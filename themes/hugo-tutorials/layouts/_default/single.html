@@ -1,4 +1,5 @@
 {{ $codePath := printf "content/%s%s.txt" .File.Dir .File.BaseFileName }}
+{{ $codeContent := readFile $codePath }}
 {{ $numContents := len (where .Site.RegularPages "Section" "==" .Section) }}
 
 {{ partial "header.html" . }}
@@ -34,12 +35,17 @@
     <div class="col-6 col-sm-6">
       <div class="panel">
         <div class="code">
-          runable
-          <pre><code class="code-content">{{ readFile $codePath }}</code></pre>
 
-          <div class="outcome">
-            outcome and visualization
-          </div>
+          {{ if not (eq $codeContent "")}}
+            runable
+            <pre><code class="code-content">{{ $codeContent }}</code></pre>
+
+            <div class="outcome">
+              outcome and visualization
+            </div>
+          {{ else }}
+            
+          {{ end }}
         </div>
       </div>
     </div>
