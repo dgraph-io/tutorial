@@ -1,3 +1,41 @@
-{{ range .Pages  }}
-  {{ .Render "article" }}
-{{ end }}
+{{ partial "header.html" . }}
+
+{{ partial "topbar.html" . }}
+
+<div class="content-wrapper home">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1>Welcome to a tour of Dgraph</h1>
+
+        <img src="/images/diggy.png" alt="diggy" class="diggy-img">
+
+        <ul class="list-unstyled">
+          {{ range $section, $pages := .Site.Sections }}
+            <li>
+              <h2>
+                {{ title $section }}
+              </h2>
+            </li>
+          {{ end }}
+        </ul>
+
+        <h2>More resources</h2>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="https://doc.dgraph.io/">Official documentation</a>
+          </li>
+          <li>
+            <a href="https://discuss.dgraph.io/">Community forum</a>
+          </li>
+          <li>
+            <a href="https://play.dgraph.io/">Dgraph Play</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ partial "footer.html" . }}

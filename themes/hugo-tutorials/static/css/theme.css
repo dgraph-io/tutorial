@@ -38,14 +38,14 @@ html body {
   vertical-align: middle;
 }
 
-.content-wrapper {
+.lesson-content-wrapper {
   height: calc(100vh - 58px);
   display: flex;
   padding-top: 11px;
   background-color: #fdfdfd;
 }
 /* overwrite the hljs style */
-.content-wrapper code {
+.lesson-content-wrapper code {
   background-color: #f9f9f9;
 }
 
@@ -90,4 +90,12 @@ html body {
 .page-nav-link {
   padding: 4px 10px 0px;
   font-size: 18px;
+}
+
+.content-wrapper {
+  padding: 20px 0;
+}
+
+.home .diggy-img {
+  width: 334px;
 }

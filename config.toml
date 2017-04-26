@@ -2,3 +2,9 @@ baseURL = "https://tour.dgraph.io"
 languageCode = "en-us"
 title = "A Tour of Dgraph"
 theme="hugo-tutorials"
+
+[[menu.main]]
+  name = "sample"
+  url = "/sample/"
+  identifier = "sample"
+  weight = 1
