@@ -8,3 +8,9 @@ theme="hugo-tutorials"
   url = "/sample/"
   identifier = "sample"
   weight = 1
+[[menu.main]]
+  name = "intro"
+  url = "/intro/"
+  identifier = "intro"
+  weight = 2
+  

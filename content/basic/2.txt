@@ -1,0 +1,6 @@
+{
+  michael(func: allofterms(name, "Michael")) {
+    name
+    age
+  }
+}

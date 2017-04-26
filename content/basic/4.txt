@@ -1,0 +1,4 @@
+schema(pred: [name, age, friend]) {
+  type
+  index
+}
