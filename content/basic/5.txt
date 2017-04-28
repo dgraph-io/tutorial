@@ -1,12 +1,10 @@
 {
-  michael_friends_and_pet(func: allofterms(name, "Michael")) {
+  michaels_friends_filter(func: allofterms(name, "Michael")) {
     name
     age
-    friend {
+    friend @filter(geq(age, 27)) {
         name
-    }
-    owns_pet {
-        name
+        age
     }
   }
 }

@@ -1,6 +1,9 @@
 {
-  michael(func: allofterms(name, "Michael")) {
+  michaels_friends(func: allofterms(name, "Michael")) {
     name
     age
+    friend {
+        name
+    }
   }
 }

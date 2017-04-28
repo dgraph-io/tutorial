@@ -1,9 +1,4 @@
-{
-  michael_friends(func: allofterms(name, "Michael")) {
-    name
-    age
-    friend {
-        name
-    }
-  }
+schema(pred: [name, age, friend, owns_pet]) {
+  type
+  index
 }

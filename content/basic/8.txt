@@ -1,8 +1,8 @@
 {
-  michael_friends_sorted(func: allofterms(name, "Michael")) {
+  michael_friends_first(func: allofterms(name, "Michael")) {
     name
     age
-    friend (orderasc: name) {
+    friend (orderasc: name, first: 2) {
         name
     }
   }
