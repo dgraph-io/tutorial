@@ -99,3 +99,15 @@ html body {
 .home .diggy-img {
   width: 334px;
 }
+
+.expandable {
+  margin-bottom: 1rem;
+}
+.expandable.expanded .expandable-content {
+  max-height: 2300px;
+}
+.expandable .expandable-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 450ms ease-in;
+}
