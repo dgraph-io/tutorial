@@ -4,13 +4,18 @@ title = "A Tour of Dgraph"
 theme="hugo-tutorials"
 
 [[menu.main]]
-  name = "sample"
+  name = "Sample"
   url = "/sample/"
   identifier = "sample"
   weight = 1
 [[menu.main]]
-  name = "intro"
+  name = "Intro"
   url = "/intro/"
   identifier = "intro"
   weight = 2
-  
+
+[[menu.main]]
+  name = "Basic"
+  url = "/basic/"
+  identifier = "basic"
+  weight = 3

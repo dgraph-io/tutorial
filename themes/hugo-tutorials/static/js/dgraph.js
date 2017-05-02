@@ -12,5 +12,25 @@ $(document).ready(function() {
     } else {
       $toggle.html("<i class='fa fa-caret-down'></i> Show answer");
     }
-  })
+  });
+
+  $(document).on('click', 'a[data-action="toggle-sidebar"]', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    $('#sidebar').toggleClass('hidden');
+  });
+
+  $(document).on('click', 'body', function (e) {
+    e.preventDefault();
+
+    var $sidebar = $('#sidebar');
+    if (!$sidebar.hasClass('hidden')) {
+      $('#sidebar').addClass('hidden');
+    }
+  });
+
+  $(document).on('click', '#sidebar', function (e) {
+    e.stopPropagation();
+  });
 });

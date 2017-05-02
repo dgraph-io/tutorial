@@ -1,7 +1,10 @@
 {{ partial "header.html" . }}
 
+{{ partial "topbar.html" . }}
+{{ partial "sidebar.html" . }}
+
 {{ range .Pages  }}
-  {{ .Render "article" }}
+  {{ .Title }}
 {{ end }}
 
 {{ partial "footer.html" . }}

@@ -1,41 +1,25 @@
-<aside id="sidebar">
-  <div class="menu-header">
-    <div class="heading">
-      Dgraph manual
-    </div>
-    <select class="version-selector">
-      {{ range $i, $version := .Site.Params.Versions }}
-          {{ if eq $i 0 }}
-            <option value="{{$version}}">{{ $version }} (latest)</option>
-          {{ else }}
-            <option value="{{$version}}">{{ $version }}</option>
-          {{ end }}
-      {{ end }}
-    </select>
-  </div>
+{{ $sections := .Site.Sections }}
 
-  <ul class="topics">
+<aside id="sidebar">
+  <ul class="categories">
     {{ range .Site.Menus.main }}
-      <li class="topic main-topic{{if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} active{{end}}">
-        <a href="{{.URL}}">
+      <li>
+        <a class="category{{if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} active{{end}}" href="{{.URL}}">
           {{ .Name }}
         </a>
+
+        <ul class="topics">
+          {{ $weightedPages := index $sections .Identifier }}
+
+          {{ range $weightedPages }}
+            <li>
+              <a href="{{ .Page.URL }}" class="topic{{if eq .Page.URL $.URL}} active{{end}}">
+                {{ .Page.Title }}
+              </a>
+            </li>
+          {{ end }}
+        </ul>
       </li>
     {{ end }}
-  </ul>
-
-  <ul class="sidebar-menu">
-    <li>
-      <a href="https://dgraph.io/" target="_blank">Home</a>
-    </li>
-    <li>
-      <a href="https://discuss.dgraph.io/" target="_blank">Community</a>
-    </li>
-    <li>
-      <a href="https://slack.dgraph.io/" target="_blank">Slack</a>
-    </li>
-    <li>
-      <a href="https://github.com/dgraph-io/dgraph" target="_blank">GitHub</a>
-    </li>
   </ul>
 </aside>
