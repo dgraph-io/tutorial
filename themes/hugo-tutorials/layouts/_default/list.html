@@ -11,16 +11,27 @@
 
         <img src="/images/diggy.png" alt="diggy" class="diggy-img">
 
-        <ul class="list-unstyled">
-          {{ range $section, $pages := .Site.Sections }}
+        <ul class="categories">
+          {{ range .Site.Menus.main }}
             <li>
-              <h2>
-                {{ title $section }}
-              </h2>
+              <a class="category" href="{{.URL}}">
+                <h2>{{ .Name }}</h2>
+              </a>
+
+              <ul class="topics">
+                {{ $weightedPages := index $.Site.Sections .Identifier }}
+
+                {{ range $weightedPages }}
+                  <li>
+                    <a href="{{ .Page.URL }}" class="topic">
+                      {{ .Page.Title }}
+                    </a>
+                  </li>
+                {{ end }}
+              </ul>
             </li>
           {{ end }}
         </ul>
-
         <h2>More resources</h2>
 
         <ul class="list-unstyled">

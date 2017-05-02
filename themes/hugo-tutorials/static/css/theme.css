@@ -163,3 +163,10 @@ html body {
   overflow: hidden;
   transition: max-height 450ms ease-in;
 }
+
+/***** home **/
+.home .categories, .home .topics {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}

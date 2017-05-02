@@ -22,8 +22,8 @@ $(document).ready(function() {
   });
 
   $(document).on('click', 'body', function (e) {
-    e.preventDefault();
 
+    // Collapse sidebar if open
     var $sidebar = $('#sidebar');
     if (!$sidebar.hasClass('hidden')) {
       $('#sidebar').addClass('hidden');
