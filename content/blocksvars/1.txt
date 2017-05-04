@@ -1,0 +1,14 @@
+{
+  caro(func: allofterms(name, "Marc Caro")) {
+    name
+    director.film {
+      name
+    }
+  }
+  jeunet(func: allofterms(name, "Jean-Pierre Jeunet")) {
+    name
+    director.film {
+      name
+    }
+  }
+}

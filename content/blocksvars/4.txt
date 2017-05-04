@@ -1,0 +1,14 @@
+{
+  qt(func:allofterms(name, "Peter Jackson")) @normalize @cascade {  
+    F as director.film 
+
+    actor.film {
+      performance.film @filter(var(F)) {
+        film_name: name
+      }
+      performance.character {
+        character: name
+      }
+    }
+  }
+}

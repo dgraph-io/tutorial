@@ -1,0 +1,16 @@
+{
+  var(func: allofterms(name, "Taraji Henson")) {
+    actor.film {
+      F as performance.film {
+        G as genre 
+      }
+    }
+  }
+  
+  Taraji_films_by_genre(id: var(G)) {
+    genre_name : name
+    films : ~genre @filter(var(F)) {
+      film_name : name
+    }
+  }
+}

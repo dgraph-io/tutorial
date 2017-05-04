@@ -1,0 +1,23 @@
+{
+  coactors(func:allofterms(name, "Jane Campion")) @cascade @normalize {
+    JC_films as director.film {      # JC_films = all Jane Campion's films
+      starting_movie: name
+      starring {
+        JC_actors as performance.actor {      # JC_actors = all actors in all JC films
+          actor : name
+          actor.film {
+            performance.film @filter(not var(JC_films)) { 
+              film_together : name
+              starring {
+                # find a coactor who has been in some JC film
+                performance.actor @filter(var(JC_actors)) {
+                  coactor_name: name
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
