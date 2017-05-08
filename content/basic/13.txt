@@ -1,1 +1,3 @@
-# A query
+{
+	# A comment in a query looks like this
+}

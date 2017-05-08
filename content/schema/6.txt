@@ -1,1 +1,5 @@
-...they can do any thing in the sandbox here...
+{
+  expand_company(func: allofterms(name, "CompanyABC")) {
+    _predicate_
+}
+

@@ -1,0 +1,18 @@
+{
+  everyone(func: allofterms(name, "Michael")) {
+    name
+    age
+    friend {
+        name
+        friend {
+	    name
+	}
+        owns_pet {
+            name
+        }
+    }
+    owns_pet {
+        name
+    }
+  }
+}

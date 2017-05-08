@@ -1,0 +1,43 @@
+mutation {
+
+  schema {
+    name: string @index(exact, term) .
+    age: int @index .
+  }
+
+  set {
+    _:michael <name> "Michael" .
+    _:michael <age> "39" .
+    _:michael <friend> _:amit .
+    _:michael <friend> _:sarah .
+    _:michael <friend> _:jing .
+    _:michael <friend> _:catalina .
+    _:michael <owns_pet> _:rammy .
+
+    _:amit <name> "Amit" .
+    _:amit <age> "35" .
+    _:amit <friend> _:michael .
+    _:amit <friend> _:jing .
+
+    _:sarah <name> "Sarah" .
+    _:sarah <age> "55" .
+
+    _:jing <name> "Jing" .
+    _:jing <age> "24" .
+    _:jing <friend> _:amit .
+    _:jing <friend> _:catalina .
+    _:jing <owns_pet> _:goldie .
+
+    _:catalina <name> "Catalina" .
+    _:catalina <age> "19" .
+    _:catalina <friend> _:jing .
+    _:catalina <owns_pet> _:perro .
+
+    _:rammy <name> "Rammy the sheep" .
+
+    _:goldie <name> "Goldie" .
+
+    _:perro <name> "Perro" . 
+
+  }
+}
