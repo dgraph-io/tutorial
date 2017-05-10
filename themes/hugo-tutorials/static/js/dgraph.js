@@ -19,11 +19,16 @@ $(document).ready(function() {
     e.preventDefault();
     e.stopPropagation();
 
-    $('#sidebar').toggleClass('hidden');
+    var $sidebar = $('#sidebar');
+    $sidebar.toggleClass('hidden');
+
+    var isShown = !$sidebar.hasClass('hidden');
+    if (isShown) {
+      $(".topic.active")[0].scrollIntoView();
+    }
   });
 
   $(document).on('click', 'body', function (e) {
-
     // Collapse sidebar if open
     var $sidebar = $('#sidebar');
     if (!$sidebar.hasClass('hidden')) {
