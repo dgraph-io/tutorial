@@ -8,9 +8,28 @@ theme="hugo-tutorials"
   url = "/intro/"
   identifier = "intro"
   weight = 1
-
 [[menu.main]]
   name = "Basic"
   url = "/basic/"
   identifier = "basic"
   weight = 2
+[[menu.main]]
+  name = "Schema"
+  url = "/schema/"
+  identifier = "schema"
+  weight = 3
+[[menu.main]]
+  name = "More Data"
+  url = "/moredata/"
+  identifier = "moredata"
+  weight = 4
+[[menu.main]]
+  name = "Blocks and variables"
+  url = "/blocksvars/"
+  identifier = "blocksvars"
+  weight = 5
+[[menu.main]]
+  name = "Aggregation"
+  url = "/aggregation/"
+  identifier = "aggregation"
+  weight = 6
