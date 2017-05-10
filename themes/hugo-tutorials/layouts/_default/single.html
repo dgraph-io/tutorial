@@ -34,21 +34,12 @@
     </div>
 
     <div class="col-6 col-sm-6">
-      <div class="panel">
-        <div class="code">
-
-          {{ if not (eq $codeContent "")}}
-            runable
-            <pre><code class="code-content">{{ $codeContent }}</code></pre>
-
-            <div class="outcome">
-              outcome and visualization
-            </div>
-          {{ else }}
-
-          {{ end }}
+      {{ if not (eq $codeContent "")}}
+        {{ partial "runnable" (dict "Content" . "Code" $codeContent) }}
+      {{ else }}
+        <div class="panel">
         </div>
-      </div>
+      {{ end }}
     </div>
   </div>
 </div>

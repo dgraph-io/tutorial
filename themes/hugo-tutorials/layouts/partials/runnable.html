@@ -1,0 +1,61 @@
+<div class="runnable" data-initial="{{ .Code }}" data-current="{{ .Code }}" data-dirty="false">
+  <div class="runnable-pane runnable-pane-query">
+    <div class="topbar">
+      <div class="row">
+        <div class="col-7">
+          <span class="pane-title">
+            Query
+          </span>
+        </div>
+        <div class="col-5">
+          <div class="actions pull-right">
+            <a class="code-btn" data-action="reset" href="#">Reset</a>
+            <a class="code-btn" data-action="run" href="#">Run</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="runnable-content runnable-code">
+      <div class="runnable-tab-content active">
+        <textarea class="query-content-editable">{{ .Code }}</textarea>
+      </div>
+    </div>
+
+    <div class="row footer">
+      <div class="col-12">
+        <div class="actions pull-right">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="runnable-pane runnable-pane-output">
+    <div class="row topbar">
+      <div class="col-12">
+        <span class="pane-title">
+          Response
+        </span>
+      </div>
+    </div>
+
+    <div class="runnable-content runnable-output" style="background: url('{{ .Content.Site.BaseURL }}images/dgraph-black.png'); background-repeat: no-repeat; background-position: center; background-color: #fff;">
+      <pre class="output-container empty"><code class="output" tabindex="-1"></code></pre>
+    </div>
+
+    <div class="row footer">
+      <div class="col-12 col-sm-8">
+        <div class="latency-info hidden">
+          <div class="stat server-latency">
+            <span class="label">Server latency:</span> <span class="number"></span> <i class="fa fa-question-circle server-latency-tooltip-trigger" data-toggle="tooltip" data-placement="top" data-html="true" title="Latency information" data-animation="false"></i>
+          </div>
+          <div class="stat network-latency">
+            <span class="label">Network latency:</span> <span class="number"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

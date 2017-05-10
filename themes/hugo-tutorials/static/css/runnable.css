@@ -35,20 +35,24 @@
   word-wrap: break-word;
   font-size: 90%;
 }
-
 .runnable {
-  background: #ffffff;
-  padding: 29px 0px;
-  margin-bottom: 13px;
-}
-.runnable .runnable-pane {
-  margin: 0px 2px 4px 0;
-  padding: 3px;
-  border: 1px solid #ececec;
-  background: #f9f9f9;
-  height: 326px;
+  height: 100%;
   display: flex;
   flex-direction: column;
+}
+.runnable .runnable-pane {
+  margin-bottom: 4px;
+  border: 1px solid #ececec;
+  background: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  transition: flex 220ms ease-in;
+}
+.runnable .runnable-pane-query {
+  flex: 0.34;
+}
+.runnable .runnable-pane-output {
+  flex: 0.66;
 }
 .runnable .runnable-content {
   flex: 1;
@@ -146,6 +150,9 @@
   vertical-align: middle;
   padding: 0px 13px;
   display: inline-block;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 13px;
 }
 .runnable .latency-info {
   vertical-align: middle;
@@ -278,7 +285,9 @@ html .runnable code {
 .runnable .code-btn.active {
   background: #E0EBF5;
 }
-
+.runnable .query-content-editable {
+  display: none;
+}
 
 /* custom bootstrap */
 /*.row-no-padding [class^="col-"] {
