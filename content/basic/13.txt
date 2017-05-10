@@ -1,3 +1,4 @@
 {
 	# A comment in a query looks like this
+	me() {}
 }

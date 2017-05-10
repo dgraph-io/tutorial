@@ -1,4 +1,5 @@
 {
   expand_company(func: allofterms(name, "CompanyABC")) {
     expand(_all_)
+  }
 }

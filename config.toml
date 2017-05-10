@@ -28,8 +28,17 @@ theme="hugo-tutorials"
   url = "/blocksvars/"
   identifier = "blocksvars"
   weight = 5
-[[menu.main]]
-  name = "Aggregation"
-  url = "/aggregation/"
-  identifier = "aggregation"
-  weight = 6
+# [[menu.main]]
+#   name = "Aggregation"
+#   url = "/aggregation/"
+#   identifier = "aggregation"
+#   weight = 6
+
+[params]
+  [params.menudesc]
+    intro = "Learn the concept of graph database. Set up and run Dgraph for this tutorial."
+    basic = "Learn the rich and descriptive ways to query data from Dgraph."
+    schema = "Learn how schemas work inside Dgraph, and how to mutate data"
+    moredata = "Use dgraphloader to load large datasets in no time. Set up data for the next steps of the tutorial"
+    blocksvars = "Learn how blocks and variables work in Dgraph"
+    aggregation = "Learn how aggregation works"

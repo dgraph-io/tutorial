@@ -121,8 +121,11 @@
     })
     .fail(function (xhr, status, error) {
       $currentRunnable.find('.output-container').addClass('error');
+      // Ideally we should check that xhr.status === 404, but because we are doing
+      // CORS, status is always 0
+      var defaultError = "Error: Is Dgraph running locally?"
 
-      codeEl.text(xhr.responseText || error);
+      codeEl.text(xhr.responseText || error || defaultError);
     });
   });
 

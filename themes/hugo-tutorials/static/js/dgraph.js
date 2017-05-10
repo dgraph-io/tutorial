@@ -5,6 +5,7 @@ $(document).ready(function() {
     var $expandable = $(this).closest('.expandable');
 
     $expandable.toggleClass('expanded');
+    $(body).toggleClass('noscroll');
 
     var isExpanded = $expandable.hasClass('expanded');
     if (isExpanded) {

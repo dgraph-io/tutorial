@@ -60,6 +60,11 @@ html body {
   opacity: 1;
   overflow-y: auto;
 }
+@media screen and (max-width: 425px) {
+  #sidebar {
+    width: 80%;
+  }
+}
 #sidebar.hidden {
   transform: translateX(445px);
   opacity: 0.01;
@@ -144,14 +149,6 @@ html body {
   font-size: 18px;
 }
 
-.content-wrapper {
-  padding: 20px 0;
-}
-
-.home .diggy-img {
-  width: 334px;
-}
-
 .expandable {
   margin-bottom: 1rem;
 }
@@ -163,10 +160,51 @@ html body {
   overflow: hidden;
   transition: max-height 450ms ease-in;
 }
+.noscroll {
+  overflow: hidden;
+}
 
 /***** home **/
-.home .categories, .home .topics {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 0;
+.home .chapter {
+  border: 1px solid #c3c3c3;
+  border-radius: 3px;
+  margin-bottom: 26px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+}
+.home .chapter .chapter-header {
+  background: #383838;
+  color: white;
+  padding: 9px 11px;
+  font-size: 17px;
+  overflow: auto;
+}
+.home .chapter .chapter-desc {
+  padding: 9px 11px;
+}
+.home .chapter-start-btn {
+  float: right;
+}
+.home .main {
+  padding: 28px 0;
+}
+
+.home .diggy-img {
+  width: 334px;
+}
+.home .masthead {
+  text-align: center;
+  padding: 4.7em 0;
+  background: #fdfdfd;
+}
+.home .cta {
+  margin-bottom: 17px;
+}
+.home .cta-btn {
+  text-transform: uppercase;
+}
+.home .main-desc-content {
+  width: 400px;
+  display: inline-block;
+  color: #777777;
+  padding-top: 34px;
 }
