@@ -35,6 +35,24 @@ $(document).ready(function() {
     e.stopPropagation();
   });
 
+  var KEY_RIGHT = 39;
+  var KEY_LEFT = 37;
+  document.addEventListener('keydown', function (e) {
+    var isCodeMirrorFocused = $('.CodeMirror-focused').length > 0;
+    if (isCodeMirrorFocused) {
+      return;
+    }
+
+    var keyCode = e.keyCode;
+    if (keyCode === KEY_RIGHT) {
+      var nextHref = $("[data-action='go-next']").attr('href');
+      window.location.href = nextHref;
+    } else if (keyCode === KEY_LEFT) {
+      var prefHref = $("[data-action='go-prev']").attr('href');
+      window.location.href = prefHref;
+    }
+  });
+
   // Add target = _blank to all external links.
   var links = document.links;
   for (var i = 0, linksLength = links.length; i < linksLength; i++) {

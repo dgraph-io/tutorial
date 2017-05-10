@@ -157,7 +157,5 @@
      updateQueryContents($runnable, currentQuery);
 
      initCodeMirror($runnable);
-
-    //  setupRunnableClipboard(this);
    });
 })();
