@@ -4,9 +4,10 @@
   <ul class="categories">
     {{ range .Site.Menus.main }}
       <li>
-        <a class="category{{if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} active{{end}}" href="{{.URL}}">
+        <div class="category">
           {{ .Name }}
-        </a>
+        </div>
+
 
         <ul class="topics">
           {{ $weightedPages := index $sections .Identifier }}
