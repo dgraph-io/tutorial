@@ -49,10 +49,10 @@
   transition: flex 220ms ease-in;
 }
 .runnable .runnable-pane-query {
-  flex: 0.34;
+  flex: 0.58;
 }
 .runnable .runnable-pane-output {
-  flex: 0.66;
+  flex: 0.42;
 }
 .runnable .runnable-content {
   flex: 1;
