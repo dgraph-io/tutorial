@@ -37,7 +37,8 @@
       {{ if not (eq $codeContent "")}}
         {{ partial "runnable" (dict "Content" . "Code" $codeContent) }}
       {{ else }}
-        <div class="panel">
+        <div class="panel empty">
+          <img src="{{ .Site.BaseURL }}/images/dgraph-black.png" alt="dgraph-icon" class="dgraph-icon" />
         </div>
       {{ end }}
     </div>

@@ -122,6 +122,12 @@ html body {
   background-color: #ffffff;
   overflow-y: auto;
 }
+.panel.empty {
+  justify-content: center;
+}
+.panel.empty .dgraph-icon {
+  align-self: center;
+}
 
 .panel .body {
   font-size: 16px;
