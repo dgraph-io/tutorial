@@ -8,7 +8,7 @@ set -e
 
 GREEN='\033[32;1m'
 RESET='\033[0m'
-HOST=http://tour.dgraph.io
+HOST=https://tour.dgraph.io
 
 
 rebuild() {
