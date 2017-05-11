@@ -226,6 +226,9 @@ html body {
   color: #777777;
   padding-top: 34px;
 }
+.home .diggy-face {
+  width: 124px;
+}
 
 .notices {
   border-radius: 3px;
