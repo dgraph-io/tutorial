@@ -1,5 +1,5 @@
 {
-  expand_company(func: allofterms(name, "CompanyABC")) {
-    expand(_all_)
+  company(func: allofterms(name, "CompanyABC")) {
+    _predicate_
   }
 }

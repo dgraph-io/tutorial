@@ -1,6 +1,6 @@
 {
   A as not_a_real_query(...) {
-    B as some_edge @filter(...) { # can't use C in this filter
+    B as some_edge @filter(...) { # can't use C or B in this filter
       C as ... { 
         # A, B and C here
       }

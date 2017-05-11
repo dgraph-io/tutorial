@@ -1,6 +1,6 @@
 mutation {
   set {
-    _:company1 <name> "The company" .
+    _:company1 <name> "CompanyABC" .
     _:company2 <name> "The other company" .
 
     _:company1 <industry> "Manufacturing" .

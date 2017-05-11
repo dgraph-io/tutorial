@@ -2,7 +2,7 @@
   michaels_friends_filter(func: allofterms(name, "Michael")) {
     name
     age
-    friend @filter(geq(age, 27)) {
+    friend @filter(ge(age, 27)) {
         name
         age
     }

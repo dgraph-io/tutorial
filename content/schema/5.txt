@@ -1,5 +1,11 @@
 mutation {
-  delete {
-     ... .
+  set {
+    ...michael... <boss_of> ...someone... .
+    
+    ...sarah... <works_for> ...company... .
+
+    ...company... <industry> ... .
+
+    ...
   }
 }

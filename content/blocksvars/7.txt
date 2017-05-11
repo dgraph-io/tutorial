@@ -1,8 +1,9 @@
 {
   q(func: allofterms(name, "Ang Lee")) {
     director.film {
+      name
       num_actors as count(starring)
     }
-    most_actors : max(var(num_actors)
+    most_actors : max(var(num_actors))
   }
 }

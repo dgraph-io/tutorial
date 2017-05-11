@@ -1,5 +1,5 @@
 {
-  qt(func:allofterms(name, "Peter Jackson")) @normalize @cascade {  
+  peterJ(func:allofterms(name, "Peter Jackson")) @normalize @cascade {  
     F as director.film 
 
     actor.film {
