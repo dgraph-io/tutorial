@@ -8,8 +8,8 @@
 {{ partial "sidebar.html" . }}
 
 <div class="lesson-content-wrapper container-fluid">
-  <div class="content row">
-    <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+  <div class="content row vertical-stretch">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-6 vertical-stretch">
       <div class="panel">
         <div class="body">
           <h1 class="lesson-heading">{{ .Title }}</h1>
@@ -33,7 +33,7 @@
       </div>
     </div>
 
-    <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-6 vertical-stretch">
       {{ if not (eq $codeContent "")}}
         {{ partial "runnable" (dict "Content" . "Code" $codeContent) }}
       {{ else }}
