@@ -226,3 +226,44 @@ html body {
   color: #777777;
   padding-top: 34px;
 }
+
+.notices {
+  border-radius: 3px;
+  margin: 10px 0;
+  padding: 10px 19px;
+}
+
+.notices .type {
+  font-weight: 600;
+  margin-right: 8px;
+  font-size: 105%;
+}
+
+.notices p {
+  margin: 0;
+  display: inline-block;
+}
+
+.notices.incomplete {
+  border-color: #f3d98c;
+  background-color: #f7f7f1;
+  border: 1px solid #e2e2e2;
+}
+
+.notices.note {
+  border-color: #f3d98c;
+  background-color: #fffad5;
+  border: 1px solid #e2e2e2;
+}
+
+.notices.tip {
+  border-color: #87cb74;
+  background-color: #e3f9e3;
+  border: 1px solid #e2e2e2;
+}
+
+.notices.warning {
+  border-color: #c16560;
+  background-color: #ffefe3;
+  border: 1px solid #e2e2e2;
+}
