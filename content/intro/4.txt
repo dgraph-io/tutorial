@@ -5,10 +5,10 @@
     friend {
         name
         friend {
-	    name
-	}
+          name
+	      }
         owns_pet {
-            name
+          name
         }
     }
     owns_pet {
