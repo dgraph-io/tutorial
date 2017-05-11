@@ -93,7 +93,7 @@
 
     var startTime;
     $.post({
-      url: 'http://127.0.0.1:8080/query?latency=true',
+      url: 'http://127.0.0.1:8080/query?latency=true&debug=true',
       data: query,
       dataType: 'json',
       beforeSend: function () {

@@ -28,6 +28,11 @@ $(document).ready(function() {
     }
   });
 
+  $(document).on('click', '.categories .category', function (e) {
+    var $topicList = $(this).siblings('.topics');
+    $topicList.toggleClass('open');
+  });
+
   $(document).on('click', 'body', function (e) {
     // Collapse sidebar if open
     var $sidebar = $('#sidebar');
@@ -58,6 +63,8 @@ $(document).ready(function() {
     }
   });
 
+  /************ On page load **/
+
   // Add target = _blank to all external links.
   var links = document.links;
   for (var i = 0, linksLength = links.length; i < linksLength; i++) {
@@ -65,4 +72,6 @@ $(document).ready(function() {
       links[i].target = '_blank';
     }
   }
+
+  $('.topic.active').closest('.topics').addClass('open');
 });

@@ -75,16 +75,28 @@ html body {
 }
 #sidebar .categories .category {
   display: block;
-  padding: 8px 11px;
+  padding: 6px 9px;
   background-color: #aec5d0;
   color: #4a4a4a;
+  border-bottom: 1px solid #efefef;
+  cursor: pointer;
 }
-#sidebar .categories li:not(:first-child) {
-  margin-top: 11px;
+#sidebar .categories .category:hover {
+  background-color: #c4d3da;
+}
+#sidebar .topics {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 500ms cubic-bezier(0.4, 0, 1, 1);
+}
+#sidebar .topics.open {
+  max-height: 2300px;
+  overflow: auto;
+  transition: max-height 500ms ease-in-out;
 }
 #sidebar .topics .topic {
   display: block;
-  padding: 8px 11px;
+  padding: 6px 11px;
   color: #4a4a4a;
 }
 #sidebar .topics .topic:hover {
