@@ -3,13 +3,13 @@
     name
     age
     friend {
+      name
+      friend {
         name
-        friend {
-	    name
-	}
-        owns_pet {
-            name
-        }
+      }
+      owns_pet {
+          name
+      }
     }
     owns_pet {
         name
