@@ -274,3 +274,9 @@ html body {
 .vertical-stretch {
   height: 100%;
 }
+
+.footer {
+  text-align: center;
+  padding: 3em 0;
+  background-color: #e6e6e6;
+}
