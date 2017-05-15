@@ -1,22 +1,20 @@
 /**
  * JS for runnable component
- *
- * IF USED IN BLOG, DO NOT MODIFY - to make it easier to share this logic with
- * the docs website, please write any custom JS elsewhere.
- *
- * Uses JQuery
  */
+
+// cm stores reference to the codemirror for the page
+var cm;
 
 (function() {
   function initCodeMirror($runnable) {
     $runnable.find('.CodeMirror').remove();
 
     var editableEl = $runnable.find('.query-content-editable')[0];
-    var cm = CodeMirror.fromTextArea(editableEl, {
+    cm = CodeMirror.fromTextArea(editableEl, {
       lineNumbers: true,
       autoCloseBrackets: true,
       lineWrapping: true,
-      autofocus: true,
+      autofocus: false,
       tabSize: 2
     });
 
@@ -144,6 +142,12 @@
     window.setTimeout(function() {
       $runnable.find('.query-content-editable').text(initialQuery);
     }, 80);
+  });
+
+  $(document).on('click', '.runnable-content.runnable-code', function (e) {
+    e.preventDefault();
+
+    cm.focus();
   });
 
   /********** On page load **/

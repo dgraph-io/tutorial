@@ -4,7 +4,7 @@ html body {
     font-size: 15px;
     line-height: 1.6;
     background-color: #fff;
-    color: #4a4a4a;
+    color: #3a3a3a;
     margin: 0;
 }
 
@@ -142,7 +142,7 @@ html body {
 }
 
 .panel .body {
-  font-size: 16px;
+  font-size: 17px;
   flex: 0.97;
   overflow-y: auto;
 }
@@ -275,7 +275,7 @@ html body {
   height: 100%;
 }
 
-.footer {
+.bottombar {
   text-align: center;
   padding: 3em 0;
   background-color: #e6e6e6;
