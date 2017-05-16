@@ -1,3 +1,17 @@
 {
-	# your query here
+  ID as var(func: allofterms(name, "Steven Spielberg")) {
+
+		# count the actors and save to a variable
+
+    # average as ...
+  }
+
+	# average is a map from uid to value so it must be used in a context
+	# where the map makes sense.  Because query block avs works over the UID
+	# of Steven Spielberg, the value variable has the value we expect.
+  avs(id: var(ID)) @normalize {
+    name : name
+    # get the average
+		# also count the movies
+  }
 }

@@ -1,0 +1,12 @@
+{
+  var(func:allofterms(name, "Steven Spielberg")) {
+    director.film @groupby(genre) {
+      a as count(_uid_)
+    }
+  }
+
+  byGenre(id: var(a), orderdesc: var(a)) {
+    name
+    num_movies : var(a)
+  }
+}

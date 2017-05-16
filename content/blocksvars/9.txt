@@ -1,16 +1,14 @@
 {
-	var(func:allofterms(name, "Jean-Pierre Jeunet")) {
-		name@en
-		films as director.film {
-			stars as count(starring)
-			directors as count(~director.film)
-			ratio as math(stars / directors)
-		}
-	}
+  ID as var(func: allofterms(name, "Steven")) {
+    director.film {
+      num_actors as count(starring)
+    }
+    average as avg(var(num_actors))
+  }
 
-	best_ratio(id: var(films), orderdesc: var(ratio)){
-		name@en
-		stars_per_dirctor : var(ratio)
-    num_stars : var(stars)
-	}
+  avs(id: var(ID), orderdesc: var(average)) @filter(ge(var(average), 40)) @normalize {
+    name : name
+    average_actors : var(average)
+    num_films : count(director.film)
+  }
 }

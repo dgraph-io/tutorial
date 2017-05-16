@@ -1,9 +1,24 @@
 {
   q(func: allofterms(name, "Ang Lee")) {
     director.film {
+      _uid_
       name
+
+      # Count the number of starring edges for each film
       num_actors as count(starring)
+
+      # In this block, num_actors is the value calculated for this film.
+      # The film with _uid_ and name
     }
+
+    # Here num_actors is a map of film uid to value
+    #
+    # It can't be used directly, but aggregations like min and max
+    # work over all the values in the map
+
     most_actors : max(var(num_actors))
   }
+
+  # to use num_actors in another query, make sure it's done in a context
+  # where the film uid to value map makes sense.
 }

@@ -1,0 +1,9 @@
+{
+  var(func:allofterms(name, "Cherie Nowlan")) {
+    pred as _predicate_
+  }
+
+  q(func:allofterms(name, "Cherie")) {
+    expand(var(pred)) { expand(_all_) }
+  }
+}

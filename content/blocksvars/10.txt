@@ -1,0 +1,16 @@
+{
+	var(func:allofterms(name, "Jean-Pierre Jeunet")) {
+		name@en
+		films as director.film {
+			stars as count(starring)
+			directors as count(~director.film)
+			ratio as math(stars / directors)
+		}
+	}
+
+	best_ratio(id: var(films), orderdesc: var(ratio)){
+		name@en
+		stars_per_dirctor : var(ratio)
+    num_stars : var(stars)
+	}
+}
