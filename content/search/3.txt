@@ -1,0 +1,5 @@
+{
+  peters(func: allofterms(name, "Peter Jackson")) {
+    name
+  }
+}

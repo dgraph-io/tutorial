@@ -1,9 +1,12 @@
 {
-  var(func:allofterms(name, "Cherie Nowlan")) {
-    pred as _predicate_
+  var(func:allofterms(name, "Steven Spielberg")) {
+    director.film @groupby(genre) {
+      a as count(_uid_)
+    }
   }
 
-  q(func:allofterms(name, "Cherie")) {
-    expand(var(pred)) { expand(_all_) }
+  byGenre(id: var(a), orderdesc: var(a)) {
+    name
+    num_movies : var(a)
   }
 }

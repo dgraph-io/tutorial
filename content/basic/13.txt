@@ -1,7 +1,6 @@
 {
-  # A comment in a query looks like this
   michael_number_friends(func: allofterms(name, "Michael")) @normalize {
-    name : name   # or like this
+    name : name
     age
     number_of_friends : count(friend)
   }

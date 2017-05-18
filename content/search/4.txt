@@ -1,0 +1,14 @@
+{
+  r(func: regexp(name, //)) {
+    name
+
+    ~genre @filter(regexp(name, //)){
+      name
+      starring {
+        performance.actor @filter(regexp(name, //)) {
+          name
+        }
+      }
+    }
+  }
+}

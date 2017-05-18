@@ -1,0 +1,5 @@
+{
+  peters(func: allofterms(name, ""Weißer Jäger")) {
+    name@en
+    name@de
+}

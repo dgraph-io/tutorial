@@ -1,12 +1,6 @@
 {
-  var(func:allofterms(name, "Steven Spielberg")) {
-    director.film @groupby(genre) {
-      a as count(_uid_)
-    }
-  }
-
-  byGenre(id: var(a), orderdesc: var(a)) {
-    name
-    num_movies : var(a)
-  }
+# The answer will have each director's most recent movie
+# and be sorted over all by the release dates of those movies.
+#
+# Return directors name, movie name and release date.
 }
