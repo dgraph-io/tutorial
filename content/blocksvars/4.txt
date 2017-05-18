@@ -1,7 +1,10 @@
 {
-  peterJ(func:allofterms(name, "Peter Jackson")) @normalize @cascade {  
-    F as director.film 
+  PJ as var(func:allofterms(name, "Peter Jackson")) @normalize @cascade {
+    F as director.film
+  }
 
+  peterJ(id: var(PJ)) @normalize {
+    name : name
     actor.film {
       performance.film @filter(var(F)) {
         film_name: name
