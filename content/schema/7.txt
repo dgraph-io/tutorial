@@ -1,5 +1,5 @@
-{
-  company(func: allofterms(name, "CompanyABC")) {
-    _predicate_
+mutation {
+  delete {
+     ... .
   }
 }

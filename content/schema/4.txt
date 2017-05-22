@@ -1,5 +1,0 @@
-mutation {
-    schema{
-        boss_of: uid @reverse .
-    }
-}

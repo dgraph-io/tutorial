@@ -1,18 +1,9 @@
 {
-  everyone(func: allofterms(name, "Michael")) {
+  everyone(func: anyofterms(name, "Michael Amit")) {
     name
-    age
     friend {
-        name
-        friend {
-          name
-	      }
-        owns_pet {
-          name
-        }
-    }
-    owns_pet {
-        name
+      name@ru:ko:en
+      friend { expand(_all_) { expand(_all_) } }
     }
   }
 }

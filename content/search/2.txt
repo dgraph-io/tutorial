@@ -1,5 +1,5 @@
 {
-  q(func: allofterms(name, "Weißer Jäger")) {
-    name@en
-    name@de
+  peters(func: allofterms(name, "Peter Jackson")) {
+    name
+  }
 }

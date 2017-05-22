@@ -1,8 +1,7 @@
 {
-  lots_of_friends(func: ge(count(friend), 2)) {
+  michael_number_friends(func: allofterms(name, "Michael")) {
     name
-    friend {
-        name
-    }
+    age
+    count(friend)
   }
 }

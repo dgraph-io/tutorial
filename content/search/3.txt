@@ -1,5 +1,14 @@
 {
-  peters(func: allofterms(name, "Peter Jackson")) {
-    name
+  aliens(func: regexp(name@en, /.*alien.*/i)) @cascade {
+    name@en
+    ~genre {
+      name@en
+      starring {
+        performance.actor @filter(regexp(name@en, /.*alie.*/i)) {
+          name
+        }
+      }
+    }
+
   }
 }
