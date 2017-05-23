@@ -28,11 +28,12 @@ theme="hugo-tutorials"
   url = "/blocksvars/"
   identifier = "blocksvars"
   weight = 5
-# [[menu.main]]
-#   name = "Aggregation"
-#   url = "/aggregation/"
-#   identifier = "aggregation"
-#   weight = 6
+[[menu.main]]
+    name = "Search - more ways to find nodes"
+    url = "/search/"
+    identifier = "search"
+    weight = 6
+
 
 [params]
   [params.menudesc]
@@ -41,4 +42,4 @@ theme="hugo-tutorials"
     schema = "This lesson shows you how schemas work inside Dgraph, and how to add, update and delete data (in Dgraph, that's mutate data)."
     moredata = "Now that you've got some Dgraph experience, this lesson shows you how to use dgraphloader to load large datasets.  You'll need this bigger dataset for the remaining sections of the tutorial."
     blocksvars = "This lesson shows you how to build more powerful queries with multiple query blocks and query variables."
-    
+    search = "In this lesson, you'll learn about Dgraph's search featurs."

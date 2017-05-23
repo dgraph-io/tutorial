@@ -1,7 +1,7 @@
 {
-  movie(func:alloftext(name@de, "weiss oder vielleicht schwarz")) @filter(gt(count(genre), 1)) {
-	name@de
-	name@en
-	name@it
+  movie(func:alloftext(name@en, "the man runs"))
+    @filter(gt(count(genre), 1))
+  {
+	 name@en
   }
 }

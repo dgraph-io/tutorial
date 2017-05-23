@@ -1,0 +1,9 @@
+{
+  movie(func:alloftext(name@de, "Die schwarz"))
+    @filter(gt(count(genre), 1))
+  {
+	 name@de
+	 name@en
+	 name@it
+  }
+}

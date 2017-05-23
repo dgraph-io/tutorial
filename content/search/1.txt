@@ -1,5 +1,5 @@
 mutation {
   schema {
-    name: string @index(term, hash, fulltext, trigram) .
+    name: string @index(term, exact, fulltext, trigram) .
   }
 }
