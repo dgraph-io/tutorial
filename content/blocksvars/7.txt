@@ -11,7 +11,8 @@
       # The film with _uid_ and name
     }
 
-    # Here num_actors is a map of film uid to value
+    # Here num_actors is a map of film uid to value for all
+    # of Ang Lee's films
     #
     # It can't be used directly, but aggregations like min and max
     # work over all the values in the map
