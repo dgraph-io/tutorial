@@ -156,10 +156,12 @@ html body {
   text-align: center;
   font-size: 21px;
   flex: 0.03;
+  padding-bottom: 9px;
 }
 
 .page-nav .nav-index {
   display: inline-block;
+  padding: 0 22px;
 }
 
 .page-nav-link {
