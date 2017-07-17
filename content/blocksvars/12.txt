@@ -5,8 +5,8 @@
     }
   }
 
-  byGenre(id: var(a), orderdesc: var(a)) {
-    name
-    num_movies : var(a)
+  byGenre(func: uid(a), orderdesc: val(a)) {
+    name@en
+    num_movies : val(a)
   }
 }

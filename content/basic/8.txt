@@ -3,7 +3,7 @@
     name
     age
     friend (orderasc: age) {
-        name
+        name@.
         age
     }
   }

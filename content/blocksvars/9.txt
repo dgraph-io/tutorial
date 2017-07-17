@@ -3,12 +3,12 @@
     director.film {
       num_actors as count(starring)
     }
-    average as avg(var(num_actors))
+    average as avg(val(num_actors))
   }
 
-  avs(id: var(ID), orderdesc: var(average)) @filter(ge(var(average), 40)) @normalize {
+  avs(func: uid(ID), orderdesc: val(average)) @filter(ge(val(average), 40)) @normalize {
     name : name
-    average_actors : var(average)
+    average_actors : val(average)
     num_films : count(director.film)
   }
 }

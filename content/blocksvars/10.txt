@@ -8,9 +8,9 @@
 		}
 	}
 
-	best_ratio(id: var(films), orderdesc: var(ratio)){
+	best_ratio(func: uid(films), orderdesc: val(ratio)){
 		name@en
-		stars_per_dirctor : var(ratio)
-    num_stars : var(stars)
+		stars_per_dirctor : val(ratio)
+    num_stars : val(stars)
 	}
 }

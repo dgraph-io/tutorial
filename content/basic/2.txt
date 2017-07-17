@@ -1,9 +1,9 @@
 {
-  michaels_friends(func: allofterms(name, "Michael")) {
+  michaels_friends(func: eq(name, "Michael")) {
     name
     age
     friend {
-        name
+        name@.
     }
   }
 }

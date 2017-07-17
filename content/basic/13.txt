@@ -1,10 +1,7 @@
 {
-  michael_friends_with_pets(func: allofterms(name, "Michael")) @cascade {
-    name
+  michael_number_friends(func: allofterms(name, "Michael")) {
+    persons_name : name
     age
-    friend {
-        name
-        owns_pet
-    }
+    number_of_friends : count(friend)
   }
 }

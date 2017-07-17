@@ -1,5 +1,6 @@
 {
-  find_michael(func: allofterms(name, "Michael")) {
+  find_michael(func: eq(name, "Michael")) {
+    _uid_
     name
     age
   }

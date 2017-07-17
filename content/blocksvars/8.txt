@@ -9,7 +9,7 @@
 	# average is a map from uid to value so it must be used in a context
 	# where the map makes sense.  Because query block avs works over the UID
 	# of Steven Spielberg, the value variable has the value we expect.
-  avs(id: var(ID)) @normalize {
+  avs(func: uid(ID)) @normalize {
     name : name
     # get the average
 		# also count the movies

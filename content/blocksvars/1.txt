@@ -1,14 +1,14 @@
 {
   caro(func: allofterms(name, "Marc Caro")) {
-    name
+    name@en
     director.film {
-      name
+      name@en
     }
   }
   jeunet(func: allofterms(name, "Jean-Pierre Jeunet")) {
-    name
+    name@en
     director.film {
-      name
+      name@en
     }
   }
 }
