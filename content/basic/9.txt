@@ -3,7 +3,7 @@
     name
     age
     friend (orderasc: name, offset: 1, first: 2) {
-        name
+        name@.
     }
   }
 }

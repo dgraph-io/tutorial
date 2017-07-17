@@ -3,14 +3,14 @@
     F as director.film
   }
 
-  peterJ(id: var(PJ)) @normalize {
-    name : name
+  peterJ(func: uid(PJ)) @normalize {
+    name : name@en
     actor.film {
-      performance.film @filter(var(F)) {
-        film_name: name
+      performance.film @filter(uid(F)) {
+        film_name: name@en
       }
       performance.character {
-        character: name
+        character: name@en
       }
     }
   }

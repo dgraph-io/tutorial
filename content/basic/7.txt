@@ -3,7 +3,7 @@
     name
     age
     friend @filter(ge(age, 27) AND le(age, 48)) {
-        name
+        name@.
         age
     }
   }

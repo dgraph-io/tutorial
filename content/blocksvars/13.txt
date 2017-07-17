@@ -4,6 +4,6 @@
   }
 
   q(func:allofterms(name, "Cherie")) {
-    expand(var(pred)) { expand(_all_) }
+    expand(val(pred)) { expand(_all_) }
   }
 }
