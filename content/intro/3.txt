@@ -2,7 +2,7 @@ mutation {
 
   schema {
     name: string @index(exact, term) .
-    age: int @index .
+    age: int @index(int) .
     friend: uid @count .
   }
 

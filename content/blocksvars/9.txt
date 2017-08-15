@@ -1,5 +1,5 @@
 {
-  ID as var(func: allofterms(name, "Steven")) {
+  ID as var(func: allofterms(name@en, "Steven")) {
     director.film {
       num_actors as count(starring)
     }

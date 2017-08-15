@@ -1,5 +1,5 @@
 {
-	var(func:allofterms(name, "Jean-Pierre Jeunet")) {
+	var(func:allofterms(name@en, "Jean-Pierre Jeunet")) {
 		name@en
 		films as director.film {
 			stars as count(starring)

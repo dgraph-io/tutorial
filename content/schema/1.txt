@@ -1,7 +1,7 @@
 mutation {
     schema{
         company_id: id .
-        industry: string @index .
+        industry: string @index(term) .
         boss_of: uid .
     }
 }

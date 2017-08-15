@@ -1,5 +1,5 @@
 {
-  coactors(func:allofterms(name, "Jane Campion")) @cascade @normalize {
+  coactors(func:allofterms(name@en, "Jane Campion")) @cascade {
     JC_films as director.film {      # JC_films = all Jane Campion's films
       starting_movie: name@en
       starring {

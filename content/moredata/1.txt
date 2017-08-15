@@ -2,7 +2,7 @@ mutation {
   schema {
     director.film: uid @reverse @count .
     genre: uid @reverse .
-    initial_release_date: dateTime @index .
+    initial_release_date: dateTime @index(year) .
     name: string @index(term) .
     starring: uid @count .
   }
