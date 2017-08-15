@@ -1,5 +1,5 @@
 {
-  q(func:allofterms(name, "Kathryn Bigelow")) {
+  q(func:allofterms(name@en, "Kathryn Bigelow")) {
     _predicate_
 	}
 }

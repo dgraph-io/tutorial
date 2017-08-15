@@ -1,5 +1,5 @@
 {
-  q(func: allofterms(name, "Ang Lee")) {
+  q(func: allofterms(name@en, "Ang Lee")) {
     director.film {
       _uid_
       name@en

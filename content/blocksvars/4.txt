@@ -1,5 +1,5 @@
 {
-  PJ as var(func:allofterms(name, "Peter Jackson")) @normalize @cascade {
+  PJ as var(func:allofterms(name@en, "Peter Jackson")) @normalize @cascade {
     F as director.film
   }
 

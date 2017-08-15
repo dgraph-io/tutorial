@@ -1,5 +1,5 @@
 {
-  var(func: allofterms(name, "Taraji Henson")) {
+  var(func: allofterms(name@en, "Taraji Henson")) {
     actor.film {
       F as performance.film {
         G as genre
