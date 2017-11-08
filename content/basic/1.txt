@@ -1,6 +1,6 @@
 {
   find_michael(func: eq(name, "Michael")) {
-    _uid_
+    uid
     name
     age
   }
