@@ -1,3 +1,4 @@
+{
   set {
     _:michael <name> "Michael" .
     _:michael <age> "39" .
@@ -49,5 +50,5 @@
     _:goldie <name> "Goldie" .
 
     _:perro <name> "Perro" .
-
   }
+}
