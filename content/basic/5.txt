@@ -3,10 +3,10 @@
     name
     age
     friend {
-        name@.
+      name@.
     }
     owns_pet {
-        name
+      name
     }
   }
 }
