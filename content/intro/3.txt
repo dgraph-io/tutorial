@@ -1,9 +1,3 @@
-mutation {
-
-  schema {
-    name: string @index(exact, term) .
-    age: int @index(int) .
-    friend: uid @count .
-  }
-
-}
+name: string @index(exact, term) .
+age: int @index(int) .
+friend: uid @count .
