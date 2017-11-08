@@ -1,4 +1,4 @@
-mutation {
+{
   set {
     _:company1 <name> "CompanyABC" .
     _:company2 <name> "The other company" .
@@ -20,6 +20,5 @@ mutation {
     _:ivy <boss_of> _:jack .
 
     _:alexei <boss_of> _:jose .
-
   }
 }

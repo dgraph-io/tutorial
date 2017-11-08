@@ -1,7 +1,3 @@
-mutation {
-    schema{
-        company_id: id .
-        industry: string @index(term) .
-        boss_of: uid .
-    }
-}
+company_id: id .
+industry: string @index(term) .
+boss_of: uid .
