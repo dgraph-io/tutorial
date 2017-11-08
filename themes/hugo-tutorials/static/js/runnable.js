@@ -115,6 +115,7 @@ var cm;
       url: "http://127.0.0.1:8080" + endpoint + "?latency=true",
       data: query,
       dataType: "json",
+      headers: { "X-Dgraph-CommitNow": "true" },
       beforeSend: function() {
         startTime = new Date().getTime();
       }

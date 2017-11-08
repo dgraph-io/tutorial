@@ -1,4 +1,5 @@
-<div class="runnable" data-initial="{{ .Code }}" data-current="{{ .Code }}" endpoint="{{ .Content.Params.endpoint }}" data-dirty="false">
+{{ $endpoint := .Content.Params.endpoint | default "/query" }}
+<div class="runnable" data-initial="{{ .Code }}" data-current="{{ .Code }}" endpoint="{{ $endpoint }}" data-dirty="false">
   <div class="runnable-pane runnable-pane-query">
     <div class="topbar">
       <div class="row">
@@ -10,7 +11,7 @@
         <div class="col-5">
           <div class="actions pull-right">
             <a class="code-btn" data-action="reset" href="#">Reset</a>
-            <a class="code-btn" data-action="run" href="#">Run ({{ .Content.Params.endpoint }} endpoint)</a>
+            <a class="code-btn" data-action="run" href="#">Run ({{ $endpoint }} endpoint)</a>
           </div>
         </div>
       </div>
