@@ -1,4 +1,4 @@
-mutation {
+{
   delete {
     # Delete a single triple
     <0x1c3eb> <name> "Steven" .
@@ -9,8 +9,5 @@ mutation {
 
     # Delete all triples for a given node
     <0x1c3eb> * * .
-
-    # Delete all data for an edge
-    * <name> * .
   }
 }
