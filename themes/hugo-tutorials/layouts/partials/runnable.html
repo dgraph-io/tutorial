@@ -1,10 +1,11 @@
-<div class="runnable" data-initial="{{ .Code }}" data-current="{{ .Code }}" data-dirty="false">
+{{ $endpoint := .Content.Params.endpoint | default "/query" }}
+<div class="runnable" data-initial="{{ .Code }}" data-current="{{ .Code }}" endpoint="{{ $endpoint }}" data-dirty="false">
   <div class="runnable-pane runnable-pane-query">
     <div class="topbar">
       <div class="row">
         <div class="col-7">
           <span class="pane-title">
-            Query
+            Endpoint: {{ $endpoint }}
           </span>
         </div>
         <div class="col-5">

@@ -1,7 +1,7 @@
 {
   var(func:allofterms(name@en, "Steven Spielberg")) {
     director.film @groupby(genre) {
-      a as count(_uid_)
+      a as count(uid)
     }
   }
 

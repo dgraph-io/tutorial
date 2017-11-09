@@ -7,7 +7,7 @@
   }
 
   avs(func: uid(ID), orderdesc: val(average)) @filter(ge(val(average), 40)) @normalize {
-    name : name
+    name : name@en
     average_actors : val(average)
     num_films : count(director.film)
   }

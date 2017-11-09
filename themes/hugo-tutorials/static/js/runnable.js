@@ -103,6 +103,7 @@ var cm;
     var $currentRunnable = $(this).closest(".runnable");
     var codeEl = $currentRunnable.find(".output");
     var query = $(this).closest(".runnable").attr("data-current");
+    var endpoint = $(this).closest(".runnable").attr("endpoint");
 
     $currentRunnable.find(".output-container").removeClass("empty error");
     codeEl.text("Waiting for the server response...");
@@ -111,9 +112,10 @@ var cm;
     // TODO: For visualization, we might need debug mode
     // However we should not show it to the user in the JSON output
     $.post({
-      url: "http://127.0.0.1:8080/query?latency=true",
+      url: "http://127.0.0.1:8080" + endpoint + "?latency=true",
       data: query,
       dataType: "json",
+      headers: { "X-Dgraph-CommitNow": "true" },
       beforeSend: function() {
         startTime = new Date().getTime();
       }
