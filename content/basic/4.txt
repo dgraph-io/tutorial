@@ -3,8 +3,8 @@
     name@bn:hi:en
     age
     friend {
-        name@ko:ru
-        age
+      name@ko:ru
+      age
     }
   }
 }

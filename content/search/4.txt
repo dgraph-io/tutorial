@@ -1,5 +1,5 @@
 {
-  alpha(func: ge(count(starring), 0), orderasc: name@en)
+  alpha(func: has(starring), orderasc: name@en)
     @filter(ge(name@en, "You") AND le(name@en, "Zoo"))
   {
     name@en

@@ -1,5 +1,1 @@
-mutation {
-  schema {
-    name: string @index(term, exact, fulltext, trigram) .
-  }
-}
+name: string @index(term, exact, fulltext, trigram) .
