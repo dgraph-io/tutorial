@@ -3,7 +3,7 @@
     F as director.film
   }
 
-  peterJ(func: uid(PJ)) @normalize {
+  peterJ(func: uid(PJ)) @normalize @cascade {
     name : name@en
     actor.film {
       performance.film @filter(uid(F)) {
