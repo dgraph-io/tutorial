@@ -3,11 +3,8 @@
     _:company1 <name> "CompanyABC" .
     _:company2 <name> "The other company" .
 
-    _:company1 <industry> "Manufacturing" .
-    _:company1 <industry> "Fabricated Metal" .
     _:company1 <industry> "Machinery" .
 
-    _:company2 <industry> "Manufacturing" .
     _:company2 <industry> "High Tech" .
 
     _:jack <works_for> _:company1 .
