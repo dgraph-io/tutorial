@@ -10,7 +10,7 @@
 
 	best_ratio(func: uid(films), orderdesc: val(ratio)){
 		name@en
-		stars_per_dirctor : val(ratio)
-    num_stars : val(stars)
+		stars_per_director : val(ratio)
+		num_stars : val(stars)
 	}
 }
