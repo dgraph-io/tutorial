@@ -1,26 +1,23 @@
-{{ $sections := .Site.Sections }}
-
+{{ $sections := .Site.Home.Sections }}
 <aside id="sidebar" class="hidden">
+  {{ range $.Site.Menus.main }}
   <ul class="categories">
-    {{ range .Site.Menus.main }}
-      <li>
-        <div class="category">
-          {{ .Name }}
-        </div>
+    <li>
+      <div class="category">
+        {{ .Name }}
+      </div>
 
 
-        <ul class="topics">
-          {{ $weightedPages := index $sections .Identifier }}
-
-          {{ range $weightedPages }}
-            <li>
-              <a href="{{ .Page.URL }}" class="topic{{if eq .Page.URL $.URL}} active{{end}}">
-                {{ .Page.Title }}
-              </a>
-            </li>
-          {{ end }}
-        </ul>
-      </li>
-    {{ end }}
-  </ul>
+      <ul class="topics">
+        {{ $section := $.Site.GetPage "section" .Identifier }}
+        {{ range $section.Pages }}
+          <li>
+            <a href="{{ .URL }}" class="topic{{if eq .URL $.URL}} active{{end}}">
+              {{ .Title }}
+            </a>
+          </li>
+        {{ end }}
+      </ul>
+    </li>
+  {{ end }}
 </aside>
