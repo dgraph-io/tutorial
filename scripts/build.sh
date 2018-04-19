@@ -48,7 +48,7 @@ checkAndUpdate()
 }
 
 while true; do
-	# Lets move to the Wiki directory.
+	# Lets move to the dgraph-tour directory.
 	pushd /home/ubuntu/dgraph-tour > /dev/null
 
 	# Now lets check the theme.
