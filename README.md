@@ -12,3 +12,6 @@ has been tested with hugo `v0.37`.
 Run `./scripts/build.sh` in a tmux window. The script polls `dgraph-io/tutorial` every one minute
 and pulls any new changes that have been merged to master. It also rebuilds the site if there are
 any changes.
+
+If for reason the site is not getting updated after pushing to `master`, the script might have been
+terminated. SSH into the server and restart it.
