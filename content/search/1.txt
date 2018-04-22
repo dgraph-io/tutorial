@@ -1,1 +1,1 @@
-name: string @index(term, fulltext, trigram) .
+name: string @index(term, fulltext, trigram) @lang .
