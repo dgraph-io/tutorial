@@ -96,6 +96,53 @@ var cm;
       .tooltip();
   }
 
+  function isFirefox() {
+    return navigator.userAgent.indexOf(' Firefox/') >= 0;
+  }
+
+  function dgraphPost(params) {
+    return $.post({
+      url: "http://127.0.0.1:8080" + params.endpoint + "?latency=true",
+      data: params.query,
+      dataType: "json",
+      headers: isFirefox() ? undefined : { "X-Dgraph-CommitNow": "true" },
+      beforeSend: params.beforeSend,
+    });
+  }
+
+  function commitTxn(resp) {
+    var txn = resp.extensions && resp.extensions.txn;
+    if (!txn || !txn.keys || !txn.keys.length) {
+      // Nothing to commit.
+      var commitRes = $.Deferred();
+      commitRes.resolve('<Nothing to commit>');
+      return commitRes;
+    }
+    return $.post({
+      url: "http://127.0.0.1:8080/commit/" + txn.start_ts,
+      data: JSON.stringify(txn.keys),
+      dataType: "json",
+    });
+  }
+
+  function displayOutput(codeEl, res, commitRes, commitError) {
+    var userOutput = JSON.stringify(res, null, 2);
+    if (isFirefox()) {
+      if (commitRes) {
+        userOutput += "\n-----\nCOMMIT response (Firefox only):\n\n";
+        userOutput += JSON.stringify(commitRes, null, 2);
+      } else if (commitError) {
+        userOutput += "\n-----\nCOMMIT ERROR (Firefox only):\n\n";
+        userOutput += JSON.stringify(commitError, null, 2);
+      }
+    }
+
+    codeEl.text(userOutput);
+    for (var i = 0; i < codeEl.length; i++) {
+      hljs.highlightBlock(codeEl[i]);
+    }
+  }
+
   // Running code
   $(document).on("click", '.runnable [data-action="run"]', function(e) {
     e.preventDefault();
@@ -111,11 +158,9 @@ var cm;
     var startTime;
     // TODO: For visualization, we might need debug mode
     // However we should not show it to the user in the JSON output
-    $.post({
-      url: "http://127.0.0.1:8080" + endpoint + "?latency=true",
-      data: query,
-      dataType: "json",
-      headers: { "X-Dgraph-CommitNow": "true" },
+    dgraphPost({
+      endpoint: endpoint,
+      query: query,
       beforeSend: function() {
         startTime = new Date().getTime();
       }
@@ -129,18 +174,36 @@ var cm;
         // In some cases, the server does not return latency information
         // TODO: find better ways to check for errors or fix dgraph to make the
         // response consistent
-        if ((!res.code || !/Error/i.test(res.code)) && serverLatencyInfo) {
+        var resSuccess = !res.code || !/Error/i.test(res.code);
+
+        if (!resSuccess) {
+          $currentRunnable.find(".output-container").addClass("error");
+        }
+
+        if (resSuccess && endpoint === "/mutate" && isFirefox()) {
+          commitTxn(res).done(function(commitResult) {
+            if (!commitResult.errors) {
+              displayOutput(codeEl, res, commitResult);
+            } else {
+              $currentRunnable.find(".output-container").addClass("error");
+              displayOutput(codeEl, res, null, commitResult);
+            }
+          }).fail(function(xhr, status, error) {
+            $currentRunnable.find(".output-container").addClass("error");
+            var defaultError = "Error: Is Dgraph running locally?";
+            var message = xhr.responseText || error || defaultError
+            displayOutput(codeEl, res, null, "Failed to POST to /commit: " + message);
+          })
+        } else {
+          displayOutput(codeEl, res);
+        }
+
+        if (resSuccess && serverLatencyInfo) {
           updateLatencyInformation(
             $currentRunnable,
             serverLatencyInfo,
             networkLatency
           );
-        }
-
-        var userOutput = JSON.stringify(res, null, 2);
-        codeEl.text(userOutput);
-        for (var i = 0; i < codeEl.length; i++) {
-          hljs.highlightBlock(codeEl[i]);
         }
       })
       .fail(function(xhr, status, error) {
