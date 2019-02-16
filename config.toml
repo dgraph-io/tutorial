@@ -38,7 +38,7 @@ theme="hugo-tutorials"
 [params]
   [params.menudesc]
     intro = "In this lesson you'll learn how to set up and run Dgraph for the tutorial and learn about graph databases"
-    basic = "Here you'll learn the basicis of how to query graph data from Dgraph and how to use and interpret the results."
+    basic = "Here you'll learn the basics of how to query graph data from Dgraph and how to use and interpret the results."
     schema = "This lesson shows you how schemas work inside Dgraph, and how to add, update and delete data (in Dgraph, that's mutate data)."
     moredata = "Now that you've got some Dgraph experience, this lesson shows you how to use dgraph live loader to load large datasets.  You'll need this bigger dataset for the remaining sections of the tutorial."
     blocksvars = "This lesson shows you how to build more powerful queries with multiple query blocks and query variables."
