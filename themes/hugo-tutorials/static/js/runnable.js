@@ -6,10 +6,13 @@
 var cm;
 
 (async function() {
+  // --- START: RunnableUrl ---
   const { RunnableUrl } = await import('./runnable-url/index.js');
   const { InitRunnableUrlView, runnableUrl } = await import(
     './runnable-url/view.js'
   );
+  InitRunnableUrlView();
+  // --- END:   RunnableUrl ---
 
   function initCodeMirror($runnable) {
     $runnable.find('.CodeMirror').remove();
@@ -290,10 +293,5 @@ var cm;
     updateQueryContents($runnable, currentQuery);
 
     initCodeMirror($runnable);
-
-    // --- START: RunnableUrl ---
-
-    InitRunnableUrlView();
-    // --- END:   RunnableUrl ---
   });
 })();
