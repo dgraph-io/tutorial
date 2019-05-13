@@ -11,6 +11,12 @@
     _:ivy <works_for> _:company1 .
     _:zoe <works_for> _:company1 .
 
+    _:jack <name> "Jack" .
+    _:ivy <name> "Ivy" .
+    _:zoe <name> "Zoe" .
+    _:jose <name> "Jose" .
+    _:alexei <name> "Alexei" .
+
     _:jose <works_for> _:company2 .
     _:alexei <works_for> _:company2 .
 

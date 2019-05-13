@@ -1,2 +1,4 @@
 industry: string @index(term) .
 boss_of: uid .
+name: string @index(exact) .
+works_for: [uid] .
