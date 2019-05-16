@@ -162,3 +162,9 @@ endpoint = "/alter"
 ```
 
 RunnableUrl will generate the following URL for the `alter` endpoint transaction: `http://127.0.0.1:8080/alter?latency=true`. However, the `static` property includes `searchParams: { latency: true }` by default, which means the URL displayed to the user in the view is: `http://127.0.0.1:8080/alter`.
+
+## Error Handling
+
+While RunnableUrl is enabled a message is appended to the error message indicating to the user that the URL is editable.  The RunnableUrl endpoint button is also highlighted via an animation, as seen below.
+
+![RunnableUrl Error Demo](./static/images/runnable-url-error-demo.gif)

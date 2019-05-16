@@ -8,9 +8,11 @@ var cm;
 (async function() {
   // --- START: RunnableUrl ---
   const { RunnableUrl } = await import('./runnable-url/index.js');
-  const { InitRunnableUrlView, runnableUrl } = await import(
-    './runnable-url/view.js'
-  );
+  const {
+    InitRunnableUrlView,
+    runnableUrl,
+    runnableUrlEndpointButton
+  } = await import('./runnable-url/view.js');
   InitRunnableUrlView();
   // --- END:   RunnableUrl ---
 
@@ -227,6 +229,11 @@ var cm;
               $currentRunnable.find('.output-container').addClass('error');
               var defaultError = 'Error: Is Dgraph running locally?';
               var message = xhr.responseText || error || defaultError;
+              // Alter error message if RunnableUrl is enabled.
+              if (RUNNABLE_URL_ENABLED) {
+                message += `\n${runnableUrl.errorMessage}`;
+                runnableUrlEndpointButton.blink();
+              }
               displayOutput(
                 codeEl,
                 res,
@@ -251,8 +258,13 @@ var cm;
         // Ideally we should check that xhr.status === 404, but because we are doing
         // CORS, status is always 0
         var defaultError = 'Error: Is Dgraph running locally?';
-
-        codeEl.text(xhr.responseText || error || defaultError);
+        let message = xhr.responseText || error || defaultError;
+        // Alter error message if RunnableUrl is enabled.
+        if (RUNNABLE_URL_ENABLED) {
+          message += `\n${runnableUrl.errorMessage}`;
+          runnableUrlEndpointButton.blink();
+        }
+        codeEl.text(message);
       });
   });
 

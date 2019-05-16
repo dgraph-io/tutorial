@@ -7,6 +7,7 @@ const runnableUrlInitialParams = RunnableUrl.reduceArrayToObject(
 const runnableUrlCurrentPathType = RunnableUrl.sanitizePathType(
   runnableUrlInitialParams.pathName
 );
+export const runnableUrlEndpointButton = $('#runnable-url-endpoint');
 export const runnableUrl = RunnableUrl.load(
   runnableUrlInitialParams,
   runnableUrlCurrentPathType
@@ -37,9 +38,9 @@ export const InitRunnableUrlView = () => {
   };
 
   const updateEndpointButton = pathType => {
-    const endpointButton = $(`#runnable-url-endpoint`);
+    // const endpointButton = $(`#runnable-url-endpoint`);
     if (pathType === runnableUrlCurrentPathType) {
-      endpointButton.text(runnableUrl.pathName);
+      runnableUrlEndpointButton.text(runnableUrl.pathName);
     }
   };
 
@@ -71,4 +72,105 @@ export const InitRunnableUrlView = () => {
 
   // Save to storage on save click.
   saveButton.on('click', saveAll);
+};
+
+/*
+ * Blink button three times to highlight to user.
+ */
+runnableUrlEndpointButton.blink = config => {
+  // Set defaults.
+  config = config
+    ? config
+    : {
+        colors: {
+          base: {
+            background: runnableUrlEndpointButton.css('background-color'),
+            border: runnableUrlEndpointButton.css('border-color')
+          },
+          highlight: {
+            background: '#fc3f0c',
+            border: '#000'
+          }
+        },
+        duration: 400
+      };
+  // Perform animations.
+  runnableUrlEndpointButton
+    .animate(
+      {
+        'background-color': config.colors.highlight.background,
+        'border-color': config.colors.highlight.border
+      },
+      {
+        duration: config.duration
+      }
+    )
+    .animate(
+      {
+        'background-color': config.colors.base.background,
+        'border-color': config.colors.base.border
+      },
+      {
+        duration: config.duration
+      }
+    )
+    .animate(
+      {
+        'background-color': config.colors.highlight.background,
+        'border-color': config.colors.highlight.border
+      },
+      {
+        duration: config.duration
+      }
+    )
+    .animate(
+      {
+        'background-color': config.colors.base.background,
+        'border-color': config.colors.base.border
+      },
+      {
+        duration: config.duration
+      }
+    )
+    .animate(
+      {
+        'background-color': config.colors.highlight.background,
+        'border-color': config.colors.highlight.border
+      },
+      {
+        duration: config.duration
+      }
+    )
+    .animate(
+      {
+        'background-color': config.colors.base.background,
+        'border-color': config.colors.base.border
+      },
+      {
+        duration: config.duration
+      }
+    )
+    .animate(
+      {
+        'background-color': config.colors.highlight.background,
+        'border-color': config.colors.highlight.border
+      },
+      {
+        duration: config.duration
+      }
+    )
+    .animate(
+      {
+        'background-color': config.colors.base.background,
+        'border-color': config.colors.base.border
+      },
+      {
+        duration: config.duration,
+        // Reset altered CSS properties after final animation.
+        always: () => {
+          runnableUrlEndpointButton.css('background-color', '');
+          runnableUrlEndpointButton.css('border-color', '');
+        }
+      }
+    );
 };

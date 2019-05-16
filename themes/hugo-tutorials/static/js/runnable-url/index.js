@@ -191,6 +191,12 @@ export class RunnableUrl {
     return this.url;
   }
 
+  get errorMessage() {
+    let message = `Unable to connect to ${this.url}.`;
+    message += '\nClick the endpoint button above to change this URL.';
+    return message;
+  }
+
   get hash() {
     return this.private.hash;
   }
