@@ -17,32 +17,8 @@ export const InitRunnableUrlView = () => {
   const modalSelector = '#runnable-url-modal';
   const modal = $(modalSelector);
   const saveButton = $(`${modalSelector} button#save`);
+  const defaultButton = $(`${modalSelector} button#load-defaults`);
   if (!modal) return;
-
-  const saveAll = () => {
-    // Handle each path type.
-    ValidPathTypes.forEach(pathType => {
-      const input = $(`${modalSelector} input[data-path-type="${pathType}"]`);
-      // Pass input value to url property, generate new RunnableUrl instance, and save.
-      // Pass explicit pathType as override to ensure custom paths are
-      // retained and associated with proper path type.
-      RunnableUrl.factory({ url: input.val() }, { pathType }).save();
-
-      if (pathType === runnableUrlCurrentPathType) {
-        // Update runnableUrl.
-        runnableUrl.url = input.val();
-        // Update endpoint button.
-        updateEndpointButton(pathType);
-      }
-    });
-  };
-
-  const updateEndpointButton = pathType => {
-    // const endpointButton = $(`#runnable-url-endpoint`);
-    if (pathType === runnableUrlCurrentPathType) {
-      runnableUrlEndpointButton.text(runnableUrl.pathName);
-    }
-  };
 
   const loadAll = () => {
     ValidPathTypes.forEach(pathType => {
@@ -52,7 +28,7 @@ export const InitRunnableUrlView = () => {
       const runnableUrl = RunnableUrl.load(runnableUrlInitialParams, pathType);
 
       // Update endpoint button.
-      updateEndpointButton(pathType);
+      updateEndpointButton(pathType, runnableUrl);
 
       // Set input value to current url.
       input.val(runnableUrl.url);
@@ -67,11 +43,70 @@ export const InitRunnableUrlView = () => {
     });
   };
 
+  const loadDefaults = () => {
+    ValidPathTypes.forEach(pathType => {
+      const input = $(`${modalSelector} input[data-path-type="${pathType}"]`);
+
+      // Delete existing record from storage using passed params and pathType.
+      RunnableUrl.load(runnableUrlInitialParams, pathType).delete(pathType);
+
+      // Load from storage using passed params and pathType.
+      const defaultRunnableUrl = RunnableUrl.load(
+        runnableUrlInitialParams,
+        pathType
+      );
+
+      // Reset current runnableUrl instance to default if matching.
+      if (runnableUrlCurrentPathType === pathType) {
+        runnableUrl.url = defaultRunnableUrl.url;
+      }
+
+      // Update endpoint button.
+      updateEndpointButton(pathType, defaultRunnableUrl);
+
+      // Set input value to current url.
+      input.val(defaultRunnableUrl.url);
+    });
+  };
+
+  const saveAll = () => {
+    // Handle each path type.
+    ValidPathTypes.forEach(pathType => {
+      const input = $(`${modalSelector} input[data-path-type="${pathType}"]`);
+      // Pass input value to url property, generate new RunnableUrl instance, and save.
+      // Pass explicit pathType as override to ensure custom paths are
+      // retained and associated with proper path type.
+      RunnableUrl.factory({ url: input.val() }, { pathType }).save();
+
+      if (pathType === runnableUrlCurrentPathType) {
+        // Update runnableUrl.
+        runnableUrl.url = input.val();
+        // Update endpoint button.
+        updateEndpointButton(pathType, runnableUrl);
+      }
+    });
+  };
+
+  const updateEndpointButton = (pathType, runnableUrl) => {
+    if (pathType === runnableUrlCurrentPathType) {
+      if (RUNNABLE_URL_CONFIG.displaycustomendpoint) {
+        // Show custom endpoint.
+        runnableUrlEndpointButton.text(runnableUrl.pathName);
+      } else {
+        // Show default endpoint.
+        runnableUrlEndpointButton.text(`/${runnableUrlCurrentPathType}`);
+      }
+    }
+  };
+
   // Load from storage.
   loadAll();
 
   // Save to storage on save click.
   saveButton.on('click', saveAll);
+
+  // Reset all default values.
+  defaultButton.on('click', loadDefaults);
 };
 
 /*

@@ -130,7 +130,7 @@ var cm;
     }
     // Default URL.
     var url = 'http://127.0.0.1:8080/commit/' + txn.start_ts;
-    if (RUNNABLE_URL_ENABLED) {
+    if (RUNNABLE_URL_CONFIG.enabled) {
       // Inject customized URL with path overrides.
       url = RunnableUrl.factory(runnableUrl, {
         pathName: `/commit/${txn.start_ts}`
@@ -182,7 +182,7 @@ var cm;
     // Set default url.
     var url = 'http://127.0.0.1:8080' + endpoint + '?latency=true';
     // Update URL if customization enabled.
-    if (RUNNABLE_URL_ENABLED) {
+    if (RUNNABLE_URL_CONFIG.enabled) {
       // Create temporary instance that includes statics params within generated URL.
       // In this case, useful for adding `latency=true` searchParam onto posted URL while hiding it from UI.
       url = RunnableUrl.factory(runnableUrl, runnableUrl.statics).url;
@@ -230,7 +230,7 @@ var cm;
               var defaultError = 'Error: Is Dgraph running locally?';
               var message = xhr.responseText || error || defaultError;
               // Alter error message if RunnableUrl is enabled.
-              if (RUNNABLE_URL_ENABLED) {
+              if (RUNNABLE_URL_CONFIG.enabled) {
                 message += `\n${runnableUrl.errorMessage}`;
                 runnableUrlEndpointButton.blink();
               }
@@ -260,7 +260,7 @@ var cm;
         var defaultError = 'Error: Is Dgraph running locally?';
         let message = xhr.responseText || error || defaultError;
         // Alter error message if RunnableUrl is enabled.
-        if (RUNNABLE_URL_ENABLED) {
+        if (RUNNABLE_URL_CONFIG.enabled) {
           message += `\n${runnableUrl.errorMessage}`;
           runnableUrlEndpointButton.blink();
         }

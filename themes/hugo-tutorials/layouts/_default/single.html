@@ -37,7 +37,7 @@
 
     <div class="col-12 col-sm-12 col-md-12 col-lg-6 vertical-stretch">
       {{ if not (eq $codeContent "")}}
-      {{ partial "runnable" (dict "Content" . "Code" $codeContent "RunnableUrlEnabled" .Site.Params.RunnableUrlEnabled) }}
+      {{ partial "runnable" (dict "Content" . "Code" $codeContent "RunnableUrlConfig" .Site.Params.RunnableUrl) }}
       {{ else }}
       <div class="panel empty">
         <img src="{{ .Site.BaseURL }}/images/dgraph-black.png" alt="dgraph-icon" class="dgraph-icon" />

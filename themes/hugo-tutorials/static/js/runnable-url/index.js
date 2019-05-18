@@ -39,8 +39,8 @@ export class RunnableUrl {
    *
    * @see RunnableStorage
    */
-  delete() {
-    return RunnableStorage.delete(this.constructor.name);
+  delete(pathType = 'query') {
+    return RunnableStorage.delete(`${this.constructor.name}-${pathType}`);
   }
 
   /**

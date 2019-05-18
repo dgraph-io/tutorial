@@ -1,6 +1,10 @@
 {{ $endpoint := .Content.Params.endpoint | default "/query" }}
 <script>
-  RUNNABLE_URL_ENABLED = '{{ .RunnableUrlEnabled }}' === 'true' ? true : false;
+  // Parse RunnableUrl config, or set default values.
+  RUNNABLE_URL_CONFIG = `{{ .RunnableUrlConfig }}` ? JSON.parse(`{{ .RunnableUrlConfig }}`) : {
+    enabled: false,
+    displaycustomendpoint: true
+  }
 </script>
 <div class="runnable" data-initial="{{ .Code }}" data-current="{{ .Code }}" endpoint="{{ $endpoint }}"
   data-dirty="false">
@@ -8,7 +12,7 @@
     <div class="topbar">
       <div class="row">
         <div class="col-7">
-          {{ if .RunnableUrlEnabled }}
+          {{ if .RunnableUrlConfig.enabled }}
           {{ partial "runnable-url.html" . }}
           {{ else }}
           <span class="pane-title">

@@ -6,16 +6,25 @@ All `Runnable` dialogs throughout site can **optionally** provide users the abil
 
 ![RunnableUrl Demo](./static/images/runnable-url-demo.gif)
 
-### Toggling Editable URLs
+### Configuration
 
-To enable editable URLs edit the Hugo configuration (`config.toml`) and set the `RunnableUrlEnabled` param to `true`.
+To enable editable URLs edit the Hugo configuration (`config.toml`) and set the `RunnableUrl.enabled` param to `true`.
 
 ```toml
-[params]
-  RunnableUrlEnabled = true
+  [params.RunnableUrl]
+    enabled = true
 ```
 
 Any other value (or a missing entry) will disable editable URLs and use the default behavior.
+
+To adjust whether the endpoint button displays the user-defined path or the default endpoint path set the `RunnableUrl.displayCustomEndpoint` to `true` or `false`.
+
+```toml
+  [params.RunnableUrl]
+    displayCustomEndpoint = true
+```
+
+A default value of `true` will display whatever custom path the user inputs for a matching endpoint type.  For example, if the user sets the path of a query to `/q` the endpoint button will display `/q`.  However, if `displayCustomEndpoint` is set to `false`, the query URL will still use the custom `/q` path value, but the UI button will display the default path of `/query`.
 
 ## RunnableUrl
 
@@ -74,7 +83,7 @@ console.log(RunnableUrl.factory(instance, instance.statics).url);
 
 ## Handling Endpoint-Specific User Settings
 
-In many situations the user may need to override a small selection of properties that makeup the overall Alpha URL. RunnableUrl intelligently parses and extracts all components of a valid URL and overrides default properties with any matching user-specified properties. However, it is necessary to differentiate between URLs and settings for each of the potential Alpha endpoints (e.g. `/query`, `/mutate`, `/alter`, etc).
+In many situations the user may need to override a small selection of properties that make up the overall Alpha URL. RunnableUrl intelligently parses and extracts all components of a valid URL and overrides default properties with any matching user-specified properties. However, it is necessary to differentiate between URLs and settings for each of the potential Alpha endpoints (e.g. `/query`, `/mutate`, `/alter`, etc).
 
 RunnableUrl handles this by tracking each Alpha endpoint as a separate instance, each of which is uniquely editable by the user. Therefore, while the default URL for a `query` transaction will post to the `http://127.0.0.1:8080/query` URL, the user can override every component of the `query` URL, including the endpoint/pathname. For example, even if the user updates the `query` URL to `https://example.com:5432/runQuery?name=Alice` RunnableUrl will remember that this URL is associated with `query` transactions and will use this URL for all runnable requests that default to a `/query` endpoint type.
 
