@@ -2,20 +2,20 @@
  * JS for runnable component
  */
 
+// --- START: RunnableUrl ---
+import { RunnableUrl } from './runnable-url/index.js';
+import {
+  InitRunnableUrlView,
+  runnableUrl,
+  runnableUrlEndpointButton
+} from './runnable-url/view.js';
+InitRunnableUrlView();
+// --- END:   RunnableUrl ---
+
 // cm stores reference to the codemirror for the page
 var cm;
 
-(async function() {
-  // --- START: RunnableUrl ---
-  const { RunnableUrl } = await import('./runnable-url/index.js');
-  const {
-    InitRunnableUrlView,
-    runnableUrl,
-    runnableUrlEndpointButton
-  } = await import('./runnable-url/view.js');
-  InitRunnableUrlView();
-  // --- END:   RunnableUrl ---
-
+export default function runnable() {
   function initCodeMirror($runnable) {
     $runnable.find('.CodeMirror').remove();
 
@@ -306,4 +306,6 @@ var cm;
 
     initCodeMirror($runnable);
   });
-})();
+}
+
+runnable();
