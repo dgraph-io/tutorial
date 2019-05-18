@@ -34,8 +34,11 @@ theme="hugo-tutorials"
     identifier = "search"
     weight = 6
 
-
 [params]
+  [params.RunnableUrl]
+    enabled = true
+    displayCustomEndpoint = true
+
   [params.menudesc]
     intro = "In this lesson you'll learn how to set up and run Dgraph for the tutorial and learn about graph databases"
     basic = "Here you'll learn the basics of how to query graph data from Dgraph and how to use and interpret the results."
