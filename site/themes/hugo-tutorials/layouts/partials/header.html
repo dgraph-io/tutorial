@@ -93,10 +93,6 @@
     {{ end }}
   </title>
 
-  <link href="{{ .Site.BaseURL }}/css/theme.css?{{ now }}" rel="stylesheet" />
-  <link href="{{ .Site.BaseURL }}/css/runnable.css?{{ now }}" rel="stylesheet" />
-  <link href="{{ .Site.BaseURL }}/css/runnable-custom.css?{{ now }}" rel="stylesheet" />
-  <link href="{{ .Site.BaseURL }}/css/runnable-url.css?{{ now }}" rel="stylesheet" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
     integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
@@ -108,6 +104,12 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+
+
+  {{ $stylesheet := .Site.Data.webpack.main }}
+  {{ with $stylesheet.css }}
+  <link href="{{ relURL . }}" rel="stylesheet">
+  {{ end }}
 </head>
 
 <body>

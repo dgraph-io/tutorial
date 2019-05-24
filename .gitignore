@@ -1,2 +1,4 @@
-/public
+public/
 *.DS_store
+node_modules/
+site/data/webpack.json
