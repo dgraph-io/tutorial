@@ -15,6 +15,9 @@ InitRunnableUrlView();
 // cm stores reference to the codemirror for the page
 var cm;
 
+const headersDefgraphqlpm = { 'Content-Type': 'application/graphqlpm' }
+const headersDefRDF = { 'Content-Type': 'application/rdf' }
+
 export default function runnable() {
   function initCodeMirror($runnable) {
     $runnable.find('.CodeMirror').remove();
@@ -112,10 +115,12 @@ export default function runnable() {
 
   function dgraphPost(params) {
     return $.post({
-      url: params.url,
+      url: params.endpoint == "/mutate" ? params.url + "?commitNow=true" : params.url,
       data: params.query,
       dataType: 'json',
-      headers: isFirefox() ? undefined : { 'X-Dgraph-CommitNow': 'true' },
+      headers: params.endpoint == "/mutate" ? headersDefRDF : headersDefgraphqlpm,
+    //  TODO: Re-evaluate compatibility with Firefox.
+    //  headers: isFirefox() ? undefined : { 'X-Dgraph-CommitNow': 'true' },
       beforeSend: params.beforeSend
     });
   }
@@ -196,6 +201,7 @@ export default function runnable() {
     dgraphPost({
       query: query,
       url: url,
+      endpoint,
       beforeSend: function() {
         startTime = new Date().getTime();
       }
