@@ -16,9 +16,10 @@ rebuild() {
 	# Generate new after merging.
 
 	# In Unix environments, env variables should also be exported to be seen by Hugo
-	hugo\
-		--destination=public\
-		--baseURL="$HOST" 1> /dev/null
+	# hugo\
+	# 	--destination=public\
+	# 	--baseURL="$HOST" 1> /dev/null
+  npm build 1> /dev/null
 }
 
 branchUpdated()
