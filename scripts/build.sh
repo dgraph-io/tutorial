@@ -19,6 +19,7 @@ rebuild() {
 	# hugo\
 	# 	--destination=public\
 	# 	--baseURL="$HOST" 1> /dev/null
+  # Perform webpack and hugo builds.
   npm build 1> /dev/null
 }
 
