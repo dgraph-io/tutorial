@@ -190,8 +190,9 @@ export default function runnable() {
     if (RUNNABLE_URL_CONFIG.enabled) {
       // Create temporary instance that includes statics params within generated URL.
       // In this case, useful for adding `latency=true` searchParam onto posted URL while hiding it from UI.
-      url = RunnableUrl.factory(runnableUrl, runnableUrl.statics).url;
-
+     // url = RunnableUrl.factory(runnableUrl, runnableUrl.statics).url;
+      // TODO: I needed to remove latency, as this parameter is not supported in the new API change. As far as I know.
+      url = RunnableUrl.factory(runnableUrl).url;
       // Set endpoint to customized pathName for later processing.
       endpoint = runnableUrl.pathName;
     }
