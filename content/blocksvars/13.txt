@@ -1,3 +1,4 @@
+# TODO: Reformulate this topic according to the new Type System.
 {
   var(func:allofterms(name@en, "Cherie Nowlan")) {
     pred as _predicate_

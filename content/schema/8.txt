@@ -1,3 +1,4 @@
+# TODO: Change this to the new TYPE System.
 {
   company(func: allofterms(name, "CompanyABC")) {
     _predicate_
