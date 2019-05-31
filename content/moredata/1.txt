@@ -3,10 +3,10 @@
 
 type Person {
     name: string
-    director.film: [Film]
+    director.film: [Movie]
 }
 
-type Film {
+type Movie {
     name: string
     initial_release_date: string
     genre: [Genre]
