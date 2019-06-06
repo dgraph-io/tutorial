@@ -53,14 +53,18 @@ $(document).ready(function() {
       return;
     }
 
-    var keyCode = e.keyCode;
-    if (keyCode === KEY_RIGHT) {
-      var nextHref = $("[data-action='go-next']").attr('href');
-      window.location.href = nextHref;
-    } else if (keyCode === KEY_LEFT) {
-      var prefHref = $("[data-action='go-prev']").attr('href');
-      window.location.href = prefHref;
+    var nextHref = null;
+    switch (e.keyCode) {
+      case 39:
+        // KEY_RIGHT
+        nextHref = $("[data-action='go-next']").attr('href');
+        break;
+      case 37:
+        // KEY_LEFT
+        nextHref = $("[data-action='go-prev']").attr('href');
+        break;
     }
+    nextHref && (window.location.href = nextHref);
   });
 
   /************ On page load **/
