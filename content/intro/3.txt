@@ -14,4 +14,4 @@ type Animal {
 
 name: string @index(term) @lang .
 age: int @index(int) .
-friend: uid @count .
+friend: [uid] @count .
