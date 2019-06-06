@@ -1,24 +1,12 @@
 {{ $endpoint := .Content.Params.endpoint | default "/query" }}
-<script>
-  // Parse RunnableUrl config, or set default values.
-  RUNNABLE_URL_CONFIG = `{{ .RunnableUrlConfig }}` ? JSON.parse(`{{ .RunnableUrlConfig }}`) : {
-    enabled: false,
-    displaycustomendpoint: true
-  }
-</script>
-<div class="runnable" data-initial="{{ .Code }}" data-current="{{ .Code }}" endpoint="{{ $endpoint }}"
-  data-dirty="false">
+<div class="runnable" data-initial="{{ .Code }}" data-current="{{ .Code }}" endpoint="{{ $endpoint }}" data-dirty="false">
   <div class="runnable-pane runnable-pane-query">
     <div class="topbar">
       <div class="row">
         <div class="col-7">
-          {{ if .RunnableUrlConfig.enabled }}
-          {{ partial "runnable-url.html" . }}
-          {{ else }}
           <span class="pane-title">
             Endpoint: {{ $endpoint }}
           </span>
-          {{ end }}
         </div>
         <div class="col-5">
           <div class="actions pull-right">
@@ -53,8 +41,7 @@
       </div>
     </div>
 
-    <div class="runnable-content runnable-output"
-      style="background: url('{{ .Content.Site.BaseURL }}/images/dgraph-black.png'); background-repeat: no-repeat; background-position: center; background-color: #fff;">
+    <div class="runnable-content runnable-output" style="background: url('{{ .Content.Site.BaseURL }}/images/dgraph-black.png'); background-repeat: no-repeat; background-position: center; background-color: #fff;">
       <pre class="output-container empty"><code class="output" tabindex="-1"></code></pre>
     </div>
 
@@ -62,9 +49,7 @@
       <div class="col-12 col-sm-8">
         <div class="latency-info hidden">
           <div class="stat server-latency">
-            <span class="label">Server latency:</span> <span class="number"></span> <i
-              class="fa fa-question-circle server-latency-tooltip-trigger" data-toggle="tooltip" data-placement="top"
-              data-html="true" title="Latency information" data-animation="false"></i>
+            <span class="label">Server latency:</span> <span class="number"></span> <i class="fa fa-question-circle server-latency-tooltip-trigger" data-toggle="tooltip" data-placement="top" data-html="true" title="Latency information" data-animation="false"></i>
           </div>
           <div class="stat network-latency">
             <span class="label">Network latency:</span> <span class="number"></span>
