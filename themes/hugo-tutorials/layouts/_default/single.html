@@ -21,15 +21,13 @@
 
         <div class="page-nav">
           {{ with .Params.prev }}
-          <a href="{{ . | relURL }}" data-action="go-prev" class="btn btn-secondary btn-sm page-nav-link"><i
-              class="fa fa-chevron-left"></i></a>
+            <a href="{{ . | relURL }}" data-action="go-prev" class="btn btn-secondary btn-sm page-nav-link"><i class="fa fa-chevron-left"></i></a>
           {{ end }}
           <div class="nav-index">
             {{ .File.BaseFileName }} / {{ $numContents }}
           </div>
           {{ with .Params.next }}
-          <a href="{{ . | relURL }}" data-action="go-next" class="btn btn-secondary btn-sm page-nav-link"><i
-              class="fa fa-chevron-right"></i></a>
+            <a href="{{ . | relURL }}" data-action="go-next" class="btn btn-secondary btn-sm page-nav-link"><i class="fa fa-chevron-right"></i></a>
           {{ end }}
         </div>
       </div>
@@ -37,11 +35,11 @@
 
     <div class="col-12 col-sm-12 col-md-12 col-lg-6 vertical-stretch">
       {{ if not (eq $codeContent "")}}
-      {{ partial "runnable" (dict "Content" . "Code" $codeContent "RunnableUrlConfig" .Site.Params.RunnableUrl) }}
+        {{ partial "runnable" (dict "Content" . "Code" $codeContent) }}
       {{ else }}
-      <div class="panel empty">
-        <img src="{{ .Site.BaseURL }}/images/dgraph-black.png" alt="dgraph-icon" class="dgraph-icon" />
-      </div>
+        <div class="panel empty">
+          <img src="{{ .Site.BaseURL }}/images/dgraph-black.png" alt="dgraph-icon" class="dgraph-icon" />
+        </div>
       {{ end }}
     </div>
   </div>
