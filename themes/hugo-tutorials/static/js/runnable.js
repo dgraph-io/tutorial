@@ -1,21 +1,10 @@
-/**
- * JS for runnable component
- */
+import * as dgraph from 'dgraph-js-http'
 
-// --- START: RunnableUrl ---
-import { RunnableUrl } from './runnable-url/index.js';
-import {
-  InitRunnableUrlView,
-  runnableUrl,
-  runnableUrlEndpointButton
-} from './runnable-url/view.js';
-InitRunnableUrlView();
-// --- END:   RunnableUrl ---
 
 // cm stores reference to the codemirror for the page
 var cm;
 
-export default function runnable() {
+function runnable() {
   function initCodeMirror($runnable) {
     $runnable.find('.CodeMirror').remove();
 
@@ -42,35 +31,42 @@ export default function runnable() {
     $runnables.find('.query-content').text(cleanValue);
   }
 
-  function getLatencyTooltipHTML(serverLatencyInfo, networkLatency) {
-    var contentHTML =
-      '<div class="measurement-row"><div class="measurement-key">JSON:</div><div class="measurement-val">' +
-      serverLatencyInfo.json +
-      '</div></div><div class="measurement-row"><div class="measurement-key">Parsing:</div><div class="measurement-val">' +
-      serverLatencyInfo.parsing +
-      '</div></div><div class="measurement-row"><div class="measurement-key">Processing:</div><div class="measurement-val">' +
-      serverLatencyInfo.processing +
-      '</div></div><div class="divider"></div><div class="measurement-row"><div class="measurement-key total">Total:</div><div class="measurement-val">' +
-      serverLatencyInfo.total +
-      '</div></div>';
-    var outputHTML =
-      '<div class="latency-tooltip-container">' + contentHTML + '</div>';
-
-    return outputHTML;
+  function formatMs(ns) {
+    return (ns / 1e6).toFixed(0);
   }
 
-  function getTotalServerLatencyInMS(serverLatencyInfo) {
-    var totalServerLatency = serverLatencyInfo.total;
-
-    var unit = totalServerLatency.slice(-2);
-    var val = totalServerLatency.slice(0, -2);
-
-    if (unit === 'µs') {
-      return val / 1000;
-    }
-
-    // else assume 'ms'
-    return val;
+  function getLatencyTooltipHTML(serverLatencyInfo, networkLatency) {
+    var contentHTML =
+      `
+        <div class="measurement-row">
+          <div class="measurement-key">Encoding:</div>
+          <div class="measurement-val">
+            ${formatMs(serverLatencyInfo.encoding_ns)}
+          </div>
+        </div>
+        <div class="measurement-row">
+          <div class="measurement-key">Parsing:</div>
+          <div class="measurement-val">
+            ${formatMs(serverLatencyInfo.parsing_ns)}
+          </div>
+        </div>
+        <div class="measurement-row">
+          <div class="measurement-key">Processing:</div>
+          <div class="measurement-val">
+            ${formatMs(serverLatencyInfo.processing_ns)}
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="measurement-row">
+        <div class="measurement-key total">Total:</div>
+        <div class="measurement-val">
+          ${formatMs(serverLatencyInfo.total_ns)}
+        </div>
+      </div>`
+    return `
+      <div class="latency-tooltip-container">
+          ${contentHTML}
+      </div>`
   }
 
   /**
@@ -87,18 +83,21 @@ export default function runnable() {
     networkLatency
   ) {
     var isModal = $runnable.parents('#runnable-modal').length > 0;
+    serverLatencyInfo.total_ns = Object.values(serverLatencyInfo).reduce((x, y) => x + y, 0);
 
-    var totalServerLatency = getTotalServerLatencyInMS(serverLatencyInfo);
+    var totalServerLatency =  serverLatencyInfo.total_ns / 1e6;
+
     var networkOnlyLatency = Math.round(networkLatency - totalServerLatency);
 
     $runnable.find('.latency-info').removeClass('hidden');
-    $runnable.find('.server-latency .number').text(serverLatencyInfo.total);
+    $runnable.find('.server-latency .number').text(formatMs(serverLatencyInfo.total_ns) + 'ms');
     $runnable.find('.network-latency .number').text(networkOnlyLatency + 'ms');
 
     var tooltipHTML = getLatencyTooltipHTML(
       serverLatencyInfo,
       networkOnlyLatency
     );
+    console.log(tooltipHTML);
 
     $runnable
       .find('.server-latency-tooltip-trigger')
@@ -106,54 +105,8 @@ export default function runnable() {
       .tooltip();
   }
 
-  function isFirefox() {
-    return navigator.userAgent.indexOf(' Firefox/') >= 0;
-  }
-
-  function dgraphPost(params) {
-    return $.post({
-      url: params.url,
-      data: params.query,
-      dataType: 'json',
-      headers: isFirefox() ? undefined : { 'X-Dgraph-CommitNow': 'true' },
-      beforeSend: params.beforeSend
-    });
-  }
-
-  function commitTxn(resp) {
-    var txn = resp.extensions && resp.extensions.txn;
-    if (!txn || !txn.keys || !txn.keys.length) {
-      // Nothing to commit.
-      var commitRes = $.Deferred();
-      commitRes.resolve('<Nothing to commit>');
-      return commitRes;
-    }
-    // Default URL.
-    var url = 'http://127.0.0.1:8080/commit/' + txn.start_ts;
-    if (RUNNABLE_URL_CONFIG.enabled) {
-      // Inject customized URL with path overrides.
-      url = RunnableUrl.factory(runnableUrl, {
-        pathName: `/commit/${txn.start_ts}`
-      }).url;
-    }
-    return $.post({
-      url: url,
-      data: JSON.stringify(txn.keys),
-      dataType: 'json'
-    });
-  }
-
-  function displayOutput(codeEl, res, commitRes, commitError) {
+  function displayOutput(codeEl, res) {
     var userOutput = JSON.stringify(res, null, 2);
-    if (isFirefox()) {
-      if (commitRes) {
-        userOutput += '\n-----\nCOMMIT response (Firefox only):\n\n';
-        userOutput += JSON.stringify(commitRes, null, 2);
-      } else if (commitError) {
-        userOutput += '\n-----\nCOMMIT ERROR (Firefox only):\n\n';
-        userOutput += JSON.stringify(commitError, null, 2);
-      }
-    }
 
     codeEl.text(userOutput);
     for (var i = 0; i < codeEl.length; i++) {
@@ -162,9 +115,7 @@ export default function runnable() {
   }
 
   // Running code
-  $(document).on('click', '.runnable [data-action="run"]', function(e) {
-    e.preventDefault();
-
+  $(document).on('click', '.runnable [data-action="run"]', async function(e) {
     var $currentRunnable = $(this).closest('.runnable');
     var codeEl = $currentRunnable.find('.output');
     var query = $(this)
@@ -177,95 +128,67 @@ export default function runnable() {
     $currentRunnable.find('.output-container').removeClass('empty error');
     codeEl.text('Waiting for the server response...');
 
-    var startTime;
+    var startTime = new Date().getTime();
 
-    // Set default url.
-    var url = 'http://127.0.0.1:8080' + endpoint + '?latency=true';
-    // Update URL if customization enabled.
-    if (RUNNABLE_URL_CONFIG.enabled) {
-      // Create temporary instance that includes statics params within generated URL.
-      // In this case, useful for adding `latency=true` searchParam onto posted URL while hiding it from UI.
-      url = RunnableUrl.factory(runnableUrl, runnableUrl.statics).url;
+    const method = endpoint.substring(1);
+    console.log('method:', method);
 
-      // Set endpoint to customized pathName for later processing.
-      endpoint = runnableUrl.pathName;
+    const stub = new dgraph.DgraphClientStub("http://localhost:8080")
+    const client = new dgraph.DgraphClient(stub)
+    client.setDebugMode(true)
+
+    let request = null;
+    switch (method) {
+      case 'query':
+        request = client.newTxn().query(query);
+        break;
+      case 'alter':
+        request = client.alter({ schema: query });
+        break;
+      case 'mutate':
+        request = client.newTxn().mutate({
+          commitNow: true,
+          mutation: query,
+        });
     }
 
-    // TODO: For visualization, we might need debug mode
-    // However we should not show it to the user in the JSON output
-    dgraphPost({
-      query: query,
-      url: url,
-      beforeSend: function() {
-        startTime = new Date().getTime();
+    try {
+      const res = await request;
+
+      var now = new Date().getTime();
+      var networkLatency = now - startTime;
+      var serverLatencyInfo = null;
+      if (res.extensions && res.extensions.server_latency) {
+        serverLatencyInfo = res.extensions.server_latency;
       }
-    })
-      .done(function(res) {
-        var now = new Date().getTime();
-        var networkLatency = now - startTime;
-        var serverLatencyInfo = res.server_latency;
-        delete res.server_latency;
 
-        // In some cases, the server does not return latency information
-        // TODO: find better ways to check for errors or fix dgraph to make the
-        // response consistent
-        var resSuccess = !res.code || !/Error/i.test(res.code);
+      // In some cases, the server does not return latency information
+      // TODO: find better ways to check for errors or fix dgraph to make the
+      // response consistent
+      var resSuccess = !res.code || !/Error/i.test(res.code);
 
-        if (!resSuccess) {
-          $currentRunnable.find('.output-container').addClass('error');
-        }
-
-        if (resSuccess && endpoint === '/mutate' && isFirefox()) {
-          commitTxn(res)
-            .done(function(commitResult) {
-              if (!commitResult.errors) {
-                displayOutput(codeEl, res, commitResult);
-              } else {
-                $currentRunnable.find('.output-container').addClass('error');
-                displayOutput(codeEl, res, null, commitResult);
-              }
-            })
-            .fail(function(xhr, status, error) {
-              $currentRunnable.find('.output-container').addClass('error');
-              var defaultError = 'Error: Is Dgraph running locally?';
-              var message = xhr.responseText || error || defaultError;
-              // Alter error message if RunnableUrl is enabled.
-              if (RUNNABLE_URL_CONFIG.enabled) {
-                message += `\n${runnableUrl.errorMessage}`;
-                runnableUrlEndpointButton.blink();
-              }
-              displayOutput(
-                codeEl,
-                res,
-                null,
-                'Failed to POST to /commit: ' + message
-              );
-            });
-        } else {
-          displayOutput(codeEl, res);
-        }
-
-        if (resSuccess && serverLatencyInfo) {
-          updateLatencyInformation(
-            $currentRunnable,
-            serverLatencyInfo,
-            networkLatency
-          );
-        }
-      })
-      .fail(function(xhr, status, error) {
+      if (!resSuccess) {
         $currentRunnable.find('.output-container').addClass('error');
-        // Ideally we should check that xhr.status === 404, but because we are doing
-        // CORS, status is always 0
-        var defaultError = 'Error: Is Dgraph running locally?';
-        let message = xhr.responseText || error || defaultError;
-        // Alter error message if RunnableUrl is enabled.
-        if (RUNNABLE_URL_CONFIG.enabled) {
-          message += `\n${runnableUrl.errorMessage}`;
-          runnableUrlEndpointButton.blink();
-        }
-        codeEl.text(message);
-      });
+      }
+
+      displayOutput(codeEl, res);
+
+      if (resSuccess && serverLatencyInfo) {
+        updateLatencyInformation(
+          $currentRunnable,
+          serverLatencyInfo,
+          networkLatency
+        );
+      }
+    } catch (error) {
+      $currentRunnable.find('.output-container').addClass('error');
+      // Ideally we should check that xhr.status === 404, but because we are doing
+      // CORS, status is always 0
+      var defaultError = 'Error: Is Dgraph running locally?';
+      let message = error || defaultError;
+
+      codeEl.text(message);
+    }
   });
 
   // Refresh code
