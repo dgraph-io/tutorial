@@ -15,7 +15,7 @@ InitRunnableUrlView();
 // cm stores reference to the codemirror for the page
 var cm;
 
-const headersDefgraphqlpm = { 'Content-Type': 'application/graphqlpm' }
+const headersDefgraphqlpm = { 'Content-Type': 'application/graphql+-' }
 const headersDefRDF = { 'Content-Type': 'application/rdf' }
 
 export default function runnable() {
