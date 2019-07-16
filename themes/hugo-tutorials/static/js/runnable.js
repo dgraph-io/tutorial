@@ -132,6 +132,8 @@ $(document).on('click', '.runnable [data-action="run"]', async function(e) {
   const stub = new dgraph.DgraphClientStub("http://localhost:8080")
   const client = new dgraph.DgraphClient(stub)
   client.setDebugMode(true)
+  // TODO: this should be done once per URL, but good enough for now.
+  await stub.detectApiVersion();
 
   let request = null;
   switch (endpoint) {
