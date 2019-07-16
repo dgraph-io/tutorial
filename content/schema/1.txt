@@ -1,2 +1,16 @@
+# Define Types
+
+type Person {
+    name: string
+    boss_of: [Person]
+}
+
+type Company {
+    name: string
+    industry: string
+}
+
+# Define Directives and index
+
 industry: string @index(term) .
 boss_of: uid .
