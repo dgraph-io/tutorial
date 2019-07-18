@@ -96,10 +96,10 @@
     
   </title>
 
-  <link href="https://tour.dgraph.io/dgraph-1.0.16/css/theme.css?2019-07-18%2019%3a13%3a08.9761%20%2b0300%20EEST%20m%3d%2b0.159407637" rel="stylesheet" />
-  <link href="https://tour.dgraph.io/dgraph-1.0.16/css/runnable.css?2019-07-18%2019%3a13%3a08.976129%20%2b0300%20EEST%20m%3d%2b0.159436151" rel="stylesheet" />
-  <link href="https://tour.dgraph.io/dgraph-1.0.16/css/runnable-custom.css?2019-07-18%2019%3a13%3a08.976157%20%2b0300%20EEST%20m%3d%2b0.159464279" rel="stylesheet" />
-  <link href="https://tour.dgraph.io/dgraph-1.0.16/css/runnable-url.css?2019-07-18%2019%3a13%3a08.976181%20%2b0300%20EEST%20m%3d%2b0.159489008" rel="stylesheet" />
+  <link href="https://tour.dgraph.io/dgraph-1.0.16/css/theme.css?2019-07-18%2019%3a24%3a05.174272%20%2b0300%20EEST%20m%3d%2b0.326267527" rel="stylesheet" />
+  <link href="https://tour.dgraph.io/dgraph-1.0.16/css/runnable.css?2019-07-18%2019%3a24%3a05.174317%20%2b0300%20EEST%20m%3d%2b0.326312326" rel="stylesheet" />
+  <link href="https://tour.dgraph.io/dgraph-1.0.16/css/runnable-custom.css?2019-07-18%2019%3a24%3a05.174358%20%2b0300%20EEST%20m%3d%2b0.326354177" rel="stylesheet" />
+  <link href="https://tour.dgraph.io/dgraph-1.0.16/css/runnable-url.css?2019-07-18%2019%3a24%3a05.174398%20%2b0300%20EEST%20m%3d%2b0.326393601" rel="stylesheet" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
     integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
@@ -118,11 +118,14 @@
 
 <nav id="header">
   <a href="https://tour.dgraph.io/dgraph-1.0.16" class="brand">
-    <img src="https://tour.dgraph.io/dgraph-1.0.16/images/dgraph.svg?2" alt="dgraph" class="logo" />
+    <img src="https://tour.dgraph.io/dgraph-1.0.16/images/dgraph.svg" alt="dgraph" class="logo" />
     <span class="name">
       A Tour of Dgraph
     </span>
   </a>
+  <select id="tour-release" value="" class="select-release">
+      
+  </select>
 
   <div class="menus">
     <a href="#toggle-sidebar" data-action="toggle-sidebar" class="menu-item">
@@ -130,6 +133,31 @@
     </a>
   </div>
 </nav>
+
+<script>
+  window.DgTour = {
+    thisRelease: "",
+    latestRelease: ""
+  }
+</script>
+
+
+<script>
+  $('#tour-release').change(function(e) {
+    var dest = e.target.value;
+    if (dest == DgTour.thisRelease) {
+      return
+    }
+    if (dest == DgTour.latestRelease) {
+      window.location.href = "https://tour.dgraph.io/"
+      return
+    }
+    if (dest != "master") {
+      dest = "dgraph-" + dest
+    }
+    window.location.href = "/" + dest
+  })
+</script>
 
 
 <aside id="sidebar" class="hidden">
@@ -607,8 +635,8 @@
     </main>
 
     <script src="https://tour.dgraph.io/dgraph-1.0.16/js/clipboard.min.js"></script>
-    <script src="https://tour.dgraph.io/dgraph-1.0.16/js/dgraph.js?2019-07-18%2019%3a13%3a08.977763%20%2b0300%20EEST%20m%3d%2b0.161070913"></script>
-    <script type="module" src="https://tour.dgraph.io/dgraph-1.0.16/js/runnable.js?2019-07-18%2019%3a13%3a08.977791%20%2b0300%20EEST%20m%3d%2b0.161098663"></script>
+    <script src="https://tour.dgraph.io/dgraph-1.0.16/js/dgraph.js?2019-07-18%2019%3a24%3a05.178356%20%2b0300%20EEST%20m%3d%2b0.330352022"></script>
+    <script type="module" src="https://tour.dgraph.io/dgraph-1.0.16/js/runnable.js?2019-07-18%2019%3a24%3a05.178647%20%2b0300%20EEST%20m%3d%2b0.330642488"></script>
     <script>
       hljs.initHighlightingOnLoad();
     </script>

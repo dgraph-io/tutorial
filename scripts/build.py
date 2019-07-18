@@ -21,7 +21,7 @@ def runHugo(outSuffix=""):
 		"--baseURL",
         "https://tour.dgraph.io/" + outSuffix,
         "--config",
-        "config.toml,releases.toml",
+        "config.toml,releases.json",
         )
 
 
