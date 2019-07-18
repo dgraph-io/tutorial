@@ -1,6 +1,0 @@
-# TODO: Reformulate this topic according to the new Type System.
-{
-  q(func:allofterms(name@en, "Kathryn Bigelow")) {
-    _predicate_
-	}
-}

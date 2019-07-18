@@ -1,5 +1,4 @@
 *.DS_store
-public/node_modules/
-public/*/node_modules/
+public/
 
 releases.json
