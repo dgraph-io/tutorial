@@ -5,6 +5,11 @@
       A Tour of Dgraph
     </span>
   </a>
+  <select id="tour-release" value="{{ $.Site.Params.thisRelease }}" class="select-release">
+      {{ range .Site.Params.tourReleases }}
+        <option value="{{ . }}">Dgraph {{ . }} </option>
+      {{ end }}
+  </select>
 
   <div class="menus">
     <a href="#toggle-sidebar" data-action="toggle-sidebar" class="menu-item">
@@ -12,3 +17,28 @@
     </a>
   </div>
 </nav>
+
+<script>
+  window.DgTour = {
+    thisRelease: "{{ $.Site.Params.thisRelease }}",
+    latestRelease: "{{ $.Site.Params.thisRelease }}"
+  }
+</script>
+
+
+<script>
+  $('#tour-release').change(function(e) {
+    var dest = e.target.value;
+    if (dest == DgTour.thisRelease) {
+      return
+    }
+    if (dest == DgTour.latestRelease) {
+      window.location.href = "https://tour.dgraph.io/"
+      return
+    }
+    if (dest != "master") {
+      dest = "dgraph-" + dest
+    }
+    window.location.href = "/" + dest
+  })
+</script>
