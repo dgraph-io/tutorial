@@ -50,11 +50,6 @@ def buildBranch(branch, dest, jsonData):
         f.write(json.dumps(jsonData))
 
     runHugo(dest)
-    exec("git", "add", "public/")
-    try:
-        exec("git", "commit", "-m", "Hugo rebuild branch " + branch)
-    except:
-        print("Couldn't commit branch %s. Probably it hasn't changed" % (branch))
 
 def buildAll(releases):
     latestRelease = releases[1]
