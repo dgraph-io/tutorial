@@ -1,0 +1,9 @@
+{
+  expand(func: allofterms(name, "Michael")) {
+    expand(_all_) {
+      expand(_all_) {
+        expand(_all_)
+      }
+    }
+  }
+}
