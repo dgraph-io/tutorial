@@ -74,8 +74,17 @@ def buildAll(releases):
 
 def main():
     releases = getReleases()
+
+    exec("rm", "-rf", "public")
+    exec("mkdir", "public")
+
     buildAll(releases)
 
     exec("git", "checkout", "master")
+
+    exec("rm", "-rf", "published")
+    exec("mv", "public", "published")
+    exec("git", "add", "published")
+    # exec("git", "commit", "-m", "Hugo rebuild all branches")
 
 main()
