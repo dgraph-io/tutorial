@@ -58,9 +58,11 @@ def buildAll(releases):
 
     def jsonFor(version, latestRelease, releases):
         return {
-            "latestRelease": latestRelease,
-            "tourReleases": releases,
-            "thisRelease": version,
+            "params": {
+                "latestRelease": latestRelease,
+                "tourReleases": releases,
+                "thisRelease": version,
+            },
         }
 
     buildBranch(
