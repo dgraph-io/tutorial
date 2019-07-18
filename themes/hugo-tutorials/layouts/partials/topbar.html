@@ -21,12 +21,24 @@
 <script>
   window.DgTour = {
     thisRelease: "{{ $.Site.Params.thisRelease }}",
+    latestRelease: "{{ $.Site.Params.thisRelease }}"
   }
 </script>
 
 
 <script>
   $('#tour-release').change(function(e) {
-    alert('One day we will redirect you to /' + e.target.value)
+    var dest = e.target.value;
+    if (dest == DgTour.thisRelease) {
+      return
+    }
+    if (dest == DgTour.latestRelease) {
+      window.location.href = "https://tour.dgraph.io/"
+      return
+    }
+    if (dest != "master") {
+      dest = "dgraph-" + dest
+    }
+    window.location.href = "/" + dest
   })
 </script>
