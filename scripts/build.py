@@ -5,6 +5,7 @@ import semver
 import subprocess as sp
 
 def exec(*argv):
+    print("$>"," ".join(argv))
     res = sp.run(argv, capture_output=True)
     if not res.returncode == 0:
         print('Error running', argv)
@@ -21,7 +22,7 @@ def runHugo(outSuffix=""):
 		"--baseURL",
         "https://tour.dgraph.io/" + outSuffix,
         "--config",
-        "config.toml,releases.toml",
+        "config.toml,releases.json",
         )
 
 
