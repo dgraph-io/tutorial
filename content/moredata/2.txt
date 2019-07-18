@@ -1,6 +1,14 @@
-# TODO: Reformulate this topic according to the new Type System.
+
 {
   q(func:allofterms(name@en, "Kathryn Bigelow")) {
-    _predicate_
+    name@en
+    director.film {
+      name@en
+      initial_release_date
+      genre
+      starring {
+        name@en
+      }
+    }
 	}
 }

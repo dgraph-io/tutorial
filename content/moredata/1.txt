@@ -1,4 +1,3 @@
-#TODO: Check the Types here!
 # Define Types
 
 type Person {
@@ -10,10 +9,20 @@ type Movie {
     name: string
     initial_release_date: string
     genre: [Genre]
+    starring: [Performance]
 }
 
 type Genre {
-    name: string
+    name: Person
+}
+
+type Performance {
+    performance.film: [Movie]
+    performance.character_note: string
+    performance.character: [Character]
+    performance.actor: [Person]
+    performance.special_performance_type: [Special_performance_type]
+    type: [Generic]
 }
 
 # Define Directives and index
