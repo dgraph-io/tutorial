@@ -18,6 +18,7 @@ html body {
   height: 58px;
   border-bottom: 1px solid #EEE;
   padding: 0 31px;
+  position: relative;
   background: #ffffff;
   opacity: 0.99;
 }
@@ -37,6 +38,13 @@ html body {
   width: 44px;
   vertical-align: middle;
 }
+
+#header .select-release {
+  position: relative;
+  margin-left: 4px;
+  top: 2px;
+}
+
 #header .menus {
   float: right;
 }
