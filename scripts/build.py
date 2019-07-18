@@ -74,6 +74,10 @@ def buildAll(releases):
 
 def main():
     releases = getReleases()
+
+    exec("rm", "-rf", "public")
+    exec("mkdir", "public")
+
     buildAll(releases)
 
     exec("git", "checkout", "master")

@@ -2,3 +2,6 @@
 public/
 
 releases.json
+
+published/node_modules/
+published/*/node_modules/
