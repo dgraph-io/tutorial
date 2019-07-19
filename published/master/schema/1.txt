@@ -1,0 +1,2 @@
+industry: string @index(term) .
+boss_of: uid .

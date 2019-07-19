@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/search/1/</loc>
+    <lastmod>2017-05-15T15:31:59+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/blocksvars/1/</loc>
+    <lastmod>2017-05-01T13:45:26+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/aggregation/1/</loc>
+    <lastmod>2017-04-27T15:42:54+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/moredata/1/</loc>
+    <lastmod>2017-04-27T15:42:54+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/basic/1/</loc>
+    <lastmod>2017-04-26T22:36:18+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/schema/1/</loc>
+    <lastmod>2017-04-26T21:53:48+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/intro/1/</loc>
+    <lastmod>2017-04-26T21:52:39+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/moredata/2/</loc>
+    <lastmod>2017-05-15T15:33:51+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/search/2/</loc>
+    <lastmod>2017-05-15T15:31:42+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/blocksvars/2/</loc>
+    <lastmod>2017-05-01T20:46:58+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/schema/2/</loc>
+    <lastmod>2017-04-27T23:05:47+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/aggregation/2/</loc>
+    <lastmod>2017-04-27T15:42:57+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/basic/2/</loc>
+    <lastmod>2017-04-26T22:36:22+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/intro/2/</loc>
+    <lastmod>2017-04-26T22:14:20+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/search/3/</loc>
+    <lastmod>2017-05-15T15:31:42+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/blocksvars/3/</loc>
+    <lastmod>2017-05-01T20:47:01+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/schema/3/</loc>
+    <lastmod>2017-04-27T23:05:50+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/basic/3/</loc>
+    <lastmod>2017-04-26T22:36:41+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/intro/3/</loc>
+    <lastmod>2017-04-26T22:28:55+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/search/4/</loc>
+    <lastmod>2017-05-15T15:31:42+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/blocksvars/4/</loc>
+    <lastmod>2017-05-01T20:48:27+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/schema/4/</loc>
+    <lastmod>2017-04-27T23:05:50+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/basic/4/</loc>
+    <lastmod>2017-04-26T22:36:45+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/intro/4/</loc>
+    <lastmod>2017-04-26T22:28:55+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/intro/5/</loc>
+    <lastmod>2018-11-04T22:28:55+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/search/5/</loc>
+    <lastmod>2017-05-15T15:31:42+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/blocksvars/5/</loc>
+    <lastmod>2017-05-01T20:48:30+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/schema/5/</loc>
+    <lastmod>2017-04-27T23:05:50+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/basic/5/</loc>
+    <lastmod>2017-04-26T22:36:45+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/search/6/</loc>
+    <lastmod>2017-05-15T15:32:13+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/blocksvars/6/</loc>
+    <lastmod>2017-05-01T20:48:32+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/schema/6/</loc>
+    <lastmod>2017-05-01T10:41:33+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/basic/6/</loc>
+    <lastmod>2017-04-26T22:36:47+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/intro/6/</loc>
+    <lastmod>2017-04-26T22:28:55+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/search/7/</loc>
+    <lastmod>2017-05-15T15:32:26+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/blocksvars/7/</loc>
+    <lastmod>2017-05-02T11:01:04+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/schema/7/</loc>
+    <lastmod>2017-04-27T23:05:53+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/basic/7/</loc>
+    <lastmod>2017-04-26T22:36:51+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/intro/7/</loc>
+    <lastmod>2017-04-26T22:28:58+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/blocksvars/8/</loc>
+    <lastmod>2017-05-02T11:01:06+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/schema/8/</loc>
+    <lastmod>2017-04-27T23:05:55+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/basic/8/</loc>
+    <lastmod>2017-04-26T23:11:34+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/intro/8/</loc>
+    <lastmod>2017-04-26T22:29:00+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/blocksvars/9/</loc>
+    <lastmod>2017-05-02T11:01:09+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/schema/9/</loc>
+    <lastmod>2017-04-27T23:05:55+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/basic/9/</loc>
+    <lastmod>2017-04-26T23:11:36+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/blocksvars/10/</loc>
+    <lastmod>2017-05-02T11:01:09+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/schema/10/</loc>
+    <lastmod>2017-04-27T23:05:55+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/basic/10/</loc>
+    <lastmod>2017-04-26T23:11:40+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/blocksvars/11/</loc>
+    <lastmod>2017-05-02T11:01:12+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/basic/11/</loc>
+    <lastmod>2017-05-01T11:55:43+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/blocksvars/12/</loc>
+    <lastmod>2017-05-02T11:01:12+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/basic/12/</loc>
+    <lastmod>2017-05-01T11:55:43+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/blocksvars/13/</loc>
+    <lastmod>2017-05-02T11:01:12+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/basic/13/</loc>
+    <lastmod>2017-05-01T11:55:43+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/blocksvars/14/</loc>
+    <lastmod>2017-05-02T11:01:12+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/basic/14/</loc>
+    <lastmod>2017-05-01T11:55:46+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/basic/15/</loc>
+    <lastmod>2017-05-01T11:55:49+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/basic/16/</loc>
+    <lastmod>2017-04-26T23:11:42+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/basic/17/</loc>
+    <lastmod>2018-09-17T16:11:42+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/basic/18/</loc>
+    <lastmod>2017-04-26T23:11:42+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/sample/3/</loc>
+    <lastmod>2017-04-26T16:24:06+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/sample/2/</loc>
+    <lastmod>2017-04-26T16:16:25+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/sample/1/</loc>
+    <lastmod>2017-04-26T14:47:31+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/</loc>
+    <lastmod>2017-05-15T15:31:59+10:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/aggregation/</loc>
+    <lastmod>2017-04-27T15:42:54+10:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/basic/</loc>
+    <lastmod>2017-04-26T22:36:18+10:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/blocksvars/</loc>
+    <lastmod>2017-05-01T13:45:26+10:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/intro/</loc>
+    <lastmod>2017-04-26T21:52:39+10:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/moredata/</loc>
+    <lastmod>2017-04-27T15:42:54+10:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/sample/</loc>
+    <lastmod>2017-04-26T16:24:06+10:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/schema/</loc>
+    <lastmod>2017-04-26T21:53:48+10:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/search/</loc>
+    <lastmod>2017-05-15T15:31:59+10:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://tour.dgraph.io/master/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
