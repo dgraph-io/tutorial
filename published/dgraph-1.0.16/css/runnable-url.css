@@ -1,0 +1,32 @@
+.runnable-url .fa-pencil-square-o {
+  color: #3e65b7;
+}
+
+.runnable-url-modal {
+  font-family: Menlo,
+    Monaco,
+    Consolas,
+    "Liberation Mono",
+    "Courier New",
+    monospace;
+}
+
+.runnable-url-modal input {
+  font-family: Menlo,
+    Monaco,
+    Consolas,
+    "Liberation Mono",
+    "Courier New",
+    monospace;
+}
+
+.runnable .code-btn.primary {
+  background-color: #3e65b7;
+  color: white;
+}
+
+.runnable .code-btn.primary:hover {
+  background-color: white;
+  color: #3e65b7;
+  border: 1px solid #3e65b7;
+}

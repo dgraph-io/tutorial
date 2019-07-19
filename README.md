@@ -4,14 +4,21 @@ A step by step introductory tutorial of Dgraph. Built with [Hugo](https://gohugo
 
 Visit https://tour.dgraph.io/ for the running instance.
 
-The tutorial can also be run locally by cloning this repo and running `scripts/local.sh`. The tour
-has been tested with hugo `v0.37`.
+## Developing
+The tutorial can be run locally by cloning this repo and running `scripts/local.sh`.
+The tour has been tested with hugo `v0.37`.
+
+To develop and test version redirects locally run the build script:
+`TOUR_BASE_URL=http://localhost:8000 python3 scripts/build.py`
+
+This will recompile `master` and all `dgraph-<version>` branches and store the static site content in the `published/` folder
 
 ## Deploying
 
-Run `./scripts/build.sh` in a tmux window. The script polls `dgraph-io/tutorial` every one minute
-and pulls any new changes that have been merged to master. It also rebuilds the site if there are
-any changes.
+Run the build script:
+`python3 scripts/build.py`
 
-If for reason the site is not getting updated after pushing to `master`, the script might have been
-terminated. SSH into the server and restart it.
+Once it finishes without errors it will commit all static content
+into the `published/` folder.
+
+After that you can `git push` and the server will pick up the changes.
