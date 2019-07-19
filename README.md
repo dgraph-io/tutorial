@@ -22,3 +22,15 @@ Once it finishes without errors it will commit all static content
 into the `published/` folder.
 
 After that you can `git push` and the server will pick up the changes.
+
+
+## Server config
+
+File `nginx/tour.conf` is symlinked to Nginx's `sites-available`
+when you edit it you must ssh and run `nginx -s reload`.
+
+Cron task ```
+*/2 *    *   *   *   cd /home/ubuntu/dgraph-tour && git pull
+```
+
+Pulls new commits from git.
