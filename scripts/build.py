@@ -22,6 +22,8 @@ def runHugo(outSuffix=""):
     baseUrl = "http://tour.dgraph.io/"
     if BASE_URL_ENV in os.environ:
         baseUrl = os.environ[BASE_URL_ENV]
+        if baseUrl[-1] != '/':
+            baseUrl += '/'
     baseUrl += outSuffix
 
     return exec(
