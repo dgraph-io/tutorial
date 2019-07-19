@@ -1,10 +1,14 @@
 import functools
 import json
+import os
 import re
 import semver
 import subprocess as sp
 
+BASE_URL_ENV = 'TOUR_BASE_URL'
+
 def exec(*argv):
+    print("$>"," ".join(argv))
     res = sp.run(argv, capture_output=True)
     if not res.returncode == 0:
         print('Error running', argv)
@@ -15,13 +19,20 @@ def exec(*argv):
 
 
 def runHugo(outSuffix=""):
+    baseUrl = "http://tour.dgraph.io/"
+    if BASE_URL_ENV in os.environ:
+        baseUrl = os.environ[BASE_URL_ENV]
+        if baseUrl[-1] != '/':
+            baseUrl += '/'
+    baseUrl += outSuffix
+
     return exec(
         "hugo",
 		"--destination=public/" + outSuffix,
 		"--baseURL",
-        "https://tour.dgraph.io/" + outSuffix,
+        baseUrl,
         "--config",
-        "config.toml,releases.toml",
+        "config.toml,releases.json",
         )
 
 
@@ -57,9 +68,11 @@ def buildAll(releases):
 
     def jsonFor(version, latestRelease, releases):
         return {
-            "latestRelease": latestRelease,
-            "tourReleases": releases,
-            "thisRelease": version,
+            "params": {
+                "latestRelease": latestRelease,
+                "tourReleases": releases,
+                "thisRelease": version,
+            },
         }
 
     buildBranch(
