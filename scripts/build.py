@@ -1,8 +1,11 @@
 import functools
 import json
+import os
 import re
 import semver
 import subprocess as sp
+
+BASE_URL_ENV = 'TOUR_BASE_URL'
 
 def exec(*argv):
     print("$>"," ".join(argv))
@@ -16,11 +19,16 @@ def exec(*argv):
 
 
 def runHugo(outSuffix=""):
+    baseUrl = "http://tour.dgraph.io/"
+    if BASE_URL_ENV in os.environ:
+        baseUrl = os.environ[BASE_URL_ENV]
+    baseUrl += outSuffix
+
     return exec(
         "hugo",
 		"--destination=public/" + outSuffix,
 		"--baseURL",
-        "https://tour.dgraph.io/" + outSuffix,
+        baseUrl,
         "--config",
         "config.toml,releases.json",
         )
