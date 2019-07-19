@@ -96,10 +96,10 @@
     
   </title>
 
-  <link href="https://tour.dgraph.io/master/css/theme.css?2019-07-19%2018%3a46%3a39.275863%20%2b0300%20EEST%20m%3d%2b0.064723748" rel="stylesheet" />
-  <link href="https://tour.dgraph.io/master/css/runnable.css?2019-07-19%2018%3a46%3a39.275888%20%2b0300%20EEST%20m%3d%2b0.064748453" rel="stylesheet" />
-  <link href="https://tour.dgraph.io/master/css/runnable-custom.css?2019-07-19%2018%3a46%3a39.276008%20%2b0300%20EEST%20m%3d%2b0.064869081" rel="stylesheet" />
-  <link href="https://tour.dgraph.io/master/css/runnable-url.css?2019-07-19%2018%3a46%3a39.276037%20%2b0300%20EEST%20m%3d%2b0.064897752" rel="stylesheet" />
+  <link href="https://tour.dgraph.io/master/css/theme.css?2019-07-19%2019%3a23%3a46.384281%20%2b0300%20EEST%20m%3d%2b0.076413628" rel="stylesheet" />
+  <link href="https://tour.dgraph.io/master/css/runnable.css?2019-07-19%2019%3a23%3a46.386026%20%2b0300%20EEST%20m%3d%2b0.078159112" rel="stylesheet" />
+  <link href="https://tour.dgraph.io/master/css/runnable-custom.css?2019-07-19%2019%3a23%3a46.386185%20%2b0300%20EEST%20m%3d%2b0.078317609" rel="stylesheet" />
+  <link href="https://tour.dgraph.io/master/css/runnable-url.css?2019-07-19%2019%3a23%3a46.386222%20%2b0300%20EEST%20m%3d%2b0.078354899" rel="stylesheet" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
     integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
@@ -164,7 +164,6 @@
   }
 </script>
 
-
 <script>
   $('#tour-release').change(function(e) {
     var dest = e.target.value;
@@ -181,6 +180,38 @@
     window.location.href = "/" + dest
   })
 </script>
+
+
+
+<style>
+  .old-branch-alert {
+    position: fixed;
+    left: 20vw;
+    right: 20vw;
+    top: 10px;
+    border-radius: 8px;
+    box-shadow: -2px 2px 6px 0px rgba(0,0,0,0.75);
+    background-color: #f0ad4e;
+    padding: 4px;
+  }
+  .old-branch-alert a.btn {
+    color: #fff;
+    padding: 2px 4px;
+  }
+</style>
+<div class="old-branch-alert">
+  You are looking at the tour for Dgraph
+  <strong>master</strong>.
+  Latest stable release is
+  <strong>1.0.16</strong>.
+  <a href="/" class="btn btn-primary btn-small">Go to
+    <strong>
+      Dgraph 1.0.16
+    </strong>
+  </a>
+</div>
+
+
 
 
 <aside id="sidebar" class="hidden">
@@ -851,8 +882,8 @@
     </main>
 
     <script src="https://tour.dgraph.io/master/js/clipboard.min.js"></script>
-    <script src="https://tour.dgraph.io/master/js/dgraph.js?2019-07-19%2018%3a46%3a39.284817%20%2b0300%20EEST%20m%3d%2b0.073678274"></script>
-    <script type="module" src="https://tour.dgraph.io/master/js/runnable.js?2019-07-19%2018%3a46%3a39.28489%20%2b0300%20EEST%20m%3d%2b0.073750491"></script>
+    <script src="https://tour.dgraph.io/master/js/dgraph.js?2019-07-19%2019%3a23%3a46.38989%20%2b0300%20EEST%20m%3d%2b0.082022635"></script>
+    <script type="module" src="https://tour.dgraph.io/master/js/runnable.js?2019-07-19%2019%3a23%3a46.38992%20%2b0300%20EEST%20m%3d%2b0.082052383"></script>
     <script>
       hljs.initHighlightingOnLoad();
     </script>
