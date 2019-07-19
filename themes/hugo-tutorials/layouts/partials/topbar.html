@@ -5,9 +5,16 @@
       A Tour of Dgraph
     </span>
   </a>
-  <select id="tour-release" value="{{ $.Site.Params.thisRelease }}" class="select-release">
+  <select id="tour-release" class="select-release">
       {{ range .Site.Params.tourReleases }}
-        <option value="{{ . }}">Dgraph {{ . }} </option>
+        <option
+          value="{{ . }}"
+          {{ if (eq . $.Site.Params.thisRelease)}}
+            selected="selected"
+          {{ end }}
+        >
+          Dgraph {{ . }}
+        </option>
       {{ end }}
   </select>
 
