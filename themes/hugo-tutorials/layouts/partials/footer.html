@@ -1,6 +1,6 @@
     </main>
 
-    <script src="{{ .Site.BaseURL }}/js/build/dgraph-tour.js?{{ now }}"></script>
+    <script src="{{ .Site.BaseURL }}/js/build/dgraph-tour.js?{{ md5 (readFile "themes/hugo-tutorials/static/js/dgraph-tour.js") }}"></script>
   </body>
 
 </html>
