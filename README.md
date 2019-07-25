@@ -29,7 +29,8 @@ After that you can `git push` and the server will pick up the changes.
 File `nginx/tour.conf` is symlinked to Nginx's `sites-available`
 when you edit it you must ssh and run `nginx -s reload`.
 
-Cron task ```
+Cron task
+```
 */2 *    *   *   *   cd /home/ubuntu/dgraph-tour && git pull
 ```
 
