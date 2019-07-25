@@ -207,15 +207,14 @@ More about in https://docs.dgraph.io/mutations/#external-ids</description>
     </item>
     
     <item>
-      <title>Data types and Schema</title>
+      <title>Data types, Schema and Type System</title>
       <link>https://tour.dgraph.io/master/basic/3/</link>
       <pubDate>Wed, 26 Apr 2017 22:36:41 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/master/basic/3/</guid>
       <description>It’s time to talk about data types and nodes
-There was some magic in the last query because some of the queried edges returned a value (name and age), but some were edges to other nodes (friend and owns_pet) that themselves had further properties.
-The truth is that there is a schema to tell us how to interpret an edge.
-The visualization won’t be much use this time. Have a look at the JSON to find out about the schema of the example.</description>
+Type System Starting in version 1.1, Dgraph has support for a type system. At the moment, the type system is basic but can be used already to categorize nodes and query them based on their type. The type system is also used during expand queries.
+So in order to Expand or Delete nodes. You need to define your Types correctly. You can see in detail more about the Type System here.</description>
     </item>
     
     <item>
@@ -281,7 +280,7 @@ Queries can search over text in the tagged languages by specifying which languag
       <description>Now that a schema has been loaded, it&amp;rsquo;s time to load some data. Press the run button again and check that the response panel indicates the data was loaded successfully.
 Don&amp;rsquo;t worry about the syntax for now, it will be explained later.
 You can load the same example data using JSON format. You&amp;rsquo;re able to do that through our clients, cURL or Ratel UI.
-See the JSON:  Show answer  { &amp;quot;set&amp;quot;: [ { &amp;quot;uid&amp;quot;: &amp;quot;_:michael&amp;quot;, &amp;quot;name&amp;quot;: &amp;quot;Michael&amp;quot;, &amp;quot;age&amp;quot;: 39, &amp;quot;owns_pet&amp;quot;: { &amp;quot;uid&amp;quot;: &amp;quot;_:rammy&amp;quot;, &amp;quot;name&amp;quot;: &amp;quot;Rammy the sheep&amp;quot; }, &amp;quot;friend&amp;quot;: [ { &amp;quot;uid&amp;quot;: &amp;quot;_:amit&amp;quot; }, { &amp;quot;uid&amp;quot;: &amp;quot;_:sarah&amp;quot; }, { &amp;quot;uid&amp;quot;: &amp;quot;_:sang&amp;quot; }, { &amp;quot;uid&amp;quot;: &amp;quot;_:catalina&amp;quot; }, { &amp;quot;uid&amp;quot;: &amp;quot;_:artyom&amp;quot; } ] }, { &amp;quot;uid&amp;quot;: &amp;quot;_:amit&amp;quot;, &amp;quot;name@hi&amp;quot;: &amp;quot;अमित&amp;quot;, &amp;quot;name@bn&amp;quot;: &amp;quot;অমিত&amp;quot;, &amp;quot;name@en&amp;quot;: &amp;quot;Amit&amp;quot;, &amp;quot;age&amp;quot;: 35, &amp;quot;friend&amp;quot;: [ { &amp;quot;uid&amp;quot;: &amp;quot;_:michael&amp;quot; }, { &amp;quot;uid&amp;quot;: &amp;quot;_:sang&amp;quot; }, { &amp;quot;uid&amp;quot;: &amp;quot;_:artyom&amp;quot; } ] }, { &amp;quot;uid&amp;quot;: &amp;quot;_:luke&amp;quot;, &amp;quot;name@pl&amp;quot;: &amp;quot;Łukasz&amp;quot;, &amp;quot;name@en&amp;quot;: &amp;quot;Luke&amp;quot;, &amp;quot;age&amp;quot;: 77 }, { &amp;quot;uid&amp;quot;: &amp;quot;_:artyom&amp;quot;, &amp;quot;name@ru&amp;quot;: &amp;quot;Артём&amp;quot;, &amp;quot;name@en&amp;quot;: &amp;quot;Artyom&amp;quot;, &amp;quot;age&amp;quot;: 35 }, { &amp;quot;uid&amp;quot;: &amp;quot;_:sarah&amp;quot;, &amp;quot;name&amp;quot;: &amp;quot;Sarah&amp;quot;, &amp;quot;age&amp;quot;: 55 }, { &amp;quot;uid&amp;quot;: &amp;quot;_:sang&amp;quot;, &amp;quot;name@ko&amp;quot;: &amp;quot;상현&amp;quot;, &amp;quot;name@en&amp;quot;: &amp;quot;Sang Hyun&amp;quot;, &amp;quot;age&amp;quot;: 24, &amp;quot;owns_pet&amp;quot;: { &amp;quot;uid&amp;quot;: &amp;quot;_:goldie&amp;quot;, &amp;quot;name&amp;quot;: &amp;quot;Goldie&amp;quot; }, &amp;quot;friend&amp;quot;: [ { &amp;quot;uid&amp;quot;: &amp;quot;_:amit&amp;quot; }, { &amp;quot;uid&amp;quot;: &amp;quot;_:catalina&amp;quot; }, { &amp;quot;uid&amp;quot;: &amp;quot;_:hyung&amp;quot; } ] }, { &amp;quot;uid&amp;quot;: &amp;quot;_:hyung&amp;quot;, &amp;quot;name@en&amp;quot;: &amp;quot;Hyung Sin&amp;quot;, &amp;quot;name@ko&amp;quot;: &amp;quot;형신&amp;quot;, &amp;quot;friend&amp;quot;: { &amp;quot;uid&amp;quot;: &amp;quot;_:sang&amp;quot; } }, { &amp;quot;uid&amp;quot;: &amp;quot;_:catalina&amp;quot;, &amp;quot;name&amp;quot;: &amp;quot;Catalina&amp;quot;, &amp;quot;age&amp;quot;: 19, &amp;quot;owns_pet&amp;quot;: { &amp;quot;uid&amp;quot;: &amp;quot;_:perro&amp;quot;, &amp;quot;name&amp;quot;: &amp;quot;Perro&amp;quot; }, &amp;quot;friend&amp;quot;: { &amp;quot;uid&amp;quot;: &amp;quot;_:sang&amp;quot; } } ] }    Tip: The JSON example may end up helping you better understand the format in RDF.</description>
+See the JSON:  Show answer  { &amp;quot;set&amp;quot;: [ { &amp;quot;uid&amp;quot;: &amp;quot;_:michael&amp;quot;, &amp;quot;name&amp;quot;: &amp;quot;Michael&amp;quot;, &amp;quot;dgraph.</description>
     </item>
     
     <item>
@@ -424,7 +423,8 @@ At the point of definition, because the context is within the appropriate UID, v
       
       <guid>https://tour.dgraph.io/master/schema/7/</guid>
       <description>There are three deletion options inside a delete mutation.
- &amp;lt;uid&amp;gt; &amp;lt;edge&amp;gt; &amp;lt;uid&amp;gt;/&amp;quot;value&amp;quot; . Delete a single triple &amp;lt;uid&amp;gt; &amp;lt;edge&amp;gt; * . Delete all triples for a given edge &amp;lt;uid&amp;gt; * * . Delete all triples for a given node  The examples given here are not complete. Uids assigned on your instance would be unique. Try something out; you&amp;rsquo;re not going to hurt anyone, just delete their friends.</description>
+ &amp;lt;uid&amp;gt; &amp;lt;edge&amp;gt; &amp;lt;uid&amp;gt;/&amp;quot;value&amp;quot; . Delete a single triple &amp;lt;uid&amp;gt; &amp;lt;edge&amp;gt; * . Delete all triples for a given edge &amp;lt;uid&amp;gt; * * . Delete all triples for a given node  Note In order to delete with S * * pattern. You need to have a Type related to the node itself. See: Type System
+ The examples given here are not complete.</description>
     </item>
     
     <item>

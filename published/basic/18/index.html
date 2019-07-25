@@ -4,117 +4,93 @@
 
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <meta name="generator" content="Hugo 0.53" />
-  <meta name="description" content="">
-
-
-  <link rel="apple-touch-icon" sizes="57x57" href="https://tour.dgraph.io//images/favicons/apple-touch-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="https://tour.dgraph.io//images/favicons/apple-touch-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="https://tour.dgraph.io//images/favicons/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="https://tour.dgraph.io//images/favicons/apple-touch-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="https://tour.dgraph.io//images/favicons/apple-touch-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="https://tour.dgraph.io//images/favicons/apple-touch-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="https://tour.dgraph.io//images/favicons/apple-touch-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="https://tour.dgraph.io//images/favicons/apple-touch-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://tour.dgraph.io//images/favicons/apple-touch-icon-180x180.png">
-  <link rel="icon" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="https://tour.dgraph.io//images/favicons/android-chrome-192x192.png"
-    sizes="192x192">
-  <link rel="icon" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-194x194.png" sizes="194x194">
-  <link rel="icon" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-96x96.png" sizes="96x96">
-  <link rel="icon" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-16x16.png" sizes="16x16">
-  <link rel="manifest" href="https://tour.dgraph.io//images/favicons/manifest.json">
-  <link rel="mask-icon" href="https://tour.dgraph.io//images/favicons/safari-pinned-tab.svg" color="#fe2c06">
-  <link rel="shortcut icon" href="https://tour.dgraph.io//images/favicons/favicon.ico">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-TileImage" content="https://tour.dgraph.io//images/favicons/mstile-144x144.png">
-  <meta name="msapplication-config" content="https://tour.dgraph.io//images/favicons/browserconfig.xml">
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/go.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/java.min.js"
-    integrity="sha256-RyOs5MjQ+Ef9DQrPHp4QGr2tcNjxLh6mCkkW+sS4doU=" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"
-    integrity="sha384-Dmia8eQq5QAVU5VL95mpXzGE2n2oYxIv9aFwn+JAtQ3Y/4bWeHSjKUgYSJi/BovQ" crossorigin="anonymous">
-  </script>
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.53" />
+    <meta name="description" content="">
 
 
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.js"
-    integrity="sha256-x3BtPVERvw1ozPlwivuFLZoViFCeAAs1Gt6SxEedmo8=" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.css"
-    integrity="sha256-7sZe9dsqyNZC9Mk+WPRB7nVvPPPXyorzm2QKqlgXC4k=" crossorigin="anonymous" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/addon/edit/closebrackets.min.js"
-    integrity="sha256-qhu2a7DSpQaammMaLw1iruxBpxmgdw8mdQaQWQUokcY=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/javascript/javascript.min.js"
-    integrity="sha256-7Bdg/UdDMmHDPafpQDYZNPCEbnRP7eAvu+2hEoqRCXs=" crossorigin="anonymous"></script>
-  
+    <link rel="apple-touch-icon" sizes="57x57" href="https://tour.dgraph.io//images/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://tour.dgraph.io//images/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://tour.dgraph.io//images/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://tour.dgraph.io//images/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://tour.dgraph.io//images/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://tour.dgraph.io//images/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://tour.dgraph.io//images/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://tour.dgraph.io//images/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://tour.dgraph.io//images/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://tour.dgraph.io//images/favicons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="https://tour.dgraph.io//images/favicons/manifest.json">
+    <link rel="mask-icon" href="https://tour.dgraph.io//images/favicons/safari-pinned-tab.svg" color="#fe2c06">
+    <link rel="shortcut icon" href="https://tour.dgraph.io//images/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="https://tour.dgraph.io//images/favicons/mstile-144x144.png">
+    <meta name="msapplication-config" content="https://tour.dgraph.io//images/favicons/browserconfig.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/go.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/java.min.js" integrity="sha256-RyOs5MjQ+Ef9DQrPHp4QGr2tcNjxLh6mCkkW+sS4doU=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
 
-  <script>
+
     
-    let HUGO_RUNNABLE_URL_INITIAL_PARAMS = [];
-  </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.js" integrity="sha256-x3BtPVERvw1ozPlwivuFLZoViFCeAAs1Gt6SxEedmo8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.css" integrity="sha256-7sZe9dsqyNZC9Mk+WPRB7nVvPPPXyorzm2QKqlgXC4k=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/addon/edit/closebrackets.min.js" integrity="sha256-qhu2a7DSpQaammMaLw1iruxBpxmgdw8mdQaQWQUokcY=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/javascript/javascript.min.js" integrity="sha256-7Bdg/UdDMmHDPafpQDYZNPCEbnRP7eAvu+2hEoqRCXs=" crossorigin="anonymous"></script>
+    
 
-  <script>
+    <script>
     if (window.location.href.indexOf("dgraph.io") > -1) {
-      (function (i, s, o, g, r, a, m) {
-        i["GoogleAnalyticsObject"] = r;
-        (i[r] =
-          i[r] ||
-          function () {
-            (i[r].q = i[r].q || []).push(arguments);
-          }), (i[r].l = 1 * new Date());
-        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m);
-      })(
-        window,
-        document,
-        "script",
-        "https://www.google-analytics.com/analytics.js",
-        "ga"
-      );
+  (function(i, s, o, g, r, a, m) {
+    i["GoogleAnalyticsObject"] = r;
+    (i[r] =
+      i[r] ||
+      function() {
+        (i[r].q = i[r].q || []).push(arguments);
+      }), (i[r].l = 1 * new Date());
+    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(
+    window,
+    document,
+    "script",
+    "https://www.google-analytics.com/analytics.js",
+    "ga"
+  );
 
-      ga("create", "UA-75364122-2", "auto");
-      ga("send", "pageview");
-    }
-  </script>
+  ga("create", "UA-75364122-2", "auto");
+  ga("send", "pageview");
+}
+</script>
 
-  
-  <title>
     
-    Congratulations — A Tour of Dgraph
-    
-  </title>
+    <title>
+      
+        Congratulations — A Tour of Dgraph
+      
+    </title>
 
-  <link href="https://tour.dgraph.io//css/theme.css?2019-07-19%2019%3a35%3a26.626138%20%2b0300%20EEST%20m%3d%2b0.356052257" rel="stylesheet" />
-  <link href="https://tour.dgraph.io//css/runnable.css?2019-07-19%2019%3a35%3a26.626179%20%2b0300%20EEST%20m%3d%2b0.356093118" rel="stylesheet" />
-  <link href="https://tour.dgraph.io//css/runnable-custom.css?2019-07-19%2019%3a35%3a26.62622%20%2b0300%20EEST%20m%3d%2b0.356134379" rel="stylesheet" />
-  <link href="https://tour.dgraph.io//css/runnable-url.css?2019-07-19%2019%3a35%3a26.626243%20%2b0300%20EEST%20m%3d%2b0.356157088" rel="stylesheet" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
-    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
-    integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous">
-  </script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
-    integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous">
-  </script>
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" />
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
-</head>
+    <link href="https://tour.dgraph.io//css/theme.css?d9869d427652dce3acfcac0db59fc1aa" rel="stylesheet" />
+    <link href="https://tour.dgraph.io//css/runnable.css?2aa73e4077d475dc8e9b8d61e4ea5a62" rel="stylesheet" />
+    <link href="https://tour.dgraph.io//css/runnable-custom.css?fd581e09310956d9e7e07a71e2d31145" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+  </head>
+  <body>
+    <main>
 
-<body>
-  <main>
 
 <nav id="header">
   <a href="https://tour.dgraph.io/" class="brand">
@@ -640,15 +616,13 @@ wasn&rsquo;t clear, or go on with the next lesson.</p>
 
         <div class="page-nav">
           
-          <a href="/basic/17" data-action="go-prev" class="btn btn-secondary btn-sm page-nav-link"><i
-              class="fa fa-chevron-left"></i></a>
+            <a href="/basic/17" data-action="go-prev" class="btn btn-secondary btn-sm page-nav-link"><i class="fa fa-chevron-left"></i></a>
           
           <div class="nav-index">
             18 / 18
           </div>
           
-          <a href="/schema/1" data-action="go-next" class="btn btn-secondary btn-sm page-nav-link"><i
-              class="fa fa-chevron-right"></i></a>
+            <a href="/schema/1" data-action="go-next" class="btn btn-secondary btn-sm page-nav-link"><i class="fa fa-chevron-right"></i></a>
           
         </div>
       </div>
@@ -656,9 +630,9 @@ wasn&rsquo;t clear, or go on with the next lesson.</p>
 
     <div class="col-12 col-sm-12 col-md-12 col-lg-6 vertical-stretch">
       
-      <div class="panel empty">
-        <img src="https://tour.dgraph.io//images/dgraph-black.png" alt="dgraph-icon" class="dgraph-icon" />
-      </div>
+        <div class="panel empty">
+          <img src="https://tour.dgraph.io//images/dgraph-black.png" alt="dgraph-icon" class="dgraph-icon" />
+        </div>
       
     </div>
   </div>
@@ -667,11 +641,11 @@ wasn&rsquo;t clear, or go on with the next lesson.</p>
     </main>
 
     <script src="https://tour.dgraph.io//js/clipboard.min.js"></script>
-    <script src="https://tour.dgraph.io//js/dgraph.js?2019-07-19%2019%3a35%3a26.644878%20%2b0300%20EEST%20m%3d%2b0.374792293"></script>
-    <script type="module" src="https://tour.dgraph.io//js/runnable.js?2019-07-19%2019%3a35%3a26.644907%20%2b0300%20EEST%20m%3d%2b0.374821619"></script>
+    <script src="https://tour.dgraph.io//js/dgraph.js?c58da7a713c2e172f9af43e595b9c7a9"></script>
+    <script src="https://tour.dgraph.io//js/runnable.js?87803fe503e1bb4355cc2c8bcb680842"></script>
     <script>
       hljs.initHighlightingOnLoad();
     </script>
-    </body>
+  </body>
+</html>
 
-    </html>

@@ -1,3 +1,23 @@
+#TODO: Check the Types here!
+# Define Types
+
+type Person {
+    name: string
+    director.film: [Movie]
+}
+
+type Movie {
+    name: string
+    initial_release_date: string
+    genre: [Genre]
+}
+
+type Genre {
+    name: string
+}
+
+# Define Directives and index
+
 director.film: uid @reverse .
 genre: uid @reverse .
 initial_release_date: dateTime @index(year) .

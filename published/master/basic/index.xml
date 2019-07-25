@@ -36,15 +36,14 @@ Let’s improve the query to get Michael and his network of friends.</descriptio
     </item>
     
     <item>
-      <title>Data types and Schema</title>
+      <title>Data types, Schema and Type System</title>
       <link>https://tour.dgraph.io/master/basic/3/</link>
       <pubDate>Wed, 26 Apr 2017 22:36:41 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/master/basic/3/</guid>
       <description>It’s time to talk about data types and nodes
-There was some magic in the last query because some of the queried edges returned a value (name and age), but some were edges to other nodes (friend and owns_pet) that themselves had further properties.
-The truth is that there is a schema to tell us how to interpret an edge.
-The visualization won’t be much use this time. Have a look at the JSON to find out about the schema of the example.</description>
+Type System Starting in version 1.1, Dgraph has support for a type system. At the moment, the type system is basic but can be used already to categorize nodes and query them based on their type. The type system is also used during expand queries.
+So in order to Expand or Delete nodes. You need to define your Types correctly. You can see in detail more about the Type System here.</description>
     </item>
     
     <item>

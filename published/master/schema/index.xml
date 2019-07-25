@@ -89,7 +89,8 @@ _:sarah &amp;lt;works_for&amp;gt; _:company1 .  it&amp;rsquo;s
       
       <guid>https://tour.dgraph.io/master/schema/7/</guid>
       <description>There are three deletion options inside a delete mutation.
- &amp;lt;uid&amp;gt; &amp;lt;edge&amp;gt; &amp;lt;uid&amp;gt;/&amp;quot;value&amp;quot; . Delete a single triple &amp;lt;uid&amp;gt; &amp;lt;edge&amp;gt; * . Delete all triples for a given edge &amp;lt;uid&amp;gt; * * . Delete all triples for a given node  The examples given here are not complete. Uids assigned on your instance would be unique. Try something out; you&amp;rsquo;re not going to hurt anyone, just delete their friends.</description>
+ &amp;lt;uid&amp;gt; &amp;lt;edge&amp;gt; &amp;lt;uid&amp;gt;/&amp;quot;value&amp;quot; . Delete a single triple &amp;lt;uid&amp;gt; &amp;lt;edge&amp;gt; * . Delete all triples for a given edge &amp;lt;uid&amp;gt; * * . Delete all triples for a given node  Note In order to delete with S * * pattern. You need to have a Type related to the node itself. See: Type System
+ The examples given here are not complete.</description>
     </item>
     
     <item>

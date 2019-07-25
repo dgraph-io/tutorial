@@ -4,72 +4,73 @@
 
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <meta name="generator" content="Hugo 0.53" />
-  <meta name="description" content="">
-
-
-  <link rel="apple-touch-icon" sizes="57x57" href="https://tour.dgraph.io/master/images/favicons/apple-touch-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="https://tour.dgraph.io/master/images/favicons/apple-touch-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="https://tour.dgraph.io/master/images/favicons/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="https://tour.dgraph.io/master/images/favicons/apple-touch-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="https://tour.dgraph.io/master/images/favicons/apple-touch-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="https://tour.dgraph.io/master/images/favicons/apple-touch-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="https://tour.dgraph.io/master/images/favicons/apple-touch-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="https://tour.dgraph.io/master/images/favicons/apple-touch-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://tour.dgraph.io/master/images/favicons/apple-touch-icon-180x180.png">
-  <link rel="icon" type="image/png" href="https://tour.dgraph.io/master/images/favicons/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="https://tour.dgraph.io/master/images/favicons/android-chrome-192x192.png"
-    sizes="192x192">
-  <link rel="icon" type="image/png" href="https://tour.dgraph.io/master/images/favicons/favicon-194x194.png" sizes="194x194">
-  <link rel="icon" type="image/png" href="https://tour.dgraph.io/master/images/favicons/favicon-96x96.png" sizes="96x96">
-  <link rel="icon" type="image/png" href="https://tour.dgraph.io/master/images/favicons/favicon-16x16.png" sizes="16x16">
-  <link rel="manifest" href="https://tour.dgraph.io/master/images/favicons/manifest.json">
-  <link rel="mask-icon" href="https://tour.dgraph.io/master/images/favicons/safari-pinned-tab.svg" color="#fe2c06">
-  <link rel="shortcut icon" href="https://tour.dgraph.io/master/images/favicons/favicon.ico">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-TileImage" content="https://tour.dgraph.io/master/images/favicons/mstile-144x144.png">
-  <meta name="msapplication-config" content="https://tour.dgraph.io/master/images/favicons/browserconfig.xml">
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/go.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/java.min.js"
-    integrity="sha256-RyOs5MjQ+Ef9DQrPHp4QGr2tcNjxLh6mCkkW+sS4doU=" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"
-    integrity="sha384-Dmia8eQq5QAVU5VL95mpXzGE2n2oYxIv9aFwn+JAtQ3Y/4bWeHSjKUgYSJi/BovQ" crossorigin="anonymous">
-  </script>
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.53" />
+    <meta name="description" content="">
 
 
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.js"
-    integrity="sha256-x3BtPVERvw1ozPlwivuFLZoViFCeAAs1Gt6SxEedmo8=" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.css"
-    integrity="sha256-7sZe9dsqyNZC9Mk+WPRB7nVvPPPXyorzm2QKqlgXC4k=" crossorigin="anonymous" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/addon/edit/closebrackets.min.js"
-    integrity="sha256-qhu2a7DSpQaammMaLw1iruxBpxmgdw8mdQaQWQUokcY=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/javascript/javascript.min.js"
-    integrity="sha256-7Bdg/UdDMmHDPafpQDYZNPCEbnRP7eAvu+2hEoqRCXs=" crossorigin="anonymous"></script>
-  
+    <link rel="manifest" href="https://tour.dgraph.io/master/images/favicons/manifest.json">
+    <link rel="mask-icon" href="https://tour.dgraph.io/master/images/favicons/safari-pinned-tab.svg" color="#fe2c06">
+    <link rel="shortcut icon" href="https://tour.dgraph.io/master/images/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="https://tour.dgraph.io/master/images/favicons/mstile-144x144.png">
+    <meta name="msapplication-config" content="https://tour.dgraph.io/master/images/favicons/browserconfig.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/go.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/java.min.js" integrity="sha256-RyOs5MjQ+Ef9DQrPHp4QGr2tcNjxLh6mCkkW+sS4doU=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
 
-  <script>
+    <link rel="apple-touch-icon" sizes="57x57" href="https://tour.dgraph.io/master/images/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://tour.dgraph.io/master/images/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://tour.dgraph.io/master/images/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://tour.dgraph.io/master/images/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://tour.dgraph.io/master/images/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://tour.dgraph.io/master/images/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://tour.dgraph.io/master/images/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://tour.dgraph.io/master/images/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://tour.dgraph.io/master/images/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="https://tour.dgraph.io/master/images/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://tour.dgraph.io/master/images/favicons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="https://tour.dgraph.io/master/images/favicons/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="https://tour.dgraph.io/master/images/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="https://tour.dgraph.io/master/images/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="https://tour.dgraph.io/master/images/favicons/manifest.json">
+    <link rel="mask-icon" href="https://tour.dgraph.io/master/images/favicons/safari-pinned-tab.svg" color="#fe2c06">
+    <link rel="shortcut icon" href="https://tour.dgraph.io/master/images/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="https://tour.dgraph.io/master/images/favicons/mstile-144x144.png">
+    <meta name="msapplication-config" content="https://tour.dgraph.io/master/images/favicons/browserconfig.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/go.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/java.min.js"
+      integrity="sha256-RyOs5MjQ+Ef9DQrPHp4QGr2tcNjxLh6mCkkW+sS4doU=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"
+      integrity="sha384-Dmia8eQq5QAVU5VL95mpXzGE2n2oYxIv9aFwn+JAtQ3Y/4bWeHSjKUgYSJi/BovQ" crossorigin="anonymous">
+    </script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+
     
-    let HUGO_RUNNABLE_URL_INITIAL_PARAMS = [];
-  </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.js" integrity="sha256-x3BtPVERvw1ozPlwivuFLZoViFCeAAs1Gt6SxEedmo8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.css" integrity="sha256-7sZe9dsqyNZC9Mk+WPRB7nVvPPPXyorzm2QKqlgXC4k=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/addon/edit/closebrackets.min.js" integrity="sha256-qhu2a7DSpQaammMaLw1iruxBpxmgdw8mdQaQWQUokcY=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/javascript/javascript.min.js" integrity="sha256-7Bdg/UdDMmHDPafpQDYZNPCEbnRP7eAvu+2hEoqRCXs=" crossorigin="anonymous"></script>
+    
 
-  <script>
-    if (window.location.href.indexOf("dgraph.io") > -1) {
-      (function (i, s, o, g, r, a, m) {
+    <script>
+        if (window.location.href.indexOf("dgraph.io") > -1) {
+      (function(i, s, o, g, r, a, m) {
         i["GoogleAnalyticsObject"] = r;
         (i[r] =
           i[r] ||
-          function () {
+          function() {
             (i[r].q = i[r].q || []).push(arguments);
           }), (i[r].l = 1 * new Date());
         (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
@@ -87,34 +88,25 @@
       ga("create", "UA-75364122-2", "auto");
       ga("send", "pageview");
     }
-  </script>
+    </script>
 
-  
-  <title>
     
-    Load Data — A Tour of Dgraph
-    
-  </title>
+    <title>
+      
+        Load Data — A Tour of Dgraph
+      
+    </title>
 
-  <link href="https://tour.dgraph.io/master/css/theme.css?2019-07-19%2019%3a35%3a34.58245%20%2b0300%20EEST%20m%3d%2b0.197799601" rel="stylesheet" />
-  <link href="https://tour.dgraph.io/master/css/runnable.css?2019-07-19%2019%3a35%3a34.582476%20%2b0300%20EEST%20m%3d%2b0.197825309" rel="stylesheet" />
-  <link href="https://tour.dgraph.io/master/css/runnable-custom.css?2019-07-19%2019%3a35%3a34.582498%20%2b0300%20EEST%20m%3d%2b0.197847516" rel="stylesheet" />
-  <link href="https://tour.dgraph.io/master/css/runnable-url.css?2019-07-19%2019%3a35%3a34.582524%20%2b0300%20EEST%20m%3d%2b0.197873597" rel="stylesheet" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
-    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
-    integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous">
-  </script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
-    integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous">
-  </script>
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" />
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
-</head>
+    <link href="https://tour.dgraph.io/master/css/theme.css?d9869d427652dce3acfcac0db59fc1aa" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+  </head>
+  <body>
+    <main>
 
-<body>
-  <main>
 
 <nav id="header">
   <a href="https://tour.dgraph.io/master" class="brand">
@@ -302,7 +294,7 @@
         
           <li>
             <a href="/master/basic/3/" class="topic">
-              Data types and Schema
+              Data types, Schema and Type System
             </a>
           </li>
         
@@ -678,9 +670,11 @@ loaded successfully.</p>
             {
                 &quot;uid&quot;: &quot;_:michael&quot;,
                 &quot;name&quot;: &quot;Michael&quot;,
+                &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;age&quot;: 39,
                 &quot;owns_pet&quot;: {
                     &quot;uid&quot;: &quot;_:rammy&quot;,
+                    &quot;dgraph.type&quot;: &quot;Animal&quot;,
                     &quot;name&quot;: &quot;Rammy the sheep&quot;
                 },
                 &quot;friend&quot;: [
@@ -706,6 +700,7 @@ loaded successfully.</p>
                 &quot;name@hi&quot;: &quot;अमित&quot;,
                 &quot;name@bn&quot;: &quot;অমিত&quot;,
                 &quot;name@en&quot;: &quot;Amit&quot;,
+                &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;age&quot;: 35,
                 &quot;friend&quot;: [
                     {
@@ -723,26 +718,31 @@ loaded successfully.</p>
                 &quot;uid&quot;: &quot;_:luke&quot;,
                 &quot;name@pl&quot;: &quot;Łukasz&quot;,
                 &quot;name@en&quot;: &quot;Luke&quot;,
+                &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;age&quot;: 77
             },
             {
                 &quot;uid&quot;: &quot;_:artyom&quot;,
                 &quot;name@ru&quot;: &quot;Артём&quot;,
                 &quot;name@en&quot;: &quot;Artyom&quot;,
+                &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;age&quot;: 35
             },
             {
                 &quot;uid&quot;: &quot;_:sarah&quot;,
                 &quot;name&quot;: &quot;Sarah&quot;,
+                &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;age&quot;: 55
             },
             {
                 &quot;uid&quot;: &quot;_:sang&quot;,
                 &quot;name@ko&quot;: &quot;상현&quot;,
                 &quot;name@en&quot;: &quot;Sang Hyun&quot;,
+                &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;age&quot;: 24,
                 &quot;owns_pet&quot;: {
                     &quot;uid&quot;: &quot;_:goldie&quot;,
+                    &quot;dgraph.type&quot;: &quot;Animal&quot;,
                     &quot;name&quot;: &quot;Goldie&quot;
                 },
                 &quot;friend&quot;: [
@@ -761,6 +761,7 @@ loaded successfully.</p>
                 &quot;uid&quot;: &quot;_:hyung&quot;,
                 &quot;name@en&quot;: &quot;Hyung Sin&quot;,
                 &quot;name@ko&quot;: &quot;형신&quot;,
+                &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;friend&quot;: {
                     &quot;uid&quot;: &quot;_:sang&quot;
                 }
@@ -768,9 +769,11 @@ loaded successfully.</p>
             {
                 &quot;uid&quot;: &quot;_:catalina&quot;,
                 &quot;name&quot;: &quot;Catalina&quot;,
+                &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;age&quot;: 19,
                 &quot;owns_pet&quot;: {
                     &quot;uid&quot;: &quot;_:perro&quot;,
+                    &quot;dgraph.type&quot;: &quot;Animal&quot;,
                     &quot;name&quot;: &quot;Perro&quot;
                 },
                 &quot;friend&quot;: {
@@ -792,15 +795,13 @@ loaded successfully.</p>
 
         <div class="page-nav">
           
-          <a href="/master/intro/3" data-action="go-prev" class="btn btn-secondary btn-sm page-nav-link"><i
-              class="fa fa-chevron-left"></i></a>
+            <a href="/master/intro/3" data-action="go-prev" class="btn btn-secondary btn-sm page-nav-link"><i class="fa fa-chevron-left"></i></a>
           
           <div class="nav-index">
             4 / 8
           </div>
           
-          <a href="/master/intro/5" data-action="go-next" class="btn btn-secondary btn-sm page-nav-link"><i
-              class="fa fa-chevron-right"></i></a>
+            <a href="/master/intro/5" data-action="go-next" class="btn btn-secondary btn-sm page-nav-link"><i class="fa fa-chevron-right"></i></a>
           
         </div>
       </div>
@@ -808,17 +809,11 @@ loaded successfully.</p>
 
     <div class="col-12 col-sm-12 col-md-12 col-lg-6 vertical-stretch">
       
-      
-<script>
-  
-  RUNNABLE_URL_CONFIG = `{"displaycustomendpoint":true,"enabled":true}` ? JSON.parse(`{"displaycustomendpoint":true,"enabled":true}`) : {
-    enabled: false,
-    displaycustomendpoint: true
-  }
-</script>
+        
 <div class="runnable" data-initial="{
   set {
     _:michael &lt;name&gt; &#34;Michael&#34; .
+    _:michael &lt;dgraph.type&gt; &#34;Person&#34; .
     _:michael &lt;age&gt; &#34;39&#34; .
     _:michael &lt;friend&gt; _:amit .
     _:michael &lt;friend&gt; _:sarah .
@@ -830,24 +825,29 @@ loaded successfully.</p>
     _:amit &lt;name&gt; &#34;अमित&#34;@hi .
     _:amit &lt;name&gt; &#34;অমিত&#34;@bn .
     _:amit &lt;name&gt; &#34;Amit&#34;@en .
+    _:amit &lt;dgraph.type&gt; &#34;Person&#34; .
     _:amit &lt;age&gt; &#34;35&#34; .
     _:amit &lt;friend&gt; _:michael .
     _:amit &lt;friend&gt; _:sang .
     _:amit &lt;friend&gt; _:artyom .
 
     _:luke &lt;name&gt; &#34;Luke&#34;@en .
+    _:luke &lt;dgraph.type&gt; &#34;Person&#34; .
     _:luke &lt;name&gt; &#34;Łukasz&#34;@pl .
     _:luke &lt;age&gt; &#34;77&#34; .
 
     _:artyom &lt;name&gt; &#34;Артём&#34;@ru .
     _:artyom &lt;name&gt; &#34;Artyom&#34;@en .
+    _:artyom &lt;dgraph.type&gt; &#34;Person&#34; .
     _:artyom &lt;age&gt; &#34;35&#34; .
 
     _:sarah &lt;name&gt; &#34;Sarah&#34; .
+    _:sarah &lt;dgraph.type&gt; &#34;Person&#34; .
     _:sarah &lt;age&gt; &#34;55&#34; .
 
     _:sang &lt;name&gt; &#34;상현&#34;@ko .
     _:sang &lt;name&gt; &#34;Sang Hyun&#34;@en .
+    _:sang &lt;dgraph.type&gt; &#34;Person&#34; .
     _:sang &lt;age&gt; &#34;24&#34; .
     _:sang &lt;friend&gt; _:amit .
     _:sang &lt;friend&gt; _:catalina .
@@ -856,23 +856,29 @@ loaded successfully.</p>
 
     _:hyung &lt;name&gt; &#34;형신&#34;@ko .
     _:hyung &lt;name&gt; &#34;Hyung Sin&#34;@en .
+    _:hyung &lt;dgraph.type&gt; &#34;Person&#34; .
     _:hyung &lt;friend&gt; _:sang .
 
     _:catalina &lt;name&gt; &#34;Catalina&#34; .
+    _:catalina &lt;dgraph.type&gt; &#34;Person&#34; .
     _:catalina &lt;age&gt; &#34;19&#34; .
     _:catalina &lt;friend&gt; _:sang .
     _:catalina &lt;owns_pet&gt; _:perro .
 
     _:rammy &lt;name&gt; &#34;Rammy the sheep&#34; .
+    _:rammy &lt;dgraph.type&gt; &#34;Animal&#34; .
 
     _:goldie &lt;name&gt; &#34;Goldie&#34; .
+    _:goldie &lt;dgraph.type&gt; &#34;Animal&#34; .
 
     _:perro &lt;name&gt; &#34;Perro&#34; .
+    _:goldie &lt;dgraph.type&gt; &#34;Animal&#34; .
   }
 }
 " data-current="{
   set {
     _:michael &lt;name&gt; &#34;Michael&#34; .
+    _:michael &lt;dgraph.type&gt; &#34;Person&#34; .
     _:michael &lt;age&gt; &#34;39&#34; .
     _:michael &lt;friend&gt; _:amit .
     _:michael &lt;friend&gt; _:sarah .
@@ -884,24 +890,29 @@ loaded successfully.</p>
     _:amit &lt;name&gt; &#34;अमित&#34;@hi .
     _:amit &lt;name&gt; &#34;অমিত&#34;@bn .
     _:amit &lt;name&gt; &#34;Amit&#34;@en .
+    _:amit &lt;dgraph.type&gt; &#34;Person&#34; .
     _:amit &lt;age&gt; &#34;35&#34; .
     _:amit &lt;friend&gt; _:michael .
     _:amit &lt;friend&gt; _:sang .
     _:amit &lt;friend&gt; _:artyom .
 
     _:luke &lt;name&gt; &#34;Luke&#34;@en .
+    _:luke &lt;dgraph.type&gt; &#34;Person&#34; .
     _:luke &lt;name&gt; &#34;Łukasz&#34;@pl .
     _:luke &lt;age&gt; &#34;77&#34; .
 
     _:artyom &lt;name&gt; &#34;Артём&#34;@ru .
     _:artyom &lt;name&gt; &#34;Artyom&#34;@en .
+    _:artyom &lt;dgraph.type&gt; &#34;Person&#34; .
     _:artyom &lt;age&gt; &#34;35&#34; .
 
     _:sarah &lt;name&gt; &#34;Sarah&#34; .
+    _:sarah &lt;dgraph.type&gt; &#34;Person&#34; .
     _:sarah &lt;age&gt; &#34;55&#34; .
 
     _:sang &lt;name&gt; &#34;상현&#34;@ko .
     _:sang &lt;name&gt; &#34;Sang Hyun&#34;@en .
+    _:sang &lt;dgraph.type&gt; &#34;Person&#34; .
     _:sang &lt;age&gt; &#34;24&#34; .
     _:sang &lt;friend&gt; _:amit .
     _:sang &lt;friend&gt; _:catalina .
@@ -910,128 +921,33 @@ loaded successfully.</p>
 
     _:hyung &lt;name&gt; &#34;형신&#34;@ko .
     _:hyung &lt;name&gt; &#34;Hyung Sin&#34;@en .
+    _:hyung &lt;dgraph.type&gt; &#34;Person&#34; .
     _:hyung &lt;friend&gt; _:sang .
 
     _:catalina &lt;name&gt; &#34;Catalina&#34; .
+    _:catalina &lt;dgraph.type&gt; &#34;Person&#34; .
     _:catalina &lt;age&gt; &#34;19&#34; .
     _:catalina &lt;friend&gt; _:sang .
     _:catalina &lt;owns_pet&gt; _:perro .
 
     _:rammy &lt;name&gt; &#34;Rammy the sheep&#34; .
+    _:rammy &lt;dgraph.type&gt; &#34;Animal&#34; .
 
     _:goldie &lt;name&gt; &#34;Goldie&#34; .
+    _:goldie &lt;dgraph.type&gt; &#34;Animal&#34; .
 
     _:perro &lt;name&gt; &#34;Perro&#34; .
+    _:goldie &lt;dgraph.type&gt; &#34;Animal&#34; .
   }
 }
-" endpoint="/mutate"
-  data-dirty="false">
+" endpoint="/mutate" data-dirty="false">
   <div class="runnable-pane runnable-pane-query">
     <div class="topbar">
       <div class="row">
         <div class="col-7">
-          
-          
-
-
-
-
-
-
-
-<script>
-  
-  const pathName = '' ?
-    '' :
-    '\/mutate' ?
-    '\/mutate' :
-    '/query';
-  
-  HUGO_RUNNABLE_URL_INITIAL_PARAMS = [
-    ['hash', '' ? '' : undefined],
-    ['protocol', '' ? '' : undefined],
-    ['hostName', '' ? '' : undefined],
-    ['port', '' ? '' : undefined],
-    [
-      'pathName',
-      pathName
-    ],
-    ['search', '' ? '' : undefined]
-  ];
-</script>
-
-
-<span class="pane-title">
-  Endpoint: <button id="runnable-url-endpoint" type="button" class="code-btn primary" data-toggle="modal"
-    data-target="#runnable-url-modal">
-    ...
-  </button>
-</span>
-
-
-<div class="modal fade runnable-url-modal" id="runnable-url-modal" tabindex="-1" role="dialog"
-  aria-labelledby="runnable-url-modal-label" aria-hidden="true">
-  <div class="modal-dialog modal-md" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="runnable-url-modal-label">Change Dgraph Alpha URLs</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="container-fluid">
-          <form>
-            <table class="table table-striped">
-              <thead class="thead-dark">
-                <tr>
-                  <th scope="col">Type</th>
-                  <th scope="col" class="col-11">URL</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row" class="align-middle py-1">Alter</th>
-                  <td class="py-1">
-                    <input type="text" class="form-control" data-module="runnable-url" data-path-type="alter"
-                      data-default="http://127.0.0.1:8080/alter" placeholder="http://127.0.0.1:8080/alter">
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row" class="align-middle py-1">Commit</th>
-                  <td class="py-1">
-                    <input type="text" class="form-control" data-module="runnable-url" data-path-type="commit"
-                      data-default="http://127.0.0.1:8080/commit" placeholder="http://127.0.0.1:8080/commit">
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row" class="align-middle py-1">Mutate</th>
-                  <td class="py-1">
-                    <input type="text" class="form-control" data-module="runnable-url" data-path-type="mutate"
-                      data-default="http://127.0.0.1:8080/mutate" placeholder="http://127.0.0.1:8080/mutate">
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row" class="align-middle py-1">Query</th>
-                  <td class="py-1">
-                    <input type="text" class="form-control" data-module="runnable-url" data-path-type="query"
-                      data-default="http://127.0.0.1:8080/query" placeholder="http://127.0.0.1:8080/query">
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </form>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" id="load-defaults" class="code-btn">Load Defaults</button>
-        <button type="button" class="code-btn" data-dismiss="modal">Close</button>
-        <button type="button" id="save" class="code-btn primary" data-dismiss="modal">Save</button>
-      </div>
-    </div>
-  </div>
-</div>
-          
+          <span class="pane-title">
+            Endpoint: /mutate
+          </span>
         </div>
         <div class="col-5">
           <div class="actions pull-right">
@@ -1047,6 +963,7 @@ loaded successfully.</p>
         <textarea class="query-content-editable">{
   set {
     _:michael &lt;name&gt; &#34;Michael&#34; .
+    _:michael &lt;dgraph.type&gt; &#34;Person&#34; .
     _:michael &lt;age&gt; &#34;39&#34; .
     _:michael &lt;friend&gt; _:amit .
     _:michael &lt;friend&gt; _:sarah .
@@ -1058,24 +975,29 @@ loaded successfully.</p>
     _:amit &lt;name&gt; &#34;अमित&#34;@hi .
     _:amit &lt;name&gt; &#34;অমিত&#34;@bn .
     _:amit &lt;name&gt; &#34;Amit&#34;@en .
+    _:amit &lt;dgraph.type&gt; &#34;Person&#34; .
     _:amit &lt;age&gt; &#34;35&#34; .
     _:amit &lt;friend&gt; _:michael .
     _:amit &lt;friend&gt; _:sang .
     _:amit &lt;friend&gt; _:artyom .
 
     _:luke &lt;name&gt; &#34;Luke&#34;@en .
+    _:luke &lt;dgraph.type&gt; &#34;Person&#34; .
     _:luke &lt;name&gt; &#34;Łukasz&#34;@pl .
     _:luke &lt;age&gt; &#34;77&#34; .
 
     _:artyom &lt;name&gt; &#34;Артём&#34;@ru .
     _:artyom &lt;name&gt; &#34;Artyom&#34;@en .
+    _:artyom &lt;dgraph.type&gt; &#34;Person&#34; .
     _:artyom &lt;age&gt; &#34;35&#34; .
 
     _:sarah &lt;name&gt; &#34;Sarah&#34; .
+    _:sarah &lt;dgraph.type&gt; &#34;Person&#34; .
     _:sarah &lt;age&gt; &#34;55&#34; .
 
     _:sang &lt;name&gt; &#34;상현&#34;@ko .
     _:sang &lt;name&gt; &#34;Sang Hyun&#34;@en .
+    _:sang &lt;dgraph.type&gt; &#34;Person&#34; .
     _:sang &lt;age&gt; &#34;24&#34; .
     _:sang &lt;friend&gt; _:amit .
     _:sang &lt;friend&gt; _:catalina .
@@ -1084,18 +1006,23 @@ loaded successfully.</p>
 
     _:hyung &lt;name&gt; &#34;형신&#34;@ko .
     _:hyung &lt;name&gt; &#34;Hyung Sin&#34;@en .
+    _:hyung &lt;dgraph.type&gt; &#34;Person&#34; .
     _:hyung &lt;friend&gt; _:sang .
 
     _:catalina &lt;name&gt; &#34;Catalina&#34; .
+    _:catalina &lt;dgraph.type&gt; &#34;Person&#34; .
     _:catalina &lt;age&gt; &#34;19&#34; .
     _:catalina &lt;friend&gt; _:sang .
     _:catalina &lt;owns_pet&gt; _:perro .
 
     _:rammy &lt;name&gt; &#34;Rammy the sheep&#34; .
+    _:rammy &lt;dgraph.type&gt; &#34;Animal&#34; .
 
     _:goldie &lt;name&gt; &#34;Goldie&#34; .
+    _:goldie &lt;dgraph.type&gt; &#34;Animal&#34; .
 
     _:perro &lt;name&gt; &#34;Perro&#34; .
+    _:goldie &lt;dgraph.type&gt; &#34;Animal&#34; .
   }
 }
 </textarea>
@@ -1120,8 +1047,7 @@ loaded successfully.</p>
       </div>
     </div>
 
-    <div class="runnable-content runnable-output"
-      style="background: url('https://tour.dgraph.io/master/images/dgraph-black.png'); background-repeat: no-repeat; background-position: center; background-color: #fff;">
+    <div class="runnable-content runnable-output" style="background: url('https://tour.dgraph.io/master/images/dgraph-black.png'); background-repeat: no-repeat; background-position: center; background-color: #fff;">
       <pre class="output-container empty"><code class="output" tabindex="-1"></code></pre>
     </div>
 
@@ -1129,9 +1055,7 @@ loaded successfully.</p>
       <div class="col-12 col-sm-8">
         <div class="latency-info hidden">
           <div class="stat server-latency">
-            <span class="label">Server latency:</span> <span class="number"></span> <i
-              class="fa fa-question-circle server-latency-tooltip-trigger" data-toggle="tooltip" data-placement="top"
-              data-html="true" title="Latency information" data-animation="false"></i>
+            <span class="label">Server latency:</span> <span class="number"></span> <i class="fa fa-question-circle server-latency-tooltip-trigger" data-toggle="tooltip" data-placement="top" data-html="true" title="Latency information" data-animation="false"></i>
           </div>
           <div class="stat network-latency">
             <span class="label">Network latency:</span> <span class="number"></span>
@@ -1142,6 +1066,7 @@ loaded successfully.</p>
 
   </div>
 </div>
+
       
     </div>
   </div>
@@ -1149,12 +1074,8 @@ loaded successfully.</p>
 
     </main>
 
-    <script src="https://tour.dgraph.io/master/js/clipboard.min.js"></script>
-    <script src="https://tour.dgraph.io/master/js/dgraph.js?2019-07-19%2019%3a35%3a34.584403%20%2b0300%20EEST%20m%3d%2b0.199752586"></script>
-    <script type="module" src="https://tour.dgraph.io/master/js/runnable.js?2019-07-19%2019%3a35%3a34.584432%20%2b0300%20EEST%20m%3d%2b0.199781226"></script>
-    <script>
-      hljs.initHighlightingOnLoad();
-    </script>
-    </body>
+    <script src="https://tour.dgraph.io/master/js/build/dgraph-tour.js?f87ae8d19c943868b26263a5dd0a3d00"></script>
+  </body>
 
-    </html>
+</html>
+
