@@ -1,8 +1,8 @@
     </main>
 
     <script src="{{ .Site.BaseURL }}/js/clipboard.min.js"></script>
-    <script src="{{ .Site.BaseURL }}/js/dgraph.js?{{ now }}"></script>
-    <script src="{{ .Site.BaseURL }}/js/runnable.js?{{ now }}"></script>
+    <script src="{{ .Site.BaseURL }}/js/dgraph.js?{{ md5 (readFile "themes/hugo-tutorials/static/js/dgraph.js") }}"></script>
+    <script src="{{ .Site.BaseURL }}/js/runnable.js?{{ md5 (readFile "themes/hugo-tutorials/static/js/runnable.js") }}"></script>
     <script>
       hljs.initHighlightingOnLoad();
     </script>
