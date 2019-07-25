@@ -93,10 +93,10 @@
     {{ end }}
   </title>
 
-  <link href="{{ .Site.BaseURL }}/css/theme.css?{{ now }}" rel="stylesheet" />
-  <link href="{{ .Site.BaseURL }}/css/runnable.css?{{ now }}" rel="stylesheet" />
-  <link href="{{ .Site.BaseURL }}/css/runnable-custom.css?{{ now }}" rel="stylesheet" />
-  <link href="{{ .Site.BaseURL }}/css/runnable-url.css?{{ now }}" rel="stylesheet" />
+  <link href="{{ .Site.BaseURL }}/css/theme.css?{{ md5 (readFile "themes/hugo-tutorials/static/css/theme.css") }}" rel="stylesheet" />
+  <link href="{{ .Site.BaseURL }}/css/runnable.css?{{ md5 (readFile "themes/hugo-tutorials/static/css/runnable.css") }}" rel="stylesheet" />
+  <link href="{{ .Site.BaseURL }}/css/runnable-custom.css?{{ md5 (readFile "themes/hugo-tutorials/static/css/runnable-custom.css") }}" rel="stylesheet" />
+  <link href="{{ .Site.BaseURL }}/css/runnable-url.css?{{ md5 (readFile "themes/hugo-tutorials/static/css/runnable-url.css") }}" rel="stylesheet" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
     integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
