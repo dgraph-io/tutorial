@@ -1,1 +1,1 @@
-boss_of: uid @reverse .
+boss_of: [uid] @reverse .
