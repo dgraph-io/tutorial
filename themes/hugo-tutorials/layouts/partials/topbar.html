@@ -1,10 +1,22 @@
 <nav id="header">
   <a href="{{ .Site.BaseURL }}" class="brand">
-    <img src="{{ .Site.BaseURL }}/images/dgraph.svg?2" alt="dgraph" class="logo" />
+    <img src="{{ .Site.BaseURL }}/images/dgraph.svg" alt="dgraph" class="logo" />
     <span class="name">
       A Tour of Dgraph
     </span>
   </a>
+  <select id="tour-release" class="select-release">
+      {{ range .Site.Params.tourReleases }}
+        <option
+          value="{{ . }}"
+          {{ if (eq . $.Site.Params.thisRelease)}}
+            selected="selected"
+          {{ end }}
+        >
+          Dgraph {{ . }}
+        </option>
+      {{ end }}
+  </select>
 
   <div class="menus">
     <a href="#toggle-sidebar" data-action="toggle-sidebar" class="menu-item">
@@ -12,3 +24,60 @@
     </a>
   </div>
 </nav>
+
+<script>
+  window.DgTour = {
+    thisRelease: "{{ $.Site.Params.thisRelease }}",
+    latestRelease: "{{ $.Site.Params.latestRelease }}"
+  }
+</script>
+
+<script>
+  $('#tour-release').change(function(e) {
+    var dest = e.target.value;
+    if (dest == DgTour.thisRelease) {
+      return
+    }
+    if (dest == DgTour.latestRelease) {
+      window.location.href = "/"
+      return
+    }
+    if (dest != "master") {
+      dest = "dgraph-" + dest
+    }
+    window.location.href = "/" + dest
+  })
+</script>
+
+{{ if not (eq $.Site.Params.thisRelease $.Site.Params.latestRelease) }}
+
+<style>
+  .old-branch-alert {
+    position: fixed;
+    z-index: 1;
+    left: 40vw;
+    right: 10vw;
+    top: 5px;
+    border-radius: 8px;
+    box-shadow: -2px 2px 6px 0px rgba(0,0,0,0.75);
+    background-color: #f0ad4e;
+    padding: 4px;
+  }
+  .old-branch-alert a.btn {
+    color: #fff;
+    padding: 2px 4px;
+  }
+</style>
+<div class="old-branch-alert">
+  You are looking at the tour for Dgraph
+  <strong>{{ $.Site.Params.thisRelease }}</strong>.
+  Latest stable release is
+  <strong>{{ $.Site.Params.latestRelease }}</strong>.
+  <a href="/" class="btn btn-primary btn-small">Go to
+    <strong>
+      Dgraph {{ $.Site.Params.latestRelease }}
+    </strong>
+  </a>
+</div>
+
+{{ end }}

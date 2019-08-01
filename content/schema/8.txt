@@ -1,3 +1,4 @@
+# TODO: Change this to the new TYPE System.
 {
   delete {
     # Delete a single triple
