@@ -13,7 +13,18 @@ To develop and test version redirects locally run the build script:
 
 This will recompile `master` and all `dgraph-<version>` branches and store the static site content in the `published/` folder
 
-## Deploying
+## Dgraph Release Process
+
+Structure of the tour releases/version switcher must mirror the structure of the Dgraph Docs releases/versions. (Starting from Dgraph 1.0.16 onwards).
+
+### Where to make changes
+
+- All changes/updates reflecting the changes in Dgraph master should be committed into the `master` branch of this repository (`dgraph-io/tutorial`).
+- Fixes and changes for older versions of the tour should be committed into relevant `dgraph-$version` branch.
+- As part of the release process for Dgraph a new branch `dgraph-$version` must be cut here (`git checkout master; git checkout -b dgraph-<NEW_SEMVER>`).
+
+
+## Deploying to Live Site
 
 Run the build script:
 `python3 scripts/build.py`
