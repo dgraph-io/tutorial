@@ -18,12 +18,6 @@
     _:zoe <works_for> _:company1 .
     _:zoe <dgraph.type> "Person" .
 
-    _:jack <name> "Jack" .
-    _:ivy <name> "Ivy" .
-    _:zoe <name> "Zoe" .
-    _:jose <name> "Jose" .
-    _:alexei <name> "Alexei" .
-
     _:jose <works_for> _:company2 .
     _:michael <dgraph.type> "Person" .
     _:alexei <works_for> _:company2 .
