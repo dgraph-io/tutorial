@@ -97,14 +97,15 @@
       
     </title>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://tour.dgraph.io/master/css/theme.css?d9869d427652dce3acfcac0db59fc1aa" rel="stylesheet" />
     <link href="https://tour.dgraph.io/master/css/runnable.css?2aa73e4077d475dc8e9b8d61e4ea5a62" rel="stylesheet" />
     <link href="https://tour.dgraph.io/master/css/runnable-custom.css?fd581e09310956d9e7e07a71e2d31145" rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </head>
   <body>
     <main>
@@ -126,13 +127,6 @@
           
         >
           Dgraph master
-        </option>
-      
-        <option
-          value="1.1.0"
-          
-        >
-          Dgraph 1.1.0
         </option>
       
         <option
@@ -675,7 +669,7 @@ data.</p>
     <i class="fa fa-caret-down"></i> Show answer
   </a>
   <div class="expandable-content">
-    <pre><code class="language-JSON"> {
+    <pre><code class="language-JSON">    {
         &quot;set&quot;: [
             {
                 &quot;uid&quot;: &quot;_:company1&quot;,
@@ -692,34 +686,29 @@ data.</p>
             {
                 &quot;uid&quot;: &quot;_:jack&quot;,
                 &quot;works_for&quot;: { &quot;uid&quot;: &quot;_:company1&quot;},
-                &quot;dgraph.type&quot;: &quot;Person&quot;,
-                &quot;name&quot;: &quot;Jack&quot;
+                &quot;dgraph.type&quot;: &quot;Person&quot;
             },
             {
                 &quot;uid&quot;: &quot;_:ivy&quot;,
                 &quot;works_for&quot;: { &quot;uid&quot;: &quot;_:company1&quot;},
                 &quot;boss_of&quot;: { &quot;uid&quot;: &quot;_:jack&quot;},
-                &quot;dgraph.type&quot;: &quot;Person&quot;,
-                &quot;name&quot;: &quot;Ivy&quot;
+                &quot;dgraph.type&quot;: &quot;Person&quot;
             },
             {
                 &quot;uid&quot;: &quot;_:zoe&quot;,
                 &quot;works_for&quot;: { &quot;uid&quot;: &quot;_:company1&quot;},
-                &quot;dgraph.type&quot;: &quot;Person&quot;,
-                &quot;name&quot;: &quot;Zoe&quot;
+                &quot;dgraph.type&quot;: &quot;Person&quot;
             },
             {
                 &quot;uid&quot;: &quot;_:jose&quot;,
                 &quot;works_for&quot;: { &quot;uid&quot;: &quot;_:company2&quot;},
-                &quot;dgraph.type&quot;: &quot;Person&quot;,
-                &quot;name&quot;: &quot;Jose&quot;
+                &quot;dgraph.type&quot;: &quot;Person&quot;
             },
             {
                 &quot;uid&quot;: &quot;_:alexei&quot;,
                 &quot;works_for&quot;: { &quot;uid&quot;: &quot;_:company2&quot;},
                 &quot;boss_of&quot;: { &quot;uid&quot;: &quot;_:jose&quot;},
-                &quot;dgraph.type&quot;: &quot;Person&quot;,
-                &quot;name&quot;: &quot;Alexei&quot;
+                &quot;dgraph.type&quot;: &quot;Person&quot;
             }
         ]
     }
