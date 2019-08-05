@@ -1,1 +1,2 @@
 boss_of: uid @reverse .
+works_for: [uid] @reverse .
