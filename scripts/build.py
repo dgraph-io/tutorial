@@ -9,7 +9,7 @@ BASE_URL_ENV = 'TOUR_BASE_URL'
 
 def exec(*argv):
     print("$>"," ".join(argv))
-    res = sp.run(argv, capture_output=True)
+    res = sp.run(argv, stdout=sp.PIPE, stderr=sp.PIPE)
     if not res.returncode == 0:
         print('Error running', argv)
         print('StdOut:\n', res.stdout)
