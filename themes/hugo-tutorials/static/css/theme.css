@@ -180,7 +180,7 @@ html body {
   margin-bottom: 1rem;
 }
 .expandable.expanded .expandable-content {
-  max-height: 2300px;
+  max-height: 3000px;
 }
 .expandable .expandable-content {
   max-height: 0;
