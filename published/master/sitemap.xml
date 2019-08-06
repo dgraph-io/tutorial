@@ -258,11 +258,6 @@
   </url>
   
   <url>
-    <loc>https://tour.dgraph.io/master/schema/11/</loc>
-    <lastmod>2017-04-27T23:05:55+10:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://tour.dgraph.io/master/blocksvars/12/</loc>
     <lastmod>2017-05-02T11:01:12+10:00</lastmod>
   </url>
@@ -280,11 +275,6 @@
   <url>
     <loc>https://tour.dgraph.io/master/basic/13/</loc>
     <lastmod>2017-05-01T11:55:43+10:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tour.dgraph.io/master/blocksvars/14/</loc>
-    <lastmod>2017-05-02T11:01:12+10:00</lastmod>
   </url>
   
   <url>

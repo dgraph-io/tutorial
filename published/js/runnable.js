@@ -76,8 +76,10 @@ var cm;
     serverLatencyInfo,
     networkLatency
   ) {
-    const totalServerLatency = getTotalServerLatencyInMS(serverLatencyInfo);
-    const networkOnlyLatency = Math.round(networkLatency - totalServerLatency);
+    var isModal = $runnable.parents("#runnable-modal").length > 0;
+
+    var totalServerLatency = getTotalServerLatencyInMS(serverLatencyInfo);
+    var networkOnlyLatency = Math.round(networkLatency - totalServerLatency);
 
     $runnable.find(".latency-info").removeClass("hidden");
     $runnable.find(".server-latency .number").text(serverLatencyInfo.total);

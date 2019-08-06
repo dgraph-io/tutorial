@@ -7,14 +7,28 @@ import '../css/runnable.css';
 
 import javascript from 'codemirror/mode/javascript/javascript';
 
-// cm stores reference to the codemirror for the page
-var cm;
+// Stores reference to the codemirror for the page
+let codeMirror;
+
+// Key in localStorage of the server URL string.
+const SERVER_ADDR = 'tourDgraphAddr';
+
+let serverAddress = localStorage.getItem(SERVER_ADDR) || "http://localhost:8080";
+
+changeServerAddress(serverAddress);
+
+function changeServerAddress(newAddr) {
+  serverAddress = newAddr;
+  localStorage.setItem(SERVER_ADDR, newAddr);
+  $('.runnable .pane-title .url').text(newAddr);
+  $('input#inputDgraphUrl').val(newAddr);
+}
 
 function initCodeMirror($runnable) {
   $runnable.find(".CodeMirror").remove();
 
   var editableEl = $runnable.find(".query-content-editable")[0];
-  cm = CodeMirror.fromTextArea(editableEl, {
+  codeMirror = CodeMirror.fromTextArea(editableEl, {
     lineNumbers: true,
     autoCloseBrackets: true,
     lineWrapping: true,
@@ -22,7 +36,7 @@ function initCodeMirror($runnable) {
     tabSize: 2
   });
 
-  cm.on("change", function(c) {
+  codeMirror.on("change", function(c) {
     var val = c.doc.getValue();
     $runnable.attr("data-current", val);
     c.save();
@@ -84,7 +98,6 @@ function updateLatencyInformation(
   serverLatencyInfo,
   networkLatency
 ) {
-  const isModal = $runnable.parents('#runnable-modal').length > 0;
   serverLatencyInfo.total_ns = Object.values(serverLatencyInfo).reduce((x, y) => x + y, 0);
 
   const totalServerLatency =  serverLatencyInfo.total_ns / 1e6;
@@ -130,10 +143,10 @@ $(document).on('click', '.runnable [data-action="run"]', async function(e) {
   $currentRunnable.find(".output-container").removeClass("empty error");
   codeEl.text("Waiting for the server response...");
 
-  var startTime = new Date().getTime();
+  const startTime = Date.now();
 
   const method = endpoint.substring(1);
-  const stub = new dgraph.DgraphClientStub("http://localhost:8080")
+  const stub = new dgraph.DgraphClientStub(serverAddress)
   const client = new dgraph.DgraphClient(stub)
   client.setDebugMode(true)
   // TODO: this should be done once per URL, but good enough for now.
@@ -191,6 +204,24 @@ $(document).on('click', '.runnable [data-action="run"]', async function(e) {
   }
 });
 
+$(document).on('click', '.runnable a.btn-change', async function(e) {
+  e.preventDefault();
+  $('.runnable-url-modal.modal').addClass('show');
+})
+
+$(document).on('click', '.runnable-url-modal button[data-dismiss="modal"]', async function(e) {
+  $('.runnable-url-modal.modal').removeClass('show');
+})
+
+$(document).on('click', '.runnable-url-modal button[data-action=apply]', async function(e) {
+  $('.runnable-url-modal.modal').removeClass('show');
+  changeServerAddress($('input#inputDgraphUrl').val())
+})
+
+$(document).on('click', '.runnable-url-modal button[data-action=default-url]', async function(e) {
+  changeServerAddress("http://localhost:8080")
+})
+
 // Refresh code
 $(document).on("click", '.runnable [data-action="reset"]', function(e) {
   var $runnable = $(this).closest(".runnable");
@@ -209,8 +240,7 @@ $(document).on("click", '.runnable [data-action="reset"]', function(e) {
   }, 80);
 });
 
-$(document).on("click", ".runnable-content.runnable-code", () => cm.focus());
-
+$(document).on("click", ".runnable-content.runnable-code", () => codeMirror.focus());
 
 // Initialize runnables
 $(".runnable").each(function() {

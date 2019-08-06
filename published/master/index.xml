@@ -100,7 +100,7 @@ The tutorial is divided into modules. You can access the table of contents at an
       <pubDate>Mon, 15 May 2017 15:33:51 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/master/moredata/2/</guid>
-      <description>Dgraph queries and the visualization will help us understand the schema of the movies dataset.
+      <description>Dgraph queries, Schema Types and the visualization will help us understand the schema of the movies dataset.
 As you&amp;rsquo;ll see in the following pages, we can view the data from a number of perspectives; considering for example directors, movies, genres or even locations as the primary starting point.
 Let&amp;rsquo;s have a look from the perspective of directors. Kathryn Bigelow directed the early 90&amp;rsquo;s classic Point Break. We&amp;rsquo;ll begin with her and learn about the schema.</description>
     </item>
@@ -500,14 +500,15 @@ A value variable can be used in place of a UID variable, uid(&amp;lt;value-varia
     </item>
     
     <item>
-      <title>Predicate Query</title>
+      <title>Expand Predicate</title>
       <link>https://tour.dgraph.io/master/schema/9/</link>
       <pubDate>Thu, 27 Apr 2017 23:05:55 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/master/schema/9/</guid>
-      <description>For any node in the graph _predicate_ queries for the name of all outgoing edges.
-Note that this is different to a schema or intent in designing a graph because any given node might or might not have all the predicates that other nodes have.
-Something to try: query for the outgoing edges of some people from the friends data and note how some have owns_pet listed and some do not.</description>
+      <description>expand(...predicates...) is used to query for all given predicates, rather than listing them in the query. Querying
+expand(_all_)  queries returns all edges out of every node matched at that level in the query. Expand can be nested to then expand all predicates at the next level.
+We&amp;rsquo;ll see later how to use expand with variables to query for a particular set of edges.
+Note As of version v1.1 you will need to add Types in your schema for expand(_all_) to work.</description>
     </item>
     
     <item>
@@ -534,15 +535,14 @@ The full list is:
     </item>
     
     <item>
-      <title>Expand Predicate</title>
+      <title>Congratulations</title>
       <link>https://tour.dgraph.io/master/schema/10/</link>
       <pubDate>Thu, 27 Apr 2017 23:05:55 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/master/schema/10/</guid>
-      <description>expand(...predicates...) is used to query for all given predicates, rather than listing them in the query. Querying
-expand(_all_)  queries returns all edges out of every node matched at that level in the query. Expand can be nested to then expand all predicates at the next level.
-We&amp;rsquo;ll see later how to use expand with variables to query for a particular set of edges.
-Note As of version v1.1 you will need to add Types in your schema for expand(_all_) to work.</description>
+      <description>This is the end of the schema module.
+The Dgraph instance you have running for the tutorial and the lessons in the modules so far give you a sandbox to play in. Make whatever queries or changes you like until you are comfortable with the material covered so far.
+When you&amp;rsquo;re done, let&amp;rsquo;s move up to bigger datasets and see more of Dgraph&amp;rsquo;s query language.</description>
     </item>
     
     <item>
@@ -577,17 +577,6 @@ At root, we use func: and a function to find an initial set of nodes. So far we&
     </item>
     
     <item>
-      <title>Congratulations</title>
-      <link>https://tour.dgraph.io/master/schema/11/</link>
-      <pubDate>Thu, 27 Apr 2017 23:05:55 +1000</pubDate>
-      
-      <guid>https://tour.dgraph.io/master/schema/11/</guid>
-      <description>This is the end of the schema module.
-The Dgraph instance you have running for the tutorial and the lessons in the modules so far give you a sandbox to play in. Make whatever queries or changes you like until you are comfortable with the material covered so far.
-When you&amp;rsquo;re done, let&amp;rsquo;s move up to bigger datasets and see more of Dgraph&amp;rsquo;s query language.</description>
-    </item>
-    
-    <item>
       <title>GroupBy</title>
       <link>https://tour.dgraph.io/master/blocksvars/12/</link>
       <pubDate>Tue, 02 May 2017 11:01:12 +1000</pubDate>
@@ -608,14 +597,13 @@ Inside a groupby block, only aggregations are allowed and count can only be appl
     </item>
     
     <item>
-      <title>expand and _predicate_</title>
+      <title>Congratulations!</title>
       <link>https://tour.dgraph.io/master/blocksvars/13/</link>
       <pubDate>Tue, 02 May 2017 11:01:12 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/master/blocksvars/13/</guid>
-      <description>We&amp;rsquo;ve already seen expand and _predicate_. Both can be used with variables.
-Cherie Nowlan has directed movies, including the quirky Australian romantic comedy Thank God He Met Lizzie, but hasn&amp;rsquo;t acted in any movies. So a query that expands all the predicates from Cherie Nowlan will at best have name and director.film.
-If the variable held the predicates from a director who had also acted, the possible set of expanded edges would be different.</description>
+      <description>You&amp;rsquo;ve finished this lesson.
+Next up, string and geo searching. Or use the index to go to another topic.</description>
     </item>
     
     <item>
@@ -625,16 +613,6 @@ If the variable held the predicates from a director who had also acted, the poss
       
       <guid>https://tour.dgraph.io/master/basic/13/</guid>
       <description>The output graph can set names for edges in the output with aliasing.</description>
-    </item>
-    
-    <item>
-      <title>Congratulations!</title>
-      <link>https://tour.dgraph.io/master/blocksvars/14/</link>
-      <pubDate>Tue, 02 May 2017 11:01:12 +1000</pubDate>
-      
-      <guid>https://tour.dgraph.io/master/blocksvars/14/</guid>
-      <description>You&amp;rsquo;ve finished this lesson.
-Next up, string and geo searching. Or use the index to go to another topic.</description>
     </item>
     
     <item>

@@ -150,7 +150,7 @@
     position: fixed;
     z-index: 1;
     left: 40vw;
-    right: 10vw;
+    right: 100px;
     top: 5px;
     border-radius: 8px;
     box-shadow: -2px 2px 6px 0px rgba(0,0,0,0.75);
@@ -167,7 +167,7 @@
   <strong>master</strong>.
   Latest stable release is
   <strong>1.0.16</strong>.
-  <a href="/" class="btn btn-primary btn-small">Go to
+  <a href="/" class="btn btn-primary">Go to
     <strong>
       Dgraph 1.0.16
     </strong>
@@ -424,18 +424,12 @@
         
           <li>
             <a href="/master/schema/9/" class="topic">
-              Predicate Query
-            </a>
-          </li>
-        
-          <li>
-            <a href="/master/schema/10/" class="topic">
               Expand Predicate
             </a>
           </li>
         
           <li>
-            <a href="/master/schema/11/" class="topic">
+            <a href="/master/schema/10/" class="topic">
               Congratulations
             </a>
           </li>
@@ -552,12 +546,6 @@
         
           <li>
             <a href="/master/blocksvars/13/" class="topic">
-              expand and _predicate_
-            </a>
-          </li>
-        
-          <li>
-            <a href="/master/blocksvars/14/" class="topic">
               Congratulations!
             </a>
           </li>
@@ -643,7 +631,7 @@
             <a href="/master/schema/5" data-action="go-prev" class="btn btn-secondary btn-sm page-nav-link"><i class="fa fa-chevron-left"></i></a>
           
           <div class="nav-index">
-            6 / 11
+            6 / 10
           </div>
           
             <a href="/master/schema/7" data-action="go-next" class="btn btn-secondary btn-sm page-nav-link"><i class="fa fa-chevron-right"></i></a>
@@ -749,12 +737,19 @@
   </div>
 </div>
 
-<div class="modal fade runnable-url-modal" id="runnable-url-modal" tabindex="-1" role="dialog"
+<style>
+  .modal.show {
+    display: block;
+    opacity: 1;
+    background-color: rgba(0,0,0,0.3);
+  }
+</style>
+<div class="modal fade runnable-url-modal" tabindex="-1" role="dialog"
   aria-labelledby="runnable-url-modal-label" aria-hidden="true">
   <div class="modal-dialog modal-md" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="runnable-url-modal-label">Change Dgraph Alpha URLs</h5>
+        <h5 class="modal-title" id="runnable-url-modal-label">Change Dgraph Alpha URL</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -762,30 +757,17 @@
       <div class="modal-body">
         <div class="container-fluid">
           <form>
-            <table class="table table-striped">
-              <thead class="thead-dark">
-                <tr>
-                  <th scope="col">Type</th>
-                  <th scope="col" class="col-11">URL</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row" class="align-middle py-1">Alter</th>
-                  <td class="py-1">
-                    <input type="text" class="form-control" data-module="runnable-url" data-path-type="alter"
-                      data-default="http://127.0.0.1:8080/alter" placeholder="http://127.0.0.1:8080/alter">
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="form-group">
+              <label for="inputDgraphUrl">Dgraph Alpha Address</label>
+              <input type="text" class="form-control" id="inputDgraphUrl" placeholder="http://localhost:8080">
+              
+            </div>
           </form>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" id="load-defaults" class="code-btn">Load Defaults</button>
-        <button type="button" class="code-btn" data-dismiss="modal">Close</button>
-        <button type="button" id="save" class="code-btn primary" data-dismiss="modal">Save</button>
+        <button type="button" class="code-btn" data-action="default-url">Reset to Default</button>
+        <button type="button" class="code-btn" data-action="apply">Apply</button>
       </div>
     </div>
   </div>
@@ -798,7 +780,7 @@
 
     </main>
 
-    <script src="https://tour.dgraph.io/master/js/build/dgraph-tour.js?c2bdf290552c283eecf18a072d1c1bde"></script>
+    <script src="https://tour.dgraph.io/master/js/build/dgraph-tour.js?210f471a0b68cfdd584ac5ab764df849"></script>
   </body>
 
 </html>

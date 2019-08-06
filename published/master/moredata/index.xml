@@ -29,7 +29,7 @@ Download it from that link and save into the ~/dgraph directory or by running th
       <pubDate>Mon, 15 May 2017 15:33:51 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/master/moredata/2/</guid>
-      <description>Dgraph queries and the visualization will help us understand the schema of the movies dataset.
+      <description>Dgraph queries, Schema Types and the visualization will help us understand the schema of the movies dataset.
 As you&amp;rsquo;ll see in the following pages, we can view the data from a number of perspectives; considering for example directors, movies, genres or even locations as the primary starting point.
 Let&amp;rsquo;s have a look from the perspective of directors. Kathryn Bigelow directed the early 90&amp;rsquo;s classic Point Break. We&amp;rsquo;ll begin with her and learn about the schema.</description>
     </item>

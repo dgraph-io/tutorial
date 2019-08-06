@@ -145,22 +145,11 @@ Inside a groupby block, only aggregations are allowed and count can only be appl
     </item>
     
     <item>
-      <title>expand and _predicate_</title>
+      <title>Congratulations!</title>
       <link>https://tour.dgraph.io/master/blocksvars/13/</link>
       <pubDate>Tue, 02 May 2017 11:01:12 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/master/blocksvars/13/</guid>
-      <description>We&amp;rsquo;ve already seen expand and _predicate_. Both can be used with variables.
-Cherie Nowlan has directed movies, including the quirky Australian romantic comedy Thank God He Met Lizzie, but hasn&amp;rsquo;t acted in any movies. So a query that expands all the predicates from Cherie Nowlan will at best have name and director.film.
-If the variable held the predicates from a director who had also acted, the possible set of expanded edges would be different.</description>
-    </item>
-    
-    <item>
-      <title>Congratulations!</title>
-      <link>https://tour.dgraph.io/master/blocksvars/14/</link>
-      <pubDate>Tue, 02 May 2017 11:01:12 +1000</pubDate>
-      
-      <guid>https://tour.dgraph.io/master/blocksvars/14/</guid>
       <description>You&amp;rsquo;ve finished this lesson.
 Next up, string and geo searching. Or use the index to go to another topic.</description>
     </item>
