@@ -1,9 +1,3 @@
 {
-  expand(func: allofterms(name, "Michael")) {
-    expand(_all_) {
-      expand(_all_) {
-        expand(_all_)
-      }
-    }
-  }
+	# write any query you like in the sandbox
 }
