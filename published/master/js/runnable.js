@@ -1,5 +1,11 @@
 import * as dgraph from 'dgraph-js-http'
+import $ from "jquery";
 
+window.CodeMirror = require('codemirror');
+import 'codemirror/lib/codemirror.css';
+import '../css/runnable.css';
+
+import javascript from 'codemirror/mode/javascript/javascript';
 
 // cm stores reference to the codemirror for the page
 var cm;
@@ -26,7 +32,6 @@ function initCodeMirror($runnable) {
 // updateQueryContents updates the query contents in all tabs
 function updateQueryContents($runnables, newQuery) {
   var cleanValue = newQuery.trim().replace(/\n$/g, "");
-
   $runnables.find(".query-content").text(cleanValue);
 }
 
@@ -35,8 +40,8 @@ function formatMs(ns) {
 }
 
 function getLatencyTooltipHTML(serverLatencyInfo, networkLatency) {
-  var contentHTML =
-    `
+  return `
+    <div class="latency-tooltip-container">
       <div class="measurement-row">
         <div class="measurement-key">Encoding:</div>
         <div class="measurement-val">
@@ -57,15 +62,13 @@ function getLatencyTooltipHTML(serverLatencyInfo, networkLatency) {
       </div>
       <div class="divider"></div>
       <div class="measurement-row">
-      <div class="measurement-key total">Total:</div>
-      <div class="measurement-val">
-        ${formatMs(serverLatencyInfo.total_ns)}
+        <div class="measurement-key total">Total:</div>
+        <div class="measurement-val">
+          ${formatMs(serverLatencyInfo.total_ns)}
+        </div>
       </div>
-    </div>`
-  return `
-    <div class="latency-tooltip-container">
-        ${contentHTML}
-    </div>`
+    </div>
+  `;
 }
 
 /**
@@ -81,26 +84,27 @@ function updateLatencyInformation(
   serverLatencyInfo,
   networkLatency
 ) {
-  var isModal = $runnable.parents('#runnable-modal').length > 0;
+  const isModal = $runnable.parents('#runnable-modal').length > 0;
   serverLatencyInfo.total_ns = Object.values(serverLatencyInfo).reduce((x, y) => x + y, 0);
 
-  var totalServerLatency =  serverLatencyInfo.total_ns / 1e6;
+  const totalServerLatency =  serverLatencyInfo.total_ns / 1e6;
 
-  var networkOnlyLatency = Math.round(networkLatency - totalServerLatency);
+  const networkOnlyLatency = Math.round(networkLatency - totalServerLatency);
 
   $runnable.find('.latency-info').removeClass('hidden');
   $runnable.find('.server-latency .number').text(formatMs(serverLatencyInfo.total_ns) + 'ms');
   $runnable.find('.network-latency .number').text(networkOnlyLatency + 'ms');
 
-  var tooltipHTML = getLatencyTooltipHTML(
+  const tooltipHTML = getLatencyTooltipHTML(
     serverLatencyInfo,
     networkOnlyLatency
   );
 
-  $runnable
-    .find(".server-latency-tooltip-trigger")
-    .attr("title", tooltipHTML)
-    .tooltip();
+  // TODO: where did .tooltip plugin go?
+  // $runnable
+  //   .find(".server-latency-tooltip-trigger")
+  //   .attr("title", tooltipHTML)
+  //   .tooltip();
 }
 
 function displayOutput(codeEl, res) {
@@ -108,7 +112,7 @@ function displayOutput(codeEl, res) {
 
   codeEl.text(userOutput);
   for (var i = 0; i < codeEl.length; i++) {
-    hljs.highlightBlock(codeEl[i]);
+    window.hljs.highlightBlock(codeEl[i]);
   }
 }
 
@@ -152,10 +156,8 @@ $(document).on('click', '.runnable [data-action="run"]', async function(e) {
 
   try {
     const res = await request;
-
-    var now = new Date().getTime();
-    var networkLatency = now - startTime;
-    var serverLatencyInfo = null;
+    const networkLatency = Date.now() - startTime;
+    let serverLatencyInfo = null;
     if (res.extensions && res.extensions.server_latency) {
       serverLatencyInfo = res.extensions.server_latency;
     }

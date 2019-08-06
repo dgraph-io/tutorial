@@ -71,11 +71,21 @@ There are two choices to query in both directions
     </item>
     
     <item>
-      <title>Exercise : Integrating existing data</title>
+      <title>Reverse edges Query</title>
       <link>https://tour.dgraph.io/master/schema/6/</link>
-      <pubDate>Mon, 01 May 2017 10:41:33 +1000</pubDate>
+      <pubDate>Mon, 13 May 2019 23:05:55 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/master/schema/6/</guid>
+      <description>The reverse edge of anEdge is ~anEdge.
+In this query we want to know who works for &amp;ldquo;CompanyABC&amp;rdquo; without having to add extra edges. So we use a reverse edge for the specific case. And then we use an alias &amp;ldquo;work_here&amp;rdquo; to differentiate the query result.</description>
+    </item>
+    
+    <item>
+      <title>Exercise : Integrating existing data</title>
+      <link>https://tour.dgraph.io/master/schema/7/</link>
+      <pubDate>Mon, 01 May 2017 10:41:33 +1000</pubDate>
+      
+      <guid>https://tour.dgraph.io/master/schema/7/</guid>
       <description>We&amp;rsquo;ve added a new schema and loaded some company data, but what about integrating our previous friends dataset with this company one.
 Trying to use the blank nodes from previous mutations won&amp;rsquo;t work. The blank nodes aren&amp;rsquo;t persisted in the store, so when referring to nodes created in a previous mutation, it&amp;rsquo;s the UID that&amp;rsquo;s needed. So instead of
 _:sarah &amp;lt;works_for&amp;gt; _:company1 .  it&amp;rsquo;s
@@ -84,21 +94,20 @@ _:sarah &amp;lt;works_for&amp;gt; _:company1 .  it&amp;rsquo;s
     
     <item>
       <title>Deleting Data</title>
-      <link>https://tour.dgraph.io/master/schema/7/</link>
+      <link>https://tour.dgraph.io/master/schema/8/</link>
       <pubDate>Thu, 27 Apr 2017 23:05:53 +1000</pubDate>
       
-      <guid>https://tour.dgraph.io/master/schema/7/</guid>
+      <guid>https://tour.dgraph.io/master/schema/8/</guid>
       <description>There are three deletion options inside a delete mutation.
- &amp;lt;uid&amp;gt; &amp;lt;edge&amp;gt; &amp;lt;uid&amp;gt;/&amp;quot;value&amp;quot; . Delete a single triple &amp;lt;uid&amp;gt; &amp;lt;edge&amp;gt; * . Delete all triples for a given edge &amp;lt;uid&amp;gt; * * . Delete all triples for a given node  Note In order to delete with S * * pattern. You need to have a Type related to the node itself. See: Type System
- The examples given here are not complete.</description>
+ &amp;lt;uid&amp;gt; &amp;lt;edge&amp;gt; &amp;lt;uid&amp;gt;/&amp;quot;value&amp;quot; . Delete a single triple &amp;lt;uid&amp;gt; &amp;lt;edge&amp;gt; * . Delete all triples for a given edge &amp;lt;uid&amp;gt; * * . Delete all triples for a given node  The examples given here are not complete. Uids assigned on your instance would be unique. Try something out; you&amp;rsquo;re not going to hurt anyone, just delete their friends.</description>
     </item>
     
     <item>
       <title>Predicate Query</title>
-      <link>https://tour.dgraph.io/master/schema/8/</link>
+      <link>https://tour.dgraph.io/master/schema/9/</link>
       <pubDate>Thu, 27 Apr 2017 23:05:55 +1000</pubDate>
       
-      <guid>https://tour.dgraph.io/master/schema/8/</guid>
+      <guid>https://tour.dgraph.io/master/schema/9/</guid>
       <description>For any node in the graph _predicate_ queries for the name of all outgoing edges.
 Note that this is different to a schema or intent in designing a graph because any given node might or might not have all the predicates that other nodes have.
 Something to try: query for the outgoing edges of some people from the friends data and note how some have owns_pet listed and some do not.</description>
@@ -106,21 +115,22 @@ Something to try: query for the outgoing edges of some people from the friends d
     
     <item>
       <title>Expand Predicate</title>
-      <link>https://tour.dgraph.io/master/schema/9/</link>
-      <pubDate>Thu, 27 Apr 2017 23:05:55 +1000</pubDate>
-      
-      <guid>https://tour.dgraph.io/master/schema/9/</guid>
-      <description>expand(...predicates...) is used to query for all given predicates, rather than listing them in the query. Calling
-expand(_all_)  queries for all edges out of every node matched at that level in the query. Expand can be nested to then expand all predicates at the next level.
-We&amp;rsquo;ll see later how to use expand with variables to query for a particular set of edges.</description>
-    </item>
-    
-    <item>
-      <title>Congratulations</title>
       <link>https://tour.dgraph.io/master/schema/10/</link>
       <pubDate>Thu, 27 Apr 2017 23:05:55 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/master/schema/10/</guid>
+      <description>expand(...predicates...) is used to query for all given predicates, rather than listing them in the query. Querying
+expand(_all_)  queries returns all edges out of every node matched at that level in the query. Expand can be nested to then expand all predicates at the next level.
+We&amp;rsquo;ll see later how to use expand with variables to query for a particular set of edges.
+Note As of version v1.1 you will need to add Types in your schema for expand(_all_) to work.</description>
+    </item>
+    
+    <item>
+      <title>Congratulations</title>
+      <link>https://tour.dgraph.io/master/schema/11/</link>
+      <pubDate>Thu, 27 Apr 2017 23:05:55 +1000</pubDate>
+      
+      <guid>https://tour.dgraph.io/master/schema/11/</guid>
       <description>This is the end of the schema module.
 The Dgraph instance you have running for the tutorial and the lessons in the modules so far give you a sandbox to play in. Make whatever queries or changes you like until you are comfortable with the material covered so far.
 When you&amp;rsquo;re done, let&amp;rsquo;s move up to bigger datasets and see more of Dgraph&amp;rsquo;s query language.</description>
