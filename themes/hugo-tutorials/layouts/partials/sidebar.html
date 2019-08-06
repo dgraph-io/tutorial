@@ -1,4 +1,7 @@
 {{ $sections := .Site.Home.Sections }}
+<style>
+  .hidden { opacity: 0; } 
+ </style>
 <aside id="sidebar" class="hidden">
   {{ range $.Site.Menus.main }}
   <ul class="categories">

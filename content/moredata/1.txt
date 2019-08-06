@@ -1,3 +1,5 @@
+# Define Directives and index
+
 director.film: [uid] @reverse .
 genre: [uid] @reverse .
 initial_release_date: dateTime @index(year) .
