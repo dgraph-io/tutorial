@@ -7,6 +7,10 @@ import golang from 'highlight.js/lib/languages/go';
 import java from 'highlight.js/lib/languages/java';
 import 'highlight.js/styles/default.css';
 
+import '../css/theme.css';
+
+window.hljs = hljs;
+
 hljs.registerLanguage('go', golang);
 hljs.registerLanguage('java', java);
 
