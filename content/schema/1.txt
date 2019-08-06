@@ -16,5 +16,5 @@ type Company {
 
 industry: string @index(term) .
 boss_of: [uid] .
-name: string @index(exact) .
+name: string @index(exact, term) .
 works_for: [uid] .
