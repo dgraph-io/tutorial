@@ -63,6 +63,11 @@ document.addEventListener('keydown', function (e) {
     return;
   }
 
+  if (document.activeElement instanceof HTMLInputElement) {
+    // An input field is focused. Do not intercept arrow keys.
+    return;
+  }
+
   var nextHref = null;
   switch (e.keyCode) {
     case 39:
