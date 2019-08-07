@@ -675,7 +675,7 @@ type Company {
 
 industry: string @index(term) .
 boss_of: [uid] .
-name: string @index(exact) .
+name: string @index(exact, term) .
 works_for: [uid] .
 " data-current="# Define Types
 
@@ -695,7 +695,7 @@ type Company {
 
 industry: string @index(term) .
 boss_of: [uid] .
-name: string @index(exact) .
+name: string @index(exact, term) .
 works_for: [uid] .
 " endpoint="/alter" data-dirty="false">
   <div class="runnable-pane runnable-pane-query">
@@ -740,7 +740,7 @@ type Company {
 
 industry: string @index(term) .
 boss_of: [uid] .
-name: string @index(exact) .
+name: string @index(exact, term) .
 works_for: [uid] .
 </textarea>
       </div>
@@ -827,7 +827,7 @@ works_for: [uid] .
 
     </main>
 
-    <script src="https://tour.dgraph.io/master/js/build/dgraph-tour.js?210f471a0b68cfdd584ac5ab764df849"></script>
+    <script src="https://tour.dgraph.io/master/js/build/dgraph-tour.js?6aec6e1a029d764cfc1f4b491bb7c502"></script>
   </body>
 
 </html>

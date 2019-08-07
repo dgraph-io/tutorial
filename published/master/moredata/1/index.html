@@ -670,7 +670,7 @@ functions require particular indexes.</p>
 
         <div class="page-nav">
           
-            <a href="/master/schema/11" data-action="go-prev" class="btn btn-secondary btn-sm page-nav-link"><i class="fa fa-chevron-left"></i></a>
+            <a href="/master/schema/10" data-action="go-prev" class="btn btn-secondary btn-sm page-nav-link"><i class="fa fa-chevron-left"></i></a>
           
           <div class="nav-index">
             1 / 2
@@ -690,13 +690,13 @@ functions require particular indexes.</p>
 director.film: [uid] @reverse .
 genre: [uid] @reverse .
 initial_release_date: dateTime @index(year) .
-name: string @index(term) @lang .
+name: string @index(exact, term) @lang .
 " data-current="# Define Directives and index
 
 director.film: [uid] @reverse .
 genre: [uid] @reverse .
 initial_release_date: dateTime @index(year) .
-name: string @index(term) @lang .
+name: string @index(exact, term) @lang .
 " endpoint="/alter" data-dirty="false">
   <div class="runnable-pane runnable-pane-query">
     <div class="topbar">
@@ -727,7 +727,7 @@ name: string @index(term) @lang .
 director.film: [uid] @reverse .
 genre: [uid] @reverse .
 initial_release_date: dateTime @index(year) .
-name: string @index(term) @lang .
+name: string @index(exact, term) @lang .
 </textarea>
       </div>
     </div>
@@ -813,7 +813,7 @@ name: string @index(term) @lang .
 
     </main>
 
-    <script src="https://tour.dgraph.io/master/js/build/dgraph-tour.js?210f471a0b68cfdd584ac5ab764df849"></script>
+    <script src="https://tour.dgraph.io/master/js/build/dgraph-tour.js?6aec6e1a029d764cfc1f4b491bb7c502"></script>
   </body>
 
 </html>
