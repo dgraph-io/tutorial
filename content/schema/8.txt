@@ -1,14 +1,15 @@
 # TODO: Change this to the new TYPE System.
 {
   delete {
-    # Delete a single triple
+    # Delete a single triple.
     <0x1c3eb> <name> "Steven" .
     <0x1c3eb> <age> "38" .
+    # Note: You need to know the value/Object to use "S P O". Otherwise use "S P *".
 
-    # Delete all triples for a given edge
+    # Delete all triples for a given edge "S P *".
     <0x1c3eb> <friend> * .
 
-    # Delete all triples for a given node
+    # Delete all triples for a given node.
     <0x1c3eb> * * .
   }
 }
