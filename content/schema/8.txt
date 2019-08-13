@@ -9,7 +9,7 @@
     # Delete all triples for a given edge "S P *".
     <0x1c3eb> <friend> * .
 
-    # Delete all triples for a given node.
+    # Delete all triples for a given node "S * *".
     <0x1c3eb> * * .
   }
 }
