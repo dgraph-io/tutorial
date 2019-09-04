@@ -121,6 +121,13 @@
         </option>
       
         <option
+          value="1.1.0"
+          
+        >
+          Dgraph 1.1.0
+        </option>
+      
+        <option
           value="1.0.16"
           
         >
@@ -139,7 +146,7 @@
 <script>
   window.DgTour = {
     thisRelease: "master",
-    latestRelease: "1.0.16"
+    latestRelease: "1.1.0"
   }
 </script>
 
@@ -166,10 +173,10 @@
   You are looking at the tour for Dgraph
   <strong>master</strong>.
   Latest stable release is
-  <strong>1.0.16</strong>.
+  <strong>1.1.0</strong>.
   <a href="/" class="btn btn-primary">Go to
     <strong>
-      Dgraph 1.0.16
+      Dgraph 1.1.0
     </strong>
   </a>
 </div>
@@ -712,28 +719,30 @@ to hurt anyone, just delete their friends.</p>
 <div class="runnable" data-initial="# TODO: Change this to the new TYPE System.
 {
   delete {
-    # Delete a single triple
+    # Delete a single triple.
     &lt;0x1c3eb&gt; &lt;name&gt; &#34;Steven&#34; .
     &lt;0x1c3eb&gt; &lt;age&gt; &#34;38&#34; .
+    # Note: You need to know the value/Object to use &#34;S P O&#34;. Otherwise use &#34;S P *&#34;.
 
-    # Delete all triples for a given edge
+    # Delete all triples for a given edge &#34;S P *&#34;.
     &lt;0x1c3eb&gt; &lt;friend&gt; * .
 
-    # Delete all triples for a given node
+    # Delete all triples for a given node &#34;S * *&#34;.
     &lt;0x1c3eb&gt; * * .
   }
 }
 " data-current="# TODO: Change this to the new TYPE System.
 {
   delete {
-    # Delete a single triple
+    # Delete a single triple.
     &lt;0x1c3eb&gt; &lt;name&gt; &#34;Steven&#34; .
     &lt;0x1c3eb&gt; &lt;age&gt; &#34;38&#34; .
+    # Note: You need to know the value/Object to use &#34;S P O&#34;. Otherwise use &#34;S P *&#34;.
 
-    # Delete all triples for a given edge
+    # Delete all triples for a given edge &#34;S P *&#34;.
     &lt;0x1c3eb&gt; &lt;friend&gt; * .
 
-    # Delete all triples for a given node
+    # Delete all triples for a given node &#34;S * *&#34;.
     &lt;0x1c3eb&gt; * * .
   }
 }
@@ -765,14 +774,15 @@ to hurt anyone, just delete their friends.</p>
         <textarea class="query-content-editable"># TODO: Change this to the new TYPE System.
 {
   delete {
-    # Delete a single triple
+    # Delete a single triple.
     &lt;0x1c3eb&gt; &lt;name&gt; &#34;Steven&#34; .
     &lt;0x1c3eb&gt; &lt;age&gt; &#34;38&#34; .
+    # Note: You need to know the value/Object to use &#34;S P O&#34;. Otherwise use &#34;S P *&#34;.
 
-    # Delete all triples for a given edge
+    # Delete all triples for a given edge &#34;S P *&#34;.
     &lt;0x1c3eb&gt; &lt;friend&gt; * .
 
-    # Delete all triples for a given node
+    # Delete all triples for a given node &#34;S * *&#34;.
     &lt;0x1c3eb&gt; * * .
   }
 }
