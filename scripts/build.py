@@ -63,10 +63,7 @@ def buildBranch(branch, dest, jsonData):
     runHugo(dest)
 
 def buildAll(releases):
-    # TODO: once 1.1.0 is released remove the line below
-    #       and uncomment one after it
-    latestRelease = "1.0.16"
-    # latestRelease = releases[1]
+    latestRelease = releases[1]
     print('Latest Release (recommended to users): ', latestRelease)
 
     def jsonFor(version, latestRelease, releases):
