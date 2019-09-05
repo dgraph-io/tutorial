@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.55.6" />
     <meta
   name="description"
   
@@ -608,8 +608,9 @@ average number of actors in movies directed by him.</p>
   <a data-action="toggle-expandable" href="#expand">
     <i class="fa fa-caret-down"></i> Show answer
   </a>
-  <div class="expandable-content">
-    <pre><code>{
+  <div class="expandable-content"></p>
+
+<pre><code>{
   ID as var(func: allofterms(name@en, &quot;Steven Spielberg&quot;)) {
     director.film {
       num_actors as count(starring)
@@ -625,9 +626,8 @@ average number of actors in movies directed by him.</p>
 }
 </code></pre>
 
-  </div>
-</div>
-</p>
+<p></div>
+</div></p>
 
 <p>After you have the query working, try changing the second block to use the wrong UID&rsquo;s and see what happens.  For example, change <code>avs</code> to query for a different director instead of using <code>ID</code> - the definition of variable <code>ID</code> would also need to be removed, otherwise it would be defined but not used.</p>
 

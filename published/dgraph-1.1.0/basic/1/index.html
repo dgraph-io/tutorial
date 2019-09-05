@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.55.6" />
     <meta
   name="description"
   
@@ -595,13 +595,11 @@
           <h1 class="lesson-heading">Hello World</h1>
 
           <div>
-            
-
-<div class="notices note" >
-  <span class="type">Note</span> <p>For the following queries to run, you should have loaded data in the <a href="/intro/3/">introduction</a>.</p>
+            <div class="notices note" >
+  <span class="type">Note</span> 
+  For the following queries to run, you should have loaded data in the [introduction](../../intro/3/).
 
 </div>
-
 
 <p>Let’s have a look at a hello world query in GraphQL+-.</p>
 
@@ -613,40 +611,38 @@ and listed outgoing edges from those nodes.</p>
 <p>Dgraph identifies each node with a unique internal id, its UID. A UID is not an edge, but can it be returned in a query with <code>uid</code>.  If you already know a node&rsquo;s UID, it can be retrieved with <code>func: uid(&lt;uid-number&gt;)</code>.</p>
 
 <p>Something to try : Change the query to select someone else.
-You can check the <a href="/intro/4">sample data</a> again.</p>
+You can check the <a href="../../intro/4">sample data</a> again.</p>
 
 <div class="expandable">
   <a data-action="toggle-expandable" href="#expand">
     <i class="fa fa-caret-down"></i> Show answer
   </a>
   <div class="expandable-content">
-    <p>Find a name in the data and try</p>
-
-<pre><code>{
-  find_someone(func: eq(name, &quot;...name in here...&quot;)) {
+    
+Find a name in the data and try
+```
+{
+  find_someone(func: eq(name, "...name in here...")) {
     name
     age
   }
 }
-</code></pre>
-
-<p>Or look at the <code>UID</code>s in the data and try</p>
-
-<pre><code>{
+```
+Or look at the `UID`s in the data and try
+```
+{
   find_someone(func: uid(...uid number here...)) {
     name
     age
   }
 }
-</code></pre>
-
-<p>You can edit the queries and try whatever you like.  When there are
+```
+You can edit the queries and try whatever you like.  When there are
 answers like this, cut and paste them into the query panel, then edit and
-run them.</p>
+run them.
 
   </div>
 </div>
-
 
 <p>The tutorial will handle the running of the query for you, so
 just focus on the query text.  You can also learn about <a href="https://docs.dgraph.io/get-started/#step-3-run-queries">posting

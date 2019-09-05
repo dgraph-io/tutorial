@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.55.6" />
     <meta
   name="description"
   
@@ -688,13 +688,11 @@ to hurt anyone, just delete their friends.</p>
     }
 </code></pre>
 
-
-
 <div class="notices tip" >
-  <span class="type">Tip</span> <p>The JSON example may end up helping you better understand the format in RDF.</p>
+  <span class="type">Tip</span> 
+The JSON example may end up helping you better understand the format in RDF.
 
 </div>
-
 
           </div>
         </div>
@@ -724,6 +722,9 @@ to hurt anyone, just delete their friends.</p>
     &lt;0x1c3eb&gt; &lt;age&gt; &#34;38&#34; .
     # Note: You need to know the value/Object to use &#34;S P O&#34;. Otherwise use &#34;S P *&#34;.
 
+    # Delete an edge for a given node &#34;S P O&#34;.
+    &lt;0x1c3eb&gt; &lt;friend&gt; &lt;1x1c2a1&gt; .
+
     # Delete all triples for a given edge &#34;S P *&#34;.
     &lt;0x1c3eb&gt; &lt;friend&gt; * .
 
@@ -738,6 +739,9 @@ to hurt anyone, just delete their friends.</p>
     &lt;0x1c3eb&gt; &lt;name&gt; &#34;Steven&#34; .
     &lt;0x1c3eb&gt; &lt;age&gt; &#34;38&#34; .
     # Note: You need to know the value/Object to use &#34;S P O&#34;. Otherwise use &#34;S P *&#34;.
+
+    # Delete an edge for a given node &#34;S P O&#34;.
+    &lt;0x1c3eb&gt; &lt;friend&gt; &lt;1x1c2a1&gt; .
 
     # Delete all triples for a given edge &#34;S P *&#34;.
     &lt;0x1c3eb&gt; &lt;friend&gt; * .
@@ -778,6 +782,9 @@ to hurt anyone, just delete their friends.</p>
     &lt;0x1c3eb&gt; &lt;name&gt; &#34;Steven&#34; .
     &lt;0x1c3eb&gt; &lt;age&gt; &#34;38&#34; .
     # Note: You need to know the value/Object to use &#34;S P O&#34;. Otherwise use &#34;S P *&#34;.
+
+    # Delete an edge for a given node &#34;S P O&#34;.
+    &lt;0x1c3eb&gt; &lt;friend&gt; &lt;1x1c2a1&gt; .
 
     # Delete all triples for a given edge &#34;S P *&#34;.
     &lt;0x1c3eb&gt; &lt;friend&gt; * .
