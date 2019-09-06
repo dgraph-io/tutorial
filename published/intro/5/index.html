@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.55.6" />
     <meta
   name="description"
   
@@ -601,7 +601,7 @@
 
 <p>In Dgraph the mutation operations consist of two patterns: blank UID reference or explicit UID reference.</p>
 
-<p>This introduction is important for the coming exercises, many of the concepts presented here will be repeated in the next few chapters. (For example, <a href="https://tour.dgraph.io/schema/2/">Adding Data - mutating data</a> and <a href="https://tour.dgraph.io/schema/6/">Exercise : Integrating existing data</a>.)</p>
+<p>This introduction is important for the coming exercises, many of the concepts presented here will be repeated in the next few chapters. (For example, <a href="../../schema/2/">Adding Data - mutating data</a> and <a href="../../schema/6/">Exercise : Integrating existing data</a>.)</p>
 
 <h2 id="blank-uid">Blank UID</h2>
 
@@ -631,13 +631,11 @@
 
 <p>Blank nodes are covered in more detail in the <a href="https://docs.dgraph.io/mutations/#blank-nodes-and-uid">mutation docs</a>.</p>
 
-
-
 <div class="notices note" >
-  <span class="type">Note</span> <p>In Dgraph&rsquo;s Bulk loader any typo will be considered blank UID reference. Because Bulk loader is a tool for populate data from scratch. Different from Live Loader.</p>
+  <span class="type">Note</span> 
+In Dgraph's Bulk loader any typo will be considered blank UID reference. Because Bulk loader is a tool for populate data from scratch. Different from Live Loader.
 
 </div>
-
 
 <h2 id="explicit-uid">Explicit UID</h2>
 
@@ -664,13 +662,11 @@
 }
 </code></pre>
 
-
-
 <div class="notices note" >
-  <span class="type">Note</span> <p>You should only reference existing UIDs. If you write a mutation with an unallocated UID, Dgraph will return an error. For new nodes, use blank nodes for Dgraph to allocate a new UID.</p>
+  <span class="type">Note</span> 
+You should only reference existing UIDs. If you write a mutation with an unallocated UID, Dgraph will return an error. For new nodes, use blank nodes for Dgraph to allocate a new UID.
 
 </div>
-
 
           </div>
         </div>

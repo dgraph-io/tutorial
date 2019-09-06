@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.55.6" />
     <meta
   name="description"
   
@@ -621,8 +621,9 @@
   <a data-action="toggle-expandable" href="#expand">
     <i class="fa fa-caret-down"></i> Show answer
   </a>
-  <div class="expandable-content">
-    <pre><code>curl -H &quot;Content-Type: application/rdf&quot; localhost:8080/mutate?commitNow=true -XPOST -d $'
+  <div class="expandable-content"></p>
+
+<pre><code>curl -H &quot;Content-Type: application/rdf&quot; localhost:8080/mutate?commitNow=true -XPOST -d $'
 {
   set {
 
@@ -664,9 +665,8 @@
 }' | python -m json.tool | less
 </code></pre>
 
-  </div>
-</div>
-</p>
+<p></div>
+</div></p>
 
 <h3 id="add-multiple-attributes-to-a-third-single-node">Add multiple attributes to a third single node</h3>
 
@@ -684,15 +684,15 @@ _:MyNode &lt;predicate3&gt; &lt;0x0f43&gt; ( bar=bar, and=3 ) .
   <a data-action="toggle-expandable" href="#expand">
     <i class="fa fa-caret-down"></i> Show answer
   </a>
-  <div class="expandable-content">
-    <pre><code>_:MyNode &lt;Morning&gt; &lt;0x0f43&gt; ( foo=true, and=1 , since=2006-02-02T13:01:09 ) .
+  <div class="expandable-content"></p>
+
+<pre><code>_:MyNode &lt;Morning&gt; &lt;0x0f43&gt; ( foo=true, and=1 , since=2006-02-02T13:01:09 ) .
 _:MyNode &lt;Evening&gt; &lt;0x0f43&gt; ( bar=false, and=2, since=2006-02-02T13:01:09 ) .
 _:MyNode &lt;Night&gt;   &lt;0x22&gt;   ( bar=true, and=3,  since=2006-02-02T13:01:09 ) .
 </code></pre>
 
-  </div>
-</div>
-</p>
+<p></div>
+</div></p>
 
 <p>If you do the same mutation above but using the same predicates instead of unique one. You gonna override the Edge attribute. Line by line. So you must to use distinct predicates.</p>
 

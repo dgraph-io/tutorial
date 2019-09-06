@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.55.6" />
     <meta
   name="description"
   
@@ -633,8 +633,9 @@
   <a data-action="toggle-expandable" href="#expand">
     <i class="fa fa-caret-down"></i> Show answer
   </a>
-  <div class="expandable-content">
-    <p>To solve this, you&rsquo;ll need to</p>
+  <div class="expandable-content"></p>
+
+<p>To solve this, you&rsquo;ll need to</p>
 
 <ul>
 <li>work out how to query for all directors - what have directors done that make them directors?</li>
@@ -645,17 +646,17 @@
 <li>for something extra, try using <code>since</code> to work out how many days since the movie was released (or how many days till release, for some)</li>
 </ul>
 
-  </div>
-</div>
-</p>
+<p></div>
+</div></p>
 
 <p>Spoiler alert:
 <div class="expandable">
   <a data-action="toggle-expandable" href="#expand">
     <i class="fa fa-caret-down"></i> Show answer
   </a>
-  <div class="expandable-content">
-    <pre><code>{ # Get all directors
+  <div class="expandable-content"></p>
+
+<pre><code>{ # Get all directors
   var(func: has(director.film)) @cascade {
     director.film {
       date as initial_release_date
@@ -679,9 +680,8 @@
 }
 </code></pre>
 
-  </div>
-</div>
-</p>
+<p></div>
+</div></p>
 
           </div>
         </div>

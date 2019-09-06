@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.55.6" />
     <meta
   name="description"
   
@@ -595,7 +595,7 @@
           <h1 class="lesson-heading">Indexes</h1>
 
           <div>
-            <p>When Dgraph is searching for strings, dates, or other values based on a filter, it needs an index to make the search efficient.  We&rsquo;ve already seen examples of how to specify the indexes in a <a href="/moredata/1">schema mutation</a>.</p>
+            <p>When Dgraph is searching for strings, dates, or other values based on a filter, it needs an index to make the search efficient.  We&rsquo;ve already seen examples of how to specify the indexes in a <a href="../../moredata/1">schema mutation</a>.</p>
 
 <p><code>int</code>, <code>float</code>, <code>geo</code> and <code>date</code> have default indexes, but <code>string</code> has options of what index types to choose.  Multiple indexes can be built for the same <code>string</code> valued predicate.</p>
 
@@ -613,7 +613,7 @@
 
 <p>Apply the schema mutation to add the indexes to the movie data.  It will take a few minutes for Dgraph to compute those indexes for all the movie data.  Let the mutation run and move on once it&rsquo;s finished.</p>
 
-<p>You might find Docker stops your Dgraph process during the mutation.  That might be a memory issue - increase the amount of memory Docker allows and then restart Dgraph, load the <a href="/moredata/1">intial schema and data</a>, then apply this mutation.</p>
+<p>You might find Docker stops your Dgraph process during the mutation.  That might be a memory issue - increase the amount of memory Docker allows and then restart Dgraph, load the <a href="../../moredata/1">intial schema and data</a>, then apply this mutation.</p>
 
           </div>
         </div>

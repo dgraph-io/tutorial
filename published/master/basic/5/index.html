@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.53" />
+    <meta name="generator" content="Hugo 0.55.6" />
     <meta
   name="description"
   
@@ -647,10 +647,12 @@ friends&rsquo; friends.</p>
     <i class="fa fa-caret-down"></i> Show answer
   </a>
   <div class="expandable-content">
-    <p>Query Michael&rsquo;s friends&rsquo; pets:</p>
+    
+Query Michael's friends' pets:
 
-<pre><code>{
-  michael_friends_pets(func: eq(name, &quot;Michael&quot;)) {
+```
+{
+  michael_friends_pets(func: eq(name, "Michael")) {
     name
     age
     friend {
@@ -661,12 +663,12 @@ friends&rsquo; friends.</p>
     }
   }
 }
-</code></pre>
+```
 
-<p>Query Michael&rsquo;s friends&rsquo; friends:</p>
-
-<pre><code>{
-  michael_friends_friends(func: allofterms(name, &quot;Michael&quot;)) {
+Query Michael's friends' friends:
+```
+{
+  michael_friends_friends(func: allofterms(name, "Michael")) {
     name
     age
     friend {
@@ -677,11 +679,10 @@ friends&rsquo; friends.</p>
     }
   }
 }
-</code></pre>
+```  
 
   </div>
 </div>
-
 
 <p>The idea is to formulate the query as a traversal
 through the graph, following edges to the desired data.  The <code>uid</code>&rsquo;s in the JSON output allow
