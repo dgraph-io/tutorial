@@ -1,14 +1,3 @@
-<meta
-  name="description"
-  {{ with .Description }}
-    content="{{ . }}"
-  {{ else }}
-    {{ with .Site.Params.description }}
-      content="{{ . }}"
-    {{ end }}
-  {{ end }}
-  >
-
 <link
   rel="manifest"
   href="{{ .Site.BaseURL }}/images/favicons/manifest.json"
