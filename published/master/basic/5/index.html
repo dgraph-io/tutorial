@@ -3,11 +3,10 @@
 
 
 <!DOCTYPE html>
-<html lang="en" class="js csstransforms3d">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.55.6" />
     <meta
   name="description"
   
@@ -185,8 +184,8 @@
 
 
 <style>
-  .hidden { opacity: 0; } 
- </style>
+  .hidden { opacity: 0; }
+</style>
 <aside id="sidebar" class="hidden">
   
   <ul class="categories">
@@ -194,7 +193,6 @@
       <div class="category">
         Introduction
       </div>
-
 
       <ul class="topics">
         
@@ -255,7 +253,6 @@
       <div class="category">
         Basic GraphQL&#43;- features
       </div>
-
 
       <ul class="topics">
         
@@ -377,7 +374,6 @@
         Schema - describe your data
       </div>
 
-
       <ul class="topics">
         
         
@@ -450,7 +446,6 @@
         Data, More Data
       </div>
 
-
       <ul class="topics">
         
         
@@ -474,7 +469,6 @@
       <div class="category">
         Query Blocks, Query Variables and Aggregation
       </div>
-
 
       <ul class="topics">
         
@@ -566,7 +560,6 @@
         Search - more ways to find nodes
       </div>
 
-
       <ul class="topics">
         
         
@@ -647,12 +640,10 @@ friends&rsquo; friends.</p>
     <i class="fa fa-caret-down"></i> Show answer
   </a>
   <div class="expandable-content">
-    
-Query Michael's friends' pets:
+    <p>Query Michael&rsquo;s friends&rsquo; pets:</p>
 
-```
-{
-  michael_friends_pets(func: eq(name, "Michael")) {
+<pre><code>{
+  michael_friends_pets(func: eq(name, &quot;Michael&quot;)) {
     name
     age
     friend {
@@ -663,12 +654,12 @@ Query Michael's friends' pets:
     }
   }
 }
-```
+</code></pre>
 
-Query Michael's friends' friends:
-```
-{
-  michael_friends_friends(func: allofterms(name, "Michael")) {
+<p>Query Michael&rsquo;s friends&rsquo; friends:</p>
+
+<pre><code>{
+  michael_friends_friends(func: allofterms(name, &quot;Michael&quot;)) {
     name
     age
     friend {
@@ -679,10 +670,11 @@ Query Michael's friends' friends:
     }
   }
 }
-```  
+</code></pre>
 
   </div>
 </div>
+
 
 <p>The idea is to formulate the query as a traversal
 through the graph, following edges to the desired data.  The <code>uid</code>&rsquo;s in the JSON output allow

@@ -3,11 +3,10 @@
 
 
 <!DOCTYPE html>
-<html lang="en" class="js csstransforms3d">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.55.6" />
     <meta
   name="description"
   
@@ -185,8 +184,8 @@
 
 
 <style>
-  .hidden { opacity: 0; } 
- </style>
+  .hidden { opacity: 0; }
+</style>
 <aside id="sidebar" class="hidden">
   
   <ul class="categories">
@@ -194,7 +193,6 @@
       <div class="category">
         Introduction
       </div>
-
 
       <ul class="topics">
         
@@ -255,7 +253,6 @@
       <div class="category">
         Basic GraphQL&#43;- features
       </div>
-
 
       <ul class="topics">
         
@@ -377,7 +374,6 @@
         Schema - describe your data
       </div>
 
-
       <ul class="topics">
         
         
@@ -450,7 +446,6 @@
         Data, More Data
       </div>
 
-
       <ul class="topics">
         
         
@@ -474,7 +469,6 @@
       <div class="category">
         Query Blocks, Query Variables and Aggregation
       </div>
-
 
       <ul class="topics">
         
@@ -566,7 +560,6 @@
         Search - more ways to find nodes
       </div>
 
-
       <ul class="topics">
         
         
@@ -644,10 +637,8 @@ of those actors list the movies they have made with either director.</p>
     <i class="fa fa-caret-down"></i> Show answer
   </a>
   <div class="expandable-content">
-    
-```
-{
-  var(func: allofterms(name@en, "Peter Jackson")) {
+    <pre><code>{
+  var(func: allofterms(name@en, &quot;Peter Jackson&quot;)) {
     F_PJ as director.film {
       starring{
         A_PJ as performance.actor
@@ -655,7 +646,7 @@ of those actors list the movies they have made with either director.</p>
     }
   }
 
-   var(func: allofterms(name@en, "Martin Scorsese")) {
+   var(func: allofterms(name@en, &quot;Martin Scorsese&quot;)) {
     F_MS as director.film {
       starring{
         A_MS as performance.actor
@@ -672,11 +663,13 @@ of those actors list the movies they have made with either director.</p>
     }
   }
 }
-```  
-The syntax `uid(F_PJ, F_MS)` means the UIDs in either `F_PJ` or `F_MS` and is equivalent to `uid(F_PJ) OR uid(F_MS)`.
+</code></pre>
+
+<p>The syntax <code>uid(F_PJ, F_MS)</code> means the UIDs in either <code>F_PJ</code> or <code>F_MS</code> and is equivalent to <code>uid(F_PJ) OR uid(F_MS)</code>.</p>
 
   </div>
 </div>
+
 
           </div>
         </div>

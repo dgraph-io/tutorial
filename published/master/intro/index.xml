@@ -6,7 +6,7 @@
     <description>Recent content in Intros on A Tour of Dgraph</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 Nov 2018 22:28:55 +1000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Apr 2017 21:52:39 +1000</lastBuildDate>
     
 	<atom:link href="https://tour.dgraph.io/master/intro/index.xml" rel="self" type="application/rss+xml" />
     
@@ -73,7 +73,7 @@ This introduction is important for the coming exercises, many of the concepts pr
       <guid>https://tour.dgraph.io/master/intro/6/</guid>
       <description>We&amp;rsquo;ve started Dgraph, but first things first: What is a graph and what has that got to do with databases?
 Graphs describe objects and the interconnections between them. Many people have heard of friendship graphs, or social network graphs, so let’s start there.
-Note OK, you&#39;ll have to use your imagination here. We&#39;re still building the tutorial, and we don&#39;t have the visualizations up and running just yet. By starting Dgraph, you&#39;ll have the visualization component [working just fine](http://localhost:8000).</description>
+Note OK, you&amp;rsquo;ll have to use your imagination here. We&amp;rsquo;re still building the tutorial, and we don&amp;rsquo;t have the visualizations up and running just yet. By starting Dgraph, you&amp;rsquo;ll have the visualization component working just fine.</description>
     </item>
     
     <item>

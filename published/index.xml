@@ -6,7 +6,7 @@
     <description>Recent content on A Tour of Dgraph</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 May 2019 23:05:55 +1000</lastBuildDate>
+    <lastBuildDate>Mon, 15 May 2017 15:31:59 +1000</lastBuildDate>
     
 	<atom:link href="https://tour.dgraph.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -28,7 +28,8 @@ For string the following indexes are available</description>
       <pubDate>Mon, 01 May 2017 13:45:26 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/blocksvars/1/</guid>
-      <description>Note From now on, to run the queries, you&#39;ll need to have loaded the [million triple movie dataset](../../moredata/1/).  Queries can be issued as multiples.
+      <description>Note From now on, to run the queries, you&amp;rsquo;ll need to have loaded the million triple movie dataset.
+ Queries can be issued as multiples.
 For queries labelled q1, ..., qn issued as a multiple query block, the JSON result will contain labelled answer blocks q1, ..., qn for each query.
 If a block is labelled with var, no results are returned for that query.
 Queries issued in this way are independent.</description>
@@ -64,7 +65,8 @@ Download it from that link and save into the ~/dgraph directory or by running th
       <pubDate>Wed, 26 Apr 2017 22:36:18 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/basic/1/</guid>
-      <description>Note For the following queries to run, you should have loaded data in the [introduction](../../intro/3/).  Let’s have a look at a hello world query in GraphQL+-.
+      <description>Note For the following queries to run, you should have loaded data in the introduction.
+ Let’s have a look at a hello world query in GraphQL+-.
 Every query has a name, and the result is labelled with the same name.
 The search criteria func: ... matches nodes. Function eq does what you&amp;rsquo;d expect, matching nodes with a name equalling &amp;ldquo;Michael&amp;rdquo;. The result is the matched nodes and listed outgoing edges from those nodes.</description>
     </item>
@@ -389,7 +391,7 @@ There are many functions for filtering, some of them are
       <guid>https://tour.dgraph.io/intro/6/</guid>
       <description>We&amp;rsquo;ve started Dgraph, but first things first: What is a graph and what has that got to do with databases?
 Graphs describe objects and the interconnections between them. Many people have heard of friendship graphs, or social network graphs, so let’s start there.
-Note OK, you&#39;ll have to use your imagination here. We&#39;re still building the tutorial, and we don&#39;t have the visualizations up and running just yet. By starting Dgraph, you&#39;ll have the visualization component [working just fine](http://localhost:8000).</description>
+Note OK, you&amp;rsquo;ll have to use your imagination here. We&amp;rsquo;re still building the tutorial, and we don&amp;rsquo;t have the visualizations up and running just yet. By starting Dgraph, you&amp;rsquo;ll have the visualization component working just fine.</description>
     </item>
     
     <item>
@@ -506,7 +508,7 @@ A value variable can be used in place of a UID variable, uid(&amp;lt;value-varia
       <description>expand(...predicates...) is used to query for all given predicates, rather than listing them in the query. Querying
 expand(_all_)  queries returns all edges out of every node matched at that level in the query. Expand can be nested to then expand all predicates at the next level.
 We&amp;rsquo;ll see later how to use expand with variables to query for a particular set of edges.
-Note As of version v1.1 you will need to add Types in your schema for `expand(_all_)` to work.</description>
+Note As of version v1.1 you will need to add Types in your schema for expand(_all_) to work.</description>
     </item>
     
     <item>
@@ -560,7 +562,7 @@ When you&amp;rsquo;re done, let&amp;rsquo;s move up to bigger datasets and see m
       <guid>https://tour.dgraph.io/blocksvars/11/</guid>
       <description>Write a query to find the most recently released movie by each director and order the result by the release dates.
 If you need some hints try:  Show answer  To solve this, you&amp;rsquo;ll need to
- work out how to query for all directors - what have directors done that make them directors? find the most recent release date for each director sort the results by the most recent release return the directors name, and the details of the most recent release you&amp;rsquo;ll need one query to get the directors and their latest movies, and another query to sort this to get most recent movies first for something extra, try using since to work out how many days since the movie was released (or how many days till release, for some)</description>
+ work out how to query for all directors - what have directors done that make them directors? find the most recent release date for each director sort the results by the most recent release return the directors name, and the details of the most recent release you&amp;rsquo;ll need one query to get the directors and their latest movies, and another query to sort this to get most recent movies first for something extra, try using since to work out how many days since the movie was released (or how many days till release, for some)    Spoiler alert:  Show answer  { # Get all directors var(func: has(director.</description>
     </item>
     
     <item>
@@ -634,7 +636,8 @@ In the query below, Dgraph returns all Michael&amp;rsquo;s friends, and only the
       <description>The @normalize directive
  returns only edges listed with an alias, and
  flattens the result to remove nesting
-  Tip Aliased names can be the same as the original edge.  </description>
+  Tip Aliased names can be the same as the original edge.
+ </description>
     </item>
     
     <item>
