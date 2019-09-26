@@ -15,6 +15,6 @@ type Company {
 # Define Directives and index
 
 industry: string @index(term) .
-boss_of: [uid] .
+boss_of: [uid] @reverse .
 name: string @index(exact, term) .
-works_for: [uid] .
+works_for: [uid] @reverse .
