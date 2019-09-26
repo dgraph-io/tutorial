@@ -60,6 +60,6 @@
     _:goldie <dgraph.type> "Animal" .
 
     _:perro <name> "Perro" .
-    _:goldie <dgraph.type> "Animal" .
+    _:perro <dgraph.type> "Animal" .
   }
 }
