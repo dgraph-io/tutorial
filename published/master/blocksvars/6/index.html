@@ -604,8 +604,10 @@ of those actors list the movies they have made with either director.</p>
     <i class="fa fa-caret-down"></i> Show answer
   </a>
   <div class="expandable-content">
-    <pre><code>{
-  var(func: allofterms(name@en, &quot;Peter Jackson&quot;)) {
+    
+```
+{
+  var(func: allofterms(name@en, "Peter Jackson")) {
     F_PJ as director.film {
       starring{
         A_PJ as performance.actor
@@ -613,7 +615,7 @@ of those actors list the movies they have made with either director.</p>
     }
   }
 
-   var(func: allofterms(name@en, &quot;Martin Scorsese&quot;)) {
+   var(func: allofterms(name@en, "Martin Scorsese")) {
     F_MS as director.film {
       starring{
         A_MS as performance.actor
@@ -630,13 +632,11 @@ of those actors list the movies they have made with either director.</p>
     }
   }
 }
-</code></pre>
-
-<p>The syntax <code>uid(F_PJ, F_MS)</code> means the UIDs in either <code>F_PJ</code> or <code>F_MS</code> and is equivalent to <code>uid(F_PJ) OR uid(F_MS)</code>.</p>
+```  
+The syntax `uid(F_PJ, F_MS)` means the UIDs in either `F_PJ` or `F_MS` and is equivalent to `uid(F_PJ) OR uid(F_MS)`.
 
   </div>
 </div>
-
 
           </div>
         </div>

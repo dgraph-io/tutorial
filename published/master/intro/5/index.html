@@ -622,13 +622,11 @@
 
 <p>Blank nodes are covered in more detail in the <a href="https://docs.dgraph.io/mutations/#blank-nodes-and-uid">mutation docs</a>.</p>
 
-
-
 <div class="notices note" >
-  <span class="type">Note</span> <p>In Dgraph&rsquo;s Bulk loader any typo will be considered blank UID reference. Because Bulk loader is a tool for populate data from scratch. Different from Live Loader.</p>
+  <span class="type">Note</span> 
+In Dgraph's Bulk loader any typo will be considered blank UID reference. Because Bulk loader is a tool for populate data from scratch. Different from Live Loader.
 
 </div>
-
 
 <h2 id="explicit-uid">Explicit UID</h2>
 
@@ -655,13 +653,11 @@
 }
 </code></pre>
 
-
-
 <div class="notices note" >
-  <span class="type">Note</span> <p>You should only reference existing UIDs. If you write a mutation with an unallocated UID, Dgraph will return an error. For new nodes, use blank nodes for Dgraph to allocate a new UID.</p>
+  <span class="type">Note</span> 
+You should only reference existing UIDs. If you write a mutation with an unallocated UID, Dgraph will return an error. For new nodes, use blank nodes for Dgraph to allocate a new UID.
 
 </div>
-
 
           </div>
         </div>
