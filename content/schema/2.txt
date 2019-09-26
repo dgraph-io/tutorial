@@ -25,9 +25,9 @@
     _:alexei <name> "Alexei" .
 
     _:jose <works_for> _:company2 .
-    _:michael <dgraph.type> "Person" .
+    _:jose <dgraph.type> "Person" .
     _:alexei <works_for> _:company2 .
-    _:michael <dgraph.type> "Person" .
+    _:alexei <dgraph.type> "Person" .
 
     _:ivy <boss_of> _:jack .
 
