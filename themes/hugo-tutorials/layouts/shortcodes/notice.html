@@ -1,3 +1,4 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
 {{ $type := .Get 0}}
 
 <div class="notices {{ $type }}" {{ if len .Params | eq 2 }} id="{{ .Get 1 }}" {{ end }}>
