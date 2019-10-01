@@ -625,11 +625,14 @@
           <h1 class="lesson-heading">Hello World</h1>
 
           <div>
-            <div class="notices note" >
-  <span class="type">Note</span> 
-  For the following queries to run, you should have loaded data in the [introduction](/intro/3/).
+            
+
+
+<div class="notices note" >
+  <span class="type">Note</span> <p>For the following queries to run, you should have loaded data in the <a href="/intro/3/">introduction</a>.</p>
 
 </div>
+
 
 <p>Let’s have a look at a hello world query in GraphQL+-.</p>
 
@@ -643,36 +646,39 @@ and listed outgoing edges from those nodes.</p>
 <p>Something to try : Change the query to select someone else.
 You can check the <a href="/intro/4">sample data</a> again.</p>
 
+
 <div class="expandable">
   <a data-action="toggle-expandable" href="#expand">
     <i class="fa fa-caret-down"></i> Show answer
   </a>
   <div class="expandable-content">
-    
-Find a name in the data and try
-```
-{
-  find_someone(func: eq(name, "...name in here...")) {
+    <p>Find a name in the data and try</p>
+
+<pre><code>{
+  find_someone(func: eq(name, &quot;...name in here...&quot;)) {
     name
     age
   }
 }
-```
-Or look at the `UID`s in the data and try
-```
-{
+</code></pre>
+
+<p>Or look at the <code>UID</code>s in the data and try</p>
+
+<pre><code>{
   find_someone(func: uid(...uid number here...)) {
     name
     age
   }
 }
-```
-You can edit the queries and try whatever you like.  When there are
+</code></pre>
+
+<p>You can edit the queries and try whatever you like.  When there are
 answers like this, cut and paste them into the query panel, then edit and
-run them.
+run them.</p>
 
   </div>
 </div>
+
 
 <p>The tutorial will handle the running of the query for you, so
 just focus on the query text.  You can also learn about <a href="https://docs.dgraph.io/get-started/#step-3-run-queries">posting

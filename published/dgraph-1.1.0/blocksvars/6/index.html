@@ -601,15 +601,14 @@ common).</p>
 <p>As an optional challenge, for each
 of those actors list the movies they have made with either director.</p>
 
+
 <div class="expandable">
   <a data-action="toggle-expandable" href="#expand">
     <i class="fa fa-caret-down"></i> Show answer
   </a>
   <div class="expandable-content">
-    
-```
-{
-  var(func: allofterms(name@en, "Peter Jackson")) {
+    <pre><code>{
+  var(func: allofterms(name@en, &quot;Peter Jackson&quot;)) {
     F_PJ as director.film {
       starring{
         A_PJ as performance.actor
@@ -617,7 +616,7 @@ of those actors list the movies they have made with either director.</p>
     }
   }
 
-   var(func: allofterms(name@en, "Martin Scorsese")) {
+   var(func: allofterms(name@en, &quot;Martin Scorsese&quot;)) {
     F_MS as director.film {
       starring{
         A_MS as performance.actor
@@ -634,11 +633,13 @@ of those actors list the movies they have made with either director.</p>
     }
   }
 }
-```  
-The syntax `uid(F_PJ, F_MS)` means the UIDs in either `F_PJ` or `F_MS` and is equivalent to `uid(F_PJ) OR uid(F_MS)`.
+</code></pre>
+
+<p>The syntax <code>uid(F_PJ, F_MS)</code> means the UIDs in either <code>F_PJ</code> or <code>F_MS</code> and is equivalent to <code>uid(F_PJ) OR uid(F_MS)</code>.</p>
 
   </div>
 </div>
+
 
           </div>
         </div>

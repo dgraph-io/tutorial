@@ -641,17 +641,16 @@ represented in the JSON.</p>
 <p>Something to try: How about Michael’s friends&rsquo; pets, or Michael&rsquo;s
 friends&rsquo; friends.</p>
 
+
 <div class="expandable">
   <a data-action="toggle-expandable" href="#expand">
     <i class="fa fa-caret-down"></i> Show answer
   </a>
   <div class="expandable-content">
-    
-Query Michael's friends' pets:
+    <p>Query Michael&rsquo;s friends&rsquo; pets:</p>
 
-```
-{
-  michael_friends_pets(func: eq(name, "Michael")) {
+<pre><code>{
+  michael_friends_pets(func: eq(name, &quot;Michael&quot;)) {
     name
     age
     friend {
@@ -662,12 +661,12 @@ Query Michael's friends' pets:
     }
   }
 }
-```
+</code></pre>
 
-Query Michael's friends' friends:
-```
-{
-  michael_friends_friends(func: allofterms(name, "Michael")) {
+<p>Query Michael&rsquo;s friends&rsquo; friends:</p>
+
+<pre><code>{
+  michael_friends_friends(func: allofterms(name, &quot;Michael&quot;)) {
     name
     age
     friend {
@@ -678,10 +677,11 @@ Query Michael's friends' friends:
     }
   }
 }
-```  
+</code></pre>
 
   </div>
 </div>
+
 
 <p>The idea is to formulate the query as a traversal
 through the graph, following edges to the desired data.  The <code>uid</code>&rsquo;s in the JSON output allow

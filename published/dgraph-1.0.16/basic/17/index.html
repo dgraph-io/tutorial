@@ -647,13 +647,13 @@
 <p>For JSON mutation with Facets see: <a href="https://docs.dgraph.io/mutations/#facets">https://docs.dgraph.io/mutations/#facets</a></p>
 
 <p>Run this mutation on you terminal, before running the query:
+
 <div class="expandable">
   <a data-action="toggle-expandable" href="#expand">
     <i class="fa fa-caret-down"></i> Show answer
   </a>
-  <div class="expandable-content"></p>
-
-<pre><code>curl localhost:8080/mutate -H &quot;X-Dgraph-CommitNow: true&quot; -XPOST -d $'
+  <div class="expandable-content">
+    <pre><code>curl localhost:8080/mutate -H &quot;X-Dgraph-CommitNow: true&quot; -XPOST -d $'
 {
   set {
 
@@ -695,8 +695,9 @@
 }' | python -m json.tool | less
 </code></pre>
 
-<p></div>
-</div></p>
+  </div>
+</div>
+</p>
 
 <h3 id="add-multiple-attributes-to-a-third-single-node">Add multiple attributes to a third single node</h3>
 
@@ -710,19 +711,20 @@ _:MyNode &lt;predicate3&gt; &lt;0x0f43&gt; ( bar=bar, and=3 ) .
 </code></pre>
 
 <p>more example:
+
 <div class="expandable">
   <a data-action="toggle-expandable" href="#expand">
     <i class="fa fa-caret-down"></i> Show answer
   </a>
-  <div class="expandable-content"></p>
-
-<pre><code>_:MyNode &lt;Morning&gt; &lt;0x0f43&gt; ( foo=true, and=1 , since=2006-02-02T13:01:09 ) .
+  <div class="expandable-content">
+    <pre><code>_:MyNode &lt;Morning&gt; &lt;0x0f43&gt; ( foo=true, and=1 , since=2006-02-02T13:01:09 ) .
 _:MyNode &lt;Evening&gt; &lt;0x0f43&gt; ( bar=false, and=2, since=2006-02-02T13:01:09 ) .
 _:MyNode &lt;Night&gt;   &lt;0x22&gt;   ( bar=true, and=3,  since=2006-02-02T13:01:09 ) .
 </code></pre>
 
-<p></div>
-</div></p>
+  </div>
+</div>
+</p>
 
 <p>If you do the same mutation above but using the same predicates instead of unique one. You gonna override the Edge attribute. Line by line. So you must to use distinct predicates.</p>
 
