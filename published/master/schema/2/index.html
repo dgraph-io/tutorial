@@ -603,6 +603,7 @@ data.</p>
 <p>You can load the same example data using JSON format. You&rsquo;re able to do that through our clients, cURL or Ratel UI.</p>
 
 <p>See the JSON:
+
 <div class="expandable">
   <a data-action="toggle-expandable" href="#expand">
     <i class="fa fa-caret-down"></i> Show answer
@@ -611,58 +612,65 @@ data.</p>
     <pre><code class="language-JSON">    {
         &quot;set&quot;: [
             {
-                &quot;uid&quot;: &quot;<em>:company1&quot;,
+                &quot;uid&quot;: &quot;_:company1&quot;,
                 &quot;industry&quot;: &quot;Machinery&quot;,
                 &quot;dgraph.type&quot;: &quot;Company&quot;,
                 &quot;name&quot;: &quot;CompanyABC&quot;
             },
             {
-                &quot;uid&quot;: &quot;</em>:company2&quot;,
+                &quot;uid&quot;: &quot;_:company2&quot;,
                 &quot;industry&quot;: &quot;High Tech&quot;,
                 &quot;dgraph.type&quot;: &quot;Company&quot;,
                 &quot;name&quot;: &quot;The other company&quot;
             },
             {
                 &quot;uid&quot;: &quot;_:jack&quot;,
-                &quot;works<em>for&quot;: { &quot;uid&quot;: &quot;</em>:company1&quot;},
+                &quot;works_for&quot;: { &quot;uid&quot;: &quot;_:company1&quot;},
                 &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;name&quot;: &quot;Jack&quot;
             },
             {
                 &quot;uid&quot;: &quot;_:ivy&quot;,
-                &quot;works<em>for&quot;: { &quot;uid&quot;: &quot;</em>:company1&quot;},
-                &quot;boss<em>of&quot;: { &quot;uid&quot;: &quot;</em>:jack&quot;},
+                &quot;works_for&quot;: { &quot;uid&quot;: &quot;_:company1&quot;},
+                &quot;boss_of&quot;: { &quot;uid&quot;: &quot;_:jack&quot;},
                 &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;name&quot;: &quot;Ivy&quot;
             },
             {
                 &quot;uid&quot;: &quot;_:zoe&quot;,
-                &quot;works<em>for&quot;: { &quot;uid&quot;: &quot;</em>:company1&quot;},
+                &quot;works_for&quot;: { &quot;uid&quot;: &quot;_:company1&quot;},
                 &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;name&quot;: &quot;Zoe&quot;
             },
             {
                 &quot;uid&quot;: &quot;_:jose&quot;,
-                &quot;works<em>for&quot;: { &quot;uid&quot;: &quot;</em>:company2&quot;},
+                &quot;works_for&quot;: { &quot;uid&quot;: &quot;_:company2&quot;},
                 &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;name&quot;: &quot;Jose&quot;
             },
             {
                 &quot;uid&quot;: &quot;_:alexei&quot;,
-                &quot;works<em>for&quot;: { &quot;uid&quot;: &quot;</em>:company2&quot;},
-                &quot;boss<em>of&quot;: { &quot;uid&quot;: &quot;</em>:jose&quot;},
+                &quot;works_for&quot;: { &quot;uid&quot;: &quot;_:company2&quot;},
+                &quot;boss_of&quot;: { &quot;uid&quot;: &quot;_:jose&quot;},
                 &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;name&quot;: &quot;Alexei&quot;
             }
         ]
     }
 </code></pre>
+
   </div>
-</div></p>
+</div>
+</p>
+
+
+
 
 <div class="notices tip" >
-  <span class="type">Tip</span> The JSON example may end up helping you better understand the format in RDF.
+  <span class="type">Tip</span> <p>The JSON example may end up helping you better understand the format in RDF.</p>
+
 </div>
+
 
           </div>
         </div>

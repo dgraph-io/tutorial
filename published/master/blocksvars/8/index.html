@@ -595,6 +595,7 @@ average number of actors in movies directed by him.</p>
 <p>This query can be done in a single block, but you&rsquo;ll see here how values are available in other blocks if the corresponding UID&rsquo;s are available for the value map.</p>
 
 <p>Spoiler alert:
+
 <div class="expandable">
   <a data-action="toggle-expandable" href="#expand">
     <i class="fa fa-caret-down"></i> Show answer
@@ -606,17 +607,19 @@ average number of actors in movies directed by him.</p>
       num_actors as count(starring)
     }
     average as avg(val(num_actors))
-  }</p>
+  }
 
-<p>avs(func: uid(ID)) @normalize {
+  avs(func: uid(ID)) @normalize {
     name : name@en
     average_actors : val(average)
     num_films : count(director.film)
   }
 }
 </code></pre>
+
   </div>
-</div></p>
+</div>
+</p>
 
 <p>After you have the query working, try changing the second block to use the wrong UID&rsquo;s and see what happens.  For example, change <code>avs</code> to query for a different director instead of using <code>ID</code> - the definition of variable <code>ID</code> would also need to be removed, otherwise it would be defined but not used.</p>
 

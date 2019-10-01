@@ -608,56 +608,57 @@
 <p>For JSON mutation with Facets see: <a href="https://docs.dgraph.io/mutations/#facets">https://docs.dgraph.io/mutations/#facets</a></p>
 
 <p>Run this mutation on you terminal, before running the query:
+
 <div class="expandable">
   <a data-action="toggle-expandable" href="#expand">
     <i class="fa fa-caret-down"></i> Show answer
   </a>
   <div class="expandable-content">
-    <pre><code>curl -H &quot;Content-Type: application/rdf&quot; localhost:8080/mutate?commitNow=true -XPOST -d $&rsquo;
+    <pre><code>curl -H &quot;Content-Type: application/rdf&quot; localhost:8080/mutate?commitNow=true -XPOST -d $'
 {
-  set {</p>
+  set {
 
-<pre><code># -- Facets on scalar predicates
-_:alice &amp;lt;name&amp;gt; &amp;quot;Alice&amp;quot; .
-_:alice &amp;lt;mobile&amp;gt; &amp;quot;040123456&amp;quot; (since=2006-01-02T15:04:05) .
-_:alice &amp;lt;car&amp;gt; &amp;quot;MA0123&amp;quot; (since=2006-02-02T13:01:09, first=true) .
+    # -- Facets on scalar predicates
+    _:alice &lt;name&gt; &quot;Alice&quot; .
+    _:alice &lt;mobile&gt; &quot;040123456&quot; (since=2006-01-02T15:04:05) .
+    _:alice &lt;car&gt; &quot;MA0123&quot; (since=2006-02-02T13:01:09, first=true) .
 
-_:bob &amp;lt;name&amp;gt; &amp;quot;Bob&amp;quot; .
-_:bob &amp;lt;car&amp;gt; &amp;quot;MA0134&amp;quot; (since=2006-02-02T13:01:09) .
+    _:bob &lt;name&gt; &quot;Bob&quot; .
+    _:bob &lt;car&gt; &quot;MA0134&quot; (since=2006-02-02T13:01:09) .
 
-_:charlie &amp;lt;name&amp;gt; &amp;quot;Charlie&amp;quot; .
-_:dave &amp;lt;name&amp;gt; &amp;quot;Dave&amp;quot; .
-
-
-# -- Facets on UID predicates
-_:alice &amp;lt;friend&amp;gt; _:bob (close=true, relative=false) .
-_:alice &amp;lt;friend&amp;gt; _:charlie (close=false, relative=true) .
-_:alice &amp;lt;friend&amp;gt; _:dave (close=true, relative=true) .
+    _:charlie &lt;name&gt; &quot;Charlie&quot; .
+    _:dave &lt;name&gt; &quot;Dave&quot; .
 
 
-# -- Facets for variable propagation
-_:movie1 &amp;lt;name&amp;gt; &amp;quot;Movie 1&amp;quot; .
-_:movie2 &amp;lt;name&amp;gt; &amp;quot;Movie 2&amp;quot; .
-_:movie3 &amp;lt;name&amp;gt; &amp;quot;Movie 3&amp;quot; .
+    # -- Facets on UID predicates
+    _:alice &lt;friend&gt; _:bob (close=true, relative=false) .
+    _:alice &lt;friend&gt; _:charlie (close=false, relative=true) .
+    _:alice &lt;friend&gt; _:dave (close=true, relative=true) .
 
-_:alice &amp;lt;rated&amp;gt; _:movie1 (rating=3) .
-_:alice &amp;lt;rated&amp;gt; _:movie2 (rating=2) .
-_:alice &amp;lt;rated&amp;gt; _:movie3 (rating=5) .
 
-_:bob &amp;lt;rated&amp;gt; _:movie1 (rating=5) .
-_:bob &amp;lt;rated&amp;gt; _:movie2 (rating=5) .
-_:bob &amp;lt;rated&amp;gt; _:movie3 (rating=5) .
+    # -- Facets for variable propagation
+    _:movie1 &lt;name&gt; &quot;Movie 1&quot; .
+    _:movie2 &lt;name&gt; &quot;Movie 2&quot; .
+    _:movie3 &lt;name&gt; &quot;Movie 3&quot; .
 
-_:charlie &amp;lt;rated&amp;gt; _:movie1 (rating=2) .
-_:charlie &amp;lt;rated&amp;gt; _:movie2 (rating=5) .
-_:charlie &amp;lt;rated&amp;gt; _:movie3 (rating=1) .
+    _:alice &lt;rated&gt; _:movie1 (rating=3) .
+    _:alice &lt;rated&gt; _:movie2 (rating=2) .
+    _:alice &lt;rated&gt; _:movie3 (rating=5) .
+
+    _:bob &lt;rated&gt; _:movie1 (rating=5) .
+    _:bob &lt;rated&gt; _:movie2 (rating=5) .
+    _:bob &lt;rated&gt; _:movie3 (rating=5) .
+
+    _:charlie &lt;rated&gt; _:movie1 (rating=2) .
+    _:charlie &lt;rated&gt; _:movie2 (rating=5) .
+    _:charlie &lt;rated&gt; _:movie3 (rating=1) .
+  }
+}' | python -m json.tool | less
 </code></pre>
 
-<p>}
-}&rsquo; | python -m json.tool | less
-</code></pre>
   </div>
-</div></p>
+</div>
+</p>
 
 <h3 id="add-multiple-attributes-to-a-third-single-node">Add multiple attributes to a third single node</h3>
 
@@ -671,6 +672,7 @@ _:MyNode &lt;predicate3&gt; &lt;0x0f43&gt; ( bar=bar, and=3 ) .
 </code></pre>
 
 <p>more example:
+
 <div class="expandable">
   <a data-action="toggle-expandable" href="#expand">
     <i class="fa fa-caret-down"></i> Show answer
@@ -680,8 +682,10 @@ _:MyNode &lt;predicate3&gt; &lt;0x0f43&gt; ( bar=bar, and=3 ) .
 _:MyNode &lt;Evening&gt; &lt;0x0f43&gt; ( bar=false, and=2, since=2006-02-02T13:01:09 ) .
 _:MyNode &lt;Night&gt;   &lt;0x22&gt;   ( bar=true, and=3,  since=2006-02-02T13:01:09 ) .
 </code></pre>
+
   </div>
-</div></p>
+</div>
+</p>
 
 <p>If you do the same mutation above but using the same predicates instead of unique one. You gonna override the Edge attribute. Line by line. So you must to use distinct predicates.</p>
 
