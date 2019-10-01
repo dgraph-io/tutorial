@@ -52,7 +52,8 @@ Note Note that Schema changes are made via Alter operations only.</description>
       <description>Now that a schema has been loaded, it&amp;rsquo;s time to load some data. Press the run button again and check that the response panel indicates the data was loaded successfully.
 Don&amp;rsquo;t worry about the syntax for now, it will be explained later.
 You can load the same example data using JSON format. You&amp;rsquo;re able to do that through our clients, cURL or Ratel UI.
-See the JSON:  Show answer  { &amp;quot;set&amp;quot;: [ { &amp;quot;uid&amp;quot;: &amp;quot;_:michael&amp;quot;, &amp;quot;name&amp;quot;: &amp;quot;Michael&amp;quot;, &amp;quot;dgraph.</description>
+See the JSON:
+ Show answer   { &amp;quot;set&amp;quot;: [ { &amp;quot;uid&amp;quot;: &amp;quot;_:michael&amp;quot;, &amp;quot;name&amp;quot;: &amp;quot;Michael&amp;quot;, &amp;quot;dgraph.</description>
     </item>
     
     <item>

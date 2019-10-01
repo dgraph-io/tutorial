@@ -605,14 +605,15 @@ this tutorial, let&rsquo;s run it in a container with Docker.</p>
 
 <p>Then, pull the latest Dgraph version with:</p>
 
-<pre><code class="language-sh">docker pull dgraph/dgraph
+<pre><code>docker pull dgraph/dgraph
 </code></pre>
 
 <p>Now, to run Dgraph in Docker, it&rsquo;s:</p>
 
-<pre><code class="language-sh">mkdir -p ~/dgraph
+<pre><code>mkdir -p ~/dgraph
+</code></pre>
 
-# Run dgraphzero
+<pre><code># Run dgraphzero
 docker run -it -p 5080:5080 -p 6080:6080 -p 8080:8080 -p 9080:9080 -p 8000:8000 -v ~/dgraph:/dgraph --name dgraph dgraph/dgraph dgraph zero
 
 # In another terminal, now run dgraph

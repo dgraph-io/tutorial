@@ -54,7 +54,7 @@ More about in https://docs.dgraph.io/mutations/#external-ids</description>
 _:myID &amp;lt;an_edge&amp;gt; &amp;quot;something&amp;quot;@en . _:myID &amp;lt;an_edge&amp;gt; &amp;quot;某物&amp;quot;@zh-Hans .  and on the edge in a query.
 You can do the same example using JSON format. You&amp;rsquo;re able to do that through our clients, cURL or Ratel UI.
 See the JSON:
-{ &amp;quot;set&amp;quot;: [ { &amp;quot;uid&amp;quot;: &amp;quot;_:myID&amp;quot;, &amp;quot;an_edge@en&amp;quot;: &amp;quot;something&amp;quot;, &amp;quot;an_edge@zh-Hans&amp;quot;: &amp;quot;某物&amp;quot; } ] }  Tip The JSON example may end up helping you better understand the format in RDF.</description>
+ { &amp;quot;set&amp;quot;: [ { &amp;quot;uid&amp;quot;: &amp;quot;_:myID&amp;quot;, &amp;quot;an_edge@en&amp;quot;: &amp;quot;something&amp;quot;, &amp;quot;an_edge@zh-Hans&amp;quot;: &amp;quot;某物&amp;quot; } ] }  Tip The JSON example may end up helping you better understand the format in RDF.</description>
     </item>
     
     <item>

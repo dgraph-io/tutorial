@@ -600,14 +600,14 @@ and actors</a>.</p>
 
 <p>Download it from that link and save into the <code>~/dgraph</code> directory or by running the following in a terminal</p>
 
-<pre><code class="language-sh">cd ~/dgraph
+<pre><code>cd ~/dgraph
 wget &quot;https://github.com/dgraph-io/tutorial/blob/master/resources/1million.rdf.gz?raw=true&quot; -O 1million.rdf.gz -q
 </code></pre>
 
 <p>Run the schema mutation using the run button and then load the dataset
 into Dgraph from the terminal. You may be required to restart the Alpha with <code>--lru_mb 4096</code> in order to handle bigger dataset.</p>
 
-<pre><code class="language-sh">docker exec -it dgraph dgraph live -f 1million.rdf.gz --alpha localhost:9080 --zero localhost:5080 -c 1
+<pre><code>docker exec -it dgraph dgraph live -f 1million.rdf.gz --alpha localhost:9080 --zero localhost:5080 -c 1
 </code></pre>
 
 <p>There&rsquo;s around one million triples in the dataset.

@@ -617,7 +617,8 @@
     <i class="fa fa-caret-down"></i> Show answer
   </a>
   <div class="expandable-content">
-    <pre><code>{ # Get all directors
+    <pre><code>{ 
+  # Get all directors
   var(func: has(director.film)) @cascade {
     director.film {
       date as initial_release_date
