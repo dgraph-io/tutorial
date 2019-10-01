@@ -1,5 +1,5 @@
 {
-  everyone(func: anyofterms(name, "Michael Amit")) {
+  everyone(func: anyofterms(name, "Michael Catalina")) {
     name
     friend {
       name@ru:ko:en
