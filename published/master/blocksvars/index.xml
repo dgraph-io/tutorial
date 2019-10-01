@@ -17,7 +17,7 @@
       <pubDate>Mon, 01 May 2017 13:45:26 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/master/blocksvars/1/</guid>
-      <description>Note From now on, to run the queries, you&#39;ll need to have loaded the [million triple movie dataset](../../moredata/1/).  Queries can be issued as multiples.
+      <description>Note From now on, to run the queries, you&amp;rsquo;ll need to have loaded the million triple movie dataset.  Queries can be issued as multiples.
 For queries labelled q1, ..., qn issued as a multiple query block, the JSON result will contain labelled answer blocks q1, ..., qn for each query.
 If a block is labelled with var, no results are returned for that query.
 Queries issued in this way are independent.</description>

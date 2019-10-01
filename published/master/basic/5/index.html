@@ -607,12 +607,10 @@ friends&rsquo; friends.</p>
     <i class="fa fa-caret-down"></i> Show answer
   </a>
   <div class="expandable-content">
-    
-Query Michael's friends' pets:
+    <p>Query Michael&rsquo;s friends&rsquo; pets:</p>
 
-```
-{
-  michael_friends_pets(func: eq(name, "Michael")) {
+<pre><code>{
+  michael_friends_pets(func: eq(name, &quot;Michael&quot;)) {
     name
     age
     friend {
@@ -623,12 +621,12 @@ Query Michael's friends' pets:
     }
   }
 }
-```
+</code></pre>
 
-Query Michael's friends' friends:
-```
-{
-  michael_friends_friends(func: allofterms(name, "Michael")) {
+<p>Query Michael&rsquo;s friends&rsquo; friends:</p>
+
+<pre><code>{
+  michael_friends_friends(func: allofterms(name, &quot;Michael&quot;)) {
     name
     age
     friend {
@@ -639,7 +637,7 @@ Query Michael's friends' friends:
     }
   }
 }
-```  
+</code></pre>
 
   </div>
 </div>

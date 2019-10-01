@@ -593,11 +593,10 @@
   <a data-action="toggle-expandable" href="#expand">
     <i class="fa fa-caret-down"></i> Show answer
   </a>
-  <div class="expandable-content"></p>
+  <div class="expandable-content">
+    To solve this, you&rsquo;ll need to</p></p>
 
-<p>To solve this, you&rsquo;ll need to</p>
-
-<ul>
+<p><ul>
 <li>work out how to query for all directors - what have directors done that make them directors?</li>
 <li>find the most recent release date for each director</li>
 <li>sort the results by the most recent release</li>
@@ -605,8 +604,7 @@
 <li>you&rsquo;ll need one query to get the directors and their latest movies, and another query to sort this to get most recent movies first</li>
 <li>for something extra, try using <code>since</code> to work out how many days since the movie was released (or how many days till release, for some)</li>
 </ul>
-
-<p></div>
+  </div>
 </div></p>
 
 <p>Spoiler alert:
@@ -614,9 +612,8 @@
   <a data-action="toggle-expandable" href="#expand">
     <i class="fa fa-caret-down"></i> Show answer
   </a>
-  <div class="expandable-content"></p>
-
-<pre><code>{ # Get all directors
+  <div class="expandable-content">
+    <pre><code>{ # Get all directors
   var(func: has(director.film)) @cascade {
     director.film {
       date as initial_release_date
@@ -624,23 +621,24 @@
     # Store maxDate as a variable
     maxDate as max(val(date))
     daysSince as math(since(maxDate)/(24*60*60))
-  }
+  }</p>
 
-  # Order by maxDate
+<p># Order by maxDate
   me(func: uid(maxDate), orderdesc: val(maxDate), first: 10) {
     name@en
-    days : val(daysSince)
+    days : val(daysSince)</p>
 
-    # For each director, sort by release date and get latest movie.
-    director.film(orderdesc: initial_release_date, first: 1) {
-      name@en
-      initial_release_date
-    }
-  }
+<pre><code># For each director, sort by release date and get latest movie.
+director.film(orderdesc: initial_release_date, first: 1) {
+  name@en
+  initial_release_date
 }
 </code></pre>
 
-<p></div>
+<p>}
+}
+</code></pre>
+  </div>
 </div></p>
 
           </div>

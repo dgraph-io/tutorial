@@ -599,25 +599,23 @@ average number of actors in movies directed by him.</p>
   <a data-action="toggle-expandable" href="#expand">
     <i class="fa fa-caret-down"></i> Show answer
   </a>
-  <div class="expandable-content"></p>
-
-<pre><code>{
+  <div class="expandable-content">
+    <pre><code>{
   ID as var(func: allofterms(name@en, &quot;Steven Spielberg&quot;)) {
     director.film {
       num_actors as count(starring)
     }
     average as avg(val(num_actors))
-  }
+  }</p>
 
-  avs(func: uid(ID)) @normalize {
+<p>avs(func: uid(ID)) @normalize {
     name : name@en
     average_actors : val(average)
     num_films : count(director.film)
   }
 }
 </code></pre>
-
-<p></div>
+  </div>
 </div></p>
 
 <p>After you have the query working, try changing the second block to use the wrong UID&rsquo;s and see what happens.  For example, change <code>avs</code> to query for a different director instead of using <code>ID</code> - the definition of variable <code>ID</code> would also need to be removed, otherwise it would be defined but not used.</p>

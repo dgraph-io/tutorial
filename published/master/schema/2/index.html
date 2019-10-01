@@ -607,65 +607,61 @@ data.</p>
   <a data-action="toggle-expandable" href="#expand">
     <i class="fa fa-caret-down"></i> Show answer
   </a>
-  <div class="expandable-content"></p>
-
-<pre><code class="language-JSON">    {
+  <div class="expandable-content">
+    <pre><code class="language-JSON">    {
         &quot;set&quot;: [
             {
-                &quot;uid&quot;: &quot;_:company1&quot;,
+                &quot;uid&quot;: &quot;<em>:company1&quot;,
                 &quot;industry&quot;: &quot;Machinery&quot;,
                 &quot;dgraph.type&quot;: &quot;Company&quot;,
                 &quot;name&quot;: &quot;CompanyABC&quot;
             },
             {
-                &quot;uid&quot;: &quot;_:company2&quot;,
+                &quot;uid&quot;: &quot;</em>:company2&quot;,
                 &quot;industry&quot;: &quot;High Tech&quot;,
                 &quot;dgraph.type&quot;: &quot;Company&quot;,
                 &quot;name&quot;: &quot;The other company&quot;
             },
             {
                 &quot;uid&quot;: &quot;_:jack&quot;,
-                &quot;works_for&quot;: { &quot;uid&quot;: &quot;_:company1&quot;},
+                &quot;works<em>for&quot;: { &quot;uid&quot;: &quot;</em>:company1&quot;},
                 &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;name&quot;: &quot;Jack&quot;
             },
             {
                 &quot;uid&quot;: &quot;_:ivy&quot;,
-                &quot;works_for&quot;: { &quot;uid&quot;: &quot;_:company1&quot;},
-                &quot;boss_of&quot;: { &quot;uid&quot;: &quot;_:jack&quot;},
+                &quot;works<em>for&quot;: { &quot;uid&quot;: &quot;</em>:company1&quot;},
+                &quot;boss<em>of&quot;: { &quot;uid&quot;: &quot;</em>:jack&quot;},
                 &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;name&quot;: &quot;Ivy&quot;
             },
             {
                 &quot;uid&quot;: &quot;_:zoe&quot;,
-                &quot;works_for&quot;: { &quot;uid&quot;: &quot;_:company1&quot;},
+                &quot;works<em>for&quot;: { &quot;uid&quot;: &quot;</em>:company1&quot;},
                 &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;name&quot;: &quot;Zoe&quot;
             },
             {
                 &quot;uid&quot;: &quot;_:jose&quot;,
-                &quot;works_for&quot;: { &quot;uid&quot;: &quot;_:company2&quot;},
+                &quot;works<em>for&quot;: { &quot;uid&quot;: &quot;</em>:company2&quot;},
                 &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;name&quot;: &quot;Jose&quot;
             },
             {
                 &quot;uid&quot;: &quot;_:alexei&quot;,
-                &quot;works_for&quot;: { &quot;uid&quot;: &quot;_:company2&quot;},
-                &quot;boss_of&quot;: { &quot;uid&quot;: &quot;_:jose&quot;},
+                &quot;works<em>for&quot;: { &quot;uid&quot;: &quot;</em>:company2&quot;},
+                &quot;boss<em>of&quot;: { &quot;uid&quot;: &quot;</em>:jose&quot;},
                 &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;name&quot;: &quot;Alexei&quot;
             }
         ]
     }
 </code></pre>
-
-<p></div>
+  </div>
 </div></p>
 
 <div class="notices tip" >
-  <span class="type">Tip</span> 
-The JSON example may end up helping you better understand the format in RDF.
-
+  <span class="type">Tip</span> The JSON example may end up helping you better understand the format in RDF.
 </div>
 
           </div>
@@ -715,9 +711,9 @@ The JSON example may end up helping you better understand the format in RDF.
     _:alexei &lt;name&gt; &#34;Alexei&#34; .
 
     _:jose &lt;works_for&gt; _:company2 .
-    _:michael &lt;dgraph.type&gt; &#34;Person&#34; .
+    _:jose &lt;dgraph.type&gt; &#34;Person&#34; .
     _:alexei &lt;works_for&gt; _:company2 .
-    _:michael &lt;dgraph.type&gt; &#34;Person&#34; .
+    _:alexei &lt;dgraph.type&gt; &#34;Person&#34; .
 
     _:ivy &lt;boss_of&gt; _:jack .
 
@@ -751,9 +747,9 @@ The JSON example may end up helping you better understand the format in RDF.
     _:alexei &lt;name&gt; &#34;Alexei&#34; .
 
     _:jose &lt;works_for&gt; _:company2 .
-    _:michael &lt;dgraph.type&gt; &#34;Person&#34; .
+    _:jose &lt;dgraph.type&gt; &#34;Person&#34; .
     _:alexei &lt;works_for&gt; _:company2 .
-    _:michael &lt;dgraph.type&gt; &#34;Person&#34; .
+    _:alexei &lt;dgraph.type&gt; &#34;Person&#34; .
 
     _:ivy &lt;boss_of&gt; _:jack .
 
@@ -812,9 +808,9 @@ The JSON example may end up helping you better understand the format in RDF.
     _:alexei &lt;name&gt; &#34;Alexei&#34; .
 
     _:jose &lt;works_for&gt; _:company2 .
-    _:michael &lt;dgraph.type&gt; &#34;Person&#34; .
+    _:jose &lt;dgraph.type&gt; &#34;Person&#34; .
     _:alexei &lt;works_for&gt; _:company2 .
-    _:michael &lt;dgraph.type&gt; &#34;Person&#34; .
+    _:alexei &lt;dgraph.type&gt; &#34;Person&#34; .
 
     _:ivy &lt;boss_of&gt; _:jack .
 

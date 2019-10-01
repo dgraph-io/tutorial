@@ -111,7 +111,7 @@ _:sarah &amp;lt;works_for&amp;gt; _:company1 .  it&amp;rsquo;s
       <description>expand(...predicates...) is used to query for all given predicates, rather than listing them in the query. Querying
 expand(_all_)  queries returns all edges out of every node matched at that level in the query. Expand can be nested to then expand all predicates at the next level.
 We&amp;rsquo;ll see later how to use expand with variables to query for a particular set of edges.
-Note As of version v1.1 you will need to add Types in your schema for `expand(_all_)` to work.</description>
+Note As of version v1.1 you will need to add Types in your schema for expand(_all_) to work.</description>
     </item>
     
     <item>
