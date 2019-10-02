@@ -1,15 +1,15 @@
 # Define Types
 
 type Person {
-    name: string
-    boss_of: [Person]
-    works_for: [Company]
+    name
+    boss_of
+    works_for
 }
 
 type Company {
-    name: string
-    industry: string
-    work_here: [Person] #this is an alias
+    name
+    industry
+    work_here #this is an alias
 }
 
 # Define Directives and index
