@@ -1,13 +1,13 @@
 # Define Types
 
 type Person {
-    name: string
-    age: int
-    friend: [Person]
+    name
+    age
+    friend
 }
 
 type Animal {
-    name: string
+    name
 }
 
 # Define Directives and index
