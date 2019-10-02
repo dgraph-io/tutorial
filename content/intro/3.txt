@@ -4,6 +4,7 @@ type Person {
     name
     age
     friend
+    owns_pet
 }
 
 type Animal {
