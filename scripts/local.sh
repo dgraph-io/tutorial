@@ -9,7 +9,6 @@ if [[ $1 == "-p" || $1 == "--preview" ]]; then
     echo -e "$(date) $GREEN  Generating tutorial static pages in the public folder. $RESET"
     hugo \
       --destination=public \
-      --baseURL="$DEPLOY_PRIME_URL" \
       --config config.toml,releases.json 1> /dev/null
     echo -e "$(date) $GREEN  Done building. $RESET"
 else
