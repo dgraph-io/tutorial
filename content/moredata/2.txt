@@ -1,27 +1,24 @@
 # Define Types
 
 type Person {
-    name: string
-    director.film: [Movie]
-    actor.film: [Performance]
+    name
+    director.film
+    actor.film
 }
 
 type Movie {
-    name: string
-    initial_release_date: string
-    genre: [Genre]
-    starring: [Performance]
+    name
+    initial_release_date
+    genre
+    starring
 }
 
 type Genre {
-    name: string
+    name
 }
 
 type Performance {
-    performance.film: [Movie]
-    performance.character_note: string
-    performance.character: [Person]
-    performance.actor: [Person]
-    performance.special_performance_type: [Special_performance_type]
-    type: [Generic]
+    performance.film
+    performance.character
+    performance.actor
 }
