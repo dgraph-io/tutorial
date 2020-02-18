@@ -18,9 +18,6 @@ type Genre {
 
 type Performance {
     performance.film: [Movie]
-    performance.character_note: string
     performance.character: [Person]
     performance.actor: [Person]
-    performance.special_performance_type: [Special_performance_type]
-    type: [Generic]
 }
