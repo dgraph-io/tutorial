@@ -3,6 +3,7 @@
 type Person {
     name: string
     director.film: [Movie]
+    actor.film: [Performance]
 }
 
 type Movie {
