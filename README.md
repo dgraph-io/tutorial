@@ -5,6 +5,7 @@ A step by step introductory tutorial of Dgraph. Built with [Hugo](https://gohugo
 Visit https://tour.dgraph.io/ for the running instance.
 
 ## Developing
+
 The tutorial can be run locally by cloning this repo and running `scripts/local.sh`.
 The tour has been tested with hugo `v0.37`.
 
@@ -23,7 +24,6 @@ Structure of the tour releases/version switcher must mirror the structure of the
 - Fixes and changes for older versions of the tour should be committed into relevant `dgraph-$version` branch.
 - As part of the release process for Dgraph a new branch `dgraph-$version` must be cut here (`git checkout master; git checkout -b dgraph-<NEW_SEMVER>`).
 
-
 ## Deploying to Live Site
 
 Run the build script:
@@ -34,14 +34,14 @@ into the `published/` folder.
 
 After that you can `git push` and the server will pick up the changes.
 
-
 ## Server config
 
 File `nginx/tour.conf` is symlinked to Nginx's `sites-available`
 when you edit it you must ssh and run `nginx -s reload`.
 
 Cron task
-```
+
+```sh
 */2 *    *   *   *   cd /home/ubuntu/dgraph-tour && git pull
 ```
 
