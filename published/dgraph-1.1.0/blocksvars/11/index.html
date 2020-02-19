@@ -118,19 +118,19 @@
         </option>
       
         <option
+          value="1.2.1"
+          
+        >
+          Dgraph 1.2.1
+        </option>
+      
+        <option
           value="1.1.0"
           
             selected="selected"
           
         >
           Dgraph 1.1.0
-        </option>
-      
-        <option
-          value="1.0.16"
-          
-        >
-          Dgraph 1.0.16
         </option>
       
   </select>
@@ -145,9 +145,40 @@
 <script>
   window.DgTour = {
     thisRelease: "1.1.0",
-    latestRelease: "1.1.0"
+    latestRelease: "1.2.1"
   }
 </script>
+
+
+
+<style>
+  .old-branch-alert {
+    position: fixed;
+    z-index: 1;
+    left: 40vw;
+    right: 100px;
+    top: 5px;
+    border-radius: 8px;
+    box-shadow: -2px 2px 6px 0px rgba(0,0,0,0.75);
+    background-color: #f0ad4e;
+    padding: 4px;
+  }
+  .old-branch-alert a.btn {
+    color: #fff;
+    padding: 2px 4px;
+  }
+</style>
+<div class="old-branch-alert">
+  You are looking at the tour for Dgraph
+  <strong>1.1.0</strong>.
+  Latest stable release is
+  <strong>1.2.1</strong>.
+  <a href="/" class="btn btn-primary">Go to
+    <strong>
+      Dgraph 1.2.1
+    </strong>
+  </a>
+</div>
 
 
 
@@ -589,7 +620,6 @@
 
           <div>
             <p>Write a query to find the most recently released movie by each director and order the result by the release dates.</p>
-
 <p>If you need some hints try:
 
 <div class="expandable">
@@ -598,7 +628,6 @@
   </a>
   <div class="expandable-content">
     <p>To solve this, you&rsquo;ll need to</p>
-
 <ul>
 <li>work out how to query for all directors - what have directors done that make them directors?</li>
 <li>find the most recent release date for each director</li>
@@ -611,7 +640,6 @@
   </div>
 </div>
 </p>
-
 <p>Spoiler alert:
 
 <div class="expandable">
@@ -643,7 +671,6 @@
   }
 }
 </code></pre>
-
   </div>
 </div>
 </p>

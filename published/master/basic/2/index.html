@@ -87,17 +87,17 @@
         </option>
       
         <option
+          value="1.2.1"
+          
+        >
+          Dgraph 1.2.1
+        </option>
+      
+        <option
           value="1.1.0"
           
         >
           Dgraph 1.1.0
-        </option>
-      
-        <option
-          value="1.0.16"
-          
-        >
-          Dgraph 1.0.16
         </option>
       
   </select>
@@ -112,7 +112,7 @@
 <script>
   window.DgTour = {
     thisRelease: "master",
-    latestRelease: "1.1.0"
+    latestRelease: "1.2.1"
   }
 </script>
 
@@ -139,10 +139,10 @@
   You are looking at the tour for Dgraph
   <strong>master</strong>.
   Latest stable release is
-  <strong>1.1.0</strong>.
+  <strong>1.2.1</strong>.
   <a href="/" class="btn btn-primary">Go to
     <strong>
-      Dgraph 1.1.0
+      Dgraph 1.2.1
     </strong>
   </a>
 </div>
@@ -587,18 +587,13 @@
 
           <div>
             <p>The last query got us some data, but the result wasn’t very interesting, nor was it much to do with graphs.</p>
-
 <p>In Dgraph and GraphQL+-, queries return graphs, not tables or lists of data.</p>
-
 <p>A query is executed against a graph and the result is a subset
 of the queried graph, or some manipulation or calculation based
 on the queried graph.</p>
-
 <p>Let’s improve the query to get Michael and his network of friends.</p>
-
 <p>Something to try : Michael also owns a pet, find it and its <code>name</code>. The
 <code>owns_pet</code> edge will help here.</p>
-
 
 <div class="expandable">
   <a data-action="toggle-expandable" href="#expand">
@@ -618,7 +613,6 @@ on the queried graph.</p>
   }
 }
 </code></pre>
-
   </div>
 </div>
 

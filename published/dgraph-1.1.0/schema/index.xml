@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Schemas on A Tour of Dgraph</title>
@@ -51,7 +51,7 @@ More about in https://docs.dgraph.io/mutations/#external-ids</description>
       
       <guid>https://tour.dgraph.io/dgraph-1.1.0/schema/4/</guid>
       <description>Language tags are used on the string on input
-_:myID &amp;lt;an_edge&amp;gt; &amp;quot;something&amp;quot;@en . _:myID &amp;lt;an_edge&amp;gt; &amp;quot;某物&amp;quot;@zh-Hans .  and on the edge in a query.
+_:myID &amp;lt;an_edge&amp;gt; &amp;quot;something&amp;quot;@en . _:myID &amp;lt;an_edge&amp;gt; &amp;quot;某物&amp;quot;@zh-Hans . and on the edge in a query.
 You can do the same example using JSON format. You&amp;rsquo;re able to do that through our clients, cURL or Ratel UI.
 See the JSON:
  { &amp;quot;set&amp;quot;: [ { &amp;quot;uid&amp;quot;: &amp;quot;_:myID&amp;quot;, &amp;quot;an_edge@en&amp;quot;: &amp;quot;something&amp;quot;, &amp;quot;an_edge@zh-Hans&amp;quot;: &amp;quot;某物&amp;quot; } ] }  Tip The JSON example may end up helping you better understand the format in RDF.</description>
@@ -65,8 +65,8 @@ See the JSON:
       <guid>https://tour.dgraph.io/dgraph-1.1.0/schema/5/</guid>
       <description>Edges are directional. A query can&amp;rsquo;t traverse an edge in reverse.
 There are two choices to query in both directions
- Add the reverse edge to the schema and add all the reverse edge data.
- Tell Dgraph to always store the reverse edge using the @reverse keyword in the schema.
+  Add the reverse edge to the schema and add all the reverse edge data.
+  Tell Dgraph to always store the reverse edge using the @reverse keyword in the schema.
   Run the schema mutation and Dgraph will compute all the reverse edges. The reverse edge of an_edge is ~an_edge.</description>
     </item>
     
@@ -88,8 +88,8 @@ In this query we want to know who works for &amp;ldquo;CompanyABC&amp;rdquo; wit
       <guid>https://tour.dgraph.io/dgraph-1.1.0/schema/7/</guid>
       <description>We&amp;rsquo;ve added a new schema and loaded some company data, but what about integrating our previous friends dataset with this company one.
 Trying to use the blank nodes from previous mutations won&amp;rsquo;t work. The blank nodes aren&amp;rsquo;t persisted in the store, so when referring to nodes created in a previous mutation, it&amp;rsquo;s the UID that&amp;rsquo;s needed. So instead of
-_:sarah &amp;lt;works_for&amp;gt; _:company1 .  it&amp;rsquo;s
-&amp;lt;uid-for-sarah&amp;gt; &amp;lt;works_for&amp;gt; &amp;lt;uid-for-company1&amp;gt; .  Because the uid picked by Dgraph is unique, we can&amp;rsquo;t help you this time.</description>
+_:sarah &amp;lt;works_for&amp;gt; _:company1 . it&amp;rsquo;s
+&amp;lt;uid-for-sarah&amp;gt; &amp;lt;works_for&amp;gt; &amp;lt;uid-for-company1&amp;gt; . Because the uid picked by Dgraph is unique, we can&amp;rsquo;t help you this time.</description>
     </item>
     
     <item>
@@ -99,7 +99,8 @@ _:sarah &amp;lt;works_for&amp;gt; _:company1 .  it&amp;rsquo;s
       
       <guid>https://tour.dgraph.io/dgraph-1.1.0/schema/8/</guid>
       <description>There are three deletion options inside a delete mutation.
- &amp;lt;uid&amp;gt; &amp;lt;edge&amp;gt; &amp;lt;uid&amp;gt;/&amp;quot;value&amp;quot; . Delete a single triple &amp;lt;uid&amp;gt; &amp;lt;edge&amp;gt; * . Delete all triples for a given edge &amp;lt;uid&amp;gt; * * . Delete all triples for a given node  The examples given here are not complete. Uids assigned on your instance would be unique. Try something out; you&amp;rsquo;re not going to hurt anyone, just delete their friends.</description>
+ &amp;lt;uid&amp;gt; &amp;lt;edge&amp;gt; &amp;lt;uid&amp;gt;/&amp;quot;value&amp;quot; . Delete a single triple &amp;lt;uid&amp;gt; &amp;lt;edge&amp;gt; * . Delete all triples for a given edge &amp;lt;uid&amp;gt; * * . Delete all triples for a given node  The examples given here are not complete. Uids assigned on your instance would be unique. Try something out; you&amp;rsquo;re not going to hurt anyone, just delete their friends.
+You can do the same example using JSON format.</description>
     </item>
     
     <item>
@@ -109,7 +110,7 @@ _:sarah &amp;lt;works_for&amp;gt; _:company1 .  it&amp;rsquo;s
       
       <guid>https://tour.dgraph.io/dgraph-1.1.0/schema/9/</guid>
       <description>expand(...predicates...) is used to query for all given predicates, rather than listing them in the query. Querying
-expand(_all_)  queries returns all edges out of every node matched at that level in the query. Expand can be nested to then expand all predicates at the next level.
+expand(_all_) queries returns all edges out of every node matched at that level in the query. Expand can be nested to then expand all predicates at the next level.
 We&amp;rsquo;ll see later how to use expand with variables to query for a particular set of edges.
 Note As of version v1.1 you will need to add Types in your schema for expand(_all_) to work.</description>
     </item>

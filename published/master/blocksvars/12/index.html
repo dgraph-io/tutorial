@@ -87,17 +87,17 @@
         </option>
       
         <option
+          value="1.2.1"
+          
+        >
+          Dgraph 1.2.1
+        </option>
+      
+        <option
           value="1.1.0"
           
         >
           Dgraph 1.1.0
-        </option>
-      
-        <option
-          value="1.0.16"
-          
-        >
-          Dgraph 1.0.16
         </option>
       
   </select>
@@ -112,7 +112,7 @@
 <script>
   window.DgTour = {
     thisRelease: "master",
-    latestRelease: "1.1.0"
+    latestRelease: "1.2.1"
   }
 </script>
 
@@ -139,10 +139,10 @@
   You are looking at the tour for Dgraph
   <strong>master</strong>.
   Latest stable release is
-  <strong>1.1.0</strong>.
+  <strong>1.2.1</strong>.
   <a href="/" class="btn btn-primary">Go to
     <strong>
-      Dgraph 1.1.0
+      Dgraph 1.2.1
     </strong>
   </a>
 </div>
@@ -587,20 +587,13 @@
 
           <div>
             <p>A <code>groupby</code> query aggregates query results given a set of properties on which to group elements.  For example, a query containing the block</p>
-
 <pre><code>director.film @groupby(genre) {
   a as count(uid)
 }
-</code></pre>
-
-<p>finds nodes reachable along the <code>director.film</code> edge, partitions these into groups based on genre, then counts how many nodes are in each group.</p>
-
+</code></pre><p>finds nodes reachable along the <code>director.film</code> edge, partitions these into groups based on genre, then counts how many nodes are in each group.</p>
 <p>Inside a <code>groupby</code> block, only aggregations are allowed and <code>count</code> can only be applied to <code>uid</code>.</p>
-
 <p>The result is the grouped edges and the value variables for the aggregations.</p>
-
 <p>In this case the value variable is a map from genres to values.</p>
-
 <p>Often, it&rsquo;s necessary to use <code>groupby</code> with another query to obtain values other than aggregations.</p>
 
           </div>

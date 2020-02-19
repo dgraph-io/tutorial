@@ -87,17 +87,17 @@
         </option>
       
         <option
+          value="1.2.1"
+          
+        >
+          Dgraph 1.2.1
+        </option>
+      
+        <option
           value="1.1.0"
           
         >
           Dgraph 1.1.0
-        </option>
-      
-        <option
-          value="1.0.16"
-          
-        >
-          Dgraph 1.0.16
         </option>
       
   </select>
@@ -112,7 +112,7 @@
 <script>
   window.DgTour = {
     thisRelease: "master",
-    latestRelease: "1.1.0"
+    latestRelease: "1.2.1"
   }
 </script>
 
@@ -139,10 +139,10 @@
   You are looking at the tour for Dgraph
   <strong>master</strong>.
   Latest stable release is
-  <strong>1.1.0</strong>.
+  <strong>1.2.1</strong>.
   <a href="/" class="btn btn-primary">Go to
     <strong>
-      Dgraph 1.1.0
+      Dgraph 1.2.1
     </strong>
   </a>
 </div>
@@ -587,14 +587,10 @@
 
           <div>
             <p>If the context provided by the UIDs of the block is correct, value variables can also be used in filtering and ordering.</p>
-
 <p>Here, <code>ID</code> will be the UID&rsquo;s of all directors of name Steven and <code>average</code> is a map from those UID&rsquo;s to the average for each director.  The filtering, ordering and result for <code>var(average)</code> are evaluated in that context to obtain each value.</p>
-
 <p>A value variable can be used in place of a UID variable, <code>uid(&lt;value-variable&gt;)</code> evaluates to the UID&rsquo;s in the map.  For example, the <code>avs</code> query block could be written:</p>
-
 <pre><code>avs(func: uid(average), orderdesc: val(average)) @filter(ge(val(average), 40)) @normalize {
 </code></pre>
-
           </div>
         </div>
 

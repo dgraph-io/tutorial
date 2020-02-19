@@ -87,17 +87,17 @@
         </option>
       
         <option
+          value="1.2.1"
+          
+        >
+          Dgraph 1.2.1
+        </option>
+      
+        <option
           value="1.1.0"
           
         >
           Dgraph 1.1.0
-        </option>
-      
-        <option
-          value="1.0.16"
-          
-        >
-          Dgraph 1.0.16
         </option>
       
   </select>
@@ -112,7 +112,7 @@
 <script>
   window.DgTour = {
     thisRelease: "master",
-    latestRelease: "1.1.0"
+    latestRelease: "1.2.1"
   }
 </script>
 
@@ -139,10 +139,10 @@
   You are looking at the tour for Dgraph
   <strong>master</strong>.
   Latest stable release is
-  <strong>1.1.0</strong>.
+  <strong>1.2.1</strong>.
   <a href="/" class="btn btn-primary">Go to
     <strong>
-      Dgraph 1.1.0
+      Dgraph 1.2.1
     </strong>
   </a>
 </div>
@@ -588,29 +588,18 @@
           <div>
             <p>Ok, we are off to a start with Dgraph and GraphQL+-.  Let’s move it up
 a few notches.</p>
-
 <p>Dgraph can also do query aggregation, geo-queries, string querying and more.  But for all that let&rsquo;s move from the small datasets we started with and try out something bigger, much bigger.</p>
-
 <p>In our github repository you&rsquo;ll find a <a href="https://github.com/dgraph-io/benchmarks/blob/master/data/goldendata.rdf.gz">dataset about movies, directors
 and actors</a>.</p>
-
 <p>Download it from that link or with something like</p>
-
 <pre><code>wget &quot;https://github.com/dgraph-io/benchmarks/blob/master/data/goldendata.rdf.gz?raw=true&quot; -O goldendata.rdf.gz -q
-</code></pre>
-
-<p>Run the schema mutation and then load the dataset into Dgraph with</p>
-
+</code></pre><p>Run the schema mutation and then load the dataset into Dgraph with</p>
 <pre><code>dgraph-live-loader -f goldendata.rdf.gz
-</code></pre>
-
-<p>Dgraph reports back exactly how many triples were loaded and how long
+</code></pre><p>Dgraph reports back exactly how many triples were loaded and how long
 it took.  There are around ??? movies and ???
 actors are described in the dataset.</p>
-
 <p>It&rsquo;s a big database of moves, but it won’t trouble Dgraph.  It is, however, big enough to
 use for more complex queries.</p>
-
 <p>Later in the tutorial, you might need to refer back to this page (or
 issue a <a href="/basic/3">schema query</a>) to check the indexes or schema types.  Remember that
 we can&rsquo;t apply functions to edges that aren&rsquo;t indexed, and some

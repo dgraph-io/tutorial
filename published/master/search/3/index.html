@@ -87,17 +87,17 @@
         </option>
       
         <option
+          value="1.2.1"
+          
+        >
+          Dgraph 1.2.1
+        </option>
+      
+        <option
           value="1.1.0"
           
         >
           Dgraph 1.1.0
-        </option>
-      
-        <option
-          value="1.0.16"
-          
-        >
-          Dgraph 1.0.16
         </option>
       
   </select>
@@ -112,7 +112,7 @@
 <script>
   window.DgTour = {
     thisRelease: "master",
-    latestRelease: "1.1.0"
+    latestRelease: "1.2.1"
   }
 </script>
 
@@ -139,10 +139,10 @@
   You are looking at the tour for Dgraph
   <strong>master</strong>.
   Latest stable release is
-  <strong>1.1.0</strong>.
+  <strong>1.2.1</strong>.
   <a href="/" class="btn btn-primary">Go to
     <strong>
-      Dgraph 1.1.0
+      Dgraph 1.2.1
     </strong>
   </a>
 </div>
@@ -587,19 +587,12 @@
 
           <div>
             <p>Regular expressions require the <code>trigram</code> index.  A trigram is a substring of 3 consecutive characters, or runes.</p>
-
 <p>The trigrams of trigram are: tri, rig, igr, gra and ram.</p>
-
 <p>Valid regular expressions are able to be converted to a trigram query against the index. Dgraph searches the trigram index for possible matches and then runs the full regular expression against the possibles.</p>
-
 <p>Each regular expressions must match at least one trigram.</p>
-
 <p>It&rsquo;s a good idea to think carefully about regular expression queries.  The more possible trigrams matched by a query, the more results are checked against the full regular expression and the less efficient the query.  The reverse, however, is also true.  The more trigrams enforced by the regular expression, the better use Dgraph can make of the index and the smaller the possible results set.</p>
-
 <p>Thus, writing efficient regular expressions generally means making use of long substrings and avoiding as much alternate choice as possible.</p>
-
 <p>An optional <code>i</code> may follow the final <code>/</code> to indicate case insensitive search.</p>
-
 <p>Natalie Portman is the only actor in our database who has acted in an alien movie and has the word alien embedded in her name.</p>
 
           </div>

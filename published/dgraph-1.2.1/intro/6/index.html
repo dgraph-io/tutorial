@@ -1,0 +1,749 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link
+  rel="manifest"
+  href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/manifest.json"
+  >
+<link
+  rel="mask-icon"
+  href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/safari-pinned-tab.svg"
+  color="#fe2c06"
+  >
+<link
+  rel="shortcut icon"
+  href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/favicon.ico"
+  >
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/mstile-144x144.png">
+<meta name="msapplication-config" content="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/browserconfig.xml">
+
+<link rel="apple-touch-icon" sizes="57x57" href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/apple-touch-icon-180x180.png">
+<link rel="icon" sizes="32x32" type="image/png" href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/favicon-32x32.png">
+<link rel="icon" sizes="192x192" type="image/png" href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/android-chrome-192x192.png">
+<link rel="icon" sizes="194x194" type="image/png" href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/favicon-194x194.png">
+<link rel="icon" sizes="96x96" type="image/png" href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/favicon-96x96.png">
+<link rel="icon" sizes="16x16" type="image/png" href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/favicon-16x16.png">
+
+
+    
+    <title>
+      
+        Graphs — A Tour of Dgraph
+      
+    </title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+      />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700"
+      rel="stylesheet"
+      />
+
+    <link
+      href="https://tour.dgraph.io/dgraph-1.2.1/css/runnable-custom.css?fd581e09310956d9e7e07a71e2d31145"
+      rel="stylesheet"
+      />
+  </head>
+  <body>
+    <main>
+
+
+<nav id="header">
+  <a href="https://tour.dgraph.io/dgraph-1.2.1" class="brand">
+    <img src="https://tour.dgraph.io/dgraph-1.2.1/images/dgraph.svg" alt="dgraph" class="logo" />
+    <span class="name">
+      A Tour of Dgraph
+    </span>
+  </a>
+  <select id="tour-release" class="select-release">
+      
+        <option
+          value="master"
+          
+        >
+          Dgraph master
+        </option>
+      
+        <option
+          value="1.2.1"
+          
+            selected="selected"
+          
+        >
+          Dgraph 1.2.1
+        </option>
+      
+        <option
+          value="1.1.0"
+          
+        >
+          Dgraph 1.1.0
+        </option>
+      
+  </select>
+
+  <div class="menus">
+    <a href="#toggle-sidebar" data-action="toggle-sidebar" class="menu-item">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</nav>
+
+<script>
+  window.DgTour = {
+    thisRelease: "1.2.1",
+    latestRelease: "1.2.1"
+  }
+</script>
+
+
+
+
+<style>
+  .hidden { opacity: 0; }
+</style>
+<aside id="sidebar" class="hidden">
+  
+  <ul class="categories">
+    <li>
+      <div class="category">
+        Introduction
+      </div>
+
+      <ul class="topics">
+        
+        
+          <li>
+            <a href="/dgraph-1.2.1/intro/1/" class="topic">
+              Welcome
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/intro/2/" class="topic">
+              Run Dgraph
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/intro/3/" class="topic">
+              Load Schema
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/intro/4/" class="topic">
+              Load Data
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/intro/5/" class="topic">
+              Mutation Introduction
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/intro/6/" class="topic active">
+              Graphs
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/intro/7/" class="topic">
+              Graph Databases
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/intro/8/" class="topic">
+              Congratulations
+            </a>
+          </li>
+        
+      </ul>
+    </li>
+  
+  <ul class="categories">
+    <li>
+      <div class="category">
+        Basic GraphQL&#43;- features
+      </div>
+
+      <ul class="topics">
+        
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/1/" class="topic">
+              Hello World
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/2/" class="topic">
+              Graphs as results
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/3/" class="topic">
+              Data types, Schema and Type System
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/4/" class="topic">
+              Language Support
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/5/" class="topic">
+              Queries describe graphs
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/6/" class="topic">
+              Functions and filtering
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/7/" class="topic">
+              AND, OR and NOT
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/8/" class="topic">
+              Sorting (orderasc or orderdesc)
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/9/" class="topic">
+              Pagination (first, offset and after)
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/10/" class="topic">
+              Count
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/11/" class="topic">
+              How Dgraph Search Works
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/12/" class="topic">
+              Has
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/13/" class="topic">
+              Alias
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/14/" class="topic">
+              Cascade
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/15/" class="topic">
+              Normalize
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/16/" class="topic">
+              Comments
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/17/" class="topic">
+              Facets : Edge attributes
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/18/" class="topic">
+              Congratulations
+            </a>
+          </li>
+        
+      </ul>
+    </li>
+  
+  <ul class="categories">
+    <li>
+      <div class="category">
+        Schema - describe your data
+      </div>
+
+      <ul class="topics">
+        
+        
+          <li>
+            <a href="/dgraph-1.2.1/schema/1/" class="topic">
+              Adding schema - mutating schema
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/schema/2/" class="topic">
+              Adding Data - mutating data
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/schema/3/" class="topic">
+              External Identifiers
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/schema/4/" class="topic">
+              Language Support
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/schema/5/" class="topic">
+              Reverse edges
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/schema/6/" class="topic">
+              Reverse edges Query
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/schema/7/" class="topic">
+              Exercise : Integrating existing data
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/schema/8/" class="topic">
+              Deleting Data
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/schema/9/" class="topic">
+              Expand Predicate
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/schema/10/" class="topic">
+              Congratulations
+            </a>
+          </li>
+        
+      </ul>
+    </li>
+  
+  <ul class="categories">
+    <li>
+      <div class="category">
+        Data, More Data
+      </div>
+
+      <ul class="topics">
+        
+        
+          <li>
+            <a href="/dgraph-1.2.1/moredata/1/" class="topic">
+              A bigger dataset
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/moredata/2/" class="topic">
+              Movies Schema
+            </a>
+          </li>
+        
+      </ul>
+    </li>
+  
+  <ul class="categories">
+    <li>
+      <div class="category">
+        Query Blocks, Query Variables and Aggregation
+      </div>
+
+      <ul class="topics">
+        
+        
+          <li>
+            <a href="/dgraph-1.2.1/blocksvars/1/" class="topic">
+              Multiple Named Query Blocks
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/blocksvars/2/" class="topic">
+              Query Variables
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/blocksvars/3/" class="topic">
+              Query Variables in a child block
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/blocksvars/4/" class="topic">
+              Query Variables in another query block I
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/blocksvars/5/" class="topic">
+              Query Variables in another query block II
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/blocksvars/6/" class="topic">
+              Exercise: Query Variables linking queries
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/blocksvars/7/" class="topic">
+              Value variables - min and max
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/blocksvars/8/" class="topic">
+              Exercise : Value variables - sum and avg
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/blocksvars/9/" class="topic">
+              Value variables: filtering and ordering
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/blocksvars/10/" class="topic">
+              Value variables: math functions
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/blocksvars/11/" class="topic">
+              Exercise : Latest Movies
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/blocksvars/12/" class="topic">
+              GroupBy
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/blocksvars/13/" class="topic">
+              Congratulations!
+            </a>
+          </li>
+        
+      </ul>
+    </li>
+  
+  <ul class="categories">
+    <li>
+      <div class="category">
+        Search - more ways to find nodes
+      </div>
+
+      <ul class="topics">
+        
+        
+          <li>
+            <a href="/dgraph-1.2.1/search/1/" class="topic">
+              Indexes
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/search/2/" class="topic">
+              Term search
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/search/3/" class="topic">
+              Regular Expressions
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/search/4/" class="topic">
+              Exact index and inequality
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/search/5/" class="topic">
+              Full Text Search
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/search/6/" class="topic">
+              Full Text Search : language support
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/search/7/" class="topic">
+              Geo queries : Near
+            </a>
+          </li>
+        
+      </ul>
+    </li>
+  
+</aside>
+
+
+<div class="lesson-content-wrapper container-fluid">
+  <div class="content row vertical-stretch">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-6 vertical-stretch">
+      <div class="panel">
+        <div class="body">
+          <h1 class="lesson-heading">Graphs</h1>
+
+          <div>
+            <p>We&rsquo;ve started Dgraph, but first things first: What is a graph and what has that got to do with databases?</p>
+<p>Graphs describe objects and the interconnections between them. Many people have heard of friendship graphs, or social network graphs, so let’s start there.</p>
+
+
+
+<div class="notices note" >
+  <span class="type">Note</span> <p>OK, you&rsquo;ll have to use your imagination here.  We&rsquo;re still building the tutorial, and we don&rsquo;t have the visualizations up and running just yet.  By starting Dgraph, you&rsquo;ll have the visualization component
+<a href="http://localhost:8000">working just fine</a>.  Very soon, that will be integrated with the tutorial.  If you want the visualization, you&rsquo;ll have to run it in another tab and cut and paste the queries across.</p>
+
+</div>
+
+<p>Press run the query to the right. <em>(You&rsquo;ll see the JSON output
+here. Run the same query in Dgraph UI and check the visualization too though.)</em> In the resulting graph, circles denote people and pets, and lines denote connections or labeled relationships between them.  See if you can find Michael and his pet sheep, Rammy.</p>
+<!-- raw HTML omitted -->
+<p>Graphs lend themselves so naturally to visualization that you’ll find yourself thinking in terms of graphs and visualizations of them.</p>
+<p>In a graph, the objects (or entities) are called nodes and the relationships are called edges or predicates.</p>
+<p>Graphs aren&rsquo;t just for social networks.  Other examples include</p>
+<ul>
+<li>Interconnected data, like SQL tables requiring joins</li>
+<li>Advanced search</li>
+<li>Recommendation engines</li>
+<li>Pattern detection</li>
+<li>Networks, like computers, roads, and telecommunications</li>
+<li>Processes, like business and biological processes</li>
+<li>Events and the causality or other links between them</li>
+<li>Structures of firms or markets</li>
+</ul>
+<p>These and the many more applications of graphs lead us to graph databases.</p>
+
+          </div>
+        </div>
+
+        <div class="page-nav">
+          
+            <a href="/dgraph-1.2.1/intro/5" data-action="go-prev" class="btn btn-secondary btn-sm page-nav-link"><i class="fa fa-chevron-left"></i></a>
+          
+          <div class="nav-index">
+            6 / 8
+          </div>
+          
+            <a href="/dgraph-1.2.1/intro/7" data-action="go-next" class="btn btn-secondary btn-sm page-nav-link"><i class="fa fa-chevron-right"></i></a>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-12 col-md-12 col-lg-6 vertical-stretch">
+      
+        
+<div class="runnable" data-initial="{
+  everyone(func: anyofterms(name, &#34;Michael Catalina&#34;)) {
+    name
+    friend {
+      name@ru:ko:en
+      friend { expand(_all_) { expand(_all_) } }
+    }
+  }
+}
+" data-current="{
+  everyone(func: anyofterms(name, &#34;Michael Catalina&#34;)) {
+    name
+    friend {
+      name@ru:ko:en
+      friend { expand(_all_) { expand(_all_) } }
+    }
+  }
+}
+" endpoint="/query" data-dirty="false">
+  <div class="runnable-pane runnable-pane-query">
+    <div class="topbar">
+      <div class="row">
+        <div class="col-7">
+          <span class="pane-title">
+            Endpoint: /query
+            <span class="server-switch">
+              Dgraph:&nbsp;<span class="url">
+                http://localhost:8080
+              </span>&nbsp;<a class="btn-change" href="#"><i class="fa fa-edit"></i></a>
+            </span>
+          </span>
+        </div>
+        <div class="col-5">
+          <div class="actions pull-right">
+            <a class="code-btn" data-action="reset" href="#">Reset</a>
+            <a class="code-btn" data-action="run" href="#">Run</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="runnable-content runnable-code">
+      <div class="runnable-tab-content active">
+        <textarea class="query-content-editable">{
+  everyone(func: anyofterms(name, &#34;Michael Catalina&#34;)) {
+    name
+    friend {
+      name@ru:ko:en
+      friend { expand(_all_) { expand(_all_) } }
+    }
+  }
+}
+</textarea>
+      </div>
+    </div>
+
+    <div class="row footer">
+      <div class="col-12">
+        <div class="actions pull-right">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="runnable-pane runnable-pane-output">
+    <div class="row topbar">
+      <div class="col-12">
+        <span class="pane-title">
+          Response
+        </span>
+      </div>
+    </div>
+
+    <div class="runnable-content runnable-output" style="background: url('https://tour.dgraph.io/dgraph-1.2.1/images/dgraph-black.png'); background-repeat: no-repeat; background-position: center; background-color: #fff;">
+      <pre class="output-container empty"><code class="output" tabindex="-1"></code></pre>
+    </div>
+
+    <div class="row footer">
+      <div class="col-12 col-sm-8">
+        <div class="latency-info hidden">
+          <div class="stat server-latency">
+            <span class="label">Server latency:</span> <span class="number"></span> <i class="fa fa-question-circle server-latency-tooltip-trigger" data-toggle="tooltip" data-placement="top" data-html="true" title="Latency information" data-animation="false"></i>
+          </div>
+          <div class="stat network-latency">
+            <span class="label">Network latency:</span> <span class="number"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .modal.show {
+    display: block;
+    opacity: 1;
+    background-color: rgba(0,0,0,0.3);
+  }
+</style>
+<div class="modal fade runnable-url-modal" tabindex="-1" role="dialog"
+  aria-labelledby="runnable-url-modal-label" aria-hidden="true">
+  <div class="modal-dialog modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="runnable-url-modal-label">Change Dgraph Alpha URL</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <form>
+            <div class="form-group">
+              <label for="inputDgraphUrl">Dgraph Alpha Address</label>
+              <input type="text" class="form-control" id="inputDgraphUrl" placeholder="http://localhost:8080">
+              
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="code-btn" data-action="default-url">Reset to Default</button>
+        <button type="button" class="code-btn" data-action="apply">Apply</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+  </div>
+</div>
+
+    </main>
+
+    <script src="https://tour.dgraph.io/dgraph-1.2.1/js/build/dgraph-tour.js?6aec6e1a029d764cfc1f4b491bb7c502"></script>
+    <script src="//unpkg.com/@dgraph-io/community"></script>
+  </body>
+
+</html>
+

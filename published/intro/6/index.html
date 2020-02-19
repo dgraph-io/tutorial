@@ -7,14 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta
-  name="description"
-  
-    
-  
-  >
-
-<link
+    <link
   rel="manifest"
   href="https://tour.dgraph.io//images/favicons/manifest.json"
   >
@@ -46,32 +39,6 @@
 <link rel="icon" sizes="96x96" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-96x96.png">
 <link rel="icon" sizes="16x16" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-16x16.png">
 
-
-    <script>
-        if (window.location.href.indexOf("dgraph.io") > -1) {
-      (function(i, s, o, g, r, a, m) {
-        i["GoogleAnalyticsObject"] = r;
-        (i[r] =
-          i[r] ||
-          function() {
-            (i[r].q = i[r].q || []).push(arguments);
-          }), (i[r].l = 1 * new Date());
-        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m);
-      })(
-        window,
-        document,
-        "script",
-        "https://www.google-analytics.com/analytics.js",
-        "ga"
-      );
-
-      ga("create", "UA-75364122-2", "auto");
-      ga("send", "pageview");
-    }
-    </script>
 
     
     <title>
@@ -118,19 +85,19 @@
         </option>
       
         <option
-          value="1.1.0"
+          value="1.2.1"
           
             selected="selected"
           
         >
-          Dgraph 1.1.0
+          Dgraph 1.2.1
         </option>
       
         <option
-          value="1.0.16"
+          value="1.1.0"
           
         >
-          Dgraph 1.0.16
+          Dgraph 1.1.0
         </option>
       
   </select>
@@ -144,8 +111,8 @@
 
 <script>
   window.DgTour = {
-    thisRelease: "1.1.0",
-    latestRelease: "1.1.0"
+    thisRelease: "1.2.1",
+    latestRelease: "1.2.1"
   }
 </script>
 
@@ -589,9 +556,7 @@
 
           <div>
             <p>We&rsquo;ve started Dgraph, but first things first: What is a graph and what has that got to do with databases?</p>
-
 <p>Graphs describe objects and the interconnections between them. Many people have heard of friendship graphs, or social network graphs, so let’s start there.</p>
-
 
 
 
@@ -601,18 +566,12 @@
 
 </div>
 
-
 <p>Press run the query to the right. <em>(You&rsquo;ll see the JSON output
 here. Run the same query in Dgraph UI and check the visualization too though.)</em> In the resulting graph, circles denote people and pets, and lines denote connections or labeled relationships between them.  See if you can find Michael and his pet sheep, Rammy.</p>
-
-<!---The graph could be represented as a picture, written down as text or stored in a graph database. -->
-
+<!-- raw HTML omitted -->
 <p>Graphs lend themselves so naturally to visualization that you’ll find yourself thinking in terms of graphs and visualizations of them.</p>
-
 <p>In a graph, the objects (or entities) are called nodes and the relationships are called edges or predicates.</p>
-
 <p>Graphs aren&rsquo;t just for social networks.  Other examples include</p>
-
 <ul>
 <li>Interconnected data, like SQL tables requiring joins</li>
 <li>Advanced search</li>
@@ -623,7 +582,6 @@ here. Run the same query in Dgraph UI and check the visualization too though.)</
 <li>Events and the causality or other links between them</li>
 <li>Structures of firms or markets</li>
 </ul>
-
 <p>These and the many more applications of graphs lead us to graph databases.</p>
 
           </div>
@@ -784,6 +742,7 @@ here. Run the same query in Dgraph UI and check the visualization too though.)</
     </main>
 
     <script src="https://tour.dgraph.io//js/build/dgraph-tour.js?6aec6e1a029d764cfc1f4b491bb7c502"></script>
+    <script src="//unpkg.com/@dgraph-io/community"></script>
   </body>
 
 </html>

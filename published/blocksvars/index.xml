@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blocksvars on A Tour of Dgraph</title>
@@ -32,7 +32,7 @@ Queries issued in this way are independent.</description>
       <guid>https://tour.dgraph.io/blocksvars/2/</guid>
       <description>Results can be stored in variables and used elsewhere in the query.
 Variables are declared by
-var_name as some_block { ... }  where var_name is any distinct variable name andsome_block is either a whole query or an internal block of a query matching on an edge.
+var_name as some_block { ... } where var_name is any distinct variable name and some_block is either a whole query or an internal block of a query matching on an edge.
 Once defined, variables can be used in:
  the same query in a child of the defining block (not a parent of the definition) in another query  Variables don&amp;rsquo;t affect the semantics of the query at the point they are defined.</description>
     </item>
@@ -140,8 +140,9 @@ If you need some hints try:  Show answer  To solve this, you&amp;rsquo;ll need t
       
       <guid>https://tour.dgraph.io/blocksvars/12/</guid>
       <description>A groupby query aggregates query results given a set of properties on which to group elements. For example, a query containing the block
-director.film @groupby(genre) { a as count(uid) }  finds nodes reachable along the director.film edge, partitions these into groups based on genre, then counts how many nodes are in each group.
-Inside a groupby block, only aggregations are allowed and count can only be applied to uid.</description>
+director.film @groupby(genre) { a as count(uid) } finds nodes reachable along the director.film edge, partitions these into groups based on genre, then counts how many nodes are in each group.
+Inside a groupby block, only aggregations are allowed and count can only be applied to uid.
+The result is the grouped edges and the value variables for the aggregations.</description>
     </item>
     
     <item>

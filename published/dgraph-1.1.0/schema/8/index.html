@@ -118,19 +118,19 @@
         </option>
       
         <option
+          value="1.2.1"
+          
+        >
+          Dgraph 1.2.1
+        </option>
+      
+        <option
           value="1.1.0"
           
             selected="selected"
           
         >
           Dgraph 1.1.0
-        </option>
-      
-        <option
-          value="1.0.16"
-          
-        >
-          Dgraph 1.0.16
         </option>
       
   </select>
@@ -145,9 +145,40 @@
 <script>
   window.DgTour = {
     thisRelease: "1.1.0",
-    latestRelease: "1.1.0"
+    latestRelease: "1.2.1"
   }
 </script>
+
+
+
+<style>
+  .old-branch-alert {
+    position: fixed;
+    z-index: 1;
+    left: 40vw;
+    right: 100px;
+    top: 5px;
+    border-radius: 8px;
+    box-shadow: -2px 2px 6px 0px rgba(0,0,0,0.75);
+    background-color: #f0ad4e;
+    padding: 4px;
+  }
+  .old-branch-alert a.btn {
+    color: #fff;
+    padding: 2px 4px;
+  }
+</style>
+<div class="old-branch-alert">
+  You are looking at the tour for Dgraph
+  <strong>1.1.0</strong>.
+  Latest stable release is
+  <strong>1.2.1</strong>.
+  <a href="/" class="btn btn-primary">Go to
+    <strong>
+      Dgraph 1.2.1
+    </strong>
+  </a>
+</div>
 
 
 
@@ -588,26 +619,18 @@
           <h1 class="lesson-heading">Deleting Data</h1>
 
           <div>
-            
-
-<p>There are three deletion options inside a delete mutation.</p>
-
+            <p>There are three deletion options inside a delete mutation.</p>
 <ul>
 <li><code>&lt;uid&gt; &lt;edge&gt; &lt;uid&gt;/&quot;value&quot; .</code>  Delete a single triple</li>
 <li><code>&lt;uid&gt; &lt;edge&gt; * .</code>  Delete all triples for a given edge</li>
 <li><code>&lt;uid&gt; * * .</code> Delete all triples for a given node</li>
 </ul>
-
 <p>The examples given here are not complete. Uids assigned on your
 instance would be unique. Try something out; you&rsquo;re not going
 to hurt anyone, just delete their friends.</p>
-
 <p>You can do the same example using JSON format. You&rsquo;re able to do that through our clients, cURL or Ratel UI.</p>
-
 <h4 id="see-in-json">See in JSON:</h4>
-
 <p>Delete all triples for a given node</p>
-
 <pre><code> {
         &quot;delete&quot;: [
             {
@@ -615,10 +638,7 @@ to hurt anyone, just delete their friends.</p>
             }
         ]
     }
-</code></pre>
-
-<p>Delete all triples for a given edge</p>
-
+</code></pre><p>Delete all triples for a given edge</p>
 <pre><code> {
         &quot;delete&quot;: [
             {
@@ -627,14 +647,10 @@ to hurt anyone, just delete their friends.</p>
             }
         ]
     }
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <p>This doesn&rsquo;t delete their children which means in this case, it will not erase the &ldquo;friends&rdquo;. Only the relation would be deleted.</p>
 </blockquote>
-
 <p>Deleting relations and then their children</p>
-
 <pre><code> {
         &quot;delete&quot;: [
             {
@@ -649,8 +665,6 @@ to hurt anyone, just delete their friends.</p>
         ]
     }
 </code></pre>
-
-
 
 
 <div class="notices tip" >

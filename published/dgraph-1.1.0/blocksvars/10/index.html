@@ -118,19 +118,19 @@
         </option>
       
         <option
+          value="1.2.1"
+          
+        >
+          Dgraph 1.2.1
+        </option>
+      
+        <option
           value="1.1.0"
           
             selected="selected"
           
         >
           Dgraph 1.1.0
-        </option>
-      
-        <option
-          value="1.0.16"
-          
-        >
-          Dgraph 1.0.16
         </option>
       
   </select>
@@ -145,9 +145,40 @@
 <script>
   window.DgTour = {
     thisRelease: "1.1.0",
-    latestRelease: "1.1.0"
+    latestRelease: "1.2.1"
   }
 </script>
+
+
+
+<style>
+  .old-branch-alert {
+    position: fixed;
+    z-index: 1;
+    left: 40vw;
+    right: 100px;
+    top: 5px;
+    border-radius: 8px;
+    box-shadow: -2px 2px 6px 0px rgba(0,0,0,0.75);
+    background-color: #f0ad4e;
+    padding: 4px;
+  }
+  .old-branch-alert a.btn {
+    color: #fff;
+    padding: 2px 4px;
+  }
+</style>
+<div class="old-branch-alert">
+  You are looking at the tour for Dgraph
+  <strong>1.1.0</strong>.
+  Latest stable release is
+  <strong>1.2.1</strong>.
+  <a href="/" class="btn btn-primary">Go to
+    <strong>
+      Dgraph 1.2.1
+    </strong>
+  </a>
+</div>
 
 
 
@@ -591,9 +622,7 @@
             <p>As well as <code>min</code>, <code>max</code>, <code>avg</code>, and <code>sum</code> to aggregate, Dgraph supports a host of
 functions that can be applied to value variables.  These need to be
 enclosed in <code>math(...)</code> and stored in a variable.</p>
-
 <p>The full list is:</p>
-
 <table>
 <thead>
 <tr>
@@ -602,50 +631,42 @@ enclosed in <code>math(...)</code> and stored in a variable.</p>
 <th align="center">Notes</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="center"><code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>%</code></td>
 <td align="center"><code>int</code> and <code>float</code></td>
 <td align="center"></td>
 </tr>
-
 <tr>
 <td align="center"><code>min</code> <code>max</code></td>
 <td align="center">All types except <code>geo</code> and <code>bool</code></td>
 <td align="center"></td>
 </tr>
-
 <tr>
 <td align="center"><code>&lt;</code> <code>&gt;</code> <code>&lt;=</code> <code>&gt;=</code> <code>==</code> <code>!=</code></td>
 <td align="center">All, except <code>geo</code> and <code>bool</code></td>
 <td align="center">boolean result</td>
 </tr>
-
 <tr>
-<td align="center"><code>floor</code> <code>ceil</code><code>ln</code> <code>exp</code> <code>sqrt</code></td>
+<td align="center"><code>floor</code> <code>ceil``ln</code> <code>exp</code> <code>sqrt</code></td>
 <td align="center"><code>int</code> and <code>float</code></td>
 <td align="center"></td>
 </tr>
-
 <tr>
 <td align="center"><code>since</code></td>
 <td align="center"><code>date</code></td>
 <td align="center">number of seconds (<code>float</code>) from the time specified</td>
 </tr>
-
 <tr>
 <td align="center"><code>pow(a, b)</code></td>
 <td align="center"><code>int</code> and <code>float</code></td>
 <td align="center"><code>a^b</code></td>
 </tr>
-
 <tr>
 <td align="center"><code>logbase(a,b)</code></td>
 <td align="center"><code>int</code> and <code>float</code></td>
 <td align="center"><code>log(a)</code> to the base <code>b</code></td>
 </tr>
-
 <tr>
 <td align="center"><code>cond(a, b, c)</code></td>
 <td align="center"><code>a</code> must be a boolean</td>
@@ -653,7 +674,6 @@ enclosed in <code>math(...)</code> and stored in a variable.</p>
 </tr>
 </tbody>
 </table>
-
 <p>Note that these are functions on values, not functions to aggregate value maps.  The results of these functions are value variables and can be aggregated.</p>
 
           </div>

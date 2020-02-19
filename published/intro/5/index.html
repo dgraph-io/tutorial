@@ -7,14 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta
-  name="description"
-  
-    
-  
-  >
-
-<link
+    <link
   rel="manifest"
   href="https://tour.dgraph.io//images/favicons/manifest.json"
   >
@@ -46,32 +39,6 @@
 <link rel="icon" sizes="96x96" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-96x96.png">
 <link rel="icon" sizes="16x16" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-16x16.png">
 
-
-    <script>
-        if (window.location.href.indexOf("dgraph.io") > -1) {
-      (function(i, s, o, g, r, a, m) {
-        i["GoogleAnalyticsObject"] = r;
-        (i[r] =
-          i[r] ||
-          function() {
-            (i[r].q = i[r].q || []).push(arguments);
-          }), (i[r].l = 1 * new Date());
-        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m);
-      })(
-        window,
-        document,
-        "script",
-        "https://www.google-analytics.com/analytics.js",
-        "ga"
-      );
-
-      ga("create", "UA-75364122-2", "auto");
-      ga("send", "pageview");
-    }
-    </script>
 
     
     <title>
@@ -118,19 +85,19 @@
         </option>
       
         <option
-          value="1.1.0"
+          value="1.2.1"
           
             selected="selected"
           
         >
-          Dgraph 1.1.0
+          Dgraph 1.2.1
         </option>
       
         <option
-          value="1.0.16"
+          value="1.1.0"
           
         >
-          Dgraph 1.0.16
+          Dgraph 1.1.0
         </option>
       
   </select>
@@ -144,8 +111,8 @@
 
 <script>
   window.DgTour = {
-    thisRelease: "1.1.0",
-    latestRelease: "1.1.0"
+    thisRelease: "1.2.1",
+    latestRelease: "1.2.1"
   }
 </script>
 
@@ -588,42 +555,26 @@
           <h1 class="lesson-heading">Mutation Introduction</h1>
 
           <div>
-            
-
-<p>In the last exercise, you added some data into Dgraph. Adding or removing data in Dgraph is called a mutation. We have two types of standard formats for mutations: RDF (Resource Description Framework) N-Quad and JSON (JavaScript Object Notation). RDF is a widely used standard in Graph or Ontology systems.</p>
-
+            <p>In the last exercise, you added some data into Dgraph. Adding or removing data in Dgraph is called a mutation. We have two types of standard formats for mutations: RDF (Resource Description Framework) N-Quad and JSON (JavaScript Object Notation). RDF is a widely used standard in Graph or Ontology systems.</p>
 <p>In Dgraph the mutation operations consist of two patterns: blank UID reference or explicit UID reference.</p>
-
 <p>This introduction is important for the coming exercises, many of the concepts presented here will be repeated in the next few chapters. (For example, <a href="../../schema/2/">Adding Data - mutating data</a> and <a href="../../schema/6/">Exercise : Integrating existing data</a>.)</p>
-
 <h2 id="blank-uid">Blank UID</h2>
-
 <p>In a mutation, any definition that doesn&rsquo;t match the UID explicit reference format can be considered blank UID reference, also known as a blank node. The structure of a blank node consists of:</p>
-
 <p>underline + a colon + unique name (identifier)</p>
-
 <p>For example, in the previous section you saw the blank nodes <code>_:michael</code> and <code>_:amit</code>. This is the proper blank node syntax. However, there will be cases where the parser will consider some typo as a blank node, but its use is not recommended. Examples below:</p>
-
 <pre><code>&lt;_:uid43&gt; or &lt;_:uid4e030f&gt;
 &lt;someTypoMistake&gt;
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <p>Dgraph&rsquo;s <a href="https://docs.dgraph.io/deploy/#export-database">data export</a> uses blank nodes of the first form presented.</p>
 </blockquote>
-
 <p>In JSON, the blank node format is similar. The blank node is defined with the <code>&quot;uid&quot;</code> key of a JSON object:</p>
-
 <pre><code>{
   &quot;uid&quot;: &quot;_:diggy&quot;,
   &quot;name&quot;: &quot;diggy&quot;,
   &quot;dgraph.type&quot;: &quot;Food&quot;,
   &quot;food&quot;: &quot;pizza&quot;
 }
-</code></pre>
-
-<p>Blank nodes are covered in more detail in the <a href="https://docs.dgraph.io/mutations/#blank-nodes-and-uid">mutation docs</a>.</p>
-
+</code></pre><p>Blank nodes are covered in more detail in the <a href="https://docs.dgraph.io/mutations/#blank-nodes-and-uid">mutation docs</a>.</p>
 
 
 
@@ -632,33 +583,22 @@
 
 </div>
 
-
 <h2 id="explicit-uid">Explicit UID</h2>
-
 <p>To do a mutation for an existing node, you can refer to the node&rsquo;s UID directly in the mutation. The syntax is simple:</p>
-
 <pre><code>&lt;THE-UID&gt; # or 
 &lt;0x4e030f&gt; &lt;somePredicate&gt; &quot;some new data&quot; .
-</code></pre>
-
-<p>In JSON:</p>
-
+</code></pre><p>In JSON:</p>
 <pre><code>{
   &quot;uid&quot;: &quot;0x4e030f&quot;,
   &quot;somePredicate&quot;: &quot;some new data&quot;
 }
-</code></pre>
-
-<p>One way to know an existing node&rsquo;s UID is to simply query for the indexed predicate, e.g:</p>
-
+</code></pre><p>One way to know an existing node&rsquo;s UID is to simply query for the indexed predicate, e.g:</p>
 <pre><code>{
   MyUser(func: eq(name, &quot;Jack Torrance&quot;)) {
     uid
   }
 }
 </code></pre>
-
-
 
 
 <div class="notices note" >
@@ -697,6 +637,7 @@
     </main>
 
     <script src="https://tour.dgraph.io//js/build/dgraph-tour.js?6aec6e1a029d764cfc1f4b491bb7c502"></script>
+    <script src="//unpkg.com/@dgraph-io/community"></script>
   </body>
 
 </html>

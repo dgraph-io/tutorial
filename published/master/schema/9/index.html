@@ -87,17 +87,17 @@
         </option>
       
         <option
+          value="1.2.1"
+          
+        >
+          Dgraph 1.2.1
+        </option>
+      
+        <option
           value="1.1.0"
           
         >
           Dgraph 1.1.0
-        </option>
-      
-        <option
-          value="1.0.16"
-          
-        >
-          Dgraph 1.0.16
         </option>
       
   </select>
@@ -112,7 +112,7 @@
 <script>
   window.DgTour = {
     thisRelease: "master",
-    latestRelease: "1.1.0"
+    latestRelease: "1.2.1"
   }
 </script>
 
@@ -139,10 +139,10 @@
   You are looking at the tour for Dgraph
   <strong>master</strong>.
   Latest stable release is
-  <strong>1.1.0</strong>.
+  <strong>1.2.1</strong>.
   <a href="/" class="btn btn-primary">Go to
     <strong>
-      Dgraph 1.1.0
+      Dgraph 1.2.1
     </strong>
   </a>
 </div>
@@ -588,16 +588,11 @@
           <div>
             <p><code>expand(...predicates...)</code> is used to query for all given predicates,
 rather than listing them in the query.  Querying</p>
-
 <pre><code>expand(_all_)
-</code></pre>
-
-<p>queries returns all edges out of every node matched at that level in the
+</code></pre><p>queries returns all edges out of every node matched at that level in the
 query.  Expand can be nested to then expand all predicates at the next level.</p>
-
 <p>We&rsquo;ll see later how to use expand with variables to query for a
 particular set of edges.</p>
-
 
 
 
@@ -605,7 +600,6 @@ particular set of edges.</p>
   <span class="type">Note</span> <p>As of version v1.1 you will need to add Types in your schema for <code>expand(_all_)</code> to work. See more in <a href="https://docs.dgraph.io/master/query-language/#type-system">Type System</a>.</p>
 
 </div>
-
 
 <p>You can also use <code>_reverse_</code> and <code>_forward_</code> as arguments to <code>expand()</code>.</p>
 

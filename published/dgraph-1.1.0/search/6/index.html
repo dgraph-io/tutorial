@@ -118,19 +118,19 @@
         </option>
       
         <option
+          value="1.2.1"
+          
+        >
+          Dgraph 1.2.1
+        </option>
+      
+        <option
           value="1.1.0"
           
             selected="selected"
           
         >
           Dgraph 1.1.0
-        </option>
-      
-        <option
-          value="1.0.16"
-          
-        >
-          Dgraph 1.0.16
         </option>
       
   </select>
@@ -145,9 +145,40 @@
 <script>
   window.DgTour = {
     thisRelease: "1.1.0",
-    latestRelease: "1.1.0"
+    latestRelease: "1.2.1"
   }
 </script>
+
+
+
+<style>
+  .old-branch-alert {
+    position: fixed;
+    z-index: 1;
+    left: 40vw;
+    right: 100px;
+    top: 5px;
+    border-radius: 8px;
+    box-shadow: -2px 2px 6px 0px rgba(0,0,0,0.75);
+    background-color: #f0ad4e;
+    padding: 4px;
+  }
+  .old-branch-alert a.btn {
+    color: #fff;
+    padding: 2px 4px;
+  }
+</style>
+<div class="old-branch-alert">
+  You are looking at the tour for Dgraph
+  <strong>1.1.0</strong>.
+  Latest stable release is
+  <strong>1.2.1</strong>.
+  <a href="/" class="btn btn-primary">Go to
+    <strong>
+      Dgraph 1.2.1
+    </strong>
+  </a>
+</div>
 
 
 
@@ -589,9 +620,7 @@
 
           <div>
             <p>Full text search works only for languages for which there are stemming procedures and stop word lists.</p>
-
 <p>Currently, Dgraph supports</p>
-
 <table>
 <thead>
 <tr>
@@ -599,93 +628,75 @@
 <th align="center">Country Code</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="center">Danish</td>
 <td align="center">da</td>
 </tr>
-
 <tr>
 <td align="center">Dutch</td>
 <td align="center">nl</td>
 </tr>
-
 <tr>
 <td align="center">English</td>
 <td align="center">en</td>
 </tr>
-
 <tr>
 <td align="center">Finnish</td>
 <td align="center">fi</td>
 </tr>
-
 <tr>
 <td align="center">French</td>
 <td align="center">fr</td>
 </tr>
-
 <tr>
 <td align="center">German</td>
 <td align="center">de</td>
 </tr>
-
 <tr>
 <td align="center">Hungarian</td>
 <td align="center">hu</td>
 </tr>
-
 <tr>
 <td align="center">Italian</td>
 <td align="center">it</td>
 </tr>
-
 <tr>
 <td align="center">Norwegian</td>
 <td align="center">no</td>
 </tr>
-
 <tr>
 <td align="center">Portuguese</td>
 <td align="center">pt</td>
 </tr>
-
 <tr>
 <td align="center">Romanian</td>
 <td align="center">ro</td>
 </tr>
-
 <tr>
 <td align="center">Russian</td>
 <td align="center">ru</td>
 </tr>
-
 <tr>
 <td align="center">Spanish</td>
 <td align="center">es</td>
 </tr>
-
 <tr>
 <td align="center">Swedish</td>
 <td align="center">sv</td>
 </tr>
-
 <tr>
 <td align="center">Turkish</td>
 <td align="center">tr</td>
 </tr>
-
 <tr>
 <td align="center">Chinese</td>
 <td align="center">zh</td>
 </tr>
-
 <tr>
 <td align="center">Japanese</td>
 <td align="center">ja</td>
 </tr>
-
 <tr>
 <td align="center">Korean</td>
 <td align="center">ko</td>

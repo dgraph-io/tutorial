@@ -7,14 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta
-  name="description"
-  
-    
-  
-  >
-
-<link
+    <link
   rel="manifest"
   href="https://tour.dgraph.io//images/favicons/manifest.json"
   >
@@ -46,32 +39,6 @@
 <link rel="icon" sizes="96x96" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-96x96.png">
 <link rel="icon" sizes="16x16" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-16x16.png">
 
-
-    <script>
-        if (window.location.href.indexOf("dgraph.io") > -1) {
-      (function(i, s, o, g, r, a, m) {
-        i["GoogleAnalyticsObject"] = r;
-        (i[r] =
-          i[r] ||
-          function() {
-            (i[r].q = i[r].q || []).push(arguments);
-          }), (i[r].l = 1 * new Date());
-        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m);
-      })(
-        window,
-        document,
-        "script",
-        "https://www.google-analytics.com/analytics.js",
-        "ga"
-      );
-
-      ga("create", "UA-75364122-2", "auto");
-      ga("send", "pageview");
-    }
-    </script>
 
     
     <title>
@@ -118,19 +85,19 @@
         </option>
       
         <option
-          value="1.1.0"
+          value="1.2.1"
           
             selected="selected"
           
         >
-          Dgraph 1.1.0
+          Dgraph 1.2.1
         </option>
       
         <option
-          value="1.0.16"
+          value="1.1.0"
           
         >
-          Dgraph 1.0.16
+          Dgraph 1.1.0
         </option>
       
   </select>
@@ -144,8 +111,8 @@
 
 <script>
   window.DgTour = {
-    thisRelease: "1.1.0",
-    latestRelease: "1.1.0"
+    thisRelease: "1.2.1",
+    latestRelease: "1.2.1"
   }
 </script>
 
@@ -589,21 +556,15 @@
 
           <div>
             <p>Now that the schema has been updated we can add data as triples.</p>
-
 <p>Dgraph creates its own internal id’s for nodes, but we need some way to refer to the same node many times in our input data. That’s what <code>_:company1</code> does.</p>
-
 <p>Technically, these are ‘blank nodes’. They tell Dgraph to create a node, give it an internal id and make sure it’s used consistently.</p>
-
 <p>After the upload, the label <code>_:company1</code> doesn’t exist in
 Dgraph and we can’t query for it. You’ll see in the result that
 Dgraph has replaced it with an internal id. You can query for this
 internal id &mdash; remember <code>func: uid(&lt;uid_number&gt;)</code>.</p>
-
 <p>Making changes to the graph stored in Dgraph is called mutating the
 data.</p>
-
 <p>You can load the same example data using JSON format. You&rsquo;re able to do that through our clients, cURL or Ratel UI.</p>
-
 <p>See the JSON:
 
 <div class="expandable">
@@ -660,11 +621,9 @@ data.</p>
         ]
     }
 </code></pre>
-
   </div>
 </div>
 </p>
-
 
 
 
@@ -721,9 +680,9 @@ data.</p>
     _:alexei &lt;name&gt; &#34;Alexei&#34; .
 
     _:jose &lt;works_for&gt; _:company2 .
-    _:michael &lt;dgraph.type&gt; &#34;Person&#34; .
+    _:jose &lt;dgraph.type&gt; &#34;Person&#34; .
     _:alexei &lt;works_for&gt; _:company2 .
-    _:michael &lt;dgraph.type&gt; &#34;Person&#34; .
+    _:alexei &lt;dgraph.type&gt; &#34;Person&#34; .
 
     _:ivy &lt;boss_of&gt; _:jack .
 
@@ -757,9 +716,9 @@ data.</p>
     _:alexei &lt;name&gt; &#34;Alexei&#34; .
 
     _:jose &lt;works_for&gt; _:company2 .
-    _:michael &lt;dgraph.type&gt; &#34;Person&#34; .
+    _:jose &lt;dgraph.type&gt; &#34;Person&#34; .
     _:alexei &lt;works_for&gt; _:company2 .
-    _:michael &lt;dgraph.type&gt; &#34;Person&#34; .
+    _:alexei &lt;dgraph.type&gt; &#34;Person&#34; .
 
     _:ivy &lt;boss_of&gt; _:jack .
 
@@ -818,9 +777,9 @@ data.</p>
     _:alexei &lt;name&gt; &#34;Alexei&#34; .
 
     _:jose &lt;works_for&gt; _:company2 .
-    _:michael &lt;dgraph.type&gt; &#34;Person&#34; .
+    _:jose &lt;dgraph.type&gt; &#34;Person&#34; .
     _:alexei &lt;works_for&gt; _:company2 .
-    _:michael &lt;dgraph.type&gt; &#34;Person&#34; .
+    _:alexei &lt;dgraph.type&gt; &#34;Person&#34; .
 
     _:ivy &lt;boss_of&gt; _:jack .
 
@@ -913,6 +872,7 @@ data.</p>
     </main>
 
     <script src="https://tour.dgraph.io//js/build/dgraph-tour.js?6aec6e1a029d764cfc1f4b491bb7c502"></script>
+    <script src="//unpkg.com/@dgraph-io/community"></script>
   </body>
 
 </html>

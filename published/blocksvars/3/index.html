@@ -7,14 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta
-  name="description"
-  
-    
-  
-  >
-
-<link
+    <link
   rel="manifest"
   href="https://tour.dgraph.io//images/favicons/manifest.json"
   >
@@ -46,32 +39,6 @@
 <link rel="icon" sizes="96x96" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-96x96.png">
 <link rel="icon" sizes="16x16" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-16x16.png">
 
-
-    <script>
-        if (window.location.href.indexOf("dgraph.io") > -1) {
-      (function(i, s, o, g, r, a, m) {
-        i["GoogleAnalyticsObject"] = r;
-        (i[r] =
-          i[r] ||
-          function() {
-            (i[r].q = i[r].q || []).push(arguments);
-          }), (i[r].l = 1 * new Date());
-        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m);
-      })(
-        window,
-        document,
-        "script",
-        "https://www.google-analytics.com/analytics.js",
-        "ga"
-      );
-
-      ga("create", "UA-75364122-2", "auto");
-      ga("send", "pageview");
-    }
-    </script>
 
     
     <title>
@@ -118,19 +85,19 @@
         </option>
       
         <option
-          value="1.1.0"
+          value="1.2.1"
           
             selected="selected"
           
         >
-          Dgraph 1.1.0
+          Dgraph 1.2.1
         </option>
       
         <option
-          value="1.0.16"
+          value="1.1.0"
           
         >
-          Dgraph 1.0.16
+          Dgraph 1.1.0
         </option>
       
   </select>
@@ -144,8 +111,8 @@
 
 <script>
   window.DgTour = {
-    thisRelease: "1.1.0",
-    latestRelease: "1.1.0"
+    thisRelease: "1.2.1",
+    latestRelease: "1.2.1"
   }
 </script>
 
@@ -590,20 +557,15 @@
           <div>
             <p>Query variables in a child block allow the query to carry answers
 matched at one level down to the children to filter against.</p>
-
 <p>For example, take of the set of actors in all Jane Campion films; our
 challenge is to find which pairs
 in that set have acted together on a film not directed by Jane Campion.</p>
-
 <p>The query here uses the sets of all Jane Campion&rsquo;s films <code>JC_films</code> and
 all actors in any Jane Campion film <code>JC_actors</code> in child blocks.</p>
-
 <p>The <code>@cascade</code> directive ensures answers match all parts of the
 query - otherwise, actors who had no matching co-actors could be
 returned.</p>
-
 <p>The query returns the trivial matches of actors and themselves as well as other coactors.</p>
-
 <p>The same query could have been written using variables that span
 multiple queries, but the graph traversal would be the same.</p>
 
@@ -807,6 +769,7 @@ multiple queries, but the graph traversal would be the same.</p>
     </main>
 
     <script src="https://tour.dgraph.io//js/build/dgraph-tour.js?6aec6e1a029d764cfc1f4b491bb7c502"></script>
+    <script src="//unpkg.com/@dgraph-io/community"></script>
   </body>
 
 </html>

@@ -7,14 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta
-  name="description"
-  
-    
-  
-  >
-
-<link
+    <link
   rel="manifest"
   href="https://tour.dgraph.io//images/favicons/manifest.json"
   >
@@ -46,32 +39,6 @@
 <link rel="icon" sizes="96x96" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-96x96.png">
 <link rel="icon" sizes="16x16" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-16x16.png">
 
-
-    <script>
-        if (window.location.href.indexOf("dgraph.io") > -1) {
-      (function(i, s, o, g, r, a, m) {
-        i["GoogleAnalyticsObject"] = r;
-        (i[r] =
-          i[r] ||
-          function() {
-            (i[r].q = i[r].q || []).push(arguments);
-          }), (i[r].l = 1 * new Date());
-        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m);
-      })(
-        window,
-        document,
-        "script",
-        "https://www.google-analytics.com/analytics.js",
-        "ga"
-      );
-
-      ga("create", "UA-75364122-2", "auto");
-      ga("send", "pageview");
-    }
-    </script>
 
     
     <title>
@@ -118,19 +85,19 @@
         </option>
       
         <option
-          value="1.1.0"
+          value="1.2.1"
           
             selected="selected"
           
         >
-          Dgraph 1.1.0
+          Dgraph 1.2.1
         </option>
       
         <option
-          value="1.0.16"
+          value="1.1.0"
           
         >
-          Dgraph 1.0.16
+          Dgraph 1.1.0
         </option>
       
   </select>
@@ -144,8 +111,8 @@
 
 <script>
   window.DgTour = {
-    thisRelease: "1.1.0",
-    latestRelease: "1.1.0"
+    thisRelease: "1.2.1",
+    latestRelease: "1.2.1"
   }
 </script>
 
@@ -589,37 +556,36 @@
 
           <div>
             <p>Nodes are filtered based on functions applied to the node&rsquo;s outgoing edges.</p>
-
 <p>So far the queries have only applied a filter to the top level nodes,
 but filters can be applied to any node in the query.</p>
-
 <p>Note the syntax difference between filtering at the root of a query and filtering on internal blocks.</p>
-
 <p>There are many functions for filtering, some of them are</p>
-
 <ul>
-<li><p><code>allOfTerms(edge_name, &quot;term1 ... termN&quot;)</code>: matches nodes with
+<li>
+<p><code>allOfTerms(edge_name, &quot;term1 ... termN&quot;)</code>: matches nodes with
 an outgoing <code>string</code> edge <code>edge_name</code> where the string contains all
-listed terms.</p></li>
-
-<li><p><code>anyOfTerms(edge_name, &quot;term1 ... termN&quot;)</code>: As with <code>allOfTerms</code>,
-but matches at least one term.</p></li>
-
-<li><p>The equalities and inequalities can be applied to edges of types:
+listed terms.</p>
+</li>
+<li>
+<p><code>anyOfTerms(edge_name, &quot;term1 ... termN&quot;)</code>: As with <code>allOfTerms</code>,
+but matches at least one term.</p>
+</li>
+<li>
+<p>The equalities and inequalities can be applied to edges of types:
 <code>int</code>, <code>float</code>, <code>string</code> and <code>date</code></p>
-
 <ul>
 <li><code>eq(edge_name, value)</code>: equal to</li>
 <li><code>ge(edge_name, value)</code>: greater than or equal to</li>
 <li><code>le(edge_name, value)</code>: less than or equal to</li>
 <li><code>gt(edge_name, value)</code>: greater than</li>
 <li><code>lt(edge_name, value)</code>: less than</li>
-</ul></li>
-
-<li><p>There&rsquo;s also regular expressions, full text search and geo search,
-but those are bigger topics that&rsquo;ll have their own section in the tutorial</p></li>
 </ul>
-
+</li>
+<li>
+<p>There&rsquo;s also regular expressions, full text search and geo search,
+but those are bigger topics that&rsquo;ll have their own section in the tutorial</p>
+</li>
+</ul>
 <p>Functions can only be applied to predicates that have been indexed -
 that’s part of the <a href="../../schema/1">lesson about schema</a>.</p>
 
@@ -784,6 +750,7 @@ that’s part of the <a href="../../schema/1">lesson about schema</a>.</p>
     </main>
 
     <script src="https://tour.dgraph.io//js/build/dgraph-tour.js?6aec6e1a029d764cfc1f4b491bb7c502"></script>
+    <script src="//unpkg.com/@dgraph-io/community"></script>
   </body>
 
 </html>

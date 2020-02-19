@@ -7,14 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta
-  name="description"
-  
-    
-  
-  >
-
-<link
+    <link
   rel="manifest"
   href="https://tour.dgraph.io//images/favicons/manifest.json"
   >
@@ -46,32 +39,6 @@
 <link rel="icon" sizes="96x96" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-96x96.png">
 <link rel="icon" sizes="16x16" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-16x16.png">
 
-
-    <script>
-        if (window.location.href.indexOf("dgraph.io") > -1) {
-      (function(i, s, o, g, r, a, m) {
-        i["GoogleAnalyticsObject"] = r;
-        (i[r] =
-          i[r] ||
-          function() {
-            (i[r].q = i[r].q || []).push(arguments);
-          }), (i[r].l = 1 * new Date());
-        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m);
-      })(
-        window,
-        document,
-        "script",
-        "https://www.google-analytics.com/analytics.js",
-        "ga"
-      );
-
-      ga("create", "UA-75364122-2", "auto");
-      ga("send", "pageview");
-    }
-    </script>
 
     
     <title>
@@ -118,19 +85,19 @@
         </option>
       
         <option
-          value="1.1.0"
+          value="1.2.1"
           
             selected="selected"
           
         >
-          Dgraph 1.1.0
+          Dgraph 1.2.1
         </option>
       
         <option
-          value="1.0.16"
+          value="1.1.0"
           
         >
-          Dgraph 1.0.16
+          Dgraph 1.1.0
         </option>
       
   </select>
@@ -144,8 +111,8 @@
 
 <script>
   window.DgTour = {
-    thisRelease: "1.1.0",
-    latestRelease: "1.1.0"
+    thisRelease: "1.2.1",
+    latestRelease: "1.2.1"
   }
 </script>
 
@@ -589,19 +556,12 @@
 
           <div>
             <p>Regular expressions require the <code>trigram</code> index.  A trigram is a substring of 3 consecutive characters, or runes.</p>
-
 <p>The trigrams of trigram are: tri, rig, igr, gra and ram.</p>
-
 <p>Valid regular expressions are able to be converted to a trigram query against the index. Dgraph searches the trigram index for possible matches and then runs the full regular expression against the possibles.</p>
-
 <p>Each regular expressions must match at least one trigram.</p>
-
 <p>It&rsquo;s a good idea to think carefully about regular expression queries.  The more possible trigrams matched by a query, the more results are checked against the full regular expression and the less efficient the query.  The reverse, however, is also true.  The more trigrams enforced by the regular expression, the better use Dgraph can make of the index and the smaller the possible results set.</p>
-
 <p>Thus, writing efficient regular expressions generally means making use of long substrings and avoiding as much alternate choice as possible.</p>
-
 <p>An optional <code>i</code> may follow the final <code>/</code> to indicate case insensitive search.</p>
-
 <p>Natalie Portman is the only actor in our database who has acted in an alien movie and has the word alien embedded in her name.</p>
 
           </div>
@@ -777,6 +737,7 @@
     </main>
 
     <script src="https://tour.dgraph.io//js/build/dgraph-tour.js?6aec6e1a029d764cfc1f4b491bb7c502"></script>
+    <script src="//unpkg.com/@dgraph-io/community"></script>
   </body>
 
 </html>

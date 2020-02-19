@@ -87,17 +87,17 @@
         </option>
       
         <option
+          value="1.2.1"
+          
+        >
+          Dgraph 1.2.1
+        </option>
+      
+        <option
           value="1.1.0"
           
         >
           Dgraph 1.1.0
-        </option>
-      
-        <option
-          value="1.0.16"
-          
-        >
-          Dgraph 1.0.16
         </option>
       
   </select>
@@ -112,7 +112,7 @@
 <script>
   window.DgTour = {
     thisRelease: "master",
-    latestRelease: "1.1.0"
+    latestRelease: "1.2.1"
   }
 </script>
 
@@ -139,10 +139,10 @@
   You are looking at the tour for Dgraph
   <strong>master</strong>.
   Latest stable release is
-  <strong>1.1.0</strong>.
+  <strong>1.2.1</strong>.
   <a href="/" class="btn btn-primary">Go to
     <strong>
-      Dgraph 1.1.0
+      Dgraph 1.2.1
     </strong>
   </a>
 </div>
@@ -588,13 +588,10 @@
           <div>
             <p>The <code>@cascade</code> directive removes any nodes that don&rsquo;t have all matching
 edges in the query.</p>
-
 <p>Another use is to remove nodes where a filter inside a block returns
 no results.</p>
-
 <p>In the query below, Dgraph returns all Michael&rsquo;s friends,
 and only the friends of friends who are over 27.</p>
-
 <pre><code>{
   michael_friends(func: allofterms(name, &quot;Michael&quot;)) {
     name
@@ -608,11 +605,8 @@ and only the friends of friends who are over 27.</p>
     }
   }
 }
-</code></pre>
-
-<p>With the <code>@cascade</code> directive, friends of Michael that don&rsquo;t have friends who
+</code></pre><p>With the <code>@cascade</code> directive, friends of Michael that don&rsquo;t have friends who
 are over 27 are not included in the result.</p>
-
 <pre><code>{
   michael_friends(func: allofterms(name, &quot;Michael&quot;)) @cascade {
     name
@@ -627,7 +621,6 @@ are over 27 are not included in the result.</p>
   }
 }
 </code></pre>
-
           </div>
         </div>
 

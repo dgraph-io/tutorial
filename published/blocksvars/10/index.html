@@ -7,14 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta
-  name="description"
-  
-    
-  
-  >
-
-<link
+    <link
   rel="manifest"
   href="https://tour.dgraph.io//images/favicons/manifest.json"
   >
@@ -46,32 +39,6 @@
 <link rel="icon" sizes="96x96" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-96x96.png">
 <link rel="icon" sizes="16x16" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-16x16.png">
 
-
-    <script>
-        if (window.location.href.indexOf("dgraph.io") > -1) {
-      (function(i, s, o, g, r, a, m) {
-        i["GoogleAnalyticsObject"] = r;
-        (i[r] =
-          i[r] ||
-          function() {
-            (i[r].q = i[r].q || []).push(arguments);
-          }), (i[r].l = 1 * new Date());
-        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m);
-      })(
-        window,
-        document,
-        "script",
-        "https://www.google-analytics.com/analytics.js",
-        "ga"
-      );
-
-      ga("create", "UA-75364122-2", "auto");
-      ga("send", "pageview");
-    }
-    </script>
 
     
     <title>
@@ -118,19 +85,19 @@
         </option>
       
         <option
-          value="1.1.0"
+          value="1.2.1"
           
             selected="selected"
           
         >
-          Dgraph 1.1.0
+          Dgraph 1.2.1
         </option>
       
         <option
-          value="1.0.16"
+          value="1.1.0"
           
         >
-          Dgraph 1.0.16
+          Dgraph 1.1.0
         </option>
       
   </select>
@@ -144,8 +111,8 @@
 
 <script>
   window.DgTour = {
-    thisRelease: "1.1.0",
-    latestRelease: "1.1.0"
+    thisRelease: "1.2.1",
+    latestRelease: "1.2.1"
   }
 </script>
 
@@ -591,9 +558,7 @@
             <p>As well as <code>min</code>, <code>max</code>, <code>avg</code>, and <code>sum</code> to aggregate, Dgraph supports a host of
 functions that can be applied to value variables.  These need to be
 enclosed in <code>math(...)</code> and stored in a variable.</p>
-
 <p>The full list is:</p>
-
 <table>
 <thead>
 <tr>
@@ -602,50 +567,42 @@ enclosed in <code>math(...)</code> and stored in a variable.</p>
 <th align="center">Notes</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="center"><code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>%</code></td>
 <td align="center"><code>int</code> and <code>float</code></td>
 <td align="center"></td>
 </tr>
-
 <tr>
 <td align="center"><code>min</code> <code>max</code></td>
 <td align="center">All types except <code>geo</code> and <code>bool</code></td>
 <td align="center"></td>
 </tr>
-
 <tr>
 <td align="center"><code>&lt;</code> <code>&gt;</code> <code>&lt;=</code> <code>&gt;=</code> <code>==</code> <code>!=</code></td>
 <td align="center">All, except <code>geo</code> and <code>bool</code></td>
 <td align="center">boolean result</td>
 </tr>
-
 <tr>
-<td align="center"><code>floor</code> <code>ceil</code><code>ln</code> <code>exp</code> <code>sqrt</code></td>
+<td align="center"><code>floor</code> <code>ceil``ln</code> <code>exp</code> <code>sqrt</code></td>
 <td align="center"><code>int</code> and <code>float</code></td>
 <td align="center"></td>
 </tr>
-
 <tr>
 <td align="center"><code>since</code></td>
 <td align="center"><code>date</code></td>
 <td align="center">number of seconds (<code>float</code>) from the time specified</td>
 </tr>
-
 <tr>
 <td align="center"><code>pow(a, b)</code></td>
 <td align="center"><code>int</code> and <code>float</code></td>
 <td align="center"><code>a^b</code></td>
 </tr>
-
 <tr>
 <td align="center"><code>logbase(a,b)</code></td>
 <td align="center"><code>int</code> and <code>float</code></td>
 <td align="center"><code>log(a)</code> to the base <code>b</code></td>
 </tr>
-
 <tr>
 <td align="center"><code>cond(a, b, c)</code></td>
 <td align="center"><code>a</code> must be a boolean</td>
@@ -653,7 +610,6 @@ enclosed in <code>math(...)</code> and stored in a variable.</p>
 </tr>
 </tbody>
 </table>
-
 <p>Note that these are functions on values, not functions to aggregate value maps.  The results of these functions are value variables and can be aggregated.</p>
 
           </div>
@@ -835,6 +791,7 @@ enclosed in <code>math(...)</code> and stored in a variable.</p>
     </main>
 
     <script src="https://tour.dgraph.io//js/build/dgraph-tour.js?6aec6e1a029d764cfc1f4b491bb7c502"></script>
+    <script src="//unpkg.com/@dgraph-io/community"></script>
   </body>
 
 </html>

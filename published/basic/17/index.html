@@ -7,14 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta
-  name="description"
-  
-    
-  
-  >
-
-<link
+    <link
   rel="manifest"
   href="https://tour.dgraph.io//images/favicons/manifest.json"
   >
@@ -46,32 +39,6 @@
 <link rel="icon" sizes="96x96" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-96x96.png">
 <link rel="icon" sizes="16x16" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-16x16.png">
 
-
-    <script>
-        if (window.location.href.indexOf("dgraph.io") > -1) {
-      (function(i, s, o, g, r, a, m) {
-        i["GoogleAnalyticsObject"] = r;
-        (i[r] =
-          i[r] ||
-          function() {
-            (i[r].q = i[r].q || []).push(arguments);
-          }), (i[r].l = 1 * new Date());
-        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m);
-      })(
-        window,
-        document,
-        "script",
-        "https://www.google-analytics.com/analytics.js",
-        "ga"
-      );
-
-      ga("create", "UA-75364122-2", "auto");
-      ga("send", "pageview");
-    }
-    </script>
 
     
     <title>
@@ -118,19 +85,19 @@
         </option>
       
         <option
-          value="1.1.0"
+          value="1.2.1"
           
             selected="selected"
           
         >
-          Dgraph 1.1.0
+          Dgraph 1.2.1
         </option>
       
         <option
-          value="1.0.16"
+          value="1.1.0"
           
         >
-          Dgraph 1.0.16
+          Dgraph 1.1.0
         </option>
       
   </select>
@@ -144,8 +111,8 @@
 
 <script>
   window.DgTour = {
-    thisRelease: "1.1.0",
-    latestRelease: "1.1.0"
+    thisRelease: "1.2.1",
+    latestRelease: "1.2.1"
   }
 </script>
 
@@ -588,14 +555,9 @@
           <h1 class="lesson-heading">Facets : Edge attributes</h1>
 
           <div>
-            
-
-<p>Dgraph supports facets — key value pairs on edges — as an extension to RDF triples. That is, facets add properties to edges, rather than to nodes. For example, a friend edge between two nodes may have a boolean property of close friendship. Facets can also be used as weights for edges.</p>
-
+            <p>Dgraph supports facets — key value pairs on edges — as an extension to RDF triples. That is, facets add properties to edges, rather than to nodes. For example, a friend edge between two nodes may have a boolean property of close friendship. Facets can also be used as weights for edges.</p>
 <p>More details about Facets you can find in our Docs: <a href="https://docs.dgraph.io/query-language/#facets-edge-attributes">https://docs.dgraph.io/query-language/#facets-edge-attributes</a></p>
-
 <p>Reading all the documentation about Facets you will have examples of:</p>
-
 <ul>
 <li>Facets on scalar predicates</li>
 <li>Alias with facets</li>
@@ -606,9 +568,7 @@
 <li>Facets and Variable Propagation</li>
 <li>Facets and Aggregation</li>
 </ul>
-
 <p>For JSON mutation with Facets see: <a href="https://docs.dgraph.io/mutations/#facets">https://docs.dgraph.io/mutations/#facets</a></p>
-
 <p>Run this mutation on you terminal, before running the query:
 
 <div class="expandable">
@@ -657,23 +617,16 @@
   }
 }' | python -m json.tool | less
 </code></pre>
-
   </div>
 </div>
 </p>
-
 <h3 id="add-multiple-attributes-to-a-third-single-node">Add multiple attributes to a third single node</h3>
-
 <p>Sometimes you need two Edges with distinct predicates pointing to the same node. This feature can be used to &ldquo;explain the relationship&rdquo; of nodes.</p>
-
-<p>Let&rsquo;s say You have a existing Node that&rsquo;s your target his UID is &ldquo;0x0f43&rdquo;. So you need to setup your RDF like this.</p>
-
+<p>Let&rsquo;s say you have a existing Node that&rsquo;s your target his UID is &ldquo;0x0f43&rdquo;. So you need to setup your RDF like this.</p>
 <pre><code>_:MyNode &lt;predicate1&gt; &lt;0x0f43&gt; ( foo=bar, and=1 ) .
 _:MyNode &lt;predicate2&gt; &lt;0x0f43&gt; ( bar=bar, and=2 ) .
 _:MyNode &lt;predicate3&gt; &lt;0x0f43&gt; ( bar=bar, and=3 ) .
-</code></pre>
-
-<p>more example:
+</code></pre><p>more examples:
 
 <div class="expandable">
   <a data-action="toggle-expandable" href="#expand">
@@ -684,12 +637,10 @@ _:MyNode &lt;predicate3&gt; &lt;0x0f43&gt; ( bar=bar, and=3 ) .
 _:MyNode &lt;Evening&gt; &lt;0x0f43&gt; ( bar=false, and=2, since=2006-02-02T13:01:09 ) .
 _:MyNode &lt;Night&gt;   &lt;0x22&gt;   ( bar=true, and=3,  since=2006-02-02T13:01:09 ) .
 </code></pre>
-
   </div>
 </div>
 </p>
-
-<p>If you do the same mutation above but using the same predicates instead of unique one. You gonna override the Edge attribute. Line by line. So you must to use distinct predicates.</p>
+<p>If you do the same mutation above but using the same predicates instead of unique one. You will override the Edge attribute. Line by line. So you must to use distinct predicates.</p>
 
           </div>
         </div>
@@ -840,6 +791,7 @@ _:MyNode &lt;Night&gt;   &lt;0x22&gt;   ( bar=true, and=3,  since=2006-02-02T13:
     </main>
 
     <script src="https://tour.dgraph.io//js/build/dgraph-tour.js?6aec6e1a029d764cfc1f4b491bb7c502"></script>
+    <script src="//unpkg.com/@dgraph-io/community"></script>
   </body>
 
 </html>

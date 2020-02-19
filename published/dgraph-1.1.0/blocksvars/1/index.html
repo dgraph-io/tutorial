@@ -118,19 +118,19 @@
         </option>
       
         <option
+          value="1.2.1"
+          
+        >
+          Dgraph 1.2.1
+        </option>
+      
+        <option
           value="1.1.0"
           
             selected="selected"
           
         >
           Dgraph 1.1.0
-        </option>
-      
-        <option
-          value="1.0.16"
-          
-        >
-          Dgraph 1.0.16
         </option>
       
   </select>
@@ -145,9 +145,40 @@
 <script>
   window.DgTour = {
     thisRelease: "1.1.0",
-    latestRelease: "1.1.0"
+    latestRelease: "1.2.1"
   }
 </script>
+
+
+
+<style>
+  .old-branch-alert {
+    position: fixed;
+    z-index: 1;
+    left: 40vw;
+    right: 100px;
+    top: 5px;
+    border-radius: 8px;
+    box-shadow: -2px 2px 6px 0px rgba(0,0,0,0.75);
+    background-color: #f0ad4e;
+    padding: 4px;
+  }
+  .old-branch-alert a.btn {
+    color: #fff;
+    padding: 2px 4px;
+  }
+</style>
+<div class="old-branch-alert">
+  You are looking at the tour for Dgraph
+  <strong>1.1.0</strong>.
+  Latest stable release is
+  <strong>1.2.1</strong>.
+  <a href="/" class="btn btn-primary">Go to
+    <strong>
+      Dgraph 1.2.1
+    </strong>
+  </a>
+</div>
 
 
 
@@ -596,23 +627,16 @@
 
 </div>
 
-
 <p>Queries can be issued as multiples.</p>
-
 <p>For queries labelled <code>q1, ..., qn</code> issued as a multiple query block, the JSON
 result will contain labelled answer blocks <code>q1, ..., qn</code> for each query.</p>
-
 <p>If a block is labelled with <code>var</code>, no results are returned for that
 query.</p>
-
 <p>Queries issued in this way are independent.</p>
-
 <p>The visualization here finds the union in the two queries based on
 <code>uid</code>, but the JSON result contains the independent answer for each query.</p>
-
 <p>So, In this case, we are visualizing the union between two distinct
 queries.</p>
-
 <p>Query variables are one of the most powerful features of  GraphQL+-.
 Query variables allow the answers from one block to be
 used in another, joining the two queries.  You&rsquo;ll learn about query variables in the following pages.</p>

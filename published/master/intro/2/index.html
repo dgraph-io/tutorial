@@ -87,17 +87,17 @@
         </option>
       
         <option
+          value="1.2.1"
+          
+        >
+          Dgraph 1.2.1
+        </option>
+      
+        <option
           value="1.1.0"
           
         >
           Dgraph 1.1.0
-        </option>
-      
-        <option
-          value="1.0.16"
-          
-        >
-          Dgraph 1.0.16
         </option>
       
   </select>
@@ -112,7 +112,7 @@
 <script>
   window.DgTour = {
     thisRelease: "master",
-    latestRelease: "1.1.0"
+    latestRelease: "1.2.1"
   }
 </script>
 
@@ -139,10 +139,10 @@
   You are looking at the tour for Dgraph
   <strong>master</strong>.
   Latest stable release is
-  <strong>1.1.0</strong>.
+  <strong>1.2.1</strong>.
   <a href="/" class="btn btn-primary">Go to
     <strong>
-      Dgraph 1.1.0
+      Dgraph 1.2.1
     </strong>
   </a>
 </div>
@@ -588,30 +588,20 @@
           <div>
             <p>Let&rsquo;s run an instance of Dgraph on your machine; that&rsquo;ll give you a
 handle on installing Dgraph and loading data yourself.</p>
-
 <p>All the data in this tutorial will be stored in the instance you
 install and all the queries will look for Dgraph on your local machine.  By
 running it in a container, you&rsquo;ll have a fresh Dgraph that will
 serve as a sandbox for you to learn and experiment with.</p>
-
 <p>There are a number of ways to
 <a href="https://docs.dgraph.io/get-started/#step-1-installation">install and run Dgraph</a>.
 For
 this tutorial, let&rsquo;s run it in a container with Docker.</p>
-
 <p>First, grab the latest version of <a href="https://www.docker.com/">Docker</a>.</p>
-
 <p>Then, pull the latest Dgraph version with:</p>
-
 <pre><code>docker pull dgraph/dgraph
-</code></pre>
-
-<p>Now, to run Dgraph in Docker, it&rsquo;s:</p>
-
+</code></pre><p>Now, to run Dgraph in Docker, it&rsquo;s:</p>
 <pre><code>mkdir -p ~/dgraph
-</code></pre>
-
-<pre><code># Run dgraphzero
+</code></pre><pre><code># Run dgraphzero
 docker run -it -p 5080:5080 -p 6080:6080 -p 8080:8080 -p 9080:9080 -p 8000:8000 -v ~/dgraph:/dgraph --name dgraph dgraph/dgraph dgraph zero
 
 # In another terminal, now run dgraph
@@ -619,10 +609,7 @@ docker exec -it dgraph dgraph alpha --lru_mb 2048 --zero localhost:5080
 
 # And in another, run ratel (Dgraph UI)
 docker exec -it dgraph dgraph-ratel
-</code></pre>
-
-<p>That&rsquo;s it!</p>
-
+</code></pre><p>That&rsquo;s it!</p>
 <p>Dgraph Alpha will now be running and listening for HTTP requests on port <code>8080</code> and Ratel would be listening on port <code>8000</code>.
 There are more options, but that&rsquo;s all we need to get started.</p>
 

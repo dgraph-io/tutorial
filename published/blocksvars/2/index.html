@@ -7,14 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta
-  name="description"
-  
-    
-  
-  >
-
-<link
+    <link
   rel="manifest"
   href="https://tour.dgraph.io//images/favicons/manifest.json"
   >
@@ -46,32 +39,6 @@
 <link rel="icon" sizes="96x96" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-96x96.png">
 <link rel="icon" sizes="16x16" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-16x16.png">
 
-
-    <script>
-        if (window.location.href.indexOf("dgraph.io") > -1) {
-      (function(i, s, o, g, r, a, m) {
-        i["GoogleAnalyticsObject"] = r;
-        (i[r] =
-          i[r] ||
-          function() {
-            (i[r].q = i[r].q || []).push(arguments);
-          }), (i[r].l = 1 * new Date());
-        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m);
-      })(
-        window,
-        document,
-        "script",
-        "https://www.google-analytics.com/analytics.js",
-        "ga"
-      );
-
-      ga("create", "UA-75364122-2", "auto");
-      ga("send", "pageview");
-    }
-    </script>
 
     
     <title>
@@ -118,19 +85,19 @@
         </option>
       
         <option
-          value="1.1.0"
+          value="1.2.1"
           
             selected="selected"
           
         >
-          Dgraph 1.1.0
+          Dgraph 1.2.1
         </option>
       
         <option
-          value="1.0.16"
+          value="1.1.0"
           
         >
-          Dgraph 1.0.16
+          Dgraph 1.1.0
         </option>
       
   </select>
@@ -144,8 +111,8 @@
 
 <script>
   window.DgTour = {
-    thisRelease: "1.1.0",
-    latestRelease: "1.1.0"
+    thisRelease: "1.2.1",
+    latestRelease: "1.2.1"
   }
 </script>
 
@@ -589,32 +556,22 @@
 
           <div>
             <p>Results can be stored in variables and used elsewhere in the query.</p>
-
 <p>Variables are declared by</p>
-
 <pre><code>var_name as some_block { ... }
-</code></pre>
-
-<p>where <code>var_name</code> is any distinct variable name and<code>some_block</code> is
+</code></pre><p>where <code>var_name</code> is any distinct variable name and <code>some_block</code> is
 either a whole query or an internal block of a query matching on an edge.</p>
-
 <p>Once defined, variables can be used in:</p>
-
 <ul>
 <li>the same query in a child of the defining block (not a parent of the
 definition)</li>
 <li>in another query</li>
 </ul>
-
 <p>Variables don&rsquo;t affect the semantics of the query at the point they
 are defined.</p>
-
-<p>Query variables are used by <code>uid(&lt;variable-name&gt;)</code>.  Variables evaluate to all <code>uid</code>&rsquo;s matched in the query by the block they are
+<p>Query variables are used by <code>uid(&lt;variable-name&gt;)</code>.  Variables evaluate to all <code>uid</code>'s matched in the query by the block they are
 defined against.  In particular, note that, variables are <code>uid</code> lists, not the graph
-matched by the block, and that the variable evaluates to all <code>uid</code>&rsquo;s the block matches for the whole query, not the <code>uid</code>&rsquo;s matched by any one branch.</p>
-
+matched by the block, and that the variable evaluates to all <code>uid</code>'s the block matches for the whole query, not the <code>uid</code>'s matched by any one branch.</p>
 <p>It is an error to define a variable but not use it.</p>
-
 <p>Let&rsquo;s look at the options for query variables in turn.</p>
 
           </div>
@@ -793,6 +750,7 @@ matched by the block, and that the variable evaluates to all <code>uid</code>&rs
     </main>
 
     <script src="https://tour.dgraph.io//js/build/dgraph-tour.js?6aec6e1a029d764cfc1f4b491bb7c502"></script>
+    <script src="//unpkg.com/@dgraph-io/community"></script>
   </body>
 
 </html>

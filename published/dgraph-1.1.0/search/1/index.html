@@ -118,19 +118,19 @@
         </option>
       
         <option
+          value="1.2.1"
+          
+        >
+          Dgraph 1.2.1
+        </option>
+      
+        <option
           value="1.1.0"
           
             selected="selected"
           
         >
           Dgraph 1.1.0
-        </option>
-      
-        <option
-          value="1.0.16"
-          
-        >
-          Dgraph 1.0.16
         </option>
       
   </select>
@@ -145,9 +145,40 @@
 <script>
   window.DgTour = {
     thisRelease: "1.1.0",
-    latestRelease: "1.1.0"
+    latestRelease: "1.2.1"
   }
 </script>
+
+
+
+<style>
+  .old-branch-alert {
+    position: fixed;
+    z-index: 1;
+    left: 40vw;
+    right: 100px;
+    top: 5px;
+    border-radius: 8px;
+    box-shadow: -2px 2px 6px 0px rgba(0,0,0,0.75);
+    background-color: #f0ad4e;
+    padding: 4px;
+  }
+  .old-branch-alert a.btn {
+    color: #fff;
+    padding: 2px 4px;
+  }
+</style>
+<div class="old-branch-alert">
+  You are looking at the tour for Dgraph
+  <strong>1.1.0</strong>.
+  Latest stable release is
+  <strong>1.2.1</strong>.
+  <a href="/" class="btn btn-primary">Go to
+    <strong>
+      Dgraph 1.2.1
+    </strong>
+  </a>
+</div>
 
 
 
@@ -589,11 +620,8 @@
 
           <div>
             <p>When Dgraph is searching for strings, dates, or other values based on a filter, it needs an index to make the search efficient.  We&rsquo;ve already seen examples of how to specify the indexes in a <a href="../../moredata/1">schema mutation</a>.</p>
-
 <p><code>int</code>, <code>float</code>, <code>geo</code> and <code>date</code> have default indexes, but <code>string</code> has options of what index types to choose.  Multiple indexes can be built for the same <code>string</code> valued predicate.</p>
-
 <p>For <code>string</code> the following indexes are available</p>
-
 <ul>
 <li><code>term</code> (default) for use with <code>allofterms</code> and <code>anyofterms</code></li>
 <li><code>exact</code> for use with inequality - matching whole string</li>
@@ -601,11 +629,8 @@
 <li><code>fulltext</code> for full text search with <code>alloftext</code> and <code>anyoftext</code></li>
 <li><code>trigram</code> for use with regular expressions</li>
 </ul>
-
 <p>Multiple indexes are specified as arguments to <code>@index</code>.</p>
-
 <p>Apply the schema mutation to add the indexes to the movie data.  It will take a few minutes for Dgraph to compute those indexes for all the movie data.  Let the mutation run and move on once it&rsquo;s finished.</p>
-
 <p>You might find Docker stops your Dgraph process during the mutation.  That might be a memory issue - increase the amount of memory Docker allows and then restart Dgraph, load the <a href="../../moredata/1">intial schema and data</a>, then apply this mutation.</p>
 
           </div>

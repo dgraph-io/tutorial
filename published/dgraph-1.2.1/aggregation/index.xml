@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aggregations on A Tour of Dgraph</title>
+    <link>https://tour.dgraph.io/dgraph-1.2.1/aggregation/</link>
+    <description>Recent content in Aggregations on A Tour of Dgraph</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 27 Apr 2017 15:42:57 +1000</lastBuildDate>
+    
+	<atom:link href="https://tour.dgraph.io/dgraph-1.2.1/aggregation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A bigger dataset</title>
+      <link>https://tour.dgraph.io/dgraph-1.2.1/aggregation/1/</link>
+      <pubDate>Thu, 27 Apr 2017 15:42:54 +1000</pubDate>
+      
+      <guid>https://tour.dgraph.io/dgraph-1.2.1/aggregation/1/</guid>
+      <description>Ok, we are off to a start with Dgraph and GraphQL+-. Let’s move it up a few notches.
+Dgraph can also do query aggregation, geo-queries, string querying and more. But for all that let&amp;rsquo;s move from the small datasets we started with and try out something bigger, much bigger.
+In our github repository you&amp;rsquo;ll find a dataset about movies, directors and actors.
+Download it from that link or with something like</description>
+    </item>
+    
+    <item>
+      <title>Min and Max</title>
+      <link>https://tour.dgraph.io/dgraph-1.2.1/aggregation/2/</link>
+      <pubDate>Thu, 27 Apr 2017 15:42:57 +1000</pubDate>
+      
+      <guid>https://tour.dgraph.io/dgraph-1.2.1/aggregation/2/</guid>
+      <description>The min and max aggreation functions can be used on all scalar types. That is: int, float, string, bool, id and date.
+Agregations don&amp;rsquo;t require an index, but can only be applied to variables</description>
+    </item>
+    
+  </channel>
+</rss>

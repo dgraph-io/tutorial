@@ -7,14 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta
-  name="description"
-  
-    
-  
-  >
-
-<link
+    <link
   rel="manifest"
   href="https://tour.dgraph.io//images/favicons/manifest.json"
   >
@@ -46,32 +39,6 @@
 <link rel="icon" sizes="96x96" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-96x96.png">
 <link rel="icon" sizes="16x16" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-16x16.png">
 
-
-    <script>
-        if (window.location.href.indexOf("dgraph.io") > -1) {
-      (function(i, s, o, g, r, a, m) {
-        i["GoogleAnalyticsObject"] = r;
-        (i[r] =
-          i[r] ||
-          function() {
-            (i[r].q = i[r].q || []).push(arguments);
-          }), (i[r].l = 1 * new Date());
-        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m);
-      })(
-        window,
-        document,
-        "script",
-        "https://www.google-analytics.com/analytics.js",
-        "ga"
-      );
-
-      ga("create", "UA-75364122-2", "auto");
-      ga("send", "pageview");
-    }
-    </script>
 
     
     <title>
@@ -118,19 +85,19 @@
         </option>
       
         <option
-          value="1.1.0"
+          value="1.2.1"
           
             selected="selected"
           
         >
-          Dgraph 1.1.0
+          Dgraph 1.2.1
         </option>
       
         <option
-          value="1.0.16"
+          value="1.1.0"
           
         >
-          Dgraph 1.0.16
+          Dgraph 1.1.0
         </option>
       
   </select>
@@ -144,8 +111,8 @@
 
 <script>
   window.DgTour = {
-    thisRelease: "1.1.0",
-    latestRelease: "1.1.0"
+    thisRelease: "1.2.1",
+    latestRelease: "1.2.1"
   }
 </script>
 
@@ -590,30 +557,20 @@
           <div>
             <p>Let&rsquo;s run an instance of Dgraph on your machine; that&rsquo;ll give you a
 handle on installing Dgraph and loading data yourself.</p>
-
 <p>All the data in this tutorial will be stored in the instance you
 install and all the queries will look for Dgraph on your local machine.  By
 running it in a container, you&rsquo;ll have a fresh Dgraph that will
 serve as a sandbox for you to learn and experiment with.</p>
-
 <p>There are a number of ways to
 <a href="https://docs.dgraph.io/get-started/#step-1-installation">install and run Dgraph</a>.
 For
 this tutorial, let&rsquo;s run it in a container with Docker.</p>
-
 <p>First, grab the latest version of <a href="https://www.docker.com/">Docker</a>.</p>
-
 <p>Then, pull the latest Dgraph version with:</p>
-
 <pre><code>docker pull dgraph/dgraph
-</code></pre>
-
-<p>Now, to run Dgraph in Docker, it&rsquo;s:</p>
-
+</code></pre><p>Now, to run Dgraph in Docker, it&rsquo;s:</p>
 <pre><code>mkdir -p ~/dgraph
-</code></pre>
-
-<pre><code># Run dgraphzero
+</code></pre><pre><code># Run dgraphzero
 docker run -it -p 5080:5080 -p 6080:6080 -p 8080:8080 -p 9080:9080 -p 8000:8000 -v ~/dgraph:/dgraph --name dgraph dgraph/dgraph dgraph zero
 
 # In another terminal, now run dgraph
@@ -621,10 +578,7 @@ docker exec -it dgraph dgraph alpha --lru_mb 2048 --zero localhost:5080
 
 # And in another, run ratel (Dgraph UI)
 docker exec -it dgraph dgraph-ratel
-</code></pre>
-
-<p>That&rsquo;s it!</p>
-
+</code></pre><p>That&rsquo;s it!</p>
 <p>Dgraph Alpha will now be running and listening for HTTP requests on port <code>8080</code> and Ratel would be listening on port <code>8000</code>.
 There are more options, but that&rsquo;s all we need to get started.</p>
 
@@ -658,6 +612,7 @@ There are more options, but that&rsquo;s all we need to get started.</p>
     </main>
 
     <script src="https://tour.dgraph.io//js/build/dgraph-tour.js?6aec6e1a029d764cfc1f4b491bb7c502"></script>
+    <script src="//unpkg.com/@dgraph-io/community"></script>
   </body>
 
 </html>

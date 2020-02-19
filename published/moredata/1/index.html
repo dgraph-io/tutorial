@@ -7,14 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta
-  name="description"
-  
-    
-  
-  >
-
-<link
+    <link
   rel="manifest"
   href="https://tour.dgraph.io//images/favicons/manifest.json"
   >
@@ -46,32 +39,6 @@
 <link rel="icon" sizes="96x96" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-96x96.png">
 <link rel="icon" sizes="16x16" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-16x16.png">
 
-
-    <script>
-        if (window.location.href.indexOf("dgraph.io") > -1) {
-      (function(i, s, o, g, r, a, m) {
-        i["GoogleAnalyticsObject"] = r;
-        (i[r] =
-          i[r] ||
-          function() {
-            (i[r].q = i[r].q || []).push(arguments);
-          }), (i[r].l = 1 * new Date());
-        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m);
-      })(
-        window,
-        document,
-        "script",
-        "https://www.google-analytics.com/analytics.js",
-        "ga"
-      );
-
-      ga("create", "UA-75364122-2", "auto");
-      ga("send", "pageview");
-    }
-    </script>
 
     
     <title>
@@ -118,19 +85,19 @@
         </option>
       
         <option
-          value="1.1.0"
+          value="1.2.1"
           
             selected="selected"
           
         >
-          Dgraph 1.1.0
+          Dgraph 1.2.1
         </option>
       
         <option
-          value="1.0.16"
+          value="1.1.0"
           
         >
-          Dgraph 1.0.16
+          Dgraph 1.1.0
         </option>
       
   </select>
@@ -144,8 +111,8 @@
 
 <script>
   window.DgTour = {
-    thisRelease: "1.1.0",
-    latestRelease: "1.1.0"
+    thisRelease: "1.2.1",
+    latestRelease: "1.2.1"
   }
 </script>
 
@@ -590,36 +557,24 @@
           <div>
             <p>Ok, we are off to a start with Dgraph and GraphQL+-.  Let’s move it up
 a few notches.</p>
-
 <p>Dgraph can also do query aggregation, geo-queries, string querying and
 more.  But for all that let&rsquo;s move from the small datasets we started
 with and try out something bigger, much bigger.</p>
-
 <p>In our github repository you&rsquo;ll find a <a href="https://github.com/dgraph-io/tutorial/tree/master/resources/1million.rdf.gz">dataset about movies, directors
 and actors</a>.</p>
-
 <p>Download it from that link and save into the <code>~/dgraph</code> directory or by running the following in a terminal</p>
-
 <pre><code>cd ~/dgraph
 wget &quot;https://github.com/dgraph-io/tutorial/blob/master/resources/1million.rdf.gz?raw=true&quot; -O 1million.rdf.gz -q
-</code></pre>
-
-<p>Run the schema mutation using the run button and then load the dataset
+</code></pre><p>Run the schema mutation using the run button and then load the dataset
 into Dgraph from the terminal. You may be required to restart the Alpha with <code>--lru_mb 4096</code> in order to handle bigger dataset.</p>
-
 <pre><code>docker exec -it dgraph dgraph live -f 1million.rdf.gz --alpha localhost:9080 --zero localhost:5080 -c 1
-</code></pre>
-
-<p>There&rsquo;s around one million triples in the dataset.
+</code></pre><p>There&rsquo;s around one million triples in the dataset.
 Dgraph reports back exactly how many triples were loaded and how long
 it took.</p>
-
-<!--There are
-actors are described in the dataset.-->
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>It&rsquo;s a big database of movies, but it won’t trouble Dgraph.  It is, however, big enough for us to
 use more complex queries.</p>
-
 <p>This dataset is a one million triple subset of a <a href="https://github.com/dgraph-io/benchmarks/blob/master/data/21million.rdf.gz">larger dataset of
 movies</a>
 that contains around 230000 actors and around 86000 movies.  We&rsquo;ve made a subset to
@@ -627,7 +582,6 @@ make it quick to load, while having enough complexity to yield
 interesting results.  But, because it&rsquo;s a subset, you might find your
 favourite actor isn&rsquo;t there, or that some actors are missing some of
 their movies.</p>
-
 <p>Later in the tutorial, you might need to refer back to this page (or
 issue a <a href="../../basic/3">schema query</a>) to check the indexes or schema types.  Remember that
 we can&rsquo;t apply functions to edges that aren&rsquo;t indexed, and we&rsquo;ll learn
@@ -660,12 +614,26 @@ director.film: [uid] @reverse .
 genre: [uid] @reverse .
 initial_release_date: dateTime @index(year) .
 name: string @index(exact, term) @lang .
+starring: [uid] .
+performance.film: [uid] .
+performance.character_note: string .
+performance.character: [uid] .
+performance.actor: [uid] .
+performance.special_performance_type: [uid] .
+type: [uid] .
 " data-current="# Define Directives and index
 
 director.film: [uid] @reverse .
 genre: [uid] @reverse .
 initial_release_date: dateTime @index(year) .
 name: string @index(exact, term) @lang .
+starring: [uid] .
+performance.film: [uid] .
+performance.character_note: string .
+performance.character: [uid] .
+performance.actor: [uid] .
+performance.special_performance_type: [uid] .
+type: [uid] .
 " endpoint="/alter" data-dirty="false">
   <div class="runnable-pane runnable-pane-query">
     <div class="topbar">
@@ -697,6 +665,13 @@ director.film: [uid] @reverse .
 genre: [uid] @reverse .
 initial_release_date: dateTime @index(year) .
 name: string @index(exact, term) @lang .
+starring: [uid] .
+performance.film: [uid] .
+performance.character_note: string .
+performance.character: [uid] .
+performance.actor: [uid] .
+performance.special_performance_type: [uid] .
+type: [uid] .
 </textarea>
       </div>
     </div>
@@ -783,6 +758,7 @@ name: string @index(exact, term) @lang .
     </main>
 
     <script src="https://tour.dgraph.io//js/build/dgraph-tour.js?6aec6e1a029d764cfc1f4b491bb7c502"></script>
+    <script src="//unpkg.com/@dgraph-io/community"></script>
   </body>
 
 </html>

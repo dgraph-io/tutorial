@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Intros on A Tour of Dgraph</title>
@@ -39,7 +39,8 @@ All the data in this tutorial will be stored in the instance you install and all
       <pubDate>Wed, 26 Apr 2017 22:28:55 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/intro/3/</guid>
-      <description>Once you have Dgraph up and running, press run on the panel to the right. This will load a schema into Dgraph for us to use in the first steps of the tutorial. Don&amp;rsquo;t worry too much about the syntax for now, we&amp;rsquo;ll cover all that in later lessons, just check in the response panel that the operation was a success.</description>
+      <description>Once you have Dgraph up and running, press run on the panel to the right. This will load a schema into Dgraph for us to use in the first steps of the tutorial. Don&amp;rsquo;t worry too much about the syntax for now, we&amp;rsquo;ll cover all that in later lessons, just check in the response panel that the operation was a success.
+Note Note that Schema changes are made via Alter operations only.</description>
     </item>
     
     <item>

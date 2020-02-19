@@ -118,19 +118,19 @@
         </option>
       
         <option
+          value="1.2.1"
+          
+        >
+          Dgraph 1.2.1
+        </option>
+      
+        <option
           value="1.1.0"
           
             selected="selected"
           
         >
           Dgraph 1.1.0
-        </option>
-      
-        <option
-          value="1.0.16"
-          
-        >
-          Dgraph 1.0.16
         </option>
       
   </select>
@@ -145,9 +145,40 @@
 <script>
   window.DgTour = {
     thisRelease: "1.1.0",
-    latestRelease: "1.1.0"
+    latestRelease: "1.2.1"
   }
 </script>
+
+
+
+<style>
+  .old-branch-alert {
+    position: fixed;
+    z-index: 1;
+    left: 40vw;
+    right: 100px;
+    top: 5px;
+    border-radius: 8px;
+    box-shadow: -2px 2px 6px 0px rgba(0,0,0,0.75);
+    background-color: #f0ad4e;
+    padding: 4px;
+  }
+  .old-branch-alert a.btn {
+    color: #fff;
+    padding: 2px 4px;
+  }
+</style>
+<div class="old-branch-alert">
+  You are looking at the tour for Dgraph
+  <strong>1.1.0</strong>.
+  Latest stable release is
+  <strong>1.2.1</strong>.
+  <a href="/" class="btn btn-primary">Go to
+    <strong>
+      Dgraph 1.2.1
+    </strong>
+  </a>
+</div>
 
 
 
@@ -589,22 +620,17 @@
 
           <div>
             <p>It&rsquo;s not uncommon to have thousands of results for a query.</p>
-
 <p>But you might want to select only the top-k answers, paginate the
 results for display, or limit a large result.</p>
-
 <p>In GraphQL+- this is done with <code>first</code>, <code>offset</code> and <code>after</code> in
 combination with ordering.</p>
-
 <ul>
 <li><code>first: N</code> Return only the first <code>N</code> results</li>
 <li><code>offset: N</code> Skip the first <code>N</code> results</li>
 <li><code>after: uid</code> Return the results after <code>uid</code></li>
 </ul>
-
 <p>By default, query answers are ordered by <code>uid</code>. You can change this behavior by
 explicitly <a href="/basic/8">specifying an order</a>.</p>
-
 <p><code>after</code> makes sense in pagination when we only know the last <code>uid</code> returned and
 don&rsquo;t record how many results have previously been retrieved.</p>
 

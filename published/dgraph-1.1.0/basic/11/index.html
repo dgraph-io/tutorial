@@ -118,19 +118,19 @@
         </option>
       
         <option
+          value="1.2.1"
+          
+        >
+          Dgraph 1.2.1
+        </option>
+      
+        <option
           value="1.1.0"
           
             selected="selected"
           
         >
           Dgraph 1.1.0
-        </option>
-      
-        <option
-          value="1.0.16"
-          
-        >
-          Dgraph 1.0.16
         </option>
       
   </select>
@@ -145,9 +145,40 @@
 <script>
   window.DgTour = {
     thisRelease: "1.1.0",
-    latestRelease: "1.1.0"
+    latestRelease: "1.2.1"
   }
 </script>
+
+
+
+<style>
+  .old-branch-alert {
+    position: fixed;
+    z-index: 1;
+    left: 40vw;
+    right: 100px;
+    top: 5px;
+    border-radius: 8px;
+    box-shadow: -2px 2px 6px 0px rgba(0,0,0,0.75);
+    background-color: #f0ad4e;
+    padding: 4px;
+  }
+  .old-branch-alert a.btn {
+    color: #fff;
+    padding: 2px 4px;
+  }
+</style>
+<div class="old-branch-alert">
+  You are looking at the tour for Dgraph
+  <strong>1.1.0</strong>.
+  Latest stable release is
+  <strong>1.2.1</strong>.
+  <a href="/" class="btn btn-primary">Go to
+    <strong>
+      Dgraph 1.2.1
+    </strong>
+  </a>
+</div>
 
 
 
@@ -589,17 +620,11 @@
 
           <div>
             <p>Given what you&rsquo;ve seen so far, you&rsquo;ve probably already understood this, but it&rsquo;s worth going over.</p>
-
 <p>The graphs in Dgraph can be huge, so starting searching from all nodes isn&rsquo;t efficient. Dgraph needs a place to start searching, that&rsquo;s the root node.</p>
-
 <p>At root, we  use  <code>func:</code> and a function to find an initial set of nodes. So far we&rsquo;ve used <code>eq</code> and <code>allofterms</code> for string search, but we can also search on other values like dates, numbers, and also filters on <code>count</code>.</p>
-
 <p>Dgraph needs to build an index on values that are to be searched in this way because, without an index to make the search efficient, Dgraph would have to trawl through the whole database to find matching values.</p>
-
 <p>From the set of nodes matched in the root filter, Dgraph then follows edges to satisfy the remainder of the query.  The filters on blocks inside the root are only applied to the nodes reached by following listed edges to them.</p>
-
 <p>The root <code>func:</code> only accepts a single function and doesn&rsquo;t accept <code>AND</code>, <code>OR</code> and <code>NOT</code> connectives as in filters. So the syntax <code>query_name(func: foo(...)) @filter(... AND ...) {...}</code> is required when further filtering on the elements returned by the root function is required.</p>
-
 <p>Something to try: Find all people who are in their 20s, and have at least 2 friends.
 
 <div class="expandable">
@@ -617,7 +642,6 @@
   }
 }
 </code></pre>
-
   </div>
 </div>
 </p>

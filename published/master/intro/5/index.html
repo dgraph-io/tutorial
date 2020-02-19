@@ -87,17 +87,17 @@
         </option>
       
         <option
+          value="1.2.1"
+          
+        >
+          Dgraph 1.2.1
+        </option>
+      
+        <option
           value="1.1.0"
           
         >
           Dgraph 1.1.0
-        </option>
-      
-        <option
-          value="1.0.16"
-          
-        >
-          Dgraph 1.0.16
         </option>
       
   </select>
@@ -112,7 +112,7 @@
 <script>
   window.DgTour = {
     thisRelease: "master",
-    latestRelease: "1.1.0"
+    latestRelease: "1.2.1"
   }
 </script>
 
@@ -139,10 +139,10 @@
   You are looking at the tour for Dgraph
   <strong>master</strong>.
   Latest stable release is
-  <strong>1.1.0</strong>.
+  <strong>1.2.1</strong>.
   <a href="/" class="btn btn-primary">Go to
     <strong>
-      Dgraph 1.1.0
+      Dgraph 1.2.1
     </strong>
   </a>
 </div>
@@ -586,42 +586,26 @@
           <h1 class="lesson-heading">Mutation Introduction</h1>
 
           <div>
-            
-
-<p>In the last exercise, you added some data into Dgraph. Adding or removing data in Dgraph is called a mutation. We have two types of standard formats for mutations: RDF (Resource Description Framework) N-Quad and JSON (JavaScript Object Notation). RDF is a widely used standard in Graph or Ontology systems.</p>
-
+            <p>In the last exercise, you added some data into Dgraph. Adding or removing data in Dgraph is called a mutation. We have two types of standard formats for mutations: RDF (Resource Description Framework) N-Quad and JSON (JavaScript Object Notation). RDF is a widely used standard in Graph or Ontology systems.</p>
 <p>In Dgraph the mutation operations consist of two patterns: blank UID reference or explicit UID reference.</p>
-
 <p>This introduction is important for the coming exercises, many of the concepts presented here will be repeated in the next few chapters. (For example, <a href="../../schema/2/">Adding Data - mutating data</a> and <a href="../../schema/6/">Exercise : Integrating existing data</a>.)</p>
-
 <h2 id="blank-uid">Blank UID</h2>
-
 <p>In a mutation, any definition that doesn&rsquo;t match the UID explicit reference format can be considered blank UID reference, also known as a blank node. The structure of a blank node consists of:</p>
-
 <p>underline + a colon + unique name (identifier)</p>
-
 <p>For example, in the previous section you saw the blank nodes <code>_:michael</code> and <code>_:amit</code>. This is the proper blank node syntax. However, there will be cases where the parser will consider some typo as a blank node, but its use is not recommended. Examples below:</p>
-
 <pre><code>&lt;_:uid43&gt; or &lt;_:uid4e030f&gt;
 &lt;someTypoMistake&gt;
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <p>Dgraph&rsquo;s <a href="https://docs.dgraph.io/deploy/#export-database">data export</a> uses blank nodes of the first form presented.</p>
 </blockquote>
-
 <p>In JSON, the blank node format is similar. The blank node is defined with the <code>&quot;uid&quot;</code> key of a JSON object:</p>
-
 <pre><code>{
   &quot;uid&quot;: &quot;_:diggy&quot;,
   &quot;name&quot;: &quot;diggy&quot;,
   &quot;dgraph.type&quot;: &quot;Food&quot;,
   &quot;food&quot;: &quot;pizza&quot;
 }
-</code></pre>
-
-<p>Blank nodes are covered in more detail in the <a href="https://docs.dgraph.io/mutations/#blank-nodes-and-uid">mutation docs</a>.</p>
-
+</code></pre><p>Blank nodes are covered in more detail in the <a href="https://docs.dgraph.io/mutations/#blank-nodes-and-uid">mutation docs</a>.</p>
 
 
 
@@ -630,33 +614,22 @@
 
 </div>
 
-
 <h2 id="explicit-uid">Explicit UID</h2>
-
 <p>To do a mutation for an existing node, you can refer to the node&rsquo;s UID directly in the mutation. The syntax is simple:</p>
-
 <pre><code>&lt;THE-UID&gt; # or 
 &lt;0x4e030f&gt; &lt;somePredicate&gt; &quot;some new data&quot; .
-</code></pre>
-
-<p>In JSON:</p>
-
+</code></pre><p>In JSON:</p>
 <pre><code>{
   &quot;uid&quot;: &quot;0x4e030f&quot;,
   &quot;somePredicate&quot;: &quot;some new data&quot;
 }
-</code></pre>
-
-<p>One way to know an existing node&rsquo;s UID is to simply query for the indexed predicate, e.g:</p>
-
+</code></pre><p>One way to know an existing node&rsquo;s UID is to simply query for the indexed predicate, e.g:</p>
 <pre><code>{
   MyUser(func: eq(name, &quot;Jack Torrance&quot;)) {
     uid
   }
 }
 </code></pre>
-
-
 
 
 <div class="notices note" >

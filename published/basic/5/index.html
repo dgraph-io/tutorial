@@ -7,14 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta
-  name="description"
-  
-    
-  
-  >
-
-<link
+    <link
   rel="manifest"
   href="https://tour.dgraph.io//images/favicons/manifest.json"
   >
@@ -46,32 +39,6 @@
 <link rel="icon" sizes="96x96" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-96x96.png">
 <link rel="icon" sizes="16x16" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-16x16.png">
 
-
-    <script>
-        if (window.location.href.indexOf("dgraph.io") > -1) {
-      (function(i, s, o, g, r, a, m) {
-        i["GoogleAnalyticsObject"] = r;
-        (i[r] =
-          i[r] ||
-          function() {
-            (i[r].q = i[r].q || []).push(arguments);
-          }), (i[r].l = 1 * new Date());
-        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m);
-      })(
-        window,
-        document,
-        "script",
-        "https://www.google-analytics.com/analytics.js",
-        "ga"
-      );
-
-      ga("create", "UA-75364122-2", "auto");
-      ga("send", "pageview");
-    }
-    </script>
 
     
     <title>
@@ -118,19 +85,19 @@
         </option>
       
         <option
-          value="1.1.0"
+          value="1.2.1"
           
             selected="selected"
           
         >
-          Dgraph 1.1.0
+          Dgraph 1.2.1
         </option>
       
         <option
-          value="1.0.16"
+          value="1.1.0"
           
         >
-          Dgraph 1.0.16
+          Dgraph 1.1.0
         </option>
       
   </select>
@@ -144,8 +111,8 @@
 
 <script>
   window.DgTour = {
-    thisRelease: "1.1.0",
-    latestRelease: "1.1.0"
+    thisRelease: "1.2.1",
+    latestRelease: "1.2.1"
   }
 </script>
 
@@ -589,21 +556,16 @@
 
           <div>
             <p>Dgraph query results are graphs.  In fact, the result structure matches the query structure.</p>
-
 <p>The braces <code>edge_name { ... }</code> in the query
 signify nested blocks where the edges inside the block are matched
 against  nodes found by following the edge that begins the block.
 We continue nesting the query as we follow edges from node to node.</p>
-
 <p>While not strictly required, it’s a good style to indent the query.</p>
-
 <p>Compare the JSON result to the structure of the query and note, for
 example, that the <code>friend</code> edge matched a number of nodes and each is
 represented in the JSON.</p>
-
 <p>Something to try: How about Michael’s friends&rsquo; pets, or Michael&rsquo;s
 friends&rsquo; friends.</p>
-
 
 <div class="expandable">
   <a data-action="toggle-expandable" href="#expand">
@@ -611,7 +573,6 @@ friends&rsquo; friends.</p>
   </a>
   <div class="expandable-content">
     <p>Query Michael&rsquo;s friends&rsquo; pets:</p>
-
 <pre><code>{
   michael_friends_pets(func: eq(name, &quot;Michael&quot;)) {
     name
@@ -624,10 +585,7 @@ friends&rsquo; friends.</p>
     }
   }
 }
-</code></pre>
-
-<p>Query Michael&rsquo;s friends&rsquo; friends:</p>
-
+</code></pre><p>Query Michael&rsquo;s friends&rsquo; friends:</p>
 <pre><code>{
   michael_friends_friends(func: allofterms(name, &quot;Michael&quot;)) {
     name
@@ -641,13 +599,11 @@ friends&rsquo; friends.</p>
   }
 }
 </code></pre>
-
   </div>
 </div>
 
-
 <p>The idea is to formulate the query as a traversal
-through the graph, following edges to the desired data.  The <code>uid</code>&rsquo;s in the JSON output allow
+through the graph, following edges to the desired data.  The <code>uid</code>'s in the JSON output allow
 interpretation as a graph rather than a tree.  See, for example, the
 cycles in Michael&rsquo;s friends&rsquo; friends.</p>
 
@@ -818,6 +774,7 @@ cycles in Michael&rsquo;s friends&rsquo; friends.</p>
     </main>
 
     <script src="https://tour.dgraph.io//js/build/dgraph-tour.js?6aec6e1a029d764cfc1f4b491bb7c502"></script>
+    <script src="//unpkg.com/@dgraph-io/community"></script>
   </body>
 
 </html>

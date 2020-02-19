@@ -87,17 +87,17 @@
         </option>
       
         <option
+          value="1.2.1"
+          
+        >
+          Dgraph 1.2.1
+        </option>
+      
+        <option
           value="1.1.0"
           
         >
           Dgraph 1.1.0
-        </option>
-      
-        <option
-          value="1.0.16"
-          
-        >
-          Dgraph 1.0.16
         </option>
       
   </select>
@@ -112,7 +112,7 @@
 <script>
   window.DgTour = {
     thisRelease: "master",
-    latestRelease: "1.1.0"
+    latestRelease: "1.2.1"
   }
 </script>
 
@@ -139,10 +139,10 @@
   You are looking at the tour for Dgraph
   <strong>master</strong>.
   Latest stable release is
-  <strong>1.1.0</strong>.
+  <strong>1.2.1</strong>.
   <a href="/" class="btn btn-primary">Go to
     <strong>
-      Dgraph 1.1.0
+      Dgraph 1.2.1
     </strong>
   </a>
 </div>
@@ -587,19 +587,14 @@
 
           <div>
             <p>As we saw in an <a href="../../basic/3/">earlier lesson</a>, Dgraph stores a schema describing the types of predicates.</p>
-
 <p>When we want to add new data to an existing schema, we can just add it.  But if we want to add new data in a new schema we have two choices</p>
-
 <ul>
 <li>Add the data and let Dgraph work out the schema, or</li>
 <li>Specify a schema and then add the data</li>
 </ul>
-
 <p>Dgraph can work out the schema just fine.  But functions and filtering
 can only be applied to indexed predicates and for that we need to specify the schema.</p>
-
 <p>Alter schema to define data types and to add indexes.</p>
-
 <p>Run to alter schema.  The index allows applying filter functions,
 such as searching for all companies that participate in a particular
 industry.</p>
@@ -627,15 +622,15 @@ industry.</p>
 <div class="runnable" data-initial="# Define Types
 
 type Person {
-    name: string
-    boss_of: [Person]
-    works_for: [Company]
+    name
+    boss_of
+    works_for
 }
 
 type Company {
-    name: string
-    industry: string
-    work_here: [Person] #this is an alias
+    name
+    industry
+    work_here #this is an alias
 }
 
 # Define Directives and index
@@ -644,18 +639,19 @@ industry: string @index(term) .
 boss_of: [uid] .
 name: string @index(exact, term) .
 works_for: [uid] .
+work_here: [uid] .
 " data-current="# Define Types
 
 type Person {
-    name: string
-    boss_of: [Person]
-    works_for: [Company]
+    name
+    boss_of
+    works_for
 }
 
 type Company {
-    name: string
-    industry: string
-    work_here: [Person] #this is an alias
+    name
+    industry
+    work_here #this is an alias
 }
 
 # Define Directives and index
@@ -664,6 +660,7 @@ industry: string @index(term) .
 boss_of: [uid] .
 name: string @index(exact, term) .
 works_for: [uid] .
+work_here: [uid] .
 " endpoint="/alter" data-dirty="false">
   <div class="runnable-pane runnable-pane-query">
     <div class="topbar">
@@ -692,15 +689,15 @@ works_for: [uid] .
         <textarea class="query-content-editable"># Define Types
 
 type Person {
-    name: string
-    boss_of: [Person]
-    works_for: [Company]
+    name
+    boss_of
+    works_for
 }
 
 type Company {
-    name: string
-    industry: string
-    work_here: [Person] #this is an alias
+    name
+    industry
+    work_here #this is an alias
 }
 
 # Define Directives and index
@@ -709,6 +706,7 @@ industry: string @index(term) .
 boss_of: [uid] .
 name: string @index(exact, term) .
 works_for: [uid] .
+work_here: [uid] .
 </textarea>
       </div>
     </div>

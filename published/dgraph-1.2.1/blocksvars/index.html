@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link
+  rel="manifest"
+  href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/manifest.json"
+  >
+<link
+  rel="mask-icon"
+  href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/safari-pinned-tab.svg"
+  color="#fe2c06"
+  >
+<link
+  rel="shortcut icon"
+  href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/favicon.ico"
+  >
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/mstile-144x144.png">
+<meta name="msapplication-config" content="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/browserconfig.xml">
+
+<link rel="apple-touch-icon" sizes="57x57" href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/apple-touch-icon-180x180.png">
+<link rel="icon" sizes="32x32" type="image/png" href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/favicon-32x32.png">
+<link rel="icon" sizes="192x192" type="image/png" href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/android-chrome-192x192.png">
+<link rel="icon" sizes="194x194" type="image/png" href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/favicon-194x194.png">
+<link rel="icon" sizes="96x96" type="image/png" href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/favicon-96x96.png">
+<link rel="icon" sizes="16x16" type="image/png" href="https://tour.dgraph.io/dgraph-1.2.1/images/favicons/favicon-16x16.png">
+
+
+    
+    <title>
+      
+        Blocksvars — A Tour of Dgraph
+      
+    </title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+      />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700"
+      rel="stylesheet"
+      />
+
+    <link
+      href="https://tour.dgraph.io/dgraph-1.2.1/css/runnable-custom.css?fd581e09310956d9e7e07a71e2d31145"
+      rel="stylesheet"
+      />
+  </head>
+  <body>
+    <main>
+
+
+<nav id="header">
+  <a href="https://tour.dgraph.io/dgraph-1.2.1" class="brand">
+    <img src="https://tour.dgraph.io/dgraph-1.2.1/images/dgraph.svg" alt="dgraph" class="logo" />
+    <span class="name">
+      A Tour of Dgraph
+    </span>
+  </a>
+  <select id="tour-release" class="select-release">
+      
+        <option
+          value="master"
+          
+        >
+          Dgraph master
+        </option>
+      
+        <option
+          value="1.2.1"
+          
+            selected="selected"
+          
+        >
+          Dgraph 1.2.1
+        </option>
+      
+        <option
+          value="1.1.0"
+          
+        >
+          Dgraph 1.1.0
+        </option>
+      
+  </select>
+
+  <div class="menus">
+    <a href="#toggle-sidebar" data-action="toggle-sidebar" class="menu-item">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</nav>
+
+<script>
+  window.DgTour = {
+    thisRelease: "1.2.1",
+    latestRelease: "1.2.1"
+  }
+</script>
+
+
+
+
+<style>
+  .hidden { opacity: 0; }
+</style>
+<aside id="sidebar" class="hidden">
+  
+  <ul class="categories">
+    <li>
+      <div class="category">
+        Introduction
+      </div>
+
+      <ul class="topics">
+        
+        
+          <li>
+            <a href="/dgraph-1.2.1/intro/1/" class="topic">
+              Welcome
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/intro/2/" class="topic">
+              Run Dgraph
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/intro/3/" class="topic">
+              Load Schema
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/intro/4/" class="topic">
+              Load Data
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/intro/5/" class="topic">
+              Mutation Introduction
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/intro/6/" class="topic">
+              Graphs
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/intro/7/" class="topic">
+              Graph Databases
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/intro/8/" class="topic">
+              Congratulations
+            </a>
+          </li>
+        
+      </ul>
+    </li>
+  
+  <ul class="categories">
+    <li>
+      <div class="category">
+        Basic GraphQL&#43;- features
+      </div>
+
+      <ul class="topics">
+        
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/1/" class="topic">
+              Hello World
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/2/" class="topic">
+              Graphs as results
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/3/" class="topic">
+              Data types, Schema and Type System
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/4/" class="topic">
+              Language Support
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/5/" class="topic">
+              Queries describe graphs
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/6/" class="topic">
+              Functions and filtering
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/7/" class="topic">
+              AND, OR and NOT
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/8/" class="topic">
+              Sorting (orderasc or orderdesc)
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/9/" class="topic">
+              Pagination (first, offset and after)
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/10/" class="topic">
+              Count
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/11/" class="topic">
+              How Dgraph Search Works
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/12/" class="topic">
+              Has
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/13/" class="topic">
+              Alias
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/14/" class="topic">
+              Cascade
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/15/" class="topic">
+              Normalize
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/16/" class="topic">
+              Comments
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/17/" class="topic">
+              Facets : Edge attributes
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/basic/18/" class="topic">
+              Congratulations
+            </a>
+          </li>
+        
+      </ul>
+    </li>
+  
+  <ul class="categories">
+    <li>
+      <div class="category">
+        Schema - describe your data
+      </div>
+
+      <ul class="topics">
+        
+        
+          <li>
+            <a href="/dgraph-1.2.1/schema/1/" class="topic">
+              Adding schema - mutating schema
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/schema/2/" class="topic">
+              Adding Data - mutating data
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/schema/3/" class="topic">
+              External Identifiers
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/schema/4/" class="topic">
+              Language Support
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/schema/5/" class="topic">
+              Reverse edges
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/schema/6/" class="topic">
+              Reverse edges Query
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/schema/7/" class="topic">
+              Exercise : Integrating existing data
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/schema/8/" class="topic">
+              Deleting Data
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/schema/9/" class="topic">
+              Expand Predicate
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/schema/10/" class="topic">
+              Congratulations
+            </a>
+          </li>
+        
+      </ul>
+    </li>
+  
+  <ul class="categories">
+    <li>
+      <div class="category">
+        Data, More Data
+      </div>
+
+      <ul class="topics">
+        
+        
+          <li>
+            <a href="/dgraph-1.2.1/moredata/1/" class="topic">
+              A bigger dataset
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/moredata/2/" class="topic">
+              Movies Schema
+            </a>
+          </li>
+        
+      </ul>
+    </li>
+  
+  <ul class="categories">
+    <li>
+      <div class="category">
+        Query Blocks, Query Variables and Aggregation
+      </div>
+
+      <ul class="topics">
+        
+        
+          <li>
+            <a href="/dgraph-1.2.1/blocksvars/1/" class="topic">
+              Multiple Named Query Blocks
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/blocksvars/2/" class="topic">
+              Query Variables
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/blocksvars/3/" class="topic">
+              Query Variables in a child block
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/blocksvars/4/" class="topic">
+              Query Variables in another query block I
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/blocksvars/5/" class="topic">
+              Query Variables in another query block II
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/blocksvars/6/" class="topic">
+              Exercise: Query Variables linking queries
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/blocksvars/7/" class="topic">
+              Value variables - min and max
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/blocksvars/8/" class="topic">
+              Exercise : Value variables - sum and avg
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/blocksvars/9/" class="topic">
+              Value variables: filtering and ordering
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/blocksvars/10/" class="topic">
+              Value variables: math functions
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/blocksvars/11/" class="topic">
+              Exercise : Latest Movies
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/blocksvars/12/" class="topic">
+              GroupBy
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/blocksvars/13/" class="topic">
+              Congratulations!
+            </a>
+          </li>
+        
+      </ul>
+    </li>
+  
+  <ul class="categories">
+    <li>
+      <div class="category">
+        Search - more ways to find nodes
+      </div>
+
+      <ul class="topics">
+        
+        
+          <li>
+            <a href="/dgraph-1.2.1/search/1/" class="topic">
+              Indexes
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/search/2/" class="topic">
+              Term search
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/search/3/" class="topic">
+              Regular Expressions
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/search/4/" class="topic">
+              Exact index and inequality
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/search/5/" class="topic">
+              Full Text Search
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/search/6/" class="topic">
+              Full Text Search : language support
+            </a>
+          </li>
+        
+          <li>
+            <a href="/dgraph-1.2.1/search/7/" class="topic">
+              Geo queries : Near
+            </a>
+          </li>
+        
+      </ul>
+    </li>
+  
+</aside>
+
+
+
+  Multiple Named Query Blocks
+
+  Query Variables
+
+  Query Variables in a child block
+
+  Query Variables in another query block I
+
+  Query Variables in another query block II
+
+  Exercise: Query Variables linking queries
+
+  Value variables - min and max
+
+  Exercise : Value variables - sum and avg
+
+  Value variables: filtering and ordering
+
+  Value variables: math functions
+
+  Exercise : Latest Movies
+
+  GroupBy
+
+  Congratulations!
+
+
+    </main>
+
+    <script src="https://tour.dgraph.io/dgraph-1.2.1/js/build/dgraph-tour.js?6aec6e1a029d764cfc1f4b491bb7c502"></script>
+    <script src="//unpkg.com/@dgraph-io/community"></script>
+  </body>
+
+</html>
+
