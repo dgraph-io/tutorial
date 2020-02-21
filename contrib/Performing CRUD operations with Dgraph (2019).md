@@ -1,9 +1,7 @@
 
-
-
 ## Schema 
 
-```
+```sh
 name:           string @index(exact).
 birth:          datetime @index(year) .
 contact:        uid .
@@ -16,13 +14,11 @@ city:           string .
 
 > Note: Next breaking change in Dgraph you gonna have to use [brackets] in UIDs. That means ``contact:        [uid] .`` and ``adresses:       uid .`` - This will come after 1.1 version.
 
-
 ## Mutations (Create Operation)
-
 
 The city creation:
 
-```
+```JSON
 {
   "set": [
     {
@@ -32,9 +28,10 @@ The city creation:
   ]
 }
 ```
+
 To find the city, use the following query:
 
-```
+```sh
 {
   myCity(func: has(city.name) {
     uid
@@ -45,7 +42,7 @@ To find the city, use the following query:
 
 The document creation:
 
-```
+```JSON
 {
   "set": [
     {
@@ -70,7 +67,8 @@ The document creation:
 ## Query
 
 The base Query:
-```
+
+```sh
 {
   data(func: eq(name@en, "Michael Keaton")) {
     name@en
@@ -89,7 +87,8 @@ The base Query:
 ## Mutation (Update operation)
 
 Editing the Michael Keaton's phone (use any value you wish):
-```
+
+```JSON
 {
   "set": [
     {
@@ -104,7 +103,7 @@ Editing the Michael Keaton's phone (use any value you wish):
 
 Note that you have to grab the correct UIDs to do this operations. So you first need to query for it.
 
-```
+```JSON
 {
   "delete": [
     {
@@ -114,7 +113,8 @@ Note that you have to grab the correct UIDs to do this operations. So you first 
   ]
 }
 ```
-```
+
+```JSON
 {
   "delete": [
     {
@@ -126,7 +126,8 @@ Note that you have to grab the correct UIDs to do this operations. So you first 
   ]
 }
 ```
-```
+
+```JSON
 {
     "delete": [
         {
