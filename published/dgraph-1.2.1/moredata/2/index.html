@@ -599,6 +599,7 @@
 type Person {
     name
     director.film
+    actor.film
 }
 
 type Movie {
@@ -614,17 +615,15 @@ type Genre {
 
 type Performance {
     performance.film
-    performance.character_note
     performance.character
     performance.actor
-    performance.special_performance_type
-    type
 }
 " data-current="# Define Types
 
 type Person {
     name
     director.film
+    actor.film
 }
 
 type Movie {
@@ -640,11 +639,8 @@ type Genre {
 
 type Performance {
     performance.film
-    performance.character_note
     performance.character
     performance.actor
-    performance.special_performance_type
-    type
 }
 " endpoint="/alter" data-dirty="false">
   <div class="runnable-pane runnable-pane-query">
@@ -676,6 +672,7 @@ type Performance {
 type Person {
     name
     director.film
+    actor.film
 }
 
 type Movie {
@@ -691,11 +688,8 @@ type Genre {
 
 type Performance {
     performance.film
-    performance.character_note
     performance.character
     performance.actor
-    performance.special_performance_type
-    type
 }
 </textarea>
       </div>
