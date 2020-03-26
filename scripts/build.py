@@ -96,16 +96,16 @@ def buildAll(releases):
 
 def main():
     releases = getReleases()
-
-    exec("rm", "-rf", "public")
-    exec("mkdir", "public")
+    publicDir = os.environ.get(DEST_ENV) or 'public'
+    exec("rm", "-rf", publicDir)
+    exec("mkdir", publicDir)
 
     buildAll(releases)
 
     exec("git", "checkout", "master")
 
     exec("rm", "-rf", "published")
-    exec("mv", "public", "published")
+    exec("mv", publicDir, "published")
     exec("git", "add", "published")
     exec("git", "commit", "-m", "Hugo rebuild all branches")
 
