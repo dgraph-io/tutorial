@@ -12,7 +12,7 @@ $('#tour-release').change(function(e) {
   if (dest != "master") {
     dest = "dgraph-" + dest
   }
-  window.location.href = "/" + dest
+  window.location.href = window.location.href + "/" + dest
 });
 
 
