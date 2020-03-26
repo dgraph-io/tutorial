@@ -5,6 +5,7 @@ import re
 import semver
 import subprocess as sp
 
+DEST_ENV = 'TOUR_DESTINATION'
 BASE_URL_ENV = 'TOUR_BASE_URL'
 
 def exec(*argv):
@@ -26,9 +27,17 @@ def runHugo(outSuffix=""):
             baseUrl += '/'
     baseUrl += outSuffix
 
+    destination = 'public/'
+    if DEST_ENV in os.environ:
+        destination = os.environ[DEST_ENV]
+        if destination[-1] != '/':
+            destination += '/'
+    destination += outSuffix
+
     return exec(
         "hugo",
-		"--destination=public/" + outSuffix,
+		"--destination",
+        destination,
 		"--baseURL",
         baseUrl,
         "--config",
