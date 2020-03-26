@@ -5,18 +5,6 @@
       A Tour of Dgraph
     </span>
   </a>
-  <select id="tour-release" class="select-release">
-      {{ range .Site.Params.tourReleases }}
-        <option
-          value="{{ . }}"
-          {{ if (eq . $.Site.Params.thisRelease)}}
-            selected="selected"
-          {{ end }}
-        >
-          Dgraph {{ . }}
-        </option>
-      {{ end }}
-  </select>
 
   <div class="menus">
     <a href="#toggle-sidebar" data-action="toggle-sidebar" class="menu-item">
