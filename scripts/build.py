@@ -36,9 +36,9 @@ def runHugo(outSuffix=""):
 
     return exec(
         "hugo",
-		"--destination",
+        "--destination",
         destination,
-		"--baseURL",
+        "--baseURL",
         baseUrl,
         "--config",
         "config.toml,releases.json",
