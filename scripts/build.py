@@ -20,7 +20,7 @@ def exec(*argv):
 
 
 def runHugo(outSuffix=""):
-    baseUrl = "https://tour.dgraph.io/"
+    baseUrl = "https://dgraph.io/tour/"
     if BASE_URL_ENV in os.environ:
         baseUrl = os.environ[BASE_URL_ENV]
         if baseUrl[-1] != '/':
