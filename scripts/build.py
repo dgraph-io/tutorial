@@ -102,11 +102,11 @@ def main():
 
     buildAll(releases)
 
-    # exec("git", "checkout", "master")
+    exec("git", "checkout", "master")
 
-    # exec("rm", "-rf", "published")
-    # exec("mv", "public", "published")
-    # exec("git", "add", "published")
-    # exec("git", "commit", "-m", "Hugo rebuild all branches")
+    exec("rm", "-rf", "published")
+    exec("mv", "public", "published")
+    exec("git", "add", "published")
+    exec("git", "commit", "-m", "Hugo rebuild all branches")
 
 main()
