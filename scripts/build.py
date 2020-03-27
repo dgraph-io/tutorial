@@ -18,14 +18,17 @@ def exec(*argv):
         raise Exception('Failed to exec ' + " ".join(argv))
     return res
 
-
-def runHugo(outSuffix=""):
+def getBaseUrl(outSuffix=""):
     baseUrl = "https://tour.dgraph.io/"
     if BASE_URL_ENV in os.environ:
         baseUrl = os.environ[BASE_URL_ENV]
         if baseUrl[-1] != '/':
             baseUrl += '/'
     baseUrl += outSuffix
+    return baseUrl
+
+def runHugo(outSuffix=""):
+    baseUrl = getBaseUrl(outSuffix)
 
     destination = 'public/'
     if DEST_ENV in os.environ:
@@ -74,13 +77,13 @@ def buildBranch(branch, dest, jsonData):
 def buildAll(releases):
     latestRelease = releases[1]
     print('Latest Release (recommended to users): ', latestRelease)
-
     def jsonFor(version, latestRelease, releases):
         return {
             "params": {
                 "latestRelease": latestRelease,
                 "tourReleases": releases,
                 "thisRelease": version,
+                "home": getBaseUrl()
             },
         }
 
