@@ -5,6 +5,7 @@ import re
 import semver
 import subprocess as sp
 
+DEST_ENV = 'TOUR_DESTINATION'
 BASE_URL_ENV = 'TOUR_BASE_URL'
 
 def exec(*argv):
@@ -26,10 +27,18 @@ def runHugo(outSuffix=""):
             baseUrl += '/'
     baseUrl += outSuffix
 
+    destination = 'public/'
+    if DEST_ENV in os.environ:
+        destination = os.environ[DEST_ENV]
+        if destination[-1] != '/':
+            destination += '/'
+    destination += outSuffix
+
     return exec(
         "hugo",
-		"--destination=public/" + outSuffix,
-		"--baseURL",
+        "--destination",
+        destination,
+        "--baseURL",
         baseUrl,
         "--config",
         "config.toml,releases.json",
@@ -90,16 +99,16 @@ def buildAll(releases):
 
 def main():
     releases = getReleases()
-
-    exec("rm", "-rf", "public")
-    exec("mkdir", "public")
+    publicDir = os.environ.get(DEST_ENV) or 'public'
+    exec("rm", "-rf", publicDir)
+    exec("mkdir", publicDir)
 
     buildAll(releases)
 
     exec("git", "checkout", "master")
 
     exec("rm", "-rf", "published")
-    exec("mv", "public", "published")
+    exec("mv", publicDir, "published")
     exec("git", "add", "published")
     exec("git", "commit", "-m", "Hugo rebuild all branches")
 

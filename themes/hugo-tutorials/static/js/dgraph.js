@@ -6,13 +6,13 @@ $('#tour-release').change(function(e) {
     return
   }
   if (dest == DgTour.latestRelease) {
-    window.location.href = "/"
+    window.location.href = DgTour.BaseUrl;
     return
   }
   if (dest != "master") {
     dest = "dgraph-" + dest
   }
-  window.location.href = "/" + dest
+  window.location.href = DgTour.BaseUrl + dest
 });
 
 
