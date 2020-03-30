@@ -18,8 +18,8 @@
       
       <guid>https://tour.dgraph.io/master/moredata/1/</guid>
       <description>Ok, we are off to a start with Dgraph and GraphQL+-. Let’s move it up a few notches.
-Dgraph can also do query aggregation, geo-queries, string querying and more. But for all that let&amp;rsquo;s move from the small datasets we started with and try out something bigger, much bigger.
-In our github repository you&amp;rsquo;ll find a dataset about movies, directors and actors.
+Dgraph can also do query aggregation, geo-queries, string querying and more. But for all that let&#39;s move from the small datasets we started with and try out something bigger, much bigger.
+In our github repository you&#39;ll find a dataset about movies, directors and actors.
 Download it from that link and save into the ~/dgraph directory or by running the following in a terminal</description>
     </item>
     
@@ -30,8 +30,8 @@ Download it from that link and save into the ~/dgraph directory or by running th
       
       <guid>https://tour.dgraph.io/master/moredata/2/</guid>
       <description>Dgraph queries, Schema Types and the visualization will help us understand the schema of the movies dataset.
-As you&amp;rsquo;ll see in the following pages, we can view the data from a number of perspectives; considering for example directors, movies, genres or even locations as the primary starting point.
-Let&amp;rsquo;s have a look from the perspective of directors. Kathryn Bigelow directed the early 90&amp;rsquo;s classic Point Break. We&amp;rsquo;ll begin with her and learn about the schema.</description>
+As you&#39;ll see in the following pages, we can view the data from a number of perspectives; considering for example directors, movies, genres or even locations as the primary starting point.
+Let&#39;s have a look from the perspective of directors. Kathryn Bigelow directed the early 90&#39;s classic Point Break. We&#39;ll begin with her and learn about the schema.</description>
     </item>
     
   </channel>
