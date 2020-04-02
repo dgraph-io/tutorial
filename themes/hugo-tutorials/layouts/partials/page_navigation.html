@@ -1,0 +1,17 @@
+<aside class="page-subnav">
+
+    <div class="page-subnav__header">
+        <h1 class="page-subnav__title">A Tour of Dgraph</h1>
+    </div>
+
+    <div class="page-subnav__labels">
+        {{- $currentSection := print "/" (index (split .URL "/") 1) "/" -}}
+        {{ range $.Site.Menus.main }}
+            {{- $thisSection := print "/" (index (split .URL "/") 1) "/" -}}
+            <a class="page-subnav__label{{ if eq ($currentSection|lower) ($thisSection|lower) }} is-active{{ end }}" href="{{ .URL }}">
+                <span>{{ .Name }}</span>
+            </a>
+        {{ end }}
+    </div>
+
+</aside>

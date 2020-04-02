@@ -1,10 +1,31 @@
 {{ partial "header.html" . }}
 
-{{ partial "topbar.html" . }}
-{{ partial "sidebar.html" . }}
+<body class="tour">
 
-{{ range .Pages  }}
-  {{ .Title }}
-{{ end }}
+    {{ partial "page_header.html" . }}
+
+    <div class="page-intro page-intro__narrow">
+        <div class="container__full">
+
+            {{ partial "page_navigation.html" . }}
+
+        </div>
+    </div>
+
+    <section class="page-body">
+        <div class="page-body__content">
+            <div class="container__full">
+
+                {{ range .Pages  }}
+                    {{ .Title }}
+                {{ end }}
+
+            </div>
+        </div>
+    </section>
+
+    {{ partial "page_footer.html" . }}
+
+</body>
 
 {{ partial "footer.html" . }}
