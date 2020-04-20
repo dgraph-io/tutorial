@@ -85,12 +85,10 @@
         </option>
       
         <option
-          value="1.2.1"
-          
-            selected="selected"
+          value="1.0.16"
           
         >
-          Dgraph 1.2.1
+          Dgraph 1.0.16
         </option>
       
         <option
@@ -101,10 +99,19 @@
         </option>
       
         <option
-          value="1.0.16"
+          value="1.2.1"
           
         >
-          Dgraph 1.0.16
+          Dgraph 1.2.1
+        </option>
+      
+        <option
+          value="20.03.0"
+          
+            selected="selected"
+          
+        >
+          Dgraph 20.03.0
         </option>
       
   </select>
@@ -118,8 +125,8 @@
 
 <script>
   window.DgTour = {
-    thisRelease: "1.2.1",
-    latestRelease: "1.2.1",
+    thisRelease: "20.03.0",
+    latestRelease: "20.03.0",
     home: "https:\/\/tour.dgraph.io\/"
   }
 </script>
@@ -563,16 +570,16 @@
           <h1 class="lesson-heading">Query Variables in another query block I</h1>
 
           <div>
-            <p>Let's take a second to think about that last query.  The variable
+            <p>Let&rsquo;s take a second to think about that last query.  The variable
 <code>JC_actor</code> evaluated to all actors in any Jane Campion film.  No
-matter where we use it, it's the full set.</p>
-<p>That's the key to using Dgraph's variables correctly: understand that
+matter where we use it, it&rsquo;s the full set.</p>
+<p>That&rsquo;s the key to using Dgraph&rsquo;s variables correctly: understand that
 they are global in the sense that they evaluate to all nodes that
 could match that edge in the query, not local in the sense that would
 evaluate to different results for each Jane Campion film.</p>
 <p>We can also use query variables in another query block, both as the nodes the root filter matches and in internal filters.</p>
 <p>Peter Jackson often appears in his own films, mostly in the background
-or just a glimpse, but he's there. The query shows all films that Peter Jackson
+or just a glimpse, but he&rsquo;s there. The query shows all films that Peter Jackson
 has both directed and appeared in.</p>
 
           </div>

@@ -85,12 +85,10 @@
         </option>
       
         <option
-          value="1.2.1"
-          
-            selected="selected"
+          value="1.0.16"
           
         >
-          Dgraph 1.2.1
+          Dgraph 1.0.16
         </option>
       
         <option
@@ -101,10 +99,19 @@
         </option>
       
         <option
-          value="1.0.16"
+          value="1.2.1"
           
         >
-          Dgraph 1.0.16
+          Dgraph 1.2.1
+        </option>
+      
+        <option
+          value="20.03.0"
+          
+            selected="selected"
+          
+        >
+          Dgraph 20.03.0
         </option>
       
   </select>
@@ -118,8 +125,8 @@
 
 <script>
   window.DgTour = {
-    thisRelease: "1.2.1",
-    latestRelease: "1.2.1",
+    thisRelease: "20.03.0",
+    latestRelease: "20.03.0",
     home: "https:\/\/tour.dgraph.io\/"
   }
 </script>
@@ -563,13 +570,13 @@
           <h1 class="lesson-heading">Value variables - min and max</h1>
 
           <div>
-            <p>We've just looked at variables that stored <code>uid</code> results from query
+            <p>We&rsquo;ve just looked at variables that stored <code>uid</code> results from query
 blocks.  Value variables store the values against which they
 match.</p>
 <p>Value variables work differently to query variables.  Value variables are context dependent - in fact, they are a map from UID to value and we can exploit this when reading and filtering value variables.  The value from a value variable is extracted with <code>val(&lt;variable-name&gt;)</code>.</p>
 <p>At the point of definition, because the context is within the appropriate UID, value variables act like the corresponding value.  In the enclosing block, value variables are the UID to value map and must be aggregated.</p>
-<p>Aggregations over value variables aren't dependent on an index -
-there's no need for indexing, the values have already been found in the query.</p>
+<p>Aggregations over value variables aren&rsquo;t dependent on an index -
+there&rsquo;s no need for indexing, the values have already been found in the query.</p>
 <p><code>min</code> and <code>max</code> can be applied to <code>int</code>, <code>float</code>, <code>string</code>, <code>bool</code>,
 and <code>date</code> types.</p>
 

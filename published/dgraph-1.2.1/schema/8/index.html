@@ -85,12 +85,10 @@
         </option>
       
         <option
-          value="1.2.1"
-          
-            selected="selected"
+          value="1.0.16"
           
         >
-          Dgraph 1.2.1
+          Dgraph 1.0.16
         </option>
       
         <option
@@ -101,10 +99,19 @@
         </option>
       
         <option
-          value="1.0.16"
+          value="1.2.1"
+          
+            selected="selected"
           
         >
-          Dgraph 1.0.16
+          Dgraph 1.2.1
+        </option>
+      
+        <option
+          value="20.03.0"
+          
+        >
+          Dgraph 20.03.0
         </option>
       
   </select>
@@ -119,10 +126,41 @@
 <script>
   window.DgTour = {
     thisRelease: "1.2.1",
-    latestRelease: "1.2.1",
+    latestRelease: "20.03.0",
     home: "https:\/\/tour.dgraph.io\/"
   }
 </script>
+
+
+
+<style>
+  .old-branch-alert {
+    position: fixed;
+    z-index: 1;
+    left: 40vw;
+    right: 100px;
+    top: 5px;
+    border-radius: 8px;
+    box-shadow: -2px 2px 6px 0px rgba(0,0,0,0.75);
+    background-color: #f0ad4e;
+    padding: 4px;
+  }
+  .old-branch-alert a.btn {
+    color: #fff;
+    padding: 2px 4px;
+  }
+</style>
+<div class="old-branch-alert">
+  You are looking at the tour for Dgraph
+  <strong>1.2.1</strong>.
+  Latest stable release is
+  <strong>20.03.0</strong>.
+  <a href="https://tour.dgraph.io/dgraph-1.2.1/" class="btn btn-primary">Go to
+    <strong>
+      Dgraph 20.03.0
+    </strong>
+  </a>
+</div>
 
 
 
@@ -570,9 +608,9 @@
 <li><code>&lt;uid&gt; * * .</code> Delete all triples for a given node</li>
 </ul>
 <p>The examples given here are not complete. Uids assigned on your
-instance would be unique. Try something out; you're not going
+instance would be unique. Try something out; you&rsquo;re not going
 to hurt anyone, just delete their friends.</p>
-<p>You can do the same example using JSON format. You're able to do that through our clients, cURL or Ratel UI.</p>
+<p>You can do the same example using JSON format. You&rsquo;re able to do that through our clients, cURL or Ratel UI.</p>
 <h4 id="see-in-json">See in JSON:</h4>
 <p>Delete all triples for a given node</p>
 <pre><code> {
@@ -592,7 +630,7 @@ to hurt anyone, just delete their friends.</p>
         ]
     }
 </code></pre><blockquote>
-<p>This doesn't delete their children which means in this case, it will not erase the &ldquo;friends&rdquo;. Only the relation would be deleted.</p>
+<p>This doesn&rsquo;t delete their children which means in this case, it will not erase the &ldquo;friends&rdquo;. Only the relation would be deleted.</p>
 </blockquote>
 <p>Deleting relations and then their children</p>
 <pre><code> {

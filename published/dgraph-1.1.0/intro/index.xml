@@ -19,7 +19,7 @@
       <guid>https://tour.dgraph.io/dgraph-1.1.0/intro/1/</guid>
       <description>Hi,
 Welcome to Dgraph.
-This interactive tutorial will get you up and running with Dgraph and writing graph queries in GraphQL+-, Dgraph&#39;s own graph query language.
+This interactive tutorial will get you up and running with Dgraph and writing graph queries in GraphQL+-, Dgraph&amp;rsquo;s own graph query language.
 The tutorial is divided into modules. You can access the table of contents at any time by clicking &amp;ldquo;A Tour of Dgraph&amp;rdquo; in the top left and can move backwards and forwards using the right and left arrows at the bottom of this pane.</description>
     </item>
     
@@ -29,8 +29,8 @@ The tutorial is divided into modules. You can access the table of contents at an
       <pubDate>Wed, 26 Apr 2017 22:14:20 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/dgraph-1.1.0/intro/2/</guid>
-      <description>Let&#39;s run an instance of Dgraph on your machine; that&#39;ll give you a handle on installing Dgraph and loading data yourself.
-All the data in this tutorial will be stored in the instance you install and all the queries will look for Dgraph on your local machine. By running it in a container, you&#39;ll have a fresh Dgraph that will serve as a sandbox for you to learn and experiment with.</description>
+      <description>Let&amp;rsquo;s run an instance of Dgraph on your machine; that&amp;rsquo;ll give you a handle on installing Dgraph and loading data yourself.
+All the data in this tutorial will be stored in the instance you install, and all the queries will look for Dgraph on your local machine. By running it in a container, you&amp;rsquo;ll have a fresh Dgraph that will serve as a sandbox for you to learn and experiment.</description>
     </item>
     
     <item>
@@ -39,7 +39,7 @@ All the data in this tutorial will be stored in the instance you install and all
       <pubDate>Wed, 26 Apr 2017 22:28:55 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/dgraph-1.1.0/intro/3/</guid>
-      <description>Once you have Dgraph up and running, press run on the panel to the right. This will load a schema into Dgraph for us to use in the first steps of the tutorial. Don&#39;t worry too much about the syntax for now, we&#39;ll cover all that in later lessons, just check in the response panel that the operation was a success.</description>
+      <description>Once you have Dgraph up and running, press run on the panel to the right. This will load a schema into Dgraph for us to use in the first steps of the tutorial. Don&amp;rsquo;t worry too much about the syntax for now, we&amp;rsquo;ll cover all that in later lessons, just check in the response panel that the operation was a success.</description>
     </item>
     
     <item>
@@ -48,9 +48,9 @@ All the data in this tutorial will be stored in the instance you install and all
       <pubDate>Wed, 26 Apr 2017 22:28:55 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/dgraph-1.1.0/intro/4/</guid>
-      <description>Now that a schema has been loaded, it&#39;s time to load some data. Press the run button again and check that the response panel indicates the data was loaded successfully.
-Don&#39;t worry about the syntax for now, it will be explained later.
-You can load the same example data using JSON format. You&#39;re able to do that through our clients, cURL or Ratel UI.
+      <description>Now that a schema has been loaded, it&amp;rsquo;s time to load some data. Press the run button again and check that the response panel indicates the data was loaded successfully.
+Don&amp;rsquo;t worry about the syntax for now, it will be explained later.
+You can load the same example data using JSON format. You&amp;rsquo;re able to do that through our clients, cURL or Ratel UI.
 See the JSON:
  Show answer   { &amp;quot;set&amp;quot;: [ { &amp;quot;uid&amp;quot;: &amp;quot;_:michael&amp;quot;, &amp;quot;name&amp;quot;: &amp;quot;Michael&amp;quot;, &amp;quot;dgraph.</description>
     </item>
@@ -72,9 +72,9 @@ This introduction is important for the coming exercises, many of the concepts pr
       <pubDate>Wed, 26 Apr 2017 22:28:55 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/dgraph-1.1.0/intro/6/</guid>
-      <description>We&#39;ve started Dgraph, but first things first: What is a graph and what has that got to do with databases?
+      <description>We&amp;rsquo;ve started Dgraph, but first things first: What is a graph and what has that got to do with databases?
 Graphs describe objects and the interconnections between them. Many people have heard of friendship graphs, or social network graphs, so let’s start there.
-Note OK, you&#39;ll have to use your imagination here. We&#39;re still building the tutorial, and we don&#39;t have the visualizations up and running just yet. By starting Dgraph, you&#39;ll have the visualization component working just fine.</description>
+Note OK, you&amp;rsquo;ll have to use your imagination here. We&amp;rsquo;re still building the tutorial, and we don&amp;rsquo;t have the visualizations up and running just yet. By starting Dgraph, you&amp;rsquo;ll have the visualization component working just fine.</description>
     </item>
     
     <item>
@@ -94,7 +94,7 @@ In a graph database, the edges are a fundamental structure, so following edges i
       <pubDate>Wed, 26 Apr 2017 22:29:00 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/dgraph-1.1.0/intro/8/</guid>
-      <description>Congratulations, you&#39;ve finished the first module of the tutorial.
+      <description>Congratulations, you&amp;rsquo;ve finished the first module of the tutorial.
 By now you should have Dgraph up and running for the tutorial and know a little about graphs.
 Let’s investigate some graphs and start writing queries.</description>
     </item>

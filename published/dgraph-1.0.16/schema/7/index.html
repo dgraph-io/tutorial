@@ -118,10 +118,12 @@
         </option>
       
         <option
-          value="1.2.1"
+          value="1.0.16"
+          
+            selected="selected"
           
         >
-          Dgraph 1.2.1
+          Dgraph 1.0.16
         </option>
       
         <option
@@ -132,12 +134,17 @@
         </option>
       
         <option
-          value="1.0.16"
-          
-            selected="selected"
+          value="1.2.1"
           
         >
-          Dgraph 1.0.16
+          Dgraph 1.2.1
+        </option>
+      
+        <option
+          value="20.03.0"
+          
+        >
+          Dgraph 20.03.0
         </option>
       
   </select>
@@ -152,7 +159,7 @@
 <script>
   window.DgTour = {
     thisRelease: "1.0.16",
-    latestRelease: "1.2.1",
+    latestRelease: "20.03.0",
     home: "https:\/\/tour.dgraph.io\/"
   }
 </script>
@@ -180,10 +187,10 @@
   You are looking at the tour for Dgraph
   <strong>1.0.16</strong>.
   Latest stable release is
-  <strong>1.2.1</strong>.
+  <strong>20.03.0</strong>.
   <a href="https://tour.dgraph.io/dgraph-1.0.16/" class="btn btn-primary">Go to
     <strong>
-      Dgraph 1.2.1
+      Dgraph 20.03.0
     </strong>
   </a>
 </div>
@@ -640,9 +647,9 @@
 <li><code>&lt;uid&gt; * * .</code> Delete all triples for a given node</li>
 </ul>
 <p>The examples given here are not complete. Uids assigned on your
-instance would be unique. Try something out; you're not going
+instance would be unique. Try something out; you&rsquo;re not going
 to hurt anyone, just delete their friends.</p>
-<p>You can do the same example using JSON format. You're able to do that through our clients, cURL or Ratel UI.</p>
+<p>You can do the same example using JSON format. You&rsquo;re able to do that through our clients, cURL or Ratel UI.</p>
 <h4 id="see-in-json">See in JSON:</h4>
 <p>Delete all triples for a given node</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"> {
@@ -662,19 +669,19 @@ to hurt anyone, just delete their friends.</p>
         ]
     }
 </code></pre></div><blockquote>
-<p>This doesn't delete their children which means in this case, it will not erase the &ldquo;friends&rdquo;. Only the relation would be deleted.</p>
+<p>This doesn&rsquo;t delete their children which means in this case, it will not erase the &ldquo;friends&rdquo;. Only the relation would be deleted.</p>
 </blockquote>
 <p>Deleting relations and then their children</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"> {
         <span style="color:#f92672">&#34;delete&#34;</span>: [
             {
-                <span style="color:#f92672">&#34;uid&#34;</span>: <span style="color:#e6db74">&#34;0x2&#34;</span>, <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#960050;background-color:#1e0010">A</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">w</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">r</span> <span style="color:#960050;background-color:#1e0010">U</span><span style="color:#960050;background-color:#1e0010">I</span><span style="color:#960050;background-color:#1e0010">D</span><span style="color:#960050;background-color:#1e0010">.</span>
+                <span style="color:#f92672">&#34;uid&#34;</span>: <span style="color:#e6db74">&#34;0x2&#34;</span>, <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#960050;background-color:#1e0010">Answer</span> <span style="color:#960050;background-color:#1e0010">UID.</span>
                 <span style="color:#f92672">&#34;comment&#34;</span>: {
-                   <span style="color:#f92672">&#34;uid&#34;</span>: <span style="color:#e6db74">&#34;0x3&#34;</span> <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#960050;background-color:#1e0010">D</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">e</span> <span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">n</span> <span style="color:#960050;background-color:#1e0010">(</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">d</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">)</span> <span style="color:#960050;background-color:#1e0010">w</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">h</span> <span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">h</span><span style="color:#960050;background-color:#1e0010">e</span> <span style="color:#960050;background-color:#1e0010">C</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">m</span><span style="color:#960050;background-color:#1e0010">m</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">t</span>
+                   <span style="color:#f92672">&#34;uid&#34;</span>: <span style="color:#e6db74">&#34;0x3&#34;</span> <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#960050;background-color:#1e0010">Delete</span> <span style="color:#960050;background-color:#1e0010">relation</span> <span style="color:#960050;background-color:#1e0010">(edge)</span> <span style="color:#960050;background-color:#1e0010">with</span> <span style="color:#960050;background-color:#1e0010">the</span> <span style="color:#960050;background-color:#1e0010">Comment</span>
             }
             },
             {
-                <span style="color:#f92672">&#34;uid&#34;</span>: <span style="color:#e6db74">&#34;0x3&#34;</span> <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#960050;background-color:#1e0010">D</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">e</span> <span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">h</span><span style="color:#960050;background-color:#1e0010">e</span> <span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">u</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">l</span> <span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">m</span><span style="color:#960050;background-color:#1e0010">m</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">t</span>
+                <span style="color:#f92672">&#34;uid&#34;</span>: <span style="color:#e6db74">&#34;0x3&#34;</span> <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#960050;background-color:#1e0010">Delete</span> <span style="color:#960050;background-color:#1e0010">the</span> <span style="color:#960050;background-color:#1e0010">actual</span> <span style="color:#960050;background-color:#1e0010">comment</span>
             }
         ]
     }

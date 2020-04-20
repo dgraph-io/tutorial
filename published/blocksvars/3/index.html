@@ -85,12 +85,10 @@
         </option>
       
         <option
-          value="1.2.1"
-          
-            selected="selected"
+          value="1.0.16"
           
         >
-          Dgraph 1.2.1
+          Dgraph 1.0.16
         </option>
       
         <option
@@ -101,10 +99,19 @@
         </option>
       
         <option
-          value="1.0.16"
+          value="1.2.1"
           
         >
-          Dgraph 1.0.16
+          Dgraph 1.2.1
+        </option>
+      
+        <option
+          value="20.03.0"
+          
+            selected="selected"
+          
+        >
+          Dgraph 20.03.0
         </option>
       
   </select>
@@ -118,8 +125,8 @@
 
 <script>
   window.DgTour = {
-    thisRelease: "1.2.1",
-    latestRelease: "1.2.1",
+    thisRelease: "20.03.0",
+    latestRelease: "20.03.0",
     home: "https:\/\/tour.dgraph.io\/"
   }
 </script>
@@ -568,7 +575,7 @@ matched at one level down to the children to filter against.</p>
 <p>For example, take of the set of actors in all Jane Campion films; our
 challenge is to find which pairs
 in that set have acted together on a film not directed by Jane Campion.</p>
-<p>The query here uses the sets of all Jane Campion's films <code>JC_films</code> and
+<p>The query here uses the sets of all Jane Campion&rsquo;s films <code>JC_films</code> and
 all actors in any Jane Campion film <code>JC_actors</code> in child blocks.</p>
 <p>The <code>@cascade</code> directive ensures answers match all parts of the
 query - otherwise, actors who had no matching co-actors could be

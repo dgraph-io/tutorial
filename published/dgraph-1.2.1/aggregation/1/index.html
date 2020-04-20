@@ -85,12 +85,10 @@
         </option>
       
         <option
-          value="1.2.1"
-          
-            selected="selected"
+          value="1.0.16"
           
         >
-          Dgraph 1.2.1
+          Dgraph 1.0.16
         </option>
       
         <option
@@ -101,10 +99,19 @@
         </option>
       
         <option
-          value="1.0.16"
+          value="1.2.1"
+          
+            selected="selected"
           
         >
-          Dgraph 1.0.16
+          Dgraph 1.2.1
+        </option>
+      
+        <option
+          value="20.03.0"
+          
+        >
+          Dgraph 20.03.0
         </option>
       
   </select>
@@ -119,10 +126,41 @@
 <script>
   window.DgTour = {
     thisRelease: "1.2.1",
-    latestRelease: "1.2.1",
+    latestRelease: "20.03.0",
     home: "https:\/\/tour.dgraph.io\/"
   }
 </script>
+
+
+
+<style>
+  .old-branch-alert {
+    position: fixed;
+    z-index: 1;
+    left: 40vw;
+    right: 100px;
+    top: 5px;
+    border-radius: 8px;
+    box-shadow: -2px 2px 6px 0px rgba(0,0,0,0.75);
+    background-color: #f0ad4e;
+    padding: 4px;
+  }
+  .old-branch-alert a.btn {
+    color: #fff;
+    padding: 2px 4px;
+  }
+</style>
+<div class="old-branch-alert">
+  You are looking at the tour for Dgraph
+  <strong>1.2.1</strong>.
+  Latest stable release is
+  <strong>20.03.0</strong>.
+  <a href="https://tour.dgraph.io/dgraph-1.2.1/" class="btn btn-primary">Go to
+    <strong>
+      Dgraph 20.03.0
+    </strong>
+  </a>
+</div>
 
 
 
@@ -565,8 +603,8 @@
           <div>
             <p>Ok, we are off to a start with Dgraph and GraphQL+-.  Let’s move it up
 a few notches.</p>
-<p>Dgraph can also do query aggregation, geo-queries, string querying and more.  But for all that let's move from the small datasets we started with and try out something bigger, much bigger.</p>
-<p>In our github repository you'll find a <a href="https://github.com/dgraph-io/benchmarks/blob/master/data/goldendata.rdf.gz">dataset about movies, directors
+<p>Dgraph can also do query aggregation, geo-queries, string querying and more.  But for all that let&rsquo;s move from the small datasets we started with and try out something bigger, much bigger.</p>
+<p>In our github repository you&rsquo;ll find a <a href="https://github.com/dgraph-io/benchmarks/blob/master/data/goldendata.rdf.gz">dataset about movies, directors
 and actors</a>.</p>
 <p>Download it from that link or with something like</p>
 <pre><code>wget &quot;https://github.com/dgraph-io/benchmarks/blob/master/data/goldendata.rdf.gz?raw=true&quot; -O goldendata.rdf.gz -q
@@ -575,11 +613,11 @@ and actors</a>.</p>
 </code></pre><p>Dgraph reports back exactly how many triples were loaded and how long
 it took.  There are around ??? movies and ???
 actors are described in the dataset.</p>
-<p>It's a big database of moves, but it won’t trouble Dgraph.  It is, however, big enough to
+<p>It&rsquo;s a big database of moves, but it won’t trouble Dgraph.  It is, however, big enough to
 use for more complex queries.</p>
 <p>Later in the tutorial, you might need to refer back to this page (or
 issue a <a href="https://tour.dgraph.io/dgraph-1.2.1/basic/3">schema query</a>) to check the indexes or schema types.  Remember that
-we can't apply functions to edges that aren't indexed, and some
+we can&rsquo;t apply functions to edges that aren&rsquo;t indexed, and some
 functions require particular indexes.</p>
 
           </div>

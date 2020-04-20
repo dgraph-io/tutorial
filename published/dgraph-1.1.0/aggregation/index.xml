@@ -18,8 +18,8 @@
       
       <guid>https://tour.dgraph.io/dgraph-1.1.0/aggregation/1/</guid>
       <description>Ok, we are off to a start with Dgraph and GraphQL+-. Let’s move it up a few notches.
-Dgraph can also do query aggregation, geo-queries, string querying and more. But for all that let&#39;s move from the small datasets we started with and try out something bigger, much bigger.
-In our github repository you&#39;ll find a dataset about movies, directors and actors.
+Dgraph can also do query aggregation, geo-queries, string querying and more. But for all that let&amp;rsquo;s move from the small datasets we started with and try out something bigger, much bigger.
+In our github repository you&amp;rsquo;ll find a dataset about movies, directors and actors.
 Download it from that link or with something like</description>
     </item>
     
@@ -30,7 +30,7 @@ Download it from that link or with something like</description>
       
       <guid>https://tour.dgraph.io/dgraph-1.1.0/aggregation/2/</guid>
       <description>The min and max aggreation functions can be used on all scalar types. That is: int, float, string, bool, id and date.
-Agregations don&#39;t require an index, but can only be applied to variables</description>
+Agregations don&amp;rsquo;t require an index, but can only be applied to variables</description>
     </item>
     
   </channel>

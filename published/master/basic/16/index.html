@@ -87,10 +87,10 @@
         </option>
       
         <option
-          value="1.2.1"
+          value="1.0.16"
           
         >
-          Dgraph 1.2.1
+          Dgraph 1.0.16
         </option>
       
         <option
@@ -101,10 +101,17 @@
         </option>
       
         <option
-          value="1.0.16"
+          value="1.2.1"
           
         >
-          Dgraph 1.0.16
+          Dgraph 1.2.1
+        </option>
+      
+        <option
+          value="20.03.0"
+          
+        >
+          Dgraph 20.03.0
         </option>
       
   </select>
@@ -119,7 +126,7 @@
 <script>
   window.DgTour = {
     thisRelease: "master",
-    latestRelease: "1.2.1",
+    latestRelease: "20.03.0",
     home: "https:\/\/tour.dgraph.io\/"
   }
 </script>
@@ -147,10 +154,10 @@
   You are looking at the tour for Dgraph
   <strong>master</strong>.
   Latest stable release is
-  <strong>1.2.1</strong>.
+  <strong>20.03.0</strong>.
   <a href="https://tour.dgraph.io/master/" class="btn btn-primary">Go to
     <strong>
-      Dgraph 1.2.1
+      Dgraph 20.03.0
     </strong>
   </a>
 </div>
@@ -598,8 +605,8 @@
 <p>Anything after <code>#</code> on a line is a comment and ignored for query
 processing.</p>
 <p>This is helpful for debugging queries and for tutorials that need to explain parts of
-queries in-line, which is what we'll do for the more complex queries
-you'll encounter later in the tutorial.</p>
+queries in-line, which is what we&rsquo;ll do for the more complex queries
+you&rsquo;ll encounter later in the tutorial.</p>
 
           </div>
         </div>
@@ -623,18 +630,22 @@ you'll encounter later in the tutorial.</p>
         
 <div class="runnable" data-initial="{
   # A comment in a query looks like this
-  michael_number_friends(func: allofterms(name, &#34;Michael&#34;)) @normalize {
-    name : name   # or like this
+  michael_and_pet_name(func: allofterms(name, &#34;Michael&#34;)) @normalize {
+    name : name # or like this
     age
-    number_of_friends : count(friend)
+    owns_pet {
+      pet: name
+    }
   }
 }
 " data-current="{
   # A comment in a query looks like this
-  michael_number_friends(func: allofterms(name, &#34;Michael&#34;)) @normalize {
-    name : name   # or like this
+  michael_and_pet_name(func: allofterms(name, &#34;Michael&#34;)) @normalize {
+    name : name # or like this
     age
-    number_of_friends : count(friend)
+    owns_pet {
+      pet: name
+    }
   }
 }
 " endpoint="/query" data-dirty="false">
@@ -664,10 +675,12 @@ you'll encounter later in the tutorial.</p>
       <div class="runnable-tab-content active">
         <textarea class="query-content-editable">{
   # A comment in a query looks like this
-  michael_number_friends(func: allofterms(name, &#34;Michael&#34;)) @normalize {
-    name : name   # or like this
+  michael_and_pet_name(func: allofterms(name, &#34;Michael&#34;)) @normalize {
+    name : name # or like this
     age
-    number_of_friends : count(friend)
+    owns_pet {
+      pet: name
+    }
   }
 }
 </textarea>

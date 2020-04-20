@@ -118,10 +118,12 @@
         </option>
       
         <option
-          value="1.2.1"
+          value="1.0.16"
+          
+            selected="selected"
           
         >
-          Dgraph 1.2.1
+          Dgraph 1.0.16
         </option>
       
         <option
@@ -132,12 +134,17 @@
         </option>
       
         <option
-          value="1.0.16"
-          
-            selected="selected"
+          value="1.2.1"
           
         >
-          Dgraph 1.0.16
+          Dgraph 1.2.1
+        </option>
+      
+        <option
+          value="20.03.0"
+          
+        >
+          Dgraph 20.03.0
         </option>
       
   </select>
@@ -152,7 +159,7 @@
 <script>
   window.DgTour = {
     thisRelease: "1.0.16",
-    latestRelease: "1.2.1",
+    latestRelease: "20.03.0",
     home: "https:\/\/tour.dgraph.io\/"
   }
 </script>
@@ -180,10 +187,10 @@
   You are looking at the tour for Dgraph
   <strong>1.0.16</strong>.
   Latest stable release is
-  <strong>1.2.1</strong>.
+  <strong>20.03.0</strong>.
   <a href="https://tour.dgraph.io/dgraph-1.0.16/" class="btn btn-primary">Go to
     <strong>
-      Dgraph 1.2.1
+      Dgraph 20.03.0
     </strong>
   </a>
 </div>
@@ -633,16 +640,16 @@
           <h1 class="lesson-heading">Exercise : Integrating existing data</h1>
 
           <div>
-            <p>We've added a new schema and loaded some company data, but what about
+            <p>We&rsquo;ve added a new schema and loaded some company data, but what about
 integrating our previous friends dataset with this company one.</p>
-<p>Trying to use the blank nodes from previous mutations won't work.  The blank nodes aren't persisted in the store, so when referring to nodes created in a previous mutation, it's the UID that's needed.  So instead of</p>
+<p>Trying to use the blank nodes from previous mutations won&rsquo;t work.  The blank nodes aren&rsquo;t persisted in the store, so when referring to nodes created in a previous mutation, it&rsquo;s the UID that&rsquo;s needed.  So instead of</p>
 <pre><code>_:sarah &lt;works_for&gt; _:company1 .
-</code></pre><p>it's</p>
+</code></pre><p>it&rsquo;s</p>
 <pre><code>&lt;uid-for-sarah&gt; &lt;works_for&gt; &lt;uid-for-company1&gt; .
-</code></pre><p>Because the <code>uid</code> picked by Dgraph is unique, we can't help you this
+</code></pre><p>Because the <code>uid</code> picked by Dgraph is unique, we can&rsquo;t help you this
 time.  Use the <code>uid</code>'s picked by your instance of Dgraph to  write a mutation that links the company and
 friendship data.  Hint: previous queries will tell you the <code>uid</code>.</p>
-<p>The process you've just done here would normally done
+<p>The process you&rsquo;ve just done here would normally done
 programmatically - query the data to get the <code>uid</code>'s, formulate the
 mutations, then batch  the updates.</p>
 

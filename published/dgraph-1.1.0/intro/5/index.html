@@ -118,10 +118,10 @@
         </option>
       
         <option
-          value="1.2.1"
+          value="1.0.16"
           
         >
-          Dgraph 1.2.1
+          Dgraph 1.0.16
         </option>
       
         <option
@@ -134,10 +134,17 @@
         </option>
       
         <option
-          value="1.0.16"
+          value="1.2.1"
           
         >
-          Dgraph 1.0.16
+          Dgraph 1.2.1
+        </option>
+      
+        <option
+          value="20.03.0"
+          
+        >
+          Dgraph 20.03.0
         </option>
       
   </select>
@@ -152,7 +159,7 @@
 <script>
   window.DgTour = {
     thisRelease: "1.1.0",
-    latestRelease: "1.2.1",
+    latestRelease: "20.03.0",
     home: "https:\/\/tour.dgraph.io\/"
   }
 </script>
@@ -180,10 +187,10 @@
   You are looking at the tour for Dgraph
   <strong>1.1.0</strong>.
   Latest stable release is
-  <strong>1.2.1</strong>.
+  <strong>20.03.0</strong>.
   <a href="https://tour.dgraph.io/dgraph-1.1.0/" class="btn btn-primary">Go to
     <strong>
-      Dgraph 1.2.1
+      Dgraph 20.03.0
     </strong>
   </a>
 </div>
@@ -631,13 +638,13 @@
 <p>In Dgraph the mutation operations consist of two patterns: blank UID reference or explicit UID reference.</p>
 <p>This introduction is important for the coming exercises, many of the concepts presented here will be repeated in the next few chapters. (For example, <a href="../../schema/2/">Adding Data - mutating data</a> and <a href="../../schema/6/">Exercise : Integrating existing data</a>.)</p>
 <h2 id="blank-uid">Blank UID</h2>
-<p>In a mutation, any definition that doesn't match the UID explicit reference format can be considered blank UID reference, also known as a blank node. The structure of a blank node consists of:</p>
+<p>In a mutation, any definition that doesn&rsquo;t match the UID explicit reference format can be considered blank UID reference, also known as a blank node. The structure of a blank node consists of:</p>
 <p>underline + a colon + unique name (identifier)</p>
 <p>For example, in the previous section you saw the blank nodes <code>_:michael</code> and <code>_:amit</code>. This is the proper blank node syntax. However, there will be cases where the parser will consider some typo as a blank node, but its use is not recommended. Examples below:</p>
 <pre><code>&lt;_:uid43&gt; or &lt;_:uid4e030f&gt;
 &lt;someTypoMistake&gt;
 </code></pre><blockquote>
-<p>Dgraph's <a href="https://docs.dgraph.io/deploy/#export-database">data export</a> uses blank nodes of the first form presented.</p>
+<p>Dgraph&rsquo;s <a href="https://docs.dgraph.io/deploy/#export-database">data export</a> uses blank nodes of the first form presented.</p>
 </blockquote>
 <p>In JSON, the blank node format is similar. The blank node is defined with the <code>&quot;uid&quot;</code> key of a JSON object:</p>
 <pre><code>{
@@ -651,12 +658,12 @@
 
 
 <div class="notices note" >
-  <span class="type">Note</span> <p>In Dgraph's Bulk loader any typo will be considered blank UID reference. Because Bulk loader is a tool for populate data from scratch. Different from Live Loader.</p>
+  <span class="type">Note</span> <p>In Dgraph&rsquo;s Bulk loader any typo will be considered blank UID reference. Because Bulk loader is a tool for populate data from scratch. Different from Live Loader.</p>
 
 </div>
 
 <h2 id="explicit-uid">Explicit UID</h2>
-<p>To do a mutation for an existing node, you can refer to the node's UID directly in the mutation. The syntax is simple:</p>
+<p>To do a mutation for an existing node, you can refer to the node&rsquo;s UID directly in the mutation. The syntax is simple:</p>
 <pre><code>&lt;THE-UID&gt; # or 
 &lt;0x4e030f&gt; &lt;somePredicate&gt; &quot;some new data&quot; .
 </code></pre><p>In JSON:</p>
@@ -664,7 +671,7 @@
   &quot;uid&quot;: &quot;0x4e030f&quot;,
   &quot;somePredicate&quot;: &quot;some new data&quot;
 }
-</code></pre><p>One way to know an existing node's UID is to simply query for the indexed predicate, e.g:</p>
+</code></pre><p>One way to know an existing node&rsquo;s UID is to simply query for the indexed predicate, e.g:</p>
 <pre><code>{
   MyUser(func: eq(name, &quot;Jack Torrance&quot;)) {
     uid

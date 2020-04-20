@@ -118,10 +118,12 @@
         </option>
       
         <option
-          value="1.2.1"
+          value="1.0.16"
+          
+            selected="selected"
           
         >
-          Dgraph 1.2.1
+          Dgraph 1.0.16
         </option>
       
         <option
@@ -132,12 +134,17 @@
         </option>
       
         <option
-          value="1.0.16"
-          
-            selected="selected"
+          value="1.2.1"
           
         >
-          Dgraph 1.0.16
+          Dgraph 1.2.1
+        </option>
+      
+        <option
+          value="20.03.0"
+          
+        >
+          Dgraph 20.03.0
         </option>
       
   </select>
@@ -152,7 +159,7 @@
 <script>
   window.DgTour = {
     thisRelease: "1.0.16",
-    latestRelease: "1.2.1",
+    latestRelease: "20.03.0",
     home: "https:\/\/tour.dgraph.io\/"
   }
 </script>
@@ -180,10 +187,10 @@
   You are looking at the tour for Dgraph
   <strong>1.0.16</strong>.
   Latest stable release is
-  <strong>1.2.1</strong>.
+  <strong>20.03.0</strong>.
   <a href="https://tour.dgraph.io/dgraph-1.0.16/" class="btn btn-primary">Go to
     <strong>
-      Dgraph 1.2.1
+      Dgraph 20.03.0
     </strong>
   </a>
 </div>
@@ -643,9 +650,9 @@
 
 <p>Let’s have a look at a hello world query in GraphQL+-.</p>
 <p>Every query has a name, and the result is labelled with the same name.</p>
-<p>The search criteria <code>func: ...</code> matches nodes.  Function <code>eq</code> does what you'd expect, matching nodes with a <code>name</code> equalling &ldquo;Michael&rdquo;.  The result is the matched nodes
+<p>The search criteria <code>func: ...</code> matches nodes.  Function <code>eq</code> does what you&rsquo;d expect, matching nodes with a <code>name</code> equalling &ldquo;Michael&rdquo;.  The result is the matched nodes
 and listed outgoing edges from those nodes.</p>
-<p>Dgraph identifies each node with a unique internal id, its UID. A UID is not an edge, but can it be returned in a query with <code>uid</code>.  If you already know a node's UID, it can be retrieved with <code>func: uid(&lt;uid-number&gt;)</code>.</p>
+<p>Dgraph identifies each node with a unique internal id, its UID. A UID is not an edge, but can it be returned in a query with <code>uid</code>.  If you already know a node&rsquo;s UID, it can be retrieved with <code>func: uid(&lt;uid-number&gt;)</code>.</p>
 <p>Something to try : Change the query to select someone else.
 You can check the <a href="https://tour.dgraph.io/dgraph-1.0.16/intro/4">sample data</a> again.</p>
 

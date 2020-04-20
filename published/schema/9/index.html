@@ -85,12 +85,10 @@
         </option>
       
         <option
-          value="1.2.1"
-          
-            selected="selected"
+          value="1.0.16"
           
         >
-          Dgraph 1.2.1
+          Dgraph 1.0.16
         </option>
       
         <option
@@ -101,10 +99,19 @@
         </option>
       
         <option
-          value="1.0.16"
+          value="1.2.1"
           
         >
-          Dgraph 1.0.16
+          Dgraph 1.2.1
+        </option>
+      
+        <option
+          value="20.03.0"
+          
+            selected="selected"
+          
+        >
+          Dgraph 20.03.0
         </option>
       
   </select>
@@ -118,8 +125,8 @@
 
 <script>
   window.DgTour = {
-    thisRelease: "1.2.1",
-    latestRelease: "1.2.1",
+    thisRelease: "20.03.0",
+    latestRelease: "20.03.0",
     home: "https:\/\/tour.dgraph.io\/"
   }
 </script>
@@ -568,7 +575,7 @@ rather than listing them in the query.  Querying</p>
 <pre><code>expand(_all_)
 </code></pre><p>queries returns all edges out of every node matched at that level in the
 query.  Expand can be nested to then expand all predicates at the next level.</p>
-<p>We'll see later how to use expand with variables to query for a
+<p>We&rsquo;ll see later how to use expand with variables to query for a
 particular set of edges.</p>
 
 

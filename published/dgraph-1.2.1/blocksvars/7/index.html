@@ -85,12 +85,10 @@
         </option>
       
         <option
-          value="1.2.1"
-          
-            selected="selected"
+          value="1.0.16"
           
         >
-          Dgraph 1.2.1
+          Dgraph 1.0.16
         </option>
       
         <option
@@ -101,10 +99,19 @@
         </option>
       
         <option
-          value="1.0.16"
+          value="1.2.1"
+          
+            selected="selected"
           
         >
-          Dgraph 1.0.16
+          Dgraph 1.2.1
+        </option>
+      
+        <option
+          value="20.03.0"
+          
+        >
+          Dgraph 20.03.0
         </option>
       
   </select>
@@ -119,10 +126,41 @@
 <script>
   window.DgTour = {
     thisRelease: "1.2.1",
-    latestRelease: "1.2.1",
+    latestRelease: "20.03.0",
     home: "https:\/\/tour.dgraph.io\/"
   }
 </script>
+
+
+
+<style>
+  .old-branch-alert {
+    position: fixed;
+    z-index: 1;
+    left: 40vw;
+    right: 100px;
+    top: 5px;
+    border-radius: 8px;
+    box-shadow: -2px 2px 6px 0px rgba(0,0,0,0.75);
+    background-color: #f0ad4e;
+    padding: 4px;
+  }
+  .old-branch-alert a.btn {
+    color: #fff;
+    padding: 2px 4px;
+  }
+</style>
+<div class="old-branch-alert">
+  You are looking at the tour for Dgraph
+  <strong>1.2.1</strong>.
+  Latest stable release is
+  <strong>20.03.0</strong>.
+  <a href="https://tour.dgraph.io/dgraph-1.2.1/" class="btn btn-primary">Go to
+    <strong>
+      Dgraph 20.03.0
+    </strong>
+  </a>
+</div>
 
 
 
@@ -563,13 +601,13 @@
           <h1 class="lesson-heading">Value variables - min and max</h1>
 
           <div>
-            <p>We've just looked at variables that stored <code>uid</code> results from query
+            <p>We&rsquo;ve just looked at variables that stored <code>uid</code> results from query
 blocks.  Value variables store the values against which they
 match.</p>
 <p>Value variables work differently to query variables.  Value variables are context dependent - in fact, they are a map from UID to value and we can exploit this when reading and filtering value variables.  The value from a value variable is extracted with <code>val(&lt;variable-name&gt;)</code>.</p>
 <p>At the point of definition, because the context is within the appropriate UID, value variables act like the corresponding value.  In the enclosing block, value variables are the UID to value map and must be aggregated.</p>
-<p>Aggregations over value variables aren't dependent on an index -
-there's no need for indexing, the values have already been found in the query.</p>
+<p>Aggregations over value variables aren&rsquo;t dependent on an index -
+there&rsquo;s no need for indexing, the values have already been found in the query.</p>
 <p><code>min</code> and <code>max</code> can be applied to <code>int</code>, <code>float</code>, <code>string</code>, <code>bool</code>,
 and <code>date</code> types.</p>
 

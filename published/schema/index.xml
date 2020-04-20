@@ -40,7 +40,7 @@ After the upload, the label _:company1 doesn’t exist in Dgraph and we can’t 
       <pubDate>Thu, 27 Apr 2017 23:05:50 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/schema/3/</guid>
-      <description>Dgraph doesn&#39;t support setting external IDs for nodes. If an application requires unique identifiers for nodes other than the UIDs assigned by Dgraph, then these have to be supplied as edges. It&#39;s up to a user application to ensure the uniqueness of such IDs/keys.
+      <description>Dgraph doesn&amp;rsquo;t support setting external IDs for nodes. If an application requires unique identifiers for nodes other than the UIDs assigned by Dgraph, then these have to be supplied as edges. It&amp;rsquo;s up to a user application to ensure the uniqueness of such IDs/keys.
 More about in https://docs.dgraph.io/mutations/#external-ids</description>
     </item>
     
@@ -52,7 +52,7 @@ More about in https://docs.dgraph.io/mutations/#external-ids</description>
       <guid>https://tour.dgraph.io/schema/4/</guid>
       <description>Language tags are used on the string on input
 _:myID &amp;lt;an_edge&amp;gt; &amp;quot;something&amp;quot;@en . _:myID &amp;lt;an_edge&amp;gt; &amp;quot;某物&amp;quot;@zh-Hans . and on the edge in a query.
-You can do the same example using JSON format. You&#39;re able to do that through our clients, cURL or Ratel UI.
+You can do the same example using JSON format. You&amp;rsquo;re able to do that through our clients, cURL or Ratel UI.
 See the JSON:
  { &amp;quot;set&amp;quot;: [ { &amp;quot;uid&amp;quot;: &amp;quot;_:myID&amp;quot;, &amp;quot;an_edge@en&amp;quot;: &amp;quot;something&amp;quot;, &amp;quot;an_edge@zh-Hans&amp;quot;: &amp;quot;某物&amp;quot; } ] }  Tip The JSON example may end up helping you better understand the format in RDF.</description>
     </item>
@@ -63,7 +63,7 @@ See the JSON:
       <pubDate>Thu, 27 Apr 2017 23:05:50 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/schema/5/</guid>
-      <description>Edges are directional. A query can&#39;t traverse an edge in reverse.
+      <description>Edges are directional. A query can&amp;rsquo;t traverse an edge in reverse.
 There are two choices to query in both directions
   Add the reverse edge to the schema and add all the reverse edge data.
   Tell Dgraph to always store the reverse edge using the @reverse keyword in the schema.
@@ -86,10 +86,10 @@ In this query we want to know who works for &amp;ldquo;CompanyABC&amp;rdquo; wit
       <pubDate>Mon, 01 May 2017 10:41:33 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/schema/7/</guid>
-      <description>We&#39;ve added a new schema and loaded some company data, but what about integrating our previous friends dataset with this company one.
-Trying to use the blank nodes from previous mutations won&#39;t work. The blank nodes aren&#39;t persisted in the store, so when referring to nodes created in a previous mutation, it&#39;s the UID that&#39;s needed. So instead of
-_:sarah &amp;lt;works_for&amp;gt; _:company1 . it&#39;s
-&amp;lt;uid-for-sarah&amp;gt; &amp;lt;works_for&amp;gt; &amp;lt;uid-for-company1&amp;gt; . Because the uid picked by Dgraph is unique, we can&#39;t help you this time.</description>
+      <description>We&amp;rsquo;ve added a new schema and loaded some company data, but what about integrating our previous friends dataset with this company one.
+Trying to use the blank nodes from previous mutations won&amp;rsquo;t work. The blank nodes aren&amp;rsquo;t persisted in the store, so when referring to nodes created in a previous mutation, it&amp;rsquo;s the UID that&amp;rsquo;s needed. So instead of
+_:sarah &amp;lt;works_for&amp;gt; _:company1 . it&amp;rsquo;s
+&amp;lt;uid-for-sarah&amp;gt; &amp;lt;works_for&amp;gt; &amp;lt;uid-for-company1&amp;gt; . Because the uid picked by Dgraph is unique, we can&amp;rsquo;t help you this time.</description>
     </item>
     
     <item>
@@ -99,7 +99,7 @@ _:sarah &amp;lt;works_for&amp;gt; _:company1 . it&#39;s
       
       <guid>https://tour.dgraph.io/schema/8/</guid>
       <description>There are three deletion options inside a delete mutation.
- &amp;lt;uid&amp;gt; &amp;lt;edge&amp;gt; &amp;lt;uid&amp;gt;/&amp;quot;value&amp;quot; . Delete a single triple &amp;lt;uid&amp;gt; &amp;lt;edge&amp;gt; * . Delete all triples for a given edge &amp;lt;uid&amp;gt; * * . Delete all triples for a given node  The examples given here are not complete. Uids assigned on your instance would be unique. Try something out; you&#39;re not going to hurt anyone, just delete their friends.
+ &amp;lt;uid&amp;gt; &amp;lt;edge&amp;gt; &amp;lt;uid&amp;gt;/&amp;quot;value&amp;quot; . Delete a single triple &amp;lt;uid&amp;gt; &amp;lt;edge&amp;gt; * . Delete all triples for a given edge &amp;lt;uid&amp;gt; * * . Delete all triples for a given node  The examples given here are not complete. Uids assigned on your instance would be unique. Try something out; you&amp;rsquo;re not going to hurt anyone, just delete their friends.
 You can do the same example using JSON format.</description>
     </item>
     
@@ -111,7 +111,7 @@ You can do the same example using JSON format.</description>
       <guid>https://tour.dgraph.io/schema/9/</guid>
       <description>expand(...predicates...) is used to query for all given predicates, rather than listing them in the query. Querying
 expand(_all_) queries returns all edges out of every node matched at that level in the query. Expand can be nested to then expand all predicates at the next level.
-We&#39;ll see later how to use expand with variables to query for a particular set of edges.
+We&amp;rsquo;ll see later how to use expand with variables to query for a particular set of edges.
 Note As of version v1.1 you will need to add Types in your schema for expand(_all_) to work.</description>
     </item>
     
@@ -123,7 +123,7 @@ Note As of version v1.1 you will need to add Types in your schema for expand(_al
       <guid>https://tour.dgraph.io/schema/10/</guid>
       <description>This is the end of the schema module.
 The Dgraph instance you have running for the tutorial and the lessons in the modules so far give you a sandbox to play in. Make whatever queries or changes you like until you are comfortable with the material covered so far.
-When you&#39;re done, let&#39;s move up to bigger datasets and see more of Dgraph&#39;s query language.</description>
+When you&amp;rsquo;re done, let&amp;rsquo;s move up to bigger datasets and see more of Dgraph&amp;rsquo;s query language.</description>
     </item>
     
   </channel>

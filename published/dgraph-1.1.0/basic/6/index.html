@@ -118,10 +118,10 @@
         </option>
       
         <option
-          value="1.2.1"
+          value="1.0.16"
           
         >
-          Dgraph 1.2.1
+          Dgraph 1.0.16
         </option>
       
         <option
@@ -134,10 +134,17 @@
         </option>
       
         <option
-          value="1.0.16"
+          value="1.2.1"
           
         >
-          Dgraph 1.0.16
+          Dgraph 1.2.1
+        </option>
+      
+        <option
+          value="20.03.0"
+          
+        >
+          Dgraph 20.03.0
         </option>
       
   </select>
@@ -152,7 +159,7 @@
 <script>
   window.DgTour = {
     thisRelease: "1.1.0",
-    latestRelease: "1.2.1",
+    latestRelease: "20.03.0",
     home: "https:\/\/tour.dgraph.io\/"
   }
 </script>
@@ -180,10 +187,10 @@
   You are looking at the tour for Dgraph
   <strong>1.1.0</strong>.
   Latest stable release is
-  <strong>1.2.1</strong>.
+  <strong>20.03.0</strong>.
   <a href="https://tour.dgraph.io/dgraph-1.1.0/" class="btn btn-primary">Go to
     <strong>
-      Dgraph 1.2.1
+      Dgraph 20.03.0
     </strong>
   </a>
 </div>
@@ -627,7 +634,7 @@
           <h1 class="lesson-heading">Functions and filtering</h1>
 
           <div>
-            <p>Nodes are filtered based on functions applied to the node's outgoing edges.</p>
+            <p>Nodes are filtered based on functions applied to the node&rsquo;s outgoing edges.</p>
 <p>So far the queries have only applied a filter to the top level nodes,
 but filters can be applied to any node in the query.</p>
 <p>Note the syntax difference between filtering at the root of a query and filtering on internal blocks.</p>
@@ -654,8 +661,8 @@ but matches at least one term.</p>
 </ul>
 </li>
 <li>
-<p>There's also regular expressions, full text search and geo search,
-but those are bigger topics that'll have their own section in the tutorial</p>
+<p>There&rsquo;s also regular expressions, full text search and geo search,
+but those are bigger topics that&rsquo;ll have their own section in the tutorial</p>
 </li>
 </ul>
 <p>Functions can only be applied to predicates that have been indexed -

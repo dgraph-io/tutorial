@@ -87,10 +87,10 @@
         </option>
       
         <option
-          value="1.2.1"
+          value="1.0.16"
           
         >
-          Dgraph 1.2.1
+          Dgraph 1.0.16
         </option>
       
         <option
@@ -101,10 +101,17 @@
         </option>
       
         <option
-          value="1.0.16"
+          value="1.2.1"
           
         >
-          Dgraph 1.0.16
+          Dgraph 1.2.1
+        </option>
+      
+        <option
+          value="20.03.0"
+          
+        >
+          Dgraph 20.03.0
         </option>
       
   </select>
@@ -119,7 +126,7 @@
 <script>
   window.DgTour = {
     thisRelease: "master",
-    latestRelease: "1.2.1",
+    latestRelease: "20.03.0",
     home: "https:\/\/tour.dgraph.io\/"
   }
 </script>
@@ -147,10 +154,10 @@
   You are looking at the tour for Dgraph
   <strong>master</strong>.
   Latest stable release is
-  <strong>1.2.1</strong>.
+  <strong>20.03.0</strong>.
   <a href="https://tour.dgraph.io/master/" class="btn btn-primary">Go to
     <strong>
-      Dgraph 1.2.1
+      Dgraph 20.03.0
     </strong>
   </a>
 </div>
@@ -597,33 +604,38 @@
             <p>Ok, we are off to a start with Dgraph and GraphQL+-.  Let’s move it up
 a few notches.</p>
 <p>Dgraph can also do query aggregation, geo-queries, string querying and
-more.  But for all that let's move from the small datasets we started
+more.  But for all that let&rsquo;s move from the small datasets we started
 with and try out something bigger, much bigger.</p>
-<p>In our github repository you'll find a <a href="https://github.com/dgraph-io/tutorial/tree/master/resources/1million.rdf.gz">dataset about movies, directors
+<p>In our github repository you&rsquo;ll find a <a href="https://github.com/dgraph-io/tutorial/tree/master/resources/1million.rdf.gz">dataset about movies, directors
 and actors</a>.</p>
 <p>Download it from that link and save into the <code>~/dgraph</code> directory or by running the following in a terminal</p>
 <pre><code>cd ~/dgraph
 wget &quot;https://github.com/dgraph-io/tutorial/blob/master/resources/1million.rdf.gz?raw=true&quot; -O 1million.rdf.gz -q
+
+OR (We have curl in Dgraph's containers)
+
+curl -L -o 1million.rdf.gz &quot;https://github.com/dgraph-io/tutorial/blob/master/resources/1million.rdf.gz?raw=true&quot;
+
 </code></pre><p>Run the schema mutation using the run button and then load the dataset
 into Dgraph from the terminal. You may be required to restart the Alpha with <code>--lru_mb 4096</code> in order to handle bigger dataset.</p>
 <pre><code>docker exec -it dgraph dgraph live -f 1million.rdf.gz --alpha localhost:9080 --zero localhost:5080 -c 1
-</code></pre><p>There's around one million triples in the dataset.
+</code></pre><p>There&rsquo;s around one million triples in the dataset.
 Dgraph reports back exactly how many triples were loaded and how long
 it took.</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<p>It's a big database of movies, but it won’t trouble Dgraph.  It is, however, big enough for us to
+<p>It&rsquo;s a big database of movies, but it won’t trouble Dgraph.  It is, however, big enough for us to
 use more complex queries.</p>
 <p>This dataset is a one million triple subset of a <a href="https://github.com/dgraph-io/benchmarks/blob/master/data/21million.rdf.gz">larger dataset of
 movies</a>
-that contains around 230000 actors and around 86000 movies.  We've made a subset to
+that contains around 230000 actors and around 86000 movies.  We&rsquo;ve made a subset to
 make it quick to load, while having enough complexity to yield
-interesting results.  But, because it's a subset, you might find your
-favourite actor isn't there, or that some actors are missing some of
+interesting results.  But, because it&rsquo;s a subset, you might find your
+favourite actor isn&rsquo;t there, or that some actors are missing some of
 their movies.</p>
 <p>Later in the tutorial, you might need to refer back to this page (or
 issue a <a href="../../basic/3">schema query</a>) to check the indexes or schema types.  Remember that
-we can't apply functions to edges that aren't indexed, and we'll learn
+we can&rsquo;t apply functions to edges that aren&rsquo;t indexed, and we&rsquo;ll learn
 that some
 functions require particular indexes.</p>
 

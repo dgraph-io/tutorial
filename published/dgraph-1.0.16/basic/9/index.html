@@ -118,10 +118,12 @@
         </option>
       
         <option
-          value="1.2.1"
+          value="1.0.16"
+          
+            selected="selected"
           
         >
-          Dgraph 1.2.1
+          Dgraph 1.0.16
         </option>
       
         <option
@@ -132,12 +134,17 @@
         </option>
       
         <option
-          value="1.0.16"
-          
-            selected="selected"
+          value="1.2.1"
           
         >
-          Dgraph 1.0.16
+          Dgraph 1.2.1
+        </option>
+      
+        <option
+          value="20.03.0"
+          
+        >
+          Dgraph 20.03.0
         </option>
       
   </select>
@@ -152,7 +159,7 @@
 <script>
   window.DgTour = {
     thisRelease: "1.0.16",
-    latestRelease: "1.2.1",
+    latestRelease: "20.03.0",
     home: "https:\/\/tour.dgraph.io\/"
   }
 </script>
@@ -180,10 +187,10 @@
   You are looking at the tour for Dgraph
   <strong>1.0.16</strong>.
   Latest stable release is
-  <strong>1.2.1</strong>.
+  <strong>20.03.0</strong>.
   <a href="https://tour.dgraph.io/dgraph-1.0.16/" class="btn btn-primary">Go to
     <strong>
-      Dgraph 1.2.1
+      Dgraph 20.03.0
     </strong>
   </a>
 </div>
@@ -633,7 +640,7 @@
           <h1 class="lesson-heading">Pagination (first, offset and after)</h1>
 
           <div>
-            <p>It's not uncommon to have thousands of results for a query.</p>
+            <p>It&rsquo;s not uncommon to have thousands of results for a query.</p>
 <p>But you might want to select only the top-k answers, paginate the
 results for display, or limit a large result.</p>
 <p>In GraphQL+- this is done with <code>first</code>, <code>offset</code> and <code>after</code> in
@@ -646,7 +653,7 @@ combination with ordering.</p>
 <p>By default, query answers are ordered by <code>uid</code>. You can change this behavior by
 explicitly <a href="https://tour.dgraph.io/dgraph-1.0.16/basic/8">specifying an order</a>.</p>
 <p><code>after</code> makes sense in pagination when we only know the last <code>uid</code> returned and
-don't record how many results have previously been retrieved.</p>
+don&rsquo;t record how many results have previously been retrieved.</p>
 
           </div>
         </div>
