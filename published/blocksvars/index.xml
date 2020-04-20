@@ -32,7 +32,7 @@ Queries issued in this way are independent.</description>
       <guid>https://tour.dgraph.io/blocksvars/2/</guid>
       <description>Results can be stored in variables and used elsewhere in the query.
 Variables are declared by
-var_name as some_block { ... } where var_name is any distinct variable name andsome_block is either a whole query or an internal block of a query matching on an edge.
+var_name as some_block { ... } where var_name is any distinct variable name and some_block is either a whole query or an internal block of a query matching on an edge.
 Once defined, variables can be used in:
  the same query in a child of the defining block (not a parent of the definition) in another query  Variables don&amp;rsquo;t affect the semantics of the query at the point they are defined.</description>
     </item>
@@ -146,22 +146,11 @@ The result is the grouped edges and the value variables for the aggregations.</d
     </item>
     
     <item>
-      <title>expand and _predicate_</title>
+      <title>Congratulations!</title>
       <link>https://tour.dgraph.io/blocksvars/13/</link>
       <pubDate>Tue, 02 May 2017 11:01:12 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/blocksvars/13/</guid>
-      <description>We&amp;rsquo;ve already seen expand and _predicate_. Both can be used with variables.
-Cherie Nowlan has directed movies, including the quirky Australian romantic comedy Thank God He Met Lizzie, but hasn&amp;rsquo;t acted in any movies. So a query that expands all the predicates from Cherie Nowlan will at best have name and director.film.
-If the variable held the predicates from a director who had also acted, the possible set of expanded edges would be different.</description>
-    </item>
-    
-    <item>
-      <title>Congratulations!</title>
-      <link>https://tour.dgraph.io/blocksvars/14/</link>
-      <pubDate>Tue, 02 May 2017 11:01:12 +1000</pubDate>
-      
-      <guid>https://tour.dgraph.io/blocksvars/14/</guid>
       <description>You&amp;rsquo;ve finished this lesson.
 Next up, string and geo searching. Or use the index to go to another topic.</description>
     </item>

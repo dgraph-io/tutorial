@@ -7,14 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta
-  name="description"
-  
-    
-  
-  >
-
-<link
+    <link
   rel="manifest"
   href="https://tour.dgraph.io//images/favicons/manifest.json"
   >
@@ -47,36 +40,10 @@
 <link rel="icon" sizes="16x16" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-16x16.png">
 
 
-    <script>
-        if (window.location.href.indexOf("dgraph.io") > -1) {
-      (function(i, s, o, g, r, a, m) {
-        i["GoogleAnalyticsObject"] = r;
-        (i[r] =
-          i[r] ||
-          function() {
-            (i[r].q = i[r].q || []).push(arguments);
-          }), (i[r].l = 1 * new Date());
-        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m);
-      })(
-        window,
-        document,
-        "script",
-        "https://www.google-analytics.com/analytics.js",
-        "ga"
-      );
-
-      ga("create", "UA-75364122-2", "auto");
-      ga("send", "pageview");
-    }
-    </script>
-
     
     <title>
       
-        Predicate Query — A Tour of Dgraph
+        Deleting Data — A Tour of Dgraph
       
     </title>
 
@@ -118,19 +85,12 @@
         </option>
       
         <option
-          value="1.0.16"
+          value="20.03.0"
           
             selected="selected"
           
         >
-          Dgraph 1.0.16
-        </option>
-      
-        <option
-          value="1.1.0"
-          
-        >
-          Dgraph 1.1.0
+          Dgraph 20.03.0
         </option>
       
         <option
@@ -141,10 +101,17 @@
         </option>
       
         <option
-          value="20.03.0"
+          value="1.1.0"
           
         >
-          Dgraph 20.03.0
+          Dgraph 1.1.0
+        </option>
+      
+        <option
+          value="1.0.16"
+          
+        >
+          Dgraph 1.0.16
         </option>
       
   </select>
@@ -158,8 +125,8 @@
 
 <script>
   window.DgTour = {
-    thisRelease: "1.0.16",
-    latestRelease: "1.0.16",
+    thisRelease: "20.03.0",
+    latestRelease: "20.03.0",
     home: "https:\/\/tour.dgraph.io\/"
   }
 </script>
@@ -255,7 +222,7 @@
         
           <li>
             <a href="https://tour.dgraph.io/basic/3/" class="topic">
-              Data types and Schema
+              Data types, Schema and Type System
             </a>
           </li>
         
@@ -393,19 +360,19 @@
         
           <li>
             <a href="https://tour.dgraph.io/schema/6/" class="topic">
-              Exercise : Integrating existing data
+              Reverse edges Query
             </a>
           </li>
         
           <li>
             <a href="https://tour.dgraph.io/schema/7/" class="topic">
-              Deleting Data
+              Exercise : Integrating existing data
             </a>
           </li>
         
           <li>
             <a href="https://tour.dgraph.io/schema/8/" class="topic active">
-              Predicate Query
+              Deleting Data
             </a>
           </li>
         
@@ -531,12 +498,6 @@
         
           <li>
             <a href="https://tour.dgraph.io/blocksvars/13/" class="topic">
-              expand and _predicate_
-            </a>
-          </li>
-        
-          <li>
-            <a href="https://tour.dgraph.io/blocksvars/14/" class="topic">
               Congratulations!
             </a>
           </li>
@@ -606,19 +567,62 @@
     <div class="col-12 col-sm-12 col-md-12 col-lg-6 vertical-stretch">
       <div class="panel">
         <div class="body">
-          <h1 class="lesson-heading">Predicate Query</h1>
+          <h1 class="lesson-heading">Deleting Data</h1>
 
           <div>
-            <p>For any node in the graph <code>_predicate_</code> queries for the name of all outgoing
-edges.</p>
-<p>Note that this is different to a schema or intent in designing a graph
-because any given node might or might not have all the predicates that
-other nodes have.</p>
-<p>Something to try: query for the outgoing edges of some people from the
-friends data and note how some have <code>owns_pet</code> listed and some do not.</p>
-<p>In general, large graphs often represent a partial view of the
-modeled data.  Our job in analysis of the data is to understand the
-relationships in the data while dealing with gaps or incomplete knowledge.</p>
+            <p>There are three deletion options inside a delete mutation.</p>
+<ul>
+<li><code>&lt;uid&gt; &lt;edge&gt; &lt;uid&gt;/&quot;value&quot; .</code>  Delete a single triple</li>
+<li><code>&lt;uid&gt; &lt;edge&gt; * .</code>  Delete all triples for a given edge</li>
+<li><code>&lt;uid&gt; * * .</code> Delete all triples for a given node</li>
+</ul>
+<p>The examples given here are not complete. Uids assigned on your
+instance would be unique. Try something out; you&rsquo;re not going
+to hurt anyone, just delete their friends.</p>
+<p>You can do the same example using JSON format. You&rsquo;re able to do that through our clients, cURL or Ratel UI.</p>
+<h4 id="see-in-json">See in JSON:</h4>
+<p>Delete all triples for a given node</p>
+<pre><code> {
+        &quot;delete&quot;: [
+            {
+                &quot;uid&quot;: &quot;0xa&quot;
+            }
+        ]
+    }
+</code></pre><p>Delete all triples for a given edge</p>
+<pre><code> {
+        &quot;delete&quot;: [
+            {
+                &quot;uid&quot;: &quot;0xa&quot;,
+                &quot;friends&quot;: null
+            }
+        ]
+    }
+</code></pre><blockquote>
+<p>This doesn&rsquo;t delete their children which means in this case, it will not erase the &ldquo;friends&rdquo;. Only the relation would be deleted.</p>
+</blockquote>
+<p>Deleting relations and then their children</p>
+<pre><code> {
+        &quot;delete&quot;: [
+            {
+                &quot;uid&quot;: &quot;0x2&quot;, # Answer UID.
+                &quot;comment&quot;: {
+                   &quot;uid&quot;: &quot;0x3&quot; # Delete relation (edge) with the Comment
+            }
+            },
+            {
+                &quot;uid&quot;: &quot;0x3&quot; # Delete the actual comment
+            }
+        ]
+    }
+</code></pre>
+
+
+<div class="notices tip" >
+  <span class="type">Tip</span> <p>The JSON example may end up helping you better understand the format in RDF.</p>
+
+</div>
+
 
           </div>
         </div>
@@ -640,23 +644,49 @@ relationships in the data while dealing with gaps or incomplete knowledge.</p>
     <div class="col-12 col-sm-12 col-md-12 col-lg-6 vertical-stretch">
       
         
-<div class="runnable" data-initial="{
-  company(func: allofterms(name, &#34;CompanyABC&#34;)) {
-    _predicate_
+<div class="runnable" data-initial="# TODO: Change this to the new TYPE System.
+{
+  delete {
+    # Delete a single triple.
+    &lt;0x1c3eb&gt; &lt;name&gt; &#34;Steven&#34; .
+    &lt;0x1c3eb&gt; &lt;age&gt; &#34;38&#34; .
+    # Note: You need to know the value/Object to use &#34;S P O&#34;. Otherwise use &#34;S P *&#34;.
+
+    # Delete an edge for a given node &#34;S P O&#34;.
+    &lt;0x1c3eb&gt; &lt;friend&gt; &lt;1x1c2a1&gt; .
+
+    # Delete all triples for a given edge &#34;S P *&#34;.
+    &lt;0x1c3eb&gt; &lt;friend&gt; * .
+
+    # Delete all triples for a given node &#34;S * *&#34;.
+    &lt;0x1c3eb&gt; * * .
   }
 }
-" data-current="{
-  company(func: allofterms(name, &#34;CompanyABC&#34;)) {
-    _predicate_
+" data-current="# TODO: Change this to the new TYPE System.
+{
+  delete {
+    # Delete a single triple.
+    &lt;0x1c3eb&gt; &lt;name&gt; &#34;Steven&#34; .
+    &lt;0x1c3eb&gt; &lt;age&gt; &#34;38&#34; .
+    # Note: You need to know the value/Object to use &#34;S P O&#34;. Otherwise use &#34;S P *&#34;.
+
+    # Delete an edge for a given node &#34;S P O&#34;.
+    &lt;0x1c3eb&gt; &lt;friend&gt; &lt;1x1c2a1&gt; .
+
+    # Delete all triples for a given edge &#34;S P *&#34;.
+    &lt;0x1c3eb&gt; &lt;friend&gt; * .
+
+    # Delete all triples for a given node &#34;S * *&#34;.
+    &lt;0x1c3eb&gt; * * .
   }
 }
-" endpoint="/query" data-dirty="false">
+" endpoint="/mutate" data-dirty="false">
   <div class="runnable-pane runnable-pane-query">
     <div class="topbar">
       <div class="row">
         <div class="col-7">
           <span class="pane-title">
-            Endpoint: /query
+            Endpoint: /mutate
             <span class="server-switch">
               Dgraph:&nbsp;<span class="url">
                 http://localhost:8080
@@ -675,9 +705,22 @@ relationships in the data while dealing with gaps or incomplete knowledge.</p>
 
     <div class="runnable-content runnable-code">
       <div class="runnable-tab-content active">
-        <textarea class="query-content-editable">{
-  company(func: allofterms(name, &#34;CompanyABC&#34;)) {
-    _predicate_
+        <textarea class="query-content-editable"># TODO: Change this to the new TYPE System.
+{
+  delete {
+    # Delete a single triple.
+    &lt;0x1c3eb&gt; &lt;name&gt; &#34;Steven&#34; .
+    &lt;0x1c3eb&gt; &lt;age&gt; &#34;38&#34; .
+    # Note: You need to know the value/Object to use &#34;S P O&#34;. Otherwise use &#34;S P *&#34;.
+
+    # Delete an edge for a given node &#34;S P O&#34;.
+    &lt;0x1c3eb&gt; &lt;friend&gt; &lt;1x1c2a1&gt; .
+
+    # Delete all triples for a given edge &#34;S P *&#34;.
+    &lt;0x1c3eb&gt; &lt;friend&gt; * .
+
+    # Delete all triples for a given node &#34;S * *&#34;.
+    &lt;0x1c3eb&gt; * * .
   }
 }
 </textarea>
@@ -766,6 +809,7 @@ relationships in the data while dealing with gaps or incomplete knowledge.</p>
     </main>
 
     <script src="https://tour.dgraph.io//js/build/dgraph-tour.js?8cb5063906121ab119297908cd5af67a"></script>
+    <script src="//unpkg.com/@dgraph-io/community"></script>
   </body>
 
 </html>

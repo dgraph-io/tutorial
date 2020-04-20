@@ -7,14 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta
-  name="description"
-  
-    
-  
-  >
-
-<link
+    <link
   rel="manifest"
   href="https://tour.dgraph.io//images/favicons/manifest.json"
   >
@@ -46,32 +39,6 @@
 <link rel="icon" sizes="96x96" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-96x96.png">
 <link rel="icon" sizes="16x16" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-16x16.png">
 
-
-    <script>
-        if (window.location.href.indexOf("dgraph.io") > -1) {
-      (function(i, s, o, g, r, a, m) {
-        i["GoogleAnalyticsObject"] = r;
-        (i[r] =
-          i[r] ||
-          function() {
-            (i[r].q = i[r].q || []).push(arguments);
-          }), (i[r].l = 1 * new Date());
-        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m);
-      })(
-        window,
-        document,
-        "script",
-        "https://www.google-analytics.com/analytics.js",
-        "ga"
-      );
-
-      ga("create", "UA-75364122-2", "auto");
-      ga("send", "pageview");
-    }
-    </script>
 
     
     <title>
@@ -118,19 +85,12 @@
         </option>
       
         <option
-          value="1.0.16"
+          value="20.03.0"
           
             selected="selected"
           
         >
-          Dgraph 1.0.16
-        </option>
-      
-        <option
-          value="1.1.0"
-          
-        >
-          Dgraph 1.1.0
+          Dgraph 20.03.0
         </option>
       
         <option
@@ -141,10 +101,17 @@
         </option>
       
         <option
-          value="20.03.0"
+          value="1.1.0"
           
         >
-          Dgraph 20.03.0
+          Dgraph 1.1.0
+        </option>
+      
+        <option
+          value="1.0.16"
+          
+        >
+          Dgraph 1.0.16
         </option>
       
   </select>
@@ -158,8 +125,8 @@
 
 <script>
   window.DgTour = {
-    thisRelease: "1.0.16",
-    latestRelease: "1.0.16",
+    thisRelease: "20.03.0",
+    latestRelease: "20.03.0",
     home: "https:\/\/tour.dgraph.io\/"
   }
 </script>
@@ -255,7 +222,7 @@
         
           <li>
             <a href="https://tour.dgraph.io/basic/3/" class="topic">
-              Data types and Schema
+              Data types, Schema and Type System
             </a>
           </li>
         
@@ -393,19 +360,19 @@
         
           <li>
             <a href="https://tour.dgraph.io/schema/6/" class="topic">
-              Exercise : Integrating existing data
+              Reverse edges Query
             </a>
           </li>
         
           <li>
             <a href="https://tour.dgraph.io/schema/7/" class="topic">
-              Deleting Data
+              Exercise : Integrating existing data
             </a>
           </li>
         
           <li>
             <a href="https://tour.dgraph.io/schema/8/" class="topic">
-              Predicate Query
+              Deleting Data
             </a>
           </li>
         
@@ -531,12 +498,6 @@
         
           <li>
             <a href="https://tour.dgraph.io/blocksvars/13/" class="topic">
-              expand and _predicate_
-            </a>
-          </li>
-        
-          <li>
-            <a href="https://tour.dgraph.io/blocksvars/14/" class="topic">
               Congratulations!
             </a>
           </li>
@@ -609,7 +570,7 @@
           <h1 class="lesson-heading">Indexes</h1>
 
           <div>
-            <p>When Dgraph is searching for strings, dates, or other values based on a filter, it needs an index to make the search efficient.  We&rsquo;ve already seen examples of how to specify the indexes in a <a href="https://tour.dgraph.io/moredata/1">schema mutation</a>.</p>
+            <p>When Dgraph is searching for strings, dates, or other values based on a filter, it needs an index to make the search efficient.  We&rsquo;ve already seen examples of how to specify the indexes in a <a href="../../moredata/1">schema mutation</a>.</p>
 <p><code>int</code>, <code>float</code>, <code>geo</code> and <code>date</code> have default indexes, but <code>string</code> has options of what index types to choose.  Multiple indexes can be built for the same <code>string</code> valued predicate.</p>
 <p>For <code>string</code> the following indexes are available</p>
 <ul>
@@ -621,14 +582,14 @@
 </ul>
 <p>Multiple indexes are specified as arguments to <code>@index</code>.</p>
 <p>Apply the schema mutation to add the indexes to the movie data.  It will take a few minutes for Dgraph to compute those indexes for all the movie data.  Let the mutation run and move on once it&rsquo;s finished.</p>
-<p>You might find Docker stops your Dgraph process during the mutation.  That might be a memory issue - increase the amount of memory Docker allows and then restart Dgraph, load the <a href="https://tour.dgraph.io/moredata/1">intial schema and data</a>, then apply this mutation.</p>
+<p>You might find Docker stops your Dgraph process during the mutation.  That might be a memory issue - increase the amount of memory Docker allows and then restart Dgraph, load the <a href="../../moredata/1">intial schema and data</a>, then apply this mutation.</p>
 
           </div>
         </div>
 
         <div class="page-nav">
           
-            <a href="https://tour.dgraph.io/blocksvars/14" data-action="go-prev" class="btn btn-secondary btn-sm page-nav-link"><i class="fa fa-chevron-left"></i></a>
+            <a href="https://tour.dgraph.io/blocksvars/13" data-action="go-prev" class="btn btn-secondary btn-sm page-nav-link"><i class="fa fa-chevron-left"></i></a>
           
           <div class="nav-index">
             1 / 7
@@ -757,6 +718,7 @@
     </main>
 
     <script src="https://tour.dgraph.io//js/build/dgraph-tour.js?8cb5063906121ab119297908cd5af67a"></script>
+    <script src="//unpkg.com/@dgraph-io/community"></script>
   </body>
 
 </html>

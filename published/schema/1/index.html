@@ -7,14 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta
-  name="description"
-  
-    
-  
-  >
-
-<link
+    <link
   rel="manifest"
   href="https://tour.dgraph.io//images/favicons/manifest.json"
   >
@@ -46,32 +39,6 @@
 <link rel="icon" sizes="96x96" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-96x96.png">
 <link rel="icon" sizes="16x16" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-16x16.png">
 
-
-    <script>
-        if (window.location.href.indexOf("dgraph.io") > -1) {
-      (function(i, s, o, g, r, a, m) {
-        i["GoogleAnalyticsObject"] = r;
-        (i[r] =
-          i[r] ||
-          function() {
-            (i[r].q = i[r].q || []).push(arguments);
-          }), (i[r].l = 1 * new Date());
-        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m);
-      })(
-        window,
-        document,
-        "script",
-        "https://www.google-analytics.com/analytics.js",
-        "ga"
-      );
-
-      ga("create", "UA-75364122-2", "auto");
-      ga("send", "pageview");
-    }
-    </script>
 
     
     <title>
@@ -118,19 +85,12 @@
         </option>
       
         <option
-          value="1.0.16"
+          value="20.03.0"
           
             selected="selected"
           
         >
-          Dgraph 1.0.16
-        </option>
-      
-        <option
-          value="1.1.0"
-          
-        >
-          Dgraph 1.1.0
+          Dgraph 20.03.0
         </option>
       
         <option
@@ -141,10 +101,17 @@
         </option>
       
         <option
-          value="20.03.0"
+          value="1.1.0"
           
         >
-          Dgraph 20.03.0
+          Dgraph 1.1.0
+        </option>
+      
+        <option
+          value="1.0.16"
+          
+        >
+          Dgraph 1.0.16
         </option>
       
   </select>
@@ -158,8 +125,8 @@
 
 <script>
   window.DgTour = {
-    thisRelease: "1.0.16",
-    latestRelease: "1.0.16",
+    thisRelease: "20.03.0",
+    latestRelease: "20.03.0",
     home: "https:\/\/tour.dgraph.io\/"
   }
 </script>
@@ -255,7 +222,7 @@
         
           <li>
             <a href="https://tour.dgraph.io/basic/3/" class="topic">
-              Data types and Schema
+              Data types, Schema and Type System
             </a>
           </li>
         
@@ -393,19 +360,19 @@
         
           <li>
             <a href="https://tour.dgraph.io/schema/6/" class="topic">
-              Exercise : Integrating existing data
+              Reverse edges Query
             </a>
           </li>
         
           <li>
             <a href="https://tour.dgraph.io/schema/7/" class="topic">
-              Deleting Data
+              Exercise : Integrating existing data
             </a>
           </li>
         
           <li>
             <a href="https://tour.dgraph.io/schema/8/" class="topic">
-              Predicate Query
+              Deleting Data
             </a>
           </li>
         
@@ -531,12 +498,6 @@
         
           <li>
             <a href="https://tour.dgraph.io/blocksvars/13/" class="topic">
-              expand and _predicate_
-            </a>
-          </li>
-        
-          <li>
-            <a href="https://tour.dgraph.io/blocksvars/14/" class="topic">
               Congratulations!
             </a>
           </li>
@@ -609,14 +570,18 @@
           <h1 class="lesson-heading">Adding schema - mutating schema</h1>
 
           <div>
-            <p>As we saw in an <a href="https://tour.dgraph.io/basic/3/">earlier lesson</a>, Dgraph stores a schema describing the types of predicates.</p>
+            <p>As we saw in an <a href="../../basic/3/">earlier lesson</a>, Dgraph stores a schema describing the types of predicates.</p>
 <p>When we want to add new data to an existing schema, we can just add it.  But if we want to add new data in a new schema we have two choices</p>
 <ul>
 <li>Add the data and let Dgraph work out the schema, or</li>
 <li>Specify a schema and then add the data</li>
 </ul>
-<p>Dgraph can work out the schema just fine.  But functions and filtering
-can only be applied to indexed predicates and for that we need to specify the schema.</p>
+<p>Dgraph can work out the schema just fine. Functions at query root
+can only be applied to indexed predicates and for that we need to specify the schema.
+Comparison functions at the query root level (aka <code>func:</code>) can only be applied on indexed
+predicates, which are added by annotating the predicate definition on the schema.
+Since v1.2, comparison functions can now be used on <code>@filter</code> directives even on predicates that
+have not been indexed.</p>
 <p>Alter schema to define data types and to add indexes.</p>
 <p>Run to alter schema.  The index allows applying filter functions,
 such as searching for all companies that participate in a particular
@@ -627,7 +592,7 @@ industry.</p>
 
         <div class="page-nav">
           
-            <a href="https://tour.dgraph.io/basic/17" data-action="go-prev" class="btn btn-secondary btn-sm page-nav-link"><i class="fa fa-chevron-left"></i></a>
+            <a href="https://tour.dgraph.io/basic/18" data-action="go-prev" class="btn btn-secondary btn-sm page-nav-link"><i class="fa fa-chevron-left"></i></a>
           
           <div class="nav-index">
             1 / 10
@@ -642,10 +607,48 @@ industry.</p>
     <div class="col-12 col-sm-12 col-md-12 col-lg-6 vertical-stretch">
       
         
-<div class="runnable" data-initial="industry: string @index(term) .
-boss_of: uid .
-" data-current="industry: string @index(term) .
-boss_of: uid .
+<div class="runnable" data-initial="# Define Types
+
+type Person {
+    name
+    boss_of
+    works_for
+}
+
+type Company {
+    name
+    industry
+    work_here #this is an alias
+}
+
+# Define Directives and index
+
+industry: string @index(term) .
+boss_of: [uid] .
+name: string @index(exact, term) .
+works_for: [uid] .
+work_here: [uid] .
+" data-current="# Define Types
+
+type Person {
+    name
+    boss_of
+    works_for
+}
+
+type Company {
+    name
+    industry
+    work_here #this is an alias
+}
+
+# Define Directives and index
+
+industry: string @index(term) .
+boss_of: [uid] .
+name: string @index(exact, term) .
+works_for: [uid] .
+work_here: [uid] .
 " endpoint="/alter" data-dirty="false">
   <div class="runnable-pane runnable-pane-query">
     <div class="topbar">
@@ -671,8 +674,27 @@ boss_of: uid .
 
     <div class="runnable-content runnable-code">
       <div class="runnable-tab-content active">
-        <textarea class="query-content-editable">industry: string @index(term) .
-boss_of: uid .
+        <textarea class="query-content-editable"># Define Types
+
+type Person {
+    name
+    boss_of
+    works_for
+}
+
+type Company {
+    name
+    industry
+    work_here #this is an alias
+}
+
+# Define Directives and index
+
+industry: string @index(term) .
+boss_of: [uid] .
+name: string @index(exact, term) .
+works_for: [uid] .
+work_here: [uid] .
 </textarea>
       </div>
     </div>
@@ -759,6 +781,7 @@ boss_of: uid .
     </main>
 
     <script src="https://tour.dgraph.io//js/build/dgraph-tour.js?8cb5063906121ab119297908cd5af67a"></script>
+    <script src="//unpkg.com/@dgraph-io/community"></script>
   </body>
 
 </html>

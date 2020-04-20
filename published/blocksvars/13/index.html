@@ -7,14 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta
-  name="description"
-  
-    
-  
-  >
-
-<link
+    <link
   rel="manifest"
   href="https://tour.dgraph.io//images/favicons/manifest.json"
   >
@@ -47,36 +40,10 @@
 <link rel="icon" sizes="16x16" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-16x16.png">
 
 
-    <script>
-        if (window.location.href.indexOf("dgraph.io") > -1) {
-      (function(i, s, o, g, r, a, m) {
-        i["GoogleAnalyticsObject"] = r;
-        (i[r] =
-          i[r] ||
-          function() {
-            (i[r].q = i[r].q || []).push(arguments);
-          }), (i[r].l = 1 * new Date());
-        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m);
-      })(
-        window,
-        document,
-        "script",
-        "https://www.google-analytics.com/analytics.js",
-        "ga"
-      );
-
-      ga("create", "UA-75364122-2", "auto");
-      ga("send", "pageview");
-    }
-    </script>
-
     
     <title>
       
-        expand and _predicate_ — A Tour of Dgraph
+        Congratulations! — A Tour of Dgraph
       
     </title>
 
@@ -118,19 +85,12 @@
         </option>
       
         <option
-          value="1.0.16"
+          value="20.03.0"
           
             selected="selected"
           
         >
-          Dgraph 1.0.16
-        </option>
-      
-        <option
-          value="1.1.0"
-          
-        >
-          Dgraph 1.1.0
+          Dgraph 20.03.0
         </option>
       
         <option
@@ -141,10 +101,17 @@
         </option>
       
         <option
-          value="20.03.0"
+          value="1.1.0"
           
         >
-          Dgraph 20.03.0
+          Dgraph 1.1.0
+        </option>
+      
+        <option
+          value="1.0.16"
+          
+        >
+          Dgraph 1.0.16
         </option>
       
   </select>
@@ -158,8 +125,8 @@
 
 <script>
   window.DgTour = {
-    thisRelease: "1.0.16",
-    latestRelease: "1.0.16",
+    thisRelease: "20.03.0",
+    latestRelease: "20.03.0",
     home: "https:\/\/tour.dgraph.io\/"
   }
 </script>
@@ -255,7 +222,7 @@
         
           <li>
             <a href="https://tour.dgraph.io/basic/3/" class="topic">
-              Data types and Schema
+              Data types, Schema and Type System
             </a>
           </li>
         
@@ -393,19 +360,19 @@
         
           <li>
             <a href="https://tour.dgraph.io/schema/6/" class="topic">
-              Exercise : Integrating existing data
+              Reverse edges Query
             </a>
           </li>
         
           <li>
             <a href="https://tour.dgraph.io/schema/7/" class="topic">
-              Deleting Data
+              Exercise : Integrating existing data
             </a>
           </li>
         
           <li>
             <a href="https://tour.dgraph.io/schema/8/" class="topic">
-              Predicate Query
+              Deleting Data
             </a>
           </li>
         
@@ -531,12 +498,6 @@
         
           <li>
             <a href="https://tour.dgraph.io/blocksvars/13/" class="topic active">
-              expand and _predicate_
-            </a>
-          </li>
-        
-          <li>
-            <a href="https://tour.dgraph.io/blocksvars/14/" class="topic">
               Congratulations!
             </a>
           </li>
@@ -606,12 +567,11 @@
     <div class="col-12 col-sm-12 col-md-12 col-lg-6 vertical-stretch">
       <div class="panel">
         <div class="body">
-          <h1 class="lesson-heading">expand and _predicate_</h1>
+          <h1 class="lesson-heading">Congratulations!</h1>
 
           <div>
-            <p>We&rsquo;ve already seen <a href="https://tour.dgraph.io/schema/9"><code>expand</code></a> and <a href="https://tour.dgraph.io/schema/8"><code>_predicate_</code></a>.  Both can be used with variables.</p>
-<p>Cherie Nowlan has directed movies, including the quirky Australian romantic comedy Thank God He Met Lizzie, but hasn&rsquo;t acted in any movies.  So a query that expands all the predicates from Cherie Nowlan will at best have <code>name</code> and <code>director.film</code>.</p>
-<p>If the variable held the predicates from a director who had also acted, the possible set of expanded edges would be different.</p>
+            <p>You&rsquo;ve finished this lesson.</p>
+<p>Next up, string and geo searching.  Or use the index to go to another topic.</p>
 
           </div>
         </div>
@@ -621,10 +581,10 @@
             <a href="https://tour.dgraph.io/blocksvars/12" data-action="go-prev" class="btn btn-secondary btn-sm page-nav-link"><i class="fa fa-chevron-left"></i></a>
           
           <div class="nav-index">
-            13 / 14
+            13 / 13
           </div>
           
-            <a href="https://tour.dgraph.io/blocksvars/14" data-action="go-next" class="btn btn-secondary btn-sm page-nav-link"><i class="fa fa-chevron-right"></i></a>
+            <a href="https://tour.dgraph.io/search/1" data-action="go-next" class="btn btn-secondary btn-sm page-nav-link"><i class="fa fa-chevron-right"></i></a>
           
         </div>
       </div>
@@ -632,137 +592,9 @@
 
     <div class="col-12 col-sm-12 col-md-12 col-lg-6 vertical-stretch">
       
-        
-<div class="runnable" data-initial="{
-  var(func:allofterms(name@en, &#34;Cherie Nowlan&#34;)) {
-    pred as _predicate_
-  }
-
-  q(func:allofterms(name@en, &#34;Cherie&#34;)) {
-    expand(val(pred)) { expand(_all_) }
-  }
-}
-" data-current="{
-  var(func:allofterms(name@en, &#34;Cherie Nowlan&#34;)) {
-    pred as _predicate_
-  }
-
-  q(func:allofterms(name@en, &#34;Cherie&#34;)) {
-    expand(val(pred)) { expand(_all_) }
-  }
-}
-" endpoint="/query" data-dirty="false">
-  <div class="runnable-pane runnable-pane-query">
-    <div class="topbar">
-      <div class="row">
-        <div class="col-7">
-          <span class="pane-title">
-            Endpoint: /query
-            <span class="server-switch">
-              Dgraph:&nbsp;<span class="url">
-                http://localhost:8080
-              </span>&nbsp;<a class="btn-change" href="#"><i class="fa fa-edit"></i></a>
-            </span>
-          </span>
+        <div class="panel empty">
+          <img src="https://tour.dgraph.io//images/dgraph-black.png" alt="dgraph-icon" class="dgraph-icon" />
         </div>
-        <div class="col-5">
-          <div class="actions pull-right">
-            <a class="code-btn" data-action="reset" href="#">Reset</a>
-            <a class="code-btn" data-action="run" href="#">Run</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="runnable-content runnable-code">
-      <div class="runnable-tab-content active">
-        <textarea class="query-content-editable">{
-  var(func:allofterms(name@en, &#34;Cherie Nowlan&#34;)) {
-    pred as _predicate_
-  }
-
-  q(func:allofterms(name@en, &#34;Cherie&#34;)) {
-    expand(val(pred)) { expand(_all_) }
-  }
-}
-</textarea>
-      </div>
-    </div>
-
-    <div class="row footer">
-      <div class="col-12">
-        <div class="actions pull-right">
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="runnable-pane runnable-pane-output">
-    <div class="row topbar">
-      <div class="col-12">
-        <span class="pane-title">
-          Response
-        </span>
-      </div>
-    </div>
-
-    <div class="runnable-content runnable-output" style="background: url('https://tour.dgraph.io//images/dgraph-black.png'); background-repeat: no-repeat; background-position: center; background-color: #fff;">
-      <pre class="output-container empty"><code class="output" tabindex="-1"></code></pre>
-    </div>
-
-    <div class="row footer">
-      <div class="col-12 col-sm-8">
-        <div class="latency-info hidden">
-          <div class="stat server-latency">
-            <span class="label">Server latency:</span> <span class="number"></span> <i class="fa fa-question-circle server-latency-tooltip-trigger" data-toggle="tooltip" data-placement="top" data-html="true" title="Latency information" data-animation="false"></i>
-          </div>
-          <div class="stat network-latency">
-            <span class="label">Network latency:</span> <span class="number"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<style>
-  .modal.show {
-    display: block;
-    opacity: 1;
-    background-color: rgba(0,0,0,0.3);
-  }
-</style>
-<div class="modal fade runnable-url-modal" tabindex="-1" role="dialog"
-  aria-labelledby="runnable-url-modal-label" aria-hidden="true">
-  <div class="modal-dialog modal-md" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="runnable-url-modal-label">Change Dgraph Alpha URL</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="container-fluid">
-          <form>
-            <div class="form-group">
-              <label for="inputDgraphUrl">Dgraph Alpha Address</label>
-              <input type="text" class="form-control" id="inputDgraphUrl" placeholder="http://localhost:8080">
-              
-            </div>
-          </form>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="code-btn" data-action="default-url">Reset to Default</button>
-        <button type="button" class="code-btn" data-action="apply">Apply</button>
-      </div>
-    </div>
-  </div>
-</div>
-
       
     </div>
   </div>
@@ -771,6 +603,7 @@
     </main>
 
     <script src="https://tour.dgraph.io//js/build/dgraph-tour.js?8cb5063906121ab119297908cd5af67a"></script>
+    <script src="//unpkg.com/@dgraph-io/community"></script>
   </body>
 
 </html>

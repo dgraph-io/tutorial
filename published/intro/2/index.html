@@ -7,14 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta
-  name="description"
-  
-    
-  
-  >
-
-<link
+    <link
   rel="manifest"
   href="https://tour.dgraph.io//images/favicons/manifest.json"
   >
@@ -46,32 +39,6 @@
 <link rel="icon" sizes="96x96" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-96x96.png">
 <link rel="icon" sizes="16x16" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-16x16.png">
 
-
-    <script>
-        if (window.location.href.indexOf("dgraph.io") > -1) {
-      (function(i, s, o, g, r, a, m) {
-        i["GoogleAnalyticsObject"] = r;
-        (i[r] =
-          i[r] ||
-          function() {
-            (i[r].q = i[r].q || []).push(arguments);
-          }), (i[r].l = 1 * new Date());
-        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m);
-      })(
-        window,
-        document,
-        "script",
-        "https://www.google-analytics.com/analytics.js",
-        "ga"
-      );
-
-      ga("create", "UA-75364122-2", "auto");
-      ga("send", "pageview");
-    }
-    </script>
 
     
     <title>
@@ -118,19 +85,12 @@
         </option>
       
         <option
-          value="1.0.16"
+          value="20.03.0"
           
             selected="selected"
           
         >
-          Dgraph 1.0.16
-        </option>
-      
-        <option
-          value="1.1.0"
-          
-        >
-          Dgraph 1.1.0
+          Dgraph 20.03.0
         </option>
       
         <option
@@ -141,10 +101,17 @@
         </option>
       
         <option
-          value="20.03.0"
+          value="1.1.0"
           
         >
-          Dgraph 20.03.0
+          Dgraph 1.1.0
+        </option>
+      
+        <option
+          value="1.0.16"
+          
+        >
+          Dgraph 1.0.16
         </option>
       
   </select>
@@ -158,8 +125,8 @@
 
 <script>
   window.DgTour = {
-    thisRelease: "1.0.16",
-    latestRelease: "1.0.16",
+    thisRelease: "20.03.0",
+    latestRelease: "20.03.0",
     home: "https:\/\/tour.dgraph.io\/"
   }
 </script>
@@ -255,7 +222,7 @@
         
           <li>
             <a href="https://tour.dgraph.io/basic/3/" class="topic">
-              Data types and Schema
+              Data types, Schema and Type System
             </a>
           </li>
         
@@ -393,19 +360,19 @@
         
           <li>
             <a href="https://tour.dgraph.io/schema/6/" class="topic">
-              Exercise : Integrating existing data
+              Reverse edges Query
             </a>
           </li>
         
           <li>
             <a href="https://tour.dgraph.io/schema/7/" class="topic">
-              Deleting Data
+              Exercise : Integrating existing data
             </a>
           </li>
         
           <li>
             <a href="https://tour.dgraph.io/schema/8/" class="topic">
-              Predicate Query
+              Deleting Data
             </a>
           </li>
         
@@ -531,12 +498,6 @@
         
           <li>
             <a href="https://tour.dgraph.io/blocksvars/13/" class="topic">
-              expand and _predicate_
-            </a>
-          </li>
-        
-          <li>
-            <a href="https://tour.dgraph.io/blocksvars/14/" class="topic">
               Congratulations!
             </a>
           </li>
@@ -612,22 +573,24 @@
             <p>Let&rsquo;s run an instance of Dgraph on your machine; that&rsquo;ll give you a
 handle on installing Dgraph and loading data yourself.</p>
 <p>All the data in this tutorial will be stored in the instance you
-install and all the queries will look for Dgraph on your local machine.  By
-running it in a container, you&rsquo;ll have a fresh Dgraph that will
-serve as a sandbox for you to learn and experiment with.</p>
-<p>There are a number of ways to
-<a href="https://docs.dgraph.io/get-started/#step-1-installation">install and run Dgraph</a>.
-For
-this tutorial, let&rsquo;s run it in a container with Docker.</p>
+install, and all the queries will look for Dgraph on your local machine.
+By running it in a container, you&rsquo;ll have a fresh Dgraph that will
+serve as a sandbox for you to learn and experiment.</p>
+<p>There are several ways to install and run Dgraph, all of which
+you can find in the <a href="https://dgraph.io/downloads">Download page</a>.
+For this tutorial, let&rsquo;s run Dgraph in a container with Docker.</p>
 <p>First, grab the latest version of <a href="https://www.docker.com/">Docker</a>.</p>
 <p>Then, pull the latest Dgraph version with:</p>
-<pre><code>docker pull dgraph/dgraph
-</code></pre><p>Now, to run Dgraph in Docker, it&rsquo;s:</p>
+<pre><code>docker pull dgraph/dgraph:v20.03.0
+</code></pre><p>Let&rsquo;s create a folder for storing Dgraph data outside of the container:</p>
 <pre><code>mkdir -p ~/dgraph
-</code></pre><pre><code># Run dgraphzero
-docker run -it -p 5080:5080 -p 6080:6080 -p 8080:8080 -p 9080:9080 -p 8000:8000 -v ~/dgraph:/dgraph --name dgraph dgraph/dgraph dgraph zero
+</code></pre><p>Now, to run Dgraph in Docker, it&rsquo;s:</p>
+<pre><code># Run Dgraph zero
+docker run -it -p 5080:5080 -p 6080:6080 -p 8080:8080 \
+  -p 9080:9080 -p 8000:8000 -v ~/dgraph:/dgraph --name dgraph \
+  dgraph/dgraph:v20.03.0 dgraph zero
 
-# In another terminal, now run dgraph
+# In another terminal, now run Dgraph alpha
 docker exec -it dgraph dgraph alpha --lru_mb 2048 --zero localhost:5080
 
 # And in another, run ratel (Dgraph UI)
@@ -666,6 +629,7 @@ There are more options, but that&rsquo;s all we need to get started.</p>
     </main>
 
     <script src="https://tour.dgraph.io//js/build/dgraph-tour.js?8cb5063906121ab119297908cd5af67a"></script>
+    <script src="//unpkg.com/@dgraph-io/community"></script>
   </body>
 
 </html>

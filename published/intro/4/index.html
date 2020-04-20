@@ -7,14 +7,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta
-  name="description"
-  
-    
-  
-  >
-
-<link
+    <link
   rel="manifest"
   href="https://tour.dgraph.io//images/favicons/manifest.json"
   >
@@ -46,32 +39,6 @@
 <link rel="icon" sizes="96x96" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-96x96.png">
 <link rel="icon" sizes="16x16" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-16x16.png">
 
-
-    <script>
-        if (window.location.href.indexOf("dgraph.io") > -1) {
-      (function(i, s, o, g, r, a, m) {
-        i["GoogleAnalyticsObject"] = r;
-        (i[r] =
-          i[r] ||
-          function() {
-            (i[r].q = i[r].q || []).push(arguments);
-          }), (i[r].l = 1 * new Date());
-        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m);
-      })(
-        window,
-        document,
-        "script",
-        "https://www.google-analytics.com/analytics.js",
-        "ga"
-      );
-
-      ga("create", "UA-75364122-2", "auto");
-      ga("send", "pageview");
-    }
-    </script>
 
     
     <title>
@@ -118,19 +85,12 @@
         </option>
       
         <option
-          value="1.0.16"
+          value="20.03.0"
           
             selected="selected"
           
         >
-          Dgraph 1.0.16
-        </option>
-      
-        <option
-          value="1.1.0"
-          
-        >
-          Dgraph 1.1.0
+          Dgraph 20.03.0
         </option>
       
         <option
@@ -141,10 +101,17 @@
         </option>
       
         <option
-          value="20.03.0"
+          value="1.1.0"
           
         >
-          Dgraph 20.03.0
+          Dgraph 1.1.0
+        </option>
+      
+        <option
+          value="1.0.16"
+          
+        >
+          Dgraph 1.0.16
         </option>
       
   </select>
@@ -158,8 +125,8 @@
 
 <script>
   window.DgTour = {
-    thisRelease: "1.0.16",
-    latestRelease: "1.0.16",
+    thisRelease: "20.03.0",
+    latestRelease: "20.03.0",
     home: "https:\/\/tour.dgraph.io\/"
   }
 </script>
@@ -255,7 +222,7 @@
         
           <li>
             <a href="https://tour.dgraph.io/basic/3/" class="topic">
-              Data types and Schema
+              Data types, Schema and Type System
             </a>
           </li>
         
@@ -393,19 +360,19 @@
         
           <li>
             <a href="https://tour.dgraph.io/schema/6/" class="topic">
-              Exercise : Integrating existing data
+              Reverse edges Query
             </a>
           </li>
         
           <li>
             <a href="https://tour.dgraph.io/schema/7/" class="topic">
-              Deleting Data
+              Exercise : Integrating existing data
             </a>
           </li>
         
           <li>
             <a href="https://tour.dgraph.io/schema/8/" class="topic">
-              Predicate Query
+              Deleting Data
             </a>
           </li>
         
@@ -531,12 +498,6 @@
         
           <li>
             <a href="https://tour.dgraph.io/blocksvars/13/" class="topic">
-              expand and _predicate_
-            </a>
-          </li>
-        
-          <li>
-            <a href="https://tour.dgraph.io/blocksvars/14/" class="topic">
               Congratulations!
             </a>
           </li>
@@ -626,9 +587,11 @@ loaded successfully.</p>
             {
                 &quot;uid&quot;: &quot;_:michael&quot;,
                 &quot;name&quot;: &quot;Michael&quot;,
+                &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;age&quot;: 39,
                 &quot;owns_pet&quot;: {
                     &quot;uid&quot;: &quot;_:rammy&quot;,
+                    &quot;dgraph.type&quot;: &quot;Animal&quot;,
                     &quot;name&quot;: &quot;Rammy the sheep&quot;
                 },
                 &quot;friend&quot;: [
@@ -654,6 +617,7 @@ loaded successfully.</p>
                 &quot;name@hi&quot;: &quot;अमित&quot;,
                 &quot;name@bn&quot;: &quot;অমিত&quot;,
                 &quot;name@en&quot;: &quot;Amit&quot;,
+                &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;age&quot;: 35,
                 &quot;friend&quot;: [
                     {
@@ -671,26 +635,31 @@ loaded successfully.</p>
                 &quot;uid&quot;: &quot;_:luke&quot;,
                 &quot;name@pl&quot;: &quot;Łukasz&quot;,
                 &quot;name@en&quot;: &quot;Luke&quot;,
+                &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;age&quot;: 77
             },
             {
                 &quot;uid&quot;: &quot;_:artyom&quot;,
                 &quot;name@ru&quot;: &quot;Артём&quot;,
                 &quot;name@en&quot;: &quot;Artyom&quot;,
+                &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;age&quot;: 35
             },
             {
                 &quot;uid&quot;: &quot;_:sarah&quot;,
                 &quot;name&quot;: &quot;Sarah&quot;,
+                &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;age&quot;: 55
             },
             {
                 &quot;uid&quot;: &quot;_:sang&quot;,
                 &quot;name@ko&quot;: &quot;상현&quot;,
                 &quot;name@en&quot;: &quot;Sang Hyun&quot;,
+                &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;age&quot;: 24,
                 &quot;owns_pet&quot;: {
                     &quot;uid&quot;: &quot;_:goldie&quot;,
+                    &quot;dgraph.type&quot;: &quot;Animal&quot;,
                     &quot;name&quot;: &quot;Goldie&quot;
                 },
                 &quot;friend&quot;: [
@@ -709,6 +678,7 @@ loaded successfully.</p>
                 &quot;uid&quot;: &quot;_:hyung&quot;,
                 &quot;name@en&quot;: &quot;Hyung Sin&quot;,
                 &quot;name@ko&quot;: &quot;형신&quot;,
+                &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;friend&quot;: {
                     &quot;uid&quot;: &quot;_:sang&quot;
                 }
@@ -716,9 +686,11 @@ loaded successfully.</p>
             {
                 &quot;uid&quot;: &quot;_:catalina&quot;,
                 &quot;name&quot;: &quot;Catalina&quot;,
+                &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;age&quot;: 19,
                 &quot;owns_pet&quot;: {
                     &quot;uid&quot;: &quot;_:perro&quot;,
+                    &quot;dgraph.type&quot;: &quot;Animal&quot;,
                     &quot;name&quot;: &quot;Perro&quot;
                 },
                 &quot;friend&quot;: {
@@ -756,6 +728,7 @@ loaded successfully.</p>
 <div class="runnable" data-initial="{
   set {
     _:michael &lt;name&gt; &#34;Michael&#34; .
+    _:michael &lt;dgraph.type&gt; &#34;Person&#34; .
     _:michael &lt;age&gt; &#34;39&#34; .
     _:michael &lt;friend&gt; _:amit .
     _:michael &lt;friend&gt; _:sarah .
@@ -767,24 +740,29 @@ loaded successfully.</p>
     _:amit &lt;name&gt; &#34;अमित&#34;@hi .
     _:amit &lt;name&gt; &#34;অমিত&#34;@bn .
     _:amit &lt;name&gt; &#34;Amit&#34;@en .
+    _:amit &lt;dgraph.type&gt; &#34;Person&#34; .
     _:amit &lt;age&gt; &#34;35&#34; .
     _:amit &lt;friend&gt; _:michael .
     _:amit &lt;friend&gt; _:sang .
     _:amit &lt;friend&gt; _:artyom .
 
     _:luke &lt;name&gt; &#34;Luke&#34;@en .
+    _:luke &lt;dgraph.type&gt; &#34;Person&#34; .
     _:luke &lt;name&gt; &#34;Łukasz&#34;@pl .
     _:luke &lt;age&gt; &#34;77&#34; .
 
     _:artyom &lt;name&gt; &#34;Артём&#34;@ru .
     _:artyom &lt;name&gt; &#34;Artyom&#34;@en .
+    _:artyom &lt;dgraph.type&gt; &#34;Person&#34; .
     _:artyom &lt;age&gt; &#34;35&#34; .
 
     _:sarah &lt;name&gt; &#34;Sarah&#34; .
+    _:sarah &lt;dgraph.type&gt; &#34;Person&#34; .
     _:sarah &lt;age&gt; &#34;55&#34; .
 
     _:sang &lt;name&gt; &#34;상현&#34;@ko .
     _:sang &lt;name&gt; &#34;Sang Hyun&#34;@en .
+    _:sang &lt;dgraph.type&gt; &#34;Person&#34; .
     _:sang &lt;age&gt; &#34;24&#34; .
     _:sang &lt;friend&gt; _:amit .
     _:sang &lt;friend&gt; _:catalina .
@@ -793,23 +771,29 @@ loaded successfully.</p>
 
     _:hyung &lt;name&gt; &#34;형신&#34;@ko .
     _:hyung &lt;name&gt; &#34;Hyung Sin&#34;@en .
+    _:hyung &lt;dgraph.type&gt; &#34;Person&#34; .
     _:hyung &lt;friend&gt; _:sang .
 
     _:catalina &lt;name&gt; &#34;Catalina&#34; .
+    _:catalina &lt;dgraph.type&gt; &#34;Person&#34; .
     _:catalina &lt;age&gt; &#34;19&#34; .
     _:catalina &lt;friend&gt; _:sang .
     _:catalina &lt;owns_pet&gt; _:perro .
 
     _:rammy &lt;name&gt; &#34;Rammy the sheep&#34; .
+    _:rammy &lt;dgraph.type&gt; &#34;Animal&#34; .
 
     _:goldie &lt;name&gt; &#34;Goldie&#34; .
+    _:goldie &lt;dgraph.type&gt; &#34;Animal&#34; .
 
     _:perro &lt;name&gt; &#34;Perro&#34; .
+    _:perro &lt;dgraph.type&gt; &#34;Animal&#34; .
   }
 }
 " data-current="{
   set {
     _:michael &lt;name&gt; &#34;Michael&#34; .
+    _:michael &lt;dgraph.type&gt; &#34;Person&#34; .
     _:michael &lt;age&gt; &#34;39&#34; .
     _:michael &lt;friend&gt; _:amit .
     _:michael &lt;friend&gt; _:sarah .
@@ -821,24 +805,29 @@ loaded successfully.</p>
     _:amit &lt;name&gt; &#34;अमित&#34;@hi .
     _:amit &lt;name&gt; &#34;অমিত&#34;@bn .
     _:amit &lt;name&gt; &#34;Amit&#34;@en .
+    _:amit &lt;dgraph.type&gt; &#34;Person&#34; .
     _:amit &lt;age&gt; &#34;35&#34; .
     _:amit &lt;friend&gt; _:michael .
     _:amit &lt;friend&gt; _:sang .
     _:amit &lt;friend&gt; _:artyom .
 
     _:luke &lt;name&gt; &#34;Luke&#34;@en .
+    _:luke &lt;dgraph.type&gt; &#34;Person&#34; .
     _:luke &lt;name&gt; &#34;Łukasz&#34;@pl .
     _:luke &lt;age&gt; &#34;77&#34; .
 
     _:artyom &lt;name&gt; &#34;Артём&#34;@ru .
     _:artyom &lt;name&gt; &#34;Artyom&#34;@en .
+    _:artyom &lt;dgraph.type&gt; &#34;Person&#34; .
     _:artyom &lt;age&gt; &#34;35&#34; .
 
     _:sarah &lt;name&gt; &#34;Sarah&#34; .
+    _:sarah &lt;dgraph.type&gt; &#34;Person&#34; .
     _:sarah &lt;age&gt; &#34;55&#34; .
 
     _:sang &lt;name&gt; &#34;상현&#34;@ko .
     _:sang &lt;name&gt; &#34;Sang Hyun&#34;@en .
+    _:sang &lt;dgraph.type&gt; &#34;Person&#34; .
     _:sang &lt;age&gt; &#34;24&#34; .
     _:sang &lt;friend&gt; _:amit .
     _:sang &lt;friend&gt; _:catalina .
@@ -847,18 +836,23 @@ loaded successfully.</p>
 
     _:hyung &lt;name&gt; &#34;형신&#34;@ko .
     _:hyung &lt;name&gt; &#34;Hyung Sin&#34;@en .
+    _:hyung &lt;dgraph.type&gt; &#34;Person&#34; .
     _:hyung &lt;friend&gt; _:sang .
 
     _:catalina &lt;name&gt; &#34;Catalina&#34; .
+    _:catalina &lt;dgraph.type&gt; &#34;Person&#34; .
     _:catalina &lt;age&gt; &#34;19&#34; .
     _:catalina &lt;friend&gt; _:sang .
     _:catalina &lt;owns_pet&gt; _:perro .
 
     _:rammy &lt;name&gt; &#34;Rammy the sheep&#34; .
+    _:rammy &lt;dgraph.type&gt; &#34;Animal&#34; .
 
     _:goldie &lt;name&gt; &#34;Goldie&#34; .
+    _:goldie &lt;dgraph.type&gt; &#34;Animal&#34; .
 
     _:perro &lt;name&gt; &#34;Perro&#34; .
+    _:perro &lt;dgraph.type&gt; &#34;Animal&#34; .
   }
 }
 " endpoint="/mutate" data-dirty="false">
@@ -889,6 +883,7 @@ loaded successfully.</p>
         <textarea class="query-content-editable">{
   set {
     _:michael &lt;name&gt; &#34;Michael&#34; .
+    _:michael &lt;dgraph.type&gt; &#34;Person&#34; .
     _:michael &lt;age&gt; &#34;39&#34; .
     _:michael &lt;friend&gt; _:amit .
     _:michael &lt;friend&gt; _:sarah .
@@ -900,24 +895,29 @@ loaded successfully.</p>
     _:amit &lt;name&gt; &#34;अमित&#34;@hi .
     _:amit &lt;name&gt; &#34;অমিত&#34;@bn .
     _:amit &lt;name&gt; &#34;Amit&#34;@en .
+    _:amit &lt;dgraph.type&gt; &#34;Person&#34; .
     _:amit &lt;age&gt; &#34;35&#34; .
     _:amit &lt;friend&gt; _:michael .
     _:amit &lt;friend&gt; _:sang .
     _:amit &lt;friend&gt; _:artyom .
 
     _:luke &lt;name&gt; &#34;Luke&#34;@en .
+    _:luke &lt;dgraph.type&gt; &#34;Person&#34; .
     _:luke &lt;name&gt; &#34;Łukasz&#34;@pl .
     _:luke &lt;age&gt; &#34;77&#34; .
 
     _:artyom &lt;name&gt; &#34;Артём&#34;@ru .
     _:artyom &lt;name&gt; &#34;Artyom&#34;@en .
+    _:artyom &lt;dgraph.type&gt; &#34;Person&#34; .
     _:artyom &lt;age&gt; &#34;35&#34; .
 
     _:sarah &lt;name&gt; &#34;Sarah&#34; .
+    _:sarah &lt;dgraph.type&gt; &#34;Person&#34; .
     _:sarah &lt;age&gt; &#34;55&#34; .
 
     _:sang &lt;name&gt; &#34;상현&#34;@ko .
     _:sang &lt;name&gt; &#34;Sang Hyun&#34;@en .
+    _:sang &lt;dgraph.type&gt; &#34;Person&#34; .
     _:sang &lt;age&gt; &#34;24&#34; .
     _:sang &lt;friend&gt; _:amit .
     _:sang &lt;friend&gt; _:catalina .
@@ -926,18 +926,23 @@ loaded successfully.</p>
 
     _:hyung &lt;name&gt; &#34;형신&#34;@ko .
     _:hyung &lt;name&gt; &#34;Hyung Sin&#34;@en .
+    _:hyung &lt;dgraph.type&gt; &#34;Person&#34; .
     _:hyung &lt;friend&gt; _:sang .
 
     _:catalina &lt;name&gt; &#34;Catalina&#34; .
+    _:catalina &lt;dgraph.type&gt; &#34;Person&#34; .
     _:catalina &lt;age&gt; &#34;19&#34; .
     _:catalina &lt;friend&gt; _:sang .
     _:catalina &lt;owns_pet&gt; _:perro .
 
     _:rammy &lt;name&gt; &#34;Rammy the sheep&#34; .
+    _:rammy &lt;dgraph.type&gt; &#34;Animal&#34; .
 
     _:goldie &lt;name&gt; &#34;Goldie&#34; .
+    _:goldie &lt;dgraph.type&gt; &#34;Animal&#34; .
 
     _:perro &lt;name&gt; &#34;Perro&#34; .
+    _:perro &lt;dgraph.type&gt; &#34;Animal&#34; .
   }
 }
 </textarea>
@@ -1026,6 +1031,7 @@ loaded successfully.</p>
     </main>
 
     <script src="https://tour.dgraph.io//js/build/dgraph-tour.js?8cb5063906121ab119297908cd5af67a"></script>
+    <script src="//unpkg.com/@dgraph-io/community"></script>
   </body>
 
 </html>

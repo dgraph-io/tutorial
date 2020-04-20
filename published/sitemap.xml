@@ -148,6 +148,11 @@
   </url>
   
   <url>
+    <loc>https://tour.dgraph.io/schema/6/</loc>
+    <lastmod>2019-05-13T23:05:55+10:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://tour.dgraph.io/search/6/</loc>
     <lastmod>2017-05-15T15:32:13+10:00</lastmod>
   </url>
@@ -155,11 +160,6 @@
   <url>
     <loc>https://tour.dgraph.io/blocksvars/6/</loc>
     <lastmod>2017-05-01T20:48:32+10:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tour.dgraph.io/schema/6/</loc>
-    <lastmod>2017-05-01T10:41:33+10:00</lastmod>
   </url>
   
   <url>
@@ -184,7 +184,7 @@
   
   <url>
     <loc>https://tour.dgraph.io/schema/7/</loc>
-    <lastmod>2017-04-27T23:05:53+10:00</lastmod>
+    <lastmod>2017-05-01T10:41:33+10:00</lastmod>
   </url>
   
   <url>
@@ -204,7 +204,7 @@
   
   <url>
     <loc>https://tour.dgraph.io/schema/8/</loc>
-    <lastmod>2017-04-27T23:05:55+10:00</lastmod>
+    <lastmod>2017-04-27T23:05:53+10:00</lastmod>
   </url>
   
   <url>
@@ -278,11 +278,6 @@
   </url>
   
   <url>
-    <loc>https://tour.dgraph.io/blocksvars/14/</loc>
-    <lastmod>2017-05-02T11:01:12+10:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://tour.dgraph.io/basic/14/</loc>
     <lastmod>2017-05-01T11:55:46+10:00</lastmod>
   </url>
@@ -309,7 +304,12 @@
   
   <url>
     <loc>https://tour.dgraph.io/</loc>
-    <lastmod>2018-11-04T22:28:55+10:00</lastmod>
+    <lastmod>2019-05-13T23:05:55+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tour.dgraph.io/schema/</loc>
+    <lastmod>2019-05-13T23:05:55+10:00</lastmod>
   </url>
   
   <url>
@@ -335,11 +335,6 @@
   <url>
     <loc>https://tour.dgraph.io/blocksvars/</loc>
     <lastmod>2017-05-02T11:01:12+10:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tour.dgraph.io/schema/</loc>
-    <lastmod>2017-05-01T10:41:33+10:00</lastmod>
   </url>
   
   <url>
