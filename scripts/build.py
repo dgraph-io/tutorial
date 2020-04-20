@@ -49,7 +49,11 @@ def runHugo(outSuffix=""):
 def compareVersions(a, b):
     a = [int(x) for x in a.split('.')]
     b = [int(x) for x in b.split('.')]
-    return a < b
+    if a < b:
+        return -1
+    if a > b:
+        return 1
+    return 0
 
 
 def getReleases():
