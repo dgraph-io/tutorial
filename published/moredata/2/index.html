@@ -7,7 +7,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link
+    <meta
+  name="description"
+  
+    
+  
+  >
+
+<link
   rel="manifest"
   href="https://tour.dgraph.io//images/favicons/manifest.json"
   >
@@ -39,6 +46,32 @@
 <link rel="icon" sizes="96x96" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-96x96.png">
 <link rel="icon" sizes="16x16" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-16x16.png">
 
+
+    <script>
+        if (window.location.href.indexOf("dgraph.io") > -1) {
+      (function(i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function() {
+            (i[r].q = i[r].q || []).push(arguments);
+          }), (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-75364122-2", "auto");
+      ga("send", "pageview");
+    }
+    </script>
 
     
     <title>
@@ -87,6 +120,8 @@
         <option
           value="1.0.16"
           
+            selected="selected"
+          
         >
           Dgraph 1.0.16
         </option>
@@ -108,8 +143,6 @@
         <option
           value="20.03.0"
           
-            selected="selected"
-          
         >
           Dgraph 20.03.0
         </option>
@@ -125,8 +158,8 @@
 
 <script>
   window.DgTour = {
-    thisRelease: "20.03.0",
-    latestRelease: "20.03.0",
+    thisRelease: "1.0.16",
+    latestRelease: "1.0.16",
     home: "https:\/\/tour.dgraph.io\/"
   }
 </script>
@@ -222,7 +255,7 @@
         
           <li>
             <a href="https://tour.dgraph.io/basic/3/" class="topic">
-              Data types, Schema and Type System
+              Data types and Schema
             </a>
           </li>
         
@@ -360,19 +393,19 @@
         
           <li>
             <a href="https://tour.dgraph.io/schema/6/" class="topic">
-              Reverse edges Query
-            </a>
-          </li>
-        
-          <li>
-            <a href="https://tour.dgraph.io/schema/7/" class="topic">
               Exercise : Integrating existing data
             </a>
           </li>
         
           <li>
-            <a href="https://tour.dgraph.io/schema/8/" class="topic">
+            <a href="https://tour.dgraph.io/schema/7/" class="topic">
               Deleting Data
+            </a>
+          </li>
+        
+          <li>
+            <a href="https://tour.dgraph.io/schema/8/" class="topic">
+              Predicate Query
             </a>
           </li>
         
@@ -498,6 +531,12 @@
         
           <li>
             <a href="https://tour.dgraph.io/blocksvars/13/" class="topic">
+              expand and _predicate_
+            </a>
+          </li>
+        
+          <li>
+            <a href="https://tour.dgraph.io/blocksvars/14/" class="topic">
               Congratulations!
             </a>
           </li>
@@ -570,20 +609,15 @@
           <h1 class="lesson-heading">Movies Schema</h1>
 
           <div>
-            <p>Dgraph queries, Schema Types and the visualization will help us understand the schema of the movies dataset.</p>
+            <p>Dgraph queries and the visualization will help us understand the schema of the movies dataset.</p>
 <p>As you&rsquo;ll see in the following pages, we can view the data from a number of perspectives; considering for example directors, movies, genres or even locations as the primary starting point.</p>
 <p>Let&rsquo;s have a look from the perspective of directors.  Kathryn Bigelow directed the early 90&rsquo;s classic Point Break.  We&rsquo;ll begin with her and learn about the schema.</p>
-<p>Checking the Type Schema tells us that directors as a &ldquo;Person Type&rdquo; have a <code>name</code> and are connected to the movies they directed via <code>director.film</code>.</p>
+<p>Run the query.  <code>_predicate_</code> tells us that directors have a <code>name</code> and are connected to the movies they directed via <code>director.film</code>.</p>
 <p>Extend the query a level deeper by also including</p>
-<pre><code>director.film (first: 1) {     
-    name
-    initial_release_date
-    genre { name }
-    starring { Performance }
- }
+<pre><code>director.film (first: 1) { _predicate_ }
 </code></pre><p>We can see a movie has a <code>name</code> and also <code>genre</code> and <code>starring</code> edges leading to the genres the movie is classified in and the people in the movie.</p>
 <p>Investigate the <code>starring</code> edge too and you&rsquo;ll learn that nodes reached via that edge represent the performance of an actor as a particular character in the movie.</p>
-<p>Try the same queries starting with Tom Hanks. He&rsquo;s both an actor and a director, so you&rsquo;ll see the links to a performance from both movie and actor.</p>
+<p>Try the same queries starting with Tom Hanks.  He&rsquo;s both an actor and a director, so you&rsquo;ll see the links to a performance from both movie and actor.</p>
 <p>Remember there&rsquo;s also the schema query that can be used to investigate the types and indexes in the schema.  Just</p>
 <pre><code>schema {}
 </code></pre><p>queries for everything about the schema</p>
@@ -609,61 +643,23 @@
     <div class="col-12 col-sm-12 col-md-12 col-lg-6 vertical-stretch">
       
         
-<div class="runnable" data-initial="# Define Types
-
-type Person {
-    name
-    director.film
-    actor.film
+<div class="runnable" data-initial="{
+  q(func:allofterms(name@en, &#34;Kathryn Bigelow&#34;)) {
+    _predicate_
+	}
 }
-
-type Movie {
-    name
-    initial_release_date
-    genre
-    starring
+" data-current="{
+  q(func:allofterms(name@en, &#34;Kathryn Bigelow&#34;)) {
+    _predicate_
+	}
 }
-
-type Genre {
-    name
-}
-
-type Performance {
-    performance.film
-    performance.character
-    performance.actor
-}
-" data-current="# Define Types
-
-type Person {
-    name
-    director.film
-    actor.film
-}
-
-type Movie {
-    name
-    initial_release_date
-    genre
-    starring
-}
-
-type Genre {
-    name
-}
-
-type Performance {
-    performance.film
-    performance.character
-    performance.actor
-}
-" endpoint="/alter" data-dirty="false">
+" endpoint="/query" data-dirty="false">
   <div class="runnable-pane runnable-pane-query">
     <div class="topbar">
       <div class="row">
         <div class="col-7">
           <span class="pane-title">
-            Endpoint: /alter
+            Endpoint: /query
             <span class="server-switch">
               Dgraph:&nbsp;<span class="url">
                 http://localhost:8080
@@ -682,29 +678,10 @@ type Performance {
 
     <div class="runnable-content runnable-code">
       <div class="runnable-tab-content active">
-        <textarea class="query-content-editable"># Define Types
-
-type Person {
-    name
-    director.film
-    actor.film
-}
-
-type Movie {
-    name
-    initial_release_date
-    genre
-    starring
-}
-
-type Genre {
-    name
-}
-
-type Performance {
-    performance.film
-    performance.character
-    performance.actor
+        <textarea class="query-content-editable">{
+  q(func:allofterms(name@en, &#34;Kathryn Bigelow&#34;)) {
+    _predicate_
+	}
 }
 </textarea>
       </div>
@@ -792,7 +769,6 @@ type Performance {
     </main>
 
     <script src="https://tour.dgraph.io//js/build/dgraph-tour.js?8cb5063906121ab119297908cd5af67a"></script>
-    <script src="//unpkg.com/@dgraph-io/community"></script>
   </body>
 
 </html>

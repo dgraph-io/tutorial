@@ -7,7 +7,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link
+    <meta
+  name="description"
+  
+    
+  
+  >
+
+<link
   rel="manifest"
   href="https://tour.dgraph.io//images/favicons/manifest.json"
   >
@@ -39,6 +46,32 @@
 <link rel="icon" sizes="96x96" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-96x96.png">
 <link rel="icon" sizes="16x16" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-16x16.png">
 
+
+    <script>
+        if (window.location.href.indexOf("dgraph.io") > -1) {
+      (function(i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function() {
+            (i[r].q = i[r].q || []).push(arguments);
+          }), (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-75364122-2", "auto");
+      ga("send", "pageview");
+    }
+    </script>
 
     
     <title>
@@ -87,6 +120,8 @@
         <option
           value="1.0.16"
           
+            selected="selected"
+          
         >
           Dgraph 1.0.16
         </option>
@@ -108,8 +143,6 @@
         <option
           value="20.03.0"
           
-            selected="selected"
-          
         >
           Dgraph 20.03.0
         </option>
@@ -125,8 +158,8 @@
 
 <script>
   window.DgTour = {
-    thisRelease: "20.03.0",
-    latestRelease: "20.03.0",
+    thisRelease: "1.0.16",
+    latestRelease: "1.0.16",
     home: "https:\/\/tour.dgraph.io\/"
   }
 </script>
@@ -222,7 +255,7 @@
         
           <li>
             <a href="https://tour.dgraph.io/basic/3/" class="topic">
-              Data types, Schema and Type System
+              Data types and Schema
             </a>
           </li>
         
@@ -360,19 +393,19 @@
         
           <li>
             <a href="https://tour.dgraph.io/schema/6/" class="topic">
-              Reverse edges Query
-            </a>
-          </li>
-        
-          <li>
-            <a href="https://tour.dgraph.io/schema/7/" class="topic">
               Exercise : Integrating existing data
             </a>
           </li>
         
           <li>
-            <a href="https://tour.dgraph.io/schema/8/" class="topic">
+            <a href="https://tour.dgraph.io/schema/7/" class="topic">
               Deleting Data
+            </a>
+          </li>
+        
+          <li>
+            <a href="https://tour.dgraph.io/schema/8/" class="topic">
+              Predicate Query
             </a>
           </li>
         
@@ -498,6 +531,12 @@
         
           <li>
             <a href="https://tour.dgraph.io/blocksvars/13/" class="topic">
+              expand and _predicate_
+            </a>
+          </li>
+        
+          <li>
+            <a href="https://tour.dgraph.io/blocksvars/14/" class="topic">
               Congratulations!
             </a>
           </li>
@@ -580,15 +619,10 @@ and actors</a>.</p>
 <p>Download it from that link and save into the <code>~/dgraph</code> directory or by running the following in a terminal</p>
 <pre><code>cd ~/dgraph
 wget &quot;https://github.com/dgraph-io/tutorial/blob/master/resources/1million.rdf.gz?raw=true&quot; -O 1million.rdf.gz -q
-
-OR (We have curl in Dgraph's containers)
-
-curl -L -o 1million.rdf.gz &quot;https://github.com/dgraph-io/tutorial/blob/master/resources/1million.rdf.gz?raw=true&quot;
-
 </code></pre><p>Run the schema mutation using the run button and then load the dataset
 into Dgraph from the terminal. You may be required to restart the Alpha with <code>--lru_mb 4096</code> in order to handle bigger dataset.</p>
-<pre><code>docker exec -it dgraph dgraph live -f 1million.rdf.gz --alpha localhost:9080 --zero localhost:5080 -c 1
-</code></pre><p>There&rsquo;s around one million triples in the dataset.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker exec -it dgraph dgraph live -r 1million.rdf.gz --zero localhost:5080 -c <span style="color:#ae81ff">1</span>
+</code></pre></div><p>There&rsquo;s around one million triples in the dataset.
 Dgraph reports back exactly how many triples were loaded and how long
 it took.</p>
 <!-- raw HTML omitted -->
@@ -603,7 +637,7 @@ interesting results.  But, because it&rsquo;s a subset, you might find your
 favourite actor isn&rsquo;t there, or that some actors are missing some of
 their movies.</p>
 <p>Later in the tutorial, you might need to refer back to this page (or
-issue a <a href="../../basic/3">schema query</a>) to check the indexes or schema types.  Remember that
+issue a <a href="https://tour.dgraph.io/basic/3">schema query</a>) to check the indexes or schema types.  Remember that
 we can&rsquo;t apply functions to edges that aren&rsquo;t indexed, and we&rsquo;ll learn
 that some
 functions require particular indexes.</p>
@@ -628,32 +662,14 @@ functions require particular indexes.</p>
     <div class="col-12 col-sm-12 col-md-12 col-lg-6 vertical-stretch">
       
         
-<div class="runnable" data-initial="# Define Directives and index
-
-director.film: [uid] @reverse .
-genre: [uid] @reverse .
+<div class="runnable" data-initial="director.film: uid @reverse .
+genre: uid @reverse .
 initial_release_date: dateTime @index(year) .
-name: string @index(exact, term) @lang .
-starring: [uid] .
-performance.film: [uid] .
-performance.character_note: string .
-performance.character: [uid] .
-performance.actor: [uid] .
-performance.special_performance_type: [uid] .
-type: [uid] .
-" data-current="# Define Directives and index
-
-director.film: [uid] @reverse .
-genre: [uid] @reverse .
+name: string @index(term) @lang .
+" data-current="director.film: uid @reverse .
+genre: uid @reverse .
 initial_release_date: dateTime @index(year) .
-name: string @index(exact, term) @lang .
-starring: [uid] .
-performance.film: [uid] .
-performance.character_note: string .
-performance.character: [uid] .
-performance.actor: [uid] .
-performance.special_performance_type: [uid] .
-type: [uid] .
+name: string @index(term) @lang .
 " endpoint="/alter" data-dirty="false">
   <div class="runnable-pane runnable-pane-query">
     <div class="topbar">
@@ -679,19 +695,10 @@ type: [uid] .
 
     <div class="runnable-content runnable-code">
       <div class="runnable-tab-content active">
-        <textarea class="query-content-editable"># Define Directives and index
-
-director.film: [uid] @reverse .
-genre: [uid] @reverse .
+        <textarea class="query-content-editable">director.film: uid @reverse .
+genre: uid @reverse .
 initial_release_date: dateTime @index(year) .
-name: string @index(exact, term) @lang .
-starring: [uid] .
-performance.film: [uid] .
-performance.character_note: string .
-performance.character: [uid] .
-performance.actor: [uid] .
-performance.special_performance_type: [uid] .
-type: [uid] .
+name: string @index(term) @lang .
 </textarea>
       </div>
     </div>
@@ -778,7 +785,6 @@ type: [uid] .
     </main>
 
     <script src="https://tour.dgraph.io//js/build/dgraph-tour.js?8cb5063906121ab119297908cd5af67a"></script>
-    <script src="//unpkg.com/@dgraph-io/community"></script>
   </body>
 
 </html>

@@ -7,7 +7,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link
+    <meta
+  name="description"
+  
+    
+  
+  >
+
+<link
   rel="manifest"
   href="https://tour.dgraph.io//images/favicons/manifest.json"
   >
@@ -39,6 +46,32 @@
 <link rel="icon" sizes="96x96" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-96x96.png">
 <link rel="icon" sizes="16x16" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-16x16.png">
 
+
+    <script>
+        if (window.location.href.indexOf("dgraph.io") > -1) {
+      (function(i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function() {
+            (i[r].q = i[r].q || []).push(arguments);
+          }), (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-75364122-2", "auto");
+      ga("send", "pageview");
+    }
+    </script>
 
     
     <title>
@@ -87,6 +120,8 @@
         <option
           value="1.0.16"
           
+            selected="selected"
+          
         >
           Dgraph 1.0.16
         </option>
@@ -108,8 +143,6 @@
         <option
           value="20.03.0"
           
-            selected="selected"
-          
         >
           Dgraph 20.03.0
         </option>
@@ -125,8 +158,8 @@
 
 <script>
   window.DgTour = {
-    thisRelease: "20.03.0",
-    latestRelease: "20.03.0",
+    thisRelease: "1.0.16",
+    latestRelease: "1.0.16",
     home: "https:\/\/tour.dgraph.io\/"
   }
 </script>
@@ -222,7 +255,7 @@
         
           <li>
             <a href="https://tour.dgraph.io/basic/3/" class="topic">
-              Data types, Schema and Type System
+              Data types and Schema
             </a>
           </li>
         
@@ -360,19 +393,19 @@
         
           <li>
             <a href="https://tour.dgraph.io/schema/6/" class="topic">
-              Reverse edges Query
-            </a>
-          </li>
-        
-          <li>
-            <a href="https://tour.dgraph.io/schema/7/" class="topic">
               Exercise : Integrating existing data
             </a>
           </li>
         
           <li>
-            <a href="https://tour.dgraph.io/schema/8/" class="topic">
+            <a href="https://tour.dgraph.io/schema/7/" class="topic">
               Deleting Data
+            </a>
+          </li>
+        
+          <li>
+            <a href="https://tour.dgraph.io/schema/8/" class="topic">
+              Predicate Query
             </a>
           </li>
         
@@ -498,6 +531,12 @@
         
           <li>
             <a href="https://tour.dgraph.io/blocksvars/13/" class="topic">
+              expand and _predicate_
+            </a>
+          </li>
+        
+          <li>
+            <a href="https://tour.dgraph.io/blocksvars/14/" class="topic">
               Congratulations!
             </a>
           </li>
@@ -592,45 +631,38 @@ data.</p>
             {
                 &quot;uid&quot;: &quot;_:company1&quot;,
                 &quot;industry&quot;: &quot;Machinery&quot;,
-                &quot;dgraph.type&quot;: &quot;Company&quot;,
                 &quot;name&quot;: &quot;CompanyABC&quot;
             },
             {
                 &quot;uid&quot;: &quot;_:company2&quot;,
                 &quot;industry&quot;: &quot;High Tech&quot;,
-                &quot;dgraph.type&quot;: &quot;Company&quot;,
                 &quot;name&quot;: &quot;The other company&quot;
             },
             {
                 &quot;uid&quot;: &quot;_:jack&quot;,
                 &quot;works_for&quot;: { &quot;uid&quot;: &quot;_:company1&quot;},
-                &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;name&quot;: &quot;Jack&quot;
             },
             {
                 &quot;uid&quot;: &quot;_:ivy&quot;,
                 &quot;works_for&quot;: { &quot;uid&quot;: &quot;_:company1&quot;},
                 &quot;boss_of&quot;: { &quot;uid&quot;: &quot;_:jack&quot;},
-                &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;name&quot;: &quot;Ivy&quot;
             },
             {
                 &quot;uid&quot;: &quot;_:zoe&quot;,
                 &quot;works_for&quot;: { &quot;uid&quot;: &quot;_:company1&quot;},
-                &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;name&quot;: &quot;Zoe&quot;
             },
             {
                 &quot;uid&quot;: &quot;_:jose&quot;,
                 &quot;works_for&quot;: { &quot;uid&quot;: &quot;_:company2&quot;},
-                &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;name&quot;: &quot;Jose&quot;
             },
             {
                 &quot;uid&quot;: &quot;_:alexei&quot;,
                 &quot;works_for&quot;: { &quot;uid&quot;: &quot;_:company2&quot;},
                 &quot;boss_of&quot;: { &quot;uid&quot;: &quot;_:jose&quot;},
-                &quot;dgraph.type&quot;: &quot;Person&quot;,
                 &quot;name&quot;: &quot;Alexei&quot;
             }
         ]
@@ -671,33 +703,18 @@ data.</p>
 <div class="runnable" data-initial="{
   set {
     _:company1 &lt;name&gt; &#34;CompanyABC&#34; .
-    _:company1 &lt;dgraph.type&gt; &#34;Company&#34; .
     _:company2 &lt;name&gt; &#34;The other company&#34; .
-    _:company2 &lt;dgraph.type&gt; &#34;Company&#34; .
 
     _:company1 &lt;industry&gt; &#34;Machinery&#34; .
 
     _:company2 &lt;industry&gt; &#34;High Tech&#34; .
 
     _:jack &lt;works_for&gt; _:company1 .
-    _:jack &lt;dgraph.type&gt; &#34;Person&#34; .
-
     _:ivy &lt;works_for&gt; _:company1 .
-    _:ivy &lt;dgraph.type&gt; &#34;Person&#34; .
-
     _:zoe &lt;works_for&gt; _:company1 .
-    _:zoe &lt;dgraph.type&gt; &#34;Person&#34; .
-
-    _:jack &lt;name&gt; &#34;Jack&#34; .
-    _:ivy &lt;name&gt; &#34;Ivy&#34; .
-    _:zoe &lt;name&gt; &#34;Zoe&#34; .
-    _:jose &lt;name&gt; &#34;Jose&#34; .
-    _:alexei &lt;name&gt; &#34;Alexei&#34; .
 
     _:jose &lt;works_for&gt; _:company2 .
-    _:jose &lt;dgraph.type&gt; &#34;Person&#34; .
     _:alexei &lt;works_for&gt; _:company2 .
-    _:alexei &lt;dgraph.type&gt; &#34;Person&#34; .
 
     _:ivy &lt;boss_of&gt; _:jack .
 
@@ -707,33 +724,18 @@ data.</p>
 " data-current="{
   set {
     _:company1 &lt;name&gt; &#34;CompanyABC&#34; .
-    _:company1 &lt;dgraph.type&gt; &#34;Company&#34; .
     _:company2 &lt;name&gt; &#34;The other company&#34; .
-    _:company2 &lt;dgraph.type&gt; &#34;Company&#34; .
 
     _:company1 &lt;industry&gt; &#34;Machinery&#34; .
 
     _:company2 &lt;industry&gt; &#34;High Tech&#34; .
 
     _:jack &lt;works_for&gt; _:company1 .
-    _:jack &lt;dgraph.type&gt; &#34;Person&#34; .
-
     _:ivy &lt;works_for&gt; _:company1 .
-    _:ivy &lt;dgraph.type&gt; &#34;Person&#34; .
-
     _:zoe &lt;works_for&gt; _:company1 .
-    _:zoe &lt;dgraph.type&gt; &#34;Person&#34; .
-
-    _:jack &lt;name&gt; &#34;Jack&#34; .
-    _:ivy &lt;name&gt; &#34;Ivy&#34; .
-    _:zoe &lt;name&gt; &#34;Zoe&#34; .
-    _:jose &lt;name&gt; &#34;Jose&#34; .
-    _:alexei &lt;name&gt; &#34;Alexei&#34; .
 
     _:jose &lt;works_for&gt; _:company2 .
-    _:jose &lt;dgraph.type&gt; &#34;Person&#34; .
     _:alexei &lt;works_for&gt; _:company2 .
-    _:alexei &lt;dgraph.type&gt; &#34;Person&#34; .
 
     _:ivy &lt;boss_of&gt; _:jack .
 
@@ -768,33 +770,18 @@ data.</p>
         <textarea class="query-content-editable">{
   set {
     _:company1 &lt;name&gt; &#34;CompanyABC&#34; .
-    _:company1 &lt;dgraph.type&gt; &#34;Company&#34; .
     _:company2 &lt;name&gt; &#34;The other company&#34; .
-    _:company2 &lt;dgraph.type&gt; &#34;Company&#34; .
 
     _:company1 &lt;industry&gt; &#34;Machinery&#34; .
 
     _:company2 &lt;industry&gt; &#34;High Tech&#34; .
 
     _:jack &lt;works_for&gt; _:company1 .
-    _:jack &lt;dgraph.type&gt; &#34;Person&#34; .
-
     _:ivy &lt;works_for&gt; _:company1 .
-    _:ivy &lt;dgraph.type&gt; &#34;Person&#34; .
-
     _:zoe &lt;works_for&gt; _:company1 .
-    _:zoe &lt;dgraph.type&gt; &#34;Person&#34; .
-
-    _:jack &lt;name&gt; &#34;Jack&#34; .
-    _:ivy &lt;name&gt; &#34;Ivy&#34; .
-    _:zoe &lt;name&gt; &#34;Zoe&#34; .
-    _:jose &lt;name&gt; &#34;Jose&#34; .
-    _:alexei &lt;name&gt; &#34;Alexei&#34; .
 
     _:jose &lt;works_for&gt; _:company2 .
-    _:jose &lt;dgraph.type&gt; &#34;Person&#34; .
     _:alexei &lt;works_for&gt; _:company2 .
-    _:alexei &lt;dgraph.type&gt; &#34;Person&#34; .
 
     _:ivy &lt;boss_of&gt; _:jack .
 
@@ -887,7 +874,6 @@ data.</p>
     </main>
 
     <script src="https://tour.dgraph.io//js/build/dgraph-tour.js?8cb5063906121ab119297908cd5af67a"></script>
-    <script src="//unpkg.com/@dgraph-io/community"></script>
   </body>
 
 </html>

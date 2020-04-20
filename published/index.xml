@@ -6,7 +6,7 @@
     <description>Recent content on A Tour of Dgraph</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 May 2019 23:05:55 +1000</lastBuildDate>
+    <lastBuildDate>Sun, 04 Nov 2018 22:28:55 +1000</lastBuildDate>
     
 	<atom:link href="https://tour.dgraph.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -100,7 +100,7 @@ The tutorial is divided into modules. You can access the table of contents at an
       <pubDate>Mon, 15 May 2017 15:33:51 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/moredata/2/</guid>
-      <description>Dgraph queries, Schema Types and the visualization will help us understand the schema of the movies dataset.
+      <description>Dgraph queries and the visualization will help us understand the schema of the movies dataset.
 As you&amp;rsquo;ll see in the following pages, we can view the data from a number of perspectives; considering for example directors, movies, genres or even locations as the primary starting point.
 Let&amp;rsquo;s have a look from the perspective of directors. Kathryn Bigelow directed the early 90&amp;rsquo;s classic Point Break. We&amp;rsquo;ll begin with her and learn about the schema.</description>
     </item>
@@ -124,7 +124,7 @@ The query makes no further constraints than requiring the found nodes to have a 
       <guid>https://tour.dgraph.io/blocksvars/2/</guid>
       <description>Results can be stored in variables and used elsewhere in the query.
 Variables are declared by
-var_name as some_block { ... } where var_name is any distinct variable name and some_block is either a whole query or an internal block of a query matching on an edge.
+var_name as some_block { ... } where var_name is any distinct variable name andsome_block is either a whole query or an internal block of a query matching on an edge.
 Once defined, variables can be used in:
  the same query in a child of the defining block (not a parent of the definition) in another query  Variables don&amp;rsquo;t affect the semantics of the query at the point they are defined.</description>
     </item>
@@ -170,7 +170,7 @@ Let’s improve the query to get Michael and his network of friends.</descriptio
       
       <guid>https://tour.dgraph.io/intro/2/</guid>
       <description>Let&amp;rsquo;s run an instance of Dgraph on your machine; that&amp;rsquo;ll give you a handle on installing Dgraph and loading data yourself.
-All the data in this tutorial will be stored in the instance you install, and all the queries will look for Dgraph on your local machine. By running it in a container, you&amp;rsquo;ll have a fresh Dgraph that will serve as a sandbox for you to learn and experiment.</description>
+All the data in this tutorial will be stored in the instance you install and all the queries will look for Dgraph on your local machine. By running it in a container, you&amp;rsquo;ll have a fresh Dgraph that will serve as a sandbox for you to learn and experiment with.</description>
     </item>
     
     <item>
@@ -207,14 +207,15 @@ More about in https://docs.dgraph.io/mutations/#external-ids</description>
     </item>
     
     <item>
-      <title>Data types, Schema and Type System</title>
+      <title>Data types and Schema</title>
       <link>https://tour.dgraph.io/basic/3/</link>
       <pubDate>Wed, 26 Apr 2017 22:36:41 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/basic/3/</guid>
       <description>It’s time to talk about data types and nodes
-Type System Starting in version 1.1, Dgraph has support for a type system. At the moment, the type system is basic but can be used already to categorize nodes and query them based on their type. The type system is also used during expand queries.
-So in order to Expand or Delete nodes. You need to define your Types correctly. You can see in detail more about the Type System here.</description>
+There was some magic in the last query because some of the queried edges returned a value (name and age), but some were edges to other nodes (friend and owns_pet) that themselves had further properties.
+The truth is that there is a schema to tell us how to interpret an edge.
+The visualization won’t be much use this time. Have a look at the JSON to find out about the schema of the example.</description>
     </item>
     
     <item>
@@ -223,8 +224,7 @@ So in order to Expand or Delete nodes. You need to define your Types correctly. 
       <pubDate>Wed, 26 Apr 2017 22:28:55 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/intro/3/</guid>
-      <description>Once you have Dgraph up and running, press run on the panel to the right. This will load a schema into Dgraph for us to use in the first steps of the tutorial. Don&amp;rsquo;t worry too much about the syntax for now, we&amp;rsquo;ll cover all that in later lessons, just check in the response panel that the operation was a success.
-Note Note that Schema changes are made via Alter operations only.</description>
+      <description>Once you have Dgraph up and running, press run on the panel to the right. This will load a schema into Dgraph for us to use in the first steps of the tutorial. Don&amp;rsquo;t worry too much about the syntax for now, we&amp;rsquo;ll cover all that in later lessons, just check in the response panel that the operation was a success.</description>
     </item>
     
     <item>
@@ -282,7 +282,7 @@ Queries can search over text in the tagged languages by specifying which languag
 Don&amp;rsquo;t worry about the syntax for now, it will be explained later.
 You can load the same example data using JSON format. You&amp;rsquo;re able to do that through our clients, cURL or Ratel UI.
 See the JSON:
- Show answer   { &amp;quot;set&amp;quot;: [ { &amp;quot;uid&amp;quot;: &amp;quot;_:michael&amp;quot;, &amp;quot;name&amp;quot;: &amp;quot;Michael&amp;quot;, &amp;quot;dgraph.</description>
+ Show answer   { &amp;quot;set&amp;quot;: [ { &amp;quot;uid&amp;quot;: &amp;quot;_:michael&amp;quot;, &amp;quot;name&amp;quot;: &amp;quot;Michael&amp;quot;, &amp;quot;age&amp;quot;: 39, &amp;quot;owns_pet&amp;quot;: { &amp;quot;uid&amp;quot;: &amp;quot;_:rammy&amp;quot;, &amp;quot;name&amp;quot;: &amp;quot;Rammy the sheep&amp;quot; }, &amp;quot;friend&amp;quot;: [ { &amp;quot;uid&amp;quot;: &amp;quot;_:amit&amp;quot; }, { &amp;quot;uid&amp;quot;: &amp;quot;_:sarah&amp;quot; }, { &amp;quot;uid&amp;quot;: &amp;quot;_:sang&amp;quot; }, { &amp;quot;uid&amp;quot;: &amp;quot;_:catalina&amp;quot; }, { &amp;quot;uid&amp;quot;: &amp;quot;_:artyom&amp;quot; } ] }, { &amp;quot;uid&amp;quot;: &amp;quot;_:amit&amp;quot;, &amp;quot;name@hi&amp;quot;: &amp;quot;अमित&amp;quot;, &amp;quot;name@bn&amp;quot;: &amp;quot;অমিত&amp;quot;, &amp;quot;name@en&amp;quot;: &amp;quot;Amit&amp;quot;, &amp;quot;age&amp;quot;: 35, &amp;quot;friend&amp;quot;: [ { &amp;quot;uid&amp;quot;: &amp;quot;_:michael&amp;quot; }, { &amp;quot;uid&amp;quot;: &amp;quot;_:sang&amp;quot; }, { &amp;quot;uid&amp;quot;: &amp;quot;_:artyom&amp;quot; } ] }, { &amp;quot;uid&amp;quot;: &amp;quot;_:luke&amp;quot;, &amp;quot;name@pl&amp;quot;: &amp;quot;Łukasz&amp;quot;, &amp;quot;name@en&amp;quot;: &amp;quot;Luke&amp;quot;, &amp;quot;age&amp;quot;: 77 }, { &amp;quot;uid&amp;quot;: &amp;quot;_:artyom&amp;quot;, &amp;quot;name@ru&amp;quot;: &amp;quot;Артём&amp;quot;, &amp;quot;name@en&amp;quot;: &amp;quot;Artyom&amp;quot;, &amp;quot;age&amp;quot;: 35 }, { &amp;quot;uid&amp;quot;: &amp;quot;_:sarah&amp;quot;, &amp;quot;name&amp;quot;: &amp;quot;Sarah&amp;quot;, &amp;quot;age&amp;quot;: 55 }, { &amp;quot;uid&amp;quot;: &amp;quot;_:sang&amp;quot;, &amp;quot;name@ko&amp;quot;: &amp;quot;상현&amp;quot;, &amp;quot;name@en&amp;quot;: &amp;quot;Sang Hyun&amp;quot;, &amp;quot;age&amp;quot;: 24, &amp;quot;owns_pet&amp;quot;: { &amp;quot;uid&amp;quot;: &amp;quot;_:goldie&amp;quot;, &amp;quot;name&amp;quot;: &amp;quot;Goldie&amp;quot; }, &amp;quot;friend&amp;quot;: [ { &amp;quot;uid&amp;quot;: &amp;quot;_:amit&amp;quot; }, { &amp;quot;uid&amp;quot;: &amp;quot;_:catalina&amp;quot; }, { &amp;quot;uid&amp;quot;: &amp;quot;_:hyung&amp;quot; } ] }, { &amp;quot;uid&amp;quot;: &amp;quot;_:hyung&amp;quot;, &amp;quot;name@en&amp;quot;: &amp;quot;Hyung Sin&amp;quot;, &amp;quot;name@ko&amp;quot;: &amp;quot;형신&amp;quot;, &amp;quot;friend&amp;quot;: { &amp;quot;uid&amp;quot;: &amp;quot;_:sang&amp;quot; } }, { &amp;quot;uid&amp;quot;: &amp;quot;_:catalina&amp;quot;, &amp;quot;name&amp;quot;: &amp;quot;Catalina&amp;quot;, &amp;quot;age&amp;quot;: 19, &amp;quot;owns_pet&amp;quot;: { &amp;quot;uid&amp;quot;: &amp;quot;_:perro&amp;quot;, &amp;quot;name&amp;quot;: &amp;quot;Perro&amp;quot; }, &amp;quot;friend&amp;quot;: { &amp;quot;uid&amp;quot;: &amp;quot;_:sang&amp;quot; } } ] }    Tip: The JSON example may end up helping you better understand the format in RDF.</description>
     </item>
     
     <item>
@@ -341,16 +341,6 @@ While not strictly required, it’s a good style to indent the query.</descripti
     </item>
     
     <item>
-      <title>Reverse edges Query</title>
-      <link>https://tour.dgraph.io/schema/6/</link>
-      <pubDate>Mon, 13 May 2019 23:05:55 +1000</pubDate>
-      
-      <guid>https://tour.dgraph.io/schema/6/</guid>
-      <description>The reverse edge of anEdge is ~anEdge.
-In this query we want to know who works for &amp;ldquo;CompanyABC&amp;rdquo; without having to add extra edges. So we use a reverse edge for the specific case. And then we use an alias &amp;ldquo;work_here&amp;rdquo; to differentiate the query result.</description>
-    </item>
-    
-    <item>
       <title>Full Text Search : language support</title>
       <link>https://tour.dgraph.io/search/6/</link>
       <pubDate>Mon, 15 May 2017 15:32:13 +1000</pubDate>
@@ -370,6 +360,18 @@ Currently, Dgraph supports
       <description>We&amp;rsquo;ve seen two common uses for variables: filtering and reorganizing results. Another is linking two queries to gain some new insight based on the joined results.
 Let&amp;rsquo;s look at an example of joining two queries.
 For two directors find the actors who have worked with both (not necessarily on the same movie). Many directors won&amp;rsquo;t have actors in common, so start with some you are sure will (the answer below uses Peter Jackson and Martin Scorsese who have a small number of actors in common).</description>
+    </item>
+    
+    <item>
+      <title>Exercise : Integrating existing data</title>
+      <link>https://tour.dgraph.io/schema/6/</link>
+      <pubDate>Mon, 01 May 2017 10:41:33 +1000</pubDate>
+      
+      <guid>https://tour.dgraph.io/schema/6/</guid>
+      <description>We&amp;rsquo;ve added a new schema and loaded some company data, but what about integrating our previous friends dataset with this company one.
+Trying to use the blank nodes from previous mutations won&amp;rsquo;t work. The blank nodes aren&amp;rsquo;t persisted in the store, so when referring to nodes created in a previous mutation, it&amp;rsquo;s the UID that&amp;rsquo;s needed. So instead of
+_:sarah &amp;lt;works_for&amp;gt; _:company1 . it&amp;rsquo;s
+&amp;lt;uid-for-sarah&amp;gt; &amp;lt;works_for&amp;gt; &amp;lt;uid-for-company1&amp;gt; . Because the uid picked by Dgraph is unique, we can&amp;rsquo;t help you this time.</description>
     </item>
     
     <item>
@@ -417,15 +419,14 @@ At the point of definition, because the context is within the appropriate UID, v
     </item>
     
     <item>
-      <title>Exercise : Integrating existing data</title>
+      <title>Deleting Data</title>
       <link>https://tour.dgraph.io/schema/7/</link>
-      <pubDate>Mon, 01 May 2017 10:41:33 +1000</pubDate>
+      <pubDate>Thu, 27 Apr 2017 23:05:53 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/schema/7/</guid>
-      <description>We&amp;rsquo;ve added a new schema and loaded some company data, but what about integrating our previous friends dataset with this company one.
-Trying to use the blank nodes from previous mutations won&amp;rsquo;t work. The blank nodes aren&amp;rsquo;t persisted in the store, so when referring to nodes created in a previous mutation, it&amp;rsquo;s the UID that&amp;rsquo;s needed. So instead of
-_:sarah &amp;lt;works_for&amp;gt; _:company1 . it&amp;rsquo;s
-&amp;lt;uid-for-sarah&amp;gt; &amp;lt;works_for&amp;gt; &amp;lt;uid-for-company1&amp;gt; . Because the uid picked by Dgraph is unique, we can&amp;rsquo;t help you this time.</description>
+      <description>There are three deletion options inside a delete mutation.
+ &amp;lt;uid&amp;gt; &amp;lt;edge&amp;gt; &amp;lt;uid&amp;gt;/&amp;quot;value&amp;quot; . Delete a single triple &amp;lt;uid&amp;gt; &amp;lt;edge&amp;gt; * . Delete all triples for a given edge &amp;lt;uid&amp;gt; * * . Delete all triples for a given node  The examples given here are not complete. Uids assigned on your instance would be unique. Try something out; you&amp;rsquo;re not going to hurt anyone, just delete their friends.
+You can do the same example using JSON format.</description>
     </item>
     
     <item>
@@ -460,14 +461,14 @@ This query can be done in a single block, but you&amp;rsquo;ll see here how valu
     </item>
     
     <item>
-      <title>Deleting Data</title>
+      <title>Predicate Query</title>
       <link>https://tour.dgraph.io/schema/8/</link>
-      <pubDate>Thu, 27 Apr 2017 23:05:53 +1000</pubDate>
+      <pubDate>Thu, 27 Apr 2017 23:05:55 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/schema/8/</guid>
-      <description>There are three deletion options inside a delete mutation.
- &amp;lt;uid&amp;gt; &amp;lt;edge&amp;gt; &amp;lt;uid&amp;gt;/&amp;quot;value&amp;quot; . Delete a single triple &amp;lt;uid&amp;gt; &amp;lt;edge&amp;gt; * . Delete all triples for a given edge &amp;lt;uid&amp;gt; * * . Delete all triples for a given node  The examples given here are not complete. Uids assigned on your instance would be unique. Try something out; you&amp;rsquo;re not going to hurt anyone, just delete their friends.
-You can do the same example using JSON format.</description>
+      <description>For any node in the graph _predicate_ queries for the name of all outgoing edges.
+Note that this is different to a schema or intent in designing a graph because any given node might or might not have all the predicates that other nodes have.
+Something to try: query for the outgoing edges of some people from the friends data and note how some have owns_pet listed and some do not.</description>
     </item>
     
     <item>
@@ -508,10 +509,9 @@ A value variable can be used in place of a UID variable, uid(&amp;lt;value-varia
       <pubDate>Thu, 27 Apr 2017 23:05:55 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/schema/9/</guid>
-      <description>expand(...predicates...) is used to query for all given predicates, rather than listing them in the query. Querying
-expand(_all_) queries returns all edges out of every node matched at that level in the query. Expand can be nested to then expand all predicates at the next level.
-We&amp;rsquo;ll see later how to use expand with variables to query for a particular set of edges.
-Note As of version v1.1 you will need to add Types in your schema for expand(_all_) to work.</description>
+      <description>expand(...predicates...) is used to query for all given predicates, rather than listing them in the query. Calling
+expand(_all_) queries for all edges out of every node matched at that level in the query. Expand can be nested to then expand all predicates at the next level.
+We&amp;rsquo;ll see later how to use expand with variables to query for a particular set of edges.</description>
     </item>
     
     <item>
@@ -601,13 +601,14 @@ The result is the grouped edges and the value variables for the aggregations.</d
     </item>
     
     <item>
-      <title>Congratulations!</title>
+      <title>expand and _predicate_</title>
       <link>https://tour.dgraph.io/blocksvars/13/</link>
       <pubDate>Tue, 02 May 2017 11:01:12 +1000</pubDate>
       
       <guid>https://tour.dgraph.io/blocksvars/13/</guid>
-      <description>You&amp;rsquo;ve finished this lesson.
-Next up, string and geo searching. Or use the index to go to another topic.</description>
+      <description>We&amp;rsquo;ve already seen expand and _predicate_. Both can be used with variables.
+Cherie Nowlan has directed movies, including the quirky Australian romantic comedy Thank God He Met Lizzie, but hasn&amp;rsquo;t acted in any movies. So a query that expands all the predicates from Cherie Nowlan will at best have name and director.film.
+If the variable held the predicates from a director who had also acted, the possible set of expanded edges would be different.</description>
     </item>
     
     <item>
@@ -617,6 +618,16 @@ Next up, string and geo searching. Or use the index to go to another topic.</des
       
       <guid>https://tour.dgraph.io/basic/13/</guid>
       <description>The output graph can set names for edges in the output with aliasing.</description>
+    </item>
+    
+    <item>
+      <title>Congratulations!</title>
+      <link>https://tour.dgraph.io/blocksvars/14/</link>
+      <pubDate>Tue, 02 May 2017 11:01:12 +1000</pubDate>
+      
+      <guid>https://tour.dgraph.io/blocksvars/14/</guid>
+      <description>You&amp;rsquo;ve finished this lesson.
+Next up, string and geo searching. Or use the index to go to another topic.</description>
     </item>
     
     <item>

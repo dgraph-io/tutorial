@@ -7,7 +7,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link
+    <meta
+  name="description"
+  
+    
+  
+  >
+
+<link
   rel="manifest"
   href="https://tour.dgraph.io//images/favicons/manifest.json"
   >
@@ -39,6 +46,32 @@
 <link rel="icon" sizes="96x96" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-96x96.png">
 <link rel="icon" sizes="16x16" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-16x16.png">
 
+
+    <script>
+        if (window.location.href.indexOf("dgraph.io") > -1) {
+      (function(i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function() {
+            (i[r].q = i[r].q || []).push(arguments);
+          }), (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-75364122-2", "auto");
+      ga("send", "pageview");
+    }
+    </script>
 
     
     <title>
@@ -87,6 +120,8 @@
         <option
           value="1.0.16"
           
+            selected="selected"
+          
         >
           Dgraph 1.0.16
         </option>
@@ -108,8 +143,6 @@
         <option
           value="20.03.0"
           
-            selected="selected"
-          
         >
           Dgraph 20.03.0
         </option>
@@ -125,8 +158,8 @@
 
 <script>
   window.DgTour = {
-    thisRelease: "20.03.0",
-    latestRelease: "20.03.0",
+    thisRelease: "1.0.16",
+    latestRelease: "1.0.16",
     home: "https:\/\/tour.dgraph.io\/"
   }
 </script>
@@ -222,7 +255,7 @@
         
           <li>
             <a href="https://tour.dgraph.io/basic/3/" class="topic">
-              Data types, Schema and Type System
+              Data types and Schema
             </a>
           </li>
         
@@ -360,19 +393,19 @@
         
           <li>
             <a href="https://tour.dgraph.io/schema/6/" class="topic">
-              Reverse edges Query
-            </a>
-          </li>
-        
-          <li>
-            <a href="https://tour.dgraph.io/schema/7/" class="topic">
               Exercise : Integrating existing data
             </a>
           </li>
         
           <li>
-            <a href="https://tour.dgraph.io/schema/8/" class="topic">
+            <a href="https://tour.dgraph.io/schema/7/" class="topic">
               Deleting Data
+            </a>
+          </li>
+        
+          <li>
+            <a href="https://tour.dgraph.io/schema/8/" class="topic">
+              Predicate Query
             </a>
           </li>
         
@@ -498,6 +531,12 @@
         
           <li>
             <a href="https://tour.dgraph.io/blocksvars/13/" class="topic">
+              expand and _predicate_
+            </a>
+          </li>
+        
+          <li>
+            <a href="https://tour.dgraph.io/blocksvars/14/" class="topic">
               Congratulations!
             </a>
           </li>
@@ -574,7 +613,7 @@
 
 
 <div class="notices note" >
-  <span class="type">Note</span> <p>For the following queries to run, you should have loaded data in the <a href="../../intro/3/">introduction</a>.</p>
+  <span class="type">Note</span> <p>For the following queries to run, you should have loaded data in the <a href="https://tour.dgraph.io/intro/3/">introduction</a>.</p>
 
 </div>
 
@@ -584,7 +623,7 @@
 and listed outgoing edges from those nodes.</p>
 <p>Dgraph identifies each node with a unique internal id, its UID. A UID is not an edge, but can it be returned in a query with <code>uid</code>.  If you already know a node&rsquo;s UID, it can be retrieved with <code>func: uid(&lt;uid-number&gt;)</code>.</p>
 <p>Something to try : Change the query to select someone else.
-You can check the <a href="../../intro/4">sample data</a> again.</p>
+You can check the <a href="https://tour.dgraph.io/intro/4">sample data</a> again.</p>
 
 <div class="expandable">
   <a data-action="toggle-expandable" href="#expand">
@@ -621,7 +660,7 @@ queries</a> or <a href="https://docs.dgraph.io/clients/">programming with Dgraph
 
         <div class="page-nav">
           
-            <a href="https://tour.dgraph.io/intro/8" data-action="go-prev" class="btn btn-secondary btn-sm page-nav-link"><i class="fa fa-chevron-left"></i></a>
+            <a href="https://tour.dgraph.io/intro/6" data-action="go-prev" class="btn btn-secondary btn-sm page-nav-link"><i class="fa fa-chevron-left"></i></a>
           
           <div class="nav-index">
             1 / 18
@@ -768,7 +807,6 @@ queries</a> or <a href="https://docs.dgraph.io/clients/">programming with Dgraph
     </main>
 
     <script src="https://tour.dgraph.io//js/build/dgraph-tour.js?8cb5063906121ab119297908cd5af67a"></script>
-    <script src="//unpkg.com/@dgraph-io/community"></script>
   </body>
 
 </html>

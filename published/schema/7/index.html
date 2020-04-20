@@ -7,7 +7,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link
+    <meta
+  name="description"
+  
+    
+  
+  >
+
+<link
   rel="manifest"
   href="https://tour.dgraph.io//images/favicons/manifest.json"
   >
@@ -40,10 +47,36 @@
 <link rel="icon" sizes="16x16" type="image/png" href="https://tour.dgraph.io//images/favicons/favicon-16x16.png">
 
 
+    <script>
+        if (window.location.href.indexOf("dgraph.io") > -1) {
+      (function(i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function() {
+            (i[r].q = i[r].q || []).push(arguments);
+          }), (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-75364122-2", "auto");
+      ga("send", "pageview");
+    }
+    </script>
+
     
     <title>
       
-        Exercise : Integrating existing data — A Tour of Dgraph
+        Deleting Data — A Tour of Dgraph
       
     </title>
 
@@ -87,6 +120,8 @@
         <option
           value="1.0.16"
           
+            selected="selected"
+          
         >
           Dgraph 1.0.16
         </option>
@@ -108,8 +143,6 @@
         <option
           value="20.03.0"
           
-            selected="selected"
-          
         >
           Dgraph 20.03.0
         </option>
@@ -125,8 +158,8 @@
 
 <script>
   window.DgTour = {
-    thisRelease: "20.03.0",
-    latestRelease: "20.03.0",
+    thisRelease: "1.0.16",
+    latestRelease: "1.0.16",
     home: "https:\/\/tour.dgraph.io\/"
   }
 </script>
@@ -222,7 +255,7 @@
         
           <li>
             <a href="https://tour.dgraph.io/basic/3/" class="topic">
-              Data types, Schema and Type System
+              Data types and Schema
             </a>
           </li>
         
@@ -360,19 +393,19 @@
         
           <li>
             <a href="https://tour.dgraph.io/schema/6/" class="topic">
-              Reverse edges Query
-            </a>
-          </li>
-        
-          <li>
-            <a href="https://tour.dgraph.io/schema/7/" class="topic active">
               Exercise : Integrating existing data
             </a>
           </li>
         
           <li>
-            <a href="https://tour.dgraph.io/schema/8/" class="topic">
+            <a href="https://tour.dgraph.io/schema/7/" class="topic active">
               Deleting Data
+            </a>
+          </li>
+        
+          <li>
+            <a href="https://tour.dgraph.io/schema/8/" class="topic">
+              Predicate Query
             </a>
           </li>
         
@@ -498,6 +531,12 @@
         
           <li>
             <a href="https://tour.dgraph.io/blocksvars/13/" class="topic">
+              expand and _predicate_
+            </a>
+          </li>
+        
+          <li>
+            <a href="https://tour.dgraph.io/blocksvars/14/" class="topic">
               Congratulations!
             </a>
           </li>
@@ -567,21 +606,62 @@
     <div class="col-12 col-sm-12 col-md-12 col-lg-6 vertical-stretch">
       <div class="panel">
         <div class="body">
-          <h1 class="lesson-heading">Exercise : Integrating existing data</h1>
+          <h1 class="lesson-heading">Deleting Data</h1>
 
           <div>
-            <p>We&rsquo;ve added a new schema and loaded some company data, but what about
-integrating our previous friends dataset with this company one.</p>
-<p>Trying to use the blank nodes from previous mutations won&rsquo;t work.  The blank nodes aren&rsquo;t persisted in the store, so when referring to nodes created in a previous mutation, it&rsquo;s the UID that&rsquo;s needed.  So instead of</p>
-<pre><code>_:sarah &lt;works_for&gt; _:company1 .
-</code></pre><p>it&rsquo;s</p>
-<pre><code>&lt;uid-for-sarah&gt; &lt;works_for&gt; &lt;uid-for-company1&gt; .
-</code></pre><p>Because the <code>uid</code> picked by Dgraph is unique, we can&rsquo;t help you this
-time.  Use the <code>uid</code>'s picked by your instance of Dgraph to  write a mutation that links the company and
-friendship data.  Hint: previous queries will tell you the <code>uid</code>.</p>
-<p>The process you&rsquo;ve just done here would normally done
-programmatically - query the data to get the <code>uid</code>'s, formulate the
-mutations, then batch  the updates.</p>
+            <p>There are three deletion options inside a delete mutation.</p>
+<ul>
+<li><code>&lt;uid&gt; &lt;edge&gt; &lt;uid&gt;/&quot;value&quot; .</code>  Delete a single triple</li>
+<li><code>&lt;uid&gt; &lt;edge&gt; * .</code>  Delete all triples for a given edge</li>
+<li><code>&lt;uid&gt; * * .</code> Delete all triples for a given node</li>
+</ul>
+<p>The examples given here are not complete. Uids assigned on your
+instance would be unique. Try something out; you&rsquo;re not going
+to hurt anyone, just delete their friends.</p>
+<p>You can do the same example using JSON format. You&rsquo;re able to do that through our clients, cURL or Ratel UI.</p>
+<h4 id="see-in-json">See in JSON:</h4>
+<p>Delete all triples for a given node</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"> {
+        <span style="color:#f92672">&#34;delete&#34;</span>: [
+            {
+                <span style="color:#f92672">&#34;uid&#34;</span>: <span style="color:#e6db74">&#34;0xa&#34;</span>
+            }
+        ]
+    }
+</code></pre></div><p>Delete all triples for a given edge</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"> {
+        <span style="color:#f92672">&#34;delete&#34;</span>: [
+            {
+                <span style="color:#f92672">&#34;uid&#34;</span>: <span style="color:#e6db74">&#34;0xa&#34;</span>,
+                <span style="color:#f92672">&#34;friends&#34;</span>: <span style="color:#66d9ef">null</span>
+            }
+        ]
+    }
+</code></pre></div><blockquote>
+<p>This doesn&rsquo;t delete their children which means in this case, it will not erase the &ldquo;friends&rdquo;. Only the relation would be deleted.</p>
+</blockquote>
+<p>Deleting relations and then their children</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"> {
+        <span style="color:#f92672">&#34;delete&#34;</span>: [
+            {
+                <span style="color:#f92672">&#34;uid&#34;</span>: <span style="color:#e6db74">&#34;0x2&#34;</span>, <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#960050;background-color:#1e0010">A</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">w</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">r</span> <span style="color:#960050;background-color:#1e0010">U</span><span style="color:#960050;background-color:#1e0010">I</span><span style="color:#960050;background-color:#1e0010">D</span><span style="color:#960050;background-color:#1e0010">.</span>
+                <span style="color:#f92672">&#34;comment&#34;</span>: {
+                   <span style="color:#f92672">&#34;uid&#34;</span>: <span style="color:#e6db74">&#34;0x3&#34;</span> <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#960050;background-color:#1e0010">D</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">e</span> <span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">n</span> <span style="color:#960050;background-color:#1e0010">(</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">d</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">)</span> <span style="color:#960050;background-color:#1e0010">w</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">h</span> <span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">h</span><span style="color:#960050;background-color:#1e0010">e</span> <span style="color:#960050;background-color:#1e0010">C</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">m</span><span style="color:#960050;background-color:#1e0010">m</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">t</span>
+            }
+            },
+            {
+                <span style="color:#f92672">&#34;uid&#34;</span>: <span style="color:#e6db74">&#34;0x3&#34;</span> <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#960050;background-color:#1e0010">D</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">e</span> <span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">h</span><span style="color:#960050;background-color:#1e0010">e</span> <span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">u</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">l</span> <span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">m</span><span style="color:#960050;background-color:#1e0010">m</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">t</span>
+            }
+        ]
+    }
+</code></pre></div>
+
+
+<div class="notices tip" >
+  <span class="type">Tip</span> <p>The JSON example may end up helping you better understand the format in RDF.</p>
+
+</div>
+
 
           </div>
         </div>
@@ -604,17 +684,29 @@ mutations, then batch  the updates.</p>
       
         
 <div class="runnable" data-initial="{
-  set {
-    ...michael... &lt;boss_of&gt; ...someone... .
-    
-    ...sarah... &lt;works_for&gt; ...company... .
+  delete {
+    # Delete a single triple
+    &lt;0x1c3eb&gt; &lt;name&gt; &#34;Steven&#34; .
+    &lt;0x1c3eb&gt; &lt;age&gt; &#34;38&#34; .
+
+    # Delete all triples for a given edge
+    &lt;0x1c3eb&gt; &lt;friend&gt; * .
+
+    # Delete all triples for a given node
+    &lt;0x1c3eb&gt; * * .
   }
 }
 " data-current="{
-  set {
-    ...michael... &lt;boss_of&gt; ...someone... .
-    
-    ...sarah... &lt;works_for&gt; ...company... .
+  delete {
+    # Delete a single triple
+    &lt;0x1c3eb&gt; &lt;name&gt; &#34;Steven&#34; .
+    &lt;0x1c3eb&gt; &lt;age&gt; &#34;38&#34; .
+
+    # Delete all triples for a given edge
+    &lt;0x1c3eb&gt; &lt;friend&gt; * .
+
+    # Delete all triples for a given node
+    &lt;0x1c3eb&gt; * * .
   }
 }
 " endpoint="/mutate" data-dirty="false">
@@ -643,10 +735,16 @@ mutations, then batch  the updates.</p>
     <div class="runnable-content runnable-code">
       <div class="runnable-tab-content active">
         <textarea class="query-content-editable">{
-  set {
-    ...michael... &lt;boss_of&gt; ...someone... .
-    
-    ...sarah... &lt;works_for&gt; ...company... .
+  delete {
+    # Delete a single triple
+    &lt;0x1c3eb&gt; &lt;name&gt; &#34;Steven&#34; .
+    &lt;0x1c3eb&gt; &lt;age&gt; &#34;38&#34; .
+
+    # Delete all triples for a given edge
+    &lt;0x1c3eb&gt; &lt;friend&gt; * .
+
+    # Delete all triples for a given node
+    &lt;0x1c3eb&gt; * * .
   }
 }
 </textarea>
@@ -735,7 +833,6 @@ mutations, then batch  the updates.</p>
     </main>
 
     <script src="https://tour.dgraph.io//js/build/dgraph-tour.js?8cb5063906121ab119297908cd5af67a"></script>
-    <script src="//unpkg.com/@dgraph-io/community"></script>
   </body>
 
 </html>

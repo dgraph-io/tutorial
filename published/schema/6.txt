@@ -1,9 +1,7 @@
 {
-  q(func: eq(name, "CompanyABC")) {
-    name
-    work_here : ~works_for {
-        uid
-        name
-    }
+  set {
+    ...michael... <boss_of> ...someone... .
+    
+    ...sarah... <works_for> ...company... .
   }
 }
