@@ -2,14 +2,13 @@ import functools
 import json
 import os
 import re
-import semver
 import subprocess as sp
 
 DEST_ENV = 'TOUR_DESTINATION'
 BASE_URL_ENV = 'TOUR_BASE_URL'
 
 def exec(*argv):
-    print("$>"," ".join(argv))
+    print("$>", " ".join(argv))
     res = sp.run(argv, stdout=sp.PIPE, stderr=sp.PIPE)
     if not res.returncode == 0:
         print('Error running', argv)
@@ -47,6 +46,11 @@ def runHugo(outSuffix=""):
         "config.toml,releases.json",
         )
 
+def compareVersions(a, b):
+    a = [int(x) for x in a.split('.')]
+    b = [int(x) for x in b.split('.')]
+    return a > b
+
 
 def getReleases():
     gitBranches = exec("git", "branch")
@@ -59,7 +63,7 @@ def getReleases():
             res.append(match.group(1))
     print('Found release versions', res)
 
-    # res.sort(key=functools.cmp_to_key(semver.compare), reverse=True)
+    res.sort(key=functools.cmp_to_key(compareVersions), reverse=True)
 
     res = ["master"] + res
     print('Order on the webpage: ', res)
@@ -75,7 +79,8 @@ def buildBranch(branch, dest, jsonData):
     runHugo(dest)
 
 def buildAll(releases):
-    latestRelease = releases[4]
+    # Latest release is one after master
+    latestRelease = releases[1]
     print('Latest Release (recommended to users): ', latestRelease)
     def jsonFor(version, latestRelease, releases):
         return {
