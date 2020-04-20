@@ -6,6 +6,27 @@ Visit https://tour.dgraph.io/ for the running instance.
 
 ## Developing
 
+### Basics
+
+```
+Install Python 3
+
+> brew install python3 \
+brew postinstall python3
+
+Install Hugo
+
+> brew install hugo
+
+Install the package semver in Python 3 env
+
+> python3 -m pip install semver
+```
+
+>This was tested on mac only. You need to check how to reproduce these steps in your OS.
+
+### Running
+
 The tutorial can be run locally by cloning this repo and running `scripts/local.sh`.
 The tour has been tested with hugo `v0.37`.
 
