@@ -59,7 +59,7 @@ def getReleases():
             res.append(match.group(1))
     print('Found release versions', res)
 
-    res.sort(key=functools.cmp_to_key(semver.compare), reverse=True)
+    # res.sort(key=functools.cmp_to_key(semver.compare), reverse=True)
 
     res = ["master"] + res
     print('Order on the webpage: ', res)
@@ -75,7 +75,7 @@ def buildBranch(branch, dest, jsonData):
     runHugo(dest)
 
 def buildAll(releases):
-    latestRelease = releases[1]
+    latestRelease = releases[4]
     print('Latest Release (recommended to users): ', latestRelease)
     def jsonFor(version, latestRelease, releases):
         return {
