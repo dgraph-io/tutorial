@@ -1,5 +1,5 @@
 {
-  michael_friends_and_pet(func: eq(name, "Michael")) {
+  michael_friends_and_pet(func: eq(name@., "Michael")) {
     name
     age
     friend {
