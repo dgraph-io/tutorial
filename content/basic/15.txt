@@ -1,7 +1,9 @@
 {
-  michael_number_friends(func: allofterms(name@., "Michael")) @normalize {
+  michael_and_pet_name(func: allofterms(name@., "Michael")) @normalize {
     name : name
     age
-    number_of_friends : count(friend)
+    owns_pet {
+      pet: name
+    }
   }
 }
