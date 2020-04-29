@@ -18,9 +18,6 @@ Install Hugo
 
 > brew install hugo
 
-Install the package semver in Python 3 env
-
-> python3 -m pip install semver
 ```
 
 >This was tested on mac only. You need to check how to reproduce these steps in your OS.
