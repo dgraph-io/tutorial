@@ -119,6 +119,5 @@ def main():
     exec("rm", "-rf", "published")
     exec("mv", publicDir, "published")
     exec("git", "add", "published")
-    exec("git", "commit", "-m", "Hugo rebuild all branches")
 
 main()

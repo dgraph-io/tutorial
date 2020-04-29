@@ -18,6 +18,14 @@ This will recompile `master` and all `dgraph-<version>` branches and store the s
 
 Structure of the tour releases/version switcher must mirror the structure of the Dgraph Docs releases/versions. (Starting from Dgraph 1.0.16 onwards).
 
+To rebuild all branches you have to run the following steps:
+
+1. At the root of this repo run `python3 scripts/build.py`.
+> It gonna stage the whole build.
+2. Create a new branch e.g: `yourName/rebuildBranches` and bring the staged changes to your branch.
+3. Now run `git commit -m "Hugo rebuild all branches"` publish and push your branch.
+4. Open a PR.
+
 ### Where to make changes
 
 - All changes/updates reflecting the changes in Dgraph master should be committed into the `master` branch of this repository (`dgraph-io/tutorial`).
