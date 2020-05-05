@@ -3,7 +3,6 @@
 type Person {
     name
     director.film
-    actor.film
 }
 
 type Movie {
@@ -19,6 +18,9 @@ type Genre {
 
 type Performance {
     performance.film
+    performance.character_note
     performance.character
     performance.actor
+    performance.special_performance_type
+    type
 }

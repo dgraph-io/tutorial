@@ -1,5 +1,5 @@
 {
-  michael_number_friends(func: allofterms(name, "Michael")) {
+  michael_number_friends(func: allofterms(name@., "Michael")) {
     name
     age
     count(friend)

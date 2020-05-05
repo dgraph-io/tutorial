@@ -1,5 +1,5 @@
 {
-  michael_friends_with_pets(func: allofterms(name, "Michael")) @cascade {
+  michael_friends_with_pets(func: allofterms(name@., "Michael")) @cascade {
     name
     age
     friend {
