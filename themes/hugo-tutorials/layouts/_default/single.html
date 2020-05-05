@@ -61,9 +61,25 @@
 
                 <nav class="lesson__navigation">
 
+                    {{ with .Params.prev }}
+                        <a href="{{ . | relURL }}" data-action="go-prev" class="lesson__prev">
+                            <span>
+                                <i class="fad fa-angle-double-left"></i>
+                            </span>
+                        </a>
+                    {{ end }}
+
                     <div>
                         {{ .File.BaseFileName }} / {{ $numContents }}
                     </div>
+
+                    {{ with .Params.next }}
+                        <a href="{{ . | relURL }}" data-action="go-next" class="lesson__next">
+                            <span>
+                                <i class="fad fa-angle-double-right"></i>
+                            </span>
+                        </a>
+                    {{ end }}
 
                 </nav>
 
