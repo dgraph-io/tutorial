@@ -1,57 +1,7 @@
-html body {
-    font-family: "Lato", sans-serif;
-    font-size: 15px;
-    line-height: 1.6;
-    background-color: #fff;
-    color: #3a3a3a;
-    margin: 0;
-}
-
 .lesson-heading {
   font-size: 1.8em;
   margin-bottom: 22px;
   font-weight: 600;
-}
-
-#header {
-  height: 58px;
-  border-bottom: 1px solid #EEE;
-  padding: 0 31px;
-  position: relative;
-  background: #ffffff;
-  opacity: 0.99;
-}
-#header .brand {
-  display: inline-block;
-  padding: 5px 0;
-}
-#header .name {
-  color: #000000;
-  font-size: 19px;
-  vertical-align: middle;
-}
-#header a:hover {
-  text-decoration: none;
-}
-#header .logo {
-  width: 44px;
-  vertical-align: middle;
-}
-
-#header .select-release {
-  position: relative;
-  margin-left: 4px;
-  top: 2px;
-}
-
-#header .menus {
-  float: right;
-}
-#header .menus .menu-item {
-  color: #424242;
-  font-size: 16px;
-  padding: 16px 17px;
-  display: inline-block;
 }
 
 #sidebar {
@@ -159,23 +109,6 @@ html body {
   flex: 1;
 }
 
-.page-nav {
-  text-align: center;
-  font-size: 21px;
-  flex: 0.03;
-  padding-bottom: 9px;
-}
-
-.page-nav .nav-index {
-  display: inline-block;
-  padding: 0 22px;
-}
-
-.page-nav-link {
-  padding: 4px 10px 0px;
-  font-size: 18px;
-}
-
 .expandable {
   margin-bottom: 1rem;
 }
@@ -239,32 +172,9 @@ html body {
   width: 124px;
 }
 
-.notices {
-  border-radius: 3px;
-  margin: 10px 0;
-  padding: 10px 19px;
-}
-
-.notices .type {
-  font-weight: 600;
-  margin-right: 8px;
-  font-size: 105%;
-}
-
-.notices p {
-  margin: 0;
-  display: inline-block;
-}
-
 .notices.incomplete {
   border-color: #f3d98c;
   background-color: #f7f7f1;
-  border: 1px solid #e2e2e2;
-}
-
-.notices.note {
-  border-color: #f3d98c;
-  background-color: #fffad5;
   border: 1px solid #e2e2e2;
 }
 
@@ -282,10 +192,4 @@ html body {
 
 .vertical-stretch {
   height: 100%;
-}
-
-.bottombar {
-  text-align: center;
-  padding: 3em 0;
-  background-color: #e6e6e6;
 }
