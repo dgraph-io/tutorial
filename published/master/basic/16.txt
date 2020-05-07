@@ -1,6 +1,6 @@
 {
   # A comment in a query looks like this
-  michael_and_pet_name(func: allofterms(name, "Michael")) @normalize {
+  michael_and_pet_name(func: allofterms(name@., "Michael")) @normalize {
     name : name # or like this
     age
     owns_pet {
