@@ -8,7 +8,8 @@
     <!-- "title - site-title" if not main page -->
     <title>
       {{ if not (eq .Section "") }}
-        {{ .Title }} — {{ .Site.Title }}
+        {{ .Title }} | {{ humanize .Page.Section }} | Dgraph Tour
+        
       {{ else }}
         {{ .Site.Title }}
       {{ end }}
