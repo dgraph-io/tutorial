@@ -203,7 +203,7 @@ The query here uses the sets of all Jane Campion&amp;rsquo;s films JC_films and 
       
       <guid>https://dgraph.io/tour/dgraph-20.03.0/schema/3/</guid>
       <description>Dgraph doesn&amp;rsquo;t support setting external IDs for nodes. If an application requires unique identifiers for nodes other than the UIDs assigned by Dgraph, then these have to be supplied as edges. It&amp;rsquo;s up to a user application to ensure the uniqueness of such IDs/keys.
-More about in https://docs.dgraph.io/mutations/#external-ids</description>
+More about in https://dgraph.io/docs/mutations/#external-ids</description>
     </item>
     
     <item>
@@ -662,7 +662,7 @@ This is helpful for debugging queries and for tutorials that need to explain par
       
       <guid>https://dgraph.io/tour/dgraph-20.03.0/basic/17/</guid>
       <description>Dgraph supports facets — key value pairs on edges — as an extension to RDF triples. That is, facets add properties to edges, rather than to nodes. For example, a friend edge between two nodes may have a boolean property of close friendship. Facets can also be used as weights for edges.
-More details about Facets you can find in our Docs: https://docs.dgraph.io/query-language/#facets-edge-attributes
+More details about Facets you can find in our Docs: https://dgraph.io/docs/query-language/#facets-edge-attributes
 Reading all the documentation about Facets you will have examples of:</description>
     </item>
     

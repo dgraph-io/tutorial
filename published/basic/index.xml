@@ -194,7 +194,7 @@ This is helpful for debugging queries and for tutorials that need to explain par
       
       <guid>https://dgraph.io/tour/basic/17/</guid>
       <description>Dgraph supports facets — key value pairs on edges — as an extension to RDF triples. That is, facets add properties to edges, rather than to nodes. For example, a friend edge between two nodes may have a boolean property of close friendship. Facets can also be used as weights for edges.
-More details about Facets you can find in our Docs: https://docs.dgraph.io/query-language/#facets-edge-attributes
+More details about Facets you can find in our Docs: https://dgraph.io/docs/query-language/#facets-edge-attributes
 Reading all the documentation about Facets you will have examples of:</description>
     </item>
     

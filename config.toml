@@ -1,4 +1,4 @@
-baseURL = "https://tour.dgraph.io"
+baseURL = "https://dgraph.io/tour/"
 languageCode = "en-us"
 title = "A Tour of Dgraph"
 theme="hugo-tutorials"
