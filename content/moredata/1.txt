@@ -12,7 +12,6 @@ performance.actor: [uid] .
 performance.special_performance_type: [uid] .
 type: [uid] .
 
-
 # Define Types
 
 type Person {
