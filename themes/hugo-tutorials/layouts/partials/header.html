@@ -8,11 +8,13 @@
     <!-- "title - site-title" if not main page -->
     <title>
       {{ if not (eq .Section "") }}
-        {{ .Title }} — {{ .Site.Title }}
+        {{ .Title }} | {{ humanize .Page.Section }} | Dgraph Tour
+        
       {{ else }}
         {{ .Site.Title }}
       {{ end }}
     </title>
+    <link rel="canonical" href="{{ .RelPermalink }}" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500&display=swap" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
