@@ -31,9 +31,11 @@
     
     <title>
       
-        A bigger dataset — A Tour of Dgraph
+        A bigger dataset | Moredata | Dgraph Tour
+        
       
     </title>
+    <link rel="canonical" href="https://dgraph.io/tour/master/moredata/1/" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500&display=swap" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
@@ -301,6 +303,31 @@ performance.character: [uid] .
 performance.actor: [uid] .
 performance.special_performance_type: [uid] .
 type: [uid] .
+
+# Define Types
+
+type Person {
+    name
+    director.film
+    actor.film
+}
+
+type Movie {
+    name
+    initial_release_date
+    genre
+    starring
+}
+
+type Genre {
+    name
+}
+
+type Performance {
+    performance.film
+    performance.character
+    performance.actor
+}
 " data-current="# Define Directives and index
 
 director.film: [uid] @reverse .
@@ -314,6 +341,31 @@ performance.character: [uid] .
 performance.actor: [uid] .
 performance.special_performance_type: [uid] .
 type: [uid] .
+
+# Define Types
+
+type Person {
+    name
+    director.film
+    actor.film
+}
+
+type Movie {
+    name
+    initial_release_date
+    genre
+    starring
+}
+
+type Genre {
+    name
+}
+
+type Performance {
+    performance.film
+    performance.character
+    performance.actor
+}
 " endpoint="/alter" data-dirty="false">
   <div class="runnable-pane runnable-pane-query">
     <div class="topbar">
@@ -350,6 +402,31 @@ performance.character: [uid] .
 performance.actor: [uid] .
 performance.special_performance_type: [uid] .
 type: [uid] .
+
+# Define Types
+
+type Person {
+    name
+    director.film
+    actor.film
+}
+
+type Movie {
+    name
+    initial_release_date
+    genre
+    starring
+}
+
+type Genre {
+    name
+}
+
+type Performance {
+    performance.film
+    performance.character
+    performance.actor
+}
 </textarea>
       </div>
     </div>
