@@ -1,0 +1,10 @@
+{
+  language_support(func: allofterms(name@hi, "अमित")) {
+    name@bn:hi:en
+    age
+    friend {
+      name@ko:ru
+      age
+    }
+  }
+}

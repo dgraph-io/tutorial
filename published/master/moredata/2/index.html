@@ -31,9 +31,11 @@
     
     <title>
       
-        Movies Schema — A Tour of Dgraph
+        Movies Schema | Moredata | Dgraph Tour
+        
       
     </title>
+    <link rel="canonical" href="https://dgraph.io/tour/master/moredata/2/" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500&display=swap" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
@@ -59,6 +61,7 @@
   	<script>
         window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-666192333');
     </script>
+    
   </head>
   <body>
     <main>
@@ -70,6 +73,13 @@
 	<div class="page-logo">
 		<a href="https://dgraph.io/">
 			<img src="https://dgraph.io/assets/images/logo.svg">
+		</a>
+		<a href="javascript:;" class="nav-icon" >
+			<div class="hamburger">
+				<div class="line line-1"></div>
+				<div class="line line-2"></div>
+				<div class="line line-3"></div>
+			</div>
 		</a>
 	</div>
 	<nav class="page-nav">
@@ -94,6 +104,16 @@
                         <span>Downloads</span>
                     </a>
                 </li>
+                <li>
+                    <a href="https://dgraph.io/badger" data-label="Badger">
+                        <span>Badger</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://dgraph.io/compare-features" data-label="Compare Features">
+                        <span>Compare Features</span>
+                    </a>
+                </li>
             </ul>
         </li>
         <li>
@@ -102,7 +122,7 @@
             </div>
             <ul>
                 <li>
-                    <a href="https://blog.dgraph.io" data-label="Blog">
+                    <a href="https://dgraph.io/blog" data-label="Blog">
                         <span>Blog</span>
                     </a>
                 </li>
@@ -119,6 +139,11 @@
                 <li>
                     <a href="https://slack.dgraph.io" target="_blank" data-label="Slack">
                         <span>Slack</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://dgraph.io/paper" target="_blank" data-label="Paper">
+                        <span>Paper</span>
                     </a>
                 </li>
             </ul>
@@ -244,7 +269,7 @@
 
                         <p>Dgraph queries, Schema Types and the visualization will help us understand the schema of the movies dataset.</p>
 <p>As you&rsquo;ll see in the following pages, we can view the data from a number of perspectives; considering for example directors, movies, genres or even locations as the primary starting point.</p>
-<p>Let&rsquo;s have a look from the perspective of directors.  Kathryn Bigelow directed the early 90&rsquo;s classic Point Break.  We&rsquo;ll begin with her and learn about the schema.</p>
+<p>Let&rsquo;s have a look from the perspective of directors. Kathryn Bigelow directed the early 90&rsquo;s classic Point Break. We&rsquo;ll begin with her and learn about the schema.</p>
 <p>Checking the Type Schema tells us that directors as a &ldquo;Person Type&rdquo; have a <code>name</code> and are connected to the movies they directed via <code>director.film</code>.</p>
 <p>Extend the query a level deeper by also including</p>
 <pre><code>director.film (first: 1) {     
@@ -269,59 +294,17 @@
                 <div class="lesson__code">
 
                     
-<div class="runnable" data-initial="# Define Types
-
-type Person {
-    name
-    director.film
-    actor.film
+<div class="runnable" data-initial="{
+	# write any query you like in the sandbox
 }
-
-type Movie {
-    name
-    initial_release_date
-    genre
-    starring
+" data-current="{
+	# write any query you like in the sandbox
 }
-
-type Genre {
-    name
-}
-
-type Performance {
-    performance.film
-    performance.character
-    performance.actor
-}
-" data-current="# Define Types
-
-type Person {
-    name
-    director.film
-    actor.film
-}
-
-type Movie {
-    name
-    initial_release_date
-    genre
-    starring
-}
-
-type Genre {
-    name
-}
-
-type Performance {
-    performance.film
-    performance.character
-    performance.actor
-}
-" endpoint="/alter" data-dirty="false">
+" endpoint="/query" data-dirty="false">
   <div class="runnable-pane runnable-pane-query">
     <div class="topbar">
       <div class="pane-title">
-        <span>Endpoint: /alter</span>
+        <span>Endpoint: /query</span>
       </div>
 
       <span class="server-switch">
@@ -340,29 +323,8 @@ type Performance {
 
     <div class="runnable-content runnable-code">
       <div class="runnable-tab-content active">
-        <textarea class="query-content-editable"># Define Types
-
-type Person {
-    name
-    director.film
-    actor.film
-}
-
-type Movie {
-    name
-    initial_release_date
-    genre
-    starring
-}
-
-type Genre {
-    name
-}
-
-type Performance {
-    performance.film
-    performance.character
-    performance.actor
+        <textarea class="query-content-editable">{
+	# write any query you like in the sandbox
 }
 </textarea>
       </div>

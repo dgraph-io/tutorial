@@ -1,0 +1,9 @@
+{
+  michaels_friends(func: eq(name, "Michael")) {
+    name
+    age
+    friend {
+      name@.
+    }
+  }
+}
