@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta name="generator" content="Hugo 0.69.0" />
+	<meta name="generator" content="Hugo 0.72.0" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="apple-touch-icon" sizes="57x57" href="https://dgraph.io/assets/images/favicons/apple-icon-57x57.png">
@@ -31,14 +31,14 @@
         A Tour of Dgraph
       
     </title>
-    <link rel="canonical" href="https://dgraph.io/tour/master/" />
+    <link rel="canonical" href="http://localhost:8000/master/" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500&display=swap" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
     <link href="https://dgraph.io/assets/css/style.min.css?05062020-2" rel="stylesheet" type="text/css" />
-    <link href="https://dgraph.io/tour/master/css/runnable-custom.css?fd581e09310956d9e7e07a71e2d31145" rel="stylesheet"/>
+    <link href="http://localhost:8000/master/css/runnable-custom.css?fd581e09310956d9e7e07a71e2d31145" rel="stylesheet"/>
 
-    <link href="https://dgraph.io/tour/master/css/font-awesome/css/all.css" rel="stylesheet"/>
+    <link href="http://localhost:8000/master/css/font-awesome/css/all.css" rel="stylesheet"/>
 
     
     <script type="text/javascript">
@@ -86,6 +86,11 @@
             </div>
             <ul>
                 <li>
+                    <a href="https://dgraph.io/slash-graphql" data-label="Slash GraphQL">
+                        <span>Slash GraphQL</span>
+                    </a>
+                </li>
+                <li>
                     <a href="https://dgraph.io/graphql" data-label="GraphQL">
                         <span>GraphQL</span>
                     </a>
@@ -95,11 +100,7 @@
                         <span>Enterprise</span>
                     </a>
                 </li>
-                <li>
-                    <a href="https://dgraph.io/downloads" data-label="Downloads">
-                        <span>Downloads</span>
-                    </a>
-                </li>
+
                 <li>
                     <a href="https://dgraph.io/badger" data-label="Badger">
                         <span>Badger</span>
@@ -117,11 +118,7 @@
                 <span>Learn</span>
             </div>
             <ul>
-                <li>
-                    <a href="https://dgraph.io/blog" data-label="Blog">
-                        <span>Blog</span>
-                    </a>
-                </li>
+
                 <li>
                     <a href="https://tour.dgraph.io" target="_blank" data-label="Interactive Tour">
                         <span>Interactive Tour</span>
@@ -138,6 +135,7 @@
                     </a>
                 </li>
                 <li>
+
                     <a href="https://dgraph.io/paper" target="_blank" data-label="Paper">
                         <span>Paper</span>
                     </a>
@@ -158,6 +156,13 @@
                     </a>
                 </li>
             </ul>
+        </li>
+        <li class="parent-link">
+            <div data-label="Blog">
+                <a href="https://dgraph.io/blog" >
+                    <span>Blog</span>
+                </a>
+            </div>
         </li>
         <li>
             <div data-label="Company"><span>Company</span></div>
@@ -186,16 +191,15 @@
         </li>
     </ul>
 </nav>
-
 	<div class="page-cta">
     <ul>
-        <li class="hide-tablet">
-            <a href="https://dgraph.io/tour/master/contact" title="Contact">Contact</a>
+        <li class="hide-tablet d-none d-xl-flex">
+            <a href="https://dgraph.io/contact" title="Contact">Contact</a>
         </li>
         <li>
-            <a href="https://dgraph.io/tour/master/downloads" title="Download" class="button button--secondary">
+            <a href="https://dgraph.io/downloads" title="Download" class="button button--secondary justify-content-center justify-content-xl-start">
                 <span>Download</span>
-                <i class="fas fa-arrow-right"></i>
+                <i class="fas fa-arrow-right d-none d-xl-block"></i>
             </a>
         </li>
     </ul>
@@ -215,7 +219,7 @@
                 <p class="page-intro__subtitle" style="max-width: 520px;">An interactive tutorial with real queries and real results,
         designed to run on Chrome on your machine.</p>
 
-                <a href="https://dgraph.io/tour/master/intro/1/" class="button button--primary">
+                <a href="http://localhost:8000/master/intro/1/" class="button button--primary">
                     <span>Get Started</span>
                     <i class="fas fa-arrow-right"></i>
                 </a>
@@ -240,7 +244,7 @@
 
                                 <p>In this lesson you&#39;ll learn how to set up and run Dgraph for the tutorial and learn about graph databases.</p>
 
-                                <a href="https://dgraph.io/tour/master/intro/1/" class="button button--secondary">
+                                <a href="http://localhost:8000/master/intro/1/" class="button button--secondary">
                                     <span>Start</span>
                                     <i class="fas fa-arrow-right"></i>
                                 </a>
@@ -255,7 +259,7 @@
 
                                 <p>Here you&#39;ll learn the basics of how to query graph data from Dgraph and how to use and interpret the results.</p>
 
-                                <a href="https://dgraph.io/tour/master/basic/1/" class="button button--secondary">
+                                <a href="http://localhost:8000/master/basic/1/" class="button button--secondary">
                                     <span>Start</span>
                                     <i class="fas fa-arrow-right"></i>
                                 </a>
@@ -270,7 +274,7 @@
 
                                 <p>This lesson shows you how schemas work inside Dgraph, and how to add, update and delete data (in Dgraph, that&#39;s mutate data).</p>
 
-                                <a href="https://dgraph.io/tour/master/schema/1/" class="button button--secondary">
+                                <a href="http://localhost:8000/master/schema/1/" class="button button--secondary">
                                     <span>Start</span>
                                     <i class="fas fa-arrow-right"></i>
                                 </a>
@@ -285,7 +289,7 @@
 
                                 <p>Now that you&#39;ve got some Dgraph experience, this lesson shows you how to use dgraph live loader to load large datasets.  You&#39;ll need this bigger dataset for the remaining sections of the tutorial.</p>
 
-                                <a href="https://dgraph.io/tour/master/moredata/1/" class="button button--secondary">
+                                <a href="http://localhost:8000/master/moredata/1/" class="button button--secondary">
                                     <span>Start</span>
                                     <i class="fas fa-arrow-right"></i>
                                 </a>
@@ -300,7 +304,7 @@
 
                                 <p>This lesson shows you how to build more powerful queries with multiple query blocks and query variables.</p>
 
-                                <a href="https://dgraph.io/tour/master/blocksvars/1/" class="button button--secondary">
+                                <a href="http://localhost:8000/master/blocksvars/1/" class="button button--secondary">
                                     <span>Start</span>
                                     <i class="fas fa-arrow-right"></i>
                                 </a>
@@ -315,7 +319,7 @@
 
                                 <p>In this lesson, you&#39;ll learn about Dgraph&#39;s search features.</p>
 
-                                <a href="https://dgraph.io/tour/master/search/1/" class="button button--secondary">
+                                <a href="http://localhost:8000/master/search/1/" class="button button--secondary">
                                     <span>Start</span>
                                     <i class="fas fa-arrow-right"></i>
                                 </a>
@@ -464,7 +468,7 @@
 
 </body>
 
-    <script src="https://dgraph.io/tour/master/js/build/dgraph-tour.js"></script>
+    <script src="http://localhost:8000/master/js/build/dgraph-tour.js"></script>
     <script src="//unpkg.com/@dgraph-io/community"></script>
 
 </html>
