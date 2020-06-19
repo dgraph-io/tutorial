@@ -4,7 +4,7 @@
 
     {{ partial "page_header.html" . }}
 
-    <div class="page-intro">
+    <div class="page-intro xs-mt-80">
         <div class="container">
 
             <div class="page-intro__header">
@@ -23,22 +23,24 @@
         </div>
     </div>
 
-    <section class="page-body">
-<div class="container">
-<div class="tabset">
-  <!-- Tab 1 -->
-  <input type="radio" name="tabset" id="tab1" aria-controls="main" checked>
-  <label for="tab1">Main</label>
-  <!-- Tab 2 -->
-  <input type="radio" name="tabset" id="tab2" aria-controls="bonus">
-  <label for="tab2">Bonus</label>
-  <!-- Tab 3 -->
-  <input type="radio" name="tabset" id="tab3" aria-controls="videos">
-  <label for="tab3">Videos</label>
+
+<section class="page-body">
+        <div class="container">
+        <div class="tabset">
+          <!-- Tab 1 -->
+          <input type="radio" name="tabset" id="tab1" aria-controls="main" checked>
+          <label for="tab1">Main</label>
+          <!-- Tab 2 -->
+          <input type="radio" name="tabset" id="tab2" aria-controls="bonus">
+          <label for="tab2">Bonus</label>
+          <!-- Tab 3 -->
+          <input type="radio" name="tabset" id="tab3" aria-controls="videos">
+          <label for="tab3">Videos</label>
 
   <div class="tab-panels">
     <section id="main" class="tab-panel">
        <div class="section--large">
+
             <div class="container">
 
                 <div class="row lesson-tiles">
@@ -117,8 +119,8 @@
         </div>
      </section>
     </div>
-</div>
-</div>
+ </div>
+ </div>
 
 
         <div class="section--large">
@@ -178,7 +180,7 @@
 
             </div>
         </div>
-    </section>
+</section>
 
     {{ partial "page_footer.html" . }}
 
