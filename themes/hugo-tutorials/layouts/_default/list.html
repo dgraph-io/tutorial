@@ -24,12 +24,24 @@
     </div>
 
     <section class="page-body">
+<div class="container">
+<div class="tabset">
+  <!-- Tab 1 -->
+  <input type="radio" name="tabset" id="tab1" aria-controls="main" checked>
+  <label for="tab1">Main</label>
+  <!-- Tab 2 -->
+  <input type="radio" name="tabset" id="tab2" aria-controls="bonus">
+  <label for="tab2">Bonus</label>
+  <!-- Tab 3 -->
+  <input type="radio" name="tabset" id="tab3" aria-controls="videos">
+  <label for="tab3">Videos</label>
 
-        <div class="section--large">
+  <div class="tab-panels">
+    <section id="main" class="tab-panel">
+       <div class="section--large">
             <div class="container">
 
                 <div class="row lesson-tiles">
-
                     {{ range .Site.Menus.main }}
                         <div class="col-6">
                             <div class="tile lesson-tiles__tile">
@@ -46,11 +58,68 @@
                             </div>
                         </div>
                     {{ end }}
-
                 </div>
 
             </div>
         </div>
+    </section>
+
+    <section id="bonus" class="tab-panel">
+         <div class="section--large">
+            <div class="container">
+                <h1 class="page-intro__title">Bonus Lessons</h1>
+                <div class="row lesson-tiles">
+
+                    {{ range .Site.Menus.bonus }}
+                        <div class="col-6">
+                            <div class="tile lesson-tiles__tile">
+
+                                <h2>{{ .Name }}</h2>
+
+                                <p>{{ index $.Site.Params.menudesc .Identifier }}</p>
+
+                                <a href="{{ .URL }}" class="button button--secondary">
+                                    <span>Start</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+
+                            </div>
+                        </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+     </section>
+
+    <section id="videos" class="tab-panel">
+         <div class="section--large">
+            <div class="container">
+                <h1 class="page-intro__title">Dgraph Videos</h1>
+                <div class="row lesson-tiles">
+                    {{ range .Site.Menus.videos }}
+                        <div class="col-6">
+                            <div class="tile lesson-tiles__tile">
+
+                                <h2>{{ .Name }}</h2>
+
+                                <p>{{ index $.Site.Params.menudesc .Identifier }}</p>
+
+                                <a href="{{ .URL }}" class="button button--secondary">
+                                    <span>Start</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+
+                            </div>
+                        </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+     </section>
+    </div>
+</div>
+</div>
+
 
         <div class="section--large">
             <div class="container">
