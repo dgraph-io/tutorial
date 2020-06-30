@@ -2,7 +2,7 @@
 
 A step by step introductory tutorial of Dgraph. Built with [Hugo](https://gohugo.io/).
 
-Visit https://tour.dgraph.io/ for the running instance.
+Visit https://dgraph.io/tour for the running instance.
 
 ## Developing
 

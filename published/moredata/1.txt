@@ -1,6 +1,7 @@
 # Define Directives and index
 
 director.film: [uid] @reverse .
+actor.film: [uid] @count .
 genre: [uid] @reverse .
 initial_release_date: dateTime @index(year) .
 name: string @index(exact, term) @lang .

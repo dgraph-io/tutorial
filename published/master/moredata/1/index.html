@@ -195,6 +195,7 @@
         </li>
     </ul>
 </nav>
+
 	<div class="page-cta">
     <ul>
         <li class="hide-tablet d-none d-xl-flex">
@@ -320,6 +321,7 @@ functions require particular indexes.</p>
 <div class="runnable" data-initial="# Define Directives and index
 
 director.film: [uid] @reverse .
+actor.film: [uid] @count .
 genre: [uid] @reverse .
 initial_release_date: dateTime @index(year) .
 name: string @index(exact, term) @lang .
@@ -358,6 +360,7 @@ type Performance {
 " data-current="# Define Directives and index
 
 director.film: [uid] @reverse .
+actor.film: [uid] @count .
 genre: [uid] @reverse .
 initial_release_date: dateTime @index(year) .
 name: string @index(exact, term) @lang .
@@ -419,6 +422,7 @@ type Performance {
         <textarea class="query-content-editable"># Define Directives and index
 
 director.film: [uid] @reverse .
+actor.film: [uid] @count .
 genre: [uid] @reverse .
 initial_release_date: dateTime @index(year) .
 name: string @index(exact, term) @lang .
