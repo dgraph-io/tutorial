@@ -170,7 +170,7 @@ Let’s improve the query to get Michael and his network of friends.</descriptio
       
       <guid>https://dgraph.io/tour/dgraph-1.1.0/intro/2/</guid>
       <description>Let&amp;rsquo;s run an instance of Dgraph on your machine; that&amp;rsquo;ll give you a handle on installing Dgraph and loading data yourself.
-All the data in this tutorial will be stored in the instance you install, and all the queries will look for Dgraph on your local machine. By running it in a container, you&amp;rsquo;ll have a fresh Dgraph that will serve as a sandbox for you to learn and experiment.</description>
+All the data in this tutorial will be stored in the instance you install and all the queries will look for Dgraph on your local machine. By running it in a container, you&amp;rsquo;ll have a fresh Dgraph that will serve as a sandbox for you to learn and experiment with.</description>
     </item>
     
     <item>
