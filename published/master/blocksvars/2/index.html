@@ -39,7 +39,7 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500&display=swap" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-    <link href="https://dgraph.io/assets/css/style.min.css?05062020-2" rel="stylesheet" type="text/css" />
+    <link href="https://dgraph.io/assets/css/style.min.css?07032020-1" rel="stylesheet" type="text/css" />
     <link href="https://dgraph.io/tour/master/css/runnable-custom.css?fd581e09310956d9e7e07a71e2d31145" rel="stylesheet"/>
 
     <link href="https://dgraph.io/tour/master/css/font-awesome/css/all.css" rel="stylesheet"/>
@@ -61,6 +61,17 @@
   	<script>
         window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-666192333');
     </script>
+    
+<script>
+  (function(h,o,t,j,a,r){
+  h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+  h._hjSettings={hjid:1883865,hjsv:6};
+  a=o.getElementsByTagName('head')[0];
+  r=o.createElement('script');r.async=1;
+  r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+  a.appendChild(r);
+  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
     
   </head>
   <body>
@@ -117,6 +128,14 @@
                 </li>
             </ul>
         </li>
+        <li class="parent-link">
+            <div data-label="Customers">
+                <a href="https://dgraph.io/case-studies" >
+                    <span>Customers</span>
+                </a>
+            </div>
+        </li>
+       
         <li>
             <div data-label="Learn" class="is-active">
                 <span>Learn</span>
@@ -128,11 +147,7 @@
                         <span>Interactive Tour</span>
                     </a>
                 </li>
-                <li>
-                    <a href="https://discuss.dgraph.io" target="_blank" data-label="Forum">
-                        <span>Forum</span>
-                    </a>
-                </li>
+                
               
                 <li>
 
@@ -140,18 +155,6 @@
                         <span>Paper</span>
                     </a>
                 </li>
-            </ul>
-        </li>
-        <li class="parent-link">
-            <div data-label="Customers">
-                <a href="https://dgraph.io/case-studies" >
-                    <span>Customers</span>
-                </a>
-            </div>
-        </li>
-        <li>
-            <div data-label="Docs"><span>Docs</span></div>
-            <ul>
                 <li>
                     <a href="https://docs.dgraph.io" target="_blank" data-label="Dgraph Docs">
                         <span>Dgraph Docs</span>
@@ -164,6 +167,7 @@
                 </li>
             </ul>
         </li>
+       
         <li class="parent-link">
             <div data-label="Blog">
                 <a href="https://dgraph.io/blog" >
@@ -195,6 +199,13 @@
                     </a>
                 </li>
             </ul>
+        </li>
+        <li class="parent-link">
+            <div data-label="Community">
+                <a href="https://discuss.dgraph.io" target="_blank" data-label="Community" >
+                    <span>Community </span>
+                </a>
+            </div>
         </li>
        
         <li class="parent-link nav-desktop-hide">
@@ -500,50 +511,57 @@ matched by the block, and that the variable evaluates to all <code>uid</code>'s 
 
     <footer class="page-footer">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-5 col-sm-4">
-        <div class="row">
-          <div class="col-12 col-md-6 page-footer__nav">
-            <h3 class="zeta">Products</h3>
-            <ul>
-              <li><a href="https://dgraph.io/graphql">GraphQL</a></li>
-              <li><a href="https://dgraph.io/enterprise">Enterprise</a></li>
-              <li><a href="https://dgraph.io/downloads">Downloads</a></li>
-            </ul>
-          </div>
-          <div class="col-12 col-md-6 page-footer__nav">
-            <h3 class="zeta">Learn</h3>
-            <ul>
-              <li><a href="https://blog.dgraph.io" target="_blank">Blog</a></li>
-              <li><a href="https://tour.dgraph.io" target="_blank">Interactive Tour</a></li>
-              <li><a href="https://discuss.dgraph.io" target="_blank">Forum</a></li>
-            </ul>
-          </div>
+    <div class="d-flex justify-content-between flex-column flex-lg-row">
+      <div class="left-menu d-flex order-1 order-md-2 order-lg-1 justify-content-between">
+        <div class="page-footer__nav pb-5 pb-md-0">
+          <h3 class="zeta">Products</h3>
+          <ul>
+            <li><a href="https://dgraph.io/slash-graphql">Slash GraphQL</a></li>
+            <li><a href="https://dgraph.io/graphql">GraphQL</a></li>
+            <li><a href="https://dgraph.io/enterprise">Enterprise</a></li>
+            <li><a href="https://dgraph.io/badger">Badger</a></li>
+            <li><a href="https://dgraph.io/compare-features">Compare Features</a></li>
+          </ul>
+        </div>
+        <div class="page-footer__nav pb-5 pb-md-0">
+          
+          <h3 class="zeta">LEARN</h3>
+          <ul>
+            <li><a href="https://dgraph.io/tour?__hstc=181257784.ca2d2a4e6a778f9c03d7afebaf21b4a9.1589987217645.1593671168105.1593677928618.110&amp;__hssc=181257784.58.1593677928618&amp;__hsfp=4017451622" target="_blank">Interactive Tour</a></li>
+            <li><a href="https://dgraph.io/paper">Paper</a></li>
+            <li><a href="https://docs.dgraph.io/?__hstc=181257784.ca2d2a4e6a778f9c03d7afebaf21b4a9.1589987217645.1593671168105.1593677928618.110&amp;__hssc=181257784.58.1593677928618&amp;__hsfp=4017451622" target="_blank">Dgraph Docs</a></li>
+            <li><a href="https://graphql.dgraph.io/docs?__hstc=181257784.ca2d2a4e6a778f9c03d7afebaf21b4a9.1589987217645.1593671168105.1593677928618.110&amp;__hssc=181257784.58.1593677928618&amp;__hsfp=4017451622" target="_blank">GraphQL Docs</a></li>
+          </ul>
+        </div>
+       
+        <div class="page-footer__nav pb-5 pb-md-0">
+          <ul>
+            <li>
+              <h3 class="zeta"><a href="https://dgraph.io/case-studies">CUSTOMERS</a></h3>
+            </li>
+            <li>
+              <h3 class="zeta"><a href="https://dgraph.io/blog">Blog</a></h3>
+            </li>
+            <li>
+              <h3 class="zeta"><a href="https://discuss.dgraph.io/?__hstc=181257784.ca2d2a4e6a778f9c03d7afebaf21b4a9.1589987217645.1593671168105.1593677928618.110&amp;__hssc=181257784.58.1593677928618&amp;__hsfp=4017451622" target="_blank">Community</a></h3>
+            </li>
+           
+            
+          </ul>
+        </div>
+        <div class="page-footer__nav pb-5 pb-md-0">
+          <h3 class="zeta">Company</h3>
+          <ul>
+            <li><a href="https://dgraph.io/about">Team</a></li>
+            <li><a href="https://dgraph.io/careers">Careers</a></li>
+            <li><a href="https://dgraph.io/contact">Contact</a></li>
+            <li><a href="https://dgraph.io/conduct">Conduct</a></li>
+          </ul>
         </div>
       </div>
-      <div class="col-5 col-sm-4">
-        <div class="row">
-          <div class="col-12 col-md-6 page-footer__nav">
-            <h3 class="zeta">Docs</h3>
-            <ul>
-              <li><a href="https://docs.dgraph.io" target="_blank">Dgraph Docs</a></li>
-              <li><a href="https://graphql.dgraph.io/docs/" target="_blank">GraphQL Docs</a></li>
-            </ul>
-          </div>
-          <div class="col-12 col-md-6 page-footer__nav">
-            <h3 class="zeta">Company</h3>
-            <ul>
-              <li><a href="https://dgraph.io/about">Team</a></li>
-              <li><a href="https://dgraph.io/careers">Careers</a></li>
-              <li><a href="https://dgraph.io/contact">Contact</a></li>
-              <li><a href="https://dgraph.io/conduct">Conduct</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 offset-lg-1 border-above-sm">
-        <div class="page-footer__cta"><a href="https://dgraph.io/downloads" title="Download" class="button button--secondary"><span>Download</span><i class="fas fa-arrow-right"></i></a></div>
-        <div class="page-footer__address">
+      <div class="border-above-sm order-1 order-lg-2 d-flex flex-column flex-md-row flex-lg-column justify-content-between justify-content-lg-start mb-5 mb-lg-0 align-items-center align-items-lg-start">
+        <div class="page-footer__cta order-md-2 order-lg-1"><a href="https://dgraph.io/downloads" title="Download" class="button button--secondary"><span>Download</span><i class="fas fa-arrow-right"></i></a></div>
+        <div class="page-footer__address order-1 order-lg-2">
           <p>
             655 Montgomery Street, 7th Floor<br>
             San Francisco, CA 94111
@@ -553,6 +571,7 @@ matched by the block, and that the variable evaluates to all <code>uid</code>'s 
         </div>
       </div>
     </div>
+    
     <div class="page-footer__social">
       <ul>
         <li><a href="https://twitter.com/dgraphlabs" target="_blank"><i class="fab fa-twitter"></i></a></li>
@@ -568,6 +587,7 @@ matched by the block, and that the variable evaluates to all <code>uid</code>'s 
     </div>
   </div>
 </footer>
+
 
 
 </body>
