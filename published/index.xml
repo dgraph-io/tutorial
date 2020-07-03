@@ -627,8 +627,8 @@ Next up, string and geo searching. Or use the index to go to another topic.</des
       <guid>https://dgraph.io/tour/basic/14/</guid>
       <description>The @cascade directive removes any nodes that don&amp;rsquo;t have all matching edges in the query.
 Another use is to remove nodes where a filter inside a block returns no results.
-In the query below, Dgraph returns all Michael&amp;rsquo;s friends, whether or not they own a pet.
-{ michael_friends_with_pets(func: allofterms(name@., &amp;quot;Michael&amp;quot;)) { name age friend { name@. owns_pet } } } With the @cascade directive, friends of Michael that don&amp;rsquo;t own a pet are not included in the result.</description>
+In the query below, Dgraph returns all Michael&amp;rsquo;s friends, and only the friends of friends who are over 27.
+{ michael_friends(func: allofterms(name, &amp;quot;Michael&amp;quot;)) { name age friend { name@. friend @filter(ge(age, 27)) { name@. age } } } } With the @cascade directive, friends of Michael that don&amp;rsquo;t have friends who are over 27 are not included in the result.</description>
     </item>
     
     <item>

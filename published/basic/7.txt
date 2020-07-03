@@ -1,5 +1,5 @@
 {
-  michael_friends_and(func: allofterms(name@., "Michael")) {
+  michael_friends_and(func: allofterms(name, "Michael")) {
     name
     age
     friend @filter(ge(age, 27) AND le(age, 48)) {
