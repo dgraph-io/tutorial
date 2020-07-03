@@ -8,12 +8,22 @@
     </div>
 
     <div class="page-subnav__labels">
+        {{- $templateParam := print "/" ($.Param "tour") "/" -}}
         {{- $currentSection := print "/" (index (split .URL "/") 1) "/" -}}
+        {{ if not (eq $templateParam "/bonus/") }}
         {{ range $.Site.Menus.main }}
             {{- $thisSection := print "/" (index (split .URL "/") 1) "/" -}}
             <a class="page-subnav__label{{ if eq ($currentSection|lower) ($thisSection|lower) }} is-active{{ end }}" href="{{ .URL }}">
                 <span>{{ .Name }}</span>
             </a>
+        {{ end }}
+        {{ else }}
+        {{ range $.Site.Menus.bonus }}
+            {{- $thisSection := print "/" (index (split .URL "/") 1) "/" -}}
+            <a class="page-subnav__label{{ if eq ($currentSection|lower) ($thisSection|lower) }} is-active{{ end }}" href="{{ .URL }}">
+                <span>{{ .Name }}</span>
+            </a>
+        {{ end }}
         {{ end }}
     </div>
 

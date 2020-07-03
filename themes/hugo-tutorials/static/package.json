@@ -7,22 +7,22 @@
     "build": "webpack --config webpack.prod.js"
   },
   "dependencies": {
-    "codemirror": "^5.48.2",
-    "dgraph-js-http": "^1.1.0-rc18",
-    "highlight.js": "^9.15.9",
-    "jquery": "^3.4.1"
+    "codemirror": "^5.54.0",
+    "dgraph-js-http": "^20.7.0-rc1",
+    "highlight.js": "^10.1.1",
+    "jquery": "^3.5.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/plugin-transform-runtime": "^7.4.4",
-    "@babel/preset-env": "^7.4.5",
-    "@babel/runtime": "^7.4.5",
-    "babel-loader": "^8.0.6",
-    "css-loader": "^3.1.0",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.33.0",
-    "webpack-cli": "^3.3.2",
-    "webpack-dev-server": "^3.6.0",
-    "webpack-merge": "^4.2.1"
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/runtime": "^7.10.2",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.6.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^4.2.2"
   }
 }
