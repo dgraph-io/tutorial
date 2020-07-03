@@ -301,6 +301,31 @@ performance.character: [uid] .
 performance.actor: [uid] .
 performance.special_performance_type: [uid] .
 type: [uid] .
+
+# Define Types
+
+type Person {
+    name
+    director.film
+    actor.film
+}
+
+type Movie {
+    name
+    initial_release_date
+    genre
+    starring
+}
+
+type Genre {
+    name
+}
+
+type Performance {
+    performance.film
+    performance.character
+    performance.actor
+}
 " data-current="# Define Directives and index
 
 director.film: [uid] @reverse .
@@ -314,6 +339,31 @@ performance.character: [uid] .
 performance.actor: [uid] .
 performance.special_performance_type: [uid] .
 type: [uid] .
+
+# Define Types
+
+type Person {
+    name
+    director.film
+    actor.film
+}
+
+type Movie {
+    name
+    initial_release_date
+    genre
+    starring
+}
+
+type Genre {
+    name
+}
+
+type Performance {
+    performance.film
+    performance.character
+    performance.actor
+}
 " endpoint="/alter" data-dirty="false">
   <div class="runnable-pane runnable-pane-query">
     <div class="topbar">
@@ -350,6 +400,31 @@ performance.character: [uid] .
 performance.actor: [uid] .
 performance.special_performance_type: [uid] .
 type: [uid] .
+
+# Define Types
+
+type Person {
+    name
+    director.film
+    actor.film
+}
+
+type Movie {
+    name
+    initial_release_date
+    genre
+    starring
+}
+
+type Genre {
+    name
+}
+
+type Performance {
+    performance.film
+    performance.character
+    performance.actor
+}
 </textarea>
       </div>
     </div>
