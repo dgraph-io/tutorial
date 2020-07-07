@@ -1,20 +1,20 @@
 import $ from "jquery";
 
 
-// $('#tour-release').change(function(e) {
-//   var dest = e.target.value;
-//   if (dest == DgTour.thisRelease) {
-//     return
-//   }
-//   if (dest == DgTour.latestRelease) {
-//     window.location.href = DgTour.home;
-//     return
-//   }
-//   if (dest != "master") {
-//     dest = "dgraph-" + dest
-//   }
-//   window.location.href = DgTour.home + dest;
-// });
+$('#tour-release').change(function(e) {
+  var dest = e.target.value;
+  if (dest == DgTour.thisRelease) {
+    return
+  }
+  if (dest == DgTour.latestRelease) {
+    window.location.href = DgTour.home;
+    return
+  }
+  if (dest != "master") {
+    dest = "dgraph-" + dest
+  }
+  window.location.href = DgTour.home + dest;
+});
 
 
 $(document).on('click', 'a[data-action="toggle-expandable"]', function(e) {
@@ -104,6 +104,8 @@ $('.topic.active').closest('.topics').addClass('open');
     });
     $(document).ready(function () {
 
+     
+
       $('.nav-icon').click(function () {
         $('.page-nav').toggleClass('shownav');
         $(this).toggleClass('active');
@@ -158,6 +160,11 @@ $('.topic.active').closest('.topics').addClass('open');
           $this.val($(this).attr('rel'));
           $list.hide();
           //console.log($this.val());
+      });
+      $('.select-options li').click(function(e) {
+        $('.select-options li').removeClass('selected');
+
+        $(this).addClass('selected');
       });
     
       $(document).click(function() {
