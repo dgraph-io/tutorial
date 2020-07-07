@@ -1,24 +1,3 @@
-# Define Types
-
-type Person {
-    name
-    director.film
-    actor.film
-}
-
-type Movie {
-    name
-    initial_release_date
-    genre
-    starring
-}
-
-type Genre {
-    name
-}
-
-type Performance {
-    performance.film
-    performance.character
-    performance.actor
+{
+	# write any query you like in the sandbox
 }

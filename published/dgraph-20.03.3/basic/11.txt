@@ -1,0 +1,9 @@
+{
+  lots_of_friends(func: ge(count(friend), 2)) {
+    name@.
+    age
+    friend {
+      name@.
+    }
+  }
+}
