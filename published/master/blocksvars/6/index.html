@@ -302,14 +302,18 @@
                         <h2 class="lesson__title">Exercise: Query Variables linking queries</h2>
 
                         <p>We&rsquo;ve seen two common uses for variables: filtering and reorganizing results.  Another is linking two queries to gain some new insight based on the joined results.</p>
+
 <p>Let&rsquo;s look at an example of joining two queries.</p>
+
 <p>For two directors find the actors who have worked with both (not
 necessarily on the same movie).  Many directors won&rsquo;t have actors in
 common, so start with some you are sure will (the answer below uses
 Peter Jackson and Martin Scorsese who have a small number of actors in
 common).</p>
+
 <p>As an optional challenge, for each
 of those actors list the movies they have made with either director.</p>
+
 
 <div class="expandable">
   <a data-action="toggle-expandable" href="#expand">
@@ -342,7 +346,9 @@ of those actors list the movies they have made with either director.</p>
     }
   }
 }
-</code></pre><p>The syntax <code>uid(F_PJ, F_MS)</code> means the UIDs in either <code>F_PJ</code> or <code>F_MS</code> and is equivalent to <code>uid(F_PJ) OR uid(F_MS)</code>.</p>
+</code></pre>
+
+<p>The syntax <code>uid(F_PJ, F_MS)</code> means the UIDs in either <code>F_PJ</code> or <code>F_MS</code> and is equivalent to <code>uid(F_PJ) OR uid(F_MS)</code>.</p>
 
   </div>
 </div>

@@ -242,18 +242,26 @@
 
                         <h2 class="lesson__title">Deleting Data</h2>
 
-                        <p>There are three deletion options inside a delete mutation.</p>
+                        
+
+<p>There are three deletion options inside a delete mutation.</p>
+
 <ul>
 <li><code>&lt;uid&gt; &lt;edge&gt; &lt;uid&gt;/&quot;value&quot; .</code>  Delete a single triple</li>
 <li><code>&lt;uid&gt; &lt;edge&gt; * .</code>  Delete all triples for a given edge</li>
 <li><code>&lt;uid&gt; * * .</code> Delete all triples for a given node</li>
 </ul>
+
 <p>The examples given here are not complete. Uids assigned on your
 instance would be unique. Try something out; you&rsquo;re not going
 to hurt anyone, just delete their friends.</p>
+
 <p>You can do the same example using JSON format. You&rsquo;re able to do that through our clients, cURL or Ratel UI.</p>
+
 <h4 id="see-in-json">See in JSON:</h4>
+
 <p>Delete all triples for a given node</p>
+
 <pre><code> {
         &quot;delete&quot;: [
             {
@@ -261,7 +269,10 @@ to hurt anyone, just delete their friends.</p>
             }
         ]
     }
-</code></pre><p>Delete all triples for a given edge</p>
+</code></pre>
+
+<p>Delete all triples for a given edge</p>
+
 <pre><code> {
         &quot;delete&quot;: [
             {
@@ -270,10 +281,14 @@ to hurt anyone, just delete their friends.</p>
             }
         ]
     }
-</code></pre><blockquote>
+</code></pre>
+
+<blockquote>
 <p>This doesn&rsquo;t delete their children which means in this case, it will not erase the &ldquo;friends&rdquo;. Only the relation would be deleted.</p>
 </blockquote>
+
 <p>Deleting relations and then their children</p>
+
 <pre><code> {
         &quot;delete&quot;: [
             {
@@ -288,6 +303,8 @@ to hurt anyone, just delete their friends.</p>
         ]
     }
 </code></pre>
+
+
 
 
 <div class="notices tip" >

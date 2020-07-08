@@ -302,13 +302,20 @@
                         <h2 class="lesson__title">GroupBy</h2>
 
                         <p>A <code>groupby</code> query aggregates query results given a set of properties on which to group elements.  For example, a query containing the block</p>
+
 <pre><code>director.film @groupby(genre) {
   a as count(uid)
 }
-</code></pre><p>finds nodes reachable along the <code>director.film</code> edge, partitions these into groups based on genre, then counts how many nodes are in each group.</p>
+</code></pre>
+
+<p>finds nodes reachable along the <code>director.film</code> edge, partitions these into groups based on genre, then counts how many nodes are in each group.</p>
+
 <p>Inside a <code>groupby</code> block, only aggregations are allowed and <code>count</code> can only be applied to <code>uid</code>.</p>
+
 <p>The result is the grouped edges and the value variables for the aggregations.</p>
+
 <p>In this case the value variable is a map from genres to values.</p>
+
 <p>Often, it&rsquo;s necessary to use <code>groupby</code> with another query to obtain values other than aggregations.</p>
 
 

@@ -304,7 +304,9 @@
                         <p>As well as <code>min</code>, <code>max</code>, <code>avg</code>, and <code>sum</code> to aggregate, Dgraph supports a host of
 functions that can be applied to value variables.  These need to be
 enclosed in <code>math(...)</code> and stored in a variable.</p>
+
 <p>The full list is:</p>
+
 <table>
 <thead>
 <tr>
@@ -313,42 +315,50 @@ enclosed in <code>math(...)</code> and stored in a variable.</p>
 <th align="center">Notes</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td align="center"><code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>%</code></td>
 <td align="center"><code>int</code> and <code>float</code></td>
 <td align="center"></td>
 </tr>
+
 <tr>
 <td align="center"><code>min</code> <code>max</code></td>
 <td align="center">All types except <code>geo</code> and <code>bool</code></td>
 <td align="center"></td>
 </tr>
+
 <tr>
 <td align="center"><code>&lt;</code> <code>&gt;</code> <code>&lt;=</code> <code>&gt;=</code> <code>==</code> <code>!=</code></td>
 <td align="center">All, except <code>geo</code> and <code>bool</code></td>
 <td align="center">boolean result</td>
 </tr>
+
 <tr>
-<td align="center"><code>floor</code> <code>ceil``ln</code> <code>exp</code> <code>sqrt</code></td>
+<td align="center"><code>floor</code> <code>ceil</code><code>ln</code> <code>exp</code> <code>sqrt</code></td>
 <td align="center"><code>int</code> and <code>float</code></td>
 <td align="center"></td>
 </tr>
+
 <tr>
 <td align="center"><code>since</code></td>
 <td align="center"><code>date</code></td>
 <td align="center">number of seconds (<code>float</code>) from the time specified</td>
 </tr>
+
 <tr>
 <td align="center"><code>pow(a, b)</code></td>
 <td align="center"><code>int</code> and <code>float</code></td>
 <td align="center"><code>a^b</code></td>
 </tr>
+
 <tr>
 <td align="center"><code>logbase(a,b)</code></td>
 <td align="center"><code>int</code> and <code>float</code></td>
 <td align="center"><code>log(a)</code> to the base <code>b</code></td>
 </tr>
+
 <tr>
 <td align="center"><code>cond(a, b, c)</code></td>
 <td align="center"><code>a</code> must be a boolean</td>
@@ -356,6 +366,7 @@ enclosed in <code>math(...)</code> and stored in a variable.</p>
 </tr>
 </tbody>
 </table>
+
 <p>Note that these are functions on values, not functions to aggregate value maps.  The results of these functions are value variables and can be aggregated.</p>
 
 

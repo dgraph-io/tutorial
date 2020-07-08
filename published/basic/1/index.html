@@ -309,13 +309,19 @@
 
 </div>
 
+
 <p>Let’s have a look at a hello world query in GraphQL+-.</p>
+
 <p>Every query has a name, and the result is labelled with the same name.</p>
+
 <p>The search criteria <code>func: ...</code> matches nodes.  Function <code>eq</code> does what you&rsquo;d expect, matching nodes with a <code>name</code> equalling &ldquo;Michael&rdquo;.  The result is the matched nodes
 and listed outgoing edges from those nodes.</p>
+
 <p>Dgraph identifies each node with a unique internal id, its UID. A UID is not an edge, but can it be returned in a query with <code>uid</code>.  If you already know a node&rsquo;s UID, it can be retrieved with <code>func: uid(&lt;uid-number&gt;)</code>.</p>
+
 <p>Something to try : Change the query to select someone else.
 You can check the <a href="../../intro/4">sample data</a> again.</p>
+
 
 <div class="expandable">
   <a data-action="toggle-expandable" href="#expand">
@@ -323,25 +329,32 @@ You can check the <a href="../../intro/4">sample data</a> again.</p>
   </a>
   <div class="expandable-content">
     <p>Find a name in the data and try</p>
+
 <pre><code>{
   find_someone(func: eq(name, &quot;...name in here...&quot;)) {
     name
     age
   }
 }
-</code></pre><p>Or look at the <code>UID</code>s in the data and try</p>
+</code></pre>
+
+<p>Or look at the <code>UID</code>s in the data and try</p>
+
 <pre><code>{
   find_someone(func: uid(...uid number here...)) {
     name
     age
   }
 }
-</code></pre><p>You can edit the queries and try whatever you like.  When there are
+</code></pre>
+
+<p>You can edit the queries and try whatever you like.  When there are
 answers like this, cut and paste them into the query panel, then edit and
 run them.</p>
 
   </div>
 </div>
+
 
 <p>The tutorial will handle the running of the query for you, so
 just focus on the query text.  You can also learn about <a href="https://docs.dgraph.io/get-started/#step-3-run-queries">posting

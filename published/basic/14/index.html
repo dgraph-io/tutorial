@@ -303,9 +303,12 @@
 
                         <p>The <code>@cascade</code> directive removes any nodes that don&rsquo;t have all matching
 edges in the query.</p>
+
 <p>Another use is to remove nodes where a filter inside a block returns
 no results.</p>
+
 <p>In the query below, Dgraph returns all Michael&rsquo;s friends, whether or not they own a pet.</p>
+
 <pre><code>{
   michael_friends_with_pets(func: allofterms(name@., &quot;Michael&quot;)) {
     name
@@ -316,7 +319,10 @@ no results.</p>
     }
   }
 }
-</code></pre><p>With the <code>@cascade</code> directive, friends of Michael that don&rsquo;t own a pet are not included in the result.</p>
+</code></pre>
+
+<p>With the <code>@cascade</code> directive, friends of Michael that don&rsquo;t own a pet are not included in the result.</p>
+
 <pre><code>{
   michael_friends_with_pets(func: allofterms(name@., &quot;Michael&quot;)) @cascade {
     name
@@ -327,7 +333,9 @@ no results.</p>
     }
   }
 }
-</code></pre><p>You can read more about <code>@cascade</code> directive in our documentation site: <a href="https://dgraph.io/docs/query-language/#cascade-directive">https://dgraph.io/docs/query-language/#cascade-directive</a></p>
+</code></pre>
+
+<p>You can read more about <code>@cascade</code> directive in our documentation site: <a href="https://dgraph.io/docs/query-language/#cascade-directive">https://dgraph.io/docs/query-language/#cascade-directive</a></p>
 
 
                     </div>

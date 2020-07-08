@@ -302,36 +302,37 @@
                         <h2 class="lesson__title">Functions and filtering</h2>
 
                         <p>Nodes are filtered based on functions applied to the node&rsquo;s outgoing edges.</p>
+
 <p>So far the queries have only applied a filter to the top level nodes,
 but filters can be applied to any node in the query.</p>
+
 <p>Note the syntax difference between filtering at the root of a query and filtering on internal blocks.</p>
+
 <p>There are many functions for filtering, some of them are</p>
+
 <ul>
-<li>
-<p><code>allOfTerms(edge_name, &quot;term1 ... termN&quot;)</code>: matches nodes with
+<li><p><code>allOfTerms(edge_name, &quot;term1 ... termN&quot;)</code>: matches nodes with
 an outgoing <code>string</code> edge <code>edge_name</code> where the string contains all
-listed terms.</p>
-</li>
-<li>
-<p><code>anyOfTerms(edge_name, &quot;term1 ... termN&quot;)</code>: As with <code>allOfTerms</code>,
-but matches at least one term.</p>
-</li>
-<li>
-<p>The equalities and inequalities can be applied to edges of types:
+listed terms.</p></li>
+
+<li><p><code>anyOfTerms(edge_name, &quot;term1 ... termN&quot;)</code>: As with <code>allOfTerms</code>,
+but matches at least one term.</p></li>
+
+<li><p>The equalities and inequalities can be applied to edges of types:
 <code>int</code>, <code>float</code>, <code>string</code> and <code>date</code></p>
+
 <ul>
 <li><code>eq(edge_name, value)</code>: equal to</li>
 <li><code>ge(edge_name, value)</code>: greater than or equal to</li>
 <li><code>le(edge_name, value)</code>: less than or equal to</li>
 <li><code>gt(edge_name, value)</code>: greater than</li>
 <li><code>lt(edge_name, value)</code>: less than</li>
+</ul></li>
+
+<li><p>There&rsquo;s also regular expressions, full text search and geo search,
+but those are bigger topics that&rsquo;ll have their own section in the tutorial</p></li>
 </ul>
-</li>
-<li>
-<p>There&rsquo;s also regular expressions, full text search and geo search,
-but those are bigger topics that&rsquo;ll have their own section in the tutorial</p>
-</li>
-</ul>
+
 <p>Functions can only be applied to predicates that have been indexed except
 the case when comparison functions (<code>eq</code>, <code>ge</code>, <code>gt</code>, <code>le</code>, <code>lt</code>) are used in filter -
 that’s part of the <a href="../../schema/1">lesson about schema</a>.</p>

@@ -79,7 +79,7 @@ While not strictly required, it’s a good style to indent the query.</descripti
 So far the queries have only applied a filter to the top level nodes, but filters can be applied to any node in the query.
 Note the syntax difference between filtering at the root of a query and filtering on internal blocks.
 There are many functions for filtering, some of them are
-  allOfTerms(edge_name, &amp;quot;term1 ... termN&amp;quot;): matches nodes with an outgoing string edge edge_name where the string contains all listed terms.</description>
+ allOfTerms(edge_name, &amp;quot;term1 ... termN&amp;quot;): matches nodes with an outgoing string edge edge_name where the string contains all listed terms.</description>
     </item>
     
     <item>
@@ -160,7 +160,7 @@ At root, we use func: and a function to find an initial set of nodes. So far we&
       <description>The @cascade directive removes any nodes that don&amp;rsquo;t have all matching edges in the query.
 Another use is to remove nodes where a filter inside a block returns no results.
 In the query below, Dgraph returns all Michael&amp;rsquo;s friends, and only the friends of friends who are over 27.
-{ michael_friends(func: allofterms(name, &amp;quot;Michael&amp;quot;)) { name age friend { name@. friend @filter(ge(age, 27)) { name@. age } } } } With the @cascade directive, friends of Michael that don&amp;rsquo;t have friends who are over 27 are not included in the result.</description>
+{ michael_friends(func: allofterms(name, &amp;quot;Michael&amp;quot;)) { name age friend { name@. friend @filter(ge(age, 27)) { name@. age } } } }  With the @cascade directive, friends of Michael that don&amp;rsquo;t have friends who are over 27 are not included in the result.</description>
     </item>
     
     <item>
@@ -170,8 +170,8 @@ In the query below, Dgraph returns all Michael&amp;rsquo;s friends, and only the
       
       <guid>https://dgraph.io/tour/dgraph-20.03.0/basic/15/</guid>
       <description>The @normalize directive
-  returns only edges listed with an alias, and
-  flattens the result to remove nesting
+ returns only edges listed with an alias, and
+ flattens the result to remove nesting
   Tip Aliased names can be the same as the original edge.
  </description>
     </item>

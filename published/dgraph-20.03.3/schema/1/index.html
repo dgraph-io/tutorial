@@ -302,18 +302,23 @@
                         <h2 class="lesson__title">Adding schema - mutating schema</h2>
 
                         <p>As we saw in an <a href="../../basic/3/">earlier lesson</a>, Dgraph stores a schema describing the types of predicates.</p>
+
 <p>When we want to add new data to an existing schema, we can just add it.  But if we want to add new data in a new schema we have two choices</p>
+
 <ul>
 <li>Add the data and let Dgraph work out the schema, or</li>
 <li>Specify a schema and then add the data</li>
 </ul>
+
 <p>Dgraph can work out the schema just fine. Functions at query root
 can only be applied to indexed predicates and for that we need to specify the schema.
 Comparison functions at the query root level (aka <code>func:</code>) can only be applied on indexed
 predicates, which are added by annotating the predicate definition on the schema.
 Since v1.2, comparison functions can now be used on <code>@filter</code> directives even on predicates that
 have not been indexed.</p>
+
 <p>Alter schema to define data types and to add indexes.</p>
+
 <p>Run to alter schema.  The index allows applying filter functions,
 such as searching for all companies that participate in a particular
 industry.</p>

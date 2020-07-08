@@ -611,11 +611,14 @@
             <p>Let&rsquo;s take a second to think about that last query.  The variable
 <code>JC_actor</code> evaluated to all actors in any Jane Campion film.  No
 matter where we use it, it&rsquo;s the full set.</p>
+
 <p>That&rsquo;s the key to using Dgraph&rsquo;s variables correctly: understand that
 they are global in the sense that they evaluate to all nodes that
 could match that edge in the query, not local in the sense that would
 evaluate to different results for each Jane Campion film.</p>
+
 <p>We can also use query variables in another query block, both as the nodes the root filter matches and in internal filters.</p>
+
 <p>Peter Jackson often appears in his own films, mostly in the background
 or just a glimpse, but he&rsquo;s there. The query shows all films that Peter Jackson
 has both directed and appeared in.</p>

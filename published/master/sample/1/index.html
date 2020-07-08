@@ -298,29 +298,39 @@
                         <h2 class="lesson__title">Reverse Edges</h2>
 
                         <p>Each graph edge is unidirectional. It points from one node to another.</p>
+
 <p>A lot of times, you wish to access data in both directions, forward and backward.</p>
+
 <p>Instead of having to send edges in both directions, you can use the @reverse keyword at the end of a uid (entity) field declaration in the schema.</p>
+
 <p>This specifies that the reverse edge should be automatically generated. For example, if we want to add a reverse edge for directed_by predicate, we should have a schema as follows.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">func</span> <span style="color:#a6e22e">Foo</span>(<span style="color:#a6e22e">bar</span> <span style="color:#a6e22e">Bar</span>) <span style="color:#a6e22e">error</span> {
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">bar</span>.<span style="color:#a6e22e">Do</span>();
+
+<pre><code class="language-js">func Foo(bar Bar) error {
+  return bar.Do();
 }
-</code></pre></div>
+</code></pre>
+
+
 <div class="expandable">
   <a data-action="toggle-expandable" href="#expand">
     <i class="fa fa-caret-down"></i> Show answer
   </a>
   <div class="expandable-content">
-    <pre><code>{
-  me(id:abc) {
-    _name_
+    <pre><code>  {
+    me(id:abc) {
+      _name_
+    }
   }
-}
 </code></pre>
+
   </div>
 </div>
 
+
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
 

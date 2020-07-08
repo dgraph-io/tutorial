@@ -243,13 +243,18 @@
                         <h2 class="lesson__title">Graphs as results</h2>
 
                         <p>The last query got us some data, but the result wasn’t very interesting, nor was it much to do with graphs.</p>
+
 <p>In Dgraph and GraphQL+-, queries return graphs, not tables or lists of data.</p>
+
 <p>A query is executed against a graph and the result is a subset
 of the queried graph, or some manipulation or calculation based
 on the queried graph.</p>
+
 <p>Let’s improve the query to get Michael and his network of friends.</p>
+
 <p>Something to try : Michael also owns a pet, find it and its <code>name</code>. The
 <code>owns_pet</code> edge will help here.</p>
+
 
 <div class="expandable">
   <a data-action="toggle-expandable" href="#expand">
@@ -269,6 +274,7 @@ on the queried graph.</p>
   }
 }
 </code></pre>
+
   </div>
 </div>
 

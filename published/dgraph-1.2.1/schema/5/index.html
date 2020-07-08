@@ -610,17 +610,18 @@
           <div>
             <p>Edges are directional.  A query can&rsquo;t traverse an edge in
 reverse.</p>
+
 <p>There are two choices to query in both directions</p>
+
 <ul>
-<li>
-<p>Add the reverse edge to the schema and add all the reverse edge data.</p>
-</li>
-<li>
-<p>Tell Dgraph to always store the reverse edge using the <code>@reverse</code> keyword in the schema.</p>
-</li>
+<li><p>Add the reverse edge to the schema and add all the reverse edge data.</p></li>
+
+<li><p>Tell Dgraph to always store the reverse edge using the <code>@reverse</code> keyword in the schema.</p></li>
 </ul>
+
 <p>Run the schema mutation and Dgraph will compute all the reverse edges.
-The reverse edge of <code>an_edge</code> is <code>~an_edge</code>.</p>
+ The reverse edge of <code>an_edge</code> is <code>~an_edge</code>.</p>
+
 <p>In terms of data modeling, some reverse edges always make sense, such as <code>friend</code>. Others, such as <code>boss_of</code>, are sometimes, but not always bidirectional.</p>
 
           </div>

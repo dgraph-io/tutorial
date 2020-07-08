@@ -244,19 +244,30 @@
 
                         <p>Let&rsquo;s run an instance of Dgraph on your machine; that&rsquo;ll give you a
 handle on installing Dgraph and loading data yourself.</p>
+
 <p>All the data in this tutorial will be stored in the instance you
 install, and all the queries will look for Dgraph on your local machine.
 By running it in a container, you&rsquo;ll have a fresh Dgraph that will
 serve as a sandbox for you to learn and experiment.</p>
+
 <p>There are several ways to install and run Dgraph, all of which
 you can find in the <a href="https://dgraph.io/downloads">Download page</a>.
 For this tutorial, let&rsquo;s run Dgraph in a container with Docker.</p>
+
 <p>First, grab the latest version of <a href="https://www.docker.com/">Docker</a>.</p>
+
 <p>Then, pull the latest Dgraph version with:</p>
+
 <pre><code>docker pull dgraph/dgraph:v20.03.0
-</code></pre><p>Let&rsquo;s create a folder for storing Dgraph data outside of the container:</p>
+</code></pre>
+
+<p>Let&rsquo;s create a folder for storing Dgraph data outside of the container:</p>
+
 <pre><code>mkdir -p ~/dgraph
-</code></pre><p>Now, to run Dgraph in Docker, it&rsquo;s:</p>
+</code></pre>
+
+<p>Now, to run Dgraph in Docker, it&rsquo;s:</p>
+
 <pre><code># Run Dgraph zero
 docker run -it -p 5080:5080 -p 6080:6080 -p 8080:8080 \
   -p 9080:9080 -p 8000:8000 -v ~/dgraph:/dgraph --name dgraph \
@@ -267,7 +278,10 @@ docker exec -it dgraph dgraph alpha --lru_mb 2048 --zero localhost:5080
 
 # And in another, run ratel (Dgraph UI)
 docker exec -it dgraph dgraph-ratel
-</code></pre><p>That&rsquo;s it!</p>
+</code></pre>
+
+<p>That&rsquo;s it!</p>
+
 <p>Dgraph Alpha will now be running and listening for HTTP requests on port <code>8080</code> and Ratel would be listening on port <code>8000</code>.
 There are more options, but that&rsquo;s all we need to get started.</p>
 

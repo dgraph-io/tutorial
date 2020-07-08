@@ -302,14 +302,19 @@
                         <h2 class="lesson__title">Language Support</h2>
 
                         <p>Dgraph supports string text and queries as UTF-8.</p>
+
 <p>String valued predicates can be annotated with a language tag.</p>
+
 <p>Amit&rsquo;s name was stored in English <code>&quot;Amit&quot;@en</code>, Hindi <code>&quot;अमित&quot;@hi</code> and Bengali <code>&quot;অমিত&quot;@bn</code>.  Michael&rsquo;s was stored in English.  Artyom&rsquo;s was stored in English and Russian <code>&quot;Артём&quot;@ru</code>.  Sang Hyun&rsquo;s was stored in English and Korean <code>&quot;상현&quot;@ko</code>.</p>
+
 <p>Queries can search over text in the tagged languages by specifying which language to search and which languages to return.  The syntax <code>@lang1:...:langN</code> specifies the preference order for returned languages with the following rules:</p>
+
 <ul>
 <li>at most one result will be returned</li>
 <li>if results exists in the preferred languages, the left most (in the preference list) of these is returned</li>
 <li>if no result exists in the preferred languages no result is returned unless the preference list is terminated with <code>.</code>, in which case the value without a specified language is returned, or if there is no value without language, a value in “some” language is returned.</li>
 </ul>
+
 <p>Try changing <code>name@ko:ru</code> to <code>name@ko:ru:.</code> to find the missing friend&rsquo;s name.</p>
 
 

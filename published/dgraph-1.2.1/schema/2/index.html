@@ -609,15 +609,21 @@
 
           <div>
             <p>Now that the schema has been updated we can add data as triples.</p>
+
 <p>Dgraph creates its own internal id’s for nodes, but we need some way to refer to the same node many times in our input data. That’s what <code>_:company1</code> does.</p>
+
 <p>Technically, these are ‘blank nodes’. They tell Dgraph to create a node, give it an internal id and make sure it’s used consistently.</p>
+
 <p>After the upload, the label <code>_:company1</code> doesn’t exist in
 Dgraph and we can’t query for it. You’ll see in the result that
 Dgraph has replaced it with an internal id. You can query for this
 internal id &mdash; remember <code>func: uid(&lt;uid_number&gt;)</code>.</p>
+
 <p>Making changes to the graph stored in Dgraph is called mutating the
 data.</p>
+
 <p>You can load the same example data using JSON format. You&rsquo;re able to do that through our clients, cURL or Ratel UI.</p>
+
 <p>See the JSON:
 
 <div class="expandable">
@@ -674,9 +680,11 @@ data.</p>
         ]
     }
 </code></pre>
+
   </div>
 </div>
 </p>
+
 
 
 

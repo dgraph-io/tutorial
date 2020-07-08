@@ -124,7 +124,7 @@ The query makes no further constraints than requiring the found nodes to have a 
       <guid>https://dgraph.io/tour/master/blocksvars/2/</guid>
       <description>Results can be stored in variables and used elsewhere in the query.
 Variables are declared by
-var_name as some_block { ... } where var_name is any distinct variable name and some_block is either a whole query or an internal block of a query matching on an edge.
+var_name as some_block { ... }  where var_name is any distinct variable name and some_block is either a whole query or an internal block of a query matching on an edge.
 Once defined, variables can be used in:
  the same query in a child of the defining block (not a parent of the definition) in another query  Variables don&amp;rsquo;t affect the semantics of the query at the point they are defined.</description>
     </item>
@@ -254,7 +254,7 @@ That&amp;rsquo;s the key to using Dgraph&amp;rsquo;s variables correctly: unders
       
       <guid>https://dgraph.io/tour/master/schema/4/</guid>
       <description>Language tags are used on the string on input
-_:myID &amp;lt;an_edge&amp;gt; &amp;quot;something&amp;quot;@en . _:myID &amp;lt;an_edge&amp;gt; &amp;quot;某物&amp;quot;@zh-Hans . and on the edge in a query.
+_:myID &amp;lt;an_edge&amp;gt; &amp;quot;something&amp;quot;@en . _:myID &amp;lt;an_edge&amp;gt; &amp;quot;某物&amp;quot;@zh-Hans .  and on the edge in a query.
 You can do the same example using JSON format. You&amp;rsquo;re able to do that through our clients, cURL or Ratel UI.
 See the JSON:
  { &amp;quot;set&amp;quot;: [ { &amp;quot;uid&amp;quot;: &amp;quot;_:myID&amp;quot;, &amp;quot;an_edge@en&amp;quot;: &amp;quot;something&amp;quot;, &amp;quot;an_edge@zh-Hans&amp;quot;: &amp;quot;某物&amp;quot; } ] }  Tip The JSON example may end up helping you better understand the format in RDF.</description>
@@ -324,8 +324,8 @@ It doesn&amp;rsquo;t match terms exactly and instead makes use of
       <guid>https://dgraph.io/tour/master/schema/5/</guid>
       <description>Edges are directional. A query can&amp;rsquo;t traverse an edge in reverse.
 There are two choices to query in both directions
-  Add the reverse edge to the schema and add all the reverse edge data.
-  Tell Dgraph to always store the reverse edge using the @reverse keyword in the schema.
+ Add the reverse edge to the schema and add all the reverse edge data.
+ Tell Dgraph to always store the reverse edge using the @reverse keyword in the schema.
   Run the schema mutation and Dgraph will compute all the reverse edges. The reverse edge of an_edge is ~an_edge.</description>
     </item>
     
@@ -382,7 +382,7 @@ For two directors find the actors who have worked with both (not necessarily on 
 So far the queries have only applied a filter to the top level nodes, but filters can be applied to any node in the query.
 Note the syntax difference between filtering at the root of a query and filtering on internal blocks.
 There are many functions for filtering, some of them are
-  allOfTerms(edge_name, &amp;quot;term1 ... termN&amp;quot;): matches nodes with an outgoing string edge edge_name where the string contains all listed terms.</description>
+ allOfTerms(edge_name, &amp;quot;term1 ... termN&amp;quot;): matches nodes with an outgoing string edge edge_name where the string contains all listed terms.</description>
     </item>
     
     <item>
@@ -424,8 +424,8 @@ At the point of definition, because the context is within the appropriate UID, v
       <guid>https://dgraph.io/tour/master/schema/7/</guid>
       <description>We&amp;rsquo;ve added a new schema and loaded some company data, but what about integrating our previous friends dataset with this company one.
 Trying to use the blank nodes from previous mutations won&amp;rsquo;t work. The blank nodes aren&amp;rsquo;t persisted in the store, so when referring to nodes created in a previous mutation, it&amp;rsquo;s the UID that&amp;rsquo;s needed. So instead of
-_:sarah &amp;lt;works_for&amp;gt; _:company1 . it&amp;rsquo;s
-&amp;lt;uid-for-sarah&amp;gt; &amp;lt;works_for&amp;gt; &amp;lt;uid-for-company1&amp;gt; . Because the uid picked by Dgraph is unique, we can&amp;rsquo;t help you this time.</description>
+_:sarah &amp;lt;works_for&amp;gt; _:company1 .  it&amp;rsquo;s
+&amp;lt;uid-for-sarah&amp;gt; &amp;lt;works_for&amp;gt; &amp;lt;uid-for-company1&amp;gt; .  Because the uid picked by Dgraph is unique, we can&amp;rsquo;t help you this time.</description>
     </item>
     
     <item>
@@ -466,8 +466,7 @@ This query can be done in a single block, but you&amp;rsquo;ll see here how valu
       
       <guid>https://dgraph.io/tour/master/schema/8/</guid>
       <description>There are three deletion options inside a delete mutation.
- &amp;lt;uid&amp;gt; &amp;lt;edge&amp;gt; &amp;lt;uid&amp;gt;/&amp;quot;value&amp;quot; . Delete a single triple &amp;lt;uid&amp;gt; &amp;lt;edge&amp;gt; * . Delete all triples for a given edge &amp;lt;uid&amp;gt; * * . Delete all triples for a given node  The examples given here are not complete. Uids assigned on your instance would be unique. Try something out; you&amp;rsquo;re not going to hurt anyone, just delete their friends.
-You can do the same example using JSON format.</description>
+ &amp;lt;uid&amp;gt; &amp;lt;edge&amp;gt; &amp;lt;uid&amp;gt;/&amp;quot;value&amp;quot; . Delete a single triple &amp;lt;uid&amp;gt; &amp;lt;edge&amp;gt; * . Delete all triples for a given edge &amp;lt;uid&amp;gt; * * . Delete all triples for a given node  The examples given here are not complete. Uids assigned on your instance would be unique. Try something out; you&amp;rsquo;re not going to hurt anyone, just delete their friends.</description>
     </item>
     
     <item>
@@ -509,7 +508,7 @@ A value variable can be used in place of a UID variable, uid(&amp;lt;value-varia
       
       <guid>https://dgraph.io/tour/master/schema/9/</guid>
       <description>expand(...predicates...) is used to query for all given predicates, rather than listing them in the query. Querying
-expand(_all_) queries returns all edges out of every node matched at that level in the query. Expand can be nested to then expand all predicates at the next level.
+expand(_all_)  queries returns all edges out of every node matched at that level in the query. Expand can be nested to then expand all predicates at the next level.
 We&amp;rsquo;ll see later how to use expand with variables to query for a particular set of edges.
 Note As of version v1.1 you will need to add Types in your schema for expand(_all_) to work.</description>
     </item>
@@ -586,9 +585,8 @@ At root, we use func: and a function to find an initial set of nodes. So far we&
       
       <guid>https://dgraph.io/tour/master/blocksvars/12/</guid>
       <description>A groupby query aggregates query results given a set of properties on which to group elements. For example, a query containing the block
-director.film @groupby(genre) { a as count(uid) } finds nodes reachable along the director.film edge, partitions these into groups based on genre, then counts how many nodes are in each group.
-Inside a groupby block, only aggregations are allowed and count can only be applied to uid.
-The result is the grouped edges and the value variables for the aggregations.</description>
+director.film @groupby(genre) { a as count(uid) }  finds nodes reachable along the director.film edge, partitions these into groups based on genre, then counts how many nodes are in each group.
+Inside a groupby block, only aggregations are allowed and count can only be applied to uid.</description>
     </item>
     
     <item>
@@ -628,7 +626,7 @@ Next up, string and geo searching. Or use the index to go to another topic.</des
       <description>The @cascade directive removes any nodes that don&amp;rsquo;t have all matching edges in the query.
 Another use is to remove nodes where a filter inside a block returns no results.
 In the query below, Dgraph returns all Michael&amp;rsquo;s friends, whether or not they own a pet.
-{ michael_friends_with_pets(func: allofterms(name@., &amp;quot;Michael&amp;quot;)) { name age friend { name@. owns_pet } } } With the @cascade directive, friends of Michael that don&amp;rsquo;t own a pet are not included in the result.</description>
+{ michael_friends_with_pets(func: allofterms(name@., &amp;quot;Michael&amp;quot;)) { name age friend { name@. owns_pet } } }  With the @cascade directive, friends of Michael that don&amp;rsquo;t own a pet are not included in the result.</description>
     </item>
     
     <item>
@@ -638,8 +636,8 @@ In the query below, Dgraph returns all Michael&amp;rsquo;s friends, whether or n
       
       <guid>https://dgraph.io/tour/master/basic/15/</guid>
       <description>The @normalize directive
-  returns only edges listed with an alias, and
-  flattens the result to remove nesting
+ returns only edges listed with an alias, and
+ flattens the result to remove nesting
   Tip Aliased names can be the same as the original edge.
  </description>
     </item>

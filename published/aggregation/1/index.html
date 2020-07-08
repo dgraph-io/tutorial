@@ -303,18 +303,29 @@
 
                         <p>Ok, we are off to a start with Dgraph and GraphQL+-.  Let’s move it up
 a few notches.</p>
+
 <p>Dgraph can also do query aggregation, geo-queries, string querying and more.  But for all that let&rsquo;s move from the small datasets we started with and try out something bigger, much bigger.</p>
+
 <p>In our github repository you&rsquo;ll find a <a href="https://github.com/dgraph-io/benchmarks/blob/master/data/goldendata.rdf.gz">dataset about movies, directors
 and actors</a>.</p>
+
 <p>Download it from that link or with something like</p>
+
 <pre><code>wget &quot;https://github.com/dgraph-io/benchmarks/blob/master/data/goldendata.rdf.gz?raw=true&quot; -O goldendata.rdf.gz -q
-</code></pre><p>Run the schema mutation and then load the dataset into Dgraph with</p>
+</code></pre>
+
+<p>Run the schema mutation and then load the dataset into Dgraph with</p>
+
 <pre><code>dgraph-live-loader -f goldendata.rdf.gz
-</code></pre><p>Dgraph reports back exactly how many triples were loaded and how long
+</code></pre>
+
+<p>Dgraph reports back exactly how many triples were loaded and how long
 it took.  There are around ??? movies and ???
 actors are described in the dataset.</p>
+
 <p>It&rsquo;s a big database of moves, but it won’t trouble Dgraph.  It is, however, big enough to
 use for more complex queries.</p>
+
 <p>Later in the tutorial, you might need to refer back to this page (or
 issue a <a href="https://dgraph.io/tour/basic/3">schema query</a>) to check the indexes or schema types.  Remember that
 we can&rsquo;t apply functions to edges that aren&rsquo;t indexed, and some

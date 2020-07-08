@@ -302,17 +302,22 @@
                         <h2 class="lesson__title">Pagination (first, offset and after)</h2>
 
                         <p>It&rsquo;s not uncommon to have thousands of results for a query.</p>
+
 <p>But you might want to select only the top-k answers, paginate the
 results for display, or limit a large result.</p>
+
 <p>In GraphQL+- this is done with <code>first</code>, <code>offset</code> and <code>after</code> in
 combination with ordering.</p>
+
 <ul>
 <li><code>first: N</code> Return only the first <code>N</code> results</li>
 <li><code>offset: N</code> Skip the first <code>N</code> results</li>
 <li><code>after: uid</code> Return the results after <code>uid</code></li>
 </ul>
+
 <p>By default, query answers are ordered by <code>uid</code>. You can change this behavior by
 explicitly <a href="https://dgraph.io/tour/master/basic/8">specifying an order</a>.</p>
+
 <p><code>after</code> makes sense in pagination when we only know the last <code>uid</code> returned and
 don&rsquo;t record how many results have previously been retrieved.</p>
 

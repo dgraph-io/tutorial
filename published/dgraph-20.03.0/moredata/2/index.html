@@ -243,22 +243,36 @@
                         <h2 class="lesson__title">Movies Schema</h2>
 
                         <p>Dgraph queries, Schema Types and the visualization will help us understand the schema of the movies dataset.</p>
+
 <p>As you&rsquo;ll see in the following pages, we can view the data from a number of perspectives; considering for example directors, movies, genres or even locations as the primary starting point.</p>
+
 <p>Let&rsquo;s have a look from the perspective of directors. Kathryn Bigelow directed the early 90&rsquo;s classic Point Break. We&rsquo;ll begin with her and learn about the schema.</p>
+
 <p>Checking the Type Schema tells us that directors as a &ldquo;Person Type&rdquo; have a <code>name</code> and are connected to the movies they directed via <code>director.film</code>.</p>
+
 <p>Extend the query a level deeper by also including</p>
+
 <pre><code>director.film (first: 1) {     
     name
     initial_release_date
     genre { name }
     starring { Performance }
  }
-</code></pre><p>We can see a movie has a <code>name</code> and also <code>genre</code> and <code>starring</code> edges leading to the genres the movie is classified in and the people in the movie.</p>
+</code></pre>
+
+<p>We can see a movie has a <code>name</code> and also <code>genre</code> and <code>starring</code> edges leading to the genres the movie is classified in and the people in the movie.</p>
+
 <p>Investigate the <code>starring</code> edge too and you&rsquo;ll learn that nodes reached via that edge represent the performance of an actor as a particular character in the movie.</p>
+
 <p>Try the same queries starting with Tom Hanks. He&rsquo;s both an actor and a director, so you&rsquo;ll see the links to a performance from both movie and actor.</p>
+
 <p>Remember there&rsquo;s also the schema query that can be used to investigate the types and indexes in the schema.  Just</p>
+
 <pre><code>schema {}
-</code></pre><p>queries for everything about the schema</p>
+</code></pre>
+
+<p>queries for everything about the schema</p>
+
 <p>If you like, investigate more.  With the lessons so far, you can find all the movies by particular directors, the movies by an actor or the cast of a movie.</p>
 
 

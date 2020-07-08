@@ -243,13 +243,17 @@
                         <h2 class="lesson__title">Full Text Search</h2>
 
                         <p>Full text search is what Google does for web pages.  It&rsquo;s different to term matching because it tries to respect language, grammar and tense.  For example, matching search term run with documents containing run, running and ran.</p>
+
 <p>It doesn&rsquo;t match terms exactly and instead makes use of</p>
+
 <ul>
 <li>stemming : finding a common base word so differences in tense, plural/singular or other inflection are still matched, and</li>
 <li>stop words : removing words such as and, or, it and maybe that occur too often to search over.</li>
 </ul>
+
 <p>Note the difference if <code>alloftext</code> is changed to <code>allofterms</code>.</p>
-<!-- raw HTML omitted -->
+
+<!---Full text search with `alloftext` removes the stop word AAA and matches BBB with BBBing.  While term searching with `allofterms` matches only strings that contain each word in the search.-->
 
 
                     </div>
