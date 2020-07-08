@@ -116,6 +116,8 @@ $('.topic.active').closest('.topics').addClass('open');
         $(this).parent().toggleClass('active');
       });
       $('.nav-icon[target="_blank"]').removeAttr('target');
+      var selectedValue = $('.page-select.dropdown .page-subnav__label.is-active').text();
+      $(".page-select.dropdown button span").replaceWith(selectedValue);
 
     });
 
@@ -156,6 +158,11 @@ $('.topic.active').closest('.topics').addClass('open');
           $this.val($(this).attr('rel'));
           $list.hide();
           //console.log($this.val());
+      });
+      $('.select-options li').click(function(e) {
+        $('.select-options li').removeClass('selected');
+
+        $(this).addClass('selected');
       });
     
       $(document).click(function() {
