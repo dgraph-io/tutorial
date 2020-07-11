@@ -4,6 +4,8 @@ A step by step introductory tutorial of Dgraph. Built with [Hugo](https://gohugo
 
 Visit https://dgraph.io/tour for the running instance.
 
+**Use [Discuss Issues](https://discuss.dgraph.io/tags/c/issues/35/tutorial) for reporting issues about this repository.**
+
 ## Developing
 
 The tutorial can be run locally by cloning this repo and running `scripts/local.sh`.
