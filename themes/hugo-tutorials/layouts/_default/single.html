@@ -7,6 +7,9 @@
 <body class="tour">
 
     {{ partial "page_header.html" . }}
+    <div class="d-block d-md-none tour-message">
+        To optimize your experience, the interactive tutorial is only availabile on desktop.
+    </div>
 
     <div class="page-intro page-intro__narrow">
         <div class="container__full">
@@ -42,7 +45,7 @@
                 </div>
 
                 {{ if not (eq $codeContent "") }}
-                <div class="lesson__code">
+                <div class="lesson__code d-none d-md-block">
 
                     {{ partial "runnable" (dict "Content" . "Code" $codeContent) }}
 
