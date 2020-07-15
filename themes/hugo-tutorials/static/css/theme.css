@@ -261,8 +261,6 @@
   font-weight: 500;
   font-size: 16px;
   color: #212121;
-
-  /* background-color: $select-background; */
 }
 
 .select-styled:after {
@@ -274,9 +272,11 @@
   position: absolute;
   right: 20px;
 }
+.tour-container.show .select-styled:after {
+  content: "\f077";
+}
 
-.select-options {
-  display: none;
+.dropdown-menu.select-options {
   position: absolute;
   top: calc(100% + 5px);
   right: 0;
@@ -289,23 +289,25 @@
   border-radius: 4px;
   background: #fff;
   z-index: 99;
+  font-size: 16px;
 }
 
-.select-options li {
+.dropdown-menu.select-options li {
   margin: 0 5px;
-  padding: 2px 0;
-  text-indent: 15px;
-  line-height: 32px;
   margin-bottom: 0 !important;
-  transition: 0.3s;
+}
+.dropdown-menu.select-options li a {
+  text-decoration: none;
+  padding: 8px 20px;
 }
 
-.select-options li:hover {
+.dropdown-menu.select-options li a:hover, .dropdown-menu.select-options li a:active, .dropdown-menu.select-options li a:focus {
   border-radius: 4px;
   background: linear-gradient(90deg, rgba(255, 66, 0, 0.05) .01%, rgba(229, 6, 149, 0.05) 99.99%);
+  color: #212121;
 }
 
-.select-options li.selected {
+.dropdown-menu.select-options li.selected a {
   background: linear-gradient(90deg, rgba(255,66,0,0.8) 0.01%, rgba(229,6,149,0.8) 99.99%);
   border-radius: 4px;
   color: #fff;
@@ -346,6 +348,7 @@
   right: 12px;
   border: none;
 }
+
 .page-select.dropdown .dropdown-menu{
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 4px;

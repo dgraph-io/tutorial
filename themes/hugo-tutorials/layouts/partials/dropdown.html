@@ -2,20 +2,20 @@
 	<div class="row">
 		<div class="col-sm-12 mt-5">
 			<div class="position-relative tour-container mt-4">
-				
-			<select id="tour-release" class="select-release">
-				{{ range .Site.Params.tourReleases }}
-				  <option
-					value="{{ . }}"
-					{{ if (eq . $.Site.Params.thisRelease)}}
-					  selected="selected"
-					{{ end }}
-				  >
-					Dgraph {{ . }}
-				  </option>
-				{{ end }}
-			</select>
-		</div>
+				<div class="select" data-toggle="dropdown">
+					<div class="select-styled">{{$.Site.Params.thisRelease}}</div>
+					<ul class="select-options dropdown-menu">
+						{{ range .Site.Params.tourReleases }}
+							<li 
+							{{ if (eq . $.Site.Params.thisRelease)}}
+							  class="selected"
+							{{ end }}>
+								<a href="{{$.Site.Params.home}}dgraph-{{ . }}" >Dgraph {{ . }}</a>
+							</li>
+						{{ end }}
+					</ul>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
