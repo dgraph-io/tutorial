@@ -125,8 +125,8 @@ $('select').each(function(){
       var $this = $(this), numberOfOptions = $(this).children('option').length;
     
       $this.addClass('select-hidden'); 
-      $this.wrap('<div class="select">' + DgTour.thisRelease + '</div>');
-      $this.after('<div class="select-styled"></div>');
+      $this.wrap('<div class="select"></div>');
+      $this.after('<div class="select-styled">' + DgTour.thisRelease + '/div>');
   
       var $styledSelect = $this.next('div.select-styled');
       $styledSelect.text($this.children('option').eq(0).text());
