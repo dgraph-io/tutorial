@@ -121,16 +121,16 @@ $('.topic.active').closest('.topics').addClass('open');
 
     });
 
-    $('select').each(function(){
+$('select').each(function(){
       var $this = $(this), numberOfOptions = $(this).children('option').length;
     
       $this.addClass('select-hidden'); 
-      $this.wrap('<div class="select"></div>');
+      $this.wrap('<div class="select">' + DgTour.thisRelease + '</div>');
       $this.after('<div class="select-styled"></div>');
   
       var $styledSelect = $this.next('div.select-styled');
       $styledSelect.text($this.children('option').eq(0).text());
-    
+      
       var $list = $('<ul />', {
           'class': 'select-options'
       }).insertAfter($styledSelect);
@@ -169,5 +169,6 @@ $('.topic.active').closest('.topics').addClass('open');
           $styledSelect.removeClass('active');
           $list.hide();
       });
+
   
   });
