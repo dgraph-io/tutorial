@@ -300,6 +300,9 @@
 .dropdown-menu.select-options li a {
   text-decoration: none;
   padding: 8px 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .dropdown-menu.select-options li a:hover, .dropdown-menu.select-options li a:active, .dropdown-menu.select-options li a:focus {
@@ -338,6 +341,10 @@
   width: 100%;
   text-align: left;
   position: relative;
+  padding-right: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .page-select.dropdown .dropdown-toggle:after {
@@ -359,14 +366,15 @@
 }
 .page-select.dropdown .page-subnav__label{
   padding: 0 5px;
-    padding: 2px 0;
-    text-indent: 15px;
-    line-height: 32px;
+    padding: 8px 15px;
     margin-bottom: 0 !important;
     transition: 0.3s;
     color:#555555;
     font-size:16px;
     font-weight:400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .page-select.dropdown .page-subnav__label+.page-subnav__label {
   margin-left: 0px;
