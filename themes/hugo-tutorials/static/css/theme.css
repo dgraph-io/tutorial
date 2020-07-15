@@ -7,6 +7,9 @@
 .tour .page-intro__home {
   padding-top: 40px;
 }
+.tour .page-intro.pt-80 {
+  padding-top: 80px;
+}
 
 #sidebar {
   position: fixed;
@@ -395,7 +398,8 @@
   line-height: 22px;
 }
 
-@media screen and (max-width:765px) {
+/*@media screen and (max-width:765px) {*/
+@media screen and (max-width:992px) {
   .page-body__content .lesson{
     position: relative;
     display:block;
