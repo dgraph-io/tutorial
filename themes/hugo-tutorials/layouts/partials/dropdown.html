@@ -2,19 +2,16 @@
 	<div class="row">
 		<div class="col-sm-12 mt-5">
 			<div class="position-relative tour-container mt-4">
-				<div class="select" data-toggle="dropdown">
-					<div class="select-styled">{{$.Site.Params.thisRelease}}</div>
-					<ul class="select-options dropdown-menu">
-						{{ range .Site.Params.tourReleases }}
-							<li 
-							{{ if (eq . $.Site.Params.thisRelease)}}
-							  class="selected"
-							{{ end }}>
-								<a href="{{$.Site.Params.home}}dgraph-{{ . }}" >Dgraph {{ . }}</a>
-							</li>
-						{{ end }}
-					</ul>
-				</div>
+				<div class="page-select dropdown">
+			        <div class="version-select dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			          Dgraph {{$.Site.Params.thisRelease}}
+			        </div>
+			        <div class="dropdown-menu">
+			            {{ range .Site.Params.tourReleases }}
+			                <a class="dropdown-item page-subnav__label{{ if (eq . $.Site.Params.thisRelease)}} is-active {{ end }}" href="{{$.Site.Params.home}}dgraph-{{ . }}">Dgraph {{ . }}</a>
+			            {{ end }}
+			        </div>
+			      </div>
 			</div>
 		</div>
 	</div>
