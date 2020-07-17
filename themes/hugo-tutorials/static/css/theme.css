@@ -258,12 +258,12 @@
   border-radius: 4px;
   background: #fff;
   width: 248px;
+  padding: 5px;
 
 }
 .page-select.dropdown .page-subnav__label{
-  padding: 0 5px;
-    padding: 8px 15px;
-    margin-bottom: 0 !important;
+    padding: 7px 15px;
+    margin-bottom: 5px !important;
     transition: 0.3s;
     color:#555555;
     font-size:16px;
