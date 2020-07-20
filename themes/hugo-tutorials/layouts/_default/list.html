@@ -1,64 +1,110 @@
 {{ partial "header.html" . }}
 
-{{ partial "topbar.html" . }}
-{{ partial "sidebar.html" . }}
+<body class="tour">
 
-<div class="content-wrapper home">
-  <div class="masthead">
-    <h1 class="cta">Let's Take a Tour of Dgraph</h1>
-    <a href="{{ .Site.BaseURL }}/intro/1/" class="cta-btn btn btn-primary">
-      Start <i class="fa fa-angle-double-right"></i>
-    </a>
+    {{ partial "page_header.html" . }}
+    {{ partial "dropdown.html" . }}
 
-    <div class="main-desc-container">
-      <div class="main-desc-content">
-        An interactive tutorial with real queries and real results,
-        designed to run on your own machine.
-      </div>
-    </div>
-  </div>
 
-  <div class="main">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          {{ range .Site.Menus.main }}
-            <section class="chapter">
-              <div class="chapter-header">
-                {{ .Name }}
+    <div class="page-intro page-intro__home">
+        <div class="container">
 
-                <a href="{{ .URL }}1" class="btn btn-success chapter-start-btn btn-sm">
-                  Start <i class="fa fa-angle-double-right"></i>
+            <div class="page-intro__header">
+
+                <h1 class="page-intro__title">Let's Take a Tour of Dgraph</h1>
+                <p class="page-intro__subtitle" style="max-width: 520px;">An interactive tutorial with real queries and real results,
+        designed to run on Chrome on your machine.</p>
+
+                <a href="{{ .Site.BaseURL }}/intro/1/" class="button button--primary">
+                    <span>Get Started</span>
+                    <i class="fas fa-arrow-right"></i>
                 </a>
-              </div>
-              <div class="chapter-desc">
-                {{ index $.Site.Params.menudesc .Identifier }}
-              </div>
-            </section>
-          {{ end }}
 
-          <h2>More resources</h2>
+            </div>
 
-          <ul class="list-unstyled">
-            <li>
-              <a href="https://docs.dgraph.io/">Official documentation</a>
-            </li>
-            <li>
-              <a href="https://discuss.dgraph.io/">Community forum</a>
-            </li>
-            <li>
-              <a href="https://slack.dgraph.io/">Slack community</a>
-            </li>
-            <li>
-              <a href="https://play.dgraph.io/">Dgraph Play</a>
-            </li>
-          </ul>
         </div>
-      </div>
     </div>
-  </div>
-</div>
 
-{{ partial "bottombar.html" . }}
+    <section class="page-body pt-0">
+
+        <div class="section--large">
+            <div class="container">
+
+                <div class="row lesson-tiles">
+
+                    {{ range .Site.Menus.main }}
+                        <div class="col-12 col-md-6">
+                            <div class="tile lesson-tiles__tile">
+
+                                <h2>{{ .Name }}</h2>
+
+                                <p>{{ index $.Site.Params.menudesc .Identifier }}</p>
+
+                                <a href="{{ .URL }}" class="button button--secondary">
+                                    <span>Start</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+
+                            </div>
+                        </div>
+                    {{ end }}
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section--large">
+            <div class="container">
+
+                <h2 class="text-center">More resources</h2>
+
+                <hr>
+
+                <div class="row justify-content-center u-align__stretch-bottom">
+    				<div class="col-12 col-sm-6 col-md-3 text-center">
+    					<div class="section-icon">
+                            <img src="https://dgraph.io/assets/images/icon-fast-forward.svg">
+                        </div>
+    					<h3>Docs</h3>
+    					<p class="u-align__center" style="max-width:320px;">Get detailed information on how to get started with Dgraph.</p>
+    					<a class="trailing-link" href="https://docs.dgraph.io/" target="_blank">
+    						<span>Get Started</span>
+    						<i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                  
+                    <div class="col-12 col-sm-6 col-md-3 text-center">
+                        <div class="section-icon">
+    						<img src="https://dgraph.io/assets/images/icon-forum-alt.svg">
+                        </div>
+    					<h3>Community</h3>
+    					<p class="u-align__center" style="max-width:320px;">Be part of the growing global community of Dgraph users and developers.</p>
+    					<a class="trailing-link" href="https://discuss.dgraph.io/" target="_blank">
+    						<span>Join Community</span>
+    						<i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3 text-center">
+                        <div class="section-icon">
+                            <img src="https://dgraph.io/assets/images/icon-docs.svg">
+
+                        </div>
+    					<h3>Play</h3>
+    					<p class="u-align__center" style="max-width:320px;">Easily query and visualize your data in an easy to use web interface.</p>
+    					<a class="trailing-link" href="https://play.dgraph.io/" target="_blank">
+    						<span>Play Now</span>
+    						<i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    {{ partial "page_footer.html" . }}
+
+</body>
 
 {{ partial "footer.html" . }}
