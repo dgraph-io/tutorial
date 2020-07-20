@@ -8,7 +8,11 @@
 			        </div>
 			        <div class="dropdown-menu">
 			            {{ range .Site.Params.tourReleases }}
+			                {{ if (eq . "master")}}
+			                <a class="dropdown-item page-subnav__label{{ if (eq . $.Site.Params.thisRelease)}} is-active {{ end }}" href="{{$.Site.Params.home}}{{ . }}">Dgraph {{ . }}</a>
+			                {{ else }}
 			                <a class="dropdown-item page-subnav__label{{ if (eq . $.Site.Params.thisRelease)}} is-active {{ end }}" href="{{$.Site.Params.home}}dgraph-{{ . }}">Dgraph {{ . }}</a>
+			                {{ end }}
 			            {{ end }}
 			        </div>
 			      </div>
