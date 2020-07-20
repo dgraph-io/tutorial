@@ -6,32 +6,32 @@ canonifyURLs = true
 
 [[menu.main]]
   name = "Introduction"
-  url = "/intro/"
+  url = "/intro/1"
   identifier = "intro"
   weight = 1
 [[menu.main]]
   name = "Basic GraphQL+- features"
-  url = "/basic/"
+  url = "/basic/1"
   identifier = "basic"
   weight = 2
 [[menu.main]]
   name = "Schema - describe your data"
-  url = "/schema/"
+  url = "/schema/1"
   identifier = "schema"
   weight = 3
 [[menu.main]]
   name = "Data, More Data"
-  url = "/moredata/"
+  url = "/moredata/1"
   identifier = "moredata"
   weight = 4
 [[menu.main]]
   name = "Query Blocks, Query Variables and Aggregation"
-  url = "/blocksvars/"
+  url = "/blocksvars/1"
   identifier = "blocksvars"
   weight = 5
 [[menu.main]]
     name = "Search - more ways to find nodes"
-    url = "/search/"
+    url = "/search/1"
     identifier = "search"
     weight = 6
 
