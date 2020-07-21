@@ -120,6 +120,7 @@ $('.topic.active').closest('.topics').addClass('open');
       $(".page-select.dropdown button span").replaceWith(selectedValue);
 
     });
+<<<<<<< HEAD
 
     $('select').each(function(){
       var $this = $(this), numberOfOptions = $(this).children('option').length;
@@ -171,3 +172,5 @@ $('.topic.active').closest('.topics').addClass('open');
       });
   
   });
+=======
+>>>>>>> master
