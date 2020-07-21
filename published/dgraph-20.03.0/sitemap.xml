@@ -13,11 +13,6 @@
   </url>
   
   <url>
-    <loc>https://dgraph.io/tour/dgraph-20.03.0/aggregation/1/</loc>
-    <lastmod>2017-04-27T15:42:54+10:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://dgraph.io/tour/dgraph-20.03.0/moredata/1/</loc>
     <lastmod>2017-04-27T15:42:54+10:00</lastmod>
   </url>
@@ -55,11 +50,6 @@
   <url>
     <loc>https://dgraph.io/tour/dgraph-20.03.0/schema/2/</loc>
     <lastmod>2017-04-27T23:05:47+10:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dgraph.io/tour/dgraph-20.03.0/aggregation/2/</loc>
-    <lastmod>2017-04-27T15:42:57+10:00</lastmod>
   </url>
   
   <url>
@@ -335,31 +325,6 @@
   <url>
     <loc>https://dgraph.io/tour/dgraph-20.03.0/blocksvars/</loc>
     <lastmod>2017-05-02T11:01:12+10:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dgraph.io/tour/dgraph-20.03.0/aggregation/</loc>
-    <lastmod>2017-04-27T15:42:57+10:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dgraph.io/tour/dgraph-20.03.0/sample/3/</loc>
-    <lastmod>2017-04-26T16:24:06+10:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dgraph.io/tour/dgraph-20.03.0/sample/</loc>
-    <lastmod>2017-04-26T16:24:06+10:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dgraph.io/tour/dgraph-20.03.0/sample/2/</loc>
-    <lastmod>2017-04-26T16:16:25+10:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dgraph.io/tour/dgraph-20.03.0/sample/1/</loc>
-    <lastmod>2017-04-26T14:47:31+10:00</lastmod>
   </url>
   
   <url>
