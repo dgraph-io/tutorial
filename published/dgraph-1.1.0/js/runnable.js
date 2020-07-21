@@ -20,7 +20,7 @@ changeServerAddress(serverAddress);
 function changeServerAddress(newAddr) {
   serverAddress = newAddr;
   localStorage.setItem(SERVER_ADDR, newAddr);
-  $('.runnable .pane-title .url').text(newAddr);
+  $('.runnable .server-switch .url').text(newAddr);
   $('input#inputDgraphUrl').val(newAddr);
 }
 

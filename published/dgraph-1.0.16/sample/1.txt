@@ -1,8 +1,0 @@
-{
-  me(id: m.06pj8) {
-    name@en
-    ~directed_by(first: 5) {
-      name@en
-    }
-  }
-}
