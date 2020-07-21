@@ -37,6 +37,18 @@ Queries issued in this way are independent.</description>
     
     <item>
       <title>A bigger dataset</title>
+      <link>https://dgraph.io/tour/dgraph-20.03.0/aggregation/1/</link>
+      <pubDate>Thu, 27 Apr 2017 15:42:54 +1000</pubDate>
+      
+      <guid>https://dgraph.io/tour/dgraph-20.03.0/aggregation/1/</guid>
+      <description>Ok, we are off to a start with Dgraph and GraphQL+-. Let’s move it up a few notches.
+Dgraph can also do query aggregation, geo-queries, string querying and more. But for all that let&amp;rsquo;s move from the small datasets we started with and try out something bigger, much bigger.
+In our github repository you&amp;rsquo;ll find a dataset about movies, directors and actors.
+Download it from that link or with something like</description>
+    </item>
+    
+    <item>
+      <title>A bigger dataset</title>
       <link>https://dgraph.io/tour/dgraph-20.03.0/moredata/1/</link>
       <pubDate>Thu, 27 Apr 2017 15:42:54 +1000</pubDate>
       
@@ -127,6 +139,16 @@ Once defined, variables can be used in:
 Dgraph creates its own internal id’s for nodes, but we need some way to refer to the same node many times in our input data. That’s what _:company1 does.
 Technically, these are ‘blank nodes’. They tell Dgraph to create a node, give it an internal id and make sure it’s used consistently.
 After the upload, the label _:company1 doesn’t exist in Dgraph and we can’t query for it.</description>
+    </item>
+    
+    <item>
+      <title>Min and Max</title>
+      <link>https://dgraph.io/tour/dgraph-20.03.0/aggregation/2/</link>
+      <pubDate>Thu, 27 Apr 2017 15:42:57 +1000</pubDate>
+      
+      <guid>https://dgraph.io/tour/dgraph-20.03.0/aggregation/2/</guid>
+      <description>The min and max aggreation functions can be used on all scalar types. That is: int, float, string, bool, id and date.
+Agregations don&amp;rsquo;t require an index, but can only be applied to variables</description>
     </item>
     
     <item>
@@ -653,6 +675,36 @@ Reading all the documentation about Facets you will have examples of:</descripti
       <description>You’ve finished the lesson.
 You can use the material in this lesson to query graphs, filter the output, and sort and paginate the results.
 Check out the list of sections again, go back and review anything that wasn&amp;rsquo;t clear, or go on with the next lesson.</description>
+    </item>
+    
+    <item>
+      <title>Lesson Title</title>
+      <link>https://dgraph.io/tour/dgraph-20.03.0/sample/3/</link>
+      <pubDate>Wed, 26 Apr 2017 16:24:06 +1000</pubDate>
+      
+      <guid>https://dgraph.io/tour/dgraph-20.03.0/sample/3/</guid>
+      <description>Hello world</description>
+    </item>
+    
+    <item>
+      <title>Some Title</title>
+      <link>https://dgraph.io/tour/dgraph-20.03.0/sample/2/</link>
+      <pubDate>Wed, 26 Apr 2017 16:16:25 +1000</pubDate>
+      
+      <guid>https://dgraph.io/tour/dgraph-20.03.0/sample/2/</guid>
+      <description>Some Content</description>
+    </item>
+    
+    <item>
+      <title>Reverse Edges</title>
+      <link>https://dgraph.io/tour/dgraph-20.03.0/sample/1/</link>
+      <pubDate>Wed, 26 Apr 2017 14:47:31 +1000</pubDate>
+      
+      <guid>https://dgraph.io/tour/dgraph-20.03.0/sample/1/</guid>
+      <description>Each graph edge is unidirectional. It points from one node to another.
+A lot of times, you wish to access data in both directions, forward and backward.
+Instead of having to send edges in both directions, you can use the @reverse keyword at the end of a uid (entity) field declaration in the schema.
+This specifies that the reverse edge should be automatically generated. For example, if we want to add a reverse edge for directed_by predicate, we should have a schema as follows.</description>
     </item>
     
   </channel>
