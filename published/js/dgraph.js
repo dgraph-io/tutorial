@@ -12,7 +12,7 @@ $('#tour-release').change(function(e) {
   if (dest != "master") {
     dest = "dgraph-" + dest
   }
-  window.location.href = DgTour.home + dest;
+  // window.location.href = DgTour.home + dest;
 });
 
 
@@ -116,5 +116,6 @@ $('.topic.active').closest('.topics').addClass('open');
         $(this).parent().toggleClass('active');
       });
       $('.nav-icon[target="_blank"]').removeAttr('target');
-
-    });
+      var selectedValue = $('.page-select.dropdown .page-subnav__label.is-active').text();
+      $(".page-select.dropdown button span").replaceWith(selectedValue);
+});
