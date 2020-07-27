@@ -4,12 +4,20 @@
 
 {{ partial "header.html" . }}
 
+
 <body class="tour">
 
     {{ partial "page_header.html" . }}
+   
+
     <div class="d-block d-lg-none tour-message">
         To optimize your experience, the interactive tutorial is only availabile on desktop.
     </div>
+    <div class="row inner-dropdown">
+        <div class="col-xl-11 col-xs-12">
+    {{ partial "dropdown.html" . }}
+</div>
+</div>
 
     <div class="page-intro page-intro__narrow pt-80">
         <div class="container__full">
