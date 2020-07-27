@@ -229,6 +229,12 @@
 .inner-dropdown .page-select.dropdown{
   float:right;
 }
+ .single .tour-container .page-select.dropdown{
+  max-width: 248px !important;
+
+}
+}
+
 .page-select.dropdown {
   width: 248px;
   height: 48px;
