@@ -226,9 +226,20 @@
 .vertical-stretch {
   height: 100%;
 }
-.inner-dropdown .page-select.dropdown{
+.tour-container .page-select.dropdown{
   float:right;
+
 }
+@media only screen and (max-width: 600px) {
+
+.page-select.dropdown{
+  width:220px !important;
+}
+.tour-container .page-select.dropdown{
+  max-width:100px !important;
+}
+}
+
 .page-select.dropdown {
   width: 248px;
   height: 48px;
@@ -238,6 +249,8 @@
   border-radius: 4px;
   display: flex;
   align-items: center;
+  
+
 }
 
 .page-select.dropdown button, .page-select.dropdown .version-select.dropdown-toggle {
