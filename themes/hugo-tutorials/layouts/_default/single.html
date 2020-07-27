@@ -4,11 +4,17 @@
 
 {{ partial "header.html" . }}
 
+
 <body class="tour">
 
     {{ partial "page_header.html" . }}
+
+
     <div class="d-block d-lg-none tour-message">
         To optimize your experience, the interactive tutorial is only availabile on desktop.
+    </div>
+    <div class=" inner-dropdown">
+            {{ partial "dropdown.html" . }}
     </div>
 
     <div class="page-intro page-intro__narrow pt-80">
@@ -25,13 +31,13 @@
             <div class="lesson">
 
                 {{ with .Params.prev }}
-                    <a href="{{ . | relURL }}" data-action="go-prev" class="lesson__prev">
-                        <span>
-                            <i class="fad fa-angle-double-left"></i>
-                        </span>
-                    </a>
+                <a href="{{ . | relURL }}" data-action="go-prev" class="lesson__prev">
+                    <span>
+                        <i class="fad fa-angle-double-left"></i>
+                    </span>
+                </a>
                 {{ else }}
-                    <div class="lesson__prev"></div>
+                <div class="lesson__prev"></div>
                 {{ end }}
 
                 <div class="lesson__content">
@@ -53,23 +59,23 @@
                 {{ end }}
 
                 {{ with .Params.next }}
-                    <a href="{{ . | relURL }}" data-action="go-next" class="lesson__next">
-                        <span>
-                            <i class="fad fa-angle-double-right"></i>
-                        </span>
-                    </a>
+                <a href="{{ . | relURL }}" data-action="go-next" class="lesson__next">
+                    <span>
+                        <i class="fad fa-angle-double-right"></i>
+                    </span>
+                </a>
                 {{ else }}
-                    <div class="lesson_next"></div>
+                <div class="lesson_next"></div>
                 {{ end }}
 
                 <nav class="lesson__navigation">
 
                     {{ with .Params.prev }}
-                        <a href="{{ . | relURL }}" data-action="go-prev" class="lesson__prev">
-                            <span>
-                                <i class="fad fa-angle-double-left"></i>
-                            </span>
-                        </a>
+                    <a href="{{ . | relURL }}" data-action="go-prev" class="lesson__prev">
+                        <span>
+                            <i class="fad fa-angle-double-left"></i>
+                        </span>
+                    </a>
                     {{ end }}
 
                     <div>
@@ -77,11 +83,11 @@
                     </div>
 
                     {{ with .Params.next }}
-                        <a href="{{ . | relURL }}" data-action="go-next" class="lesson__next">
-                            <span>
-                                <i class="fad fa-angle-double-right"></i>
-                            </span>
-                        </a>
+                    <a href="{{ . | relURL }}" data-action="go-next" class="lesson__next">
+                        <span>
+                            <i class="fad fa-angle-double-right"></i>
+                        </span>
+                    </a>
                     {{ end }}
 
                 </nav>

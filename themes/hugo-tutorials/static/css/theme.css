@@ -226,7 +226,9 @@
 .vertical-stretch {
   height: 100%;
 }
-
+.inner-dropdown .page-select.dropdown{
+  float:right;
+}
 .page-select.dropdown {
   width: 248px;
   height: 48px;
