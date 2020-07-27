@@ -238,6 +238,10 @@
 .tour-container .page-select.dropdown{
   max-width:100px !important;
 }
+ .single .tour-container .page-select.dropdown{
+  max-width: 248px !important;
+
+}
 }
 
 .page-select.dropdown {
