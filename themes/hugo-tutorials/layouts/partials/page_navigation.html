@@ -6,6 +6,7 @@
             <h1 class="page-subnav__title">A Tour of Dgraph</h1>
         </a>
     </div>
+    <div class="d-flex align-items-center">
 
     <div class="page-subnav__labels d-none d-lg-flex">
         {{- $currentSection := print "/" (index (split .URL "/") 1) "/" -}}
@@ -30,4 +31,8 @@
         </div>
       </div>
     </div>
+    <div class="d-lg-none d-block">
+        {{ partial "dropdown-inner.html" . }}
+    </div>
+</div>
 </aside>
