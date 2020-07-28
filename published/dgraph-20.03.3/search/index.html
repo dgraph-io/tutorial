@@ -40,7 +40,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link href="https://dgraph.io/assets/css/style.min.css?07032020-1" rel="stylesheet" type="text/css" />
     <link href="https://dgraph.io/tour/dgraph-20.03.3/css/runnable-custom.css?fd581e09310956d9e7e07a71e2d31145" rel="stylesheet"/>
-    <link href="https://dgraph.io/tour/dgraph-20.03.3/css/theme.css?18adc1b8c0486cfa4e16f26d0f0d779c" rel="stylesheet"/>
+    <link href="https://dgraph.io/tour/dgraph-20.03.3/css/theme.css?a80be17313296650215bb24bf64c2eea" rel="stylesheet"/>
 
     <link href="https://dgraph.io/tour/dgraph-20.03.3/css/font-awesome/css/all.css" rel="stylesheet"/>
 
@@ -244,6 +244,7 @@
 
 
 
+
     <div class="page-intro page-intro__narrow">
         <div class="container__full">
 
@@ -255,6 +256,7 @@
             <h1 class="page-subnav__title">A Tour of Dgraph</h1>
         </a>
     </div>
+    <div class="d-flex align-items-center">
 
     <div class="page-subnav__labels d-none d-lg-flex"><a class="page-subnav__label" href="https://dgraph.io/tour/dgraph-20.03.3/intro/1/">
                 <span>Introduction</span>
@@ -269,7 +271,7 @@
                 <span>Data, More Data</span>
             </a>
         <a class="page-subnav__label" href="https://dgraph.io/tour/dgraph-20.03.3/blocksvars/1/">
-                <span>Query Blocks, &amp; Variables</span>
+                <span>Query Blocks &amp; Variables</span>
             </a>
         <a class="page-subnav__label is-active" href="https://dgraph.io/tour/dgraph-20.03.3/search/1/">
                 <span>Search</span>
@@ -285,12 +287,92 @@
                 <a class="dropdown-item page-subnav__label" href="https://dgraph.io/tour/dgraph-20.03.3/basic/1/">Basic Features</a>
                 <a class="dropdown-item page-subnav__label" href="https://dgraph.io/tour/dgraph-20.03.3/schema/1/">Schema</a>
                 <a class="dropdown-item page-subnav__label" href="https://dgraph.io/tour/dgraph-20.03.3/moredata/1/">Data, More Data</a>
-                <a class="dropdown-item page-subnav__label" href="https://dgraph.io/tour/dgraph-20.03.3/blocksvars/1/">Query Blocks, &amp; Variables</a>
+                <a class="dropdown-item page-subnav__label" href="https://dgraph.io/tour/dgraph-20.03.3/blocksvars/1/">Query Blocks &amp; Variables</a>
                 <a class="dropdown-item page-subnav__label is-active" href="https://dgraph.io/tour/dgraph-20.03.3/search/1/">Search</a>
                 
         </div>
       </div>
     </div>
+    <div class="d-lg-none d-block">
+        <div class="container mt-lg-3 mt-sm-0">
+	<div class="row">
+		<div class="col-sm-12 mt-lg-5 mt-sm-0">
+			<div class="position-relative tour-container mt-lg-4 mt-sm-0">
+				<div class="d-none d-lg-block">
+				<div class="page-select dropdown ">
+			        <div class="version-select dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			          Dgraph 20.03.3
+			        </div>
+			        <div class="dropdown-menu">
+			            
+			                
+			                <a class="dropdown-item page-subnav__label" href="https://dgraph.io/tour/master">Dgraph master</a>
+			                
+			            
+			                
+			                <a class="dropdown-item page-subnav__label is-active " href="https://dgraph.io/tour/dgraph-20.03.3">Dgraph 20.03.3</a>
+			                
+			            
+			                
+			                <a class="dropdown-item page-subnav__label" href="https://dgraph.io/tour/dgraph-20.03.0">Dgraph 20.03.0</a>
+			                
+			            
+			                
+			                <a class="dropdown-item page-subnav__label" href="https://dgraph.io/tour/dgraph-1.2.1">Dgraph 1.2.1</a>
+			                
+			            
+			                
+			                <a class="dropdown-item page-subnav__label" href="https://dgraph.io/tour/dgraph-1.1.0">Dgraph 1.1.0</a>
+			                
+			            
+			                
+			                <a class="dropdown-item page-subnav__label" href="https://dgraph.io/tour/dgraph-1.0.16">Dgraph 1.0.16</a>
+			                
+			            
+			        </div>
+				  </div>
+				</div>
+				  <div class="d-block d-lg-none	">
+				  
+				  <div class="page-select dropdown ">
+			        <div class="version-select dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			        	20.03.3
+			        </div>
+			        <div class="dropdown-menu">
+			            
+			                
+			                <a class="dropdown-item page-subnav__label" href="https://dgraph.io/tour/master">master</a>
+			                
+			            
+			                
+			                <a class="dropdown-item page-subnav__label is-active " href="https://dgraph.io/tour/dgraph-20.03.3"> 20.03.3</a>
+			                
+			            
+			                
+			                <a class="dropdown-item page-subnav__label" href="https://dgraph.io/tour/dgraph-20.03.0"> 20.03.0</a>
+			                
+			            
+			                
+			                <a class="dropdown-item page-subnav__label" href="https://dgraph.io/tour/dgraph-1.2.1"> 1.2.1</a>
+			                
+			            
+			                
+			                <a class="dropdown-item page-subnav__label" href="https://dgraph.io/tour/dgraph-1.1.0"> 1.1.0</a>
+			                
+			            
+			                
+			                <a class="dropdown-item page-subnav__label" href="https://dgraph.io/tour/dgraph-1.0.16"> 1.0.16</a>
+			                
+			            
+			        </div>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+    </div>
+</div>
 </aside>
 
 
