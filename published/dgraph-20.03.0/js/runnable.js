@@ -256,6 +256,3 @@ $(".runnable").each(function() {
 
   initCodeMirror($runnable);
 });
-
-
-
