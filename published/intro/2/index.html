@@ -44,7 +44,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link href="https://dgraph.io/assets/css/style.min.css?07032020-1" rel="stylesheet" type="text/css" />
     <link href="https://dgraph.io/tour//css/runnable-custom.css?fd581e09310956d9e7e07a71e2d31145" rel="stylesheet"/>
-    <link href="https://dgraph.io/tour//css/theme.css?a80be17313296650215bb24bf64c2eea" rel="stylesheet"/>
+    <link href="https://dgraph.io/tour//css/theme.css?985461856c07a671d86f2e4f6713183b" rel="stylesheet"/>
 
     <link href="https://dgraph.io/tour//css/font-awesome/css/all.css" rel="stylesheet"/>
 
@@ -262,7 +262,7 @@
 				<div class="d-none d-lg-block">
 				<div class="page-select dropdown ">
 			        <div class="version-select dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			          Dgraph 20.03.3
+			          Dgraph 20.07.0
 			        </div>
 			        <div class="dropdown-menu">
 			            
@@ -271,7 +271,11 @@
 			                
 			            
 			                
-			                <a class="dropdown-item page-subnav__label is-active " href="https://dgraph.io/tour/dgraph-20.03.3">Dgraph 20.03.3</a>
+			                <a class="dropdown-item page-subnav__label is-active " href="https://dgraph.io/tour/dgraph-20.07.0">Dgraph 20.07.0</a>
+			                
+			            
+			                
+			                <a class="dropdown-item page-subnav__label" href="https://dgraph.io/tour/dgraph-20.03.3">Dgraph 20.03.3</a>
 			                
 			            
 			                
@@ -297,7 +301,7 @@
 				  
 				  <div class="page-select dropdown ">
 			        <div class="version-select dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			        	20.03.3
+			        	20.07.0
 			        </div>
 			        <div class="dropdown-menu">
 			            
@@ -306,7 +310,11 @@
 			                
 			            
 			                
-			                <a class="dropdown-item page-subnav__label is-active " href="https://dgraph.io/tour/dgraph-20.03.3"> 20.03.3</a>
+			                <a class="dropdown-item page-subnav__label is-active " href="https://dgraph.io/tour/dgraph-20.07.0"> 20.07.0</a>
+			                
+			            
+			                
+			                <a class="dropdown-item page-subnav__label" href="https://dgraph.io/tour/dgraph-20.03.3"> 20.03.3</a>
 			                
 			            
 			                
@@ -390,7 +398,7 @@
 				<div class="d-none d-lg-block">
 				<div class="page-select dropdown ">
 			        <div class="version-select dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			          Dgraph 20.03.3
+			          Dgraph 20.07.0
 			        </div>
 			        <div class="dropdown-menu">
 			            
@@ -399,7 +407,11 @@
 			                
 			            
 			                
-			                <a class="dropdown-item page-subnav__label is-active " href="https://dgraph.io/tour/dgraph-20.03.3">Dgraph 20.03.3</a>
+			                <a class="dropdown-item page-subnav__label is-active " href="https://dgraph.io/tour/dgraph-20.07.0">Dgraph 20.07.0</a>
+			                
+			            
+			                
+			                <a class="dropdown-item page-subnav__label" href="https://dgraph.io/tour/dgraph-20.03.3">Dgraph 20.03.3</a>
 			                
 			            
 			                
@@ -425,7 +437,7 @@
 				  
 				  <div class="page-select dropdown ">
 			        <div class="version-select dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			        	20.03.3
+			        	20.07.0
 			        </div>
 			        <div class="dropdown-menu">
 			            
@@ -434,7 +446,11 @@
 			                
 			            
 			                
-			                <a class="dropdown-item page-subnav__label is-active " href="https://dgraph.io/tour/dgraph-20.03.3"> 20.03.3</a>
+			                <a class="dropdown-item page-subnav__label is-active " href="https://dgraph.io/tour/dgraph-20.07.0"> 20.07.0</a>
+			                
+			            
+			                
+			                <a class="dropdown-item page-subnav__label" href="https://dgraph.io/tour/dgraph-20.03.3"> 20.03.3</a>
 			                
 			            
 			                
@@ -508,7 +524,7 @@ docker run -it -p 5080:5080 -p 6080:6080 -p 8080:8080 \
   dgraph/dgraph:v20.03.0 dgraph zero
 
 # In another terminal, now run Dgraph alpha
-docker exec -it dgraph dgraph alpha --lru_mb 2048 --zero localhost:5080
+docker exec -it dgraph dgraph alpha --lru_mb 2048 --zero localhost:5080 --whitelist 0.0.0.0/0
 
 # And in another, run ratel (Dgraph UI)
 docker exec -it dgraph dgraph-ratel
