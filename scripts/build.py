@@ -99,6 +99,7 @@ def buildAll(releases):
 
 def main():
     releases = getReleases()
+    os.environ["CANONICAL_PATH"] = "https://dgraph.io/tour"
     publicDir = os.environ.get(DEST_ENV) or 'public'
     exec("rm", "-rf", publicDir)
     exec("mkdir", publicDir)
