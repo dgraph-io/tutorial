@@ -109,6 +109,7 @@ def buildAll(releases):
 def main():
     releases = getReleases()
     publicDir = os.environ.get(DEST_ENV) or 'public'
+    exec("./scripts/delete-all-local-dgraph-branches")
     exec("rm", "-rf", publicDir)
     exec("mkdir", publicDir)
 

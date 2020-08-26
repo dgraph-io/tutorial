@@ -1,0 +1,3 @@
+#! /bin/sh
+
+git branch | grep dgraph- | while read i; do git branch -d $i; done
