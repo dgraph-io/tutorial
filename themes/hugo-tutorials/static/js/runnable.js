@@ -201,7 +201,7 @@ $(document).on('click', '.runnable [data-action="run"]', async function(e) {
     $currentRunnable.find('.output-container').addClass('error');
     // Ideally we should check that xhr.status === 404, but because we are doing
     // CORS, status is always 0
-    var defaultError = 'Error: Is Dgraph running locally? or reachable? 2';
+    var defaultError = 'Error: Is Dgraph running locally? or reachable?';
     let message;
 
     let res = await error.toString().match(/APIError/g);
