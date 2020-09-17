@@ -10,6 +10,52 @@
 .tour .page-intro.pt-80 {
   padding-top: 80px;
 }
+@media screen and (min-width: 992px) {
+  .lesson__next {
+    font-size: 20px;
+    align-items: flex-start;
+    color: #555555;
+    display: flex;
+    flex-shrink: 0;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 1.6;
+    text-decoration: none;
+    margin-top: -50px;
+    margin-left: -40px;
+  }
+  .lesson__prev {
+    font-size: 20px;
+    align-items: flex-start;
+    color: #555555;
+    display: flex;
+    flex-shrink: 0;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 1.6;
+    text-decoration: none;
+    margin-top: -50px;
+    margin-right: -40px;
+  }
+
+  .lesson__navigation .lesson__next {
+    font-size: 20px;
+    align-items: center;
+    color: #555555;
+    display: flex;
+    flex-shrink: 0;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 1.6;
+    text-decoration: none;
+    margin-top: 0;
+    margin-left: 0;
+  }
+  .lesson__navigation .lesson__prev {
+    font-size: 20px;
+    align-items: center;
+    color: #555555;
+    display:
 
 #sidebar {
   position: fixed;
