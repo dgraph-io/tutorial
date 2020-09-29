@@ -6,11 +6,7 @@
     <description>Recent content in Searches on A Tour of Dgraph</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 May 2017 15:32:26 +1000</lastBuildDate>
-    
-	<atom:link href="https://dgraph.io/tour/master/search/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 15 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://dgraph.io/tour/master/search/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Indexes</title>
       <link>https://dgraph.io/tour/master/search/1/</link>
@@ -84,6 +80,17 @@ Currently, Dgraph supports
       
       <guid>https://dgraph.io/tour/master/search/7/</guid>
       <description>Coming soon.</description>
+    </item>
+    
+    <item>
+      <title>Next steps</title>
+      <link>https://dgraph.io/tour/master/search/8/</link>
+      <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dgraph.io/tour/master/search/8/</guid>
+      <description>Congratulations on completing the Tour!
+You should now be able to load data into Dgraph and perform basic queries and mutations on it.
+Where to go from here  Follow the Tutorial videos to reinforce what you have learnt. More queries can be found in the Query Language reference. Go to Clients to see how to communicate with Dgraph from your application. See Deploy if you wish to run Dgraph in a cluster.</description>
     </item>
     
   </channel>

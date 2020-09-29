@@ -541,16 +541,16 @@ queries</a> or <a href="https://docs.dgraph.io/clients/">programming with Dgraph
 
                     
 <div class="runnable" data-initial="{
-  find_michael(func: eq(name@., &#34;Michael&#34;)) {
+  find_michael(func: eq(name, &#34;Michael&#34;)) {
     uid
-    name@.
+    name
     age
   }
 }
 " data-current="{
-  find_michael(func: eq(name@., &#34;Michael&#34;)) {
+  find_michael(func: eq(name, &#34;Michael&#34;)) {
     uid
-    name@.
+    name
     age
   }
 }
@@ -578,9 +578,9 @@ queries</a> or <a href="https://docs.dgraph.io/clients/">programming with Dgraph
     <div class="runnable-content runnable-code">
       <div class="runnable-tab-content active">
         <textarea class="query-content-editable">{
-  find_michael(func: eq(name@., &#34;Michael&#34;)) {
+  find_michael(func: eq(name, &#34;Michael&#34;)) {
     uid
-    name@.
+    name
     age
   }
 }

@@ -6,11 +6,7 @@
     <description>Recent content in Schemas on A Tour of Dgraph</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 May 2019 23:05:55 +1000</lastBuildDate>
-    
-	<atom:link href="https://dgraph.io/tour/dgraph-1.1.0/schema/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 13 May 2019 23:05:55 +1000</lastBuildDate><atom:link href="https://dgraph.io/tour/dgraph-1.1.0/schema/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Adding schema - mutating schema</title>
       <link>https://dgraph.io/tour/dgraph-1.1.0/schema/1/</link>

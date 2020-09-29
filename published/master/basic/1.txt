@@ -1,7 +1,7 @@
 {
-  find_michael(func: eq(name@., "Michael")) {
+  find_michael(func: eq(name, "Michael")) {
     uid
-    name@.
+    name
     age
   }
 }

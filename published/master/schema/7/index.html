@@ -491,13 +491,38 @@ integrating our previous friends dataset with this company one.</p>
 <p>Trying to use the blank nodes from previous mutations won&rsquo;t work.  The blank nodes aren&rsquo;t persisted in the store, so when referring to nodes created in a previous mutation, it&rsquo;s the UID that&rsquo;s needed.  So instead of</p>
 <pre><code>_:sarah &lt;works_for&gt; _:company1 .
 </code></pre><p>it&rsquo;s</p>
-<pre><code>&lt;uid-for-sarah&gt; &lt;works_for&gt; &lt;uid-for-company1&gt; .
+<pre><code>&lt;uid_of_sarah&gt; &lt;works_for&gt; &lt;uid_of_company1&gt; .
 </code></pre><p>Because the <code>uid</code> picked by Dgraph is unique, we can&rsquo;t help you this
-time.  Use the <code>uid</code>'s picked by your instance of Dgraph to  write a mutation that links the company and
-friendship data.  Hint: previous queries will tell you the <code>uid</code>.</p>
+time.  Use the <code>uid</code>&rsquo;s picked by your instance of Dgraph to  write a mutation that links the company and
+friendship data (hint: previous queries will tell you the <code>uid</code>).</p>
 <p>The process you&rsquo;ve just done here would normally done
-programmatically - query the data to get the <code>uid</code>'s, formulate the
-mutations, then batch  the updates.</p>
+programmatically - query the data to get the <code>uid</code>&rsquo;s, formulate the
+mutations, then batch the updates.</p>
+<p>Don&rsquo;t worry if you can&rsquo;t find the <code>uid</code>s, you can always search by name:</p>
+
+<div class="expandable">
+  <a data-action="toggle-expandable" href="#expand">
+    <i class="fa fa-caret-down"></i> Show answer
+  </a>
+  <div class="expandable-content">
+    <pre><code>{
+  find_companyabc(func: eq(name, &quot;CompanyABC&quot;)) {
+    uid
+  }
+
+  find_michael(func: eq(name, &quot;Michael&quot;)) {
+    uid
+  }
+
+  find_sarah(func: eq(name, &quot;Sarah&quot;)) {
+    uid
+  }
+}
+</code></pre><p>The current editor is using the <code>/MUTATE</code> endpoint, so you may want to go back a few steps and run this on the <code>/QUERY</code> endpoint.</p>
+
+  </div>
+</div>
+
 
 
                     </div>
@@ -509,16 +534,14 @@ mutations, then batch  the updates.</p>
                     
 <div class="runnable" data-initial="{
   set {
-    ...michael... &lt;boss_of&gt; ...someone... .
-    
-    ...sarah... &lt;works_for&gt; ...company... .
+    # &lt;uid_of_michael&gt; &lt;boss_of&gt; &lt;uid_of_sarah&gt; .
+    # &lt;uid_of_sarah&gt; &lt;works_for&gt; &lt;uid_of_company&gt; .
   }
 }
 " data-current="{
   set {
-    ...michael... &lt;boss_of&gt; ...someone... .
-    
-    ...sarah... &lt;works_for&gt; ...company... .
+    # &lt;uid_of_michael&gt; &lt;boss_of&gt; &lt;uid_of_sarah&gt; .
+    # &lt;uid_of_sarah&gt; &lt;works_for&gt; &lt;uid_of_company&gt; .
   }
 }
 " endpoint="/mutate" data-dirty="false">
@@ -546,9 +569,8 @@ mutations, then batch  the updates.</p>
       <div class="runnable-tab-content active">
         <textarea class="query-content-editable">{
   set {
-    ...michael... &lt;boss_of&gt; ...someone... .
-    
-    ...sarah... &lt;works_for&gt; ...company... .
+    # &lt;uid_of_michael&gt; &lt;boss_of&gt; &lt;uid_of_sarah&gt; .
+    # &lt;uid_of_sarah&gt; &lt;works_for&gt; &lt;uid_of_company&gt; .
   }
 }
 </textarea>
