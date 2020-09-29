@@ -499,36 +499,36 @@ to hurt anyone, just delete their friends.</p>
 <h4 id="see-in-json">See in JSON:</h4>
 <p>Delete all triples for a given node</p>
 <pre><code> {
-        &quot;delete&quot;: [
-            {
-                &quot;uid&quot;: &quot;0xa&quot;
-            }
-        ]
-    }
+    &quot;delete&quot;: [
+        {
+            &quot;uid&quot;: &quot;0xa&quot;
+        }
+    ]
+}
 </code></pre><p>Delete all triples for a given edge</p>
 <pre><code> {
-        &quot;delete&quot;: [
-            {
-                &quot;uid&quot;: &quot;0xa&quot;,
-                &quot;friends&quot;: null
-            }
-        ]
-    }
+    &quot;delete&quot;: [
+        {
+            &quot;uid&quot;: &quot;0xa&quot;,
+            &quot;friends&quot;: null
+        }
+    ]
+}
 </code></pre><p>This doesn&rsquo;t delete their children which means in this case, it will not erase the &ldquo;friends&rdquo;. Only the relation would be deleted.</p>
 <p>Deleting relations and then their children</p>
 <pre><code> {
-        &quot;delete&quot;: [
-            {
-                &quot;uid&quot;: &quot;0x2&quot;, # Answer UID.
-                &quot;comment&quot;: {
-                   &quot;uid&quot;: &quot;0x3&quot; # Delete relation (edge) with the Comment
-            }
-            },
-            {
-                &quot;uid&quot;: &quot;0x3&quot; # Delete the actual comment
-            }
-        ]
-    }
+    &quot;delete&quot;: [
+        {
+            &quot;uid&quot;: &quot;0x2&quot;, # Answer UID.
+            &quot;comment&quot;: {
+                &quot;uid&quot;: &quot;0x3&quot; # Delete relation (edge) with the Comment
+        }
+        },
+        {
+            &quot;uid&quot;: &quot;0x3&quot; # Delete the actual comment
+        }
+    ]
+}
 </code></pre>
 
 

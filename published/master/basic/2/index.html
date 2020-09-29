@@ -501,11 +501,11 @@ on the queried graph.</p>
   </a>
   <div class="expandable-content">
     <pre><code>{
-  michaels_pet(func: eq(name@., &quot;Michael&quot;)) {
+  michaels_pet(func: eq(name, &quot;Michael&quot;)) {
     name
     age
     friend {
-      name@.
+      name
     }
     owns_pet {
       name
@@ -526,20 +526,20 @@ on the queried graph.</p>
 
                     
 <div class="runnable" data-initial="{
-  michaels_friends(func: eq(name@., &#34;Michael&#34;)) {
+  michaels_friends(func: eq(name, &#34;Michael&#34;)) {
     name
     age
     friend {
-      name@.
+      name
     }
   }
 }
 " data-current="{
-  michaels_friends(func: eq(name@., &#34;Michael&#34;)) {
+  michaels_friends(func: eq(name, &#34;Michael&#34;)) {
     name
     age
     friend {
-      name@.
+      name
     }
   }
 }
@@ -567,11 +567,11 @@ on the queried graph.</p>
     <div class="runnable-content runnable-code">
       <div class="runnable-tab-content active">
         <textarea class="query-content-editable">{
-  michaels_friends(func: eq(name@., &#34;Michael&#34;)) {
+  michaels_friends(func: eq(name, &#34;Michael&#34;)) {
     name
     age
     friend {
-      name@.
+      name
     }
   }
 }
