@@ -6,11 +6,7 @@
     <description>Recent content in Searches on A Tour of Dgraph</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 May 2017 15:32:26 +1000</lastBuildDate>
-    
-	<atom:link href="https://dgraph.io/tour/dgraph-20.07.0/search/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 15 May 2017 15:32:26 +1000</lastBuildDate><atom:link href="https://dgraph.io/tour/dgraph-20.07.0/search/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Indexes</title>
       <link>https://dgraph.io/tour/dgraph-20.07.0/search/1/</link>

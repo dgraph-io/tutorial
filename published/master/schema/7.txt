@@ -1,7 +1,6 @@
 {
   set {
-    ...michael... <boss_of> ...someone... .
-    
-    ...sarah... <works_for> ...company... .
+    # <uid_of_michael> <boss_of> <uid_of_sarah> .
+    # <uid_of_sarah> <works_for> <uid_of_company> .
   }
 }

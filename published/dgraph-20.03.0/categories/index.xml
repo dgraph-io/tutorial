@@ -5,10 +5,6 @@
     <link>https://dgraph.io/tour/dgraph-20.03.0/categories/</link>
     <description>Recent content in Categories on A Tour of Dgraph</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://dgraph.io/tour/dgraph-20.03.0/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="https://dgraph.io/tour/dgraph-20.03.0/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

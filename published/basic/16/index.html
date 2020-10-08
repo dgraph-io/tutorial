@@ -45,7 +45,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link href="https://dgraph.io/assets/css/style.min.css?07032020-1" rel="stylesheet" type="text/css" />
     <link href="https://dgraph.io/tour//css/runnable-custom.css?fd581e09310956d9e7e07a71e2d31145" rel="stylesheet"/>
-    <link href="https://dgraph.io/tour//css/theme.css?985461856c07a671d86f2e4f6713183b" rel="stylesheet"/>
+    <link href="https://dgraph.io/tour//css/theme.css?6a37edc2f04e54e1929015ecdb7909cb" rel="stylesheet"/>
 
     <link href="https://dgraph.io/tour//css/font-awesome/css/all.css" rel="stylesheet"/>
 
@@ -62,9 +62,9 @@
     
 
   	
-  	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-666192333"></script>
+  	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-75364122-1"></script>
   	<script>
-        window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-666192333');
+        window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-75364122-1');
     </script>
     
   <script>
@@ -86,169 +86,148 @@
 
 <body class="tour">
 
-    <header id="page-header" class="page-header">
-	<div class="page-logo">
-		<a href="https://dgraph.io/">
-			<img src="https://dgraph.io/assets/images/logo.svg">
-		</a>
-		<a href="javascript:;" class="nav-icon" >
-			<div class="hamburger">
-				<div class="line line-1"></div>
-				<div class="line line-2"></div>
-				<div class="line line-3"></div>
-			</div>
-		</a>
-	</div>
-	<nav class="page-nav">
-    <ul>
-        <li>
-            <div data-label="Products">
-                <span>Products</span>
+    <div class="header position-absolute w-100">
+	<div class="container">
+	  <div class="page-header">
+		<div class="page-logo"><a href="https://dgraph.io/tour/"></a></div><a class="nav-icon" href="javascript:;">
+		  <div class="hamburger">
+			<div class="line line-1"></div>
+			<div class="line line-2"></div>
+			<div class="line line-3"></div>
+		  </div></a>
+	
+	<div class="page-nav">
+    <ul class="d-flex align-items-center justify-content-center m-0 p-0">
+      <li class="product parent sf-bold">
+        <div class="lg-pt-0 lg-pb-0 xs-p-15 p-15" data-label="Products"><span>Products</span></div>
+        <ul>
+          <li class="my-3">
+            <div class="d-flex align-items-center lg-p-0 sm-pl-15">
+              <div class="circle-gradient d-flex align-items-center justify-content-center"><img src="https://dgraph.io/assets/images/slash-graphql.png" /></div><a href="https://dgraph.io/slash-graphql" data-label="Slash GraphQL">
+                <div class="d-flex align-items-center"><span class="sf-medium">Slash GraphQL</span></div>
+                <div class="sm-text d-none d-lg-block">Fully managed GraphQL backend</div>
+              </a>
             </div>
-            <ul>
-                <li>
-                    <a href="https://dgraph.io/slash-graphql" data-label="Slash GraphQL">
-                        <span>Slash GraphQL</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://dgraph.io/graphql" data-label="GraphQL">
-                        <span>GraphQL</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://dgraph.io/enterprise" data-label="Enterprise">
-                        <span>Enterprise</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="https://dgraph.io/badger" data-label="Badger">
-                        <span>Badger</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://dgraph.io/compare-features" data-label="Compare Features">
-                        <span>Compare Features</span>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li class="parent-link">
-            <div data-label="Customers">
-                <a href="https://dgraph.io/case-studies" >
-                    <span>Customers</span>
-                </a>
+          </li>
+          <li class="my-3">
+            <div class="d-flex align-items-center lg-p-0 sm-pl-15">
+              <div class="circle-gradient d-flex align-items-center justify-content-center"><img src="https://dgraph.io/assets/images/graphql-icon.png" /></div><a href="https://dgraph.io/graphql" data-label="GraphQL"><span class="sf-medium">GraphQL</span>
+                <div class="sm-text d-none d-lg-block">The only native GraphQL database</div>
+              </a>
             </div>
-        </li>
-       
-        <li>
-            <div data-label="Learn" class="is-active">
-                <span>Learn</span>
+          </li>
+          <li class="my-3">
+            <div class="d-flex align-items-center lg-p-0 sm-pl-15">
+              <div class="circle-gradient d-flex align-items-center justify-content-center"><img src="https://dgraph.io/assets/images/graphdb.png" /></div><a href="https://dgraph.io/graph-db" data-label=""><span class="sf-medium">Graph DB</span>
+                <div class="sm-text d-none d-lg-block">The world's most advanced graph database</div>
+              </a>
             </div>
-            <ul>
-
-                <li>
-                    <a href="https://tour.dgraph.io" target="_blank" data-label="Interactive Tour">
-                        <span>Interactive Tour</span>
-                    </a>
-                </li>
-                
-              
-                <li>
-
-                    <a href="https://dgraph.io/paper" target="_blank" data-label="Paper">
-                        <span>Paper</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://docs.dgraph.io" target="_blank" data-label="Dgraph Docs">
-                        <span>Dgraph Docs</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://graphql.dgraph.io/docs/" target="_blank" data-label="GraphQL Docs">
-                        <span>GraphQL Docs</span>
-                    </a>
-                </li>
-            </ul>
-        </li>
-       
-        <li class="parent-link">
-            <div data-label="Blog">
-                <a href="https://dgraph.io/blog" >
-                    <span>Blog</span>
-                </a>
+          </li>
+          <li class="my-3">
+            <div class="d-flex align-items-center lg-p-0 sm-pl-15">
+              <div class="circle-gradient d-flex align-items-center justify-content-center"><img src="https://dgraph.io/assets/images/enterprise.png" /></div><a href="https://dgraph.io/enterprise" data-label="Enterprise"><span class="sf-medium">Enterprise</span>
+                <div class="sm-text d-none d-lg-block">Learn about Dgraph Pricing</div>
+              </a>
             </div>
-        </li>
-        <li>
-            <div data-label="Company"><span>Company</span></div>
-            <ul>
-                <li>
-                    <a href="https://dgraph.io/about" data-label="Team">
-                        <span>Team</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://dgraph.io/careers" data-label="Careers">
-                        <span>Careers</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://dgraph.io/contact" data-label="Contact">
-                        <span>Contact</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://dgraph.io/conduct" data-label="Conduct">
-                        <span>Conduct</span>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li class="parent-link">
-            <div data-label="Community">
-                <a href="https://discuss.dgraph.io" target="_blank" data-label="Community" >
-                    <span>Community </span>
-                </a>
+          </li>
+          <li class="my-3">
+            <div class="d-flex align-items-center lg-p-0 sm-pl-15">
+              <div class="circle-gradient d-flex align-items-center justify-content-center"><img src="https://dgraph.io/assets/images/open-source-icon.png" /></div><a href="https://dgraph.io/open-source" data-label="Open Source"><span class="sf-medium">Open Source</span>
+                <div class="sm-text d-none d-lg-block">The Most Popular Go Key-Value Store.</div>
+              </a>
             </div>
-        </li>
-       
-        <li class="parent-link nav-desktop-hide">
-            <div data-label="Contact">
-                <a href="https://dgraph.io/contact" >
-                    <span>Contact</span>
-                </a>
-            </div>
-        </li>
-        <li class="parent-link nav-desktop-hide last">
-            <div data-label="Download">
-                <a href="https://dgraph.io/downloads"  data-label="Download" class="d-flex justify-content-between">
-                    <span>Download</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </li>
+          </li>
+        </ul>
+      </li>
+      <li class="parent-link parent lg-pt-0 lg-pb-0 sf-bold">
+        <div class="lg-pt-0 lg-pb-0 xs-p-15 p-15" data-label="Customers"><a href="https://dgraph.io/case-studies" data-label="Customers">Customers</a></div>
+      </li>
+      <li class="parent horizental-menu product sf-bold">
+        <div class="lg-pt-0 lg-pb-0 xs-p-15 p-15" data-label="Learn"><span>Learn</span></div>
+        <ul>
+          <div class="d-flex">
+            <li class="my-3">
+              <div class="d-flex align-items-center lg-p-0 sm-pl-15">
+                <div class="xs-mr-12 d-flex align-items-center justify-content-center"><img src="https://dgraph.io/assets/images/blog-icon.svg" /></div><a href="https://dgraph.io/blog" data-label="Blog"><span class="sf-medium">Blog</span></a>
+              </div>
+            </li>
+            <li class="my-3">
+              <div class="d-flex align-items-center lg-p-0 sm-pl-15">
+                <div class="xs-mr-12 d-flex align-items-center justify-content-center"><img src="https://dgraph.io/assets/images/tour.png" /></div><a href="https://tour.dgraph.io" target="_blank" data-label="Interactive Tour"><span class="sf-medium">Tour</span></a>
+              </div>
+            </li>
+          </div>
+          <div class="d-flex">
+            <li class="my-3">
+              <div class="d-flex align-items-center lg-p-0 sm-pl-15">
+                <div class="xs-mr-12 d-flex align-items-center justify-content-center"><img src="https://dgraph.io/assets/images/docs.svg" /></div><a href="https://dgraph.io/docs/" target="_blank" data-label="Dgraph Docs"><span class="sf-medium">Docs</span></a>
+              </div>
+            </li>
+            <li class="my-3">
+              <div class="d-flex align-items-center lg-p-0 sm-pl-15">
+                <div class="xs-mr-12 d-flex align-items-center justify-content-center"><img src="https://dgraph.io/assets/images/paper.svg" /></div><a href="https://dgraph.io/paper" data-label="Paper"><span class="sf-medium">Paper</span></a>
+              </div>
+            </li>
+          </div>
+        </ul>
+      </li>
+      <li class="parent-link parent lg-pt-0 lg-pb-0 sf-bold">
+        <div class="lg-pt-0 lg-pb-0 xs-p-15 p-15" data-label="Pricing"><a href="https://dgraph.io/pricing" data-label="Pricing">Pricing</a></div>
+      </li>
+      <li class="parent horizental-menu sf-bold product">
+        <div class="lg-pt-0 lg-pb-0 xs-p-15" data-label="Company"><span>Company</span></div>
+        <ul>
+          <div class="d-flex">
+            <li class="my-3">
+              <div class="d-flex align-items-center lg-p-0 sm-pl-15">
+                <div class="xs-mr-12 d-flex align-items-center justify-content-center">
+                  <div>
+                    <div class="d-flex align-items-center justify-content-center" id="circle-gradient-small"><img src="https://dgraph.io/assets/images/team.svg" /></div>
+                  </div>
+                </div><a href="https://dgraph.io/about" data-label="Team"><span class="sf-medium">Team</span></a>
+              </div>
+            </li>
+            <li class="my-3">
+              <div class="d-flex align-items-center lg-p-0 sm-pl-15">
+                <div class="xs-mr-12 d-flex align-items-center justify-content-center"><img src="https://dgraph.io/assets/images/briefcase.svg" /></div><a href="https://dgraph.io/careers" data-label="Careers"><span class="sf-medium">Careers</span></a>
+              </div>
+            </li>
+          </div>
+          <div class="d-flex">
+            <li class="my-3">
+              <div class="d-flex align-items-center lg-p-0 sm-pl-15">
+                <div class="xs-mr-12 d-flex align-items-center justify-content-center"><img src="https://dgraph.io/assets/images/phone.svg" /></div><a href="https://dgraph.io/contact" data-label="Contact"><span class="sf-medium">Contact</span></a>
+              </div>
+            </li>
+            <li class="my-3">
+              <div class="d-flex align-items-center lg-p-0 sm-pl-15">
+                <div class="xs-mr-12 d-flex align-items-center justify-content-center"><img src="https://dgraph.io/assets/images/book.svg" /></div><a href="https://dgraph.io/conduct" data-label="Conduct"><span class="sf-medium">Conduct</span></a>
+              </div>
+            </li>
+          </div>
+        </ul>
+      </li>
+      <li class="parent-link parent sf-bold">
+        <div class="lg-pt-0 lg-pb-0 xs-p-15 p-15" data-label="Community"><a href="https://discuss.dgraph.io/" data-label="Community" target="_blank">Community</a></div>
+      </li>
+      <li class="parent-link nav-desktop-hide w-100 sf-bold">
+        <div class="lg-pt-0 lg-pb-0 xs-p-15 p-15" data-label="Contact"><a href="https://dgraph.io/contact" data-label="Contact">Contact</a></div>
+      </li>
+      <li class="parent-link nav-desktop-hide last sf-bold w-100">
+        <div class="lg-pt-0 lg-pb-0 xs-p-15 p-15 w-100" data-label="Download"><a class="button--primary d-flex justify-content-between align-items-center " href="https://dgraph.io/downloads" data-label="Download"><span class="mr-2 d-inline-block">TRY FREE</span><i class="fas fa-arrow-right"></i></a></div>
+      </li>
     </ul>
-</nav>
+  </div>
 	<div class="page-cta">
     <ul>
-        <li class="hide-tablet d-none d-lg-flex">
-            <a href="https://dgraph.io/contact" title="Contact">Contact</a>
-        </li>
-        <li class="d-none d-lg-flex">
-            <a href="https://dgraph.io/downloads" title="Download" class="button button--secondary justify-content-center justify-content-xl-start">
-                <span>Download</span>
-                <i class="fas fa-arrow-right d-none d-xl-block"></i>
-            </a>
-        </li>
+      <li class="d-none d-lg-flex slashql-menu"><a class="button justify-content-center justify-content-xl-start download-btn" href="https://slash.dgraph.io/" title="Slash" target="_blank"><span>Try Free</span><i class="fas fa-arrow-right d-none d-xl-block"></i></a></li>
+      <li class="d-none d-lg-flex other-menu"><a class="button justify-content-center justify-content-xl-start download-btn" href="https://dgraph.io/downloads" title="Download"><span>Try Free</span><i class="fas fa-arrow-right d-none d-xl-block"></i></a></li>
     </ul>
+  </div>
+</div>
 </div>
 
-</header>
-
-
-
+</div>
 
 
     <div class="d-block d-lg-none tour-message">
@@ -694,22 +673,21 @@ you&rsquo;ll encounter later in the tutorial.</p>
           <ul>
             <li><a href="https://dgraph.io/slash-graphql">Slash GraphQL</a></li>
             <li><a href="https://dgraph.io/graphql">GraphQL</a></li>
+            <li><a href="https://dgraph.io/graph-db">Graph DB</a></li>
             <li><a href="https://dgraph.io/enterprise">Enterprise</a></li>
-            <li><a href="https://dgraph.io/badger">Badger</a></li>
-            <li><a href="https://dgraph.io/compare-features">Compare Features</a></li>
+            <li><a href="https://dgraph.io/open-source">Open Source</a></li>
           </ul>
         </div>
         <div class="page-footer__nav pb-5 pb-md-0">
-          
-          <h3 class="zeta">LEARN</h3>
+          <h3 class="zeta">Learn</h3>
           <ul>
-            <li><a href="https://dgraph.io/tour?__hstc=181257784.ca2d2a4e6a778f9c03d7afebaf21b4a9.1589987217645.1593671168105.1593677928618.110&amp;__hssc=181257784.58.1593677928618&amp;__hsfp=4017451622" target="_blank">Interactive Tour</a></li>
+            <li><a href="https://dgraph.io/tour" target="_blank">Interactive Tour</a></li>
             <li><a href="https://dgraph.io/paper">Paper</a></li>
-            <li><a href="https://docs.dgraph.io/?__hstc=181257784.ca2d2a4e6a778f9c03d7afebaf21b4a9.1589987217645.1593671168105.1593677928618.110&amp;__hssc=181257784.58.1593677928618&amp;__hsfp=4017451622" target="_blank">Dgraph Docs</a></li>
-            <li><a href="https://graphql.dgraph.io/docs?__hstc=181257784.ca2d2a4e6a778f9c03d7afebaf21b4a9.1589987217645.1593671168105.1593677928618.110&amp;__hssc=181257784.58.1593677928618&amp;__hsfp=4017451622" target="_blank">GraphQL Docs</a></li>
+            <li><a href="https://dgraph.io/docs/" target="_blank">Dgraph Docs</a></li>
+            <li><a href="https://dgraph.io/docs/graphql/overview/" target="_blank">GraphQL Docs</a></li>
+            <li><a href="https://dgraph.io/docs/slash-graphql/introduction/" target="_blank">Slash GraphQL Docs</a></li>
           </ul>
         </div>
-       
         <div class="page-footer__nav pb-5 pb-md-0">
           <ul>
             <li>
@@ -719,10 +697,8 @@ you&rsquo;ll encounter later in the tutorial.</p>
               <h3 class="zeta"><a href="https://dgraph.io/blog">Blog</a></h3>
             </li>
             <li>
-              <h3 class="zeta"><a href="https://discuss.dgraph.io/?__hstc=181257784.ca2d2a4e6a778f9c03d7afebaf21b4a9.1589987217645.1593671168105.1593677928618.110&amp;__hssc=181257784.58.1593677928618&amp;__hsfp=4017451622" target="_blank">Community</a></h3>
+              <h3 class="zeta"><a href="https://discuss.dgraph.io/" target="_blank">Community</a></h3>
             </li>
-           
-            
           </ul>
         </div>
         <div class="page-footer__nav pb-5 pb-md-0">
@@ -732,22 +708,20 @@ you&rsquo;ll encounter later in the tutorial.</p>
             <li><a href="https://dgraph.io/careers">Careers</a></li>
             <li><a href="https://dgraph.io/contact">Contact</a></li>
             <li><a href="https://dgraph.io/conduct">Conduct</a></li>
+            <li><a href="https://dgraph.io/privacy-policy">Privacy Policy</a></li>
           </ul>
         </div>
       </div>
       <div class="border-above-sm order-1 order-lg-2 d-flex flex-column flex-md-row flex-lg-column justify-content-between justify-content-lg-start mb-5 mb-lg-0 align-items-center align-items-lg-start">
-        <div class="page-footer__cta order-md-2 order-lg-1"><a href="https://dgraph.io/downloads" title="Download" class="button button--secondary"><span>Download</span><i class="fas fa-arrow-right"></i></a></div>
+        <div class="page-footer__cta order-md-2 order-lg-1"><a class="button button--secondary" href="https://dgraph.io/downloads" title="Download"><span>Download</span><i class="fas fa-arrow-right"></i></a></div>
         <div class="page-footer__address order-1 order-lg-2">
           <p>
-            655 Montgomery Street, 7th Floor<br>
-            San Francisco, CA 94111
-          </p>
-          <hr>
+            655 Montgomery Street, 7th Floor<br>San Francisco, CA 94111</p>
+          <hr/>
           <p><a href="mailto:contact@dgraph.io">contact@dgraph.io</a></p>
         </div>
       </div>
     </div>
-    
     <div class="page-footer__social">
       <ul>
         <li><a href="https://twitter.com/dgraphlabs" target="_blank"><i class="fab fa-twitter"></i></a></li>
@@ -763,8 +737,6 @@ you&rsquo;ll encounter later in the tutorial.</p>
     </div>
   </div>
 </footer>
-
-
 
 </body>
 
