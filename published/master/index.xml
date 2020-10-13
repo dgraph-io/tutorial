@@ -6,11 +6,7 @@
     <description>Recent content on A Tour of Dgraph</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 May 2019 23:05:55 +1000</lastBuildDate>
-    
-	<atom:link href="https://dgraph.io/tour/master/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 15 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://dgraph.io/tour/master/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Indexes</title>
       <link>https://dgraph.io/tour/master/search/1/</link>
@@ -190,9 +186,9 @@ More about in https://docs.dgraph.io/mutations/#external-ids</description>
       <pubDate>Wed, 26 Apr 2017 22:36:41 +1000</pubDate>
       
       <guid>https://dgraph.io/tour/master/basic/3/</guid>
-      <description>It’s time to talk about data types and nodes
+      <description>It’s time to talk about data types and nodes.
 Type System Starting in version 1.1, Dgraph has support for a type system. At the moment, the type system is basic but can be used already to categorize nodes and query them based on their type. The type system is also used during expand queries.
-So in order to Expand or Delete nodes. You need to define your Types correctly. You can see in detail more about the Type System here.</description>
+So in order to expand or delete nodes, you need to define your types correctly. You can see more about the Type System here.</description>
     </item>
     
     <item>
@@ -403,7 +399,7 @@ At the point of definition, because the context is within the appropriate UID, v
       <description>We&amp;rsquo;ve added a new schema and loaded some company data, but what about integrating our previous friends dataset with this company one.
 Trying to use the blank nodes from previous mutations won&amp;rsquo;t work. The blank nodes aren&amp;rsquo;t persisted in the store, so when referring to nodes created in a previous mutation, it&amp;rsquo;s the UID that&amp;rsquo;s needed. So instead of
 _:sarah &amp;lt;works_for&amp;gt; _:company1 . it&amp;rsquo;s
-&amp;lt;uid-for-sarah&amp;gt; &amp;lt;works_for&amp;gt; &amp;lt;uid-for-company1&amp;gt; . Because the uid picked by Dgraph is unique, we can&amp;rsquo;t help you this time.</description>
+&amp;lt;uid_of_sarah&amp;gt; &amp;lt;works_for&amp;gt; &amp;lt;uid_of_company1&amp;gt; . Because the uid picked by Dgraph is unique, we can&amp;rsquo;t help you this time.</description>
     </item>
     
     <item>
@@ -424,6 +420,17 @@ _:sarah &amp;lt;works_for&amp;gt; _:company1 . it&amp;rsquo;s
       <description>A graph database is a database optimized for storing and querying graphs. When it comes to relationships, graph databases are much faster than SQL databases.
 SQL databases get bogged down by graph-like data because following edges means joining tables; sometimes big tables; the more edges, the more joins, and the more data needs to be loaded and processed.
 In a graph database, the edges are a fundamental structure, so following edges is a single lookup, making this operation blazingly fast.</description>
+    </item>
+    
+    <item>
+      <title>Next steps</title>
+      <link>https://dgraph.io/tour/master/search/8/</link>
+      <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dgraph.io/tour/master/search/8/</guid>
+      <description>Congratulations on completing the Tour!
+You should now be able to load data into Dgraph and perform basic queries and mutations on it.
+Where to go from here  Follow the Tutorial videos to reinforce what you have learnt. More queries can be found in the Query Language reference. Go to Clients to see how to communicate with Dgraph from your application. See Deploy if you wish to run Dgraph in a cluster.</description>
     </item>
     
     <item>

@@ -524,19 +524,19 @@ here. Run the same query in Dgraph UI and check the visualization too though.)</
 
                     
 <div class="runnable" data-initial="{
-  everyone(func: anyofterms(name@., &#34;Michael Catalina&#34;)) {
+  everyone(func: anyofterms(name, &#34;Michael Catalina&#34;)) {
     name
     friend {
-      name@ru:ko:en
+      name
       friend { expand(_all_) { expand(_all_) } }
     }
   }
 }
 " data-current="{
-  everyone(func: anyofterms(name@., &#34;Michael Catalina&#34;)) {
+  everyone(func: anyofterms(name, &#34;Michael Catalina&#34;)) {
     name
     friend {
-      name@ru:ko:en
+      name
       friend { expand(_all_) { expand(_all_) } }
     }
   }
@@ -565,10 +565,10 @@ here. Run the same query in Dgraph UI and check the visualization too though.)</
     <div class="runnable-content runnable-code">
       <div class="runnable-tab-content active">
         <textarea class="query-content-editable">{
-  everyone(func: anyofterms(name@., &#34;Michael Catalina&#34;)) {
+  everyone(func: anyofterms(name, &#34;Michael Catalina&#34;)) {
     name
     friend {
-      name@ru:ko:en
+      name
       friend { expand(_all_) { expand(_all_) } }
     }
   }
