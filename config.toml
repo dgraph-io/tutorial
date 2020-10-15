@@ -25,7 +25,7 @@ canonifyURLs = true
   identifier = "moredata"
   weight = 4
 [[menu.main]]
-  name = "Query Blocks, & Variables"
+  name = "Query Blocks & Variables"
   url = "/blocksvars/1/"
   identifier = "blocksvars"
   weight = 5

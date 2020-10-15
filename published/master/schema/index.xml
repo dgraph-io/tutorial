@@ -89,7 +89,7 @@ In this query we want to know who works for &amp;ldquo;CompanyABC&amp;rdquo; wit
       <description>We&amp;rsquo;ve added a new schema and loaded some company data, but what about integrating our previous friends dataset with this company one.
 Trying to use the blank nodes from previous mutations won&amp;rsquo;t work. The blank nodes aren&amp;rsquo;t persisted in the store, so when referring to nodes created in a previous mutation, it&amp;rsquo;s the UID that&amp;rsquo;s needed. So instead of
 _:sarah &amp;lt;works_for&amp;gt; _:company1 . it&amp;rsquo;s
-&amp;lt;uid-for-sarah&amp;gt; &amp;lt;works_for&amp;gt; &amp;lt;uid-for-company1&amp;gt; . Because the uid picked by Dgraph is unique, we can&amp;rsquo;t help you this time.</description>
+&amp;lt;uid_of_sarah&amp;gt; &amp;lt;works_for&amp;gt; &amp;lt;uid_of_company1&amp;gt; . Because the uid picked by Dgraph is unique, we can&amp;rsquo;t help you this time.</description>
     </item>
     
     <item>

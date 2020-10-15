@@ -6,7 +6,7 @@
     <description>Recent content on A Tour of Dgraph</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 May 2019 23:05:55 +1000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://dgraph.io/tour/master/index.xml" rel="self" type="application/rss+xml" />
     
@@ -33,18 +33,6 @@ For string the following indexes are available</description>
 For queries labelled q1, ..., qn issued as a multiple query block, the JSON result will contain labelled answer blocks q1, ..., qn for each query.
 If a block is labelled with var, no results are returned for that query.
 Queries issued in this way are independent.</description>
-    </item>
-    
-    <item>
-      <title>A bigger dataset</title>
-      <link>https://dgraph.io/tour/master/aggregation/1/</link>
-      <pubDate>Thu, 27 Apr 2017 15:42:54 +1000</pubDate>
-      
-      <guid>https://dgraph.io/tour/master/aggregation/1/</guid>
-      <description>Ok, we are off to a start with Dgraph and GraphQL+-. Let’s move it up a few notches.
-Dgraph can also do query aggregation, geo-queries, string querying and more. But for all that let&amp;rsquo;s move from the small datasets we started with and try out something bigger, much bigger.
-In our github repository you&amp;rsquo;ll find a dataset about movies, directors and actors.
-Download it from that link or with something like</description>
     </item>
     
     <item>
@@ -142,16 +130,6 @@ After the upload, the label _:company1 doesn’t exist in Dgraph and we can’t 
     </item>
     
     <item>
-      <title>Min and Max</title>
-      <link>https://dgraph.io/tour/master/aggregation/2/</link>
-      <pubDate>Thu, 27 Apr 2017 15:42:57 +1000</pubDate>
-      
-      <guid>https://dgraph.io/tour/master/aggregation/2/</guid>
-      <description>The min and max aggreation functions can be used on all scalar types. That is: int, float, string, bool, id and date.
-Agregations don&amp;rsquo;t require an index, but can only be applied to variables</description>
-    </item>
-    
-    <item>
       <title>Graphs as results</title>
       <link>https://dgraph.io/tour/master/basic/2/</link>
       <pubDate>Wed, 26 Apr 2017 22:36:22 +1000</pubDate>
@@ -212,9 +190,9 @@ More about in https://dgraph.io/docs/mutations/#external-ids</description>
       <pubDate>Wed, 26 Apr 2017 22:36:41 +1000</pubDate>
       
       <guid>https://dgraph.io/tour/master/basic/3/</guid>
-      <description>It’s time to talk about data types and nodes
+      <description>It’s time to talk about data types and nodes.
 Type System Starting in version 1.1, Dgraph has support for a type system. At the moment, the type system is basic but can be used already to categorize nodes and query them based on their type. The type system is also used during expand queries.
-So in order to Expand or Delete nodes. You need to define your Types correctly. You can see in detail more about the Type System here.</description>
+So in order to expand or delete nodes, you need to define your types correctly. You can see more about the Type System here.</description>
     </item>
     
     <item>
@@ -425,7 +403,7 @@ At the point of definition, because the context is within the appropriate UID, v
       <description>We&amp;rsquo;ve added a new schema and loaded some company data, but what about integrating our previous friends dataset with this company one.
 Trying to use the blank nodes from previous mutations won&amp;rsquo;t work. The blank nodes aren&amp;rsquo;t persisted in the store, so when referring to nodes created in a previous mutation, it&amp;rsquo;s the UID that&amp;rsquo;s needed. So instead of
 _:sarah &amp;lt;works_for&amp;gt; _:company1 . it&amp;rsquo;s
-&amp;lt;uid-for-sarah&amp;gt; &amp;lt;works_for&amp;gt; &amp;lt;uid-for-company1&amp;gt; . Because the uid picked by Dgraph is unique, we can&amp;rsquo;t help you this time.</description>
+&amp;lt;uid_of_sarah&amp;gt; &amp;lt;works_for&amp;gt; &amp;lt;uid_of_company1&amp;gt; . Because the uid picked by Dgraph is unique, we can&amp;rsquo;t help you this time.</description>
     </item>
     
     <item>
@@ -446,6 +424,17 @@ _:sarah &amp;lt;works_for&amp;gt; _:company1 . it&amp;rsquo;s
       <description>A graph database is a database optimized for storing and querying graphs. When it comes to relationships, graph databases are much faster than SQL databases.
 SQL databases get bogged down by graph-like data because following edges means joining tables; sometimes big tables; the more edges, the more joins, and the more data needs to be loaded and processed.
 In a graph database, the edges are a fundamental structure, so following edges is a single lookup, making this operation blazingly fast.</description>
+    </item>
+    
+    <item>
+      <title>Next steps</title>
+      <link>https://dgraph.io/tour/master/search/8/</link>
+      <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dgraph.io/tour/master/search/8/</guid>
+      <description>Congratulations on completing the Tour!
+You should now be able to load data into Dgraph and perform basic queries and mutations on it.
+Where to go from here  Follow the Tutorial videos to reinforce what you have learnt. More queries can be found in the Query Language reference. Go to Clients to see how to communicate with Dgraph from your application. See Deploy if you wish to run Dgraph in a cluster.</description>
     </item>
     
     <item>
@@ -675,36 +664,6 @@ Reading all the documentation about Facets you will have examples of:</descripti
       <description>You’ve finished the lesson.
 You can use the material in this lesson to query graphs, filter the output, and sort and paginate the results.
 Check out the list of sections again, go back and review anything that wasn&amp;rsquo;t clear, or go on with the next lesson.</description>
-    </item>
-    
-    <item>
-      <title>Lesson Title</title>
-      <link>https://dgraph.io/tour/master/sample/3/</link>
-      <pubDate>Wed, 26 Apr 2017 16:24:06 +1000</pubDate>
-      
-      <guid>https://dgraph.io/tour/master/sample/3/</guid>
-      <description>Hello world</description>
-    </item>
-    
-    <item>
-      <title>Some Title</title>
-      <link>https://dgraph.io/tour/master/sample/2/</link>
-      <pubDate>Wed, 26 Apr 2017 16:16:25 +1000</pubDate>
-      
-      <guid>https://dgraph.io/tour/master/sample/2/</guid>
-      <description>Some Content</description>
-    </item>
-    
-    <item>
-      <title>Reverse Edges</title>
-      <link>https://dgraph.io/tour/master/sample/1/</link>
-      <pubDate>Wed, 26 Apr 2017 14:47:31 +1000</pubDate>
-      
-      <guid>https://dgraph.io/tour/master/sample/1/</guid>
-      <description>Each graph edge is unidirectional. It points from one node to another.
-A lot of times, you wish to access data in both directions, forward and backward.
-Instead of having to send edges in both directions, you can use the @reverse keyword at the end of a uid (entity) field declaration in the schema.
-This specifies that the reverse edge should be automatically generated. For example, if we want to add a reverse edge for directed_by predicate, we should have a schema as follows.</description>
     </item>
     
   </channel>

@@ -41,9 +41,9 @@ Let’s improve the query to get Michael and his network of friends.</descriptio
       <pubDate>Wed, 26 Apr 2017 22:36:41 +1000</pubDate>
       
       <guid>https://dgraph.io/tour/master/basic/3/</guid>
-      <description>It’s time to talk about data types and nodes
+      <description>It’s time to talk about data types and nodes.
 Type System Starting in version 1.1, Dgraph has support for a type system. At the moment, the type system is basic but can be used already to categorize nodes and query them based on their type. The type system is also used during expand queries.
-So in order to Expand or Delete nodes. You need to define your Types correctly. You can see in detail more about the Type System here.</description>
+So in order to expand or delete nodes, you need to define your types correctly. You can see more about the Type System here.</description>
     </item>
     
     <item>

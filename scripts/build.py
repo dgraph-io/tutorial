@@ -57,12 +57,12 @@ def compareVersions(a, b):
 
 
 def getReleases():
-    gitBranches = exec("git", "branch")
+    gitBranches = exec("git", "branch", "-a")
     branches = gitBranches.stdout.decode('utf8')
     branches = branches.split('\n')
     res = []
     for b in branches:
-        match = re.compile(r"[ *]+dgraph-([0-9.]+)").match(b)
+        match = re.compile(r"[ *]+remotes/origin/dgraph-([0-9.]+)").match(b)
         if match:
             res.append(match.group(1))
     print('Found release versions', res)
@@ -108,7 +108,9 @@ def buildAll(releases):
 
 def main():
     releases = getReleases()
+    os.environ["CANONICAL_PATH"] = "https://dgraph.io/tour"
     publicDir = os.environ.get(DEST_ENV) or 'public'
+    exec("./scripts/delete-all-local-dgraph-branches")
     exec("rm", "-rf", publicDir)
     exec("mkdir", publicDir)
 

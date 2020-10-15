@@ -3,8 +3,12 @@
 <body class="tour">
 
     {{ partial "page_header.html" . }}
+    <div class="mt-5">
+        {{ partial "dropdown.html" . }}
+    </div>
 
-    <div class="page-intro">
+
+    <div class="page-intro page-intro__home">
         <div class="container">
 
             <div class="page-intro__header">
@@ -23,7 +27,7 @@
         </div>
     </div>
 
-    <section class="page-body">
+    <section class="page-body pt-0">
 
         <div class="section--large">
             <div class="container">
@@ -31,7 +35,7 @@
                 <div class="row lesson-tiles">
 
                     {{ range .Site.Menus.main }}
-                        <div class="col-6">
+                        <div class="col-12 col-md-6">
                             <div class="tile lesson-tiles__tile">
 
                                 <h2>{{ .Name }}</h2>
@@ -71,25 +75,15 @@
     						<i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
-                    <div class="col-12 col-sm-6 col-md-3 text-center">
-                        <div class="section-icon">
-    						<img src="https://dgraph.io/assets/images/icon-slack.svg">
-                        </div>
-    					<h3>Slack</h3>
-    					<p class="u-align__center" style="max-width:320px;">Collaborate and get answers to your Dgraph questions.</p>
-    					<a class="trailing-link" href="https://slack.dgraph.io/" target="_blank">
-    						<span>Join Now</span>
-    						<i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
+                  
                     <div class="col-12 col-sm-6 col-md-3 text-center">
                         <div class="section-icon">
     						<img src="https://dgraph.io/assets/images/icon-forum-alt.svg">
                         </div>
-    					<h3>Forum</h3>
+    					<h3>Community</h3>
     					<p class="u-align__center" style="max-width:320px;">Be part of the growing global community of Dgraph users and developers.</p>
     					<a class="trailing-link" href="https://discuss.dgraph.io/" target="_blank">
-    						<span>Join Forum</span>
+    						<span>Join Community</span>
     						<i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
