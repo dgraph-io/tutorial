@@ -120,13 +120,13 @@ $(document).ready(function () {
   $(".page-select.dropdown button span").replaceWith(selectedValue);
 });
 
-
 //Check if the previous link button is empty
 $(document).ready(function () {
   if ($('.lesson__prev').is(':empty')) {
     $('.lesson__next').css({
       "transform": "translate(40px , 0)"
     });
+
     $('.lesson__navigation .lesson__next').css({
       "transform": "translate(0px , 0)"
     });

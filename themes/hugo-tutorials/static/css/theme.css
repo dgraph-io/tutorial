@@ -58,7 +58,7 @@
     margin-left: 0;
     position: relative;
     left: 0;
-    transform: translate(0, 0);
+    transform: translate(0, 0) !important;
   }
   .lesson__navigation .lesson__prev {
     font-size: 20px;
@@ -74,7 +74,7 @@
     margin-right: 0;
     position: relative;
     left: 0;
-    transform: translate(0, 0);
+    transform: translate(0, 0) !important;
   }
 }
 #sidebar {
