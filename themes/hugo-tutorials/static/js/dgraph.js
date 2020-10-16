@@ -122,16 +122,16 @@ $(document).ready(function () {
 
 alert('HELLO')
 //Check if the previous link button is empty
-// $(document).ready(function () {
-//   if ($('.lesson__prev').is(':empty')) {
-//     console.log('HELLO');
-//     // $('.lesson__next').css({
-//     //   "transform": "translate(40px , 0)"
-//     // })
-//   } else {
-//     console.log('JELLO');
-//     // $('.lesson__next').css({
-//     //   "transform": "translate(60px , 0)"
-//     // })
-//   }
-// });
+$(document).ready(function () {
+  if ($('.lesson__prev').is(':empty')) {
+    console.log('HELLO');
+    $('.lesson__next').css({
+      "transform": "translate(40px , 0)"
+    })
+  } else {
+    console.log('JELLO');
+    $('.lesson__next').css({
+      "transform": "translate(60px , 0)"
+    })
+  }
+});
