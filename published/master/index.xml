@@ -41,7 +41,7 @@ Queries issued in this way are independent.</description>
       <pubDate>Thu, 27 Apr 2017 15:42:54 +1000</pubDate>
       
       <guid>https://dgraph.io/tour/master/moredata/1/</guid>
-      <description>Ok, we are off to a start with Dgraph and GraphQL+-. Let’s move it up a few notches.
+      <description>Ok, we are off to a start with Dgraph and DQL. Let’s move it up a few notches.
 Dgraph can also do query aggregation, geo-queries, string querying and more. But for all that let&amp;rsquo;s move from the small datasets we started with and try out something bigger, much bigger.
 In our github repository you&amp;rsquo;ll find a dataset about movies, directors and actors.
 Download it from that link and save into the ~/dgraph directory or by running the following in a terminal</description>
@@ -54,7 +54,7 @@ Download it from that link and save into the ~/dgraph directory or by running th
       
       <guid>https://dgraph.io/tour/master/basic/1/</guid>
       <description>Note For the following queries to run, you should have loaded data in the introduction.
- Let’s have a look at a hello world query in GraphQL+-.
+ Let’s have a look at a hello world query in DQL.
 Every query has a name, and the result is labelled with the same name.
 The search criteria func: ... matches nodes. Function eq does what you&amp;rsquo;d expect, matching nodes with a name equalling &amp;ldquo;Michael&amp;rdquo;. The result is the matched nodes and listed outgoing edges from those nodes.</description>
     </item>
@@ -78,8 +78,10 @@ When we want to add new data to an existing schema, we can just add it. But if w
       <guid>https://dgraph.io/tour/master/intro/1/</guid>
       <description>Hi,
 Welcome to Dgraph.
-This interactive tutorial will get you up and running with Dgraph and writing graph queries in GraphQL+-, Dgraph&amp;rsquo;s own graph query language.
-The tutorial is divided into modules. You can access the table of contents at any time by clicking &amp;ldquo;A Tour of Dgraph&amp;rdquo; in the top left and can move backwards and forwards using the right and left arrows at the bottom of this pane.</description>
+This interactive tutorial will get you up and running with Dgraph and writing graph
+queries in DQL, Dgraph&amp;rsquo;s own graph query language.
+Note If you are looking for GraphQL Spec support, please start at https://dgraph.io/docs/graphql/overview/ this tutorial is exclusive for DQL (GraphQL+-).
+ The tutorial is divided into modules. You can access the table of contents at any time by clicking &amp;ldquo;A Tour of Dgraph&amp;rdquo; in the top left and can move backwards and forwards using the right and left arrows at the bottom of this pane.</description>
     </item>
     
     <item>
@@ -136,7 +138,7 @@ After the upload, the label _:company1 doesn’t exist in Dgraph and we can’t 
       
       <guid>https://dgraph.io/tour/master/basic/2/</guid>
       <description>The last query got us some data, but the result wasn’t very interesting, nor was it much to do with graphs.
-In Dgraph and GraphQL+-, queries return graphs, not tables or lists of data.
+In Dgraph and DQL, queries return graphs, not tables or lists of data.
 A query is executed against a graph and the result is a subset of the queried graph, or some manipulation or calculation based on the queried graph.
 Let’s improve the query to get Michael and his network of friends.</description>
     </item>
@@ -511,7 +513,7 @@ Note As of version v1.1 you will need to add Types in your schema for expand(_al
       <guid>https://dgraph.io/tour/master/basic/9/</guid>
       <description>It&amp;rsquo;s not uncommon to have thousands of results for a query.
 But you might want to select only the top-k answers, paginate the results for display, or limit a large result.
-In GraphQL+- this is done with first, offset and after in combination with ordering.
+In DQL this is done with first, offset and after in combination with ordering.
  first: N Return only the first N results offset: N Skip the first N results after: uid Return the results after uid  By default, query answers are ordered by uid.</description>
     </item>
     

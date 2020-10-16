@@ -17,7 +17,7 @@
       <pubDate>Thu, 27 Apr 2017 15:42:54 +1000</pubDate>
       
       <guid>https://dgraph.io/tour/master/moredata/1/</guid>
-      <description>Ok, we are off to a start with Dgraph and GraphQL+-. Let’s move it up a few notches.
+      <description>Ok, we are off to a start with Dgraph and DQL. Let’s move it up a few notches.
 Dgraph can also do query aggregation, geo-queries, string querying and more. But for all that let&amp;rsquo;s move from the small datasets we started with and try out something bigger, much bigger.
 In our github repository you&amp;rsquo;ll find a dataset about movies, directors and actors.
 Download it from that link and save into the ~/dgraph directory or by running the following in a terminal</description>

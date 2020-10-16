@@ -19,8 +19,10 @@
       <guid>https://dgraph.io/tour/master/intro/1/</guid>
       <description>Hi,
 Welcome to Dgraph.
-This interactive tutorial will get you up and running with Dgraph and writing graph queries in GraphQL+-, Dgraph&amp;rsquo;s own graph query language.
-The tutorial is divided into modules. You can access the table of contents at any time by clicking &amp;ldquo;A Tour of Dgraph&amp;rdquo; in the top left and can move backwards and forwards using the right and left arrows at the bottom of this pane.</description>
+This interactive tutorial will get you up and running with Dgraph and writing graph
+queries in DQL, Dgraph&amp;rsquo;s own graph query language.
+Note If you are looking for GraphQL Spec support, please start at https://dgraph.io/docs/graphql/overview/ this tutorial is exclusive for DQL (GraphQL+-).
+ The tutorial is divided into modules. You can access the table of contents at any time by clicking &amp;ldquo;A Tour of Dgraph&amp;rdquo; in the top left and can move backwards and forwards using the right and left arrows at the bottom of this pane.</description>
     </item>
     
     <item>
