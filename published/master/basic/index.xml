@@ -18,7 +18,7 @@
       
       <guid>https://dgraph.io/tour/master/basic/1/</guid>
       <description>Note For the following queries to run, you should have loaded data in the introduction.
- Let’s have a look at a hello world query in GraphQL+-.
+ Let’s have a look at a hello world query in DQL.
 Every query has a name, and the result is labelled with the same name.
 The search criteria func: ... matches nodes. Function eq does what you&amp;rsquo;d expect, matching nodes with a name equalling &amp;ldquo;Michael&amp;rdquo;. The result is the matched nodes and listed outgoing edges from those nodes.</description>
     </item>
@@ -30,7 +30,7 @@ The search criteria func: ... matches nodes. Function eq does what you&amp;rsquo
       
       <guid>https://dgraph.io/tour/master/basic/2/</guid>
       <description>The last query got us some data, but the result wasn’t very interesting, nor was it much to do with graphs.
-In Dgraph and GraphQL+-, queries return graphs, not tables or lists of data.
+In Dgraph and DQL, queries return graphs, not tables or lists of data.
 A query is executed against a graph and the result is a subset of the queried graph, or some manipulation or calculation based on the queried graph.
 Let’s improve the query to get Michael and his network of friends.</description>
     </item>
@@ -109,7 +109,7 @@ The visualization will look the same as without the sorting, but the JSON result
       <guid>https://dgraph.io/tour/master/basic/9/</guid>
       <description>It&amp;rsquo;s not uncommon to have thousands of results for a query.
 But you might want to select only the top-k answers, paginate the results for display, or limit a large result.
-In GraphQL+- this is done with first, offset and after in combination with ordering.
+In DQL this is done with first, offset and after in combination with ordering.
  first: N Return only the first N results offset: N Skip the first N results after: uid Return the results after uid  By default, query answers are ordered by uid.</description>
     </item>
     

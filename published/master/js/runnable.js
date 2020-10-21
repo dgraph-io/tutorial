@@ -262,4 +262,14 @@ $(".runnable").each(function() {
 });
 
 
-
+$(document).ready(function () {
+  if ($('.lesson__prev').is(':empty')) {
+    $('.lesson__next').css({
+      "transform": "translate(40px , 0)"
+    })
+  } else {
+    $('.lesson__next').css({
+      "transform": "translate(60px , 0)"
+    })
+  }
+});
