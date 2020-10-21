@@ -41,7 +41,7 @@ After the upload, the label _:company1 doesn’t exist in Dgraph and we can’t 
       
       <guid>https://dgraph.io/tour/dgraph-20.03.0/schema/3/</guid>
       <description>Dgraph doesn&amp;rsquo;t support setting external IDs for nodes. If an application requires unique identifiers for nodes other than the UIDs assigned by Dgraph, then these have to be supplied as edges. It&amp;rsquo;s up to a user application to ensure the uniqueness of such IDs/keys.
-More about in https://dgraph.io/docs/mutations/#external-ids</description>
+More about in https://docs.dgraph.io/mutations/#external-ids</description>
     </item>
     
     <item>
