@@ -1,5 +1,3 @@
 {
-  q(func:allofterms(name@en, "Kathryn Bigelow")) {
-    _predicate_
-	}
+	# write any query you like in the sandbox
 }

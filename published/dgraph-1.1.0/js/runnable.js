@@ -1,14 +1,34 @@
 import * as dgraph from 'dgraph-js-http'
+import $ from "jquery";
 
+window.CodeMirror = require('codemirror');
+import 'codemirror/lib/codemirror.css';
+import '../css/runnable.css';
 
-// cm stores reference to the codemirror for the page
-var cm;
+import javascript from 'codemirror/mode/javascript/javascript';
+
+// Stores reference to the codemirror for the page
+let codeMirror;
+
+// Key in localStorage of the server URL string.
+const SERVER_ADDR = 'tourDgraphAddr';
+
+let serverAddress = localStorage.getItem(SERVER_ADDR) || "http://localhost:8080";
+
+changeServerAddress(serverAddress);
+
+function changeServerAddress(newAddr) {
+  serverAddress = newAddr;
+  localStorage.setItem(SERVER_ADDR, newAddr);
+  $('.runnable .server-switch .url').text(newAddr);
+  $('input#inputDgraphUrl').val(newAddr);
+}
 
 function initCodeMirror($runnable) {
   $runnable.find(".CodeMirror").remove();
 
   var editableEl = $runnable.find(".query-content-editable")[0];
-  cm = CodeMirror.fromTextArea(editableEl, {
+  codeMirror = CodeMirror.fromTextArea(editableEl, {
     lineNumbers: true,
     autoCloseBrackets: true,
     lineWrapping: true,
@@ -16,7 +36,7 @@ function initCodeMirror($runnable) {
     tabSize: 2
   });
 
-  cm.on("change", function(c) {
+  codeMirror.on("change", function(c) {
     var val = c.doc.getValue();
     $runnable.attr("data-current", val);
     c.save();
@@ -26,7 +46,6 @@ function initCodeMirror($runnable) {
 // updateQueryContents updates the query contents in all tabs
 function updateQueryContents($runnables, newQuery) {
   var cleanValue = newQuery.trim().replace(/\n$/g, "");
-
   $runnables.find(".query-content").text(cleanValue);
 }
 
@@ -35,8 +54,8 @@ function formatMs(ns) {
 }
 
 function getLatencyTooltipHTML(serverLatencyInfo, networkLatency) {
-  var contentHTML =
-    `
+  return `
+    <div class="latency-tooltip-container">
       <div class="measurement-row">
         <div class="measurement-key">Encoding:</div>
         <div class="measurement-val">
@@ -57,15 +76,13 @@ function getLatencyTooltipHTML(serverLatencyInfo, networkLatency) {
       </div>
       <div class="divider"></div>
       <div class="measurement-row">
-      <div class="measurement-key total">Total:</div>
-      <div class="measurement-val">
-        ${formatMs(serverLatencyInfo.total_ns)}
+        <div class="measurement-key total">Total:</div>
+        <div class="measurement-val">
+          ${formatMs(serverLatencyInfo.total_ns)}
+        </div>
       </div>
-    </div>`
-  return `
-    <div class="latency-tooltip-container">
-        ${contentHTML}
-    </div>`
+    </div>
+  `;
 }
 
 /**
@@ -81,26 +98,26 @@ function updateLatencyInformation(
   serverLatencyInfo,
   networkLatency
 ) {
-  var isModal = $runnable.parents('#runnable-modal').length > 0;
   serverLatencyInfo.total_ns = Object.values(serverLatencyInfo).reduce((x, y) => x + y, 0);
 
-  var totalServerLatency =  serverLatencyInfo.total_ns / 1e6;
+  const totalServerLatency =  serverLatencyInfo.total_ns / 1e6;
 
-  var networkOnlyLatency = Math.round(networkLatency - totalServerLatency);
+  const networkOnlyLatency = Math.round(networkLatency - totalServerLatency);
 
   $runnable.find('.latency-info').removeClass('hidden');
   $runnable.find('.server-latency .number').text(formatMs(serverLatencyInfo.total_ns) + 'ms');
   $runnable.find('.network-latency .number').text(networkOnlyLatency + 'ms');
 
-  var tooltipHTML = getLatencyTooltipHTML(
+  const tooltipHTML = getLatencyTooltipHTML(
     serverLatencyInfo,
     networkOnlyLatency
   );
 
-  $runnable
-    .find(".server-latency-tooltip-trigger")
-    .attr("title", tooltipHTML)
-    .tooltip();
+  // TODO: where did .tooltip plugin go?
+  // $runnable
+  //   .find(".server-latency-tooltip-trigger")
+  //   .attr("title", tooltipHTML)
+  //   .tooltip();
 }
 
 function displayOutput(codeEl, res) {
@@ -108,7 +125,7 @@ function displayOutput(codeEl, res) {
 
   codeEl.text(userOutput);
   for (var i = 0; i < codeEl.length; i++) {
-    hljs.highlightBlock(codeEl[i]);
+    window.hljs.highlightBlock(codeEl[i]);
   }
 }
 
@@ -126,14 +143,18 @@ $(document).on('click', '.runnable [data-action="run"]', async function(e) {
   $currentRunnable.find(".output-container").removeClass("empty error");
   codeEl.text("Waiting for the server response...");
 
-  var startTime = new Date().getTime();
+  const startTime = Date.now();
 
   const method = endpoint.substring(1);
-  const stub = new dgraph.DgraphClientStub("http://localhost:8080")
+  const stub = new dgraph.DgraphClientStub(serverAddress)
   const client = new dgraph.DgraphClient(stub)
   client.setDebugMode(true)
-  // TODO: this should be done once per URL, but good enough for now.
-  await stub.detectApiVersion();
+  try {
+    // TODO: this should be done once per URL, but good enough for now.
+    await stub.detectApiVersion();
+  } catch (e) {
+    // Ignore errors while detecting version - real request will handle errors
+  }
 
   let request = null;
   switch (endpoint) {
@@ -152,10 +173,8 @@ $(document).on('click', '.runnable [data-action="run"]', async function(e) {
 
   try {
     const res = await request;
-
-    var now = new Date().getTime();
-    var networkLatency = now - startTime;
-    var serverLatencyInfo = null;
+    const networkLatency = Date.now() - startTime;
+    let serverLatencyInfo = null;
     if (res.extensions && res.extensions.server_latency) {
       serverLatencyInfo = res.extensions.server_latency;
     }
@@ -189,6 +208,24 @@ $(document).on('click', '.runnable [data-action="run"]', async function(e) {
   }
 });
 
+$(document).on('click', '.runnable a.btn-change', async function(e) {
+  e.preventDefault();
+  $('.runnable-url-modal.modal').addClass('show');
+})
+
+$(document).on('click', '.runnable-url-modal button[data-dismiss="modal"]', async function(e) {
+  $('.runnable-url-modal.modal').removeClass('show');
+})
+
+$(document).on('click', '.runnable-url-modal button[data-action=apply]', async function(e) {
+  $('.runnable-url-modal.modal').removeClass('show');
+  changeServerAddress($('input#inputDgraphUrl').val())
+})
+
+$(document).on('click', '.runnable-url-modal button[data-action=default-url]', async function(e) {
+  changeServerAddress("http://localhost:8080")
+})
+
 // Refresh code
 $(document).on("click", '.runnable [data-action="reset"]', function(e) {
   var $runnable = $(this).closest(".runnable");
@@ -207,8 +244,7 @@ $(document).on("click", '.runnable [data-action="reset"]', function(e) {
   }, 80);
 });
 
-$(document).on("click", ".runnable-content.runnable-code", () => cm.focus());
-
+$(document).on("click", ".runnable-content.runnable-code", () => codeMirror.focus());
 
 // Initialize runnables
 $(".runnable").each(function() {

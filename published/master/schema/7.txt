@@ -1,13 +1,6 @@
 {
-  delete {
-    # Delete a single triple
-    <0x1c3eb> <name> "Steven" .
-    <0x1c3eb> <age> "38" .
-
-    # Delete all triples for a given edge
-    <0x1c3eb> <friend> * .
-
-    # Delete all triples for a given node
-    <0x1c3eb> * * .
+  set {
+    # <uid_of_michael> <boss_of> <uid_of_sarah> .
+    # <uid_of_sarah> <works_for> <uid_of_company> .
   }
 }
