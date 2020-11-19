@@ -116,7 +116,7 @@ def main():
 
     buildAll(releases)
 
-    exec("git", "checkout", "master")
+    exec("git", "checkout", "-b", "newRelease")
 
     exec("rm", "-rf", "published")
     exec("mv", publicDir, "published")

@@ -32,9 +32,9 @@ Run the build script:
 `python3 scripts/build.py`
 
 Once it finishes without errors it will commit all static content
-into the `published/` folder.
+into the `published/` folder. And it will create a new branch called "newRelease".
 
-After that you can `git push` and the server will pick up the changes.
+After that you can `git push`, create a PR, wait until it is merged and that the server will pick up the changes.
 
 ## Server config
 
