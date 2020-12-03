@@ -23,6 +23,9 @@
     text-decoration: none;
     margin-top: -50px;
     margin-left: -40px;
+    position: absolute;
+    left: 50%;
+    transform: translate(60px, 0px);
   }
   .lesson__prev {
     font-size: 20px;
@@ -36,8 +39,10 @@
     text-decoration: none;
     margin-top: -50px;
     margin-right: -40px;
+    position: absolute;
+    right: 50%;
+    transform: translate(-60px, 0px);
   }
-
   .lesson__navigation .lesson__next {
     font-size: 20px;
     align-items: center;
@@ -50,6 +55,9 @@
     text-decoration: none;
     margin-top: 0;
     margin-left: 0;
+    position: relative;
+    left: 0;
+    transform: translate(0, 0) !important;
   }
   .lesson__navigation .lesson__prev {
     font-size: 20px;
@@ -63,9 +71,11 @@
     text-decoration: none;
     margin-top: 0;
     margin-right: 0;
+    position: relative;
+    left: 0;
+    transform: translate(0, 0) !important;
   }
 }
-
 #sidebar {
   position: fixed;
   right: 0;
