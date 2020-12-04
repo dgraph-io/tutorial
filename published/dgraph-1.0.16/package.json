@@ -9,7 +9,7 @@
   "dependencies": {
     "codemirror": "^5.48.2",
     "dgraph-js-http": "^1.1.0-rc18",
-    "highlight.js": "^9.15.9",
+    "highlight.js": "^10.4.1",
     "jquery": "^3.4.1"
   },
   "devDependencies": {
