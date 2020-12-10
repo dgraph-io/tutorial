@@ -3,10 +3,6 @@
 <body class="tour">
 
     {{ partial "page_header.html" . }}
-    <div class="mt-5">
-        {{ partial "dropdown.html" . }}
-    </div>
-
 
     <div class="page-intro page-intro__home">
         <div class="container">
@@ -17,7 +13,7 @@
                 <p class="page-intro__subtitle" style="max-width: 520px;">An interactive tutorial with real queries and real results,
         designed to run on Chrome on your machine.</p>
 
-                <a href="{{ .Site.BaseURL }}/intro/1/" class="button button--primary">
+                <a href="{{ range first 1 .Site.Menus.main }}{{ .URL }}{{ end }}" class="button button--primary">
                     <span>Get Started</span>
                     <i class="fas fa-arrow-right"></i>
                 </a>
