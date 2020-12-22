@@ -9,9 +9,10 @@
     <div class="d-flex align-items-center">
 
     <div class="page-subnav__labels d-none d-lg-flex">
-        {{- $currentSection := print "/" (index (split .URL "/") 1) "/" -}}
+    {{ .URL }}
+        {{- $currentSection := print "/tour/" (index (split .URL "/tour/") 1) "/" -}}
         {{ range $.Site.Menus.main }}
-            {{- $thisSection := print "/" (index (split .URL "/") 1) "/" -}}
+            {{- $thisSection := print "/tour/" (index (split .URL "/tour/") 1) "/" -}}
             <a class="page-subnav__label{{ if eq ($currentSection|lower) ($thisSection|lower) }} is-active{{ end }}" href="{{ .URL }}">
                 <span>{{ .Name }}</span>
             </a>
@@ -23,9 +24,9 @@
           <span style="opacity:0">Dropdown button</span>
         </button>
         <div class="dropdown-menu"  >
-            {{- $currentSection := print "/" (index (split .URL "/") 1) "/" -}}
+            {{- $currentSection := print "/" (index (split .URL "/tour/") 1) "/" -}}
             {{ range $.Site.Menus.main }}
-                {{- $thisSection := print "/" (index (split .URL "/") 1) "/" -}}
+                {{- $thisSection := print "/" (index (split .URL "/tour/") 1) "/" -}}
                 <a class="dropdown-item page-subnav__label{{ if eq ($currentSection|lower) ($thisSection|lower) }} is-active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
                 {{ end }}
         </div>
