@@ -9,7 +9,6 @@
     <div class="d-flex align-items-center">
 
     <div class="page-subnav__labels d-none d-lg-flex">
-    {{ .URL }}
         {{- $currentSection := print "/tour/" (index (split .URL "/tour/") 1) "/" -}}
         {{ range $.Site.Menus.main }}
             {{- $thisSection := print "/tour/" (index (split .URL "/tour/") 1) "/" -}}
