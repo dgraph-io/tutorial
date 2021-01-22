@@ -23,16 +23,16 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500&display=swap" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link href='{{ relURL "https://dgraph.io/assets/css/style.min.css" }}?100820120' rel="stylesheet" type="text/css" />
     <link href='{{ relURL "/css/runnable-custom.css" }}?{{ md5 (readFile "themes/hugo-tutorials/static/css/runnable-custom.css") }}' rel="stylesheet"/>
     <link href='{{ relURL "/css/theme.css" }}?{{ md5 (readFile "themes/hugo-tutorials/static/css/theme.css") }}' rel="stylesheet"/>
 
     <link href='{{ relURL "/css/font-awesome/css/all.css" }}' rel="stylesheet"/>
 
-  <link href="{{ .Site.BaseURL }}/css/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="{{ .Site.BaseURL }}/css/font-awesome/css/all.css" rel="stylesheet" />
 
   <!-- Google Tag Manager -->
   <script type="text/javascript">
@@ -63,6 +63,9 @@
       a.appendChild(r);
     })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
   </script>
+
+
+  <script src='{{ relURL "/js/app.js" }}?{{ md5 (readFile "themes/hugo-tutorials/static/js/app.js") }}'></script>
 
 </head>
 
