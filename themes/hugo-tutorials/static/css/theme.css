@@ -461,3 +461,119 @@
     margin: 30px 24px;
   }
 }
+.tour-container-new .page-intro {
+  border-bottom: none;
+  padding: 120px 0 0;
+}
+
+.lesson-tiles-container {
+  padding-top: 96px !important;
+  margin-bottom: 96px !important;
+}
+
+.lesson-tiles-container h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1em;
+  text-align: center;
+}
+
+.lesson-tiles-container .lesson-tiles {
+  display: flex;
+  flex-direction: column;
+  border-left: 16px solid;
+  max-width: 904px;
+  margin: auto;
+  position: relative;
+}
+
+.lesson-tiles-container .lesson-tiles::before {
+  content: '';
+  background: linear-gradient(180deg, #FF4200 0%, #E50793 116.97%, #E50695 116.98%);
+  width: 16px;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  transform: translateX(-100%);
+}
+
+.lesson-tiles-container .lesson-tiles__tile {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #D6D6D6;
+  padding: 24px 8px;
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+.lesson-tiles-container .lesson-tiles__tile:before {
+  background: none;
+  border: none;
+  border-radius: 0;
+  color: #212121;
+  content: counter(lesson-tiles);
+  counter-increment: lesson-tiles;
+  display: block;
+  margin: 0;
+  line-height: 1em;
+  width: auto;
+  height: auto;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.1em;
+  -webkit-background-clip: unset;
+}
+
+.lesson-tiles-container .lesson-tiles .lesson-tiles__tile:last-child {
+  border-bottom: none;
+}
+
+.lesson-tiles-container .lesson-tiles__tile p {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.1em;
+  color: #212121;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+  width: 100%;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.lesson-tiles-container .lesson-tiles__tile p span {
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5em;
+  text-align: center;
+  color: #555555;
+}
+
+.lesson-tiles-container .lesson-tiles__tile a {
+  margin: 0;
+  min-width: 92px;
+}
+
+@media screen and (min-width: 576px) {
+  .lesson-tiles-container .lesson-tiles__tile {
+    flex-direction: row;
+    padding: 24px 42px;
+  }
+
+  .lesson-tiles-container .lesson-tiles__tile p {
+    padding: 0 42px;
+    text-align: left;
+  }
+
+  .lesson-tiles-container .lesson-tiles__tile p span {
+    text-align: left;
+  }
+
+  .lesson-tiles-container .lesson-tiles__tile a {
+    min-width: 112px;
+  }
+}
