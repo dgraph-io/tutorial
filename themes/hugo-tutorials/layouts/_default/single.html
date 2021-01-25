@@ -1,98 +1,45 @@
 {{ $codePath := printf "content/%s%s.txt" .File.Dir .File.BaseFileName }}
 {{ $codeContent := readFile $codePath }}
-{{ $numContents := len (where .Site.RegularPages "Section" "==" .Section) }}
 
 {{ partial "header.html" . }}
 
-
-<body class="tour">
+<body class="tour new">
 
     {{ partial "page_header.html" . }}
-
 
     <div class="d-block d-lg-none tour-message">
         To optimize your experience, the interactive tutorial is only available on desktop.
     </div>
 
-    <div class="page-intro page-intro__narrow pt-80">
-        <div class="container__full">
-            {{ partial "page_navigation.html" . }}
-           
-
-        </div>
-    </div>
-
-    <section class="page-body">
+    <section class="page-body new">
         <div class="page-body__content">
-
             <div class="lesson">
-
-                {{ with .Params.prev }}
-                <a href="{{ . | relURL }}" data-action="go-prev" class="lesson__prev">
-                    <span>
-                        <i class="fad fa-angle-double-left"></i>
-                    </span>
-                </a>
-                {{ else }}
-                <div class="lesson__prev"></div>
-                {{ end }}
-
-                <div class="lesson__content">
-                    <div>
-
+                <div class="lesson__content" id="lesson-content">
+                    <div id="lesson-content-inner">
+                        <h2 class="lesson__tour__type">Dgraph Tour</h2>
+                        <h2 class="lesson__Category">{{ (index (split .File.Dir "/") 0) }}</h2>
                         <h2 class="lesson__title">{{ .Title }}</h2>
 
                         {{ .Content }}
-
                     </div>
+                    {{ partial "page_navigation_modal.html" . }}
                 </div>
 
                 {{ if not (eq $codeContent "") }}
-                <div class="lesson__code d-none d-lg-block">
-
-                    {{ partial "runnable" (dict "Content" . "Code" $codeContent) }}
-
-                </div>
-                {{ end }}
-
-                {{ with .Params.next }}
-                <a href="{{ . | relURL }}" data-action="go-next" class="lesson__next">
-                    <span>
-                        <i class="fad fa-angle-double-right"></i>
-                    </span>
-                </a>
-                {{ else }}
-                <div class="lesson_next"></div>
-                {{ end }}
-
-                <nav class="lesson__navigation">
-
-                    {{ with .Params.prev }}
-                    <a href="{{ . | relURL }}" data-action="go-prev" class="lesson__prev">
-                        <span>
-                            <i class="fad fa-angle-double-left"></i>
-                        </span>
-                    </a>
-                    {{ end }}
-
-                    <div>
-                        {{ .File.BaseFileName }} / {{ $numContents }}
+                    <div class="lesson__code modal-bakdrop d-none d-lg-block">
+                        {{ partial "runnable" (dict "Content" . "Code" $codeContent) }}
                     </div>
-
-                    {{ with .Params.next }}
-                    <a href="{{ . | relURL }}" data-action="go-next" class="lesson__next">
-                        <span>
-                            <i class="fad fa-angle-double-right"></i>
-                        </span>
-                    </a>
-                    {{ end }}
-
-                </nav>
-
+                    {{else}}
+                    <div class="lesson__code modal-bakdrop d-none d-lg-block empty">
+                        <img src="https://dgraph.io/assets/images/why/dgraph-pattern.svg" />
+                    </div>
+                {{ end }}
             </div>
-
         </div>
+
     </section>
+
+    {{ partial "page_navigation_new.html" . }}
 
     {{ partial "page_footer.html" . }}
 
