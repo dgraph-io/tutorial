@@ -206,7 +206,7 @@ $(document).on('click', '.runnable [data-action="run"]', async function(e) {
 
     let res = await error.toString().match(/APIError/g);
 
-    !res ? message = defaultError : message = error
+    !res ? message = `${defaultError} ${error}` : message = error
 
     codeEl.text(message);
   }
