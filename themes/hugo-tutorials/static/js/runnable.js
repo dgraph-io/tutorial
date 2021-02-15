@@ -12,7 +12,7 @@ let codeMirror;
 const SERVER_ADDR = 'tourDgraphAddr';
 const SLASH_KEY = 'slashAPIKey';
 
-let slashApiKey = localStorage.getItem(SLASH_KEY) || '';
+let slashApiKey = localStorage.getItem(SLASH_KEY) || null;
 let serverAddress = localStorage.getItem(SERVER_ADDR) || "http://localhost:8080";
 
 changeServerAddress(serverAddress, slashApiKey);
