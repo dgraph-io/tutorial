@@ -1,0 +1,10 @@
+{
+  getPerson(xid: "alice") {
+    id
+    name
+    friends(order: { asc: name }, offset: 1, first: 2) {
+      id
+      name
+    }
+  }
+}

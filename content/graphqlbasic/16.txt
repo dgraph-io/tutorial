@@ -1,0 +1,10 @@
+{
+  # A comment in a query looks like this
+  getPerson(xid: "Alice") {
+    name # or like this
+    age
+    ownsPets {
+      pet: name
+    }
+  }
+}

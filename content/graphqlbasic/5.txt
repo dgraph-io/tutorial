@@ -1,0 +1,15 @@
+{
+  getPerson(xid: "alice") {
+    id
+    name
+    age
+    friends {
+      id
+      name
+    }
+    ownsPet {
+      id
+      name
+    }
+  }
+}
