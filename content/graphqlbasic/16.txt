@@ -1,6 +1,6 @@
 {
   # A comment in a query looks like this
-  getPerson(xid: "Alice") {
+  getPerson(xid: "alice") {
     name # or like this
     age
     ownsPets {

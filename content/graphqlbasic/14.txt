@@ -2,9 +2,11 @@
   getPerson(xid: "alice") @cascade {
     name
     age
-    friend {
+    friends {
       name
-      ownsPet
+      ownsPets {
+        name
+      }
     }
   }
 }
