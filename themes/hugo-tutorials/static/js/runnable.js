@@ -1,5 +1,6 @@
 import * as dgraph from 'dgraph-js-http'
 import $ from "jquery";
+import https from 'https';
 
 window.CodeMirror = require('codemirror');
 import 'codemirror/lib/codemirror.css';
@@ -14,15 +15,6 @@ let codeMirror;
 const SERVER_ADDR = 'tourDgraphAddr';
 
 let serverAddress = localStorage.getItem(SERVER_ADDR) || "http://localhost:8080";
-
-changeServerAddress(serverAddress);
-
-function changeServerAddress(newAddr) {
-  serverAddress = newAddr;
-  localStorage.setItem(SERVER_ADDR, newAddr);
-  $('.runnable .server-switch .url').text(newAddr);
-  $('input#inputDgraphUrl').val(newAddr);
-}
 
 function initCodeMirror($runnable) {
   $runnable.find(".CodeMirror").remove();
@@ -129,8 +121,144 @@ function displayOutput(codeEl, res) {
   }
 }
 
+$(document).on('click', '.runnable [data-action="run-graphql"]', async function (e) {
+  e.preventDefault();
+  var $currentRunnable = $(this).closest('.runnable');
+  var query = $(this).closest('.runnable').attr('data-current');
+  var responseEl = $currentRunnable.find('.output');
+  $currentRunnable.find(".output-container").removeClass("empty error");
+  responseEl.text("Waiting for the server response...");
+
+  var endpoint = sessionStorage.getItem('graphqlendpoint');
+  // leaving this commented code for later use if key required by default to run any queries/mutations
+  // var slashAPIKey = sessionStorage.getItem('apikey');
+  if (!endpoint) {
+    $('.runnable-url-modal.modal').addClass('show');
+    return null
+  }
+  const data = JSON.stringify({
+    query,
+    // leaving this here for later expansions for when tour supports a variable block as well.
+    // variables: { }
+  });
+  const options = {
+    hostname: new URL(endpoint).hostname,
+    path: '/graphql',
+    method: 'POST',
+    headers: {
+      // 'Dg-Auth': slashAPIKey,
+      // leaving this here for later expansion when tour supports auth rules and JWTs
+      // [authKey]: authJWT
+      'Content-Type': 'application/json'
+    }
+  }
+  const req = https.request(options, res => {
+    var json = '';
+    res.on('data', function (chunk) {
+      json += chunk;
+    });
+    res.on('end', function () {
+      if (res.statusCode === 200) {
+        try {
+          let html = ''
+          var data = JSON.parse(json);
+          if (data.errors) {
+            $currentRunnable.find('.output-container').addClass('error');
+          } else {
+            html = `<h6>Successfully Updated Schema</h6>`
+          }
+          if (data.extensions) delete data.extensions
+          displayOutput(responseEl, data);
+        } catch (e) {
+          console.log('Error parsing JSON!')
+          console.error(e)
+        }
+      } else {
+        responseEl.test('Could not connect to GraphQL Endpoint')
+        console.log('Status: ', res.statusCode);
+      }
+    })
+  })
+  req.on('error', error => {
+    console.error(error)
+  })
+  req.write(data)
+  req.end()
+})
+
+$(document).on('click', '.runnable [data-action="push schema"]', async function (e) {
+  e.preventDefault();
+  $('.runnable-response-modal.modal .container-fluid').text('running...');
+  $('.runnable-response-modal.modal').addClass('show');
+  var schema = $(this).closest('.runnable').attr('data-current');
+  var endpoint = sessionStorage.getItem('graphqlendpoint');
+  var slashAPIKey = sessionStorage.getItem('apikey');
+  if (!endpoint || !slashAPIKey) {
+    $('.runnable-url-modal.modal').addClass('show');
+    return null
+  }
+  const data = JSON.stringify({
+    query: `mutation($schema: String!) {
+      updateGQLSchema(input: { set: { schema: $schema}}) {
+        gqlSchema {
+          schema
+          generatedSchema
+        }
+      }
+    }`,
+    variables: { schema }
+  });
+  const options = {
+    hostname: new URL(endpoint).hostname,
+    path: '/admin',
+    method: 'POST',
+    headers: {
+      'Dg-Auth': slashAPIKey,
+      'Content-Type': 'application/json'
+    }
+  }
+  const req = https.request(options, res => {
+    var json = '';
+    res.on('data', function (chunk) {
+      json += chunk;
+    });
+    res.on('end', function () {
+      if (res.statusCode === 200) {
+        try {
+          let html = ''
+          var data = JSON.parse(json);
+          if (data.errors) {
+            html += '<h6>Errors</h6><ul>';
+            data.errors.forEach(error => {
+              const locLine = error.locations[0].line
+              const locColumn = error.locations[0].column
+              html += `<li><b>Line ${locLine}:${locColumn}</b>: ${error.message}</li>`
+            })
+            html += '</ul>'
+          } else {
+            html = `<h6>Successfully Updated Schema</h6>`
+          }
+          console.log(JSON.stringify(data, undefined, 2));
+          $('.runnable-response-modal.modal').addClass('show');
+          $('.runnable-response-modal.modal .container-fluid').html(html);
+        } catch (e) {
+          console.log('Error parsing JSON!')
+          console.error(e)
+        }
+      } else {
+        console.log('Status: ', res.statusCode);
+      }
+    })
+  })
+  req.on('error', error => {
+    console.error(error)
+  })
+  req.write(data)
+  req.end()
+})
+
 // Running code
-$(document).on('click', '.runnable [data-action="run"]', async function(e) {
+$(document).on('click', '.runnable [data-action="run"]', async function (e) {
   var $currentRunnable = $(this).closest('.runnable');
   var codeEl = $currentRunnable.find('.output');
   var query = $(this)
@@ -212,24 +340,6 @@ $(document).on('click', '.runnable [data-action="run"]', async function(e) {
   }
 });
 
-$(document).on('click', '.runnable a.btn-change', async function(e) {
-  e.preventDefault();
-  $('.runnable-url-modal.modal').addClass('show');
-})
-
-$(document).on('click', '.runnable-url-modal button[data-dismiss="modal"]', async function(e) {
-  $('.runnable-url-modal.modal').removeClass('show');
-})
-
-$(document).on('click', '.runnable-url-modal button[data-action=apply]', async function(e) {
-  $('.runnable-url-modal.modal').removeClass('show');
-  changeServerAddress($('input#inputDgraphUrl').val())
-})
-
-$(document).on('click', '.runnable-url-modal button[data-action=default-url]', async function(e) {
-  changeServerAddress("http://localhost:8080")
-})
-
 // Refresh code
 $(document).on("click", '.runnable [data-action="reset"]', function(e) {
   var $runnable = $(this).closest(".runnable");
@@ -259,17 +369,4 @@ $(".runnable").each(function() {
   updateQueryContents($runnable, currentQuery);
 
   initCodeMirror($runnable);
-});
-
-
-$(document).ready(function () {
-  if ($('.lesson__prev').is(':empty')) {
-    $('.lesson__next').css({
-      "transform": "translate(40px , 0)"
-    })
-  } else {
-    $('.lesson__next').css({
-      "transform": "translate(60px , 0)"
-    })
-  }
 });

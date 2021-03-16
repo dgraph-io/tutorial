@@ -1,0 +1,115 @@
+{{ $endpoint := .Content.Params.endpoint | default "/query" }}
+<div class="runnable {{ .Content.Params.type }}" data-type="{{ .Content.Params.type }}" data-initial="{{ .Code }}" data-current="{{ .Code }}" endpoint="" data-dirty="false">
+  <div class="runnable-pane runnable-pane-query">
+    <div class="topbar">
+      <div class="pane-title">
+        <span>GraphQL</span>
+      </div>
+      <span class="server-switch">
+        <span>Dgraph Cloud:</span>
+        <span class="url sessionDisplayVal" data-key="graphqlendpoint">http://localhost:8080</span>
+        <a class="btn-change" href="#">
+            <i class="far fa-edit"></i>
+        </a>
+      </span>
+
+      <div class="actions">
+        <a class="button button--small button--outline" data-action="reset" href="#">Reset</a>
+        <a class="button button--small" data-action="run-graphql" href="#">Run</a>
+      </div>
+    </div>
+
+    <div class="runnable-content runnable-code">
+      <div class="runnable-tab-content active">
+        <textarea class="query-content-editable">{{ .Code }}</textarea>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="actions">
+
+    </div>
+    </div>
+  </div>
+
+  <div class="runnable-pane runnable-pane-output">
+    <div class="topbar">
+      <div class="pane-title">
+         Response
+      </div>
+    </div>
+
+    <div class="runnable-content runnable-output">
+      <pre class="output-container empty"><code class="output" tabindex="-1"></code></pre>
+    </div>
+
+    <div class="footer">
+      <div class="latency-info hidden">
+          <div class="stat server-latency">
+            <span class="label">Server latency:</span> <span class="number"></span> <i class="fa fa-question-circle server-latency-tooltip-trigger" data-toggle="tooltip" data-placement="top" data-html="true" title="Latency information" data-animation="false"></i>
+          </div>
+          <div class="stat network-latency">
+            <span class="label">Network latency:</span> <span class="number"></span>
+          </div>
+        </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .modal.show {
+    display: block;
+    opacity: 1;
+    background-color: rgba(0,0,0,0.3);
+  }
+</style>
+<div class="modal fade runnable-url-modal" tabindex="-1" role="dialog"
+  aria-labelledby="runnable-url-modal-label" aria-hidden="true">
+  <div class="modal-dialog modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="runnable-url-modal-label">Change GraphQL Endpoint</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <form>
+            <div class="form-group">
+              <label for="inputGraphQLEndpoint">GraphQL Endpoint</label>
+              <input type="text" class="form-control sessionInput" data-key="graphqlendpoint" id="inputGraphQLEndpoint" placeholder="https://your-endpoint.location.provider.cloud.dgraph.io/graphql" style="padding:0 4px;">
+              <!-- <small id="serverStatus" class="form-text text-muted">Server status goes hear.</small> -->
+            </div>
+            <div class="form-group">
+              <label for="inputAPIKey">API Key</label>
+              <input type="text" class="form-control sessionInput" data-key="apikey" id="inputAPIKey" placeholder="Your Admin API Key" style="padding:0 4px;">
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="code-btn" data-action="clear-endpoint">Clear</button>
+        <button type="button" class="code-btn" data-action="apply-endpoint">Apply</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade runnable-response-modal" tabindex="-1" role="dialog"
+  aria-labelledby="runnable-response-modal-label" aria-hidden="true">
+  <div class="modal-dialog modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="runnable-response-modal-label">Response</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

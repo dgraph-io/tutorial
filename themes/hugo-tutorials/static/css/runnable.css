@@ -78,11 +78,14 @@
   color: inherit;
 }
 .runnable .code-btn[data-action='run'],
-.runnable .code-btn[data-action='save'] {
+.runnable .code-btn[data-action='save'],
+.runnable .code-btn[data-action='push schema'] {
   background-color: #3e65b7;
   color: white;
 }
-.runnable .code-btn[data-action='run']:hover {
+.runnable .code-btn[data-action='run']:hover,
+.runnable .code-btn[data-action='run-graphql']:hover,
+.runnable .code-btn[data-action='push schema']:hover {
   background-color: white;
   color: #3e65b7;
   border: 1px solid #3e65b7;
