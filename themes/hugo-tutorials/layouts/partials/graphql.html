@@ -1,7 +1,7 @@
 <div class="runnable {{ .Content.Params.type }}" data-type="{{ .Content.Params.type }}" data-initial="{{ .Code }}" data-current="{{ .Code }}" endpoint="" data-dirty="false">
   <div class="runnable-pane runnable-pane-query">
     <div class="topbar">
-      {{ if and (isset .Content.Params "type") }}
+      {{ if (isset .Content.Params "playground") }}
       <div class="pane-title">
         <span>Playground:</span>
       </div>
@@ -17,7 +17,6 @@
         <span>GraphQL</span>
       </div>
       <span class="server-switch">
-        <span>Dgraph Cloud:</span>
         <span class="url sessionDisplayVal" data-key="graphqlendpoint">http://localhost:8080</span>
         <a class="btn-change" href="#">
             <i class="far fa-edit"></i>
