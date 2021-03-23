@@ -1,6 +1,6 @@
 {{ $endpoint := .Content.Params.endpoint | default "/query" }}
 <div class="runnable {{ .Content.Params.type }}" data-type="{{ .Content.Params.type }}" data-initial="{{ .Code }}" data-current="{{ .Code }}" endpoint="" data-dirty="false">
-  <div class="runnable-pane" style="max-height:100%;">
+  <div class="runnable-pane" style="max-height:100%;height:100%;width:100%">
     <div class="topbar">
       {{ if not (isset .Content.Params "readonly") }}
       <div class="pane-title">
