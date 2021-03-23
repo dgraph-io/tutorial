@@ -16,27 +16,6 @@ $(document).ready(function () {
   updateFields();
 });
 
-const SERVER_ADDR = 'tourDgraphAddr';
-let serverAddress = localStorage.getItem(SERVER_ADDR) || "http://localhost:8080";
-
-function changeServerAddress(newAddr) {
-  serverAddress = newAddr;
-  localStorage.setItem(SERVER_ADDR, newAddr);
-  $('.runnable .server-switch .url').text(newAddr);
-  $('input#inputDgraphUrl').val(newAddr);
-}
-
-changeServerAddress(serverAddress);
-
-$(document).on('click', '.runnable-url-modal button[data-action=apply]', async function(e) {
-  $('.runnable-url-modal.modal').removeClass('show');
-  changeServerAddress($('input#inputDgraphUrl').val())
-})
-
-$(document).on('click', '.runnable-url-modal button[data-action=default-url]', async function(e) {
-  changeServerAddress("http://localhost:8080")
-})
-
 $(document).on('click', '.runnable a.btn-change', async function (e) {
   e.preventDefault();
   $('.runnable-url-modal.modal').addClass('show');
