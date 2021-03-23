@@ -1,7 +1,18 @@
-{{ $endpoint := .Content.Params.endpoint | default "/query" }}
 <div class="runnable {{ .Content.Params.type }}" data-type="{{ .Content.Params.type }}" data-initial="{{ .Code }}" data-current="{{ .Code }}" endpoint="" data-dirty="false">
   <div class="runnable-pane runnable-pane-query">
     <div class="topbar">
+      {{ if and (isset .Content.Params "type") }}
+      <div class="pane-title">
+        <span>Playground:</span>
+      </div>
+      <span class="server-playground">
+        <span class="url" data-key="graphqlplayground">https://play.dgraph.io/graphql</span>
+      </span>
+      <div class="actions">
+        <a class="button button--small button--outline" data-action="reset" href="#">Reset</a>
+        <a class="button button--small" data-action="run-graphql-playground" href="#">Run</a>
+      </div>
+      {{ else }}
       <div class="pane-title">
         <span>GraphQL</span>
       </div>
@@ -12,11 +23,11 @@
             <i class="far fa-edit"></i>
         </a>
       </span>
-
       <div class="actions">
         <a class="button button--small button--outline" data-action="reset" href="#">Reset</a>
         <a class="button button--small" data-action="run-graphql" href="#">Run</a>
       </div>
+      {{ end }}
     </div>
 
     <div class="runnable-content runnable-code">

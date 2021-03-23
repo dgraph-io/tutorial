@@ -77,15 +77,16 @@
   text-decoration: none;
   color: inherit;
 }
-.runnable .code-btn[data-action='run'],
-.runnable .code-btn[data-action='save'],
-.runnable .code-btn[data-action='push schema'] {
+.runnable .code-btn[data-action="run"],
+.runnable .code-btn[data-action="save"],
+.runnable .code-btn[data-action="push schema"] {
   background-color: #3e65b7;
   color: white;
 }
-.runnable .code-btn[data-action='run']:hover,
-.runnable .code-btn[data-action='run-graphql']:hover,
-.runnable .code-btn[data-action='push schema']:hover {
+.runnable .code-btn[data-action="run"]:hover,
+.runnable .code-btn[data-action="run-graphql"]:hover,
+.runnable .code-btn[data-action="run-graphql-playground"]:hover,
+.runnable .code-btn[data-action="push schema"]:hover {
   background-color: white;
   color: #3e65b7;
   border: 1px solid #3e65b7;
@@ -156,6 +157,7 @@
   font-weight: 600;
   font-size: 13px;
 }
+.runnable .topbar .server-playground,
 .runnable .topbar .server-switch {
   display: inline-block;
   margin-left: 8px;
@@ -198,7 +200,7 @@ html .runnable code {
 #runnable-modal .runnable-pane {
   height: 77vh;
 }
-#runnable-modal .code-btn[data-action='expand'] {
+#runnable-modal .code-btn[data-action="expand"] {
   display: none;
 }
 #runnable-modal .modal-close-btn {
@@ -266,7 +268,7 @@ html .runnable code {
   display: inline-block;
   float: left;
 }
-.latency-tooltip-container .measurement-key.total  {
+.latency-tooltip-container .measurement-key.total {
   font-weight: 600;
 }
 .latency-tooltip-container .measurement-val {
@@ -292,7 +294,7 @@ html .runnable code {
   /*display: inline-block;*/
 }
 .runnable .code-btn.active {
-  background: #E0EBF5;
+  background: #e0ebf5;
 }
 .runnable .query-content-editable {
   display: none;
@@ -304,8 +306,8 @@ html .runnable code {
   padding-right: 0 !important;
 }*/
 .runnable .nopadding {
-   padding: 0 !important;
-   margin: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 .runnable .hidden {
   display: none !important;

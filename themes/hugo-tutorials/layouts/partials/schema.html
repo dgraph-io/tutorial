@@ -2,6 +2,7 @@
 <div class="runnable {{ .Content.Params.type }}" data-type="{{ .Content.Params.type }}" data-initial="{{ .Code }}" data-current="{{ .Code }}" endpoint="" data-dirty="false">
   <div class="runnable-pane" style="max-height:100%;">
     <div class="topbar">
+      {{ if not (isset .Content.Params "readonly") }}
       <div class="pane-title">
         <span>GraphQL Schema</span>
       </div>
@@ -17,6 +18,11 @@
         <a class="button button--small button--outline" data-action="reset" href="#">Reset</a>
         <a class="button button--small" data-action="push schema" href="#">Push</a>
       </div>
+      {{ else }}
+      <div class="pane-title">
+        <span>Read Only Schema</span>
+      </div>
+      {{ end }}
     </div>
 
     <div class="runnable-content runnable-code">
