@@ -6,16 +6,29 @@ window.CodeMirror = require("codemirror");
 import "codemirror/lib/codemirror.css";
 import "../css/runnable.css";
 
-import javascript from "codemirror/mode/javascript/javascript";
-
 // Stores reference to the codemirror for the page
 let codeMirror;
 
 // Key in localStorage of the server URL string.
-const SERVER_ADDR = "tourDgraphAddr";
+const SERVER_ADDR = 'tourDgraphAddr';
+const SLASH_KEY = 'slashAPIKey';
 
-let serverAddress =
-  localStorage.getItem(SERVER_ADDR) || "http://localhost:8080";
+let slashApiKey = localStorage.getItem(SLASH_KEY) || null;
+let serverAddress = localStorage.getItem(SERVER_ADDR) || "http://localhost:8080";
+
+changeServerAddress(serverAddress, slashApiKey);
+
+function changeServerAddress(newAddr, newKey) {
+  serverAddress = newAddr;
+  slashApiKey = newKey;
+  localStorage.setItem(SERVER_ADDR, newAddr);
+  localStorage.setItem(SLASH_KEY, newKey);
+  $('.runnable .server-switch .url').text(newAddr);
+  $('input#inputDgraphUrl').val(newAddr);
+  $('input#inputSlashKey').val(newKey);
+}
+
+
 
 function initCodeMirror($runnable) {
   $runnable.find(".CodeMirror").remove();
@@ -300,9 +313,13 @@ $(document).on("click", '.runnable [data-action="run"]', async function (e) {
   const startTime = Date.now();
 
   const method = endpoint.substring(1);
-  const stub = new dgraph.DgraphClientStub(serverAddress);
-  const client = new dgraph.DgraphClient(stub);
-  client.setDebugMode(true);
+
+  const stub = new dgraph.DgraphClientStub(serverAddress)
+  const client = new dgraph.DgraphClient(stub)
+
+  slashApiKey ? client.setSlashApiKey(slashApiKey) : null
+
+  client.setDebugMode(true)
   try {
     // TODO: this should be done once per URL, but good enough for now.
     await stub.detectApiVersion();
@@ -360,11 +377,20 @@ $(document).on("click", '.runnable [data-action="run"]', async function (e) {
 
     let res = await error.toString().match(/APIError/g);
 
-    !res ? (message = defaultError) : (message = error);
+    !res ? message = `${defaultError} ${error}` : message = error
 
     codeEl.text(message);
   }
 });
+
+$(document).on('click', '.runnable-url-modal button[data-action=apply]', async function(e) {
+  $('.runnable-url-modal.modal').removeClass('show');
+  changeServerAddress($('input#inputDgraphUrl').val(), $('input#inputSlashKey').val())
+})
+
+$(document).on('click', '.runnable-url-modal button[data-action=default-url]', async function(e) {
+  changeServerAddress("http://localhost:8080")
+})
 
 // Refresh code
 $(document).on("click", '.runnable [data-action="reset"]', function (e) {
