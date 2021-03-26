@@ -15,12 +15,12 @@
                 </p>
             </div>
 
-            <div class="module-section">
+            <div class="module-section main" data-context='{{ if in ($currentUrlIdentifier|lower) "graphql" }}graphql{{ else }}dql{{ end }}'>
                 <p class="heading text-gradient">Modules</p>
                 {{ range $.Site.Menus.main }}
                     <a class="module {{ if eq ($currentUrlIdentifier|lower) (.Identifier|lower) }}active{{ end }}"
-                        href="{{ .URL }}">
-                        <span>{{ .Weight }}. {{ .Name }}</span>
+                        href="{{ .URL }}" data-context='{{if in .Identifier "graphql" }}graphql{{ else }}dql{{ end }}'>
+                        <span>. {{ .Name }}</span>
                     </a>
                 {{ end }}
             </div>

@@ -560,6 +560,25 @@
   display: none;
 }
 
+.module-section[data-context="dql"] a[data-context="graphql"] {
+  display: none;
+}
+
+.module-section[data-context="graphql"] a[data-context="dql"] {
+  display: none;
+}
+
+.module-section.main[data-context] {
+  counter-reset: moduleNumber;
+}
+.module-section.main .module {
+  counter-increment: moduleNumber;
+}
+
+.module-section.main .module span:before {
+  content: counter(moduleNumber);
+}
+
 .lesson-tiles-container .lesson-tiles {
   display: flex;
   flex-direction: column;
