@@ -10,7 +10,7 @@ canonifyURLs = false
   identifier = "graphqlintro"
   weight = 1
 [[menu.main]]
-  name = "GraphQL Features"
+  name = "GraphQL Basic Features"
   url = "/graphqlbasic/1/"
   identifier = "graphqlbasic"
   weight = 2
@@ -25,7 +25,7 @@ canonifyURLs = false
   identifier = "graphqlmoredata"
   weight = 4
 [[menu.main]]
-  name = "Search in GraphQL"
+  name = "GraphQL Search"
   url = "/graphqlsearch/1/"
   identifier = "graphqlsearch"
   weight = 5
@@ -50,12 +50,12 @@ canonifyURLs = false
   identifier = "moredata"
   weight = 9
 [[menu.main]]
-  name = "DQL Query Blocks & Variables"
+  name = "DQL Query Blocks and Variables"
   url = "/blocksvars/1/"
   identifier = "blocksvars"
   weight = 10
 [[menu.main]]
-  name = "Search in DQL"
+  name = "DQL Search"
   url = "/search/1/"
   identifier = "search"
   weight = 11
@@ -64,12 +64,12 @@ canonifyURLs = false
 
 [params]
   [params.menudesc]
-    graphqlintro = "In this lesson you'll learn how to set up and run Dgraph for the GraphQL portion of the tutorial and learn about graph databases."
+    graphqlintro = "In this lesson you'll learn how to set up and run Dgraph Cloud for the GraphQL portion of this tour, and learn about graph databases."
     graphqlbasic = "Here you'll learn the basics of how to query graph data from Dgraph using GraphQL, and how to use and interpret the results."
     graphqlschema = "This lesson shows you how GraphQL schemas work inside Dgraph, and how to add, update and delete (or mutate) data."
     graphqlmoredata = "Now that you have some experience with Dgraph and GraphQL, this lesson shows you how to work with some larger datasets."
     graphqlsearch = "In this lesson, you'll learn about Dgraph's search features with GraphQL."
-    intro = "In this lesson you'll learn how to set up and run Dgraph for the tutorial and learn about graph databases."
+    intro = "In this lesson you'll learn how to set up and run Dgraph with Docker for the DQL portion of this tour, and also learn about graph databases."
     basic = "Here you'll learn the basics of how to query graph data from Dgraph and how to use and interpret the results."
     schema = "This lesson shows you how schemas work inside Dgraph, and how to add, update and delete (or mutate) data."
     moredata = "Now that you have some experience with Dgraph and DQL, this lesson shows you how to use the Live Loader tool to load large datasets.  You'll need this bigger dataset for the remaining sections of the tutorial."
