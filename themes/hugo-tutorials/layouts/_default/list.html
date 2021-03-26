@@ -26,14 +26,21 @@
     <section class="page-body pt-0">
 
         <div class="section--large lesson-tiles-container">
-            <div class="container">
+            <div class="container" data-context='graphql'>
 
                 <h1>What Will You Learn?</h1>
 
+                <div class="lesson-tiles-switcher">
+                  <div data-context='dql'>
+                    <p>DQL</p>
+                  </div>
+                  <div data-context='graphql'>
+                    <p>GraphQL API</p>
+                  </div>
+                </div>
                 <div class="lesson-tiles">
-
                     {{ range .Site.Menus.main }}
-                        <div class="tile lesson-tiles__tile">
+                        <div class="tile lesson-tiles__tile" data-context='{{ if in .Identifier "graphql" }}graphql{{ else }}dql{{ end }}'>
 
                             <p>
                                 {{ .Name }}
