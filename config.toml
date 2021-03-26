@@ -5,42 +5,73 @@ theme="hugo-tutorials"
 canonifyURLs = false
 
 [[menu.main]]
-  name = "Introduction"
-  url = "/intro/1/"
-  identifier = "intro"
+  name = "GraphQL Introduction"
+  url = "/graphqlintro/1/"
+  identifier = "graphqlintro"
   weight = 1
 [[menu.main]]
-  name = "Basic Features"
-  url = "/basic/1/"
-  identifier = "basic"
+  name = "GraphQL Basic Features"
+  url = "/graphqlbasic/1/"
+  identifier = "graphqlbasic"
   weight = 2
 [[menu.main]]
-  name = "Schema"
-  url = "/schema/1/"
-  identifier = "schema"
+  name = "GraphQL Schema"
+  url = "/graphqlschema/1/"
+  identifier = "graphqlschema"
   weight = 3
 [[menu.main]]
-  name = "Data, More Data"
-  url = "/moredata/1/"
-  identifier = "moredata"
+  name = "GraphQL Data and More Data"
+  url = "/graphqlmoredata/1/"
+  identifier = "graphqlmoredata"
   weight = 4
 [[menu.main]]
-  name = "Query Blocks & Variables"
-  url = "/blocksvars/1/"
-  identifier = "blocksvars"
+  name = "GraphQL Search"
+  url = "/graphqlsearch/1/"
+  identifier = "graphqlsearch"
   weight = 5
 [[menu.main]]
-    name = "Search"
-    url = "/search/1/"
-    identifier = "search"
-    weight = 6
+  name = "DQL Introduction"
+  url = "/intro/1/"
+  identifier = "intro"
+  weight = 6
+[[menu.main]]
+  name = "DQL Basic Features"
+  url = "/basic/1/"
+  identifier = "basic"
+  weight = 7
+[[menu.main]]
+  name = "DQL Schema"
+  url = "/schema/1/"
+  identifier = "schema"
+  weight = 8
+[[menu.main]]
+  name = "DQL Data and More Data"
+  url = "/moredata/1/"
+  identifier = "moredata"
+  weight = 9
+[[menu.main]]
+  name = "DQL Query Blocks and Variables"
+  url = "/blocksvars/1/"
+  identifier = "blocksvars"
+  weight = 10
+[[menu.main]]
+  name = "DQL Search"
+  url = "/search/1/"
+  identifier = "search"
+  weight = 11
+
 
 
 [params]
   [params.menudesc]
-    intro = "In this lesson you'll learn how to set up and run Dgraph for the tutorial and learn about graph databases."
+    graphqlintro = "In this lesson you'll learn how to set up and run Dgraph Cloud for the GraphQL portion of this tour, and learn about graph databases."
+    graphqlbasic = "Here you'll learn the basics of how to query graph data from Dgraph using GraphQL, and how to use and interpret the results."
+    graphqlschema = "This lesson shows you how GraphQL schemas work inside Dgraph, and how to add, update and delete (or mutate) data."
+    graphqlmoredata = "Now that you have some experience with Dgraph and GraphQL, this lesson shows you how to work with some larger datasets."
+    graphqlsearch = "In this lesson, you'll learn about Dgraph's search features with GraphQL."
+    intro = "In this lesson you'll learn how to set up and run Dgraph with Docker for the DQL portion of this tour, and also learn about graph databases."
     basic = "Here you'll learn the basics of how to query graph data from Dgraph and how to use and interpret the results."
-    schema = "This lesson shows you how schemas work inside Dgraph, and how to add, update and delete data (in Dgraph, that's mutate data)."
-    moredata = "Now that you've got some Dgraph experience, this lesson shows you how to use dgraph live loader to load large datasets.  You'll need this bigger dataset for the remaining sections of the tutorial."
+    schema = "This lesson shows you how schemas work inside Dgraph, and how to add, update and delete (or mutate) data."
+    moredata = "Now that you have some experience with Dgraph and DQL, this lesson shows you how to use the Live Loader tool to load large datasets.  You'll need this bigger dataset for the remaining sections of the tutorial."
     blocksvars = "This lesson shows you how to build more powerful queries with multiple query blocks and query variables."
-    search = "In this lesson, you'll learn about Dgraph's search features."
+    search = "In this lesson, you'll learn about Dgraph's search features with DQL."
