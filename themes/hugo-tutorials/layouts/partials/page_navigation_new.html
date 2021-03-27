@@ -5,7 +5,7 @@
 
         <!-- Button to trigger page navigation modal -->
         <i class="fa fa-bars btn" type="button" id="toggle-navigation-modal"></i>
-        <p class="lesson-title">{{ .File.BaseFileName }}. {{ .Title }}</p>
+        <p class="lesson-title">{{ with .Params.course }}{{ . }}.{{ end }}{{ .File.BaseFileName }} {{ .Title }}</p>
     </div>
 
     <nav class="lesson-navigation xs-hidden">

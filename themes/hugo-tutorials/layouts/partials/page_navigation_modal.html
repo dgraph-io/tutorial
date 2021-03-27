@@ -49,7 +49,7 @@
                         {{- $activeWeightIndex :=(index (split $activeWeight "/") 1) -}}
 
                         <a class="module {{ if eq (int $activeWeightIndex) (int .Weight) }}active{{ end }}" href="/tour/{{ $currentUrlIdentifier }}/{{ .Weight }}">
-                            <span>{{ .Weight }}. {{ .Title }}</span>
+                            <span>{{ .Params.course }}.{{ .Weight }}. {{ .Title }}</span>
                         </a>
                     {{ end }}
                 {{ end }}
