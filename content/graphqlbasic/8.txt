@@ -1,7 +1,10 @@
 {
-  queryPerson(order: { asc: name }) {
+  getPerson(xid: "alice") {
     id
     name
-    age
+    friends(order: { asc: name }, offset: 1, first: 2) {
+      id
+      name
+    }
   }
 }

@@ -1,11 +1,1 @@
-mutation {
-  deletePerson(filter: {
-    xid: { eq: "karl" }
-  }) {
-    person {
-      xid
-      name
-      age
-    }
-  }
-}
+# Write any query or mutation you would like

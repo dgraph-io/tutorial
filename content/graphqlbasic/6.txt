@@ -1,11 +1,11 @@
 {
   getPerson(xid: "alice") {
-    id
-    name
-    age
-    friends(filter: { age: { ge: 27 } }) {
-      id
-      name
+    xid
+    friends(filter: {
+      xid: { eq: "dave" }
+      age: { eq: 35 }
+    }) {
+      xid
       age
     }
   }
