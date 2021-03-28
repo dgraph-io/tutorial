@@ -13,10 +13,10 @@
 
     <section class="page-body new">
         <div class="page-body__content">
-            <div class="lesson">
+            <div class="lesson" {{ if eq .Params.completed 1 }}data-completed="{{ .Section }}"{{ end }}>
                 <div class="lesson__content" id="lesson-content">
                     <div id="lesson-content-inner">
-                        <h2 class="lesson__tour__type">Dgraph Tour</h2>
+                        <h2 class="lesson__tour__type">Dgraph {{ if in .Section "graphql" }}GraphQL{{ else }}DQL{{ end }} Tour</h2>
                         <h2 class="lesson__Category">{{ with .Params.courseName }}{{ . }}{{ else }}{{ (index (split .File.Dir "/") 0) }}{{ end }}</h2>
                         <h2 class="lesson__title">{{ .Title }}</h2>
 
