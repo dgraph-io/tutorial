@@ -4,4 +4,4 @@
   status = 301
 
 [build.environment]
-  HUGO_VERSION = 0.79.0
+  HUGO_VERSION = "0.79.0"
