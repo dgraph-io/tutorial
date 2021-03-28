@@ -522,6 +522,7 @@
   font-size: 32px;
   font-weight: 700;
   line-height: 1.1em;
+  margin-bottom: 0.2em;
 }
 
 .container[data-context="graphql"]
@@ -657,6 +658,25 @@
   line-height: 1.5em;
   text-align: center;
   color: #555555;
+}
+
+.lesson-tiles-container .lesson-tiles__tile div {
+  width: min-content;
+  text-align: center;
+}
+
+.lesson-tiles__link .status {
+  position: relative;
+  top: 0.2em;
+}
+
+.lesson-tiles__link .status.completed {
+  color: green;
+}
+
+.lesson-tiles__link .status.completed::after {
+  padding-left: 5px;
+  content: "✔️";
 }
 
 .lesson-tiles-container .lesson-tiles__tile a {
