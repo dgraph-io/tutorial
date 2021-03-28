@@ -28,14 +28,16 @@
         <div class="section--large lesson-tiles-container">
             <div class="container" data-context='graphql'>
 
-                <h1>What Will You Learn?</h1>
+                <h1>What Language Suits You?</h1>
 
                 <div class="lesson-tiles-switcher">
                   <div data-context='dql'>
                     <p>DQL</p>
+                    <span>Dgraph's Query Language</span>
                   </div>
                   <div data-context='graphql'>
-                    <p>GraphQL API</p>
+                    <p>GraphQL</p>
+                    <span>Dgraph's Generated API</span>
                   </div>
                 </div>
                 <div class="lesson-tiles">
@@ -47,10 +49,13 @@
                                 <span> {{ index $.Site.Params.menudesc .Identifier }}</span>
                             </p>
 
-                            <a href="{{ .URL }}" class="button button--secondary">
+                            <div class="lesson-tiles__link">
+                              <a href="{{ .URL }}" class="button button--secondary">
                                 <span>Start</span>
                                 <i class="fas fa-arrow-right"></i>
-                            </a>
+                              </a>
+                              <span class="status" data-course="{{ .Identifier }}">{{ with .Params.time }}{{ . }}{{ end }}</span>
+                            </div>
 
                         </div>
                     {{ end }}
