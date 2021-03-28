@@ -10,11 +10,12 @@ import "../css/runnable.css";
 let codeMirror;
 
 // Key in localStorage of the server URL string.
-const SERVER_ADDR = 'tourDgraphAddr';
-const SLASH_KEY = 'slashAPIKey';
+const SERVER_ADDR = "tourDgraphAddr";
+const SLASH_KEY = "slashAPIKey";
 
 let slashApiKey = localStorage.getItem(SLASH_KEY) || null;
-let serverAddress = localStorage.getItem(SERVER_ADDR) || "http://localhost:8080";
+let serverAddress =
+  localStorage.getItem(SERVER_ADDR) || "http://localhost:8080";
 
 changeServerAddress(serverAddress, slashApiKey);
 
@@ -23,12 +24,10 @@ function changeServerAddress(newAddr, newKey) {
   slashApiKey = newKey;
   localStorage.setItem(SERVER_ADDR, newAddr);
   localStorage.setItem(SLASH_KEY, newKey);
-  $('.runnable .server-switch .url').text(newAddr);
-  $('input#inputDgraphUrl').val(newAddr);
-  $('input#inputSlashKey').val(newKey);
+  $(".runnable .server-switch .url").text(newAddr);
+  $("input#inputDgraphUrl").val(newAddr);
+  $("input#inputSlashKey").val(newKey);
 }
-
-
 
 function initCodeMirror($runnable) {
   $runnable.find(".CodeMirror").remove();
@@ -230,8 +229,6 @@ $(document).on(
   '.runnable [data-action="push schema"]',
   async function (e) {
     e.preventDefault();
-    $(".runnable-response-modal.modal .container-fluid").text("running...");
-    $(".runnable-response-modal.modal").addClass("show");
     var schema = $(this).closest(".runnable").attr("data-current");
     var endpoint = sessionStorage.getItem("graphqlendpoint");
     var slashAPIKey = sessionStorage.getItem("apikey");
@@ -239,6 +236,8 @@ $(document).on(
       $(".runnable-url-modal.modal").addClass("show");
       return null;
     }
+    $(".runnable-response-modal.modal .container-fluid").text("running...");
+    $(".runnable-response-modal.modal").addClass("show");
     const data = JSON.stringify({
       query: `mutation($schema: String!) {
       updateGQLSchema(input: { set: { schema: $schema}}) {
@@ -314,12 +313,12 @@ $(document).on("click", '.runnable [data-action="run"]', async function (e) {
 
   const method = endpoint.substring(1);
 
-  const stub = new dgraph.DgraphClientStub(serverAddress)
-  const client = new dgraph.DgraphClient(stub)
+  const stub = new dgraph.DgraphClientStub(serverAddress);
+  const client = new dgraph.DgraphClient(stub);
 
-  slashApiKey ? client.setSlashApiKey(slashApiKey) : null
+  slashApiKey ? client.setSlashApiKey(slashApiKey) : null;
 
-  client.setDebugMode(true)
+  client.setDebugMode(true);
   try {
     // TODO: this should be done once per URL, but good enough for now.
     await stub.detectApiVersion();
@@ -377,20 +376,31 @@ $(document).on("click", '.runnable [data-action="run"]', async function (e) {
 
     let res = await error.toString().match(/APIError/g);
 
-    !res ? message = `${defaultError} ${error}` : message = error
+    !res ? (message = `${defaultError} ${error}`) : (message = error);
 
     codeEl.text(message);
   }
 });
 
-$(document).on('click', '.runnable-url-modal button[data-action=apply]', async function(e) {
-  $('.runnable-url-modal.modal').removeClass('show');
-  changeServerAddress($('input#inputDgraphUrl').val(), $('input#inputSlashKey').val())
-})
+$(document).on(
+  "click",
+  ".runnable-url-modal button[data-action=apply]",
+  async function (e) {
+    $(".runnable-url-modal.modal").removeClass("show");
+    changeServerAddress(
+      $("input#inputDgraphUrl").val(),
+      $("input#inputSlashKey").val()
+    );
+  }
+);
 
-$(document).on('click', '.runnable-url-modal button[data-action=default-url]', async function(e) {
-  changeServerAddress("http://localhost:8080")
-})
+$(document).on(
+  "click",
+  ".runnable-url-modal button[data-action=default-url]",
+  async function (e) {
+    changeServerAddress("http://localhost:8080");
+  }
+);
 
 // Refresh code
 $(document).on("click", '.runnable [data-action="reset"]', function (e) {
