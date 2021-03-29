@@ -4,13 +4,7 @@
 <head>
   <meta charset="utf-8">
   {{ partial "meta.html" . }}
-  {{ .Scratch.Add "title" "" }}
-  {{ if isset .Site.Data.titles .Title }}
-    {{ .Scratch.Set "title" (index .Site.Data.titles .Title).title }}
-  {{ else }}
-    {{ .Scratch.Set "title" .Title}}
-  {{end}}
-  <title>{{ .Scratch.Get "title" }}</title>
+  <title>Error</title>
   <link href='{{ relURL "/css/nucleus.css" }}' rel="stylesheet">
   <link href='{{ relURL "/css/font-awesome.min.css" }}' rel="stylesheet">
   <link href='{{ relURL "/css/hybrid.css" }}"' rel="stylesheet">
