@@ -26,19 +26,19 @@ canonifyURLs = false
   [menu.main.params]
     time = "25 min."
 [[menu.main]]
-  name = "GraphQL Data and More Data"
-  url = "/graphqlmoredata/1/"
-  identifier = "graphqlmoredata"
-  weight = 4
-  [menu.main.params]
-    time = "10 min."
-[[menu.main]]
   name = "GraphQL Search"
   url = "/graphqlsearch/1/"
   identifier = "graphqlsearch"
-  weight = 5
+  weight = 4
   [menu.main.params]
     time = "15 min."
+[[menu.main]]
+  name = "GraphQL Data and More Data"
+  url = "/graphqlmoredata/1/"
+  identifier = "graphqlmoredata"
+  weight = 5
+  [menu.main.params]
+    time = "10 min."
 [[menu.main]]
   name = "DQL Introduction"
   url = "/intro/1/"

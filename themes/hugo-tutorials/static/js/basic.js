@@ -92,4 +92,14 @@ $(document).ready(function () {
       $(".lesson-tiles-container .container").data("context", "dql");
     }
   }
+  const request = new XMLHttpRequest();
+  request.open("GET", "https://api.github.com/repos/dgraph-io/dgraph", true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      const data = JSON.parse(request.responseText);
+      const stars = `${(data.stargazers_count / 1000).toFixed(1)}k`;
+      $(".gh-button__stat__text").text(stars);
+    }
+  };
+  request.send();
 });
