@@ -1,5 +1,5 @@
-{{- $currentUrl := print (index (split .URL "/tour/") 1) -}}
-{{- $currentUrlIdentifier := print (index (split $currentUrl "/") 0) -}}
+{{- $currentUrl := print (index (split .Permalink "/tour/") 1) -}}
+{{- $currentUrlIdentifier := print .Section -}}
 
 <!-- Modal -->
 <div class="page-navigation-modal" id="page-navigation-modal">
@@ -7,10 +7,10 @@
         <div class="modal-body" id="dgraph-tour">
             <div class="top-section">
                 <h2 class="title">
-                    <a href='/tour/?{{ if in ($currentUrlIdentifier|lower) "graphql" }}graphql{{ else }}dql{{ end }}'>
+                    <a href='/tour/?{{ if in .Section "graphql" }}graphql{{ else }}dql{{ end }}'>
                         <i class="fa fa-arrow-left text-gradient"></i>
                     </a>
-                    Dgraph {{ if in ($currentUrlIdentifier|lower) "graphql" }}GraphQL{{ else }}DQL{{ end }} Tour
+                    Dgraph {{ if in .Section "graphql" }}GraphQL{{ else }}DQL{{ end }} Tour
                 </h2>
                 <p class="description">
                     An interactive tutorial with real queries and real results,
@@ -18,7 +18,7 @@
                 </p>
             </div>
 
-            <div class="module-section main" data-context='{{ if in ($currentUrlIdentifier|lower) "graphql" }}graphql{{ else }}dql{{ end }}'>
+            <div class="module-section main" data-context='{{ if in .Section "graphql" }}graphql{{ else }}dql{{ end }}'>
                 <p class="heading text-gradient">Modules</p>
                 {{ range $.Site.Menus.main }}
                     <a class="module {{ if eq ($currentUrlIdentifier|lower) (.Identifier|lower) }}active{{ end }}"
@@ -51,7 +51,7 @@
                         {{- $activeWeight := (index (split $currentUrl $currentUrlIdentifier) 1) -}}
                         {{- $activeWeightIndex :=(index (split $activeWeight "/") 1) -}}
 
-                        <a class="module {{ if eq (int $activeWeightIndex) (int .Weight) }}active{{ end }}" href="/tour/{{ $currentUrlIdentifier }}/{{ .Weight }}">
+                        <a class="module {{ if eq (int $activeWeightIndex) (int .Weight) }}active{{ end }}" href="{{ .Permalink }}">
                             <span>{{ .Params.course }}.{{ .Weight }}. {{ .Title }}</span>
                         </a>
                     {{ end }}
