@@ -527,45 +527,41 @@
 
 .container[data-context="graphql"]
   .lesson-tiles-switcher
-  div[data-context="dql"] {
-  border-bottom: #ff4200 solid 1px;
-  color: #212121;
-  cursor: pointer;
+  div[data-context="graphql"] {
+  background: linear-gradient(110deg, #ff4200, #ff009b);
+  color: #ffffff;
 }
 
 .container[data-context="graphql"]
   .lesson-tiles-switcher
-  div[data-context="graphql"] {
-  background: linear-gradient(135deg, #ff1800, #ff009b);
-  color: #ffffff;
-}
-
-.container[data-context="dql"] .lesson-tiles-switcher div[data-context="dql"] {
-  background: linear-gradient(110deg, #ff4200, #ff009b);
-  color: #ffffff;
+  div[data-context="dql"] {
+  border-bottom: #ff009b solid 1px;
+  color: #212121;
+  cursor: pointer;
 }
 
 .container[data-context="dql"]
   .lesson-tiles-switcher
   div[data-context="graphql"] {
-  border-bottom: #ff009b solid 1px;
+  border-bottom: #ff4200 solid 1px;
   color: #212121;
   cursor: pointer;
+}
+
+.container[data-context="dql"] .lesson-tiles-switcher div[data-context="dql"] {
+  background: linear-gradient(135deg, #ff1800, #ff009b);
+  color: #ffffff;
 }
 
 .container[data-context="dql"] .lesson-tiles div[data-context="graphql"] {
   display: none;
 }
 
-.container[data-context="graphql"] .lesson-tiles div[data-context="dql"] {
+.module-section[data-context="graphql"] a[data-context="dql"] {
   display: none;
 }
 
 .module-section[data-context="dql"] a[data-context="graphql"] {
-  display: none;
-}
-
-.module-section[data-context="graphql"] a[data-context="dql"] {
   display: none;
 }
 
