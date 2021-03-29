@@ -7,7 +7,10 @@
         <div class="modal-body" id="dgraph-tour">
             <div class="top-section">
                 <h2 class="title">
-                    Dgraph Tour
+                    <a href='/tour/?{{ if in ($currentUrlIdentifier|lower) "graphql" }}graphql{{ else }}dql{{ end }}'>
+                        <i class="fa fa-arrow-left text-gradient"></i>
+                    </a>
+                    Dgraph {{ if in ($currentUrlIdentifier|lower) "graphql" }}GraphQL{{ else }}DQL{{ end }} Tour
                 </h2>
                 <p class="description">
                     An interactive tutorial with real queries and real results,
@@ -49,7 +52,7 @@
                         {{- $activeWeightIndex :=(index (split $activeWeight "/") 1) -}}
 
                         <a class="module {{ if eq (int $activeWeightIndex) (int .Weight) }}active{{ end }}" href="/tour/{{ $currentUrlIdentifier }}/{{ .Weight }}">
-                            <span>{{ .Weight }}. {{ .Title }}</span>
+                            <span>{{ .Params.course }}.{{ .Weight }}. {{ .Title }}</span>
                         </a>
                     {{ end }}
                 {{ end }}

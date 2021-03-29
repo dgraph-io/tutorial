@@ -1,12 +1,10 @@
 {
-  getPerson(xid: "alice") @cascade {
-    name
+  # A comment in a query looks like this
+  getPerson(xid: "alice") {
+    name # or like this
     age
-    friends {
-      name
-      ownsPets {
-        name
-      }
+    ownsPets {
+      pet: name
     }
   }
 }

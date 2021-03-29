@@ -1,9 +1,19 @@
 {
-  queryPerson(filter: { has: friends }) {
+  getPerson(xid: "alice") {
     id
     name
-    friendsAggregate {
-      count
+    friendsWithAge: friends(filter: { has: age }) {
+      id
+      name
+      age
+    }
+    friendsWithPets: friends(filter: { has: ownsPets }) {
+      id
+      name
+      pet: ownsPets {
+        id
+        name
+      }
     }
   }
 }

@@ -1,17 +1,10 @@
 {
-  getPerson(xid: "alice") {
-    id
+  getPerson(xid: "alice") @cascade {
     name
-    friendsWithAge: friends(filter: { has: age }) {
-      id
+    age
+    friends {
       name
-      age
-    }
-    friendsWithPets: friends(filter: { has: ownsPets }) {
-      id
-      name
-      pet: ownsPets {
-        id
+      ownsPets {
         name
       }
     }

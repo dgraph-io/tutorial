@@ -1,35 +1,11 @@
 mutation {
-  updatePerson(input: {
-    filter: { xid: { eq: "alice" } }
-    set: { 
-      manager: { xid: "bob" }
-      manages: [
-        { xid: "frank" }
-        { xid: "karl", name: "Karl" }
-      ]
-      employers: { name: "Acme Corp.", industry: "Demolition" }
-    }
+  deletePerson(filter: {
+    xid: { eq: "karl" }
   }) {
-    numUids
     person {
       xid
       name
-      manages {
-        xid
-        name
-      }
-      manager {
-        xid
-        name
-      }
-      employers {
-        id
-        name
-        employees {
-          xid
-          name
-        }
-      }
+      age
     }
   }
 }

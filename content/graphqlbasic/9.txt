@@ -2,9 +2,16 @@
   getPerson(xid: "alice") {
     id
     name
-    friends(order: { asc: name }, offset: 1, first: 2) {
-      id
-      name
+    friendsAggregate {
+      count
+      xidMin
+      xidMax
+      nameMin
+      nameMax
+      ageMin
+      ageMax
+      ageAvg
+      ageSum
     }
   }
 }

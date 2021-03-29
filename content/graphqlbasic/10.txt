@@ -1,17 +1,10 @@
 {
-  getPerson(xid: "alice") {
+  queryPerson(filter: {age: { between: { min: 30, max: 39 } } }) {
     id
     name
-    friendsAggregate {
-      count
-      xidMin
-      xidMax
-      nameMin
-      nameMax
-      ageMin
-      ageMax
-      ageAvg
-      ageSum
+    friends(filter: { xid: { eq: "bob" } }) {
+      id
+      name
     }
   }
 }

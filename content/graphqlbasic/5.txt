@@ -3,13 +3,10 @@
     id
     name
     age
-    friends {
+    friends(filter: { age: { ge: 27 } }) {
       id
       name
-    }
-    ownsPets {
-      id
-      name
+      age
     }
   }
 }

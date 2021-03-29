@@ -14,6 +14,13 @@ function updateFields() {
 
 $(document).ready(function () {
   updateFields();
+  $(".lesson-tiles__link .status").each(function () {
+    const status = localStorage.getItem(`${$(this).data("course")}.Status`);
+    if (status === "1") $(this).addClass("completed");
+  });
+  $(".lesson[data-completed]").each(function () {
+    localStorage.setItem(`${$(this).data("completed")}.Status`, "1");
+  });
 });
 
 $(document).on("click", ".runnable a.btn-change", async function (e) {
