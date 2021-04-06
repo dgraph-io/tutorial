@@ -17,6 +17,6 @@ jobs:
         uses: reviewdog/action-misspell@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          pattern: "*.html"
+          path: "./content"
           locale: "US"
 
