@@ -138,4 +138,35 @@ $(document).ready(function () {
       });
     });
   });
+  const lessonEl = document.querySelector(".lesson");
+  const contentEl = document.querySelector(".lesson__content");
+  const codeEl = document.querySelector(".lesson__code");
+  const resizerEl = document.querySelector(".lesson__resizer");
+  resizerEl.addEventListener("mousedown", mousedown);
+  function mousedown(e) {
+    e.preventDefault();
+    $("iframe").css("pointer-events", "none");
+    let prevX = e.clientX;
+    window.addEventListener("mousemove", mousemove);
+    window.addEventListener("mouseup", mouseup);
+
+    function mousemove(e) {
+      const lessonRect = lessonEl.getBoundingClientRect();
+      const contentRect = contentEl.getBoundingClientRect();
+      let contentWidth = contentRect.width - (prevX - e.clientX);
+      if (lessonRect.width <= contentWidth + 5) contentWidth = -5;
+      const codeWidth = lessonRect.width - contentWidth - 5;
+      console.log(lessonRect.width - contentWidth);
+      contentEl.style["max-width"] = contentWidth + "px";
+      contentEl.style["min-width"] = contentWidth + "px";
+      contentEl.style["width"] = contentWidth + "px";
+      codeEl.style["width"] = codeWidth + "px";
+      prevX = e.clientX;
+    }
+    function mouseup() {
+      window.removeEventListener("mousemove", mousemove);
+      window.removeEventListener("mouseup", mouseup);
+      $("iframe").css("pointer-events", "auto");
+    }
+  }
 });

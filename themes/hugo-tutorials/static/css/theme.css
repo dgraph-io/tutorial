@@ -144,10 +144,6 @@
   color: #4a4a4a;
 }
 
-#sidebar .topics .topic:hover {
-  /*background-color: green;*/
-}
-
 #sidebar .topics .topic.active {
   color: #286ad4;
   font-weight: 600;
@@ -481,10 +477,14 @@
 
   .lesson__code {
     margin-top: 30px;
-    width: auto;
-    max-width: 100%;
     margin: 30px 24px;
   }
+}
+
+.lesson__content,
+.lesson__code {
+  max-width: unset;
+  width: unset;
 }
 
 .tour-container-new .page-intro {
@@ -627,6 +627,7 @@
   font-size: 32px;
   font-weight: 700;
   line-height: 1.1em;
+  background-clip: unset;
   -webkit-background-clip: unset;
 }
 
@@ -861,18 +862,6 @@
   overflow: hidden;
   display: none !important;
   padding-right: 2px;
-}
-
-@media screen and (max-width: 1279px) {
-  .tour.new .page-body.new .page-body__content .lesson .lesson__code {
-    min-width: calc(100% - 480px);
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .tour.new .page-body.new .page-body__content .lesson .lesson__code {
-    min-width: 60%;
-  }
 }
 
 .tour.new .page-body.new .page-body__content .lesson .lesson__content > div {
@@ -1150,15 +1139,21 @@
   }
 }
 
+.lesson__resizer {
+  width: 5px;
+  background-color: #212121;
+  cursor: ew-resize;
+}
+
 @media screen and (min-width: 993px) {
   .tour.new .page-body.new .page-body__content .lesson .lesson__content {
-    max-width: 480px;
+    max-width: calc(480px - 5px);
   }
 }
 
 @media screen and (min-width: 1280px) {
   .tour.new .page-body.new .page-body__content .lesson .lesson__content {
-    max-width: 40%;
+    max-width: calc(40% - 5px);
   }
 }
 
