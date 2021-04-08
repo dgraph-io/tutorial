@@ -129,4 +129,13 @@ $(document).ready(function () {
     console.log(url);
     $(this).attr("src", url);
   });
+  $("a.routeIframe").each(function () {
+    $(this).click((e) => {
+      e.preventDefault();
+      const location = $(this).data("location");
+      $(".lesson__code iframe").each(function () {
+        $(this).attr("src", location);
+      });
+    });
+  });
 });
