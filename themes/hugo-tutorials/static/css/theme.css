@@ -1141,8 +1141,28 @@
 
 .lesson__resizer {
   width: 5px;
-  background-color: #212121;
+  background: linear-gradient(
+    45deg,
+    #ff4200 0%,
+    #e50793 116.97%,
+    #e50695 116.98%
+  );
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+  /* background-color: #212121; */
   cursor: ew-resize;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @media screen and (min-width: 993px) {
