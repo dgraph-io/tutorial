@@ -4,7 +4,6 @@ import https from "https";
 
 window.CodeMirror = require("codemirror");
 import "codemirror/lib/codemirror.css";
-import "../css/runnable.css";
 
 // Stores reference to the codemirror for the page
 let codeMirror;
