@@ -102,4 +102,31 @@ $(document).ready(function () {
     }
   };
   request.send();
+  $("iframe.ratel.query").each(function () {
+    let url = "https://play.dgraph.io/?latest";
+    const address = localStorage.getItem("tourDgraphAddr");
+    const slashApiKey = localStorage.getItem("slashAPIKey");
+    const query = $(this).data("code");
+
+    if (address || slashApiKey || query) {
+      url += "#";
+      if (address) url += `addr=${address}&`;
+      if (slashApiKey) url += `slashApiKey=${slashApiKey}&`;
+      if (query) url += `query=${encodeURIComponent(query)}`;
+    }
+    console.log(url);
+    $(this).attr("src", url);
+  });
+  $("iframe.ratel.mutate").each(function () {
+    let url = "https://play.dgraph.io/?latest";
+    const address = localStorage.getItem("tourDgraphAddr");
+    const slashApiKey = localStorage.getItem("slashAPIKey");
+    if (address || slashApiKey) {
+      url += "#";
+      if (address) url += `addr=${address}&`;
+      if (slashApiKey) url += `slashApiKey=${slashApiKey}&`;
+    }
+    console.log(url);
+    $(this).attr("src", url);
+  });
 });
