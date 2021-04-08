@@ -858,10 +858,21 @@
 
 .tour.new .page-body.new .page-body__content .lesson .lesson__code {
   margin-left: 0;
-  min-width: calc(100% - 480px);
   overflow: hidden;
   display: none !important;
   padding-right: 2px;
+}
+
+@media screen and (max-width: 1279px) {
+  .tour.new .page-body.new .page-body__content .lesson .lesson__code {
+    min-width: calc(100% - 480px);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .tour.new .page-body.new .page-body__content .lesson .lesson__code {
+    min-width: 60%;
+  }
 }
 
 .tour.new .page-body.new .page-body__content .lesson .lesson__content > div {
@@ -1075,10 +1086,6 @@
 }
 
 @media screen and (min-width: 993px) {
-  .tour.new .page-body.new .page-body__content .lesson .lesson__content {
-    max-width: 480px;
-  }
-
   .tour.new .page-body.new .page-body__content .lesson .lesson__code {
     display: block !important;
   }
@@ -1143,8 +1150,25 @@
   }
 }
 
+@media screen and (min-width: 993px) {
+  .tour.new .page-body.new .page-body__content .lesson .lesson__content {
+    max-width: 480px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .tour.new .page-body.new .page-body__content .lesson .lesson__content {
+    max-width: 40%;
+  }
+}
+
 /** Override .runnable classes */
-@media screen and (min-width: 1600px) {
+/**
+ * I am leaving this CSS snippet here but commented out because I have
+ * a strong feeling that this will be wanted back later to put the panels
+ * side by side on wider displays
+ */
+/* @media screen and (min-width: 1600px) {
   .runnable {
     flex-direction: row !important;
   }
@@ -1161,4 +1185,4 @@
     margin-left: 4px !important;
     width: 50% !important;
   }
-}
+} */

@@ -38,6 +38,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  border-left: 1px solid black;
 }
 .runnable .runnable-pane {
   margin-bottom: 4px;
@@ -46,6 +47,9 @@
   display: flex;
   flex-direction: column;
   transition: flex 220ms ease-in;
+}
+.lesson .runnable .runnable-pane:last-child {
+  max-height: unset;
 }
 .runnable .runnable-pane-query {
   flex: 0.58;
@@ -265,14 +269,12 @@ html .runnable code {
   width: 117px;
 }
 .latency-tooltip-container .measurement-key {
-  display: inline-block;
   float: left;
 }
 .latency-tooltip-container .measurement-key.total {
   font-weight: 600;
 }
 .latency-tooltip-container .measurement-val {
-  display: inline-block;
   float: right;
   font-weight: 600;
 }
