@@ -1,0 +1,11 @@
+query {
+  getPerson(xid: "alice" ){
+    name
+    friends {
+      name
+      friends {
+        name
+      }
+    }
+  }
+}
