@@ -557,6 +557,10 @@
   display: none;
 }
 
+.container[data-context="graphql"] .lesson-tiles div[data-context="dql"] {
+  display: none;
+}
+
 .module-section[data-context="graphql"] a[data-context="dql"] {
   display: none;
 }
