@@ -26,24 +26,36 @@
     <section class="page-body pt-0">
 
         <div class="section--large lesson-tiles-container">
-            <div class="container">
+            <div class="container" data-context='graphql'>
 
-                <h1>What Will You Learn?</h1>
+                <h1>Which Language Suits You?</h1>
 
+                <div class="lesson-tiles-switcher">
+                  <div data-context='graphql'>
+                    <p>GraphQL</p>
+                    <span>Dgraph's Generated API</span>
+                  </div>
+                  <div data-context='dql'>
+                    <p>DQL</p>
+                    <span>Dgraph's Query Language</span>
+                  </div>
+                </div>
                 <div class="lesson-tiles">
-
                     {{ range .Site.Menus.main }}
-                        <div class="tile lesson-tiles__tile">
+                        <div class="tile lesson-tiles__tile" data-context='{{ if in .Identifier "graphql" }}graphql{{ else }}dql{{ end }}'>
 
                             <p>
                                 {{ .Name }}
                                 <span> {{ index $.Site.Params.menudesc .Identifier }}</span>
                             </p>
 
-                            <a href="{{ .URL }}" class="button button--secondary">
+                            <div class="lesson-tiles__link">
+                              <a href="{{ .URL }}" class="button button--secondary">
                                 <span>Start</span>
                                 <i class="fas fa-arrow-right"></i>
-                            </a>
+                              </a>
+                              <span class="status" data-course="{{ .Identifier }}">{{ with .Params.time }}{{ . }}{{ end }}</span>
+                            </div>
 
                         </div>
                     {{ end }}

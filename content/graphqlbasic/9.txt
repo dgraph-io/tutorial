@@ -1,0 +1,17 @@
+{
+  getPerson(xid: "alice") {
+    id
+    name
+    friendsAggregate {
+      count
+      xidMin
+      xidMax
+      nameMin
+      nameMax
+      ageMin
+      ageMax
+      ageAvg
+      ageSum
+    }
+  }
+}

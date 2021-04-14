@@ -144,10 +144,6 @@
   color: #4a4a4a;
 }
 
-#sidebar .topics .topic:hover {
-  /*background-color: green;*/
-}
-
 #sidebar .topics .topic.active {
   color: #286ad4;
   font-weight: 600;
@@ -364,14 +360,16 @@
   text-overflow: ellipsis;
 }
 
-.page-select.dropdown .page-subnav__label+.page-subnav__label {
+.page-select.dropdown .page-subnav__label + .page-subnav__label {
   margin-left: 0px;
 }
 
 .page-select.dropdown .dropdown-item.page-subnav__label.is-active {
-  background: linear-gradient(90deg,
-      rgba(255, 66, 0, 0.8) 0.01%,
-      rgba(229, 6, 149, 0.8) 99.99%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 66, 0, 0.8) 0.01%,
+    rgba(229, 6, 149, 0.8) 99.99%
+  );
   border-radius: 4px;
   color: #fff;
   border: none;
@@ -379,15 +377,19 @@
 
 .page-select.dropdown .dropdown-item.page-subnav__label:hover {
   border-radius: 4px;
-  background: linear-gradient(90deg,
-      rgba(255, 66, 0, 0.05) 0.01%,
-      rgba(229, 6, 149, 0.05) 99.99%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 66, 0, 0.05) 0.01%,
+    rgba(229, 6, 149, 0.05) 99.99%
+  );
 }
 
 .page-select.dropdown .dropdown-item.page-subnav__label.is-active:hover {
-  background: linear-gradient(90deg,
-      rgba(255, 66, 0, 0.8) 0.01%,
-      rgba(229, 6, 149, 0.8) 99.99%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 66, 0, 0.8) 0.01%,
+    rgba(229, 6, 149, 0.8) 99.99%
+  );
   border-radius: 4px;
   color: #fff;
   border: none;
@@ -475,10 +477,14 @@
 
   .lesson__code {
     margin-top: 30px;
-    width: auto;
-    max-width: 100%;
     margin: 30px 24px;
   }
+}
+
+.lesson__content,
+.lesson__code {
+  max-width: unset;
+  width: unset;
 }
 
 .tour-container-new .page-intro {
@@ -498,6 +504,82 @@
   text-align: center;
 }
 
+.lesson-tiles-switcher {
+  display: flex;
+  max-width: 904px;
+  margin: auto;
+  position: relative;
+}
+
+.lesson-tiles-switcher div {
+  background-color: #f2f2f2;
+  width: 50%;
+  text-align: center;
+  padding: 24px;
+}
+
+.lesson-tiles-switcher div p {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.1em;
+  margin-bottom: 0.2em;
+}
+
+.container[data-context="graphql"]
+  .lesson-tiles-switcher
+  div[data-context="graphql"] {
+  background: linear-gradient(110deg, #ff4200, #ff009b);
+  color: #ffffff;
+}
+
+.container[data-context="graphql"]
+  .lesson-tiles-switcher
+  div[data-context="dql"] {
+  border-bottom: #ff009b solid 1px;
+  color: #212121;
+  cursor: pointer;
+}
+
+.container[data-context="dql"]
+  .lesson-tiles-switcher
+  div[data-context="graphql"] {
+  border-bottom: #ff4200 solid 1px;
+  color: #212121;
+  cursor: pointer;
+}
+
+.container[data-context="dql"] .lesson-tiles-switcher div[data-context="dql"] {
+  background: linear-gradient(135deg, #ff1800, #ff009b);
+  color: #ffffff;
+}
+
+.container[data-context="dql"] .lesson-tiles div[data-context="graphql"] {
+  display: none;
+}
+
+.container[data-context="graphql"] .lesson-tiles div[data-context="dql"] {
+  display: none;
+}
+
+.module-section[data-context="graphql"] a[data-context="dql"] {
+  display: none;
+}
+
+.module-section[data-context="dql"] a[data-context="graphql"] {
+  display: none;
+}
+
+.module-section.main[data-context] {
+  counter-reset: moduleNumber;
+}
+.module-section.main .module {
+  counter-increment: moduleNumber;
+}
+
+.module-section.main .module span:before {
+  content: counter(moduleNumber);
+}
+
 .lesson-tiles-container .lesson-tiles {
   display: flex;
   flex-direction: column;
@@ -508,8 +590,13 @@
 }
 
 .lesson-tiles-container .lesson-tiles::before {
-  content: '';
-  background: linear-gradient(180deg, #FF4200 0%, #E50793 116.97%, #E50695 116.98%);
+  content: "";
+  background: linear-gradient(
+    180deg,
+    #ff4200 0%,
+    #e50793 116.97%,
+    #e50695 116.98%
+  );
   width: 16px;
   height: 100%;
   display: flex;
@@ -523,7 +610,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid #D6D6D6;
+  border-bottom: 1px solid #d6d6d6;
   padding: 24px 8px;
   margin-bottom: 0;
   border-radius: 0;
@@ -544,6 +631,7 @@
   font-size: 32px;
   font-weight: 700;
   line-height: 1.1em;
+  background-clip: unset;
   -webkit-background-clip: unset;
 }
 
@@ -571,6 +659,25 @@
   line-height: 1.5em;
   text-align: center;
   color: #555555;
+}
+
+.lesson-tiles-container .lesson-tiles__tile div {
+  width: min-content;
+  text-align: center;
+}
+
+.lesson-tiles__link .status {
+  position: relative;
+  top: 0.2em;
+}
+
+.lesson-tiles__link .status.completed {
+  color: green;
+}
+
+.lesson-tiles__link .status.completed::after {
+  padding-left: 5px;
+  content: "✔️";
 }
 
 .lesson-tiles-container .lesson-tiles__tile a {
@@ -603,7 +710,7 @@
   align-items: center;
   height: 64px;
   box-shadow: 0px -4px 8px 0px rgb(0 0 0 / 0.1);
-  background: #FAFAFA;
+  background: #fafafa;
   position: relative;
 }
 
@@ -637,7 +744,6 @@
   justify-content: center;
   width: 100%;
 }
-
 
 .page-subnav-new .lesson-navigation .lesson__prev {
   position: unset;
@@ -688,7 +794,6 @@
   padding: 0;
 }
 
-
 .tour.new .page-body.new .page-body__content .lesson {
   justify-content: flex-start;
 }
@@ -702,7 +807,11 @@
   overflow-y: auto;
 }
 
-.tour.new .page-body.new .page-body__content .lesson #lesson-content.over-flow-hidden {
+.tour.new
+  .page-body.new
+  .page-body__content
+  .lesson
+  #lesson-content.over-flow-hidden {
   overflow-x: hidden;
   overflow-y: hidden;
 }
@@ -712,12 +821,20 @@
   height: auto;
 }
 
-.tour.new .page-body.new .page-body__content .lesson .lesson__code.modal-bakdrop.active {
+.tour.new
+  .page-body.new
+  .page-body__content
+  .lesson
+  .lesson__code.modal-bakdrop.active {
   pointer-events: none;
 }
 
-.tour.new .page-body.new .page-body__content .lesson .lesson__code.modal-bakdrop:after {
-  content: '';
+.tour.new
+  .page-body.new
+  .page-body__content
+  .lesson
+  .lesson__code.modal-bakdrop:after {
+  content: "";
   background: #000;
   opacity: 0;
   position: absolute;
@@ -729,46 +846,64 @@
   transition: all ease 600ms;
 }
 
-.tour.new .page-body.new .page-body__content .lesson .lesson__code.modal-bakdrop.active:after {
+.tour.new
+  .page-body.new
+  .page-body__content
+  .lesson
+  .lesson__code.modal-bakdrop.active:after {
   opacity: 0.5;
   transition: all ease 600ms;
   z-index: 1;
 }
 
 .tour.new .page-body.new .page-body__content .lesson .lesson__code.empty {
-  background: #F2F2F2;
+  background: #f2f2f2;
   padding-right: 0;
 }
 
 .tour.new .page-body.new .page-body__content .lesson .lesson__code {
   margin-left: 0;
-  min-width: calc(100% - 480px);
   overflow: hidden;
   display: none !important;
   padding-right: 2px;
 }
 
-.tour.new .page-body.new .page-body__content .lesson .lesson__content>div {
+.tour.new .page-body.new .page-body__content .lesson .lesson__content > div {
   padding: 40px 0;
 }
 
-.tour.new .page-body.new .page-body__content .lesson .lesson__content .lesson__title {
+.tour.new
+  .page-body.new
+  .page-body__content
+  .lesson
+  .lesson__content
+  .lesson__title {
   font-size: 24px;
   font-weight: 500;
   line-height: 26px;
   text-align: left;
 }
 
-.tour.new .page-body.new .page-body__content .lesson .lesson__content .lesson__tour__type {
+.tour.new
+  .page-body.new
+  .page-body__content
+  .lesson
+  .lesson__content
+  .lesson__tour__type {
   font-size: 16px;
   font-weight: 500;
   line-height: 1em;
   text-align: left;
   padding: 16px 0;
-  background: #FAFAFA;
+  background: #fafafa;
 }
 
-.tour.new .page-body.new .page-body__content .lesson .lesson__content .lesson__Category {
+.tour.new
+  .page-body.new
+  .page-body__content
+  .lesson
+  .lesson__content
+  .lesson__Category {
   font-size: 14px;
   font-weight: 500;
   line-height: 1em;
@@ -847,7 +982,7 @@
 } */
 
 .page-navigation-modal {
-  background: #FAFAFA;
+  background: #fafafa;
 }
 
 .page-navigation-modal .modal-body {
@@ -855,7 +990,7 @@
 }
 
 .page-navigation-modal .modal-body .top-section {
-  border-bottom: 1px solid #D6D6D6;
+  border-bottom: 1px solid #d6d6d6;
   padding-bottom: 16px;
 }
 
@@ -873,7 +1008,7 @@
 .page-navigation-modal .modal-body .top-section .title .fa {
   font-size: 18px;
   margin-right: 16px;
-  font-family: 'Font Awesome 5 Pro';
+  font-family: "Font Awesome 5 Pro";
   font-weight: 400;
   cursor: pointer;
 }
@@ -918,7 +1053,7 @@
 }
 
 .page-navigation-modal .modal-body .module.active {
-  background: #F2F2F2;
+  background: #f2f2f2;
 }
 
 #dgraph-tour {
@@ -944,10 +1079,6 @@
 }
 
 @media screen and (min-width: 993px) {
-  .tour.new .page-body.new .page-body__content .lesson .lesson__content {
-    max-width: 480px;
-  }
-
   .tour.new .page-body.new .page-body__content .lesson .lesson__code {
     display: block !important;
   }
@@ -965,12 +1096,15 @@
 
   .tour.new .page-body.new .page-body__content .lesson .lesson__content,
   .lesson__code {
-    height: calc(100vh - 152px);
-    min-height: calc(100vh - 152px);
-    max-height: calc(100vh - 152px);
+    /* height: calc(100vh - 152px); */
+    /* min-height: calc(100vh - 152px); */
+    /* max-height: calc(100vh - 152px); */
+    height: calc(100vh - 196px);
+    min-height: calc(100vh - 196px);
+    max-height: calc(100vh - 196px);
   }
 
-  .tour.new .page-body.new .page-body__content .lesson .lesson__content>div {
+  .tour.new .page-body.new .page-body__content .lesson .lesson__content > div {
     padding: 0 40px 40px;
   }
 
@@ -983,12 +1117,22 @@
     top: 88px;
   } */
 
-  .tour.new .page-body.new .page-body__content .lesson .lesson__content .lesson__tour__type {
+  .tour.new
+    .page-body.new
+    .page-body__content
+    .lesson
+    .lesson__content
+    .lesson__tour__type {
     margin: 0 -40px;
     padding: 16px 16px 16px 40px;
   }
 
-  .tour.new .page-body.new .page-body__content .lesson .lesson__content .lesson__tour__type {
+  .tour.new
+    .page-body.new
+    .page-body__content
+    .lesson
+    .lesson__content
+    .lesson__tour__type {
     margin: 0 -40px;
     padding: 16px 16px 16px 40px;
   }
@@ -1002,8 +1146,51 @@
   }
 }
 
+.lesson__resizer {
+  width: 5px;
+  background: linear-gradient(
+    45deg,
+    #ff4200 0%,
+    #e50793 116.97%,
+    #e50695 116.98%
+  );
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+  /* background-color: #212121; */
+  cursor: ew-resize;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media screen and (min-width: 993px) {
+  .tour.new .page-body.new .page-body__content .lesson .lesson__content {
+    max-width: calc(480px - 5px);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .tour.new .page-body.new .page-body__content .lesson .lesson__content {
+    max-width: calc(40% - 5px);
+  }
+}
+
 /** Override .runnable classes */
-@media screen and (min-width: 1600px) {
+/**
+ * I am leaving this CSS snippet here but commented out because I have
+ * a strong feeling that this will be wanted back later to put the panels
+ * side by side on wider displays
+ */
+/* @media screen and (min-width: 1600px) {
   .runnable {
     flex-direction: row !important;
   }
@@ -1020,4 +1207,4 @@
     margin-left: 4px !important;
     width: 50% !important;
   }
-}
+} */
