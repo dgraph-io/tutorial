@@ -25,7 +25,7 @@ function changeServerAddress(newAddr, newKey) {
   localStorage.setItem(SLASH_KEY, newKey);
   $(".runnable .server-switch .url").text(newAddr);
   $("input#inputDgraphUrl").val(newAddr);
-  $("input#inputSlashKey").val(newKey);
+  $("input#inputDgraph CloudKey").val(newKey);
 }
 
 function initCodeMirror($runnable) {
@@ -315,7 +315,7 @@ $(document).on("click", '.runnable [data-action="run"]', async function (e) {
   const stub = new dgraph.DgraphClientStub(serverAddress);
   const client = new dgraph.DgraphClient(stub);
 
-  slashApiKey ? client.setSlashApiKey(slashApiKey) : null;
+  slashApiKey ? client.setDgraph CloudApiKey(slashApiKey) : null;
 
   client.setDebugMode(true);
   try {
@@ -388,7 +388,7 @@ $(document).on(
     $(".runnable-url-modal.modal").removeClass("show");
     changeServerAddress(
       $("input#inputDgraphUrl").val(),
-      $("input#inputSlashKey").val()
+      $("input#inputDgraph CloudKey").val()
     );
   }
 );
