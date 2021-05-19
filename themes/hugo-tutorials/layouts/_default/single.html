@@ -40,7 +40,7 @@
                         </div>
                     {{ else if (eq $codeContent "") }}
                         <div class="lesson__code modal-bakdrop d-none d-lg-block empty">
-														<img src="{{ .Site.BaseURL }}/images/dgraph-pattern.svg" />
+														<img src="/tour/images/dgraph-pattern.svg" />
                         </div>
                     {{ else if eq .Params.type "graphql" }}
                         <div class="lesson__code modal-bakdrop d-none d-lg-block">
@@ -52,7 +52,7 @@
                         </div>
                     {{else}}
                         <div class="lesson__code modal-bakdrop d-none d-lg-block empty">
-														<img src="{{ .Site.BaseURL }}/images/dgraph-pattern.svg" />
+														<img src="/tour/images/dgraph-pattern.svg" />
                         </div>
                     {{ end }}
                 {{ end }}
