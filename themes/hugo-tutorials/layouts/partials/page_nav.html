@@ -6,188 +6,291 @@
 </style>
 
 <div class="navbar">
-            <div class="dropdown">
-              <div class="dropbtn">Why Dgraph</div>
-              <div class="dropdown-wrapper">
-                <div class="row">
-                  <div class="dropdown-content col-sm-8 align-items-start">
-
-                    <div class="col-md-4"><a href="https://dgraph.io/why-dgraph" class="card">
-                        <h4>Why Dgraph</h4>
-                        <p>Core benefits that make Dgraph unique</p></a><a href="https://dgraph.io/ke-holdings" class="card">
-                        <h4>Third-party Benchmarks</h4>
-                        <p>Enterprises testing Dgraph for production</p></a></div>
-                    <div class="col-md-4"><a href="https://dgraph.io/compare-features" class="card">
-                        <h4>Comparison</h4>
-                        <p>Dgraph vs Other Graph Databases </p></a>
-											<a href="https://dgraph.io/partner-capventis" class="card">
-													<h4>Partnerships</h4>
-													<p>Dgraph integration partners</p>
-												</a></div>
-
-
-                    <div class="col-md-4"><a href="https://dgraph.io/graph-db" class="card">
-                        <div class="d-flex"><img style="height:32px; width:32px" src='{{ relURL "/images/database-guide.svg" }}' class="mr-2">
-                          <h4>The ultimate guide to graph databases</h4>
-                        </div></a><a href="https://dgraph.io/graphql" class="card">
-
-                        <div class="d-flex"><img style="height:32px; width:32px" src='{{ relURL "/images/graphql-guide.svg" }}' class="mr-2">
-                          <h4>The ultimate guide to GraphQL</h4>
-                        </div></a></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="dropdown">
-              <div class="dropbtn">Products</div>
-              <div class="dropdown-wrapper">
-                <div class="row">
-                  <div class="dropdown-content col-sm-9">
-
-                    <div class="col"><a href="https://dgraph.io/cloud" class="card text-center h-100"><img src='{{ relURL "/images/cloud.svg" }}'>
-                        <h4 class="mt-3">Dgraph Cloud</h4>
-                        <p>The only native GraphQL graph database built for the cloud.</p></a></div>
-                    <div class="col"><a href="https://dgraph.io/enterprise" class="card text-center h-100"><img src='{{ relURL "/images/enterprise.svg" }}'>
-                        <h4 class="mt-3">Enterprise</h4>
-                        <p>Turn your siloed data into real-time insights.</p></a></div>
-                    <div class="col"><a href="https://dgraph.io/dgraph" class="card text-center h-100"><img src='{{ relURL "/images/opensource.svg" }}'>
-                        <h4 class="mt-3">Dgraph Open Source</h4>
-                        <p>#1 graph database on GitHub.</p></a></div>
-                    <div class="col-md-4"><a href="https://dgraph.io/pricing" class="card">
-                        <h4>Pricing</h4>
-                        <p>Pricing breakdown</p></a><a href="https://dgraph.io/badger" class="card">
-                        <h4>Badger</h4>
-                        <p>Open source key-value store</p></a><a href="https://dgraph.io/ristretto" class="card">
-
-                        <h4>Ristretto</h4>
-                        <p>Open source Go caching library</p></a></div>
-                  </div>
-                </div>
-              </div>
-
-            </div><a href="https://dgraph.io/pricing" class="dropbtn">Pricing</a><a href="https://dgraph.io/case-studies" class="dropbtn">Customers</a>
-
-            <div class="dropdown">
-              <div class="dropbtn">Learn </div>
-              <div class="dropdown-wrapper">
-                <div class="row">
-                  <div class="dropdown-content col-sm-8 align-items-start">
-                    <div class="col-md-4"><a href="https://dgraph.io/docs" class="card">
-                        <h4>Docs</h4>
-                        <p>For Dgraph and Slash GraphQL</p></a><a href="https://dgraph.io/learn" class="card">
-                        <h4>Learn</h4>
-                        <p>From GraphQL Basics to Building an App</p></a><a href="https://dgraph.io/blog" class="card">
-                        <h4>Blog</h4>
-                        <p>Updates from Dgraph Labs</p></a></div>
-                    <div class="col-md-4"><a href="https://dgraph.io/paper" class="card">
-                        <h4>Paper</h4>
-                        <p>Dgraph Database in a Nutshell</p></a><a href="https://dgraph.io/tour" class="card">
-                        <h4>Tour</h4>
-                        <p>An Interactive Dgraph Demo</p></a></div>
-                    <div class="col-md-4"><a href="https://dgraph.io/graph-db" class="card">
-                        <div class="d-flex"><img style="height:32px; width:32px" src='{{ relURL "/images/database-guide.svg" }}' class="mr-2">
-                          <h4>The ultimate guide to graph databases</h4>
-                        </div></a><a href="https://dgraph.io/graphql" class="card">
-
-                        <div class="d-flex"><img style="height:32px; width:32px" src='{{ relURL "/images/graphql-guide.svg" }}' class="mr-2">
-                          <h4>The ultimate guide to GraphQL</h4>
-                        </div></a></div>
-                  </div>
-                </div>
-              </div>
-            </div><a href="https://discuss.dgraph.io" target="_blank" class="dropbtn">Community</a>
+  <div class="dropdown">
+    <div class="dropbtn">Why Dgraph</div>
+    <div class="dropdown-wrapper">
+      <div class="row">
+        <div class="dropdown-content col-sm-8 align-items-start">
+          <div class="col-md-4">
+            <a href="https://dgraph.io/why-dgraph" class="card">
+              <h4>Why Dgraph</h4>
+              <p>Core benefits that make Dgraph unique</p>
+            </a>
+            <a href="https://dgraph.io/ke-holdings" class="card">
+              <h4>Third-party Benchmarks</h4>
+              <p>Enterprises testing Dgraph for production</p>
+            </a>
           </div>
+          <div class="col-md-4">
+            <a href="https://dgraph.io/compare-features" class="card">
+              <h4>Comparison</h4>
+              <p>Millisecond query response time</p>
+            </a>
+            <a href="https://dgraph.io/partner-capventis" class="card">
+              <h4>Partnerships</h4>
+              <p>Dgraph integration partners</p>
+              </a>
+          </div>
+          <div class="col-md-4">
+            <a href="https://dgraph.io/graph-db" class="card">
+              <div class="d-flex">
+                <img style="height:32px; width:32px" src='{{ relURL "/images/database-guide.svg" }}' class="mr-2" />
+                <h4>The ultimate guide to graph databases</h4>
+              </div>
+            </a>
+            <a href="https://dgraph.io/graphql" class="card">
+              <div class="d-flex">
+                <img style="height:32px; width:32px" src='{{ relURL "/images/graphql-guide.svg" }}' class="mr-2" />
+                <h4>The ultimate guide to GraphQL</h4>
+              </div>
+            </a>
+            <a href="https://dgraph.io/knowledge-graph" class="card">
+              <div class="d-flex">
+                <img style="height:32px; width:32px" src='{{ relURL "/images/knowledge-graph.jpg" }}' class="mr-2" />
+                <h4>The ultimate guide to knowledge graphs</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dropdown">
+    <div class="dropbtn">Products</div>
+    <div class="dropdown-wrapper">
+      <div class="row">
+        <div class="dropdown-content col-sm-9">
+          <div class="col">
+            <a href="https://dgraph.io/cloud" class="card text-center h-100">
+              <img src='{{ relURL "/images/cloud.svg" }}' />
+              <h4 class="mt-3">Dgraph Cloud</h4>
+              <p>The only native GraphQL graph database built for the cloud.</p>
+            </a>
+          </div>
+          <div class="col">
+            <a href="https://dgraph.io/enterprise" class="card text-center h-100">
+              <img src='{{ relURL "/images/enterprise.svg" }}' />
+              <h4 class="mt-3">Enterprise</h4>
+              <p>Turn your siloed data into real-time insights.</p>
+            </a>
+          </div>
+          <div class="col">
+            <a href="https://dgraph.io/dgraph" class="card text-center h-100">
+              <img src='{{ relURL "/images/opensource.svg" }}' />
+              <h4 class="mt-3">Dgraph Open Source</h4>
+              <p>#1 graph database on GitHub.</p>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a href="https://dgraph.io/pricing" class="card">
+              <h4>Pricing</h4>
+              <p>Pricing breakdown</p>
+            </a>
+            <a href="https://dgraph.io/badger" class="card">
+              <h4>Badger</h4>
+              <p>Open source key-value store</p>
+            </a>
+            <a href="https://dgraph.io/ristretto" class="card">
+              <h4>Ristretto</h4>
+              <p>Open source Go caching library</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="https://dgraph.io/pricing" class="dropbtn">Pricing</a>
+  <a href="https://dgraph.io/case-studies" class="dropbtn">Customers</a>
+  <div class="dropdown">
+    <div class="dropbtn">Learn</div>
+    <div class="dropdown-wrapper">
+      <div class="row">
+        <div class="dropdown-content col-sm-8 align-items-start">
+          <div class="col-md-4">
+            <a href="https://dgraph.io/docs" class="card">
+              <h4>Docs</h4>
+              <p>Docs for Dgraph and Dgraph Cloud</p>
+            </a>
+            <a href="https://dgraph.io/blog" class="card">
+              <h4>Blog</h4>
+              <p>Updates from Dgraph Labs</p>
+            </a>
+            <a href="https://dgraph.io/paper" class="card">
+              <h4>Paper</h4>
+              <p>Dgraph database in a nutshell</p>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a href="https://dgraph.io/learn" class="card">
+              <h4>Learn</h4>
+              <p>From GraphQL basics to building an app</p>
+            </a>
+            <a href="https://dgraph.io/tour" class="card">
+              <h4>Tour</h4>
+              <p>An interactive Dgraph demo</p>
+            </a>
+            <a href="https://dgraph.io/paper" class="card">
+              <h4>Dgraph Day 2021</h4>
+              <p>Solving real problems with Dgraph</p>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a href="https://dgraph.io/graph-db" class="card">
+              <div class="d-flex">
+                <img style="height:32px; width:32px" src='{{ relURL "/images/database-guide.svg" }}' class="mr-2" />
+                <h4>The ultimate guide to graph databases</h4>
+              </div>
+            </a>
+            <a href="https://dgraph.io/graphql" class="card">
+              <div class="d-flex">
+                <img style="height:32px; width:32px" src='{{ relURL "/images/graphql-guide.svg" }}' class="mr-2" />
+                <h4>The ultimate guide to GraphQL</h4>
+              </div>
+            </a>
+            <a href="https://dgraph.io/knowledge-graph" class="card">
+              <div class="d-flex">
+                <img style="height:32px; width:32px" src='{{ relURL "/images/knowledge-graph.jpg" }}' class="mr-2" />
+                <h4>The ultimate guide to knowledge graphs</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="https://discuss.dgraph.io" target="_blank" class="dropbtn">Community</a>
+</div>
 <div class="page-nav">
-            <ul class="d-flex align-items-center justify-content-center m-0 p-0 w-100">
-              <li class="parent arrow-down">
-                <div class="nav-item"><span>Why Dgraph</span></div>
-                <ul>
-
-                  <li><a href="https://dgraph.io/why-dgraph">
-                      <h4>Why Dgraph</h4>
-                      <p>Core benefits that make Dgraph unique</p></a></li>
-                  <li>
-										<a href="https://dgraph.io/ke-holdings">
-                      <h4>Third-party Benchmarks</h4>
-                      <p>Enterprises testing Dgraph for production</p>
-										</a>
-									</li>
-                  <li><a href="https://dgraph.io/compare-features">
-
-                      <h4>Comparison </h4>
-                      <p>Dgraph vs Other Graph Databases</p></a></li>
-                  <li>
-										<a href="https://dgraph.io/partner-capventis">
-                      <h4>Partnerships</h4>
-											<p>Dgraph integration partners</p>
-										</a>
-									</li>
-                </ul>
-              </li>
-              <li class="parent arrow-down">
-                <div class="nav-item"><span>Products</span></div>
-                <ul>
-
-                  <li><a href="https://dgraph.io/cloud" class="d-flex"><img src='{{ relURL "/images/cloud.svg" }}'>
-
-                      <div class="px-3">
-                        <h4>Dgraph Cloud</h4>
-                        <p>The only native GraphQL graph database built for the cloud.</p>
-                      </div></a></li>
-
-                  <li><a href="https://dgraph.io/enterprise" class="d-flex"><img src='{{ relURL "/images/enterprise.svg" }}'>
-
-                      <div class="px-3">
-                        <h4>Enterprise</h4>
-                        <p>Turn your siloed data into real-time insights.</p>
-                      </div></a></li>
-
-                  <li><a href="https://dgraph.io/dgraph" class="d-flex"><img src='{{ relURL "/images/opensource.svg" }}'>
-
-                      <div class="px-3">
-                        <h4>Dgraph Open Source</h4>
-                        <p>#1 graph database on GitHub.</p>
-                      </div></a></li>
-
-                  <li><a href="https://dgraph.io/pricing">
-                      <h4>Pricing</h4>
-                      <p>Pricing breakdown</p></a></li>
-                  <li><a href="https://dgraph.io/badger">
-                      <h4>Badger</h4>
-                      <p>Open source key-value store</p></a></li>
-                  <li><a href="https://dgraph.io/ristretto">
-
-                      <h4>Ristretto</h4>
-                      <p>Open source Go caching library</p></a></li>
-                </ul>
-              </li>
-
-              <li class="parent"><a href="https://dgraph.io/case-studies" class="nav-item w-100"><span>Customers</span></a></li>
-              <li class="parent arrow-down">
-                <div class="nav-item"><span>Learn</span></div>
-                <ul>
-                  <li><a href="https://dgraph.io/docs">
-                      <h4>Docs</h4>
-                      <p>Docs for Dgraph and Slash GraphQL</p></a></li>
-                  <li><a href="https://dgraph.io/learn">
-                      <h4>Learn</h4>
-                      <p>From GraphQL Basics to Building an App</p></a></li>
-                  <li><a href="https://dgraph.io/blog">
-                      <h4>Blog</h4>
-                      <p>Updates from Dgraph Labs</p></a></li>
-                  <li><a href="https://dgraph.io/tour">
-                      <h4>Tour</h4>
-                      <p>An Interactive Dgraph Demo</p></a></li>
-                  <li><a href="https://dgraph.io/paper">
-
-                      <h4>Paper</h4>
-                      <p>Dgraph Database in a Nutshell</p></a></li>
-                </ul>
-              </li>
-
-              <li class="parent"><a href="https://dgraph.io/pricing" class="nav-item w-100"><span>Pricing </span></a></li>
-
-              <li class="parent"><a href="https://discuss.dgraph.io" target="_blank" class="nav-item w-100"><span>Community</span></a></li>
-              <div class="btn-wrapper"><a href="https://cloud.dgraph.io" target="_blank" class="button button--primary w-100 track-links"><span>Get Dgraph Cloud</span><i class="fa fa-arrow-right" aria-hidden="true"></i></a></div>
-            </ul>
-          </div>
+  <ul class="d-flex align-items-center justify-content-center m-0 p-0 w-100">
+    <li class="parent arrow-down">
+      <div class="nav-item"><span>Why Dgraph</span></div>
+      <ul>
+        <li>
+          <a href="https://dgraph.io/why-dgraph">
+            <h4>Why Dgraph</h4>
+            <p>Core benefits that make Dgraph unique</p>
+          </a>
+        </li>
+        <li>
+          <a href="https://dgraph.io/ke-holdings">
+            <h4>Third-party Benchmarks</h4>
+            <p>Enterprises testing Dgraph for production</p>
+          </a>
+        </li>
+        <li>
+          <a href="https://dgraph.io/compare-features">
+            <h4>Comparison </h4>
+            <p>Dgraph vs Other Graph Databases</p>
+          </a>
+        </li>
+        <li>
+          <a href="https://dgraph.io/partner-capventis">
+            <h4>Partnerships</h4>
+            <p>Dgraph integration partners</p>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="parent arrow-down">
+      <div class="nav-item"><span>Products</span></div>
+      <ul>
+        <li>
+          <a href="https://dgraph.io/cloud" class="d-flex">
+            <img src='{{ relURL "/images/cloud.svg" }}' />
+            <div class="px-3">
+              <h4>Dgraph Cloud</h4>
+              <p>The only native GraphQL graph database built for the cloud.</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://dgraph.io/enterprise" class="d-flex">
+            <img src='{{ relURL "/images/enterprise.svg" }}' />
+            <div class="px-3">
+              <h4>Enterprise</h4>
+              <p>Turn your siloed data into real-time insights.</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://dgraph.io/dgraph" class="d-flex">
+            <img src='{{ relURL "/images/opensource.svg" }}' />
+            <div class="px-3">
+              <h4>Dgraph Open Source</h4>
+              <p>#1 graph database on GitHub.</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://dgraph.io/pricing">
+            <h4>Pricing</h4>
+            <p>Pricing breakdown</p>
+          </a>
+        </li>
+        <li>
+          <a href="https://dgraph.io/badger">
+            <h4>Badger</h4>
+            <p>Open source key-value store</p>
+          </a>
+        </li>
+        <li>
+          <a href="https://dgraph.io/ristretto">
+            <h4>Ristretto</h4>
+            <p>Open source Go caching library</p>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="parent">
+      <a href="https://dgraph.io/case-studies" class="nav-item w-100">
+        <span>Customers</span>
+      </a>
+    </li>
+    <li class="parent arrow-down">
+      <div class="nav-item"><span>Learn</span></div>
+      <ul>
+        <li>
+          <a href="https://dgraph.io/docs">
+            <h4>Docs</h4>
+            <p>Docs for Dgraph and Slash GraphQL</p>
+          </a>
+        </li>
+        <li><a href="https://dgraph.io/learn">
+            <h4>Learn</h4>
+            <p>From GraphQL Basics to Building an App</p>
+          </a>
+        </li>
+        <li>
+          <a href="https://dgraph.io/blog">
+            <h4>Blog</h4>
+            <p>Updates from Dgraph Labs</p>
+          </a>
+        </li>
+        <li>
+          <a href="https://dgraph.io/tour">
+            <h4>Tour</h4>
+            <p>An Interactive Dgraph Demo</p>
+          </a>
+        </li>
+        <li>
+          <a href="https://dgraph.io/paper">
+            <h4>Paper</h4>
+            <p>Dgraph Database in a Nutshell</p>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="parent">
+      <a href="https://dgraph.io/pricing" class="nav-item w-100"><span>Pricing </span></a>
+    </li>
+    <li class="parent">
+      <a href="https://discuss.dgraph.io" target="_blank" class="nav-item w-100"><span>Community</span></a>
+    </li>
+    <div class="btn-wrapper">
+      <a href="https://cloud.dgraph.io" target="_blank" class="button button--primary w-100 track-links">
+        <span>Get Dgraph Cloud</span>
+        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+      </a>
+    </div>
+  </ul>
+</div>
