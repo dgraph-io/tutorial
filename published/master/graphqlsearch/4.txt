@@ -1,0 +1,11 @@
+{
+  queryMovie @cascade {
+    name
+    lines(filter: { line: { regexp: "/[A-Z]{3}/" } }) {
+      line
+      in {
+        name
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+mutation {
+  addPerson(input: [{
+    xid: "manish"
+    name: "Manish"
+    ownsPets: [{ xid: "diggy" name: "Diggy" }]
+    friends: [{ xid: "alice" }]
+  }]) { numUids }
+}

@@ -1,0 +1,9 @@
+{
+  everyone(func: anyofterms(name, "Michael Catalina")) {
+    name
+    friend {
+      name@ru:ko:en
+      friend { expand(_all_) { expand(_all_) } }
+    }
+  }
+}
