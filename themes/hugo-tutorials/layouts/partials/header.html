@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -16,7 +16,7 @@
   <!-- "title - site-title" if not main page -->
   <title>
     {{ if not (eq .Section "") }}
-    {{ .Title }} | {{ humanize .Page.Section }} | Dgraph Tour
+    {{ .Title }} | {{ humanize .Page.Section }} | Dgraph Tour 
 
     {{ else }}
     {{ .Site.Title }}
@@ -28,29 +28,42 @@
   {{- end }}
   <link rel="canonical" href="{{ $canonicalUrl }}" />
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500&display=swap" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link href='{{ relURL "/css/style.min.css" }}?100820120' rel="stylesheet" type="text/css" />
-    <link href='{{ relURL "/css/runnable-custom.css" }}?{{ md5 (readFile "themes/hugo-tutorials/static/css/runnable-custom.css") }}' rel="stylesheet"/>
-    <link href='{{ relURL "/css/theme.css" }}?{{ md5 (readFile "themes/hugo-tutorials/static/css/theme.css") }}' rel="stylesheet"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link href='{{ relURL "/css/style.min.css" }}?100820120' rel="stylesheet" type="text/css" />
+  <link href='{{ relURL "/css/runnable-custom.css" }}?{{ md5 (readFile "themes/hugo-tutorials/static/css/runnable-custom.css") }}' rel="stylesheet" />
+  <link href='{{ relURL "/css/theme.css" }}?{{ md5 (readFile "themes/hugo-tutorials/static/css/theme.css") }}' rel="stylesheet" />
 
-    <link href='{{ relURL "/css/font-awesome/css/all.css" }}' rel="stylesheet"/>
+  <link href='{{ relURL "/css/font-awesome/css/all.css" }}' rel="stylesheet" />
 
-    <link href="{{ .Site.BaseURL }}/css/font-awesome/css/all.css" rel="stylesheet" />
+  <link href="{{ .Site.BaseURL }}/css/font-awesome/css/all.css" rel="stylesheet" />
+
+  <!-- Tween Marquee -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 
   <!-- Segment Tracking -->
 
-
   <script src='{{ relURL "/js/app.js" }}?{{ md5 (readFile "themes/hugo-tutorials/static/js/app.js") }}'></script>
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet" />
+
+  <script src='{{ relURL "/js/app.js" }}?{{ md5 (readFile "themes/hugo-tutorials/static/js/app.js") }}'></script>
+  <link rel="stylesheet" href='{{ relURL "/css/page-footer.css" }}' />
+  <link rel="stylesheet" href='{{ relURL "/css/header.css" }}' />
+  <link rel="stylesheet" href='{{ relURL "/css/reskin.css" }}' />
 </head>
 
 <body>
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58V4RXS"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-  <main>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58V4RXS" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <main></main>
+</body>
+
+</html>

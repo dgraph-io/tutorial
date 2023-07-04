@@ -9,8 +9,9 @@ $(function () {
     });
 
     $('#toggle-navigation-modal').on('click', function (e) {
-        $(this).toggleClass('active');
+        $('#toggle-navigation-modal').toggleClass('active');
         animateModal();
+
     });
 
     $('#toggle-navigation-modal.acive').on('click', function (e) {

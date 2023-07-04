@@ -1,6 +1,6 @@
-<div class="runnable {{ .Content.Params.type }}" data-type="{{ .Content.Params.type }}" data-initial="{{ .Code }}" data-current="{{ .Code }}" endpoint="" data-dirty="false">
-  <div class="runnable-pane runnable-pane-query">
-    <div class="topbar">
+<div class="runnable {{ .Content.Params.type }}" data-type="{{ .Content.Params.type }}" data-initial="{{ .Code }}" data-current="{{ .Code }}" endpoint="" data-dirty="false" >
+  <div class="runnable-pane runnable-pane-query" style="margin: 0 !important;">
+    <div class="topbar" style="background-color: #fff !important; border-bottom: #B8B7BA 2 solid;">
       {{ if (isset .Content.Params "playground") }}
       <div class="pane-title">
         <span>Playground:</span>
@@ -10,7 +10,7 @@
       </span>
       <div class="actions">
         <a class="button button--small button--outline" data-action="reset" href="#">Reset</a>
-        <a class="button button--small" data-action="run-graphql-playground" href="#">Run</a>
+        <a class="button button--small button--outline" data-action="run-graphql-playground" href="#">Run</a>
       </div>
       {{ else }}
       <div class="pane-title">
@@ -24,7 +24,7 @@
       </span>
       <div class="actions">
         <a class="button button--small button--outline" data-action="reset" href="#">Reset</a>
-        <a class="button button--small" data-action="run-graphql" href="#">Run</a>
+        <a class="button button--small button--outline" data-action="run-graphql" href="#">Run</a>
       </div>
       {{ end }}
     </div>
