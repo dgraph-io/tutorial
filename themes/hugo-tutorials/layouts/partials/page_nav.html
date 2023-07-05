@@ -1,162 +1,297 @@
 <style>
-	.navbar .dropdown-wrapper .row .card img {
-		width: 64px;
+  .navbar .dropdown-wrapper .row .card img {
+    width: 64px;
     margin: 0 auto;
-	}
+  }
+  .navbar .dropdown-wrapper .row .card img {
+    width: 64px;
+    margin: 0 auto;
+  }
 </style>
 
-<div class="navbar">
+<div class="dgraph-header">
+  <div class="header-container">
+    <a href="https://dgraph.io" aria-current="page" class="dgraph_logo">
+      <div class="nav_logo-embed w-embed">
+        <svg width="123" height="38" viewBox="0 0 123 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g class="dgraph-logo-fill">
+            <path
+              d="M38.4186 29.078V8.89143H45.2389C49.7735 8.89143 52.8149 11.3172 52.8149 17.784V20.1854C52.8149 26.6522 49.7735 29.078 45.2389 29.078H38.4186ZM49.42 20.1854V17.784C49.42 13.6272 48.134 11.8475 45.2389 11.8475H41.8135V26.1524H45.2389C48.134 26.1524 49.42 24.3361 49.42 20.1854Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M57.5567 34.8134V32.0219H61.2381C63.5786 32.0219 64.6025 31.1564 64.6025 28.7854V28.115C63.8102 28.9317 62.64 29.3462 61.0918 29.3462C57.2032 29.3462 55.2711 26.5669 55.2711 22.7331V20.7462C55.2711 16.5345 57.5506 14.1941 61.0918 14.1941C62.6704 14.1941 63.8102 14.6634 64.6025 15.4801V14.4561H67.7049V28.7915C67.7049 33.2957 65.1328 34.8195 61.3295 34.8195H57.5628L57.5567 34.8134ZM64.6025 22.5808V20.8864C64.6025 18.3691 63.5786 16.9063 61.5002 16.9063C59.4218 16.9063 58.3674 18.3387 58.3674 20.8864V22.5808C58.3674 24.8603 59.245 26.6461 61.5002 26.6461C63.7553 26.6461 64.6025 24.8603 64.6025 22.5808Z"
+              fill="currentColor"
+            ></path>
+            <path d="M80.1377 16.9677H76.8891C75.3105 16.9677 74.1951 18.138 74.1951 20.2468V29.0846H71.0623V14.4505H74.1341V15.767C74.6888 14.9198 75.6823 14.1884 77.4132 14.1884H80.1377V16.9677Z" fill="currentColor"></path>
+            <path
+              d="M83.0093 14.1884H85.941C89.6833 14.1884 91.7068 15.3587 91.7068 19.2473V29.0785H88.6349V27.7315C87.934 28.8712 87.0259 29.3405 85.24 29.3405C82.0219 29.3405 80.0349 27.701 80.0349 24.7754C80.0349 21.6426 82.3449 20.448 85.4777 20.448H88.6349V19.2168C88.6349 17.3761 87.934 16.9677 85.7398 16.9677H83.0032V14.1884H83.0093ZM88.641 22.8494H85.7154C83.8748 22.8494 83.1129 23.4955 83.1129 24.7815C83.1129 26.0675 84.1064 26.6831 85.5996 26.6831C87.5013 26.6831 88.641 26.098 88.641 23.5503V22.8494Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M107.474 22.7336C107.474 26.5369 105.603 29.3466 101.709 29.3466C100.014 29.3466 98.8988 28.9383 98.1674 28.1459V34.6432H95.0345V14.4505H98.1674V15.6207C98.8988 14.7126 100.069 14.1884 101.739 14.1884C105.25 14.1884 107.474 16.5594 107.474 20.7405V22.7275V22.7336ZM104.372 22.5873V20.8929C104.372 18.3452 103.348 16.9129 101.27 16.9129C99.1913 16.9129 98.1978 18.3147 98.1674 20.7161V22.5873C98.1674 24.8668 98.8988 26.6527 101.27 26.6527C103.494 26.6527 104.372 24.8668 104.372 22.5873Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M110.229 8.89143H113.362V15.7117C113.978 14.834 115.032 14.188 116.934 14.188C119.951 14.188 122.261 15.7117 122.261 19.9234V29.0841H119.158V20.2769C119.158 17.7048 117.988 16.9734 116.379 16.9734C114.447 16.9734 113.368 18.2899 113.368 20.2525V29.0902H110.235V8.89143H110.229Z"
+              fill="currentColor"
+            ></path>
+          </g>
 
-            <div class="dropdown">
-              <div class="dropbtn">Products</div>
-              <div class="dropdown-wrapper">
-                <div class="row">
-                  <div class="dropdown-content col-sm-9">
+          <path
+            d="M28.2044 13.7789L28.2053 13.7811C31.088 20.741 27.7809 28.7155 20.8253 31.5986L20.8242 31.5991C18.6613 32.4972 16.4085 32.7933 14.2405 32.5707L12.5346 32.3955L12.1239 34.0605C11.9326 34.836 11.3952 35.5024 10.6093 35.8284L10.6072 35.8293C9.29611 36.375 7.78894 35.7515 7.24453 34.4353L7.24373 34.4333C6.91961 33.652 7.00969 32.8026 7.42616 32.1131L8.31198 30.6467L6.98398 29.5643C5.2914 28.1848 3.90767 26.3826 3.01547 24.2211L3.01456 24.2189C0.131867 17.259 3.43896 9.2845 10.3945 6.40139L10.3957 6.40092C12.5585 5.50282 14.8113 5.20668 16.9793 5.42931L18.6853 5.60449L19.0959 3.93948C19.2872 3.164 19.8246 2.49759 20.6105 2.17156L20.6127 2.17067C21.9237 1.62497 23.4309 2.2485 23.9753 3.56473L23.9761 3.56665C24.3002 4.34795 24.2102 5.19741 23.7937 5.88686L22.9079 7.35331L24.2359 8.4357C25.9284 9.81523 27.3122 11.6174 28.2044 13.7789Z"
+            fill="#EF265A"
+            stroke="#EF265A"
+            stroke-width="3.94497"
+          ></path>
+          <path
+            d="M17.6365 14.1076L17.594 14.2109H23.2091L16.8283 20.5918H22.5042L11.3529 31.7431C11.5717 31.9558 11.7479 32.2111 11.8694 32.5088C12.3799 33.7486 11.7904 35.1706 10.5568 35.681C9.93694 35.9424 9.26847 35.918 8.69723 35.681C8.41161 35.5656 8.14421 35.3954 7.92543 35.1706C7.70058 34.9518 7.51221 34.6783 7.38459 34.3684C6.86804 33.1287 7.45752 31.7127 8.69723 31.1962C9.31708 30.941 9.98555 30.9592 10.5568 31.1962L13.6196 23.7944V23.7762H7.96189L14.3428 17.3953H8.66683L19.8425 6.21966C19.6359 6.01304 19.4718 5.75781 19.3502 5.47219C18.8398 4.23248 19.4231 2.81653 20.6629 2.29998C21.2827 2.04475 21.9512 2.06298 22.5224 2.30606C22.7959 2.41545 23.0511 2.57953 23.2699 2.79222C23.5069 3.01707 23.7014 3.29054 23.8351 3.61262C24.3455 4.85233 23.7622 6.27435 22.5224 6.78482C21.9026 7.04006 21.2402 7.02183 20.6689 6.78482L17.6365 14.1016V14.1076Z"
+            fill="white"
+          ></path>
+        </svg>
+      </div>
+    </a>
 
-                    <div class="col"><a href="https://dgraph.io/cloud" class="card text-center h-100"><img src='{{ relURL "/images/cloud.svg" }}'>
-                        <h4 class="mt-3">Dgraph Cloud</h4>
-                        <p>The only native GraphQL graph database built for the cloud.</p></a></div>
-                    <div class="col"><a href="https://dgraph.io/enterprise" class="card text-center h-100"><img src='{{ relURL "/images/enterprise.svg" }}'>
-                        <h4 class="mt-3">Enterprise</h4>
-                        <p>Turn your siloed data into real-time insights.</p></a></div>
-                    <div class="col"><a href="https://dgraph.io/dgraph" class="card text-center h-100"><img src='{{ relURL "/images/opensource.svg" }}'>
-                        <h4 class="mt-3">Dgraph Open Source</h4>
-                        <p>#1 graph database on GitHub.</p></a></div>
-                    <div class="col-md-4"><a href="https://dgraph.io/pricing" class="card">
-                        <h4>Pricing</h4>
-                        <p>Pricing breakdown</p></a><a href="https://dgraph.io/badger" class="card">
-                        <h4>Badger</h4>
-                        <p>Open source key-value store</p></a><a href="https://dgraph.io/ristretto" class="card">
-
-                        <h4>Ristretto</h4>
-                        <p>Open source Go caching library</p></a></div>
-                  </div>
+    <nav role="navigation" class="dgraph-menu">
+      <a href="https://dgraph.io/product" class="navigation-link">
+        <div>Product</div>
+      </a>
+      <a href="https://dgraph.io/solutions" class="navigation-link">
+        <div>Solutions</div>
+      </a>
+      <a href="https://dgraph.io/pricing" class="navigation-link">
+        <div>Pricing</div>
+      </a>
+      <div class="navigation-link has-submenu">
+        <div class="nav_dropdown-toggle">
+          <div>Resources</div>
+          <div class="nav_dropdown-arrow">
+            <div class="arrow-embed w-embed">
+              <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 1L7.00005 6.99995L1 1" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="nav-submenu nav-mega-menu">
+          <div class="nav-submenu-container">
+            <div class="nav-submenu-column">
+              <div class="nav-submenu-title">Learn</div>
+              <div class="nav-submenu-list">
+                <div class="nav-submenu-list-item">
+                  <a href="https://dgraph.io/docs">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="nav-submenu-list-item-arrow" width="15" height="14" viewBox="0 0 15 14" fill="none">
+                      <path d="M1 7H13.5M13.5 7L7.5 1M13.5 7L7.5 13" stroke="#EF265A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <div class="nav-submenu-list-item-title">Docs</div>
+                    <div class="nav-submenu-list-item-subtitle">Documents and tutorials to get you started with Dgraph</div>
+                  </a>
+                </div>
+                <div class="nav-submenu-list-item">
+                  <a href="https://dgraph.io/tour">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="nav-submenu-list-item-arrow" width="15" height="14" viewBox="0 0 15 14" fill="none">
+                      <path d="M1 7H13.5M13.5 7L7.5 1M13.5 7L7.5 13" stroke="#EF265A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <div class="nav-submenu-list-item-title">Tour</div>
+                    <div class="nav-submenu-list-item-subtitle">Documents and tutorials to get you started with Dgraph</div>
+                  </a>
                 </div>
               </div>
-
-            </div><a href="https://dgraph.io/pricing" class="dropbtn">Pricing</a><a href="https://dgraph.io/case-studies" class="dropbtn">Customers</a>
-
-            <div class="dropdown">
-              <div class="dropbtn">Learn </div>
-              <div class="dropdown-wrapper">
-                <div class="row">
-                  <div class="dropdown-content col-sm-8 align-items-start">
-                    <div class="col-md-4"><a href="https://dgraph.io/docs" class="card">
-                        <h4>Docs</h4>
-                        <p>For Dgraph and Slash GraphQL</p></a><a href="https://dgraph.io/learn" class="card">
-                        <h4>Learn</h4>
-                        <p>From GraphQL Basics to Building an App</p></a><a href="https://dgraph.io/blog" class="card">
-                        <h4>Blog</h4>
-                        <p>Updates from Dgraph Labs</p></a></div>
-                    <div class="col-md-4"><a href="https://dgraph.io/paper" class="card">
-                        <h4>Paper</h4>
-                        <p>Dgraph Database in a Nutshell</p></a><a href="https://dgraph.io/tour" class="card">
-                        <h4>Tour</h4>
-                        <p>An Interactive Dgraph Demo</p></a></div>
-                    <div class="col-md-4"><a href="https://dgraph.io/graph-db" class="card">
-                        <div class="d-flex"><img style="height:32px; width:32px" src='{{ relURL "/images/database-guide.svg" }}' class="mr-2">
-                          <h4>The ultimate guide to graph databases</h4>
-                        </div></a><a href="https://dgraph.io/graphql" class="card">
-
-                        <div class="d-flex"><img style="height:32px; width:32px" src='{{ relURL "/images/graphql-guide.svg" }}' class="mr-2">
-                          <h4>The ultimate guide to GraphQL</h4>
-                        </div></a></div>
-                  </div>
+            </div>
+            <div class="nav-submenu-column">
+              <div class="nav-submenu-title">Resources</div>
+              <div class="nav-submenu-list">
+                <div class="nav-submenu-list-item">
+                  <a href="https://dgraph.io/blog/">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="nav-submenu-list-item-arrow" width="15" height="14" viewBox="0 0 15 14" fill="none">
+                      <path d="M1 7H13.5M13.5 7L7.5 1M13.5 7L7.5 13" stroke="#EF265A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <div class="nav-submenu-list-item-title">Blog</div>
+                    <div class="nav-submenu-list-item-subtitle">The latest news and articles from Dgraph team</div>
+                  </a>
+                </div>
+                <div class="nav-submenu-list-item">
+                  <a href="https://dgraph.io/paper">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="nav-submenu-list-item-arrow" width="15" height="14" viewBox="0 0 15 14" fill="none">
+                      <path d="M1 7H13.5M13.5 7L7.5 1M13.5 7L7.5 13" stroke="#EF265A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <div class="nav-submenu-list-item-title">Whitepapers</div>
+                    <div class="nav-submenu-list-item-subtitle">Dgraph most valuable insights and discoveries.</div>
+                  </a>
+                </div>
+                <div class="nav-submenu-list-item">
+                  <a href="https://dgraph.io/casestudies">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="nav-submenu-list-item-arrow" width="15" height="14" viewBox="0 0 15 14" fill="none">
+                      <path d="M1 7H13.5M13.5 7L7.5 1M13.5 7L7.5 13" stroke="#EF265A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <div class="nav-submenu-list-item-title">Case Studies</div>
+                    <div class="nav-submenu-list-item-subtitle">Real-world scenarios where Dgraph added value</div>
+                  </a>
                 </div>
               </div>
-            </div><a href="https://discuss.dgraph.io" target="_blank" class="dropbtn">Community</a>
+            </div>
+            <div class="nav-submenu-column">
+              <div class="nav-submenu-title">Collaborate</div>
+              <div class="nav-submenu-list">
+                <div class="nav-submenu-list-item">
+                  <a href="https://discuss.dgraph.io/">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="nav-submenu-list-item-arrow" width="15" height="14" viewBox="0 0 15 14" fill="none">
+                      <path d="M1 7H13.5M13.5 7L7.5 1M13.5 7L7.5 13" stroke="#EF265A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <div class="nav-submenu-list-item-title">Forum</div>
+                    <div class="nav-submenu-list-item-subtitle">The latest news and articles from Dgraph team</div>
+                  </a>
+                </div>
+                <div class="nav-submenu-list-item">
+                  <a href="https://dgraph.io/community">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="nav-submenu-list-item-arrow" width="15" height="14" viewBox="0 0 15 14" fill="none">
+                      <path d="M1 7H13.5M13.5 7L7.5 1M13.5 7L7.5 13" stroke="#EF265A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <div class="nav-submenu-list-item-title">Commmunity</div>
+                    <div class="nav-submenu-list-item-subtitle">Become part of a community passionate about building better apps.</div>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-<div class="page-nav">
-            <ul class="d-flex align-items-center justify-content-center m-0 p-0 w-100">
-              <li class="parent arrow-down">
-                <div class="nav-item"><span>Why Dgraph</span></div>
-                <ul>
-
-                  <li><a href="https://dgraph.io/why-dgraph">
-                      <h4>Why Dgraph</h4>
-                      <p>Core benefits that make Dgraph unique</p></a></li>
-                  <li>
-										<a href="https://dgraph.io/ke-holdings">
-                      <h4>Third-party Benchmarks</h4>
-                      <p>Enterprises testing Dgraph for production</p>
-										</a>
-									</li>
-                  <li><a href="https://dgraph.io/compare-features">
-
-                      <h4>Comparison </h4>
-                      <p>Dgraph vs Other Graph Databases</p></a></li>
-                  <li>
-										<a href="https://dgraph.io/partner-capventis">
-                      <h4>Partnerships</h4>
-											<p>Dgraph integration partners</p>
-										</a>
-									</li>
-                </ul>
-              </li>
-              <li class="parent arrow-down">
-                <div class="nav-item"><span>Products</span></div>
-                <ul>
-
-                  <li><a href="https://dgraph.io/cloud" class="d-flex"><img src='{{ relURL "/images/cloud.svg" }}'>
-
-                      <div class="px-3">
-                        <h4>Dgraph Cloud</h4>
-                        <p>The only native GraphQL graph database built for the cloud.</p>
-                      </div></a></li>
-
-                  <li><a href="https://dgraph.io/enterprise" class="d-flex"><img src='{{ relURL "/images/enterprise.svg" }}'>
-
-                      <div class="px-3">
-                        <h4>Enterprise</h4>
-                        <p>Turn your siloed data into real-time insights.</p>
-                      </div></a></li>
-
-                  <li><a href="https://dgraph.io/dgraph" class="d-flex"><img src='{{ relURL "/images/opensource.svg" }}'>
-
-                      <div class="px-3">
-                        <h4>Dgraph Open Source</h4>
-                        <p>#1 graph database on GitHub.</p>
-                      </div></a></li>
-
-                  <li><a href="https://dgraph.io/pricing">
-                      <h4>Pricing</h4>
-                      <p>Pricing breakdown</p></a></li>
-                  <li><a href="https://dgraph.io/badger">
-                      <h4>Badger</h4>
-                      <p>Open source key-value store</p></a></li>
-                  <li><a href="https://dgraph.io/ristretto">
-
-                      <h4>Ristretto</h4>
-                      <p>Open source Go caching library</p></a></li>
-                </ul>
-              </li>
-
-              <li class="parent"><a href="https://dgraph.io/case-studies" class="nav-item w-100"><span>Customers</span></a></li>
-              <li class="parent arrow-down">
-                <div class="nav-item"><span>Learn</span></div>
-                <ul>
-                  <li><a href="https://dgraph.io/docs">
-                      <h4>Docs</h4>
-                      <p>Docs for Dgraph and Slash GraphQL</p></a></li>
-                  <li><a href="https://dgraph.io/learn">
-                      <h4>Learn</h4>
-                      <p>From GraphQL Basics to Building an App</p></a></li>
-                  <li><a href="https://dgraph.io/blog">
-                      <h4>Blog</h4>
-                      <p>Updates from Dgraph Labs</p></a></li>
-                  <li><a href="https://dgraph.io/tour">
-                      <h4>Tour</h4>
-                      <p>An Interactive Dgraph Demo</p></a></li>
-                  <li><a href="https://dgraph.io/paper">
-
-                      <h4>Paper</h4>
-                      <p>Dgraph Database in a Nutshell</p></a></li>
-                </ul>
-              </li>
-
-              <li class="parent"><a href="https://dgraph.io/pricing" class="nav-item w-100"><span>Pricing </span></a></li>
-
-              <li class="parent"><a href="https://discuss.dgraph.io" target="_blank" class="nav-item w-100"><span>Community</span></a></li>
-              <div class="btn-wrapper"><a href="https://cloud.dgraph.io" target="_blank" class="button button--primary w-100 track-links"><span>Get Dgraph Cloud</span><i class="fa fa-arrow-right" aria-hidden="true"></i></a></div>
-            </ul>
+        </div>
+      </div>
+      <div class="navigation-link has-submenu">
+        <div class="nav_dropdown-toggle">
+          <div>Company</div>
+          <div class="nav_dropdown-arrow">
+            <div class="arrow-embed w-embed">
+              <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 1L7.00005 6.99995L1 1" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+              </svg>
+            </div>
           </div>
+        </div>
+        <div class="nav-submenu">
+          <div class="nav-submenu-container">
+            <div class="nav-submenu-column">
+              <div class="nav-submenu-list-item">
+                <a href="https://dgraph.io/company">About Us</a>
+              </div>
+              <div class="nav-submenu-list-item">
+                <a href="https://dgraph.io/press">News/Press</a>
+              </div>
+              <div class="nav-submenu-list-item">
+                <a href="https://dgraph.io/careers">Careers</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav_buttons-inside">
+        <div class="nav_button_wrapper">
+          <a href="https://cloud.dgraph.io/?__hstc=17958374.33a8f2bf90fb365fa4bbcd78710030ca.1680885624716.1680885624716.1680888099029.2&amp;__hssc=17958374.1.1680888099029&amp;__hsfp=179051687" target="_blank" class="button-ghost nav w-button"
+            >Sign In</a
+          ><a href="https://cloud.dgraph.io/?__hstc=17958374.33a8f2bf90fb365fa4bbcd78710030ca.1680885624716.1680885624716.1680888099029.2&amp;__hssc=17958374.1.1680888099029&amp;__hsfp=179051687" target="_blank" class="button nav w-inline-block">
+            <div>Contact Us</div>
+            <div class="button-icon-embed w-embed">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M14.351 11.7475V2.48994C14.351 1.98552 13.7451 1.7285 13.3824 2.07907L3.87339 11.2702C3.50397 11.6273 3.75674 12.2525 4.27052 12.2525H9.64896L9.64896 21.5101C9.64896 22.0145 10.2548 22.2715 10.6175 21.921L20.1266 12.7298C20.496 12.3728 20.2432 11.7475 19.7294 11.7475L14.351 11.7475Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="nav_tablet-left">
+      <div class="nav_tablet-buttons">
+        <div class="nav_button_wrapper">
+          <a href="https://cloud.dgraph.io/?__hstc=17958374.33a8f2bf90fb365fa4bbcd78710030ca.1680885624716.1680885624716.1680888099029.2&amp;__hssc=17958374.1.1680888099029&amp;__hsfp=179051687" target="_blank" class="button-ghost nav w-button"
+            >Sign In</a
+          ><a href="https://cloud.dgraph.io/?__hstc=17958374.33a8f2bf90fb365fa4bbcd78710030ca.1680885624716.1680885624716.1680888099029.2&amp;__hssc=17958374.1.1680888099029&amp;__hsfp=179051687" target="_blank" class="button nav w-inline-block">
+            <div>Contact Us</div>
+            <div class="button-icon-embed w-embed">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M14.351 11.7475V2.48994C14.351 1.98552 13.7451 1.7285 13.3824 2.07907L3.87339 11.2702C3.50397 11.6273 3.75674 12.2525 4.27052 12.2525H9.64896L9.64896 21.5101C9.64896 22.0145 10.2548 22.2715 10.6175 21.921L20.1266 12.7298C20.496 12.3728 20.2432 11.7475 19.7294 11.7475L14.351 11.7475Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="menu_button w-nav-button" style="-webkit-user-select: text" aria-label="menu" role="button" tabindex="0" aria-controls="w-nav-overlay-0" aria-haspopup="menu" aria-expanded="false">
+        <div class="nav_icon">
+          <div class="nav_icon-line is-1st"></div>
+          <div class="nav_icon-line is-2nd"></div>
+          <div class="nav_icon-line is-3rd"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuButton = document.querySelector(".menu_button");
+    const dgraphMenu = document.querySelector(".dgraph-menu");
+    const header = document.querySelector(".dgraph-header");
+
+    menuButton.addEventListener("click", function () {
+      if (dgraphMenu.classList.contains("active-menu")) {
+        menuButton.classList.remove("active-menu-btn");
+        dgraphMenu.classList.remove("active-menu");
+        header.classList.remove("menu-opened");
+      } else {
+        menuButton.classList.add("active-menu-btn");
+        dgraphMenu.classList.add("active-menu");
+        header.classList.add("menu-opened");
+      }
+    });
+  });
+
+  // Submenu
+  function toggleSubmenu(event) {
+    event.stopPropagation();
+
+    const dropdownToggle = event.currentTarget;
+    const submenu = dropdownToggle.querySelector(".nav-submenu");
+
+    const allSubmenus = document.querySelectorAll(".nav-submenu");
+    allSubmenus.forEach((otherSubmenu) => {
+      if (otherSubmenu !== submenu && otherSubmenu.classList.contains("submenu-open")) {
+        otherSubmenu.classList.remove("submenu-open");
+      }
+    });
+
+    submenu.classList.toggle("submenu-open");
+  }
+
+  const dropdownToggles = document.querySelectorAll(".has-submenu");
+  dropdownToggles.forEach((dropdownToggle) => {
+    dropdownToggle.addEventListener("click", toggleSubmenu);
+  });
+
+  function handleOutsideClick(event) {
+    const allSubmenus = document.querySelectorAll(".nav-submenu");
+
+    allSubmenus.forEach((submenu) => {
+      if (submenu.classList.contains("submenu-open")) {
+        submenu.classList.remove("submenu-open");
+      }
+    });
+  }
+
+  document.addEventListener("click", handleOutsideClick);
+
+  const navSubmenus = document.querySelectorAll(".nav-submenu");
+  navSubmenus.forEach((navSubmenu) => {
+    navSubmenu.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
+  });
+</script>

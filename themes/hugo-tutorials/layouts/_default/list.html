@@ -5,102 +5,60 @@
     {{ partial "page_header.html" . }}
 
     <div class="page-intro page-intro__home">
-        <div class="container">
-
-            <div class="page-intro__header">
-
-                <h1 class="page-intro__title">Let's Take a Tour of Dgraph</h1>
-                <p class="page-intro__subtitle" style="max-width: 520px;">An interactive tutorial with real queries and real results,
-        designed to run on Chrome on your machine.</p>
-
-                <a href="{{ range first 1 .Site.Menus.main }}{{ .URL }}{{ end }}" class="button button--primary">
-                    <span>Get Started</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-
-            </div>
-
-        </div>
-    </div>
-
-    <section class="page-body pt-0">
-
-        <div class="section--large lesson-tiles-container">
-            <div class="container" data-context='graphql'>
-
-                <h1>Which Language Suits You?</h1>
-
-                <div class="lesson-tiles-switcher">
-                  <div data-context='graphql'>
-                    <p>GraphQL</p>
-                    <span>Dgraph's Generated API</span>
-                  </div>
-                  <div data-context='dql'>
-                    <p>DQL</p>
-                    <span>Dgraph's Query Language</span>
-                  </div>
-                </div>
-                <div class="lesson-tiles">
-                    {{ range .Site.Menus.main }}
-                        <div class="tile lesson-tiles__tile" data-context='{{ if in .Identifier "graphql" }}graphql{{ else }}dql{{ end }}'>
-
-                            <p>
-                                {{ .Name }}
-                                <span> {{ index $.Site.Params.menudesc .Identifier }}</span>
-                            </p>
-
-                            <div class="lesson-tiles__link">
-                              <a href="{{ .URL }}" class="button button--secondary">
-                                <span>Start</span>
-                                <i class="fas fa-arrow-right"></i>
-                              </a>
-                              <span class="status" data-course="{{ .Identifier }}">{{ with .Params.time }}{{ . }}{{ end }}</span>
-                            </div>
-
-                        </div>
-                    {{ end }}
-
-                </div>
-
-            </div>
-        </div><div class="section">
-        <div class="container">
-          <div class="w-100 text-center">
-            <h2 class="mb-5">Stay in the Loop with Dgraph</h2>
-          </div>
-          <div class="row"><a href="https://discuss.dgraph.io/" class="col-md-4 large-card">
-              <div class="connect-graphic"><img src='{{ relURL "/images/discuss.png" }}' class="w-100"></div>
-              <h3 class="mt-4">Discuss Forum</h3>
-              <p>Be part of the community passionate about building smarter apps.</p>
-              <div class="link"><span>Join now</span><i class="fa fa-arrow-right" aria-hidden="true"></i></div></a><a href="https://dgraph.io/docs/" target="_blank" class="col-md-4 large-card">
-              <div class="connect-graphic"><img src='{{ relURL "/images/docs.png" }}' class="w-100"></div>
-              <h3 class="mt-4">Dgraph Docs</h3>
-              <p>Get detailed information on how to get started with Dgraph.</p>
-              <div class="link"><span>Get started</span><i class="fa fa-arrow-right" aria-hidden="true"></i></div></a><a href="http://cloud.dgraph.io" target="_blank" class="col-md-4 large-card">
-              <div class="connect-graphic"><img src='{{ relURL "/images/dgraph-cloud.png" }}' class="w-100"></div>
-              <h3 class="mt-4">Dgraph Cloud</h3>
-              <p>Fully managed GraphQL backend in one click. The fastest way to build apps.</p>
-              <div class="link"><span>Try free</span><i class="fa fa-arrow-right" aria-hidden="true"></i></div></a></div>
+      <div class="container">
+        <div class="page-intro__header">
+          <h1 class="title_small">DGRAPH TOUR</h1>
+          <h1 class="page-intro__title">Let's Take a Tour of Dgraph</h1>
+          <p class="page-intro__subtitle">An interactive tutorial with real queries and real results, designed to run on Chrome on your machine.</p>
         </div>
       </div>
-    </section>
+    </div>
 
-		<div class="section--jepsen section--small">
-        <div class="container">
-          <div class="row d-flex align-items-center">
-            <div class="col-md-6 pr-5">
-              <h2 class="mb-3">Need to learn GraphQL? <br>Meet<span class="text-gradient pl-2">Dgraph Learn</span></h2>
-              <p>
-                <just>Starting out with GraphQL? New to the world of graph databases? Dgraph has you covered! Dgraph Learn can take you from beginner to adept in less than four hours. Find the course that’s right for you.</just>
-              </p><a href="https://dgraph.io/learn" class="button button--primary"><span>Teach me</span><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-            </div>
-            <div class="col-lg-6 d-flex justify-content-center"><img src='{{ relURL "/images/learn-illustration.svg" }}'></div>
+  <section class="page-body pt-0">
+    <div class="section--large lesson-tiles-container" style="margin-bottom: 0px !important">
+      <div class="container" data-context="graphql">
+        <h2 class="main-title">Which Language Suits You?</h2>
+
+        <div class="lesson-tiles-switcher">
+          <div data-context="graphql">
+            <p style="font-weight: normal">GraphQL</p>
+            <span>Dgraph's Generated API</span>
+          </div>
+          <div data-context="dql">
+            <p style="font-weight: normal">DQL</p>
+            <span>Dgraph's Query Language</span>
           </div>
         </div>
-		</div>
+      </div>
+    </div>
+    <div class="section--large lesson-tiles-container tiles-container">
+      <div class="container container-narrow" data-context="graphql">
+        <div class="lesson-tiles" style="all: unset !important">
+          {{ $counter := 1 }} {{ range .Site.Menus.main }}
+          <div class="tile" data-context='{{ if in .Identifier "graphql" }}graphql{{ else }}dql{{ end }}'>
+            <div class="meta">
+              <div>
+                <p class="tile-counter">{{ $counter }}</p>
+                <p class="tile-name">{{ .Name }}</p>
+                <p class="tile-time">{{ with .Params.time }}<i class="fa-regular fa-clock" style="margin-right: 7px"></i>{{ . }}{{ end }}</p>
+                <script src="https://kit.fontawesome.com/37543023ae.js" crossorigin="anonymous"></script>
+              </div>
+              <span class="tile-description">{{ index $.Site.Params.menudesc .Identifier }}</span>
+              {{ $counter = add $counter 1 }}
+            </div>
+            <div class="lesson-tiles__link">
+              <a href="{{ .URL }}" class="button button--primary-custom lesson-button">
+                <span>Start</span>
+              </a>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
 
-    {{ partial "page_footer.html" . }}
-
+  {{ partial "page_footer.html" . }}
 </body>
 
 {{ partial "footer.html" . }}
