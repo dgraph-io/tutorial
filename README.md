@@ -8,6 +8,24 @@ Visit https://dgraph.io/tour for the running instance.
 
 ## Developing
 
+### Basics
+
+```
+Install Python 3
+
+> brew install python3 \
+brew postinstall python3
+
+Install Hugo
+
+> brew install hugo
+
+```
+
+>This was tested on mac only. You need to check how to reproduce these steps in your OS.
+
+### Running
+
 The tutorial can be run locally by cloning this repo and running `scripts/local.sh`.
 The tour has been tested with hugo `v0.37`.
 
