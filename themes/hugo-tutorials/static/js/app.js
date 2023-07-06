@@ -1,3 +1,13 @@
+function animateModal(timeout) {
+    $('#page-navigation-modal').scrollTop(0);
+    $('#page-navigation-modal').toggleClass('show');
+    $('#lesson-content-inner').toggleClass('hide');
+    $('#lesson-content').scrollTop(0);
+    $('#lesson-content').toggleClass('over-flow-hidden');
+    $('.lesson__code').toggleClass('active');
+    setTimeout(() => $('.lesson__content').toggleClass('margin-0'), timeout || 0);
+}
+
 $(function () {
     // move the community widget to the right-side
     $('.community-cta-wrapper').css({ right: '3%', left: 'unset' });
@@ -18,13 +28,3 @@ $(function () {
         animateModal(600);
     });
 });
-
-function animateModal(timeout) {
-    $('#page-navigation-modal').scrollTop(0);
-    $('#page-navigation-modal').toggleClass('show');
-    $('#lesson-content-inner').toggleClass('hide');
-    $('#lesson-content').scrollTop(0);
-    $('#lesson-content').toggleClass('over-flow-hidden');
-    $('.lesson__code').toggleClass('active');
-    setTimeout(() => $('.lesson__content').toggleClass('margin-0'), timeout || 0);
-}
