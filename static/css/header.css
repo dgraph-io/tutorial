@@ -836,21 +836,6 @@ body.new-design .header.position-absolute {
   padding-bottom: 16px;
 }
 
-.banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  background-color: #6342cb;
-  font-size: 18px;
-  font-weight: 700;
-  height: 48px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  color: white;
-  font-family: Dmsans, sans-serif;
-}
-
 .header-container {
   display: flex;
   justify-content: space-between;
