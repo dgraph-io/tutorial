@@ -1,0 +1,18 @@
+{
+  queryCompany(filter: { name: { eq: "CompanyABC" } }) {
+    id
+    name
+    employees {
+      xid
+      name
+    }
+  }
+  getPerson(xid: "jack") {
+    xid
+    name
+    employers {
+      id
+      name
+    }
+  }
+}

@@ -1,22 +1,22 @@
 {{ $endpoint := .Content.Params.endpoint | default "/query" }}
 <div class="runnable" data-initial="{{ .Code }}" data-current="{{ .Code }}" endpoint="{{ $endpoint }}" data-dirty="false">
   <div class="runnable-pane runnable-pane-query">
-    <div class="topbar">
+    <div class="topbar-custom">
       <div class="pane-title">
         <span>Endpoint: {{ $endpoint }}</span>
       </div>
 
-      <span class="server-switch">
+      <div class="server-switch">
         <span>Dgraph:</span>
         <span class="url">http://localhost:8080</span>
         <a class="btn-change" href="#">
             <i class="far fa-edit"></i>
         </a>
-      </span>
-
+      </div>
+      
       <div class="actions">
         <a class="button button--small button--outline" data-action="reset" href="#">Reset</a>
-        <a class="button button--small" data-action="run" href="#">Run</a>
+        <a class="button button--small button--outline" data-action="run" href="#">Run</a>
       </div>
     </div>
 
@@ -82,6 +82,8 @@
               <label for="inputDgraphUrl">Dgraph Alpha Address</label>
               <input type="text" class="form-control" id="inputDgraphUrl" placeholder="http://localhost:8080" style="padding:0 4px;">
               <!-- <small id="serverStatus" class="form-text text-muted">Server status goes hear.</small> -->
+              <label for="inputSlashKey">Dgraph Cloud API Key</label>
+              <input type="password" class="form-control" id="inputSlashKey" placeholder="" style="padding:0 4px;">
             </div>
           </form>
         </div>

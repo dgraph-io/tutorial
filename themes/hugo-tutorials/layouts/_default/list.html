@@ -1,112 +1,64 @@
 {{ partial "header.html" . }}
 
-<body class="tour">
+<body class="tour tour-container-new">
 
     {{ partial "page_header.html" . }}
-    <div class="mt-5">
-        {{ partial "dropdown.html" . }}
-    </div>
-
 
     <div class="page-intro page-intro__home">
-        <div class="container">
-
-            <div class="page-intro__header">
-
-                <h1 class="page-intro__title">Let's Take a Tour of Dgraph</h1>
-                <p class="page-intro__subtitle" style="max-width: 520px;">An interactive tutorial with real queries and real results,
-        designed to run on Chrome on your machine.</p>
-
-                <a href="{{ .Site.BaseURL }}/intro/1/" class="button button--primary">
-                    <span>Get Started</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-
-            </div>
-
+      <div class="container">
+        <div class="page-intro__header">
+          <h1 class="title_small">DGRAPH TOUR</h1>
+          <h1 class="page-intro__title">Let's Take a Tour of Dgraph</h1>
+          <p class="page-intro__subtitle">An interactive tutorial with real queries and real results, designed to run on Chrome on your machine.</p>
         </div>
+      </div>
     </div>
 
-    <section class="page-body pt-0">
+  <section class="page-body pt-0">
+    <div class="section--large lesson-tiles-container" style="margin-bottom: 0px !important">
+      <div class="container" data-context="graphql">
+        <h2 class="main-title">Which Language Suits You?</h2>
 
-        <div class="section--large">
-            <div class="container">
-
-                <div class="row lesson-tiles">
-
-                    {{ range .Site.Menus.main }}
-                        <div class="col-12 col-md-6">
-                            <div class="tile lesson-tiles__tile">
-
-                                <h2>{{ .Name }}</h2>
-
-                                <p>{{ index $.Site.Params.menudesc .Identifier }}</p>
-
-                                <a href="{{ .URL }}" class="button button--secondary">
-                                    <span>Start</span>
-                                    <i class="fas fa-arrow-right"></i>
-                                </a>
-
-                            </div>
-                        </div>
-                    {{ end }}
-
-                </div>
-
-            </div>
+        <div class="lesson-tiles-switcher">
+          <div data-context="graphql">
+            <p style="font-weight: normal">GraphQL</p>
+            <span>Dgraph's Generated API</span>
+          </div>
+          <div data-context="dql">
+            <p style="font-weight: normal">DQL</p>
+            <span>Dgraph's Query Language</span>
+          </div>
         </div>
-
-        <div class="section--large">
-            <div class="container">
-
-                <h2 class="text-center">More resources</h2>
-
-                <hr>
-
-                <div class="row justify-content-center u-align__stretch-bottom">
-    				<div class="col-12 col-sm-6 col-md-3 text-center">
-    					<div class="section-icon">
-                            <img src="https://dgraph.io/assets/images/icon-fast-forward.svg">
-                        </div>
-    					<h3>Docs</h3>
-    					<p class="u-align__center" style="max-width:320px;">Get detailed information on how to get started with Dgraph.</p>
-    					<a class="trailing-link" href="https://docs.dgraph.io/" target="_blank">
-    						<span>Get Started</span>
-    						<i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                  
-                    <div class="col-12 col-sm-6 col-md-3 text-center">
-                        <div class="section-icon">
-    						<img src="https://dgraph.io/assets/images/icon-forum-alt.svg">
-                        </div>
-    					<h3>Community</h3>
-    					<p class="u-align__center" style="max-width:320px;">Be part of the growing global community of Dgraph users and developers.</p>
-    					<a class="trailing-link" href="https://discuss.dgraph.io/" target="_blank">
-    						<span>Join Community</span>
-    						<i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-3 text-center">
-                        <div class="section-icon">
-                            <img src="https://dgraph.io/assets/images/icon-docs.svg">
-
-                        </div>
-    					<h3>Play</h3>
-    					<p class="u-align__center" style="max-width:320px;">Easily query and visualize your data in an easy to use web interface.</p>
-    					<a class="trailing-link" href="https://play.dgraph.io/" target="_blank">
-    						<span>Play Now</span>
-    						<i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
+      </div>
+    </div>
+    <div class="section--large lesson-tiles-container tiles-container">
+      <div class="container container-narrow" data-context="graphql">
+        <div class="lesson-tiles" style="all: unset !important">
+          {{ $counter := 1 }} {{ range .Site.Menus.main }}
+          <div class="tile" data-context='{{ if in .Identifier "graphql" }}graphql{{ else }}dql{{ end }}'>
+            <div class="meta">
+              <div>
+                <p class="tile-counter">{{ $counter }}</p>
+                <p class="tile-name">{{ .Name }}</p>
+                <p class="tile-time">{{ with .Params.time }}<i class="fa-regular fa-clock" style="margin-right: 7px"></i>{{ . }}{{ end }}</p>
+                <script src="https://kit.fontawesome.com/37543023ae.js" crossorigin="anonymous"></script>
+              </div>
+              <span class="tile-description">{{ index $.Site.Params.menudesc .Identifier }}</span>
+              {{ $counter = add $counter 1 }}
             </div>
+            <div class="lesson-tiles__link">
+              <a href="{{ .URL }}" class="button button--primary-custom lesson-button">
+                <span>Start</span>
+              </a>
+            </div>
+          </div>
+          {{ end }}
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    {{ partial "page_footer.html" . }}
-
+  {{ partial "page_footer.html" . }}
 </body>
 
 {{ partial "footer.html" . }}

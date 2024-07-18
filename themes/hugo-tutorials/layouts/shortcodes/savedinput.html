@@ -1,0 +1,36 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+{{ $name := .Get 0}}
+{{ $key := .Get 1}}
+
+<style>
+  .savedinput {
+    display: flex;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  .savedinput input {
+    border: none;
+    width: 100%;
+  }
+  .savedinput button {
+    border: none;
+    background: none;
+  }
+  .savedinput button:focus {
+    border: none;
+  }
+  .savedinput button:hover {
+    color: #f10042;
+  }
+  .savedinput span {
+    padding-top: 2.5px;
+    white-space: nowrap;
+  }
+</style>
+<div class="savedinput">
+  <span>{{ $name }}:</span>
+  <input onChange="updateSavedInput('{{ $key }}')" class="sessionInput" data-key="{{ $key }}" type="{{ with .Get 2 }}password{{ else }}text{{ end }}" id="{{ $key }}_id" placeholder="{{ .Inner }}" />
+  <!--<button onclick="updateSavedInput('{{ $key }}')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg></button>-->
+</div>

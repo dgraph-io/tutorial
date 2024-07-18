@@ -1,0 +1,9 @@
+{
+  queryPerson(filter: { has: friends }) {
+    id
+    name
+    friendsAggregate {
+      count
+    }
+  }
+}

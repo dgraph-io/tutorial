@@ -1,103 +1,69 @@
 {{ $codePath := printf "content/%s%s.txt" .File.Dir .File.BaseFileName }}
 {{ $codeContent := readFile $codePath }}
-{{ $numContents := len (where .Site.RegularPages "Section" "==" .Section) }}
 
 {{ partial "header.html" . }}
 
-
-<body class="tour">
+<body class="tour new">
 
     {{ partial "page_header.html" . }}
 
+    <!-- <div class="d-block d-lg-none tour-message">
+        To optimize your experience, the interactive tutorial is only available on desktop.
+    </div> -->
 
-    <div class="d-block d-lg-none tour-message">
-        To optimize your experience, the interactive tutorial is only availabile on desktop.
-    </div>
-    <div class="row inner-dropdown d-lg-block d-none ">
-        <div class=" col-12">
-            {{ partial "dropdown-inner.html" . }}
-        </div>
-    </div>
-
-    <div class="page-intro page-intro__narrow pt-80">
-        <div class="container__full">
-            {{ partial "page_navigation.html" . }}
-           
-
-        </div>
-    </div>
-
-    <section class="page-body">
+    <section class="page-body new">
         <div class="page-body__content">
-
-            <div class="lesson">
-
-                {{ with .Params.prev }}
-                <a href="{{ . | relURL }}" data-action="go-prev" class="lesson__prev">
-                    <span>
-                        <i class="fad fa-angle-double-left"></i>
-                    </span>
-                </a>
-                {{ else }}
-                <div class="lesson__prev"></div>
-                {{ end }}
-
-                <div class="lesson__content">
-                    <div>
-
-                        <h2 class="lesson__title">{{ .Title }}</h2>
-
+            <div class="lesson" {{ if eq .Params.completed 1 }}data-completed="{{ .Section }}"{{ end }}>
+                <div class="lesson__content" id="lesson-content">
+                    <div id="lesson-content-inner">
+                        <h2 class="lesson__tour__type">Dgraph {{ if in .Section "graphql" }}GraphQL{{ else }}DQL{{ end }} Tour</h2>
+                        <div class="category_title">
+                            <h2 class="lesson__Category">{{ with .Params.courseName }}{{ . }}{{ else }}{{ (index (split .File.Dir "/") 0) }}{{ end }}</h2>
+                            <h2 class="lesson__title">{{ .Title }}</h2>
+                        </div>
                         {{ .Content }}
 
                     </div>
+                    {{ partial "page_navigation_modal.html" . }}
                 </div>
-
-                {{ if not (eq $codeContent "") }}
-                <div class="lesson__code d-none d-lg-block">
-
-                    {{ partial "runnable" (dict "Content" . "Code" $codeContent) }}
-
-                </div>
-                {{ end }}
-
-                {{ with .Params.next }}
-                <a href="{{ . | relURL }}" data-action="go-next" class="lesson__next">
-                    <span>
-                        <i class="fad fa-angle-double-right"></i>
-                    </span>
-                </a>
-                {{ else }}
-                <div class="lesson_next"></div>
-                {{ end }}
-
-                <nav class="lesson__navigation">
-
-                    {{ with .Params.prev }}
-                    <a href="{{ . | relURL }}" data-action="go-prev" class="lesson__prev">
-                        <span>
-                            <i class="fad fa-angle-double-left"></i>
-                        </span>
-                    </a>
-                    {{ end }}
-
-                    <div>
-                        {{ .File.BaseFileName }} / {{ $numContents }}
+                <div class="lesson__resizer" ></div>
+                {{ with .Params.iframeURL }}
+                    <div class="lesson__code modal-bakdrop block">
+                        <iframe src="{{ . }}" style="width: 100%; height: 100%;" ></iframe>
                     </div>
-
-                    {{ with .Params.next }}
-                    <a href="{{ . | relURL }}" data-action="go-next" class="lesson__next">
-                        <span>
-                            <i class="fad fa-angle-double-right"></i>
-                        </span>
-                    </a>
+                {{ else }}
+                    {{ if eq .Params.iFrameRatel 1 }}
+                        <div class="lesson__code modal-bakdrop block">
+                            <iframe class='ratel {{ if eq .Params.endpoint "/mutate" }}mutate{{ else }}query{{ end }}' {{ if ne .Params.endpoint "/mutate"}}data-code='{{ $codeContent }}'{{ end }} src="https://play.dgraph.io/?latest" style="width: 100%; height: 100%;" ></iframe>
+                        </div>
+                    {{ else if eq .Params.type "graphql/schema" }}
+                        <div class="lesson__code modal-bakdrop block">
+                            {{ partial "schema" (dict "Content" . "Code" $codeContent) }}
+                        </div>
+                    {{ else if (eq $codeContent "") }}
+                        <div class="lesson__code modal-bakdrop d-none d-lg-block empty custom-class">
+                            <img src='{{ relURL "/images/single-bg.svg" }}' />
+                        </div>
+                    {{ else if eq .Params.type "graphql" }}
+                        <div class="lesson__code modal-bakdrop block" style="background-color: #B8B7BA !important;">
+                            {{ partial "graphql" (dict "Content" . "Code" $codeContent) }}
+                        </div>
+                    {{ else if not (eq $codeContent "") }}
+                        <div class="lesson__code modal-bakdrop block">
+                            {{ partial "runnable" (dict "Content" . "Code" $codeContent) }}
+                        </div>
+                    {{else}}
+                        <div class="lesson__code modal-bakdrop d-none d-lg-block empty custom-class">
+                            <img src='{{ relURL "/images/single-bg.svg" }}' />
+                        </div>
                     {{ end }}
-
-                </nav>
-
+                {{ end }}
             </div>
-
         </div>
+
     </section>
+
+    {{ partial "page_navigation_new.html" . }}
 
     {{ partial "page_footer.html" . }}
 

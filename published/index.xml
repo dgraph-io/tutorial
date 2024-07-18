@@ -6,11 +6,7 @@
     <description>Recent content on A Tour of Dgraph</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 May 2019 23:05:55 +1000</lastBuildDate>
-    
-	<atom:link href="https://dgraph.io/tour/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 15 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://dgraph.io/tour/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Indexes</title>
       <link>https://dgraph.io/tour/search/1/</link>
@@ -41,7 +37,7 @@ Queries issued in this way are independent.</description>
       <pubDate>Thu, 27 Apr 2017 15:42:54 +1000</pubDate>
       
       <guid>https://dgraph.io/tour/moredata/1/</guid>
-      <description>Ok, we are off to a start with Dgraph and GraphQL+-. Let’s move it up a few notches.
+      <description>Ok, we are off to a start with Dgraph and DQL. Let’s move it up a few notches.
 Dgraph can also do query aggregation, geo-queries, string querying and more. But for all that let&amp;rsquo;s move from the small datasets we started with and try out something bigger, much bigger.
 In our github repository you&amp;rsquo;ll find a dataset about movies, directors and actors.
 Download it from that link and save into the ~/dgraph directory or by running the following in a terminal</description>
@@ -54,7 +50,7 @@ Download it from that link and save into the ~/dgraph directory or by running th
       
       <guid>https://dgraph.io/tour/basic/1/</guid>
       <description>Note For the following queries to run, you should have loaded data in the introduction.
- Let’s have a look at a hello world query in GraphQL+-.
+ Let’s have a look at a hello world query in DQL.
 Every query has a name, and the result is labelled with the same name.
 The search criteria func: ... matches nodes. Function eq does what you&amp;rsquo;d expect, matching nodes with a name equalling &amp;ldquo;Michael&amp;rdquo;. The result is the matched nodes and listed outgoing edges from those nodes.</description>
     </item>
@@ -78,8 +74,10 @@ When we want to add new data to an existing schema, we can just add it. But if w
       <guid>https://dgraph.io/tour/intro/1/</guid>
       <description>Hi,
 Welcome to Dgraph.
-This interactive tutorial will get you up and running with Dgraph and writing graph queries in GraphQL+-, Dgraph&amp;rsquo;s own graph query language.
-The tutorial is divided into modules. You can access the table of contents at any time by clicking &amp;ldquo;A Tour of Dgraph&amp;rdquo; in the top left and can move backwards and forwards using the right and left arrows at the bottom of this pane.</description>
+This interactive tutorial will get you up and running with Dgraph and writing graph
+queries in DQL, Dgraph&amp;rsquo;s own graph query language.
+Note If you are looking for GraphQL Spec support, please start at https://dgraph.io/docs/graphql/overview/ this tutorial is exclusive for DQL (GraphQL+-).
+ The tutorial is divided into modules. You can access the table of contents at any time by clicking &amp;ldquo;A Tour of Dgraph&amp;rdquo; in the top left and can move backwards and forwards using the right and left arrows at the bottom of this pane.</description>
     </item>
     
     <item>
@@ -136,7 +134,7 @@ After the upload, the label _:company1 doesn’t exist in Dgraph and we can’t 
       
       <guid>https://dgraph.io/tour/basic/2/</guid>
       <description>The last query got us some data, but the result wasn’t very interesting, nor was it much to do with graphs.
-In Dgraph and GraphQL+-, queries return graphs, not tables or lists of data.
+In Dgraph and DQL, queries return graphs, not tables or lists of data.
 A query is executed against a graph and the result is a subset of the queried graph, or some manipulation or calculation based on the queried graph.
 Let’s improve the query to get Michael and his network of friends.</description>
     </item>
@@ -181,7 +179,7 @@ The query here uses the sets of all Jane Campion&amp;rsquo;s films JC_films and 
       
       <guid>https://dgraph.io/tour/schema/3/</guid>
       <description>Dgraph doesn&amp;rsquo;t support setting external IDs for nodes. If an application requires unique identifiers for nodes other than the UIDs assigned by Dgraph, then these have to be supplied as edges. It&amp;rsquo;s up to a user application to ensure the uniqueness of such IDs/keys.
-More about in https://docs.dgraph.io/mutations/#external-ids</description>
+More about in https://dgraph.io/docs/mutations/#external-ids</description>
     </item>
     
     <item>
@@ -190,9 +188,9 @@ More about in https://docs.dgraph.io/mutations/#external-ids</description>
       <pubDate>Wed, 26 Apr 2017 22:36:41 +1000</pubDate>
       
       <guid>https://dgraph.io/tour/basic/3/</guid>
-      <description>It’s time to talk about data types and nodes
+      <description>It’s time to talk about data types and nodes.
 Type System Starting in version 1.1, Dgraph has support for a type system. At the moment, the type system is basic but can be used already to categorize nodes and query them based on their type. The type system is also used during expand queries.
-So in order to Expand or Delete nodes. You need to define your Types correctly. You can see in detail more about the Type System here.</description>
+So in order to expand or delete nodes, you need to define your types correctly. You can see more about the Type System here.</description>
     </item>
     
     <item>
@@ -403,7 +401,7 @@ At the point of definition, because the context is within the appropriate UID, v
       <description>We&amp;rsquo;ve added a new schema and loaded some company data, but what about integrating our previous friends dataset with this company one.
 Trying to use the blank nodes from previous mutations won&amp;rsquo;t work. The blank nodes aren&amp;rsquo;t persisted in the store, so when referring to nodes created in a previous mutation, it&amp;rsquo;s the UID that&amp;rsquo;s needed. So instead of
 _:sarah &amp;lt;works_for&amp;gt; _:company1 . it&amp;rsquo;s
-&amp;lt;uid-for-sarah&amp;gt; &amp;lt;works_for&amp;gt; &amp;lt;uid-for-company1&amp;gt; . Because the uid picked by Dgraph is unique, we can&amp;rsquo;t help you this time.</description>
+&amp;lt;uid_of_sarah&amp;gt; &amp;lt;works_for&amp;gt; &amp;lt;uid_of_company1&amp;gt; . Because the uid picked by Dgraph is unique, we can&amp;rsquo;t help you this time.</description>
     </item>
     
     <item>
@@ -424,6 +422,17 @@ _:sarah &amp;lt;works_for&amp;gt; _:company1 . it&amp;rsquo;s
       <description>A graph database is a database optimized for storing and querying graphs. When it comes to relationships, graph databases are much faster than SQL databases.
 SQL databases get bogged down by graph-like data because following edges means joining tables; sometimes big tables; the more edges, the more joins, and the more data needs to be loaded and processed.
 In a graph database, the edges are a fundamental structure, so following edges is a single lookup, making this operation blazingly fast.</description>
+    </item>
+    
+    <item>
+      <title>Next steps</title>
+      <link>https://dgraph.io/tour/search/8/</link>
+      <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dgraph.io/tour/search/8/</guid>
+      <description>Congratulations on completing the Tour!
+You should now be able to load data into Dgraph and perform basic queries and mutations on it.
+Where to go from here  Follow the Tutorial videos to reinforce what you have learnt. More queries can be found in the Query Language reference. Go to Clients to see how to communicate with Dgraph from your application. See Deploy if you wish to run Dgraph in a cluster.</description>
     </item>
     
     <item>
@@ -500,7 +509,7 @@ Note As of version v1.1 you will need to add Types in your schema for expand(_al
       <guid>https://dgraph.io/tour/basic/9/</guid>
       <description>It&amp;rsquo;s not uncommon to have thousands of results for a query.
 But you might want to select only the top-k answers, paginate the results for display, or limit a large result.
-In GraphQL+- this is done with first, offset and after in combination with ordering.
+In DQL this is done with first, offset and after in combination with ordering.
  first: N Return only the first N results offset: N Skip the first N results after: uid Return the results after uid  By default, query answers are ordered by uid.</description>
     </item>
     
@@ -640,7 +649,7 @@ This is helpful for debugging queries and for tutorials that need to explain par
       
       <guid>https://dgraph.io/tour/basic/17/</guid>
       <description>Dgraph supports facets — key value pairs on edges — as an extension to RDF triples. That is, facets add properties to edges, rather than to nodes. For example, a friend edge between two nodes may have a boolean property of close friendship. Facets can also be used as weights for edges.
-More details about Facets you can find in our Docs: https://docs.dgraph.io/query-language/#facets-edge-attributes
+More details about Facets you can find in our Docs: https://dgraph.io/docs/query-language/#facets-edge-attributes
 Reading all the documentation about Facets you will have examples of:</description>
     </item>
     

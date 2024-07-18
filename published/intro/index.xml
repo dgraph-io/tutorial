@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Intros on A Tour of Dgraph</title>
+    <title>Introes on A Tour of Dgraph</title>
     <link>https://dgraph.io/tour/intro/</link>
-    <description>Recent content in Intros on A Tour of Dgraph</description>
+    <description>Recent content in Introes on A Tour of Dgraph</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 Nov 2018 22:28:55 +1000</lastBuildDate>
-    
-	<atom:link href="https://dgraph.io/tour/intro/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 04 Nov 2018 22:28:55 +1000</lastBuildDate><atom:link href="https://dgraph.io/tour/intro/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome</title>
       <link>https://dgraph.io/tour/intro/1/</link>
@@ -19,8 +15,10 @@
       <guid>https://dgraph.io/tour/intro/1/</guid>
       <description>Hi,
 Welcome to Dgraph.
-This interactive tutorial will get you up and running with Dgraph and writing graph queries in GraphQL+-, Dgraph&amp;rsquo;s own graph query language.
-The tutorial is divided into modules. You can access the table of contents at any time by clicking &amp;ldquo;A Tour of Dgraph&amp;rdquo; in the top left and can move backwards and forwards using the right and left arrows at the bottom of this pane.</description>
+This interactive tutorial will get you up and running with Dgraph and writing graph
+queries in DQL, Dgraph&amp;rsquo;s own graph query language.
+Note If you are looking for GraphQL Spec support, please start at https://dgraph.io/docs/graphql/overview/ this tutorial is exclusive for DQL (GraphQL+-).
+ The tutorial is divided into modules. You can access the table of contents at any time by clicking &amp;ldquo;A Tour of Dgraph&amp;rdquo; in the top left and can move backwards and forwards using the right and left arrows at the bottom of this pane.</description>
     </item>
     
     <item>

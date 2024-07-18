@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Intros on A Tour of Dgraph</title>
+    <title>Introes on A Tour of Dgraph</title>
     <link>https://dgraph.io/tour/master/intro/</link>
-    <description>Recent content in Intros on A Tour of Dgraph</description>
+    <description>Recent content in Introes on A Tour of Dgraph</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 Nov 2018 22:28:55 +1000</lastBuildDate>
-    
-	<atom:link href="https://dgraph.io/tour/master/intro/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 04 Nov 2018 22:28:55 +1000</lastBuildDate><atom:link href="https://dgraph.io/tour/master/intro/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome</title>
       <link>https://dgraph.io/tour/master/intro/1/</link>
@@ -19,8 +15,9 @@
       <guid>https://dgraph.io/tour/master/intro/1/</guid>
       <description>Hi,
 Welcome to Dgraph.
-This interactive tutorial will get you up and running with Dgraph and writing graph queries in GraphQL+-, Dgraph&amp;rsquo;s own graph query language.
-The tutorial is divided into modules. You can access the table of contents at any time by clicking &amp;ldquo;A Tour of Dgraph&amp;rdquo; in the top left and can move backwards and forwards using the right and left arrows at the bottom of this pane.</description>
+This interactive tutorial will get you up and running with Dgraph and writing graph queries in DQL, Dgraph&amp;rsquo;s own graph query language.
+Note If you are looking for GraphQL Spec support, please start at https://dgraph.io/docs/graphql/overview/ this tutorial is exclusive for DQL (GraphQL+-).
+ The tutorial is divided into modules. You can access the table of contents at any time by clicking on the context menu (&amp;ldquo;sandwich&amp;rdquo; icon) in the bottom left corner of the screen; you can also navigate using the Back and Next buttons at the bottom of this pane, or by pressing your keyboard&amp;rsquo;s Left Arrow (←) and Right Arrow (→) keys.</description>
     </item>
     
     <item>
@@ -74,8 +71,9 @@ This introduction is important for the coming exercises, many of the concepts pr
       
       <guid>https://dgraph.io/tour/master/intro/6/</guid>
       <description>We&amp;rsquo;ve started Dgraph, but first things first: What is a graph and what has that got to do with databases?
-Graphs describe objects and the interconnections between them. Many people have heard of friendship graphs, or social network graphs, so let’s start there.
-Note OK, you&amp;rsquo;ll have to use your imagination here. We&amp;rsquo;re still building the tutorial, and we don&amp;rsquo;t have the visualizations up and running just yet. By starting Dgraph, you&amp;rsquo;ll have the visualization component working just fine.</description>
+Graphs describe objects and the interconnections among them. Many people have heard of friendship graphs, or social network graphs, so let’s start there.
+We have loaded Ratel UI in an iFrame for this lesson and have ran the following query against your endpoint you provided in the earlier lesson.
+ Show answer  { michael(func: anyofterms(name, &amp;quot;Michael&amp;quot;)) { name owns_pet { name } friend { name friend { expand(_all_) { expand(_all_) } } owns_pet { name } } } }    In the resulting graph, circles denote people and pets, and lines denote connections or labeled relationships among them.</description>
     </item>
     
     <item>

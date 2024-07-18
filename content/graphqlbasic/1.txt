@@ -1,0 +1,8 @@
+{
+  getPerson(xid: "alice") {
+    id
+    xid
+    name
+    age
+  }
+}

@@ -6,11 +6,7 @@
     <description>Recent content in Blocksvars on A Tour of Dgraph</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 May 2017 11:01:12 +1000</lastBuildDate>
-    
-	<atom:link href="https://dgraph.io/tour/master/blocksvars/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 02 May 2017 11:01:12 +1000</lastBuildDate><atom:link href="https://dgraph.io/tour/master/blocksvars/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Multiple Named Query Blocks</title>
       <link>https://dgraph.io/tour/master/blocksvars/1/</link>
@@ -19,8 +15,8 @@
       <guid>https://dgraph.io/tour/master/blocksvars/1/</guid>
       <description>Note From now on, to run the queries, you&amp;rsquo;ll need to have loaded the million triple movie dataset.
  Queries can be issued as multiples.
-For queries labelled q1, ..., qn issued as a multiple query block, the JSON result will contain labelled answer blocks q1, ..., qn for each query.
-If a block is labelled with var, no results are returned for that query.
+For queries labeled q1, ..., qn issued as a multiple query block, the JSON result will contain labeled answer blocks q1, ..., qn for each query.
+If a block is labeled with var, no results are returned for that query.
 Queries issued in this way are independent.</description>
     </item>
     

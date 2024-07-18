@@ -1,0 +1,98 @@
+{{ $endpoint := .Content.Params.endpoint | default "/query" }}
+<div class="runnable {{ .Content.Params.type }}" data-type="{{ .Content.Params.type }}" data-initial="{{ .Code }}" data-current="{{ .Code }}" endpoint="" data-dirty="false">
+  <div class="runnable-pane" style="max-height:100%;height:100%;width:100%">
+    <div class="topbar">
+      {{ if not (isset .Content.Params "readonly") }}
+      <div class="pane-title">
+        <span>GraphQL Schema</span>
+      </div>
+      <span class="server-switch">
+        <span>Dgraph Cloud:</span>
+        <span class="url sessionDisplayVal" data-key="graphqlendpoint">http://localhost:8080</span>
+        <a class="btn-change" href="#">
+            <i class="far fa-edit"></i>
+        </a>
+      </span>
+
+      <div class="actions">
+        <a class="button button--small button--outline" data-action="reset" href="#">Reset</a>
+        <a class="button button--small" data-action="push schema" href="#">Push</a>
+      </div>
+      {{ else }}
+      <div class="pane-title">
+        <span>Read Only Schema</span>
+      </div>
+      {{ end }}
+    </div>
+
+    <div class="runnable-content runnable-code">
+      <div class="runnable-tab-content active">
+        <textarea class="query-content-editable">{{ .Code }}</textarea>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="actions">
+
+    </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .modal.show {
+    display: block;
+    opacity: 1;
+    background-color: rgba(0,0,0,0.3);
+  }
+</style>
+<div class="modal fade runnable-url-modal" tabindex="-1" role="dialog"
+  aria-labelledby="runnable-url-modal-label" aria-hidden="true">
+  <div class="modal-dialog modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="runnable-url-modal-label">Change GraphQL Endpoint</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <form>
+            <p>For directions on obtaining your GraphQL Endpoint and API Key see <a href="/tour/graphqlintro/2">Run Dgraph</a></p>
+            <div class="form-group">
+              <label for="inputGraphQLEndpoint">GraphQL Endpoint</label>
+              <input type="text" class="form-control sessionInput" data-key="graphqlendpoint" id="inputGraphQLEndpoint" placeholder="https://your-endpoint.location.provider.cloud.dgraph.io/graphql" style="padding:0 4px;">
+              <!-- <small id="serverStatus" class="form-text text-muted">Server status goes hear.</small> -->
+            </div>
+            <div class="form-group">
+              <label for="inputAPIKey">API Key</label>
+              <input type="text" class="form-control sessionInput" data-key="apikey" id="inputAPIKey" placeholder="Your Admin API Key" style="padding:0 4px;">
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="code-btn" data-action="clear-endpoint">Clear</button>
+        <button type="button" class="code-btn" data-action="apply-endpoint">Apply</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade runnable-response-modal" tabindex="-1" role="dialog"
+  aria-labelledby="runnable-response-modal-label" aria-hidden="true">
+  <div class="modal-dialog modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="runnable-response-modal-label">Response</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

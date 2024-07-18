@@ -1,0 +1,36 @@
+{{ $numContents := len (where .Site.RegularPages "Section" "==" .Section) }}
+
+<div class="outer-container">
+    <div class="page-select">
+
+        <i class="fa fa-bars btn" type="button" id="toggle-navigation-modal"></i>
+        <p class="lesson-title">{{ with .Params.course }}{{ . }}.{{ end }}{{ .File.BaseFileName }} {{ .Title }}</p>
+    </div>
+
+    <nav class="lesson-navigation xs-hidden" style="margin-left: auto !important;">
+        {{ with .Params.prev }}
+        <a href="{{ . | relURL }}" data-action="go-prev" class="button button--small custom-class">
+            <span> Back </span>
+        </a>
+        {{ else }}
+        <a class="">
+            <span> Back </span>
+        </a>
+        {{ end }}
+
+        <div class="page-count">
+            {{ .File.BaseFileName }}/{{ $numContents }}
+        </div>
+
+        {{ with .Params.next }}
+        <a href="{{ . | relURL }}" data-action="go-next" class="button button--primary-custom button--small custom-class">
+            <span> Next </span>
+        </a>
+        {{ else }}
+        <a class="button button--primary-custom">
+            <span> Next </span>
+        </a>
+        {{ end }}
+    </nav>
+
+</div>

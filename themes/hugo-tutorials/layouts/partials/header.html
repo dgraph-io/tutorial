@@ -1,66 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    {{ partial "meta.html" . }}
 
-    <!-- "title - site-title" if not main page -->
-    <title>
-      {{ if not (eq .Section "") }}
-        {{ .Title }} | {{ humanize .Page.Section }} | Dgraph Tour
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-58V4RXS');</script>
+  <!-- End Google Tag Manager -->
+  {{ partial "meta.html" . }}
 
-      {{ else }}
-        {{ .Site.Title }}
-      {{ end }}
-    </title>
-    {{- $canonicalUrl := string .Permalink -}}
-    {{- if (ne (getenv "CANONICAL_PATH") "") -}}
-    {{- $canonicalUrl = (replace $canonicalUrl (trim .Site.BaseURL "/") (trim (getenv "CANONICAL_PATH") "/")) -}}
-    {{- end }}
-    <link rel="canonical" href="{{ $canonicalUrl }}" />
+  <!-- "title - site-title" if not main page -->
+  <title>
+    {{ if not (eq .Section "") }}
+    {{ .Title }} | {{ humanize .Page.Section }} | Dgraph Tour 
 
+    {{ else }}
+    {{ .Site.Title }}
+    {{ end }}
+  </title>
+  {{- $canonicalUrl := string .Permalink -}}
+  {{- if (ne (getenv "CANONICAL_PATH") "") -}}
+  {{- $canonicalUrl = (replace $canonicalUrl (trim .Site.BaseURL "/") (trim (getenv "CANONICAL_PATH") "/")) -}}
+  {{- end }}
+  <link rel="canonical" href="{{ $canonicalUrl }}" />
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500&display=swap" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link href="https://dgraph.io/assets/css/style.min.css?100820120" rel="stylesheet" type="text/css" />
-    <link href="{{ .Site.BaseURL }}/css/runnable-custom.css?{{ md5 (readFile "themes/hugo-tutorials/static/css/runnable-custom.css") }}" rel="stylesheet"/>
-    <link href="{{ .Site.BaseURL }}/css/theme.css?{{ md5 (readFile "themes/hugo-tutorials/static/css/theme.css") }}" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link href='{{ relURL "/css/style.min.css" }}?100820120' rel="stylesheet" type="text/css" />
+  <link href='{{ relURL "/css/runnable-custom.css" }}?{{ md5 (readFile "themes/hugo-tutorials/static/css/runnable-custom.css") }}' rel="stylesheet" />
+  <link href='{{ relURL "/css/theme.css" }}?{{ md5 (readFile "themes/hugo-tutorials/static/css/theme.css") }}' rel="stylesheet" />
 
-    <link href="{{ .Site.BaseURL }}/css/font-awesome/css/all.css" rel="stylesheet"/>
+  <link href='{{ relURL "/css/font-awesome/css/all.css" }}' rel="stylesheet" />
 
-    <!-- Google Tag Manager -->
-    <script type="text/javascript">
-  		(function(w,d,s,l,i){w[l]=w[l]||[];
-  		w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
-  		var f=d.getElementsByTagName(s)[0],j=d.createElement(s),
-  		dl=l!='dataLayer'?'&l='+l:'';j.async=true;
-  		j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-  		f.parentNode.insertBefore(j,f);
-  		})(window,document,'script','dataLayer','GTM-K8KPL5S');
-  	</script>
-    <!-- End Google Tag Manager -->
+  <link href="{{ .Site.BaseURL }}/css/font-awesome/css/all.css" rel="stylesheet" />
 
-  	<!-- Global site tag (gtag.js) - Google Ads: 666192333 -->
-  	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-666192333"></script>
-  	<script>
-        window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-666192333');
-    </script>
-    <!-- Hotjar Tracking Code for https://dgraph.io/ -->
-  <script>
-    (function(h,o,t,j,a,r){
-    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-    h._hjSettings={hjid:1883865,hjsv:6};
-    a=o.getElementsByTagName('head')[0];
-    r=o.createElement('script');r.async=1;
-    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-    a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-  </script>
+  <!-- Tween Marquee -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 
-  </head>
-  <body>
-    <main>
+  <!-- Segment Tracking -->
+
+  <!-- Fathom -->
+  <script src="https://cdn.usefathom.com/script.js" data-site="EXTODBMG" defer></script>
+  <!-- / Fathom -->
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet" />
+
+  <script src='{{ relURL "/js/app.js" }}?{{ md5 (readFile "themes/hugo-tutorials/static/js/app.js") }}'></script>
+  <link rel="stylesheet" href='{{ relURL "/css/page-footer.css" }}' />
+  <link rel="stylesheet" href='{{ relURL "/css/header.css" }}' />
+  <link rel="stylesheet" href='{{ relURL "/css/reskin.css" }}' />
+</head>
+
+<body>
+  <main></main>
+</body>
+
+</html>

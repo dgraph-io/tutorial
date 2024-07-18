@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Intros on A Tour of Dgraph</title>
+    <title>Introes on A Tour of Dgraph</title>
     <link>https://dgraph.io/tour/dgraph-20.03.0/intro/</link>
-    <description>Recent content in Intros on A Tour of Dgraph</description>
+    <description>Recent content in Introes on A Tour of Dgraph</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 Nov 2018 22:28:55 +1000</lastBuildDate>
-    
-	<atom:link href="https://dgraph.io/tour/dgraph-20.03.0/intro/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 04 Nov 2018 22:28:55 +1000</lastBuildDate><atom:link href="https://dgraph.io/tour/dgraph-20.03.0/intro/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome</title>
       <link>https://dgraph.io/tour/dgraph-20.03.0/intro/1/</link>

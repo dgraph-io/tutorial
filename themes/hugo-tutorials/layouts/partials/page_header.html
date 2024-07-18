@@ -1,53 +1,47 @@
+<style>
+	.announcement-banner {
+		background: linear-gradient(90deg, #75CDDC 0%, #A480CC 22.55%, #D360A9 44.03%, #D865A3 63.02%, #EA6287 83.85%, #E66A77 100%);
+		color: white;
+		font-weight: 600;
+		padding: 10px 0;
+		text-align: center;
+		background-size: 250% 250%;
+		animation: gradient 10s ease infinite;
+	}
+	.line-1{
+		display: inline-flex;
+		color: white !important;
+		position: relative;
+		width: 218px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+		font-weight: bold;
+	}
+
+	/* Animation */
+	.anim-typewriter{
+		animation: typewriter 4s steps(27) 1s 1 normal both
+	}
+	@keyframes typewriter{
+		from{width: 0;}
+		to{width: 218px;}
+	}
+</style>
+
+
 <div class="header position-absolute w-100">
 	<div class="container">
 	  <div class="page-header">
-		<div class="page-logo"><a href="/"></a></div><a class="nav-icon" href="javascript:;">
+		<div class="page-logo"><a href="/"><img src='{{ relURL "/images/logo.svg" }}'></a></div><a class="nav-icon" href="javascript:;">
 		  <div class="hamburger">
 			<div class="line line-1"></div>
 			<div class="line line-2"></div>
 			<div class="line line-3"></div>
 		  </div></a>
-	
+
 	{{ partial "page_nav.html" }}
-	{{ partial "page_cta.html" }}
 </div>
 </div>
 
 </div>
-
-<!--
-<div class="container">
-  <div class="row">
-	<div class="col-12 offset-0 col-md-10 offset-md-1">
-
-			  {{if .Site.Params.github}}
-		<span class="topnav-stargazers-wrapper">
-		  <a href="https://github.com/{{.Site.Params.github}}" data-show-count="true" aria-label="Star Dgraph on GitHub" class="github-button">Star</a>
-		</span>
-	  {{end}}
-
-	  	<span
-			onclick="toggleVisibility()"
-		  	class="search-button pull-right button button-dgraph-site button--outline"
-		>
-		<i class="fa fa-search" aria-hidden="true"></i>
-	  </span>
-
-	  <a
-		  href="{{.Site.Params.website}}"
-		  title="Dgraph Website"
-		  class="button button-dgraph-site button--outline pull-right"
-	  >
-		Dgraph.io
-	  </a>
-	</div>
-  </div>
-
-  <div id="searchbox"></div>
-
-</div>
-
-<script>
-	createSearch();
-</script>
--->

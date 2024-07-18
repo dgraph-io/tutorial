@@ -1,0 +1,10 @@
+{
+  queryPerson(filter: {age: { between: { min: 30, max: 39 } } }) {
+    id
+    name
+    friends(filter: { xid: { eq: "bob" } }) {
+      id
+      name
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  queryMovie(filter: {
+    and: [
+      {name: {ge: "I"}}
+      {name: {lt: "J"}}
+    ]
+  }) {
+    name
+    lines {
+      line
+      by {
+        name
+      }
+    }
+  }
+}

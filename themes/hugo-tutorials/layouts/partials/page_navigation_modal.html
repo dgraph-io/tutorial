@@ -1,0 +1,62 @@
+{{- $currentUrl := print (index (split .Permalink "/tour/") 1) -}}
+{{- $currentUrlIdentifier := print .Section -}}
+
+<!-- Modal -->
+<div class="page-navigation-modal" id="page-navigation-modal">
+    <div class="modal-dialog">
+        <div class="modal-body" id="dgraph-tour">
+            <div class="top-section">
+                <h2 class="title">
+                    <a href='/tour/?{{ if in .Section "graphql" }}graphql{{ else }}dql{{ end }}'>
+                        <i class="fa fa-arrow-left text-gradient"></i>
+                    </a>
+                    Dgraph {{ if in .Section "graphql" }}GraphQL{{ else }}DQL{{ end }} Tour
+                </h2>
+                <p class="description">
+                    An interactive tutorial with real queries and real results,
+                    designed to run on Chrome on your machine.
+                </p>
+            </div>
+
+            <div class="module-section main" data-context='{{ if in .Section "graphql" }}graphql{{ else }}dql{{ end }}'>
+                <p class="heading text-gradient">Modules</p>
+                {{ range $.Site.Menus.main }}
+                    <a class="module {{ if eq ($currentUrlIdentifier|lower) (.Identifier|lower) }}active{{ end }}"
+                        href="{{ .URL }}" data-context='{{if in .Identifier "graphql" }}graphql{{ else }}dql{{ end }}'>
+                        <span>. {{ .Name }}</span>
+                    </a>
+                {{ end }}
+            </div>
+        </div>
+
+        <div class="modal-body" id="dgraph-tour-category">
+            {{ range .Site.Menus.main }}
+                {{ if eq ($currentUrlIdentifier|lower) (.Identifier|lower) }}
+                    <div class="top-section">
+                        <h2 class="title">
+                            <i class="fa fa-arrow-left text-gradient" id="go-back"></i>
+                            {{ .Name }}
+                        </h2>
+                        <p class="description">
+                            {{ index $.Site.Params.menudesc .Identifier }}
+                        </p>
+                    </div>
+                {{ end }}
+            {{ end }}
+
+            <div class="module-section">
+                <p class="heading text-gradient">Module Breakdown</p>
+                {{ range where $.Site.Pages "Section" (.Section) }}
+                    {{ if ne .Weight 0 }}
+                        {{- $activeWeight := (index (split $currentUrl $currentUrlIdentifier) 1) -}}
+                        {{- $activeWeightIndex :=(index (split $activeWeight "/") 1) -}}
+
+                        <a class="module {{ if eq (int $activeWeightIndex) (int .Weight) }}active{{ end }}" href="/tour/{{ .Section }}/{{ .Weight }}">
+                            <span>{{ .Params.course }}.{{ .Weight }}. {{ .Title }}</span>
+                        </a>
+                    {{ end }}
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</div>

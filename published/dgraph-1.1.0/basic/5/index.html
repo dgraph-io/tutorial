@@ -45,7 +45,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link href="https://dgraph.io/assets/css/style.min.css?07032020-1" rel="stylesheet" type="text/css" />
     <link href="https://dgraph.io/tour/dgraph-1.1.0/css/runnable-custom.css?fd581e09310956d9e7e07a71e2d31145" rel="stylesheet"/>
-    <link href="https://dgraph.io/tour/dgraph-1.1.0/css/theme.css?c0ca0f2a399ff0e15ed26fbcf4995107" rel="stylesheet"/>
+    <link href="https://dgraph.io/tour/dgraph-1.1.0/css/theme.css?13626e63f8905e6640bb9029194a17ec" rel="stylesheet"/>
 
     <link href="https://dgraph.io/tour/dgraph-1.1.0/css/font-awesome/css/all.css" rel="stylesheet"/>
 
@@ -252,6 +252,10 @@
 			                
 			            
 			                
+			                <a class="dropdown-item page-subnav__label" href="https://dgraph.io/tour/dgraph-20.07.1">Dgraph 20.07.1</a>
+			                
+			            
+			                
 			                <a class="dropdown-item page-subnav__label" href="https://dgraph.io/tour/dgraph-20.07.0">Dgraph 20.07.0</a>
 			                
 			            
@@ -288,6 +292,10 @@
 			            
 			                
 			                <a class="dropdown-item page-subnav__label" href="https://dgraph.io/tour/master">master</a>
+			                
+			            
+			                
+			                <a class="dropdown-item page-subnav__label" href="https://dgraph.io/tour/dgraph-20.07.1"> 20.07.1</a>
 			                
 			            
 			                
@@ -388,6 +396,10 @@
 			                
 			            
 			                
+			                <a class="dropdown-item page-subnav__label" href="https://dgraph.io/tour/dgraph-20.07.1">Dgraph 20.07.1</a>
+			                
+			            
+			                
 			                <a class="dropdown-item page-subnav__label" href="https://dgraph.io/tour/dgraph-20.07.0">Dgraph 20.07.0</a>
 			                
 			            
@@ -424,6 +436,10 @@
 			            
 			                
 			                <a class="dropdown-item page-subnav__label" href="https://dgraph.io/tour/master">master</a>
+			                
+			            
+			                
+			                <a class="dropdown-item page-subnav__label" href="https://dgraph.io/tour/dgraph-20.07.1"> 20.07.1</a>
 			                
 			            
 			                
@@ -493,15 +509,15 @@ We continue nesting the query as we follow edges from node to node.</p>
 <p>Compare the JSON result to the structure of the query and note, for
 example, that the <code>friend</code> edge matched a number of nodes and each is
 represented in the JSON.</p>
-<p>Something to try: How about Michael’s friends&rsquo; pets, or Michael&rsquo;s
-friends&rsquo; friends.</p>
+<p>Something to try: How about Michael’s friends' pets, or Michael&rsquo;s
+friends' friends.</p>
 
 <div class="expandable">
   <a data-action="toggle-expandable" href="#expand">
     <i class="fa fa-caret-down"></i> Show answer
   </a>
   <div class="expandable-content">
-    <p>Query Michael&rsquo;s friends&rsquo; pets:</p>
+    <p>Query Michael&rsquo;s friends' pets:</p>
 <pre><code>{
   michael_friends_pets(func: eq(name, &quot;Michael&quot;)) {
     name
@@ -514,7 +530,7 @@ friends&rsquo; friends.</p>
     }
   }
 }
-</code></pre><p>Query Michael&rsquo;s friends&rsquo; friends:</p>
+</code></pre><p>Query Michael&rsquo;s friends' friends:</p>
 <pre><code>{
   michael_friends_friends(func: allofterms(name, &quot;Michael&quot;)) {
     name
@@ -532,9 +548,9 @@ friends&rsquo; friends.</p>
 </div>
 
 <p>The idea is to formulate the query as a traversal
-through the graph, following edges to the desired data.  The <code>uid</code>'s in the JSON output allow
+through the graph, following edges to the desired data.  The <code>uid</code>&rsquo;s in the JSON output allow
 interpretation as a graph rather than a tree.  See, for example, the
-cycles in Michael&rsquo;s friends&rsquo; friends.</p>
+cycles in Michael&rsquo;s friends' friends.</p>
 
 
                     </div>
