@@ -1,0 +1,11 @@
+mutation {
+  deletePerson(filter: {
+    xid: { eq: "karl" }
+  }) {
+    person {
+      xid
+      name
+      age
+    }
+  }
+}

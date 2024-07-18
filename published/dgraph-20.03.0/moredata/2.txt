@@ -1,0 +1,3 @@
+{
+	# write any query you like in the sandbox
+}

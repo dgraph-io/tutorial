@@ -477,7 +477,6 @@
 
   .lesson__code {
     margin-top: 30px;
-    margin: 30px 24px;
   }
 }
 
@@ -504,7 +503,7 @@
   text-align: center;
 }
 
-.lesson-tiles-switcher {
+/* .lesson-tiles-switcher {
   display: flex;
   max-width: 904px;
   margin: auto;
@@ -578,7 +577,7 @@
 
 .module-section.main .module span:before {
   content: counter(moduleNumber);
-}
+} */
 
 .lesson-tiles-container .lesson-tiles {
   display: flex;
@@ -591,14 +590,6 @@
 
 .lesson-tiles-container .lesson-tiles::before {
   content: "";
-  background: linear-gradient(
-    180deg,
-    #ff4200 0%,
-    #e50793 116.97%,
-    #e50695 116.98%
-  );
-  width: 16px;
-  height: 100%;
   display: flex;
   position: absolute;
   z-index: 1;
@@ -708,6 +699,8 @@
 .page-subnav-new {
   display: flex;
   align-items: center;
+  width: 100%;
+  justify-content: end !important;
   height: 64px;
   box-shadow: 0px -4px 8px 0px rgb(0 0 0 / 0.1);
   background: #fafafa;
@@ -857,7 +850,7 @@
 }
 
 .tour.new .page-body.new .page-body__content .lesson .lesson__code.empty {
-  background: #f2f2f2;
+  background: #fff !important;
   padding-right: 0;
 }
 
@@ -895,7 +888,7 @@
   line-height: 1em;
   text-align: left;
   padding: 16px 0;
-  background: #fafafa;
+  background: #fff;
 }
 
 .tour.new
@@ -1078,6 +1071,28 @@
   }
 }
 
+
+.tour.new .page-body.new .page-body__content .lesson .lesson__code {
+  display: block !important;
+}
+
+.tour.new .page-body.new .page-body__content .lesson .lesson__code.empty {
+  display: none !important;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.tour.new .page-body.new .page-body__content .lesson .lesson__code.empty img {
+  width: auto;
+  height: 100%;
+}
+
+.tour.new .page-body.new .page-body__content .lesson .lesson__content > div {
+  padding: 0;
+}
+
+
 @media screen and (min-width: 993px) {
   .tour.new .page-body.new .page-body__content .lesson .lesson__code {
     display: block !important;
@@ -1148,12 +1163,7 @@
 
 .lesson__resizer {
   width: 5px;
-  background: linear-gradient(
-    45deg,
-    #ff4200 0%,
-    #e50793 116.97%,
-    #e50695 116.98%
-  );
+  background-color:#EF265A;
   background-size: 400% 400%;
   animation: gradient 5s ease infinite;
   /* background-color: #212121; */
@@ -1180,7 +1190,7 @@
 
 @media screen and (min-width: 1280px) {
   .tour.new .page-body.new .page-body__content .lesson .lesson__content {
-    max-width: calc(40% - 5px);
+    max-width: calc(50% - 5px);
   }
 }
 
