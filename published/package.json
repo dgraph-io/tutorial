@@ -12,7 +12,7 @@
     "codemirror": "^5.58.1",
     "dgraph-js-http": "^20.7.1",
     "highlight.js": "^9.15.9",
-    "jquery": "^3.5.1"
+    "jquery": "^3.7.1"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
